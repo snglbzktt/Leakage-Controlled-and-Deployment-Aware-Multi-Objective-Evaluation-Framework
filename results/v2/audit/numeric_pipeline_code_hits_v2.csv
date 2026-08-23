@@ -1,0 +1,779 @@
+﻿relative_path,line_number,keywords,code
+src\data\nbaiot_pipeline.py,7,scaler,- Standardizasyonu train tabanlı scaler parametreleriyle uygular.
+src\data\nbaiot_pipeline.py,40,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_seed2026"""
+src\data\nbaiot_pipeline.py,43,scaler,DEFAULT_SCALER_FILE = (
+src\data\nbaiot_pipeline.py,47,scaler,"/ ""nbaiot_standard_scaler_seed2026.npz"""
+src\data\nbaiot_pipeline.py,82,scaler,scaler_file: Path
+src\data\nbaiot_pipeline.py,90,scaler,scaler_mean: np.ndarray
+src\data\nbaiot_pipeline.py,91,scaler,scaler_scale: np.ndarray
+src\data\nbaiot_pipeline.py,92,scaler,scaler_train_sample_count: int
+src\data\nbaiot_pipeline.py,140,scaler,"scaler_file: Path = DEFAULT_SCALER_FILE,"
+src\data\nbaiot_pipeline.py,147,scaler,"""""""Scaler, görev eşleme ve sınıf ağırlıklarını yükler."""""""
+src\data\nbaiot_pipeline.py,150,scaler,scaler_file = scaler_file.resolve()
+src\data\nbaiot_pipeline.py,170,scaler,if not scaler_file.exists():
+src\data\nbaiot_pipeline.py,172,scaler,"f""Scaler artifactı bulunamadı: {scaler_file}"""
+src\data\nbaiot_pipeline.py,277,scaler,"scaler_file,"
+src\data\nbaiot_pipeline.py,279,scaler,) as scaler_data:
+src\data\nbaiot_pipeline.py,283,scaler,in scaler_data[
+src\data\nbaiot_pipeline.py,288,scaler,scaler_mean = np.asarray(
+src\data\nbaiot_pipeline.py,289,scaler,"scaler_data[""mean""],"
+src\data\nbaiot_pipeline.py,290,float64,"dtype=np.float64,"
+src\data\nbaiot_pipeline.py,293,scaler,scaler_scale = np.asarray(
+src\data\nbaiot_pipeline.py,294,scaler,"scaler_data[""scale""],"
+src\data\nbaiot_pipeline.py,295,float64,"dtype=np.float64,"
+src\data\nbaiot_pipeline.py,298,scaler,scaler_train_sample_count = int(
+src\data\nbaiot_pipeline.py,300,scaler,scaler_data[
+src\data\nbaiot_pipeline.py,306,scaler,scaler_seed = int(
+src\data\nbaiot_pipeline.py,308,scaler,"scaler_data[""seed""]"
+src\data\nbaiot_pipeline.py,312,scaler,if scaler_seed != expected_seed:
+src\data\nbaiot_pipeline.py,314,scaler,"""Scaler seed değeri uyuşmuyor: """
+src\data\nbaiot_pipeline.py,315,scaler,"f""scaler={scaler_seed}, beklenen={expected_seed}"""
+src\data\nbaiot_pipeline.py,320,scaler,"""Scaler özellik listesi boş."""
+src\data\nbaiot_pipeline.py,327,scaler,"""Scaler özellik listesinde tekrar var."""
+src\data\nbaiot_pipeline.py,334,scaler,if scaler_mean.shape != (
+src\data\nbaiot_pipeline.py,338,scaler,"""Scaler mean boyutu özellik sayısıyla uyuşmuyor."""
+src\data\nbaiot_pipeline.py,341,scaler,if scaler_scale.shape != (
+src\data\nbaiot_pipeline.py,345,scaler,"""Scaler scale boyutu özellik sayısıyla uyuşmuyor."""
+src\data\nbaiot_pipeline.py,349,scaler,scaler_mean
+src\data\nbaiot_pipeline.py,352,scaler,"""Scaler mean içinde sonlu olmayan değer var."""
+src\data\nbaiot_pipeline.py,356,scaler,scaler_scale
+src\data\nbaiot_pipeline.py,359,scaler,"""Scaler scale içinde sonlu olmayan değer var."""
+src\data\nbaiot_pipeline.py,363,scaler,scaler_scale <= 0
+src\data\nbaiot_pipeline.py,366,scaler,"""Scaler scale içinde sıfır veya negatif değer var."""
+src\data\nbaiot_pipeline.py,410,float32,"dtype=np.float32,"
+src\data\nbaiot_pipeline.py,466,scaler,"scaler_file=scaler_file,"
+src\data\nbaiot_pipeline.py,472,scaler,"scaler_mean=scaler_mean,"
+src\data\nbaiot_pipeline.py,473,scaler,"scaler_scale=scaler_scale,"
+src\data\nbaiot_pipeline.py,474,scaler,scaler_train_sample_count=(
+src\data\nbaiot_pipeline.py,475,scaler,scaler_train_sample_count
+src\data\nbaiot_pipeline.py,573,float32,if feature_type != pa.float32():
+src\data\nbaiot_pipeline.py,576,float32,"f""float32 değil: {feature_type}"""
+src\data\nbaiot_pipeline.py,690,float32,"dtype=np.float32,"
+src\data\nbaiot_pipeline.py,703,float64,scaled_float64 = (
+src\data\nbaiot_pipeline.py,705,float64,"np.float64,"
+src\data\nbaiot_pipeline.py,708,scaler,- self.assets.scaler_mean
+src\data\nbaiot_pipeline.py,709,scaler,) / self.assets.scaler_scale
+src\data\nbaiot_pipeline.py,712,float64,scaled_float64
+src\data\nbaiot_pipeline.py,719,float32,scaled_float32 = np.asarray(
+src\data\nbaiot_pipeline.py,720,float64,"scaled_float64,"
+src\data\nbaiot_pipeline.py,721,float32,"dtype=np.float32,"
+src\data\nbaiot_pipeline.py,725,float32,return scaled_float32
+src\data\nbaiot_pipeline.py,876,float32,"dtype=np.float32,"
+src\models\nbaiot_models.py,10,float32,"- [batch_size, input_features] biçiminde float32 girdi kabul eder."
+src\models\nbaiot_models.py,337,scaler,deneylerde scaler artifactındaki sıra olarak sabitlenmelidir.
+src\training\baseline_trainer.py,7,scaler,- Scaler yalnızca train verisinden öğrenilmiş artifacttan yüklenir.
+src\training\baseline_trainer.py,252,float64|astype(np.float64,).astype(np.float64)
+src\training\baseline_trainer.py,256,float64|astype(np.float64,).astype(np.float64)
+src\training\baseline_trainer.py,260,float64|astype(np.float64,).astype(np.float64)
+src\training\baseline_trainer.py,455,float32,if features.dtype != torch.float32:
+src\training\baseline_trainer.py,457,float32,"""Model girdisi float32 değil."""
+src\training\baseline_trainer.py,834,float32,"dtype=torch.float32,"
+scripts\04_validate_nbaiot_values.py,382,float64,"dtype=np.float64,"
+scripts\04_validate_nbaiot_values.py,388,float64,"dtype=np.float64,"
+scripts\04_validate_nbaiot_values.py,421,float64,"dtype=np.float64,"
+scripts\04_validate_nbaiot_values.py,438,float64,"dtype=np.float64,"
+scripts\04_validate_nbaiot_values.py,586,float64,"dtype=np.float64,"
+scripts\04_validate_nbaiot_values.py,592,float64,"dtype=np.float64,"
+scripts\05_audit_nbaiot_duplicates.py,482,float64,"dtype=np.float64,"
+scripts\06_analyze_duplicate_structure.py,818,float64,"dtype=np.float64,"
+scripts\08_materialize_primary_dataset.py,11,float64,- Özellikleri float64 olarak korur.
+scripts\08_materialize_primary_dataset.py,16,nbaiot_primary_seed2026,data/processed/nbaiot_primary_seed2026/
+scripts\08_materialize_primary_dataset.py,765,float64,"pa.float64(),"
+scripts\08_materialize_primary_dataset.py,1197,float64,"dtype=np.float64,"
+scripts\08_materialize_primary_dataset.py,1612,float64,"""float64"""
+scripts\09_validate_primary_dataset.py,5,float64,- Parquet şeması 115 float64 özellik ve class_label içeriyor mu?
+scripts\09_validate_primary_dataset.py,40,nbaiot_primary_seed2026,"/ ""nbaiot_primary_seed2026"""
+scripts\09_validate_primary_dataset.py,885,float64,).type != pa.float64():
+scripts\09_validate_primary_dataset.py,887,float64,"f""{split_name}/{column_name} float64 değil: """
+scripts\09_validate_primary_dataset.py,941,float64,"dtype=np.float64,"
+scripts\10_audit_float32_conversion.py,2,float32|float64,N-BaIoT float64 -> float32 dönüşüm çakışma denetimi.
+scripts\10_audit_float32_conversion.py,5,float32,- Float32 dönüşümünden sonra kaç benzersiz vektör kalıyor?
+scripts\10_audit_float32_conversion.py,7,float32,- Aynı float32 vektörü farklı splitlerde bulunuyor mu?
+scripts\10_audit_float32_conversion.py,8,float32,- Aynı float32 vektörü farklı sınıflarda bulunuyor mu?
+scripts\10_audit_float32_conversion.py,36,nbaiot_primary_seed2026,"/ ""nbaiot_primary_seed2026"""
+scripts\10_audit_float32_conversion.py,78,float32,"""N-BaIoT float32 dönüşümünden """
+scripts\10_audit_float32_conversion.py,306,float32,def create_float32_fingerprints(
+scripts\10_audit_float32_conversion.py,310,float32,Özellikleri float32'ye dönüştürür ve iki 64-bit özet üretir.
+scripts\10_audit_float32_conversion.py,314,float32,"dtype=np.float32,"
+scripts\10_audit_float32_conversion.py,320,float32,"""Float32 dönüşümünden sonra sonlu olmayan değer oluştu."""
+scripts\10_audit_float32_conversion.py,324,float32,values[values == 0] = np.float32(0.0)
+scripts\10_audit_float32_conversion.py,326,float32,float32_frame = pd.DataFrame(
+scripts\10_audit_float32_conversion.py,332,float32,"float32_frame,"
+scripts\10_audit_float32_conversion.py,340,float32,"float32_frame.iloc[:, ::-1],"
+scripts\10_audit_float32_conversion.py,459,float32,"print(""N-BaIoT Float32 Dönüşüm Çakışma Denetimi"")"
+scripts\10_audit_float32_conversion.py,497,float64,if arrow_type != pa.float64():
+scripts\10_audit_float32_conversion.py,499,float64,"f""{split_name}/{column_name} float64 değil: """
+scripts\10_audit_float32_conversion.py,528,float32,"desc=f""{split_name} float32 denetimi"","
+scripts\10_audit_float32_conversion.py,545,float32,) = create_float32_fingerprints(
+scripts\10_audit_float32_conversion.py,657,float32,"print(""Global float32 çakışma grupları hesaplanıyor..."")"
+scripts\10_audit_float32_conversion.py,726,float32,unique_float32_vectors = int(
+scripts\10_audit_float32_conversion.py,732,float32,- unique_float32_vectors
+scripts\10_audit_float32_conversion.py,856,float64,"""original_float64_unique_rows"": ("
+scripts\10_audit_float32_conversion.py,859,float32,"""unique_float32_vectors"": ("
+scripts\10_audit_float32_conversion.py,862,float32,"""float32_duplicate_rows_beyond_first"": ("
+scripts\10_audit_float32_conversion.py,865,float32,"""float32_duplicate_percentage"": ("
+scripts\10_audit_float32_conversion.py,1019,float32,"/ ""nbaiot_float32_collision_by_split.csv"""
+scripts\10_audit_float32_conversion.py,1024,float32,"/ ""nbaiot_float32_collision_groups.csv"""
+scripts\10_audit_float32_conversion.py,1029,float32,"/ ""nbaiot_float32_collision_summary.json"""
+scripts\10_audit_float32_conversion.py,1058,float32,"""Float32 dönüşümü yeni duplicate üretmedi. """
+scripts\10_audit_float32_conversion.py,1059,float32,"""Mevcut splitler korunarak float32 veri üretilebilir."""
+scripts\10_audit_float32_conversion.py,1067,float32,"""Float32 dönüşümü yalnızca split içi duplicate üretti. """
+scripts\10_audit_float32_conversion.py,1068,float32,"""Float32 üretim sırasında split içi yeniden deduplication gerekir."""
+scripts\10_audit_float32_conversion.py,1073,float32,"""Float32 dönüşümü splitler arası veya sınıflar arası """
+scripts\10_audit_float32_conversion.py,1074,float32,"""çakışma üretti. Float32 uzayında yeniden deduplication """
+scripts\10_audit_float32_conversion.py,1085,float64,"""input_dtype"": ""float64"","
+scripts\10_audit_float32_conversion.py,1086,float32,"""audited_dtype"": ""float32"","
+scripts\10_audit_float32_conversion.py,1096,float32,"""unique_float32_vector_count"": int("
+scripts\10_audit_float32_conversion.py,1097,float32,unique_float32_vectors
+scripts\10_audit_float32_conversion.py,1099,float32,"""float32_collision_group_count"": int("
+scripts\10_audit_float32_conversion.py,1102,float32,"""float32_duplicate_rows_beyond_first"": int("
+scripts\10_audit_float32_conversion.py,1105,float32,"""float32_duplicate_percentage"": float("
+scripts\10_audit_float32_conversion.py,1127,float32,"""no_new_float32_collisions"": ("
+scripts\10_audit_float32_conversion.py,1136,float32,"""safe_to_materialize_float32_without_changes"": bool("
+scripts\10_audit_float32_conversion.py,1157,float32,"print(""Float32 dönüşüm denetimi tamamlandı"")"
+scripts\10_audit_float32_conversion.py,1160,float64,"""Toplam float64 vektör       : """
+scripts\10_audit_float32_conversion.py,1164,float32,"""Benzersiz float32 vektör    : """
+scripts\10_audit_float32_conversion.py,1165,float32,"f""{unique_float32_vectors:,}"""
+scripts\10_audit_float32_conversion.py,1173,float32,"f""{summary['float32_duplicate_percentage']:.6f}%"""
+scripts\10_audit_float32_conversion.py,1184,float32,"""Değişikliksiz float32 güvenli: """
+scripts\10_audit_float32_conversion.py,1185,float32,"f""{summary['safe_to_materialize_float32_without_changes']}"""
+scripts\11_build_float32_canonical_index.py,2,float32,N-BaIoT float32 kanonik grup indeksini oluşturur.
+scripts\11_build_float32_canonical_index.py,6,float64,- Mevcut float64 Parquet dosyalarını parça parça okur.
+scripts\11_build_float32_canonical_index.py,7,float32,- Özellikleri float32 biçimine dönüştürür.
+scripts\11_build_float32_canonical_index.py,9,float32,- Her float32 özellik vektörü için iki adet 64-bit parmak izi üretir.
+scripts\11_build_float32_canonical_index.py,10,float32,- Aynı float32 vektörleri SQLite üzerinde tek grupta toplar.
+scripts\11_build_float32_canonical_index.py,14,float32,- Önceki float32 denetim raporuyla sonuçları karşılaştırır.
+scripts\11_build_float32_canonical_index.py,47,nbaiot_primary_seed2026,"/ ""nbaiot_primary_seed2026"""
+scripts\11_build_float32_canonical_index.py,68,float32,"/ ""nbaiot_float32_collision_summary.json"""
+scripts\11_build_float32_canonical_index.py,75,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical.sqlite"""
+scripts\11_build_float32_canonical_index.py,110,float32,"""N-BaIoT float32 kanonik grup """
+scripts\11_build_float32_canonical_index.py,119,float64,"help=""Float64 Parquet veri klasörü."","
+scripts\11_build_float32_canonical_index.py,140,float32,"help=""10 numaralı float32 denetim özeti."","
+scripts\11_build_float32_canonical_index.py,372,float32,"""Float32 denetim özeti bulunamadı: """
+scripts\11_build_float32_canonical_index.py,578,float32,# FLOAT32 FINGERPRINTS
+scripts\11_build_float32_canonical_index.py,581,float32,def create_float32_fingerprints(
+scripts\11_build_float32_canonical_index.py,588,float32,"""""""Float32 kanonik değerleri ve iki 64-bit parmak izini üretir."""""""
+scripts\11_build_float32_canonical_index.py,591,float32,"dtype=np.float32,"
+scripts\11_build_float32_canonical_index.py,597,float32,"""Float32 dönüşümünden sonra sonlu olmayan değer oluştu."""
+scripts\11_build_float32_canonical_index.py,602,float32,values == np.float32(0.0)
+scripts\11_build_float32_canonical_index.py,603,float32,] = np.float32(0.0)
+scripts\11_build_float32_canonical_index.py,605,float32,float32_frame = pd.DataFrame(
+scripts\11_build_float32_canonical_index.py,611,float32,"float32_frame,"
+scripts\11_build_float32_canonical_index.py,619,float32,"float32_frame.iloc[:, ::-1],"
+scripts\11_build_float32_canonical_index.py,629,float32,"float32_frame,"
+scripts\11_build_float32_canonical_index.py,671,float32,CREATE TABLE float32_groups (
+scripts\11_build_float32_canonical_index.py,678,float64,"float64_unique_occurrence_count INTEGER NOT NULL,"
+scripts\11_build_float32_canonical_index.py,720,float32,"""reversed float32 feature-column order"""
+scripts\11_build_float32_canonical_index.py,740,float32,INSERT INTO float32_groups (
+scripts\11_build_float32_canonical_index.py,745,float64,"float64_unique_occurrence_count,"
+scripts\11_build_float32_canonical_index.py,761,float32,< float32_groups.class_code
+scripts\11_build_float32_canonical_index.py,763,float32,ELSE float32_groups.class_code
+scripts\11_build_float32_canonical_index.py,767,float32,float32_groups.class_mask
+scripts\11_build_float32_canonical_index.py,770,float64,float64_unique_occurrence_count =
+scripts\11_build_float32_canonical_index.py,771,float32|float64,float32_groups.float64_unique_occurrence_count
+scripts\11_build_float32_canonical_index.py,775,float32,float32_groups.raw_occurrence_count
+scripts\11_build_float32_canonical_index.py,779,float32,float32_groups.old_split_mask
+scripts\11_build_float32_canonical_index.py,785,float32,< float32_groups.representative_location
+scripts\11_build_float32_canonical_index.py,787,float32,ELSE float32_groups.representative_location
+scripts\11_build_float32_canonical_index.py,888,float32,expected_unique_float32_groups = int(
+scripts\11_build_float32_canonical_index.py,890,float32,"""unique_float32_vector_count"""
+scripts\11_build_float32_canonical_index.py,963,float32,"print(""N-BaIoT Float32 Kanonik Grup İndeksi"")"
+scripts\11_build_float32_canonical_index.py,972,float32,"""Beklenen float32 grup: """
+scripts\11_build_float32_canonical_index.py,973,float32,"f""{expected_unique_float32_groups:,}"""
+scripts\11_build_float32_canonical_index.py,1048,float64,if arrow_type != pa.float64():
+scripts\11_build_float32_canonical_index.py,1051,float64,"f""float64 değil: {arrow_type}"""
+scripts\11_build_float32_canonical_index.py,1105,float32,) = create_float32_fingerprints(
+scripts\11_build_float32_canonical_index.py,1252,float32,idx_float32_groups_representative
+scripts\11_build_float32_canonical_index.py,1253,float32,ON float32_groups (
+scripts\11_build_float32_canonical_index.py,1262,float32,idx_float32_groups_class_mask
+scripts\11_build_float32_canonical_index.py,1263,float32,ON float32_groups (
+scripts\11_build_float32_canonical_index.py,1279,float32,FROM float32_groups
+scripts\11_build_float32_canonical_index.py,1283,float64,total_float64_occurrences = scalar_query(
+scripts\11_build_float32_canonical_index.py,1287,float64,float64_unique_occurrence_count
+scripts\11_build_float32_canonical_index.py,1289,float32,FROM float32_groups
+scripts\11_build_float32_canonical_index.py,1299,float32,FROM float32_groups
+scripts\11_build_float32_canonical_index.py,1307,float32,FROM float32_groups
+scripts\11_build_float32_canonical_index.py,1315,float64,conflict_float64_rows = scalar_query(
+scripts\11_build_float32_canonical_index.py,1319,float64,float64_unique_occurrence_count
+scripts\11_build_float32_canonical_index.py,1321,float32,FROM float32_groups
+scripts\11_build_float32_canonical_index.py,1335,float32,FROM float32_groups
+scripts\11_build_float32_canonical_index.py,1347,float32,FROM float32_groups
+scripts\11_build_float32_canonical_index.py,1361,float64,total_float64_occurrences
+scripts\11_build_float32_canonical_index.py,1362,float64,- conflict_float64_rows
+scripts\11_build_float32_canonical_index.py,1381,float64,total_float64_occurrences
+scripts\11_build_float32_canonical_index.py,1387,float64,"f""bulunan={total_float64_occurrences:,}"""
+scripts\11_build_float32_canonical_index.py,1392,float32,!= expected_unique_float32_groups
+scripts\11_build_float32_canonical_index.py,1395,float32,"""Float32 grup sayısı 10 numaralı raporla """
+scripts\11_build_float32_canonical_index.py,1397,float32,"f""beklenen={expected_unique_float32_groups:,}, """
+scripts\11_build_float32_canonical_index.py,1434,float64,"float64_unique_occurrence_count,"
+scripts\11_build_float32_canonical_index.py,1437,float32,FROM float32_groups
+scripts\11_build_float32_canonical_index.py,1443,float64,float64_unique_occurrence_count DESC
+scripts\11_build_float32_canonical_index.py,1457,float64,"float64_count,"
+scripts\11_build_float32_canonical_index.py,1495,float64,"""float64_unique_row_count"": int("
+scripts\11_build_float32_canonical_index.py,1496,float64,float64_count
+scripts\11_build_float32_canonical_index.py,1510,float32,"""exclude_entire_float32_group"""
+scripts\11_build_float32_canonical_index.py,1521,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_conflicts.csv"""
+scripts\11_build_float32_canonical_index.py,1526,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_index_summary.json"""
+scripts\11_build_float32_canonical_index.py,1552,float64,"""total_input_float64_unique_rows"": int("
+scripts\11_build_float32_canonical_index.py,1553,float64,total_float64_occurrences
+scripts\11_build_float32_canonical_index.py,1558,float32,"""float32_unique_group_count"": int("
+scripts\11_build_float32_canonical_index.py,1567,float64,"""class_conflict_float64_unique_rows"": int("
+scripts\11_build_float32_canonical_index.py,1568,float64,conflict_float64_rows
+scripts\11_build_float32_canonical_index.py,1573,float64,"""conflict_free_float64_input_rows"": int("
+scripts\11_build_float32_canonical_index.py,1576,float32,"""same_class_float32_rows_merged"": int("
+scripts\11_build_float32_canonical_index.py,1583,float32,"""Every float32 group containing more than one """
+scripts\11_build_float32_canonical_index.py,1622,float32,"print(""Float32 kanonik grup indeksi tamamlandı"")"
+scripts\11_build_float32_canonical_index.py,1625,float64,"""Giriş float64 benzersiz satır : """
+scripts\11_build_float32_canonical_index.py,1626,float64,"f""{total_float64_occurrences:,}"""
+scripts\11_build_float32_canonical_index.py,1629,float32,"""Benzersiz float32 grup        : """
+scripts\11_build_float32_canonical_index.py,1642,float64,"f""{conflict_float64_rows:,}"""
+scripts\12_materialize_float32_canonical_dataset.py,2,float32,N-BaIoT float32 kanonik ve sızıntısız veri setini oluşturur.
+scripts\12_materialize_float32_canonical_dataset.py,5,float32,1. Float32 kanonik SQLite gruplarını doğrular.
+scripts\12_materialize_float32_canonical_dataset.py,7,float32,3. Kalan her float32 vektörü için deterministik train/validation/test
+scripts\12_materialize_float32_canonical_dataset.py,9,float64,4. Temsilci satırları eski float64 Parquet dosyalarından okur.
+scripts\12_materialize_float32_canonical_dataset.py,10,float32,5. Özellikleri float32 biçiminde kaydeder.
+scripts\12_materialize_float32_canonical_dataset.py,14,float64,Yeni splitler eski float64 splitlerinden bağımsızdır. Atama doğrudan
+scripts\12_materialize_float32_canonical_dataset.py,15,float32,float32 kanonik parmak izleri üzerinden yapılır.
+scripts\12_materialize_float32_canonical_dataset.py,46,nbaiot_primary_seed2026,"/ ""nbaiot_primary_seed2026"""
+scripts\12_materialize_float32_canonical_dataset.py,53,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical.sqlite"""
+scripts\12_materialize_float32_canonical_dataset.py,117,float32,"""N-BaIoT float32 kanonik ve """
+scripts\12_materialize_float32_canonical_dataset.py,126,float64,"help=""Eski float64 Parquet veri klasörü."","
+scripts\12_materialize_float32_canonical_dataset.py,133,float32,"help=""Float32 kanonik SQLite veritabanı."","
+scripts\12_materialize_float32_canonical_dataset.py,161,float32,"help=""Yeni float32 split tohumu."","
+scripts\12_materialize_float32_canonical_dataset.py,346,float32,Float32 parmak izlerinden deterministik split kodu üretir.
+scripts\12_materialize_float32_canonical_dataset.py,411,float32,# FLOAT32 FINGERPRINTS
+scripts\12_materialize_float32_canonical_dataset.py,414,float32,def create_float32_features_and_hashes(
+scripts\12_materialize_float32_canonical_dataset.py,417,float32,"""""""Float32 kanonik özellik tablosu ve parmak izlerini üretir."""""""
+scripts\12_materialize_float32_canonical_dataset.py,420,float32,"dtype=np.float32,"
+scripts\12_materialize_float32_canonical_dataset.py,426,float32,"""Float32 dönüşümünden sonra sonlu olmayan değer oluştu."""
+scripts\12_materialize_float32_canonical_dataset.py,431,float32,values == np.float32(0.0)
+scripts\12_materialize_float32_canonical_dataset.py,432,float32,] = np.float32(0.0)
+scripts\12_materialize_float32_canonical_dataset.py,434,float32,float32_frame = pd.DataFrame(
+scripts\12_materialize_float32_canonical_dataset.py,440,float32,"float32_frame,"
+scripts\12_materialize_float32_canonical_dataset.py,448,float32,"float32_frame.iloc[:, ::-1],"
+scripts\12_materialize_float32_canonical_dataset.py,456,float32,"float32_frame,"
+scripts\12_materialize_float32_canonical_dataset.py,586,float32,"toplam float32 grup,"
+scripts\12_materialize_float32_canonical_dataset.py,593,float32,"""float32_groups"","
+scripts\12_materialize_float32_canonical_dataset.py,615,float32,FROM float32_groups
+scripts\12_materialize_float32_canonical_dataset.py,623,float32,FROM float32_groups
+scripts\12_materialize_float32_canonical_dataset.py,635,float32,FROM float32_groups
+scripts\12_materialize_float32_canonical_dataset.py,649,float32,"""Float32 grup sayıları kendi içinde uyuşmuyor."""
+scripts\12_materialize_float32_canonical_dataset.py,710,float32,"""Float32 kanonik split atamaları oluşturuluyor..."""
+scripts\12_materialize_float32_canonical_dataset.py,727,float64,"float64_unique_occurrence_count INTEGER NOT NULL,"
+scripts\12_materialize_float32_canonical_dataset.py,747,float64,"float64_unique_occurrence_count,"
+scripts\12_materialize_float32_canonical_dataset.py,751,float32,FROM float32_groups
+scripts\12_materialize_float32_canonical_dataset.py,831,float64,"float64_unique_occurrence_count,"
+scripts\12_materialize_float32_canonical_dataset.py,924,float32,'SplitMix64 from float32 composite fingerprint'
+scripts\12_materialize_float32_canonical_dataset.py,944,float32,"pa.float32(),"
+scripts\12_materialize_float32_canonical_dataset.py,991,float64,"""float64_unique_occurrence_count"","
+scripts\12_materialize_float32_canonical_dataset.py,1118,float32,"""Float32 kanonik SQLite bulunamadı: """
+scripts\12_materialize_float32_canonical_dataset.py,1128,float32|nbaiot_float32_canonical,"/ f""nbaiot_float32_canonical_seed{args.seed}"""
+scripts\12_materialize_float32_canonical_dataset.py,1134,float32|nbaiot_float32_canonical,"""nbaiot_float32_canonical_"""
+scripts\12_materialize_float32_canonical_dataset.py,1174,float32,"print(""N-BaIoT Float32 Kanonik Parquet Veri Seti"")"
+scripts\12_materialize_float32_canonical_dataset.py,1339,float64,# Scan original float64 Parquet files
+scripts\12_materialize_float32_canonical_dataset.py,1379,float64,if arrow_type != pa.float64():
+scripts\12_materialize_float32_canonical_dataset.py,1382,float64,"f""float64 değil: {arrow_type}"""
+scripts\12_materialize_float32_canonical_dataset.py,1444,float64,"float64_unique_occurrence_count,"
+scripts\12_materialize_float32_canonical_dataset.py,1509,float32,"float32_features,"
+scripts\12_materialize_float32_canonical_dataset.py,1512,float32,) = create_float32_features_and_hashes(
+scripts\12_materialize_float32_canonical_dataset.py,1546,float32,"""Float32 ileri parmak izleri """
+scripts\12_materialize_float32_canonical_dataset.py,1562,float32,"""Float32 ters parmak izleri """
+scripts\12_materialize_float32_canonical_dataset.py,1665,float32,float32_features.iloc[
+scripts\12_materialize_float32_canonical_dataset.py,1744,float64,float64_unique_counts = np.asarray(
+scripts\12_materialize_float32_canonical_dataset.py,1798,float64,"""float64_unique_occurrence_count"": ("
+scripts\12_materialize_float32_canonical_dataset.py,1799,float64,float64_unique_counts
+scripts\12_materialize_float32_canonical_dataset.py,1995,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_class_distribution.csv"""
+scripts\12_materialize_float32_canonical_dataset.py,2000,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_materialization_summary.json"""
+scripts\12_materialize_float32_canonical_dataset.py,2025,float32,"""float32"""
+scripts\12_materialize_float32_canonical_dataset.py,2031,float32,"""original_float32_group_count"": int("
+scripts\12_materialize_float32_canonical_dataset.py,2042,float32,"""the float32 composite fingerprint"""
+scripts\12_materialize_float32_canonical_dataset.py,2060,float32,"""Every conflict-free float32 feature vector """
+scripts\12_materialize_float32_canonical_dataset.py,2064,float32,"""All float32 groups containing multiple class """
+scripts\12_materialize_float32_canonical_dataset.py,2080,float32,"print(""Float32 kanonik veri seti tamamlandı"")"
+scripts\12_materialize_float32_canonical_dataset.py,2093,float32,"""Toplam float32 grup      : """
+scripts\13_validate_float32_canonical_dataset.py,2,float32,N-BaIoT float32 kanonik veri seti bütünlük doğrulaması.
+scripts\13_validate_float32_canonical_dataset.py,8,float32,"- Train, validation ve test arasında float32 vektör örtüşmesi var mı?"
+scripts\13_validate_float32_canonical_dataset.py,9,float32,- Parquet dosyaları gerçekten float32 mi?
+scripts\13_validate_float32_canonical_dataset.py,11,float32,- Float32 parmak izleri yeniden hesaplandığında metadata ile eşleşiyor mu?
+scripts\13_validate_float32_canonical_dataset.py,17,float32|nbaiot_float32_canonical,results/reports/nbaiot_float32_canonical_validation_by_split.csv
+scripts\13_validate_float32_canonical_dataset.py,18,float32|nbaiot_float32_canonical,results/reports/nbaiot_float32_canonical_validation_summary.json
+scripts\13_validate_float32_canonical_dataset.py,48,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_seed2026"""
+scripts\13_validate_float32_canonical_dataset.py,55,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical.sqlite"""
+scripts\13_validate_float32_canonical_dataset.py,107,float32,"""N-BaIoT float32 kanonik Parquet veri setini """
+scripts\13_validate_float32_canonical_dataset.py,116,float32,"help=""Float32 kanonik Parquet veri klasörü."","
+scripts\13_validate_float32_canonical_dataset.py,123,float32,"help=""Float32 kanonik SQLite veritabanı."","
+scripts\13_validate_float32_canonical_dataset.py,306,float32,"""""""Float32 parmak izlerinden split kodlarını tekrar hesaplar."""""""
+scripts\13_validate_float32_canonical_dataset.py,366,float32,# FLOAT32 FINGERPRINT
+scripts\13_validate_float32_canonical_dataset.py,369,float32,def create_float32_fingerprints(
+scripts\13_validate_float32_canonical_dataset.py,372,float32,"""""""Float32 özellik vektörlerinin çift parmak izini hesaplar."""""""
+scripts\13_validate_float32_canonical_dataset.py,375,float32,"dtype=np.float32,"
+scripts\13_validate_float32_canonical_dataset.py,386,float32,values == np.float32(0.0)
+scripts\13_validate_float32_canonical_dataset.py,387,float32,] = np.float32(0.0)
+scripts\13_validate_float32_canonical_dataset.py,496,float32,"""float32_groups"","
+scripts\13_validate_float32_canonical_dataset.py,555,float32,total_float32_group_count = scalar_query(
+scripts\13_validate_float32_canonical_dataset.py,559,float32,FROM float32_groups
+scripts\13_validate_float32_canonical_dataset.py,567,float32,FROM float32_groups
+scripts\13_validate_float32_canonical_dataset.py,584,float32,total_float32_group_count
+scripts\13_validate_float32_canonical_dataset.py,685,float32,"total_float32_group_count,"
+scripts\13_validate_float32_canonical_dataset.py,729,float64,"""float64_unique_occurrence_count"","
+scripts\13_validate_float32_canonical_dataset.py,781,float64,float64_unique_counts = np.empty(
+scripts\13_validate_float32_canonical_dataset.py,930,float64,batch_float64_counts = pd.to_numeric(
+scripts\13_validate_float32_canonical_dataset.py,932,float64,"""float64_unique_occurrence_count"""
+scripts\13_validate_float32_canonical_dataset.py,1009,float32,"""Metadata split atamaları float32 parmak iziyle """
+scripts\13_validate_float32_canonical_dataset.py,1033,float64,float64_unique_counts[
+scripts\13_validate_float32_canonical_dataset.py,1035,float64,] = batch_float64_counts
+scripts\13_validate_float32_canonical_dataset.py,1128,float32,"""Metadata içinde tekrarlanan float32 parmak izi var: """
+scripts\13_validate_float32_canonical_dataset.py,1161,float64,database_float64_counts = np.empty(
+scripts\13_validate_float32_canonical_dataset.py,1184,float64,"float64_unique_occurrence_count,"
+scripts\13_validate_float32_canonical_dataset.py,1266,float64,database_float64_counts[
+scripts\13_validate_float32_canonical_dataset.py,1332,float64,"""float64_unique_occurrence_count"": ("
+scripts\13_validate_float32_canonical_dataset.py,1333,float64,"float64_unique_counts[sort_order],"
+scripts\13_validate_float32_canonical_dataset.py,1334,float64,"database_float64_counts,"
+scripts\13_validate_float32_canonical_dataset.py,1373,float64,del database_float64_counts
+scripts\13_validate_float32_canonical_dataset.py,1462,float32,"""""""Tek bir float32 split Parquet dosyasını doğrular."""""""
+scripts\13_validate_float32_canonical_dataset.py,1488,float32,if arrow_type != pa.float32():
+scripts\13_validate_float32_canonical_dataset.py,1490,float32,"f""{split_name}/{feature_name} float32 değil: """
+scripts\13_validate_float32_canonical_dataset.py,1545,float32,"dtype=np.float32,"
+scripts\13_validate_float32_canonical_dataset.py,1578,float32,) = create_float32_fingerprints(
+scripts\13_validate_float32_canonical_dataset.py,1767,float32,"""feature_dtype"": ""float32"","
+scripts\13_validate_float32_canonical_dataset.py,1809,float32,"f""Float32 veri klasörü bulunamadı: {data_dir}"""
+scripts\13_validate_float32_canonical_dataset.py,1827,float32,"print(""N-BaIoT Float32 Kanonik Veri Seti Doğrulaması"")"
+scripts\13_validate_float32_canonical_dataset.py,1844,float32,"total_float32_group_count,"
+scripts\13_validate_float32_canonical_dataset.py,1917,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_validation_by_split.csv"""
+scripts\13_validate_float32_canonical_dataset.py,1922,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_validation_summary.json"""
+scripts\13_validate_float32_canonical_dataset.py,2010,float32,"""Float32 kanonik veri seti doğrulaması başarısız."""
+scripts\13_validate_float32_canonical_dataset.py,2029,float32,"""feature_dtype"": ""float32"","
+scripts\13_validate_float32_canonical_dataset.py,2034,float32,"""total_float32_group_count"": int("
+scripts\13_validate_float32_canonical_dataset.py,2035,float32,total_float32_group_count
+scripts\13_validate_float32_canonical_dataset.py,2088,float32,"print(""Float32 kanonik veri seti doğrulaması tamamlandı"")"
+scripts\13_validate_float32_canonical_dataset.py,2102,float32,"""Toplam float32 grup        : """
+scripts\13_validate_float32_canonical_dataset.py,2103,float32,"f""{total_float32_group_count:,}"""
+scripts\14_fit_training_standardizer.py,2,StandardScaler|scaler,N-BaIoT eğitim verisinden StandardScaler parametrelerini üretir.
+scripts\14_fit_training_standardizer.py,12,scaler,models/preprocessing/nbaiot_standard_scaler_seed2026.npz
+scripts\14_fit_training_standardizer.py,13,standardizer,results/reports/nbaiot_training_standardizer_statistics.csv
+scripts\14_fit_training_standardizer.py,14,standardizer,results/reports/nbaiot_training_standardizer_summary.json
+scripts\14_fit_training_standardizer.py,30,StandardScaler|scaler,from sklearn.preprocessing import StandardScaler
+scripts\14_fit_training_standardizer.py,44,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_seed2026"""
+scripts\14_fit_training_standardizer.py,82,StandardScaler|scaler,"""N-BaIoT train splitinden StandardScaler """
+scripts\14_fit_training_standardizer.py,91,float32,"help=""Float32 kanonik veri klasörü."","
+scripts\14_fit_training_standardizer.py,316,float32,if feature_type != pa.float32():
+scripts\14_fit_training_standardizer.py,318,float32,"f""{split_name}/{feature_name} float32 değil: """
+scripts\14_fit_training_standardizer.py,345,standardizer,def fit_training_standardizer(
+scripts\14_fit_training_standardizer.py,350,StandardScaler|scaler,"StandardScaler,"
+scripts\14_fit_training_standardizer.py,355,StandardScaler|scaler,"""""""StandardScaler parametrelerini yalnızca train verisinden öğrenir."""""""
+scripts\14_fit_training_standardizer.py,374,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,380,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,383,StandardScaler|scaler,scaler = StandardScaler(
+scripts\14_fit_training_standardizer.py,393,StandardScaler|scaler,"desc=""StandardScaler train verisine fit ediliyor"","
+scripts\14_fit_training_standardizer.py,404,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,418,scaler,scaler.partial_fit(
+scripts\14_fit_training_standardizer.py,455,scaler,scaler.n_samples_seen_
+scripts\14_fit_training_standardizer.py,461,StandardScaler|scaler,"""StandardScaler örnek sayısı uyuşmuyor: """
+scripts\14_fit_training_standardizer.py,463,scaler,"f""scaler={fitted_sample_count:,}"""
+scripts\14_fit_training_standardizer.py,467,scaler,scaler.mean_ is None
+scripts\14_fit_training_standardizer.py,468,scaler,or scaler.var_ is None
+scripts\14_fit_training_standardizer.py,469,scaler,or scaler.scale_ is None
+scripts\14_fit_training_standardizer.py,472,StandardScaler|scaler,"""StandardScaler parametreleri oluşturulamadı."""
+scripts\14_fit_training_standardizer.py,476,scaler,scaler.mean_
+scripts\14_fit_training_standardizer.py,479,scaler,"""Scaler ortalamalarında sonlu olmayan değer var."""
+scripts\14_fit_training_standardizer.py,483,scaler,scaler.var_
+scripts\14_fit_training_standardizer.py,486,scaler,"""Scaler varyanslarında sonlu olmayan değer var."""
+scripts\14_fit_training_standardizer.py,490,scaler,scaler.scale_
+scripts\14_fit_training_standardizer.py,493,scaler,"""Scaler ölçeklerinde sonlu olmayan değer var."""
+scripts\14_fit_training_standardizer.py,497,scaler,scaler.scale_ <= 0
+scripts\14_fit_training_standardizer.py,500,scaler,"""Scaler içinde sıfır veya negatif ölçek bulundu."""
+scripts\14_fit_training_standardizer.py,504,scaler,"scaler,"
+scripts\14_fit_training_standardizer.py,542,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,547,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,576,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,582,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,602,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,666,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,675,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,768,scaler,def save_scaler_artifact(
+scripts\14_fit_training_standardizer.py,796,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,800,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,804,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,808,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,812,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,823,float32,"[""float32""],"
+scripts\14_fit_training_standardizer.py,827,float64,"[""float64""],"
+scripts\14_fit_training_standardizer.py,831,StandardScaler|scaler,"[""StandardScaler population variance ddof=0""],"
+scripts\14_fit_training_standardizer.py,886,scaler,"/ f""nbaiot_standard_scaler_seed{args.seed}.npz"""
+scripts\14_fit_training_standardizer.py,891,standardizer,"/ ""nbaiot_training_standardizer_statistics.csv"""
+scripts\14_fit_training_standardizer.py,896,standardizer,"/ ""nbaiot_training_standardizer_summary.json"""
+scripts\14_fit_training_standardizer.py,943,scaler,"scaler,"
+scripts\14_fit_training_standardizer.py,947,standardizer,) = fit_training_standardizer(
+scripts\14_fit_training_standardizer.py,954,scaler,"scaler.mean_,"
+scripts\14_fit_training_standardizer.py,955,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,959,scaler,"scaler.var_,"
+scripts\14_fit_training_standardizer.py,960,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,964,scaler,"scaler.scale_,"
+scripts\14_fit_training_standardizer.py,965,float64,"dtype=np.float64,"
+scripts\14_fit_training_standardizer.py,1082,scaler,"""scaler_scale"": scale,"
+scripts\14_fit_training_standardizer.py,1106,scaler,save_scaler_artifact(
+scripts\14_fit_training_standardizer.py,1122,float64,parameter_memory_float64_bytes = int(
+scripts\14_fit_training_standardizer.py,1127,float32,parameter_memory_float32_bytes = int(
+scripts\14_fit_training_standardizer.py,1131,float32,np.float32
+scripts\14_fit_training_standardizer.py,1153,StandardScaler|scaler,"""method"": ""StandardScaler"","
+scripts\14_fit_training_standardizer.py,1159,float32,"""source_feature_dtype"": ""float32"","
+scripts\14_fit_training_standardizer.py,1160,float64,"""parameter_storage_dtype"": ""float64"","
+scripts\14_fit_training_standardizer.py,1162,float32,"""Scaled arrays will be converted to float32 """
+scripts\14_fit_training_standardizer.py,1207,scaler,"""scaler_artifact"": str("
+scripts\14_fit_training_standardizer.py,1210,scaler,"""scaler_artifact_sha256"": ("
+scripts\14_fit_training_standardizer.py,1216,float64,"""mean_and_scale_memory_float64_bytes"": ("
+scripts\14_fit_training_standardizer.py,1217,float64,parameter_memory_float64_bytes
+scripts\14_fit_training_standardizer.py,1219,float32,"""mean_and_scale_memory_float32_bytes"": ("
+scripts\14_fit_training_standardizer.py,1220,float32,parameter_memory_float32_bytes
+scripts\14_fit_training_standardizer.py,1269,scaler,"print(f""Scaler artifactı : {artifact_file}"")"
+scripts\15_build_label_mapping_and_class_weights.py,5,float32,- Sınıf sırası float32 kanonik SQLite veritabanından alınır.
+scripts\15_build_label_mapping_and_class_weights.py,47,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical_seed2026"""
+scripts\15_build_label_mapping_and_class_weights.py,54,float32|nbaiot_float32_canonical,"/ ""nbaiot_float32_canonical.sqlite"""
+scripts\15_build_label_mapping_and_class_weights.py,94,float32,"help=""Float32 kanonik Parquet veri klasörü."","
+scripts\15_build_label_mapping_and_class_weights.py,101,float32,"help=""Float32 kanonik SQLite veritabanı."","
+scripts\15_build_label_mapping_and_class_weights.py,533,float64,"dtype=np.float64,"
+scripts\15_build_label_mapping_and_class_weights.py,573,float64,"dtype=np.float64,"
+scripts\15_build_label_mapping_and_class_weights.py,592,float64,"dtype=np.float64,"
+scripts\15_build_label_mapping_and_class_weights.py,650,float32,"dtype=np.float32,"
+scripts\15_build_label_mapping_and_class_weights.py,656,float32,"dtype=np.float32,"
+scripts\15_build_label_mapping_and_class_weights.py,662,float32,"dtype=np.float32,"
+scripts\15_build_label_mapping_and_class_weights.py,696,float32,"f""Float32 veri klasörü bulunamadı: {data_dir}"""
+scripts\15_build_label_mapping_and_class_weights.py,928,float32|nbaiot_float32_canonical,"f""nbaiot_float32_canonical_seed{args.seed}"""
+scripts\15_build_label_mapping_and_class_weights.py,937,float32|nbaiot_float32_canonical,"""classes_json in nbaiot_float32_canonical.sqlite"""
+scripts\16_build_task_definitions.py,523,float64,"dtype=np.float64,"
+scripts\16_build_task_definitions.py,551,float64,"dtype=np.float64,"
+scripts\16_build_task_definitions.py,1040,float32,"dtype=np.float32,"
+scripts\16_build_task_definitions.py,1058,float32|nbaiot_float32_canonical,"f""nbaiot_float32_canonical_seed{args.seed}"""
+scripts\17_validate_pytorch_data_pipeline.py,5,scaler,"- Scaler, görev tanımı ve sınıf ağırlıkları yüklenebiliyor mu?"
+scripts\17_validate_pytorch_data_pipeline.py,6,float32,"- Model girdileri [batch, 115] ve float32 mi?"
+scripts\17_validate_pytorch_data_pipeline.py,263,float32,if features.dtype != torch.float32:
+scripts\17_validate_pytorch_data_pipeline.py,265,float32,"f""{split_name} özellik dtype float32 değil: """
+scripts\17_validate_pytorch_data_pipeline.py,560,float32,"""feature_dtype"": ""torch.float32"","
+scripts\17_validate_pytorch_data_pipeline.py,769,float32,"dtype=torch.float32,"
+scripts\17_validate_pytorch_data_pipeline.py,781,float32,"dtype=torch.float32,"
+scripts\17_validate_pytorch_data_pipeline.py,1061,float32,"""feature_dtype"": ""torch.float32"","
+scripts\17_validate_pytorch_data_pipeline.py,1063,scaler,"""scaler_fit_sample_count"": int("
+scripts\17_validate_pytorch_data_pipeline.py,1064,scaler,assets.scaler_train_sample_count
+scripts\17_validate_pytorch_data_pipeline.py,1066,scaler,"""scaler_fit_split"": ""train"","
+scripts\18_validate_model_registry.py,534,float32,if logits_first.dtype != torch.float32:
+scripts\18_validate_model_registry.py,536,float32,"f""{model_name} logit dtype float32 değil: """
+scripts\18_validate_model_registry.py,601,float32,"dtype=torch.float32,"
+scripts\18_validate_model_registry.py,899,float32,if features.dtype != torch.float32:
+scripts\18_validate_model_registry.py,901,float32,"""Model doğrulama girdisi float32 değil."""
+scripts\18_validate_model_registry.py,1012,float32|nbaiot_float32_canonical,"f""nbaiot_float32_canonical_seed{args.seed}"""
+scripts\18_validate_model_registry.py,1071,scaler,"""Tiny-1D-CNN is order-sensitive. The scaler artifact """
+scripts\22_lock_fp32_baseline_protocol.py,54,scaler,DEFAULT_SCALER_FILE = (
+scripts\22_lock_fp32_baseline_protocol.py,58,scaler,"/ ""nbaiot_standard_scaler_seed2026.npz"""
+scripts\22_lock_fp32_baseline_protocol.py,124,scaler,"""--scaler-file"","
+scripts\22_lock_fp32_baseline_protocol.py,126,scaler,"default=DEFAULT_SCALER_FILE,"
+scripts\22_lock_fp32_baseline_protocol.py,614,scaler,scaler_file = args.scaler_file.resolve()
+scripts\22_lock_fp32_baseline_protocol.py,687,scaler,"""scaler"": scaler_file,"
+scripts\22_lock_fp32_baseline_protocol.py,842,float32|nbaiot_float32_canonical,"""nbaiot_float32_canonical_seed2026"""
+scripts\22_lock_fp32_baseline_protocol.py,895,scaler,"""feature_scaler_fitted_from"": ("
+scripts\23_run_fp32_baseline_experiments.py,850,float32,"dtype=torch.float32,"
+scripts\23_run_fp32_baseline_experiments.py,1032,float64,"dtype=np.float64,"
+scripts\23_run_fp32_baseline_experiments.py,1140,float64,dtype=np.float64
+scripts\23_run_fp32_baseline_experiments.py,1204,float64,dtype=np.float64
+scripts\24_analyze_fp32_statistics.py,499,float64,dtype=np.float64
+scripts\24_analyze_fp32_statistics.py,610,float64,dtype=np.float64
+scripts\24_analyze_fp32_statistics.py,671,float64,"dtype=np.float64,"
+scripts\24_analyze_fp32_statistics.py,697,float64,"dtype=np.float64,"
+scripts\24_analyze_fp32_statistics.py,727,float64,"dtype=np.float64,"
+scripts\24_analyze_fp32_statistics.py,819,float64,"dtype=np.float64,"
+scripts\24_analyze_fp32_statistics.py,911,float64,"dtype=np.float64,"
+scripts\24_analyze_fp32_statistics.py,997,float64,dtype=np.float64
+scripts\24_analyze_fp32_statistics.py,1087,float64,dtype=np.float64
+scripts\24_analyze_fp32_statistics.py,1139,float64,dtype=np.float64
+scripts\24_analyze_fp32_statistics.py,1145,float64,dtype=np.float64
+scripts\25_validate_structured_pruning.py,656,float32,torch.float32
+scripts\25_validate_structured_pruning.py,659,float32,"""Train özellikleri float32 değil."""
+scripts\25_validate_structured_pruning.py,678,float32,"dtype=torch.float32,"
+scripts\25_validate_structured_pruning.py,1180,float64,dtype=np.float64
+scripts\26_run_pruning_experiments.py,771,scaler,"""feature_scaler_fitted_from"": ("
+scripts\26_run_pruning_experiments.py,1281,float32,"dtype=torch.float32,"
+scripts\26_run_pruning_experiments.py,1789,float32,"dtype=torch.float32,"
+scripts\26_run_pruning_experiments.py,2035,float64,"dtype=np.float64,"
+scripts\26_run_pruning_experiments.py,2171,float64,dtype=np.float64
+scripts\26_run_pruning_experiments.py,2237,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,597,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,715,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,948,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,983,float64,"dtype=np.float64,"
+scripts\27_analyze_pruning_statistics.py,1056,float64,"dtype=np.float64,"
+scripts\27_analyze_pruning_statistics.py,1082,float64,"dtype=np.float64,"
+scripts\27_analyze_pruning_statistics.py,1112,float64,"dtype=np.float64,"
+scripts\27_analyze_pruning_statistics.py,1196,float64,"dtype=np.float64,"
+scripts\27_analyze_pruning_statistics.py,1237,float64,"dtype=np.float64,"
+scripts\27_analyze_pruning_statistics.py,1346,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,1405,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,1480,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,1517,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,1523,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,1699,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,1710,float64,dtype=np.float64
+scripts\27_analyze_pruning_statistics.py,1861,float64,dtype=np.float64
+scripts\28_audit_quantization_capabilities.py,576,float32,if features.dtype != torch.float32:
+scripts\28_audit_quantization_capabilities.py,578,float32,"""Kalibrasyon özellikleri float32 değil."""
+scripts\28_audit_quantization_capabilities.py,591,float32,"np.float32,"
+scripts\28_audit_quantization_capabilities.py,634,float32,.to(dtype=torch.float32)
+scripts\28_audit_quantization_capabilities.py,848,float32,"np.float32,"
+scripts\28_audit_quantization_capabilities.py,862,float32,"dtype=np.float32,"
+scripts\28_audit_quantization_capabilities.py,886,float64,"dtype=np.float64,"
+scripts\28_audit_quantization_capabilities.py,891,float64,"dtype=np.float64,"
+scripts\28_audit_quantization_capabilities.py,995,float32,"np.float32,"
+scripts\28_audit_quantization_capabilities.py,1774,float32,"np.float32,"
+scripts\29_validate_fx_qat_pipeline.py,518,float32,if features.dtype != torch.float32:
+scripts\29_validate_fx_qat_pipeline.py,520,float32,"""QAT özellikleri float32 değil."""
+scripts\29_validate_fx_qat_pipeline.py,1019,float32,"dtype=torch.float32,"
+scripts\29b_run_quantization_experiments.py,860,float32|astype(np.float32,"features.detach().cpu().numpy().astype(np.float32, copy=False)"
+scripts\29b_run_quantization_experiments.py,864,float32,"dtype=np.float32,"
+scripts\29b_run_quantization_experiments.py,970,float32|astype(np.float32,"np.ascontiguousarray(batch.astype(np.float32, copy=False))"
+scripts\29b_run_quantization_experiments.py,1072,float32,"dtype=np.float32,"
+scripts\29b_run_quantization_experiments.py,1212,float32,"dtype=np.float32,"
+scripts\29b_run_quantization_experiments.py,1219,float32,"dtype=np.float32,"
+scripts\29b_run_quantization_experiments.py,1259,float64,"values = np.asarray(values, dtype=np.float64)"
+scripts\29b_run_quantization_experiments.py,1479,float32,"class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)"
+scripts\29b_run_quantization_experiments.py,1744,float32,"class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)"
+scripts\29b_run_quantization_experiments.py,1889,float32,"class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)"
+scripts\29b_run_quantization_experiments.py,1952,float64|to_numpy(dtype=np.float64,subset[metric_name].to_numpy(dtype=np.float64)
+scripts\29b_run_quantization_experiments.py,1985,float64|to_numpy(dtype=np.float64,subset[metric_name].to_numpy(dtype=np.float64)
+scripts\30_run_pruning_qat_experiments.py,782,float32,"dtype=torch.float32,"
+scripts\30_run_pruning_qat_experiments.py,1255,float32,"dtype=torch.float32,"
+scripts\30_run_pruning_qat_experiments.py,1394,float64,dtype=np.float64
+scripts\30_run_pruning_qat_experiments.py,1446,float64,dtype=np.float64
+scripts\31_profile_efficiency.py,26,float32,- Profil girdileri deterministik sentetik float32 girdilerdir.
+scripts\31_profile_efficiency.py,619,float32,"dtype=torch.float32,"
+scripts\31_profile_efficiency.py,717,float32,"dtype=np.float32,"
+scripts\31_profile_efficiency.py,728,float64,"np.asarray(values, dtype=np.float64),"
+scripts\31_profile_efficiency.py,740,float64,"values = np.asarray(values, dtype=np.float64)"
+scripts\31_profile_efficiency.py,884,float32,"dtype=np.float32,"
+scripts\31_profile_efficiency.py,893,float32,"dtype=np.float32,"
+scripts\31_profile_efficiency.py,947,float32,"dtype=np.float32,"
+scripts\31_profile_efficiency.py,955,float32,"dtype=np.float32,"
+scripts\31_profile_efficiency.py,1166,float32,"torch.zeros((8, 115), dtype=torch.float32),"
+scripts\31_profile_efficiency.py,1242,float32,"torch.zeros((8, 115), dtype=torch.float32),"
+scripts\31_profile_efficiency.py,1368,float64,"dtype=np.float64,"
+scripts\31_profile_efficiency.py,1372,float64,"dtype=np.float64,"
+scripts\31_profile_efficiency.py,1502,float32,"""dtype"": ""float32"","
+scripts\31_profile_efficiency.py,1602,float64|to_numpy(dtype=np.float64,).dropna().to_numpy(dtype=np.float64)
+scripts\31_profile_efficiency.py,1652,float64|to_numpy(dtype=np.float64,).to_numpy(dtype=np.float64)
+scripts\31_profile_efficiency.py,1656,float64|to_numpy(dtype=np.float64,).to_numpy(dtype=np.float64)
+scripts\31_profile_efficiency.py,1660,float64|to_numpy(dtype=np.float64,).to_numpy(dtype=np.float64)
+scripts\31_profile_efficiency.py,1664,float64|to_numpy(dtype=np.float64,).to_numpy(dtype=np.float64)
+scripts\31_profile_efficiency.py,2106,float64|to_numpy(dtype=np.float64,).to_numpy(dtype=np.float64)
+scripts\32_analyze_overall_results.py,462,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,1054,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,1059,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,1089,float64,"dtype=np.float64,"
+scripts\32_analyze_overall_results.py,1176,float64,"dtype=np.float64,"
+scripts\32_analyze_overall_results.py,1202,float64,"dtype=np.float64,"
+scripts\32_analyze_overall_results.py,1229,float64,"dtype=np.float64,"
+scripts\32_analyze_overall_results.py,1273,float64,"dtype=np.float64,"
+scripts\32_analyze_overall_results.py,1348,float64,"dtype=np.float64,"
+scripts\32_analyze_overall_results.py,1453,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,1510,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,1586,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,1618,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,1624,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,1777,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,1791,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,2186,float64,dtype=np.float64
+scripts\32_analyze_overall_results.py,2318,float64,"dtype=np.float64,"
+scripts\32_analyze_overall_results.py,2344,float64,"dtype=np.float64,"
+scripts\33_generate_publication_outputs.py,362,float64,dtype=np.float64
+scripts\33_generate_publication_outputs.py,1555,float64,dtype=np.float64
+scripts\34_generate_manuscript_skeleton.py,502,float32,- Float32 kanonik veri
+scripts\34_generate_manuscript_skeleton.py,503,StandardScaler|scaler,- Train verisinden öğrenilen StandardScaler
+scripts\35_build_leakage_ablation_splits.py,311,.transform(,"totals = result.groupby(""arm"")[""row_count""].transform(""sum"")"
+scripts\35_build_leakage_ablation_splits.py,438,scaler,"""scaler_and_class_weights_must_be_fitted_separately_from_each_arm_train_only"": True,"
+scripts\36_run_leakage_ablation.py,5,scaler,(grouped) arms produced by stage 35.  Each arm gets its own train-only scaler
+scripts\36_run_leakage_ablation.py,182,float32,"arm_dir / f""X_{split}.npy"", mode=""w+"", dtype=np.float32,"
+scripts\36_run_leakage_ablation.py,197,float32|to_numpy(dtype=np.float32,"values = frame.to_numpy(dtype=np.float32, copy=False)"
+scripts\36_run_leakage_ablation.py,223,float64,"total = np.zeros(feature_count, dtype=np.float64)"
+scripts\36_run_leakage_ablation.py,224,float64,"square = np.zeros(feature_count, dtype=np.float64)"
+scripts\36_run_leakage_ablation.py,226,float64,"part = np.asarray(x_train[start:start+chunk_size], dtype=np.float64)"
+scripts\36_run_leakage_ablation.py,233,float32|astype(np.float32,"np.save(arm_dir / ""mean.npy"", mean.astype(np.float32))"
+scripts\36_run_leakage_ablation.py,234,float32|astype(np.float32,"np.save(arm_dir / ""std.npy"", std.astype(np.float32))"
+scripts\36_run_leakage_ablation.py,235,float32|astype(np.float32,"np.save(arm_dir / ""class_weights.npy"", weights.astype(np.float32))"
+scripts\36_run_leakage_ablation.py,240,scaler,"""scaler_fit_split"": ""train"", ""class_weights_fit_split"": ""train"","
+scripts\36_run_leakage_ablation.py,255,float32,"x = (np.asarray(self.x[i], dtype=np.float32) - self.mean) / self.std"
+scripts\37_build_float32_leakage_ablation_splits.py,1,float32,"""""""Build leakage-ablation splits in the model's actual float32 input space."
+scripts\37_build_float32_leakage_ablation_splits.py,7,float32,float32 feature vectors to cross train/validation/test boundaries.
+scripts\37_build_float32_leakage_ablation_splits.py,8,float32,* ``grouped_float32`` assigns every identical 115-feature float32 vector to one
+scripts\37_build_float32_leakage_ablation_splits.py,11,float32,Grouping is performed after the same float32 conversion used by the PyTorch
+scripts\37_build_float32_leakage_ablation_splits.py,38,float32,"DEFAULT_OUTPUT_DATABASE = PROJECT_ROOT / ""data"" / ""splits"" / ""vs2_float32_leakage_ablation_seed2026.sqlite"""
+scripts\37_build_float32_leakage_ablation_splits.py,51,float32,EXPECTED_FLOAT32_GROUP_COUNT = 2_278_176
+scripts\37_build_float32_leakage_ablation_splits.py,61,float32,"parser = argparse.ArgumentParser(description=""Stage 37: float32 leakage-ablation splits"")"
+scripts\37_build_float32_leakage_ablation_splits.py,188,float32,"def float32_fingerprints(values: np.ndarray) -> tuple[np.ndarray, np.ndarray]:"
+scripts\37_build_float32_leakage_ablation_splits.py,189,float32,"""""""Create an order-sensitive paired uint64 fingerprint of float32 rows."
+scripts\37_build_float32_leakage_ablation_splits.py,199,float32,"raise ValueError(""Float32 özellik matrisinde sonlu olmayan değer var."")"
+scripts\37_build_float32_leakage_ablation_splits.py,268,float32,"""""""Allocate float32 groups to balanced family-stratified raw-row targets."""""""
+scripts\37_build_float32_leakage_ablation_splits.py,321,float32,"f""Family {family}: {processed:,}/{group_count:,} float32 grup dengelendi"""
+scripts\37_build_float32_leakage_ablation_splits.py,338,float32,"""float32_group_count"": group_count,"
+scripts\37_build_float32_leakage_ablation_splits.py,373,float32,"raise RuntimeError(f""Atanmamış float32 grup sayısı: {unassigned:,}"")"
+scripts\37_build_float32_leakage_ablation_splits.py,450,float32|to_numpy(dtype=np.float32,"values = frame.to_numpy(dtype=np.float32, copy=False)"
+scripts\37_build_float32_leakage_ablation_splits.py,453,float32,"forward, reverse = float32_fingerprints(values)"
+scripts\37_build_float32_leakage_ablation_splits.py,510,float32,"progress(""Float32 parmak izi grupları özetleniyor..."")"
+scripts\37_build_float32_leakage_ablation_splits.py,546,float32,"f""Aynı float32 girdiye birden fazla family_3 etiketi atanmış: {cross_family:,} grup"""
+scripts\37_build_float32_leakage_ablation_splits.py,548,float32,"progress(""Float32 grupları family_3 katmanlı ham-kayıt hedeflerine dengeleniyor..."")"
+scripts\37_build_float32_leakage_ablation_splits.py,557,float32,"(""protocol"", ""vs2_float32_leakage_ablation""),"
+scripts\37_build_float32_leakage_ablation_splits.py,564,float32,"(""feature_dtype"", ""float32""),"
+scripts\37_build_float32_leakage_ablation_splits.py,600,float32,if group_count != EXPECTED_FLOAT32_GROUP_COUNT:
+scripts\37_build_float32_leakage_ablation_splits.py,602,float32,"""Float32 grup sayısı önceki tam-korpus denetimiyle uyuşmuyor: """
+scripts\37_build_float32_leakage_ablation_splits.py,603,float32,"f""{group_count:,} != {EXPECTED_FLOAT32_GROUP_COUNT:,}"""
+scripts\37_build_float32_leakage_ablation_splits.py,621,float32,# float32 fingerprint; an identical model input cannot span splits.
+scripts\37_build_float32_leakage_ablation_splits.py,625,float32,"f""Aynı float32 girdiye birden fazla family_3 etiketi atanmış: {cross_family:,} grup"""
+scripts\37_build_float32_leakage_ablation_splits.py,638,float32,"""unique_float32_fingerprint_count"": int(unique_count),"
+scripts\37_build_float32_leakage_ablation_splits.py,649,float32,"""arm"": ""grouped_float32"","
+scripts\37_build_float32_leakage_ablation_splits.py,652,float32,"""unique_float32_fingerprint_count"": int(unique_count),"
+scripts\37_build_float32_leakage_ablation_splits.py,681,float32,"for arm, count in ((""naive_row"", naive_count), (""grouped_float32"", grouped_count)):"
+scripts\37_build_float32_leakage_ablation_splits.py,709,float32,"for arm in (""naive_row"", ""grouped_float32""):"
+scripts\37_build_float32_leakage_ablation_splits.py,726,float32,"""overlapping_float32_fingerprint_count"": count,"
+scripts\37_build_float32_leakage_ablation_splits.py,743,float32,"""train_exposed_unique_float32_fingerprints"": int(exposed_groups),"
+scripts\37_build_float32_leakage_ablation_splits.py,752,.transform(,"/ distribution.groupby(""arm"")[""row_count""].transform(""sum"")"
+scripts\37_build_float32_leakage_ablation_splits.py,757,float32,"distribution_file = report_directory / ""nbaiot_vs2_float32_leakage_split_distribution.csv"""
+scripts\37_build_float32_leakage_ablation_splits.py,758,float32,"overlap_file = report_directory / ""nbaiot_vs2_float32_leakage_overlap_by_pair.csv"""
+scripts\37_build_float32_leakage_ablation_splits.py,760,float32,"report_directory / ""nbaiot_vs2_float32_leakage_family_split_distribution.csv"""
+scripts\37_build_float32_leakage_ablation_splits.py,762,float32,"summary_file = report_directory / ""nbaiot_vs2_float32_leakage_split_summary.json"""
+scripts\37_build_float32_leakage_ablation_splits.py,779,float32,"""protocol"": ""vs2_float32_leakage_ablation"","
+scripts\37_build_float32_leakage_ablation_splits.py,784,float32,"""feature_space_used_for_grouping"": ""115-feature float32 model input"","
+scripts\37_build_float32_leakage_ablation_splits.py,789,float32,"""unique_float32_fingerprint_count"": group_count,"
+scripts\37_build_float32_leakage_ablation_splits.py,793,float32,"""grouped_float32"": MAX_GROUPED_RATIO_ERROR_PERCENTAGE_POINTS,"
+scripts\37_build_float32_leakage_ablation_splits.py,800,float32,"""cross_split_exact_float32_overlap_allowed"": True,"
+scripts\37_build_float32_leakage_ablation_splits.py,803,float32,"""grouped_float32"": {"
+scripts\37_build_float32_leakage_ablation_splits.py,804,float32,"""assignment_unit"": ""paired fingerprint of float32 model-input vector"","
+scripts\37_build_float32_leakage_ablation_splits.py,806,float32,"""cross_split_exact_float32_overlap_allowed"": False,"
+scripts\37_build_float32_leakage_ablation_splits.py,814,float32,"""primary_experimental_factor"": ""assignment unit: raw row vs float32 group"","
+scripts\37_build_float32_leakage_ablation_splits.py,817,scaler,"""train_only_scaler_and_class_weight_fit_per_arm"": True,"
+scripts\37_build_float32_leakage_ablation_splits.py,830,float32,"print(""37. aşama tamamlandı: float32 sızıntı-ablasyon splitleri hazır"")"
+scripts\37_build_float32_leakage_ablation_splits.py,832,float32,"print(f""Benzersiz float32 parmak izi      : {group_count:,}"")"
+scripts\37_build_float32_leakage_ablation_splits.py,836,float32,"for arm in (""naive_row"", ""grouped_float32""):"
+scripts\38_run_b0_matched_leakage_ablation.py,35,StandardScaler|scaler,from sklearn.preprocessing import StandardScaler
+scripts\38_run_b0_matched_leakage_ablation.py,47,float32,"DEFAULT_DATABASE = PROJECT_ROOT / ""data"" / ""splits"" / ""vs2_float32_leakage_ablation_seed2026.sqlite"""
+scripts\38_run_b0_matched_leakage_ablation.py,50,float32,"DEFAULT_CACHE = PROJECT_ROOT / ""data"" / ""processed"" / ""vs2_float32_leakage_ablation"""
+scripts\38_run_b0_matched_leakage_ablation.py,53,float32,"ARMS = (""naive_row"", ""grouped_float32"")"
+scripts\38_run_b0_matched_leakage_ablation.py,61,float32,EXPECTED_FLOAT32_GROUP_COUNT = 2_278_176
+scripts\38_run_b0_matched_leakage_ablation.py,62,float32,EXPECTED_LARGEST_FLOAT32_GROUP_RAW_ROWS = 965_536
+scripts\38_run_b0_matched_leakage_ablation.py,66,scaler,SCALER_AUDIT_TOLERANCE = 1e-4
+scripts\38_run_b0_matched_leakage_ablation.py,144,float32,"""protocol"": ""vs2_float32_leakage_ablation"","
+scripts\38_run_b0_matched_leakage_ablation.py,146,float32,"""feature_dtype"": ""float32"","
+scripts\38_run_b0_matched_leakage_ablation.py,216,float32,"if arm == ""grouped_float32"":"
+scripts\38_run_b0_matched_leakage_ablation.py,227,float32,"elif arm == ""grouped_float32"":"
+scripts\38_run_b0_matched_leakage_ablation.py,250,float32,"elif arm == ""grouped_float32"":"
+scripts\38_run_b0_matched_leakage_ablation.py,275,float32,"elif arm == ""grouped_float32"":"
+scripts\38_run_b0_matched_leakage_ablation.py,370,float32,"""grouped_float32"","
+scripts\38_run_b0_matched_leakage_ablation.py,390,float32,"""group_count"": group_count == EXPECTED_FLOAT32_GROUP_COUNT,"
+scripts\38_run_b0_matched_leakage_ablation.py,398,float32,"""largest_group_count"": int(largest_size) == EXPECTED_LARGEST_FLOAT32_GROUP_RAW_ROWS,"
+scripts\38_run_b0_matched_leakage_ablation.py,410,float32,"""float32_group_count"": group_count,"
+scripts\38_run_b0_matched_leakage_ablation.py,476,float64,"counts = np.asarray(class_counts, dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,480,float32|astype(np.float32,return (raw / raw.mean()).astype(np.float32)
+scripts\38_run_b0_matched_leakage_ablation.py,483,float32,"def float32_fingerprints(values: np.ndarray) -> tuple[np.ndarray, np.ndarray]:"
+scripts\38_run_b0_matched_leakage_ablation.py,484,float32,"""""""Paired order-sensitive fingerprints of the exact model-facing float32 rows."""""""
+scripts\38_run_b0_matched_leakage_ablation.py,514,float32|StandardScaler|scaler,"""""""Prove zero overlap after StandardScaler and final float32 conversion."""""""
+scripts\38_run_b0_matched_leakage_ablation.py,546,float64,"raw = np.asarray(x[start : start + chunk_size], dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,547,float32|astype(np.float32,scaled = ((raw - mean) / scale).astype(np.float32)
+scripts\38_run_b0_matched_leakage_ablation.py,548,float32,"forward, reverse = float32_fingerprints(scaled)"
+scripts\38_run_b0_matched_leakage_ablation.py,561,float32,"f""[grouped_float32 gerçek model-girdisi denetimi] {split}: """
+scripts\38_run_b0_matched_leakage_ablation.py,594,float32|StandardScaler|scaler,"""Grouped kolda StandardScaler ve float32 dönüşümü sonrasında splitler arası """
+scripts\38_run_b0_matched_leakage_ablation.py,598,float32|float64|StandardScaler|scaler,"""feature_space"": ""StandardScaler(float64 parameters) then float32 model input"","
+scripts\38_run_b0_matched_leakage_ablation.py,653,float32,"""feature_dtype"": ""float32"","
+scripts\38_run_b0_matched_leakage_ablation.py,654,float64|scaler,"""scaler_parameter_dtype"": ""float64"","
+scripts\38_run_b0_matched_leakage_ablation.py,668,float32,"if x.shape != (counts[split], EXPECTED_FEATURE_COUNT) or x.dtype != np.float32:"
+scripts\38_run_b0_matched_leakage_ablation.py,681,float64,"if mean.shape != (EXPECTED_FEATURE_COUNT,) or mean.dtype != np.float64:"
+scripts\38_run_b0_matched_leakage_ablation.py,682,scaler,"raise RuntimeError(f""Geçersiz scaler mean: {arm} {mean.shape} {mean.dtype}"")"
+scripts\38_run_b0_matched_leakage_ablation.py,683,float64,"if scale.shape != (EXPECTED_FEATURE_COUNT,) or scale.dtype != np.float64:"
+scripts\38_run_b0_matched_leakage_ablation.py,684,scaler,"raise RuntimeError(f""Geçersiz scaler scale: {arm} {scale.shape} {scale.dtype}"")"
+scripts\38_run_b0_matched_leakage_ablation.py,685,float32,"if weights.shape != (3,) or weights.dtype != np.float32:"
+scripts\38_run_b0_matched_leakage_ablation.py,688,scaler,"raise RuntimeError(f""Sonlu/pozitif olmayan scaler parametresi: {arm}"")"
+scripts\38_run_b0_matched_leakage_ablation.py,698,float32,"or item.get(""model_input_dtype"") != ""float32"""
+scripts\38_run_b0_matched_leakage_ablation.py,702,float32,"if arm == ""grouped_float32"":"
+scripts\38_run_b0_matched_leakage_ablation.py,755,float32,"dtype=np.float32,"
+scripts\38_run_b0_matched_leakage_ablation.py,772,float32|to_numpy(dtype=np.float32,"values = frame.to_numpy(dtype=np.float32, copy=False)"
+scripts\38_run_b0_matched_leakage_ablation.py,816,StandardScaler|scaler,"scaler = StandardScaler(with_mean=True, with_std=True)"
+scripts\38_run_b0_matched_leakage_ablation.py,818,float32|scaler,"scaler.partial_fit(np.asarray(x_train[start : start + chunk_size], dtype=np.float32))"
+scripts\38_run_b0_matched_leakage_ablation.py,819,float64|scaler,"mean = np.asarray(scaler.mean_, dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,820,float64|scaler,"standard_deviation = np.asarray(scaler.scale_, dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,824,StandardScaler|scaler,"raise RuntimeError(f""{arm}: StandardScaler parametre boyutu geçersiz."")"
+scripts\38_run_b0_matched_leakage_ablation.py,826,StandardScaler|scaler,"raise RuntimeError(f""{arm}: StandardScaler sonlu olmayan parametre üretti."")"
+scripts\38_run_b0_matched_leakage_ablation.py,828,StandardScaler|scaler,"raise RuntimeError(f""{arm}: StandardScaler pozitif olmayan ölçek üretti."")"
+scripts\38_run_b0_matched_leakage_ablation.py,835,float64,"scaled_sum = np.zeros(EXPECTED_FEATURE_COUNT, dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,836,float64,"scaled_square = np.zeros(EXPECTED_FEATURE_COUNT, dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,839,float64,"raw = np.asarray(x_train[start : start + chunk_size], dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,851,scaler,scaler_audit_passed = (
+scripts\38_run_b0_matched_leakage_ablation.py,853,scaler,and max_abs_scaled_mean <= SCALER_AUDIT_TOLERANCE
+scripts\38_run_b0_matched_leakage_ablation.py,854,scaler,and max_scaled_std_error <= SCALER_AUDIT_TOLERANCE
+scripts\38_run_b0_matched_leakage_ablation.py,856,scaler,if not scaler_audit_passed:
+scripts\38_run_b0_matched_leakage_ablation.py,858,StandardScaler|scaler,"f""{arm}: StandardScaler tam tarama denetimi başarısız; """
+scripts\38_run_b0_matched_leakage_ablation.py,869,float64,"raw = np.asarray(x_split[start : start + chunk_size], dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,870,float32|astype(np.float32,scaled32 = ((raw - mean) / standard_deviation).astype(np.float32)
+scripts\38_run_b0_matched_leakage_ablation.py,884,float32,"""model_input_dtype"": ""float32"","
+scripts\38_run_b0_matched_leakage_ablation.py,886,float32,"if arm == ""grouped_float32"":"
+scripts\38_run_b0_matched_leakage_ablation.py,888,float32|StandardScaler|scaler,"""[grouped_float32] StandardScaler sonrası gerçek float32 model-girdisi """
+scripts\38_run_b0_matched_leakage_ablation.py,895,float32|float64|StandardScaler|scaler,"""feature_space"": ""StandardScaler(float64 parameters) then float32 model input"","
+scripts\38_run_b0_matched_leakage_ablation.py,904,float32,"""protocol"": ""vs2_float32_leakage_ablation"","
+scripts\38_run_b0_matched_leakage_ablation.py,910,float32,"""feature_dtype"": ""float32"","
+scripts\38_run_b0_matched_leakage_ablation.py,911,StandardScaler|scaler,"""scaler_method"": ""sklearn.preprocessing.StandardScaler.partial_fit"","
+scripts\38_run_b0_matched_leakage_ablation.py,912,float64|scaler,"""scaler_parameter_dtype"": ""float64"","
+scripts\38_run_b0_matched_leakage_ablation.py,913,float32,"""scaled_model_input_dtype"": ""float32"","
+scripts\38_run_b0_matched_leakage_ablation.py,919,scaler,"""scaler_fit_split"": ""train_only"","
+scripts\38_run_b0_matched_leakage_ablation.py,923,scaler,"""scaler_full_scan_audit"": {"
+scripts\38_run_b0_matched_leakage_ablation.py,927,scaler,"""tolerance"": SCALER_AUDIT_TOLERANCE,"
+scripts\38_run_b0_matched_leakage_ablation.py,928,scaler,"""passed"": scaler_audit_passed,"
+scripts\38_run_b0_matched_leakage_ablation.py,948,float64,"raw = np.asarray(self.x[index], dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,949,float32|astype(np.float32,scaled = ((raw - self.mean) / self.std).astype(np.float32)
+scripts\38_run_b0_matched_leakage_ablation.py,962,float64,"matrix = np.asarray(confusion, dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,1292,float64,"values = np.asarray(values, dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,1311,float64,"differences = np.asarray(differences, dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,1315,float64|to_numpy(dtype=np.float64,"ranks = pd.Series(np.abs(differences)).rank(method=""average"").to_numpy(dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,1381,float64|to_numpy(dtype=np.float64,"pivot[""naive_row""].to_numpy(dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,1382,float32|float64|to_numpy(dtype=np.float64,"- pivot[""grouped_float32""].to_numpy(dtype=np.float64)"
+scripts\38_run_b0_matched_leakage_ablation.py,1387,float32,"pivot[""grouped_float32""],"
+scripts\38_run_b0_matched_leakage_ablation.py,1395,float32,"""grouped_float32"": float(grouped),"
+scripts\38_run_b0_matched_leakage_ablation.py,1400,float32,"""difference_direction"": ""naive_row_minus_grouped_float32"","
+scripts\38_run_b0_matched_leakage_ablation.py,1432,float32,"""protocol"": ""vs2_float32_leakage_ablation_b0_matched"","
+scripts\38_run_b0_matched_leakage_ablation.py,1448,float32,"""split assignment unit: raw row vs identical float32 vector group"""
+scripts\38_run_b0_matched_leakage_ablation.py,1566,float32,"differences = macro[""naive_row""] - macro[""grouped_float32""]"
+scripts\38_run_b0_matched_leakage_ablation.py,1568,float32,"print(""38. aşama tamamlandı: B0-eşlenmiş float32 sızıntı ablasyonu"")"
+scripts\38_run_b0_matched_leakage_ablation.py,1570,float32,"print(f""Gruplu Macro-F1 ortalaması: {macro['grouped_float32'].mean():.9f}"")"
+scripts\40_preflight_exact_fingerprint_v2.py,40,float64,def canonical_float64_bytes(values: np.ndarray) -> bytes:
+scripts\40_preflight_exact_fingerprint_v2.py,45,float64,- float64
+scripts\40_preflight_exact_fingerprint_v2.py,80,float64,canonical_bytes = canonical_float64_bytes(values)
+scripts\40_preflight_exact_fingerprint_v2.py,376,float64,"dtype=np.float64,"
+scripts\40_preflight_exact_fingerprint_v2.py,381,float64,"dtype=np.float64,"
+scripts\41_preflight_exact_fingerprint_v2_fixed.py,57,float64,def canonical_float64_bytes(
+scripts\41_preflight_exact_fingerprint_v2_fixed.py,92,float64,canonical_float64_bytes(values)
+scripts\41_preflight_exact_fingerprint_v2_fixed.py,369,float64,"dtype=np.float64,"
+scripts\42_audit_exact_fingerprints_v2.py,127,float64,"dtype=np.float64,"
+scripts\43_lock_exact_byte_audit_v2.py,236,float64,validated against canonical little-endian float64 byte sequences
+scripts\43_lock_exact_byte_audit_v2.py,243,float32,It does not replace the separate float32 model-input grouping
+scripts\46_inspect_numeric_pipeline_v2.py,47,float32,"""float32"","
+scripts\46_inspect_numeric_pipeline_v2.py,48,float64,"""float64"","
+scripts\46_inspect_numeric_pipeline_v2.py,49,StandardScaler|scaler,"""StandardScaler"","
+scripts\46_inspect_numeric_pipeline_v2.py,50,standardizer,"""standardizer"","
+scripts\46_inspect_numeric_pipeline_v2.py,51,scaler,"""scaler"","
+scripts\46_inspect_numeric_pipeline_v2.py,52,fit_transform,"""fit_transform"","
+scripts\46_inspect_numeric_pipeline_v2.py,53,.fit(,""".fit("","
+scripts\46_inspect_numeric_pipeline_v2.py,54,.transform(,""".transform("","
+scripts\46_inspect_numeric_pipeline_v2.py,55,float32|astype(np.float32,"""astype(np.float32"","
+scripts\46_inspect_numeric_pipeline_v2.py,56,float64|astype(np.float64,"""astype(np.float64"","
+scripts\46_inspect_numeric_pipeline_v2.py,57,float32|to_numpy(dtype=np.float32,"""to_numpy(dtype=np.float32"","
+scripts\46_inspect_numeric_pipeline_v2.py,58,float64|to_numpy(dtype=np.float64,"""to_numpy(dtype=np.float64"","
+scripts\46_inspect_numeric_pipeline_v2.py,59,float32|nbaiot_float32_canonical,"""nbaiot_float32_canonical"","
+scripts\46_inspect_numeric_pipeline_v2.py,60,nbaiot_primary_seed2026,"""nbaiot_primary_seed2026"","
+scripts\46_inspect_numeric_pipeline_v2.py,112,float32|scaler,"# 1. Kod içinde float32, scaler ve standardizasyon kullanımını tara"
+scripts\46_inspect_numeric_pipeline_v2.py,175,standardizer|scaler,"# 2. Scaler, standardizer ve işlenmiş veri yapıtlarını bul"
+scripts\46_inspect_numeric_pipeline_v2.py,180,float32|float64|scaler,"r""(scaler|standard|preprocess|normaliz|float32|float64|split|class_weight)"","
+scripts\46_inspect_numeric_pipeline_v2.py,345,standardizer,"""*standardizer*"","
+scripts\46_inspect_numeric_pipeline_v2.py,346,scaler,"""*scaler*"","
+scripts\46_inspect_numeric_pipeline_v2.py,365,float32,code_files_with_float32 = sorted(
+scripts\46_inspect_numeric_pipeline_v2.py,369,float32,"if ""float32"" in row[""keywords""].casefold()"
+scripts\46_inspect_numeric_pipeline_v2.py,373,scaler,code_files_with_scaler = sorted(
+scripts\46_inspect_numeric_pipeline_v2.py,378,scaler,"""scaler"" in row[""keywords""].casefold()"
+scripts\46_inspect_numeric_pipeline_v2.py,407,float32,"""code_files_with_float32"":"
+scripts\46_inspect_numeric_pipeline_v2.py,408,float32,"code_files_with_float32,"
+scripts\46_inspect_numeric_pipeline_v2.py,410,scaler,"""code_files_with_scaler"":"
+scripts\46_inspect_numeric_pipeline_v2.py,411,scaler,"code_files_with_scaler,"
+scripts\46_inspect_numeric_pipeline_v2.py,440,float32,"print(""FLOAT32 KULLANAN DOSYALAR"")"
+scripts\46_inspect_numeric_pipeline_v2.py,443,float32,for path in code_files_with_float32:
+scripts\46_inspect_numeric_pipeline_v2.py,447,standardizer|scaler,"print(""SCALER/STANDARDIZER KULLANAN DOSYALAR"")"
+scripts\46_inspect_numeric_pipeline_v2.py,450,scaler,for path in code_files_with_scaler:

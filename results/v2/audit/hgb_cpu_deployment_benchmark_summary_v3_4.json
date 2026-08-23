@@ -1,0 +1,99 @@
+{
+  "status": "completed",
+  "protocol_version": "hgb_cpu_deployment_benchmark_v3_4",
+  "completed_at_utc": "2026-08-13T07:53:12.310794+00:00",
+  "scientific_role": "post-selection descriptive CPU deployment comparison; does not alter TinyML selection",
+  "model_id": "hist_gradient_boosting_b0",
+  "model_seed": 2026,
+  "benchmark_repeat_count": 5,
+  "repeat_unit": "independent process benchmark repeats of the same locked model",
+  "joblib_file_bytes": 367362,
+  "metrics": {
+    "model_load_elapsed_ms": {
+      "mean": 92.31978000000001,
+      "std_population": 20.66671734556797,
+      "minimum": 74.8089,
+      "maximum": 126.5062
+    },
+    "model_load_rss_delta_bytes": {
+      "mean": 3366912.0,
+      "std_population": 129033.75201240953,
+      "minimum": 3268608.0,
+      "maximum": 3616768.0
+    },
+    "peak_inference_rss_delta_bytes": {
+      "mean": 155648.0,
+      "std_population": 5181.075718419873,
+      "minimum": 147456.0,
+      "maximum": 159744.0
+    },
+    "batch_1_median_ms": {
+      "mean": 1.8179299999999998,
+      "std_population": 0.033982151197356494,
+      "minimum": 1.7856,
+      "maximum": 1.8618999999999999
+    },
+    "batch_1_p95_ms": {
+      "mean": 3.985177,
+      "std_population": 0.4384917463487767,
+      "minimum": 3.163395,
+      "maximum": 4.400164999999999
+    },
+    "batch_1_p99_ms": {
+      "mean": 5.8721575999999995,
+      "std_population": 1.093949705109262,
+      "minimum": 4.681580999999997,
+      "maximum": 7.216149
+    },
+    "batch_1_samples_per_second": {
+      "mean": 454.56176298926613,
+      "std_population": 25.423617923282162,
+      "minimum": 415.59958011143226,
+      "maximum": 487.2814664443364
+    },
+    "batch_32_median_ms": {
+      "mean": 4.53425,
+      "std_population": 1.2773272830406464,
+      "minimum": 2.326,
+      "maximum": 5.5256
+    },
+    "batch_32_p95_ms": {
+      "mean": 6.979220999999997,
+      "std_population": 1.5772944550793284,
+      "minimum": 4.1275249999999994,
+      "maximum": 8.455394999999994
+    },
+    "batch_32_p99_ms": {
+      "mean": 9.419294599999935,
+      "std_population": 3.9746958898376823,
+      "minimum": 4.600670999999999,
+      "maximum": 16.57171099999969
+    },
+    "batch_32_samples_per_second": {
+      "mean": 7150.92596428144,
+      "std_population": 2579.085696246902,
+      "minimum": 5513.73492908863,
+      "maximum": 12223.031361433701
+    }
+  },
+  "runtime_policy": {
+    "cpu_threads": 1,
+    "interop_threads": 1,
+    "batch_1_warmup_iterations": 50,
+    "batch_1_measured_iterations": 500,
+    "batch_32_warmup_iterations": 30,
+    "batch_32_measured_iterations": 200,
+    "inference_operation": "predict_proba"
+  },
+  "data_access": {
+    "train_data_access": true,
+    "validation_data_access": false,
+    "test_data_access": false
+  },
+  "comparability_note": "HGB uses its locked canonical unscaled float32 input. Phase-6 TinyML uses train-only standardized float32 input. HGB uncertainty here is five process repeats of one trained model, whereas Phase-6 TinyML group summaries span five matched training seeds.",
+  "all_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hgb_cpu_deployment_benchmark_all_runs_v3_4.csv",
+    "sha256": "1090dc7373dbe364a48d6bbfd833d6b65d32e1ab4edef5090376f3e5b8a2d7d7"
+  },
+  "all_checks_passed": true
+}

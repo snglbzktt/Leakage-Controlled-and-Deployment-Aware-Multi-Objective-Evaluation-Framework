@@ -1,0 +1,140 @@
+{
+  "status": "generated",
+  "phase": 13,
+  "asset_id": "table_05_statistical_analysis",
+  "generated_at_utc": "2026-08-07T07:58:59.978105+00:00",
+  "title": "Statistical Analysis",
+  "table_row_count": 16,
+  "omnibus_analysis_count": 16,
+  "posthoc_comparison_count": 160,
+  "nominal_omnibus_rejection_count": 16,
+  "holm_posthoc_rejection_count": 0,
+  "minimum_raw_posthoc_p": 0.0625,
+  "minimum_holm_adjusted_p": 0.625,
+  "small_sample_interpretation": {
+    "paired_seed_count": 5,
+    "minimum_possible_two_sided_exact_p": 0.0625,
+    "absence_of_p_below_0_05_is_not_equivalence": true,
+    "effect_sizes_and_consistency_required": true
+  },
+  "source_files": [
+    {
+      "source_id": "phase7_omnibus",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_omnibus_results_v3_2.csv",
+      "sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2"
+    },
+    {
+      "source_id": "phase7_posthoc_verified",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_posthoc_verified_v3_2.csv",
+      "sha256": "e654b3e8ded77dfab834754331cf5c9601e312bf4616b83c6f327730e68626bd"
+    },
+    {
+      "source_id": "phase7_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_summary_v3_2.json",
+      "sha256": "0c3343af85283b4edf977e306dd8fc31356d860a231659c6b48cbb6ad289231d"
+    }
+  ],
+  "outputs": {
+    "csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_05_statistical_analysis_v3_3.csv",
+      "sha256": "5448dd8cc9f0685cdb175c79b34120bba633a24300022b20bd536f43dac4a4fe",
+      "size_bytes": 1872
+    },
+    "markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_05_statistical_analysis_v3_3.md",
+      "sha256": "6833952512e0266dfdf480a52bd56be8c756272daf30d0cf34f6fb81000e0e1e",
+      "size_bytes": 2394
+    },
+    "source_omnibus_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_05_statistical_omnibus_source_v3_3.csv",
+      "sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2",
+      "size_bytes": 4639
+    },
+    "source_posthoc_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_05_statistical_posthoc_source_v3_3.csv",
+      "sha256": "e654b3e8ded77dfab834754331cf5c9601e312bf4616b83c6f327730e68626bd",
+      "size_bytes": 20131
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\table_05_statistical_analysis_caption_v3_3.txt",
+      "sha256": "fb05c53cc047e6ee6bbe1284c4b287f8ff37de510ed24d9621e70a08563f58b5",
+      "size_bytes": 638
+    }
+  },
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_hash_matches": true,
+    "mapping_validated": true,
+    "mapping_hash_matches": true,
+    "table_04_locked": true,
+    "table_05_mapped": true
+  },
+  "data_checks": {
+    "omnibus_rows_16": true,
+    "posthoc_rows_160": true,
+    "required_omnibus_columns_present": true,
+    "required_posthoc_columns_present": true,
+    "summary_omnibus_16": true,
+    "summary_posthoc_160": true,
+    "summary_confirmatory_holm_zero": true,
+    "summary_exploratory_holm_zero": true,
+    "minimum_raw_posthoc_p_00625": true,
+    "minimum_holm_p_0625": true,
+    "all_posthoc_verified": true
+  },
+  "group_checks": {
+    "confirmatory::tinyml_mlp::test_fingerprint_macro_f1_posthoc_count_10": true,
+    "confirmatory::tinyml_mlp::test_fingerprint_macro_f1_reference_B0": true,
+    "confirmatory::tinyml_mlp::test_fingerprint_macro_f1_holm_zero": true,
+    "confirmatory::tinyml_mlp::batch_1_median_ms_posthoc_count_10": true,
+    "confirmatory::tinyml_mlp::batch_1_median_ms_reference_B0": true,
+    "confirmatory::tinyml_mlp::batch_1_median_ms_holm_zero": true,
+    "confirmatory::tinyml_mlp::batch_32_samples_per_second_posthoc_count_10": true,
+    "confirmatory::tinyml_mlp::batch_32_samples_per_second_reference_B0": true,
+    "confirmatory::tinyml_mlp::batch_32_samples_per_second_holm_zero": true,
+    "confirmatory::tinyml_mlp::serialized_state_dict_bytes_posthoc_count_10": true,
+    "confirmatory::tinyml_mlp::serialized_state_dict_bytes_reference_B0": true,
+    "confirmatory::tinyml_mlp::serialized_state_dict_bytes_holm_zero": true,
+    "exploratory::tinyml_mlp::test_raw_weighted_macro_f1_posthoc_count_10": true,
+    "exploratory::tinyml_mlp::test_raw_weighted_macro_f1_reference_B0": true,
+    "exploratory::tinyml_mlp::test_raw_weighted_macro_f1_holm_zero": true,
+    "exploratory::tinyml_mlp::batch_1_p95_ms_posthoc_count_10": true,
+    "exploratory::tinyml_mlp::batch_1_p95_ms_reference_B0": true,
+    "exploratory::tinyml_mlp::batch_1_p95_ms_holm_zero": true,
+    "exploratory::tinyml_mlp::batch_32_p95_ms_posthoc_count_10": true,
+    "exploratory::tinyml_mlp::batch_32_p95_ms_reference_B0": true,
+    "exploratory::tinyml_mlp::batch_32_p95_ms_holm_zero": true,
+    "exploratory::tinyml_mlp::peak_inference_RSS_delta_bytes_posthoc_count_10": true,
+    "exploratory::tinyml_mlp::peak_inference_RSS_delta_bytes_reference_B0": true,
+    "exploratory::tinyml_mlp::peak_inference_RSS_delta_bytes_holm_zero": true,
+    "confirmatory::compact_dnn::test_fingerprint_macro_f1_posthoc_count_10": true,
+    "confirmatory::compact_dnn::test_fingerprint_macro_f1_reference_B0": true,
+    "confirmatory::compact_dnn::test_fingerprint_macro_f1_holm_zero": true,
+    "confirmatory::compact_dnn::batch_1_median_ms_posthoc_count_10": true,
+    "confirmatory::compact_dnn::batch_1_median_ms_reference_B0": true,
+    "confirmatory::compact_dnn::batch_1_median_ms_holm_zero": true,
+    "confirmatory::compact_dnn::batch_32_samples_per_second_posthoc_count_10": true,
+    "confirmatory::compact_dnn::batch_32_samples_per_second_reference_B0": true,
+    "confirmatory::compact_dnn::batch_32_samples_per_second_holm_zero": true,
+    "confirmatory::compact_dnn::serialized_state_dict_bytes_posthoc_count_10": true,
+    "confirmatory::compact_dnn::serialized_state_dict_bytes_reference_B0": true,
+    "confirmatory::compact_dnn::serialized_state_dict_bytes_holm_zero": true,
+    "exploratory::compact_dnn::test_raw_weighted_macro_f1_posthoc_count_10": true,
+    "exploratory::compact_dnn::test_raw_weighted_macro_f1_reference_B0": true,
+    "exploratory::compact_dnn::test_raw_weighted_macro_f1_holm_zero": true,
+    "exploratory::compact_dnn::batch_1_p95_ms_posthoc_count_10": true,
+    "exploratory::compact_dnn::batch_1_p95_ms_reference_B0": true,
+    "exploratory::compact_dnn::batch_1_p95_ms_holm_zero": true,
+    "exploratory::compact_dnn::batch_32_p95_ms_posthoc_count_10": true,
+    "exploratory::compact_dnn::batch_32_p95_ms_reference_B0": true,
+    "exploratory::compact_dnn::batch_32_p95_ms_holm_zero": true,
+    "exploratory::compact_dnn::peak_inference_RSS_delta_bytes_posthoc_count_10": true,
+    "exploratory::compact_dnn::peak_inference_RSS_delta_bytes_reference_B0": true,
+    "exploratory::compact_dnn::peak_inference_RSS_delta_bytes_holm_zero": true
+  },
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "dynamic_quantization_evaluation",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "completed_at_utc": "2026-08-06T19:11:49.939996+00:00",
+  "run_count": 10,
+  "test_evaluation_count_per_run": 1,
+  "test_inference_total": 10,
+  "test_used_for_selection": false,
+  "aggregate_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_DQ_summary_v3_2.json",
+  "aggregate_json_sha256": "ef4a60e0508308620401137add863056256d0dc2d152fc2253cca3951fb0092f",
+  "aggregate_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_DQ_all_runs_v3_2.csv",
+  "aggregate_runs_csv_sha256": "e312ff54d1856b06fb9f7aa56e6d18ca16b7a1bf7a35ba77d6b12b38b907c343",
+  "group_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_DQ_group_summary_v3_2.csv",
+  "group_summary_csv_sha256": "25e3df415930daf6dd492e64b94f845ccd1ae69e0e760e5b0b6d58cc4cc272cc",
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

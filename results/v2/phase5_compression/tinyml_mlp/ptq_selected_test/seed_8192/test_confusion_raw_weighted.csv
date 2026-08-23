@@ -1,0 +1,4 @@
+true_class,pred_benign,pred_gafgyt,pred_mirai
+benign,83323,31,36
+gafgyt,1464,421054,3224
+mirai,33,21,550207

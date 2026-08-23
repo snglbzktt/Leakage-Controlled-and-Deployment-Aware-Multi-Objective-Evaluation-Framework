@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "measurement_order": 109,
+  "architecture": "compact_dnn",
+  "variant": "P25-QAT",
+  "seed": 42,
+  "deployment_metrics_sha256": "a8f6f8ee1ffed546826216f0fb5e76d55ba6840604042949969f81cd24ff0b34",
+  "raw_latencies_sha256": "8de30b3d8dab30ceafad044fb13b8c2491a7f038733ff490b3e9bd11499baf52",
+  "run_manifest_sha256": "31cccd35453e956653297ba2f791e7ca428e6d7932f42a5aa255814095ba7ee9",
+  "validation_data_access": false,
+  "test_data_access": false,
+  "completed_at_utc": "2026-08-06T21:10:42.938169+00:00"
+}

@@ -1,0 +1,103 @@
+{
+  "protocol_version": "early_lodo_cache_cleanup_v2_1",
+  "status": "completed",
+  "verified_at": "2026-08-05T22:32:36.658671+00:00",
+  "held_out_device": "SimpleHome_XCS7_1002_WHT_Security_Camera",
+  "cache_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera",
+  "retained_files": [
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\cache_summary.json",
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\scaler.npz"
+  ],
+  "removed_files": [
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\test_global_indices.npy",
+      "size_bytes": 6776504,
+      "sha256": "42a414c9c8ecbef87700ea9f02ca4541df8fc79502f0fed5a187adffa9cdeb75"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\test_occurrence_count.npy",
+      "size_bytes": 3388316,
+      "sha256": "8282b091d9f8f66f251a1092ae32ec67d4a789cb61d97d220d6212c62e88d3f6"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\test_source_split.npy",
+      "size_bytes": 847175,
+      "sha256": "5c4e76e682a292dd4180b10f6f90d5ed9b8bae05bcde3db8825f2734163bb20f"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\train_global_indices.npy",
+      "size_bytes": 9160880,
+      "sha256": "b1fa9ec1c6832fffd1c6e22e88da02a87d892ebffe606211f4cd4597b7c96a1c"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\validation_global_indices.npy",
+      "size_bytes": 1960032,
+      "sha256": "8d90f1c509abb12ffc62cfb6bd0cdac51ad24124384de45297d321ec342db028"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\x_test.npy",
+      "size_bytes": 389641748,
+      "sha256": "bbd9794ebe578da8a00274f2cc60865ca005f16891a61116a0810c31ebb91b95"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\x_train.npy",
+      "size_bytes": 526743368,
+      "sha256": "dc835958fc1459e7b83249b137127814a1d7c763fbd3b7559b172a51666c1030"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\x_validation.npy",
+      "size_bytes": 112694608,
+      "sha256": "a0896ea0630c747af1104adfbc6ce110bf272e1ac28c8118e697a3721040327f"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\y_test.npy",
+      "size_bytes": 847175,
+      "sha256": "7821dfff55b8d6a90df586e52cbe70c11a7cb43d70dfc241342690cd94ded3c6"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\y_train.npy",
+      "size_bytes": 1145222,
+      "sha256": "2ae778c8b6b4b28d0d26057496321d68d9def3fb94182c6a298dc911679933be"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\SimpleHome_XCS7_1002_WHT_Security_Camera\\y_validation.npy",
+      "size_bytes": 245116,
+      "sha256": "74438dbdc1d31554a348856efd210cd6ea3dc87af30d7b834a66d01354d6b67b"
+    }
+  ],
+  "expected_reclaimed_bytes": 1053450144,
+  "device_summary_sha256": "af5556dbbd4464118ec35f8b9ab4e6432de5b08c7288f1e2d9b8aedebbef6e5c",
+  "cache_manifest_sha256": "1c56315c2c2acc2b9a71f3b7089e65c89cc62c1fe027c38660bed22996b32f82",
+  "device_release_manifest_sha256": "5ef47268dcaf4617c021c3e286787ce2fdedc92211e2a90912a74686330a8371",
+  "pre_cleanup_validation_checks": {
+    "device_summary_complete": true,
+    "device_summary_checks_passed": true,
+    "three_models_completed": true,
+    "cache_cleanup_eligible": true,
+    "one_device_ledger_row": true,
+    "device_ledger_complete": true,
+    "device_ledger_cleanup_eligible": true,
+    "cache_directory_exists": true,
+    "cache_manifest_nonempty": true,
+    "manifest_paths_inside_cache": true,
+    "manifest_matches_cache_directory": true,
+    "manifest_sizes_match": true,
+    "manifest_hashes_match": true,
+    "removable_files_found": true,
+    "retained_files_present": true
+  },
+  "all_pre_cleanup_checks_passed": true,
+  "completed_at": "2026-08-05T22:32:36.768026+00:00",
+  "removed_file_count": 11,
+  "reclaimed_bytes": 1053450144,
+  "reclaimed_gb": 0.9811019003391266,
+  "post_cleanup_validation_checks": {
+    "all_removable_files_removed": true,
+    "retained_files_still_present": true,
+    "cache_directory_retained": true,
+    "device_summary_unchanged": true,
+    "cache_manifest_unchanged": true,
+    "device_release_manifest_unchanged": true
+  },
+  "all_post_cleanup_checks_passed": true
+}

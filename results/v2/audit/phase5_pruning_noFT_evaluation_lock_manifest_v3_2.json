@@ -1,0 +1,66 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "P25_noFT_and_P50_noFT_evaluation",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T18:18:24.919479+00:00",
+  "source_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase5_fair_budget_compression_protocol_v3_2.json",
+      "size_bytes": 21842,
+      "sha256": "1681aaa46ce286f498367a6c8a2ccb4c711c091fbb053ec4aa48f9bd1d10ab03"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_locked_configuration_matrix_v3_2.csv",
+      "size_bytes": 43039,
+      "sha256": "424bb76cd67006b930579182e08dc5f005bf86ae4adc75df04e0609df06aeed7"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_sources_verified_locked_v3_2.json",
+      "size_bytes": 968,
+      "sha256": "f51da00617882c021417c4f41a0eca92aaa0bcae8db18bb7f279b786fc5215a2"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_source_checkpoint_registry_v3_2.csv",
+      "size_bytes": 20143,
+      "sha256": "8c8ee86e88eba63858ae562183716323a3a972e29948a0f8f8dc83e15436deef"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_all_runs_v3_2.csv",
+      "size_bytes": 15477,
+      "sha256": "8a2daf059b5b15f749120a1df09767b64e4eb41e7361bc34af1c901a41fc46fa"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_group_summary_v3_2.csv",
+      "size_bytes": 1378,
+      "sha256": "f97b550dd2684038a37b9360ba28ac1797bc9f1f3152f6b17647dcdce78370ee"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_summary_v3_2.json",
+      "size_bytes": 11141,
+      "sha256": "9daeecb7b637f4f804ca87b0561ff6b44a0353c5d80a60170acd51440287a656"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_completed_v3_2.json",
+      "size_bytes": 1178,
+      "sha256": "05b1b5c8b246eae79e4212edabd5f67c31b80619d9fb0729cef88cc26bdcceac"
+    }
+  ],
+  "generated_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_verification_v3_2.json",
+      "size_bytes": 21478,
+      "sha256": "a6d43a65e1478673ecd9f55e8ec68a60c3a2ff8c110c81c42f75d4f8e72c8a01"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_locked_v3_2.json",
+      "size_bytes": 1495,
+      "sha256": "83af36bb484ed2acc0bbdf709d8d517c9bb653365abd5871c293a561c17aef1c"
+    }
+  ],
+  "run_count": 20,
+  "test_evaluation_count_per_run": 1,
+  "test_model_inference_repeated_by_verifier": false,
+  "ready_for_P25_and_P50_fine_tuning": true,
+  "all_checks_passed": true
+}

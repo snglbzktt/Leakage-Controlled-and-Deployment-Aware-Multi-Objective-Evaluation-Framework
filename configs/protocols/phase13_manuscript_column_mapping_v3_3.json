@@ -1,0 +1,760 @@
+{
+  "status": "validated",
+  "phase": 13,
+  "artifact_name": "manuscript_column_mapping",
+  "protocol_version": "phase13_manuscript_column_mapping_v3_3",
+  "validated_at_utc": "2026-08-07T00:14:03.524921+00:00",
+  "asset_count": 12,
+  "mapping_row_count": 221,
+  "assets": [
+    {
+      "asset_order": 1,
+      "asset_id": "figure_01_methodology_overview",
+      "asset_type": "figure",
+      "title": "Leakage-Controlled TinyML IDS Experimental Pipeline",
+      "mapping_entries": [
+        {
+          "source_id": "lodo_global_summary",
+          "relative_path": "results/v2/early_lodo/global/early_lodo_global_summary_v2.json",
+          "sha256": "1edbff5dd484f4bcd8b4d651b33795b21748debaa3e9f643b720b6970bea4b77",
+          "source_type": "json",
+          "role": "LODO scope and gate",
+          "fields": [
+            "scope.device_count",
+            "scope.model_count",
+            "scope.scientific_run_count",
+            "gate.passed"
+          ],
+          "field_count": 4,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase5_closure",
+          "relative_path": "results/v2/audit/phase5_compression_closure_v3_2.json",
+          "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac",
+          "source_type": "json",
+          "role": "Compression experiment scope",
+          "fields": [
+            "architecture_count",
+            "variant_count",
+            "seed_count",
+            "final_run_count",
+            "group_count"
+          ],
+          "field_count": 5,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase6_summary",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json",
+          "sha256": "da9a34e01207cfb98d1edb4064e0a0a0b0f3fe3adfcb199f4a73d5bb663b6016",
+          "source_type": "json",
+          "role": "Deployment benchmark protocol",
+          "fields": [
+            "run_count",
+            "runtime_policy.cpu_threads",
+            "runtime_policy.interop_threads",
+            "data_access.validation_data_access",
+            "data_access.test_data_access"
+          ],
+          "field_count": 5,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase8_final_model_lock",
+          "relative_path": "results/v2/audit/phase8_final_model_family_locked_v3_2.json",
+          "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9",
+          "source_type": "json",
+          "role": "Model-family selection",
+          "fields": [
+            "selected_model_family.candidate_id",
+            "selected_model_family.representation",
+            "final_model_family_selected"
+          ],
+          "field_count": 3,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase9_artifact_lock",
+          "relative_path": "results/v2/audit/phase9_final_deployment_artifact_locked_v3_2.json",
+          "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6",
+          "source_type": "json",
+          "role": "Final deployment artifact",
+          "fields": [
+            "canonical_seed",
+            "source_bundle_checkpoint_exact",
+            "serialization_roundtrip_exact",
+            "final_deployment_artifact_locked"
+          ],
+          "field_count": 4,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase10_release_lock",
+          "relative_path": "results/v2/audit/phase10_release_archive_locked_v3_3.json",
+          "sha256": "e7e5e3d6a44c65e96024c376daf7f81589aaea876d80775374dea5b9b8c47f3e",
+          "source_type": "json",
+          "role": "Deterministic release",
+          "fields": [
+            "payload_file_count",
+            "archive_file_count",
+            "deterministic_rebuild_exact",
+            "release_locked"
+          ],
+          "field_count": 4,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase11_lock",
+          "relative_path": "results/v2/audit/phase11_input_robustness_locked_v3_3.json",
+          "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a",
+          "source_type": "json",
+          "role": "Robustness evaluation scope",
+          "fields": [
+            "model_count",
+            "condition_count",
+            "locked_evaluation_count",
+            "phase11_locked"
+          ],
+          "field_count": 4,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 7,
+      "field_count": 29,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 2,
+      "asset_id": "figure_02_lodo_generalization",
+      "asset_type": "figure",
+      "title": "Leave-One-Device-Out Generalization",
+      "mapping_entries": [
+        {
+          "source_id": "lodo_device_model_matrix",
+          "relative_path": "results/v2/early_lodo/global/early_lodo_device_model_matrix_v2.csv",
+          "sha256": "63021a73dde31ac38d03e2924cb48f49ce2b483aff00cfe3137056312e3e41dc",
+          "source_type": "csv",
+          "role": "Per-device LODO performance",
+          "fields": [
+            "held_out_device",
+            "model_id",
+            "test_fingerprint_macro_f1",
+            "benign_fnr",
+            "gafgyt_fnr",
+            "mirai_fnr",
+            "local_severe_signal"
+          ],
+          "field_count": 7,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "lodo_global_summary",
+          "relative_path": "results/v2/early_lodo/global/early_lodo_global_summary_v2.json",
+          "sha256": "1edbff5dd484f4bcd8b4d651b33795b21748debaa3e9f643b720b6970bea4b77",
+          "source_type": "json",
+          "role": "Global LODO summary",
+          "fields": [
+            "model_ranking",
+            "global_statistics.mean_cell_test_macro_f1",
+            "global_statistics.minimum_cell_test_macro_f1",
+            "gate.status"
+          ],
+          "field_count": 4,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 2,
+      "field_count": 11,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 3,
+      "asset_id": "figure_03_compression_tradeoff",
+      "asset_type": "figure",
+      "title": "Compression Accuracy and Resource Trade-off",
+      "mapping_entries": [
+        {
+          "source_id": "phase5_group_summary",
+          "relative_path": "results/v2/audit/phase5_compression_group_summary_v3_2.csv",
+          "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67",
+          "source_type": "csv",
+          "role": "Accuracy and compression characteristics",
+          "fields": [
+            "architecture",
+            "variant",
+            "representation",
+            "mean_test_fingerprint_macro_f1",
+            "mean_state_size_ratio_vs_float",
+            "fragility_triggered_in_any_run"
+          ],
+          "field_count": 6,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase6_group_summary",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv",
+          "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf",
+          "source_type": "csv",
+          "role": "Deployment measurements",
+          "fields": [
+            "architecture",
+            "variant",
+            "representation",
+            "mean_serialized_state_dict_bytes",
+            "mean_peak_inference_RSS_delta_bytes",
+            "mean_batch_1_median_ms",
+            "mean_batch_32_samples_per_second"
+          ],
+          "field_count": 7,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 2,
+      "field_count": 13,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 4,
+      "asset_id": "figure_04_pareto_selection",
+      "asset_type": "figure",
+      "title": "Final Model-Family Pareto Selection",
+      "mapping_entries": [
+        {
+          "source_id": "phase8_input_matrix",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_input_matrix_v3_2.csv",
+          "sha256": "aa3213d72488093da08f6e4f5536c51e15d883d8e22b0fde697bb243b3f2d96f",
+          "source_type": "csv",
+          "role": "Candidate decision space",
+          "fields": [
+            "architecture",
+            "variant",
+            "candidate_role",
+            "representation",
+            "mean_test_fingerprint_macro_f1",
+            "mean_serialized_state_dict_bytes",
+            "mean_batch_1_median_ms",
+            "mean_batch_32_samples_per_second",
+            "fragility_triggered_in_any_run"
+          ],
+          "field_count": 9,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase8_pareto_results",
+          "relative_path": "results/v2/audit/phase8_multi_objective_pareto_results_v3_2.csv",
+          "sha256": "2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306",
+          "source_type": "csv",
+          "role": "Pareto eligibility and dominance",
+          "fields": [
+            "profile",
+            "primary_profile",
+            "architecture",
+            "variant",
+            "eligible",
+            "Pareto_nondominated",
+            "dominated_by_count",
+            "deployment_improvement_count",
+            "failed_gates"
+          ],
+          "field_count": 9,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase8_selection_trace",
+          "relative_path": "results/v2/audit/phase8_multi_objective_selection_trace_v3_2.csv",
+          "sha256": "79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55",
+          "source_type": "csv",
+          "role": "Profile-specific selection",
+          "fields": [
+            "profile",
+            "primary_profile",
+            "eligible_candidate_count",
+            "Pareto_candidate_count",
+            "selected_architecture",
+            "selected_variant",
+            "selected_representation",
+            "selection_rule"
+          ],
+          "field_count": 8,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase8_final_model_lock",
+          "relative_path": "results/v2/audit/phase8_final_model_family_locked_v3_2.json",
+          "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9",
+          "source_type": "json",
+          "role": "Locked final family",
+          "fields": [
+            "primary_profile",
+            "selected_model_family.candidate_id",
+            "sensitivity_profile_selections",
+            "selection_stable_across_profiles"
+          ],
+          "field_count": 4,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 4,
+      "field_count": 30,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 5,
+      "asset_id": "figure_05_input_robustness",
+      "asset_type": "figure",
+      "title": "Input Perturbation Robustness",
+      "mapping_entries": [
+        {
+          "source_id": "phase11_all_runs",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv",
+          "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090",
+          "source_type": "csv",
+          "role": "Condition-level robustness",
+          "fields": [
+            "model_id",
+            "condition_id",
+            "condition_family",
+            "severity",
+            "fingerprint_macro_f1",
+            "macro_f1_drop_from_model_clean",
+            "macro_f1_retention_ratio",
+            "severe_fragility",
+            "material_sensitivity"
+          ],
+          "field_count": 9,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase11_summary",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json",
+          "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4",
+          "source_type": "json",
+          "role": "Robustness summary",
+          "fields": [
+            "model_summaries",
+            "severe_fragility_evaluation_count",
+            "material_sensitivity_evaluation_count"
+          ],
+          "field_count": 3,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 2,
+      "field_count": 12,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 6,
+      "asset_id": "table_01_dataset_protocol",
+      "asset_type": "table",
+      "title": "Dataset, Split, Leakage-Control, and Evaluation Protocol",
+      "mapping_entries": [
+        {
+          "source_id": "lodo_global_summary",
+          "relative_path": "results/v2/early_lodo/global/early_lodo_global_summary_v2.json",
+          "sha256": "1edbff5dd484f4bcd8b4d651b33795b21748debaa3e9f643b720b6970bea4b77",
+          "source_type": "json",
+          "role": "LODO dataset and evaluation protocol",
+          "fields": [
+            "scope.device_count",
+            "scope.model_count",
+            "scope.scientific_run_count",
+            "scope.two_class_test_devices",
+            "locked_thresholds",
+            "interpretation.class_coverage_note"
+          ],
+          "field_count": 6,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase4_summary",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_summary_v3_2.json",
+          "sha256": "a64ead61fa0f4d56c586ed3cdf6922c212dd25423bbf7fc3b59343d2a800de98",
+          "source_type": "json",
+          "role": "Classical baseline protocol",
+          "fields": [
+            "model_count",
+            "total_run_count",
+            "interpretation_policy",
+            "scientific_caveats"
+          ],
+          "field_count": 4,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase5_closure",
+          "relative_path": "results/v2/audit/phase5_compression_closure_v3_2.json",
+          "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac",
+          "source_type": "json",
+          "role": "Compression protocol",
+          "fields": [
+            "architecture_count",
+            "variant_count",
+            "seed_count",
+            "final_run_count",
+            "test_evaluation_count_total",
+            "final_checks"
+          ],
+          "field_count": 6,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 3,
+      "field_count": 16,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 7,
+      "asset_id": "table_02_classical_baselines",
+      "asset_type": "table",
+      "title": "Classical Baseline Performance",
+      "mapping_entries": [
+        {
+          "source_id": "phase4_model_summary",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_model_summary_v3_2.csv",
+          "sha256": "51bd0a583fb50b8974bae822640ca8f4892beedc73edd587b651ef213b39f8cd",
+          "source_type": "csv",
+          "role": "Baseline performance table",
+          "fields": [
+            "descriptive_macro_f1_rank",
+            "model_id",
+            "display_name",
+            "run_count",
+            "seed_policy",
+            "input_space",
+            "mean_test_fingerprint_macro_f1",
+            "std_test_fingerprint_macro_f1",
+            "mean_test_raw_weighted_macro_f1",
+            "mean_test_gafgyt_fnr",
+            "mean_test_mirai_fnr",
+            "scientific_status",
+            "important_caveat"
+          ],
+          "field_count": 13,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 1,
+      "field_count": 13,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 8,
+      "asset_id": "table_03_compression_results",
+      "asset_type": "table",
+      "title": "Five-Seed Compression Results",
+      "mapping_entries": [
+        {
+          "source_id": "phase5_group_summary",
+          "relative_path": "results/v2/audit/phase5_compression_group_summary_v3_2.csv",
+          "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67",
+          "source_type": "csv",
+          "role": "Grouped compression results",
+          "fields": [
+            "architecture",
+            "variant",
+            "representation",
+            "run_count",
+            "mean_test_fingerprint_macro_f1",
+            "std_test_fingerprint_macro_f1",
+            "mean_test_raw_weighted_macro_f1",
+            "mean_state_size_ratio_vs_float",
+            "fragility_triggered_in_any_run"
+          ],
+          "field_count": 9,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase5_closure",
+          "relative_path": "results/v2/audit/phase5_compression_closure_v3_2.json",
+          "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac",
+          "source_type": "json",
+          "role": "Compression closure notes",
+          "fields": [
+            "final_run_count",
+            "group_count",
+            "fragility_groups",
+            "final_checks"
+          ],
+          "field_count": 4,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 2,
+      "field_count": 13,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 9,
+      "asset_id": "table_04_deployment_benchmarks",
+      "asset_type": "table",
+      "title": "CPU Deployment Benchmark Results",
+      "mapping_entries": [
+        {
+          "source_id": "phase6_group_summary",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv",
+          "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf",
+          "source_type": "csv",
+          "role": "Grouped deployment measurements",
+          "fields": [
+            "architecture",
+            "variant",
+            "representation",
+            "run_count",
+            "mean_serialized_state_dict_bytes",
+            "mean_peak_inference_RSS_delta_bytes",
+            "mean_batch_1_median_ms",
+            "std_batch_1_median_ms",
+            "mean_batch_1_p95_ms",
+            "mean_batch_32_samples_per_second",
+            "validation_data_access",
+            "test_data_access"
+          ],
+          "field_count": 12,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase6_summary",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json",
+          "sha256": "da9a34e01207cfb98d1edb4064e0a0a0b0f3fe3adfcb199f4a73d5bb663b6016",
+          "source_type": "json",
+          "role": "Benchmark execution protocol",
+          "fields": [
+            "runtime_policy",
+            "data_access",
+            "global_checks"
+          ],
+          "field_count": 3,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 2,
+      "field_count": 15,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 10,
+      "asset_id": "table_05_statistical_analysis",
+      "asset_type": "table",
+      "title": "Omnibus and Post-hoc Statistical Results",
+      "mapping_entries": [
+        {
+          "source_id": "phase7_omnibus",
+          "relative_path": "results/v2/audit/phase7_statistical_omnibus_results_v3_2.csv",
+          "sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2",
+          "source_type": "csv",
+          "role": "Omnibus statistical results",
+          "fields": [
+            "endpoint_class",
+            "architecture",
+            "metric",
+            "block_count",
+            "variant_count",
+            "friedman_statistic",
+            "kendalls_W",
+            "monte_carlo_p_plus_one",
+            "monte_carlo_reject_nominal"
+          ],
+          "field_count": 9,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase7_posthoc_verified",
+          "relative_path": "results/v2/audit/phase7_statistical_posthoc_verified_v3_2.csv",
+          "sha256": "e654b3e8ded77dfab834754331cf5c9601e312bf4616b83c6f327730e68626bd",
+          "source_type": "csv",
+          "role": "Verified post-hoc comparisons",
+          "fields": [
+            "endpoint_class",
+            "architecture",
+            "metric",
+            "reference_variant",
+            "candidate_variant",
+            "mean_improvement_delta",
+            "paired_rank_biserial_improvement",
+            "exact_two_sided_p_raw",
+            "Holm_adjusted_p",
+            "Holm_reject_alpha_0_05"
+          ],
+          "field_count": 10,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase7_summary",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_summary_v3_2.json",
+          "sha256": "0c3343af85283b4edf977e306dd8fc31356d860a231659c6b48cbb6ad289231d",
+          "source_type": "json",
+          "role": "Statistical interpretation",
+          "fields": [
+            "omnibus_analysis_count",
+            "posthoc_comparison_count",
+            "confirmatory_omnibus_rejections_nominal",
+            "exploratory_omnibus_rejections_nominal",
+            "confirmatory_posthoc_Holm_rejections",
+            "exploratory_posthoc_Holm_rejections",
+            "minimum_raw_posthoc_p",
+            "minimum_Holm_adjusted_p",
+            "small_sample_interpretation"
+          ],
+          "field_count": 9,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 3,
+      "field_count": 28,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 11,
+      "asset_id": "table_06_robustness_results",
+      "asset_type": "table",
+      "title": "Input Robustness Results",
+      "mapping_entries": [
+        {
+          "source_id": "phase11_all_runs",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv",
+          "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090",
+          "source_type": "csv",
+          "role": "All robustness evaluations",
+          "fields": [
+            "model_id",
+            "condition_id",
+            "condition_family",
+            "severity",
+            "fingerprint_macro_f1",
+            "raw_weighted_macro_f1",
+            "macro_f1_drop_from_model_clean",
+            "severe_fragility",
+            "material_sensitivity"
+          ],
+          "field_count": 9,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase11_summary",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json",
+          "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4",
+          "source_type": "json",
+          "role": "Robustness interpretation",
+          "fields": [
+            "model_summaries",
+            "severe_fragility_evaluation_count",
+            "material_sensitivity_evaluation_count",
+            "model_retraining_performed",
+            "test_used_for_model_selection",
+            "final_model_changed"
+          ],
+          "field_count": 6,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 2,
+      "field_count": 15,
+      "mapping_status": "validated"
+    },
+    {
+      "asset_order": 12,
+      "asset_id": "table_07_reproducibility_release",
+      "asset_type": "table",
+      "title": "Reproducibility and Release Artifacts",
+      "mapping_entries": [
+        {
+          "source_id": "phase8_final_model_lock",
+          "relative_path": "results/v2/audit/phase8_final_model_family_locked_v3_2.json",
+          "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9",
+          "source_type": "json",
+          "role": "Selection reproducibility",
+          "fields": [
+            "selected_model_family",
+            "sensitivity_profile_selections",
+            "weighted_score_used",
+            "pairwise_p_value_used_as_gate",
+            "single_seed_checkpoint_selected"
+          ],
+          "field_count": 5,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase9_artifact_lock",
+          "relative_path": "results/v2/audit/phase9_final_deployment_artifact_locked_v3_2.json",
+          "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6",
+          "source_type": "json",
+          "role": "Artifact reproducibility",
+          "fields": [
+            "model_family",
+            "canonical_seed",
+            "class_labels_in_output_index_order",
+            "source_bundle_checkpoint_exact",
+            "source_bundle_outputs_exact",
+            "serialization_roundtrip_exact",
+            "validation_data_access",
+            "test_data_access"
+          ],
+          "field_count": 8,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase10_release_lock",
+          "relative_path": "results/v2/audit/phase10_release_archive_locked_v3_3.json",
+          "sha256": "e7e5e3d6a44c65e96024c376daf7f81589aaea876d80775374dea5b9b8c47f3e",
+          "source_type": "json",
+          "role": "Release integrity",
+          "fields": [
+            "release_name",
+            "payload_file_count",
+            "archive_file_count",
+            "release_directory_tree_sha256",
+            "zip_archive_sha256",
+            "deterministic_rebuild_exact",
+            "raw_dataset_included",
+            "processed_dataset_included",
+            "nonselected_checkpoints_included"
+          ],
+          "field_count": 9,
+          "validation_status": "passed"
+        },
+        {
+          "source_id": "phase11_lock",
+          "relative_path": "results/v2/audit/phase11_input_robustness_locked_v3_3.json",
+          "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a",
+          "source_type": "json",
+          "role": "Post-selection robustness integrity",
+          "fields": [
+            "model_retraining_performed",
+            "test_used_for_model_selection",
+            "final_model_changed",
+            "phase11_locked"
+          ],
+          "field_count": 4,
+          "validation_status": "passed"
+        }
+      ],
+      "source_count": 4,
+      "field_count": 26,
+      "mapping_status": "validated"
+    }
+  ],
+  "binding": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase13_exact_source_binding_v3_3.json",
+    "sha256": "e14b5496d0001298686faf8def01e69901054f271f440be0b6f919d874e2a9a6"
+  },
+  "field_inspection": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_bound_source_field_inspection_v3_3.json",
+    "sha256": "929ab13886293e700d60caccc034fa6f1b31965302576edf5835161a841723fb"
+  },
+  "mapping_rules": {
+    "exact_field_names_only": true,
+    "locked_sources_only": true,
+    "no_inferred_columns": true,
+    "no_model_inference": true,
+    "no_test_array_access": true,
+    "no_source_mutation": true
+  },
+  "asset_generation_performed": false,
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_asset_generation": true,
+  "all_checks_passed": true
+}

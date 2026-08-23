@@ -1,0 +1,1021 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "physical_structured_pruning_preflight",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "generated_at_utc": "2026-08-06T17:41:24.672683+00:00",
+  "audit_scope": {
+    "B0_checkpoint_count": 10,
+    "architecture_count": 2,
+    "seed_count_per_architecture": 5,
+    "train_rows_used_for_forward_smoke": 32,
+    "validation_access_count": 0,
+    "test_access_count": 0
+  },
+  "architecture_summaries": [
+    {
+      "architecture": "tinyml_mlp",
+      "seed_count": 5,
+      "model_symbol": "TinyMLMLP",
+      "linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.3",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.4",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "leaf_signature_identical_across_seeds": true,
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504,
+      "all_modules_supported": true,
+      "parameterized_non_linear_module_count": 0
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed_count": 5,
+      "model_symbol": "CompactDNN",
+      "linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.3",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.4",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.5",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.6",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.7",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.8",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "leaf_signature_identical_across_seeds": true,
+      "parameter_count": 25283,
+      "linear_macs_per_sample": 25056,
+      "all_modules_supported": true,
+      "parameterized_non_linear_module_count": 0
+    }
+  ],
+  "checkpoint_audits": [
+    {
+      "architecture": "compact_dnn",
+      "seed": 42,
+      "model_symbol": "CompactDNN",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "bfaa7bf463eb749ac96c61b2c1053ab23e9e96b7f6fbf23b35e18041a1a583f4"
+      },
+      "linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 25283,
+      "linear_macs_per_sample": 25056,
+      "leaf_module_count": 9,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.3",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.4",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.5",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.6",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.7",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.8",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 123,
+      "model_symbol": "CompactDNN",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "846daa7d293dc3485b0343cd0f3b2f78b5e80872923162019cd3b68e21ace6de"
+      },
+      "linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 25283,
+      "linear_macs_per_sample": 25056,
+      "leaf_module_count": 9,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.3",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.4",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.5",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.6",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.7",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.8",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 2026,
+      "model_symbol": "CompactDNN",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "7404110900abe7bf20e384481f693da8abde7fb316436556b680f7786080da9a"
+      },
+      "linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 25283,
+      "linear_macs_per_sample": 25056,
+      "leaf_module_count": 9,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.3",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.4",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.5",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.6",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.7",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.8",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 3407,
+      "model_symbol": "CompactDNN",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "79ac775ce6b798be6e1ecec074d116a2c3701fb8535ec48f03eac295a9445ea7"
+      },
+      "linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 25283,
+      "linear_macs_per_sample": 25056,
+      "leaf_module_count": 9,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.3",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.4",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.5",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.6",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.7",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.8",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 8192,
+      "model_symbol": "CompactDNN",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "822635e009b505e48e0e03fc4944bcf087624692af90451888302a9528024fa8"
+      },
+      "linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 25283,
+      "linear_macs_per_sample": 25056,
+      "leaf_module_count": 9,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.3",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.4",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.5",
+          "type": "Dropout",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.6",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.7",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.8",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 42,
+      "model_symbol": "TinyMLMLP",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "5abfac0829d550c2e2f452f992e5cc4b53b79412f506e8ef38d2335285aefa1f"
+      },
+      "linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504,
+      "leaf_module_count": 5,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.3",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.4",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 123,
+      "model_symbol": "TinyMLMLP",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "eab045d2e16f00c850e93b72979e5e1e299c4e792944403cddd60df7c7fd371a"
+      },
+      "linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504,
+      "leaf_module_count": 5,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.3",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.4",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 2026,
+      "model_symbol": "TinyMLMLP",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "6b60c988f01ec53e91ea7d9288ebd06cb4fd825ed093476150986c96d4223fa9"
+      },
+      "linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504,
+      "leaf_module_count": 5,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.3",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.4",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 3407,
+      "model_symbol": "TinyMLMLP",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "d8e8c6350d2a580b0942dcdbb47f5c42850d52313f3eb8724244ca0b84ed5fb0"
+      },
+      "linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504,
+      "leaf_module_count": 5,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.3",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.4",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 8192,
+      "model_symbol": "TinyMLMLP",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "cb2e01cfae3b36651853cbe4dab841cedabed53a57d25c508ef4b1e011ddb69b"
+      },
+      "linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504,
+      "leaf_module_count": 5,
+      "leaf_signature": [
+        {
+          "name": "network.0",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.1",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.2",
+          "type": "Linear",
+          "has_direct_parameters": true
+        },
+        {
+          "name": "network.3",
+          "type": "ReLU",
+          "has_direct_parameters": false
+        },
+        {
+          "name": "network.4",
+          "type": "Linear",
+          "has_direct_parameters": true
+        }
+      ],
+      "unsupported_modules": [],
+      "parameterized_non_linear_modules": [],
+      "checks": {
+        "linear_widths_match_expected": true,
+        "checkpoint_identity_matches": true,
+        "all_leaf_modules_supported": true,
+        "no_parameterized_non_linear_leaf": true,
+        "leaf_signature_matches_architecture": true,
+        "forward_trace_not_empty": true,
+        "checkpoint_parameter_count_matches": true,
+        "checkpoint_macs_match": true
+      },
+      "all_checks_passed": true
+    }
+  ],
+  "pruning_source_plan": {
+    "row_count": 20,
+    "ratios": [
+      0.25,
+      0.5
+    ],
+    "P25_and_P50_each_derived_directly_from_B0": true,
+    "physical_compaction_required": true,
+    "mask_only_pruning_allowed": false
+  },
+  "engine_requirements": {
+    "must_preserve_leaf_module_order": true,
+    "must_preserve_stateless_activations_and_dropout_configuration": true,
+    "must_physically_replace_linear_dimensions": true,
+    "must_copy_selected_rows_and_following_columns": true,
+    "must_preserve_output_class_count": 3,
+    "must_record_selected_unit_indices": true,
+    "must_record_source_checkpoint_hash": true,
+    "must_pass_output_shape_parameter_MAC_and_serialization_tests": true,
+    "selection_criterion_status": "not_yet_locked"
+  },
+  "entry_checks": {
+    "phase5_protocol_locked": true,
+    "physical_pruning_required": true,
+    "mask_only_pruning_disallowed": true,
+    "pruning_ratios_match": true,
+    "B0_pair_locked": true,
+    "B0_registry_hash_matches": true,
+    "B0_lock_manifest_locked": true,
+    "registry_has_ten_rows": true,
+    "registry_architectures_match": true,
+    "registry_seed_sets_match": true
+  },
+  "global_checks": {
+    "ten_B0_checkpoints_audited": true,
+    "twenty_pruning_sources_planned": true,
+    "all_run_checks_passed": true,
+    "all_architecture_signatures_stable": true,
+    "all_non_linear_modules_stateless": true,
+    "P25_and_P50_directly_from_B0": true,
+    "compacted_counts_strictly_smaller": true
+  },
+  "source_artifacts": {
+    "phase5_protocol": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase5_fair_budget_compression_protocol_v3_2.json",
+      "size_bytes": 21842,
+      "sha256": "1681aaa46ce286f498367a6c8a2ccb4c711c091fbb053ec4aa48f9bd1d10ab03"
+    },
+    "B0_pair_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_locked_v3_2.json",
+      "size_bytes": 1241,
+      "sha256": "af730f4071ea0db3a4c910231d1964a70d81967838f9448a8b180455537a9a2b"
+    },
+    "B0_pair_lock_manifest": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_lock_manifest_v3_2.json",
+      "size_bytes": 4350,
+      "sha256": "5df380393d8dfb805cbe9ad36e3fa7fbcc46f92b148f6417d3f3a5543c8e0f95"
+    },
+    "B0_checkpoint_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_checkpoint_registry_v3_2.csv",
+      "size_bytes": 9616,
+      "sha256": "af2f62797979caa86d02fffb6ed3ca18e038d54550d89b559161832f7ae290ef"
+    },
+    "model_source": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+    },
+    "scaler": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_standard_scaler_v3_2.npz",
+      "size_bytes": 5361,
+      "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+    }
+  },
+  "leaf_module_inventory_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_leaf_module_inventory_v3_2.csv",
+    "size_bytes": 5025,
+    "sha256": "d608a71de8d519008f6c06e7c496b5d27cfb5fa67e8f86e605566924c0952d22"
+  },
+  "pruning_source_plan_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_source_plan_v3_2.csv",
+    "size_bytes": 9118,
+    "sha256": "0b15da3ef876e4a84f0381113d824784e356f90b5e9666cb2428cb2c7dad9125"
+  },
+  "next_action": "Create and lock the repository physical structured-pruning engine, including its deterministic hidden-unit importance criterion, before generating P25-noFT and P50-noFT checkpoints.",
+  "all_checks_passed": true
+}

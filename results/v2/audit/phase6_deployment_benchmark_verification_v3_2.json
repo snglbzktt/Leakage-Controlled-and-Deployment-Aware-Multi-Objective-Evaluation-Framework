@@ -1,0 +1,1854 @@
+{
+  "status": "passed",
+  "phase": 6,
+  "artifact_name": "isolated_deployment_benchmark_independent_verification",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "verified_at_utc": "2026-08-06T21:14:11.100359+00:00",
+  "run_count": 110,
+  "group_count": 22,
+  "verification_policy": {
+    "model_inference_repeated": false,
+    "raw_latency_arrays_loaded": true,
+    "latency_statistics_recomputed": true,
+    "throughput_recomputed": true,
+    "group_statistics_recomputed": true,
+    "source_hashes_verified": true
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "preflight_locked": true,
+    "loader_locked": true,
+    "summary_completed": true,
+    "completion_completed": true,
+    "all_runs_hash_matches": true,
+    "group_summary_hash_matches": true,
+    "summary_hash_matches": true,
+    "matrix_count_110": true,
+    "all_runs_count_110": true,
+    "groups_count_22": true,
+    "configuration_matrix_exact": true
+  },
+  "global_checks": {
+    "runs_verified_110": true,
+    "groups_verified_22": true,
+    "configuration_matrix_exact": true,
+    "all_run_checks_passed": true,
+    "all_group_checks_passed": true,
+    "model_inference_not_repeated": true,
+    "validation_access_zero": true,
+    "test_access_zero": true,
+    "final_model_not_selected": true
+  },
+  "verified_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_verified_runs_v3_2.csv",
+    "size_bytes": 45403,
+    "sha256": "f69a170dcb1ff5336abcea2fba284df7e3f78fd682950e152b34ef26bb8f4df3"
+  },
+  "verified_groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "B0",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 123467.0,
+          "std_population": 0.0,
+          "minimum": 123467.0,
+          "maximum": 123467.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 41173.0,
+          "std_population": 0.0,
+          "minimum": 41173.0,
+          "maximum": 41173.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 1309900.8,
+          "std_population": 6553.6,
+          "minimum": 1302528.0,
+          "maximum": 1318912.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 2111897.6,
+          "std_population": 28448.776772297257,
+          "minimum": 2060288.0,
+          "maximum": 2142208.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.02838,
+          "std_population": 0.005283616185909041,
+          "minimum": 0.021449999999999997,
+          "maximum": 0.0366
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.04827299999999999,
+          "std_population": 0.011812430571224539,
+          "minimum": 0.029719999999999983,
+          "maximum": 0.063
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.10449379999999993,
+          "std_population": 0.04000423616268654,
+          "minimum": 0.062176999999999934,
+          "maximum": 0.16887799999999994
+        },
+        "batch_1_samples_per_second": {
+          "mean": 32189.310005792475,
+          "std_population": 5661.465820617453,
+          "minimum": 24173.975265188506,
+          "maximum": 40312.17750257998
+        },
+        "batch_32_median_ms": {
+          "mean": 0.02994,
+          "std_population": 0.0021914378841299616,
+          "minimum": 0.0269,
+          "maximum": 0.0335
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.043141,
+          "std_population": 0.006612511928155586,
+          "minimum": 0.0356,
+          "maximum": 0.05150999999999999
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.09714039999999965,
+          "std_population": 0.042878999631987574,
+          "minimum": 0.04681299999999999,
+          "maximum": 0.1565339999999999
+        },
+        "batch_32_samples_per_second": {
+          "mean": 901145.111378992,
+          "std_population": 76125.25320485992,
+          "minimum": 777576.6338221536,
+          "maximum": 1003953.0651942022
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "FP32-FT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 123877.0,
+          "std_population": 0.0,
+          "minimum": 123877.0,
+          "maximum": 123877.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 41173.0,
+          "std_population": 0.0,
+          "minimum": 41173.0,
+          "maximum": 41173.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 1317273.6,
+          "std_population": 21766.685090752795,
+          "minimum": 1302528.0,
+          "maximum": 1359872.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 2079129.6,
+          "std_population": 43471.6644521463,
+          "minimum": 2031616.0,
+          "maximum": 2150400.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.0267,
+          "std_population": 0.0019493588689617927,
+          "minimum": 0.0234,
+          "maximum": 0.0292
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.03595499999999998,
+          "std_population": 0.0076217701356049725,
+          "minimum": 0.0288,
+          "maximum": 0.05032999999999997
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.05845879999999988,
+          "std_population": 0.021330553048620058,
+          "minimum": 0.03590999999999999,
+          "maximum": 0.09527199999999957
+        },
+        "batch_1_samples_per_second": {
+          "mean": 36290.715442554196,
+          "std_population": 2568.9382163092655,
+          "minimum": 33835.90937390033,
+          "maximum": 40472.72138578598
+        },
+        "batch_32_median_ms": {
+          "mean": 0.03164,
+          "std_population": 0.0031348684182912674,
+          "minimum": 0.0279,
+          "maximum": 0.03695
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.039714999999999986,
+          "std_population": 0.00982014103768371,
+          "minimum": 0.034409999999999996,
+          "maximum": 0.059339999999999955
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.0669387999999999,
+          "std_population": 0.029928038381424226,
+          "minimum": 0.044406999999999995,
+          "maximum": 0.124716
+        },
+        "batch_32_samples_per_second": {
+          "mean": 943871.4823726129,
+          "std_population": 99442.89249515865,
+          "minimum": 754547.9196878057,
+          "maximum": 1032541.1806463061
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-noFT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 34327.4,
+          "std_population": 31.353468707624682,
+          "minimum": 34289.0,
+          "maximum": 34353.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 30101.0,
+          "std_population": 0.0,
+          "minimum": 30101.0,
+          "maximum": 30101.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 3133440.0,
+          "std_population": 6345.495914426232,
+          "minimum": 3121152.0,
+          "maximum": 3137536.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 1385267.2,
+          "std_population": 64524.67684971386,
+          "minimum": 1327104.0,
+          "maximum": 1503232.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.02631,
+          "std_population": 0.0019985995096567,
+          "minimum": 0.0232,
+          "maximum": 0.0292
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.031184999999999997,
+          "std_population": 0.004341040197924918,
+          "minimum": 0.0275,
+          "maximum": 0.039205
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.04087399999999999,
+          "std_population": 0.004762641787915601,
+          "minimum": 0.034703,
+          "maximum": 0.04873099999999997
+        },
+        "batch_1_samples_per_second": {
+          "mean": 37533.43364370917,
+          "std_population": 2050.3231000403307,
+          "minimum": 35421.300953541424,
+          "maximum": 41337.68756975735
+        },
+        "batch_32_median_ms": {
+          "mean": 0.02813,
+          "std_population": 0.001248038460945816,
+          "minimum": 0.0269,
+          "maximum": 0.0297
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.032828,
+          "std_population": 0.0021271450350175965,
+          "minimum": 0.030214999999999995,
+          "maximum": 0.0367
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.0527599999999999,
+          "std_population": 0.018600985382500476,
+          "minimum": 0.039539999999999964,
+          "maximum": 0.0893199999999997
+        },
+        "batch_32_samples_per_second": {
+          "mean": 1087208.0098179034,
+          "std_population": 32958.60928483764,
+          "minimum": 1051766.6392769103,
+          "maximum": 1140068.0478116036
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-FP32-FT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 90891.4,
+          "std_population": 31.35346870762468,
+          "minimum": 90853.0,
+          "maximum": 90917.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 30101.0,
+          "std_population": 0.0,
+          "minimum": 30101.0,
+          "maximum": 30101.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 3216179.2,
+          "std_population": 3065.165731245213,
+          "minimum": 3211264.0,
+          "maximum": 3219456.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 1414758.4,
+          "std_population": 89161.18005858827,
+          "minimum": 1314816.0,
+          "maximum": 1581056.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.02706,
+          "std_population": 0.003647930920398575,
+          "minimum": 0.0221,
+          "maximum": 0.03315
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.04649599999999998,
+          "std_population": 0.024498243079861877,
+          "minimum": 0.02711999999999998,
+          "maximum": 0.09321499999999999
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.09800539999999988,
+          "std_population": 0.0617149298973919,
+          "minimum": 0.05780299999999991,
+          "maximum": 0.21958699999999984
+        },
+        "batch_1_samples_per_second": {
+          "mean": 34280.190106439884,
+          "std_population": 6349.769964866183,
+          "minimum": 22542.018322152493,
+          "maximum": 41051.24015796517
+        },
+        "batch_32_median_ms": {
+          "mean": 0.03084,
+          "std_population": 0.0026446927987953542,
+          "minimum": 0.0287,
+          "maximum": 0.0359
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.03865999999999999,
+          "std_population": 0.006699315636690066,
+          "minimum": 0.032539999999999986,
+          "maximum": 0.051609999999999996
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.052403399999999725,
+          "std_population": 0.011985524729439215,
+          "minimum": 0.038909999999999986,
+          "maximum": 0.07094599999999977
+        },
+        "batch_32_samples_per_second": {
+          "mean": 1017574.6801011197,
+          "std_population": 64192.60201621975,
+          "minimum": 900634.6659911907,
+          "maximum": 1078548.6779352534
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 23921.0,
+          "std_population": 0.0,
+          "minimum": 23921.0,
+          "maximum": 23921.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 19925.0,
+          "std_population": 0.0,
+          "minimum": 19925.0,
+          "maximum": 19925.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 3036774.4,
+          "std_population": 19830.73228703368,
+          "minimum": 3022848.0,
+          "maximum": 3076096.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 1400832.0,
+          "std_population": 95428.88894250001,
+          "minimum": 1318912.0,
+          "maximum": 1581056.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.02722,
+          "std_population": 0.004900775448844804,
+          "minimum": 0.0196,
+          "maximum": 0.0326
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.04043199999999997,
+          "std_population": 0.008840926761375177,
+          "minimum": 0.0276,
+          "maximum": 0.053514999999999986
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.07411439999999996,
+          "std_population": 0.014065389416578544,
+          "minimum": 0.058032999999999973,
+          "maximum": 0.09562199999999998
+        },
+        "batch_1_samples_per_second": {
+          "mean": 35761.18422050396,
+          "std_population": 6108.001056817434,
+          "minimum": 28646.072050600425,
+          "maximum": 44056.74508767293
+        },
+        "batch_32_median_ms": {
+          "mean": 0.026000000000000002,
+          "std_population": 0.0017357995275952812,
+          "minimum": 0.0236,
+          "maximum": 0.02885
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.030093999999999992,
+          "std_population": 0.00289936096407467,
+          "minimum": 0.0264,
+          "maximum": 0.03471
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.03693179999999999,
+          "std_population": 0.004102439001374677,
+          "minimum": 0.03092099999999998,
+          "maximum": 0.043503999999999994
+        },
+        "batch_32_samples_per_second": {
+          "mean": 1193413.86087045,
+          "std_population": 84683.14705707575,
+          "minimum": 1074095.829487287,
+          "maximum": 1329041.6363825146
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-FP32-FT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 60747.4,
+          "std_population": 31.353468707624682,
+          "minimum": 60709.0,
+          "maximum": 60773.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 19925.0,
+          "std_population": 0.0,
+          "minimum": 19925.0,
+          "maximum": 19925.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 3124428.8,
+          "std_population": 27828.695451997028,
+          "minimum": 3096576.0,
+          "maximum": 3162112.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 1328742.4,
+          "std_population": 25853.51592027668,
+          "minimum": 1314816.0,
+          "maximum": 1380352.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.02541,
+          "std_population": 0.004709607202304668,
+          "minimum": 0.0203,
+          "maximum": 0.0339
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.03951299999999999,
+          "std_population": 0.01649283984036709,
+          "minimum": 0.0247,
+          "maximum": 0.06721499999999998
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.06976799999999991,
+          "std_population": 0.030141611184540184,
+          "minimum": 0.03645499999999995,
+          "maximum": 0.11958699999999983
+        },
+        "batch_1_samples_per_second": {
+          "mean": 36885.20026284816,
+          "std_population": 5713.972696813914,
+          "minimum": 26413.10089804543,
+          "maximum": 42795.028929439555
+        },
+        "batch_32_median_ms": {
+          "mean": 0.02569,
+          "std_population": 0.0015100993344810136,
+          "minimum": 0.02305,
+          "maximum": 0.0273
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.03266599999999999,
+          "std_population": 0.00843334832673239,
+          "minimum": 0.02806499999999998,
+          "maximum": 0.04952499999999999
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.04254779999999987,
+          "std_population": 0.013747281395243127,
+          "minimum": 0.03249399999999991,
+          "maximum": 0.06961399999999972
+        },
+        "batch_32_samples_per_second": {
+          "mean": 1186343.7549770407,
+          "std_population": 116738.73491316792,
+          "minimum": 992094.2489536506,
+          "maximum": 1353408.8986635087
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "DQ",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 16225.0,
+          "std_population": 0.0,
+          "minimum": 16225.0,
+          "maximum": 16225.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 14719.0,
+          "std_population": 0.0,
+          "minimum": 14719.0,
+          "maximum": 14719.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 4015718.4,
+          "std_population": 28092.70796203171,
+          "minimum": 3997696.0,
+          "maximum": 4071424.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 6043238.4,
+          "std_population": 109772.8,
+          "minimum": 5918720.0,
+          "maximum": 6225920.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.11377999999999999,
+          "std_population": 0.0042102969016448236,
+          "minimum": 0.108,
+          "maximum": 0.12025
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.1631849999999999,
+          "std_population": 0.0070580535560449895,
+          "minimum": 0.150635,
+          "maximum": 0.17027499999999993
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.28858319999999954,
+          "std_population": 0.03739806040639001,
+          "minimum": 0.2459339999999994,
+          "maximum": 0.35186099999999965
+        },
+        "batch_1_samples_per_second": {
+          "mean": 8148.109243317481,
+          "std_population": 257.7838165052587,
+          "minimum": 7867.436836283359,
+          "maximum": 8567.629439745575
+        },
+        "batch_32_median_ms": {
+          "mean": 0.1634,
+          "std_population": 0.0024419254697881296,
+          "minimum": 0.1587,
+          "maximum": 0.1656
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.24567699999999987,
+          "std_population": 0.026793012633893956,
+          "minimum": 0.1974649999999999,
+          "maximum": 0.27619499999999997
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.35581799999999875,
+          "std_population": 0.04978881911433418,
+          "minimum": 0.31508599999999987,
+          "maximum": 0.44988999999999624
+        },
+        "batch_32_samples_per_second": {
+          "mean": 184982.40524081374,
+          "std_population": 2834.474429408917,
+          "minimum": 180346.71656259155,
+          "maximum": 188744.9053621248
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "QAT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 20167.0,
+          "std_population": 0.0,
+          "minimum": 20167.0,
+          "maximum": 20167.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 18407.0,
+          "std_population": 0.0,
+          "minimum": 18407.0,
+          "maximum": 18407.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 5777817.6,
+          "std_population": 12315.276393163085,
+          "minimum": 5763072.0,
+          "maximum": 5795840.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 5321523.2,
+          "std_population": 275516.8242139851,
+          "minimum": 5029888.0,
+          "maximum": 5689344.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.10343,
+          "std_population": 0.008392889847960593,
+          "minimum": 0.09425,
+          "maximum": 0.11815
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.15676099999999998,
+          "std_population": 0.023496726027257497,
+          "minimum": 0.12004499999999996,
+          "maximum": 0.18983499999999998
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.2554991999999999,
+          "std_population": 0.03515782263110159,
+          "minimum": 0.21430899999999997,
+          "maximum": 0.31615299999999996
+        },
+        "batch_1_samples_per_second": {
+          "mean": 9008.557180617363,
+          "std_population": 759.7199824892283,
+          "minimum": 7973.922085212522,
+          "maximum": 9878.826316403001
+        },
+        "batch_32_median_ms": {
+          "mean": 0.17564,
+          "std_population": 0.005144258935940144,
+          "minimum": 0.1678,
+          "maximum": 0.1824
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.2392419999999998,
+          "std_population": 0.025040802423245218,
+          "minimum": 0.20901,
+          "maximum": 0.27579499999999985
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.39130159999999947,
+          "std_population": 0.09150511652929602,
+          "minimum": 0.32004599999999994,
+          "maximum": 0.5717519999999999
+        },
+        "batch_32_samples_per_second": {
+          "mean": 171992.6788425923,
+          "std_population": 5175.663417482841,
+          "minimum": 164395.94763989068,
+          "maximum": 177607.07764204402
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-QAT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 16967.0,
+          "std_population": 0.0,
+          "minimum": 16967.0,
+          "maximum": 16967.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 15207.0,
+          "std_population": 0.0,
+          "minimum": 15207.0,
+          "maximum": 15207.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 6752665.6,
+          "std_population": 64378.90524574024,
+          "minimum": 6705152.0,
+          "maximum": 6873088.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 5176524.8,
+          "std_population": 254115.78718245745,
+          "minimum": 4886528.0,
+          "maximum": 5640192.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.10096000000000001,
+          "std_population": 0.004301092884372531,
+          "minimum": 0.0929,
+          "maximum": 0.10505
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.14159799999999986,
+          "std_population": 0.006119680220403692,
+          "minimum": 0.13394499999999987,
+          "maximum": 0.15103999999999995
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.24798259999999983,
+          "std_population": 0.026801672049332984,
+          "minimum": 0.1963219999999999,
+          "maximum": 0.26933399999999985
+        },
+        "batch_1_samples_per_second": {
+          "mean": 9249.360226874105,
+          "std_population": 313.74797625218855,
+          "minimum": 8947.152747581136,
+          "maximum": 9825.363980608661
+        },
+        "batch_32_median_ms": {
+          "mean": 0.17719999999999997,
+          "std_population": 0.006158002923026268,
+          "minimum": 0.1679,
+          "maximum": 0.18365
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.2712769999999998,
+          "std_population": 0.035593114727430035,
+          "minimum": 0.23111999999999996,
+          "maximum": 0.3357549999999998
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.42046559999999894,
+          "std_population": 0.15792510875424365,
+          "minimum": 0.3116589999999993,
+          "maximum": 0.7334709999999969
+        },
+        "batch_32_samples_per_second": {
+          "mean": 169674.26636355594,
+          "std_population": 9398.51910476633,
+          "minimum": 153858.35895635953,
+          "maximum": 179938.0338395965
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-QAT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 14023.0,
+          "std_population": 0.0,
+          "minimum": 14023.0,
+          "maximum": 14023.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 12199.0,
+          "std_population": 0.0,
+          "minimum": 12199.0,
+          "maximum": 12199.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 6719078.4,
+          "std_population": 103186.68694284161,
+          "minimum": 6627328.0,
+          "maximum": 6909952.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 5140480.0,
+          "std_population": 183050.41872445963,
+          "minimum": 4886528.0,
+          "maximum": 5373952.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.10766,
+          "std_population": 0.012193334244578061,
+          "minimum": 0.09914999999999999,
+          "maximum": 0.1318
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.15941599999999992,
+          "std_population": 0.02315862849997808,
+          "minimum": 0.12342499999999998,
+          "maximum": 0.19284999999999977
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.25342979999999987,
+          "std_population": 0.03285891567535357,
+          "minimum": 0.20642499999999997,
+          "maximum": 0.3036279999999998
+        },
+        "batch_1_samples_per_second": {
+          "mean": 8732.178597533679,
+          "std_population": 781.9299755965759,
+          "minimum": 7249.297543068077,
+          "maximum": 9394.417085814242
+        },
+        "batch_32_median_ms": {
+          "mean": 0.17938,
+          "std_population": 0.00977341291463735,
+          "minimum": 0.1677,
+          "maximum": 0.19595
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.2566699999999998,
+          "std_population": 0.02110318411993797,
+          "minimum": 0.21921499999999994,
+          "maximum": 0.281275
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.37556299999999937,
+          "std_population": 0.035519185705756205,
+          "minimum": 0.3141439999999995,
+          "maximum": 0.42502699999999943
+        },
+        "batch_32_samples_per_second": {
+          "mean": 168078.67334476035,
+          "std_population": 8938.601936460534,
+          "minimum": 156924.2840329541,
+          "maximum": 182678.1183012077
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "PTQ",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 20179.4,
+          "std_population": 31.353468707624682,
+          "minimum": 20141.0,
+          "maximum": 20205.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 18407.0,
+          "std_population": 0.0,
+          "minimum": 18407.0,
+          "maximum": 18407.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 6396313.6,
+          "std_population": 11757.73191733848,
+          "minimum": 6385664.0,
+          "maximum": 6418432.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 5328076.8,
+          "std_population": 403046.4,
+          "minimum": 4853760.0,
+          "maximum": 5844992.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.10937,
+          "std_population": 0.012934434661012437,
+          "minimum": 0.0997,
+          "maximum": 0.1349
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.15305299999999986,
+          "std_population": 0.024481875867669783,
+          "minimum": 0.12940999999999997,
+          "maximum": 0.18546999999999939
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.2629095999999998,
+          "std_population": 0.04402580898336764,
+          "minimum": 0.2312369999999999,
+          "maximum": 0.3490229999999992
+        },
+        "batch_1_samples_per_second": {
+          "mean": 8646.487691243632,
+          "std_population": 770.8337596110181,
+          "minimum": 7227.971672133422,
+          "maximum": 9431.008401142284
+        },
+        "batch_32_median_ms": {
+          "mean": 0.18221,
+          "std_population": 0.01616729414589838,
+          "minimum": 0.16505,
+          "maximum": 0.2117
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.253416,
+          "std_population": 0.027840476720056344,
+          "minimum": 0.211635,
+          "maximum": 0.2936349999999999
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.37374839999999954,
+          "std_population": 0.03354221922652088,
+          "minimum": 0.33729199999999976,
+          "maximum": 0.4289299999999994
+        },
+        "batch_32_samples_per_second": {
+          "mean": 167364.55012861296,
+          "std_population": 9847.429465826319,
+          "minimum": 149800.11047758147,
+          "maximum": 178794.92222420883
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "B0",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 313779.0,
+          "std_population": 0.0,
+          "minimum": 313779.0,
+          "maximum": 313779.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 104397.0,
+          "std_population": 0.0,
+          "minimum": 104397.0,
+          "maximum": 104397.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 1778483.2,
+          "std_population": 7508.092018615649,
+          "minimum": 1765376.0,
+          "maximum": 1785856.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 2180710.4,
+          "std_population": 75464.2842610993,
+          "minimum": 2113536.0,
+          "maximum": 2314240.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.039299999999999995,
+          "std_population": 0.004948939280290273,
+          "minimum": 0.0313,
+          "maximum": 0.0454
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.05220899999999995,
+          "std_population": 0.010174544412404873,
+          "minimum": 0.0366,
+          "maximum": 0.06362499999999999
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.1006899999999999,
+          "std_population": 0.034252642969557864,
+          "minimum": 0.059302999999999814,
+          "maximum": 0.15756899999999993
+        },
+        "batch_1_samples_per_second": {
+          "mean": 24263.66552819837,
+          "std_population": 3245.4711980714446,
+          "minimum": 20925.755419770656,
+          "maximum": 29966.13826376195
+        },
+        "batch_32_median_ms": {
+          "mean": 0.054689999999999996,
+          "std_population": 0.004116721996929111,
+          "minimum": 0.04765,
+          "maximum": 0.0596
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.07031199999999996,
+          "std_population": 0.002993741137773904,
+          "minimum": 0.06511,
+          "maximum": 0.07349499999999987
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.11656919999999982,
+          "std_population": 0.02860045228593421,
+          "minimum": 0.07041399999999999,
+          "maximum": 0.15683199999999997
+        },
+        "batch_32_samples_per_second": {
+          "mean": 547202.1636133095,
+          "std_population": 24373.955649025338,
+          "minimum": 512389.41595612664,
+          "maximum": 584736.548775251
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "FP32-FT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 314149.0,
+          "std_population": 0.0,
+          "minimum": 314149.0,
+          "maximum": 314149.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 104397.0,
+          "std_population": 0.0,
+          "minimum": 104397.0,
+          "maximum": 104397.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 1794867.2,
+          "std_population": 5433.958056518288,
+          "minimum": 1785856.0,
+          "maximum": 1802240.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 2146304.0,
+          "std_population": 39457.897115786596,
+          "minimum": 2117632.0,
+          "maximum": 2224128.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.04038,
+          "std_population": 0.0024555243839147656,
+          "minimum": 0.0371,
+          "maximum": 0.0435
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.06195599999999999,
+          "std_population": 0.0074137746121661855,
+          "minimum": 0.050705,
+          "maximum": 0.07044999999999996
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.12086779999999993,
+          "std_population": 0.03579302997176966,
+          "minimum": 0.07254099999999995,
+          "maximum": 0.17667299999999994
+        },
+        "batch_1_samples_per_second": {
+          "mean": 22641.026293119277,
+          "std_population": 1176.341240747696,
+          "minimum": 21056.089210438768,
+          "maximum": 23983.691090058757
+        },
+        "batch_32_median_ms": {
+          "mean": 0.05704,
+          "std_population": 0.0019925862591115106,
+          "minimum": 0.0538,
+          "maximum": 0.0597
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.069059,
+          "std_population": 0.006384315468395965,
+          "minimum": 0.0621,
+          "maximum": 0.08061
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.1354553999999995,
+          "std_population": 0.043715762514681344,
+          "minimum": 0.07321299999999999,
+          "maximum": 0.19305099999999994
+        },
+        "batch_32_samples_per_second": {
+          "mean": 534397.3785229261,
+          "std_population": 17913.719500571908,
+          "minimum": 507948.6019508401,
+          "maximum": 557996.7915184487
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-noFT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 77699.0,
+          "std_population": 0.0,
+          "minimum": 77699.0,
+          "maximum": 77699.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 71501.0,
+          "std_population": 0.0,
+          "minimum": 71501.0,
+          "maximum": 71501.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 4027187.2,
+          "std_population": 10805.990161017176,
+          "minimum": 4009984.0,
+          "maximum": 4038656.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 1384448.0,
+          "std_population": 85173.16595266375,
+          "minimum": 1306624.0,
+          "maximum": 1531904.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.04132,
+          "std_population": 0.001802942040111106,
+          "minimum": 0.038650000000000004,
+          "maximum": 0.04355
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.06565199999999996,
+          "std_population": 0.010832569224334556,
+          "minimum": 0.05167499999999993,
+          "maximum": 0.07811999999999998
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.11135299999999988,
+          "std_population": 0.020524030081833265,
+          "minimum": 0.09401899999999998,
+          "maximum": 0.14978699999999973
+        },
+        "batch_1_samples_per_second": {
+          "mean": 22200.02739950923,
+          "std_population": 1674.0309224546263,
+          "minimum": 20453.996915537264,
+          "maximum": 24238.31107448433
+        },
+        "batch_32_median_ms": {
+          "mean": 0.052110000000000004,
+          "std_population": 0.004354583791822128,
+          "minimum": 0.047,
+          "maximum": 0.059
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.06849699999999999,
+          "std_population": 0.01082470489205133,
+          "minimum": 0.055889999999999974,
+          "maximum": 0.08541
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.11229279999999983,
+          "std_population": 0.017553117676355933,
+          "minimum": 0.08742899999999998,
+          "maximum": 0.13556099999999996
+        },
+        "batch_32_samples_per_second": {
+          "mean": 581034.4864529131,
+          "std_population": 44916.890777129585,
+          "minimum": 508554.03783959884,
+          "maximum": 642234.9777224741
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-FP32-FT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 215781.0,
+          "std_population": 0.0,
+          "minimum": 215781.0,
+          "maximum": 215781.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 71501.0,
+          "std_population": 0.0,
+          "minimum": 71501.0,
+          "maximum": 71501.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 4208230.4,
+          "std_population": 49056.33356703291,
+          "minimum": 4173824.0,
+          "maximum": 4304896.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 1359872.0,
+          "std_population": 34073.20570771115,
+          "minimum": 1318912.0,
+          "maximum": 1417216.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.0407,
+          "std_population": 0.001248999599679678,
+          "minimum": 0.0391,
+          "maximum": 0.0428
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.06135099999999999,
+          "std_population": 0.010585243218745613,
+          "minimum": 0.05060999999999999,
+          "maximum": 0.077705
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.11904099999999995,
+          "std_population": 0.051292611386046655,
+          "minimum": 0.07266499999999984,
+          "maximum": 0.21711999999999998
+        },
+        "batch_1_samples_per_second": {
+          "mean": 22990.17172663265,
+          "std_population": 1675.7379948840307,
+          "minimum": 19888.465485556997,
+          "maximum": 24383.583021223472
+        },
+        "batch_32_median_ms": {
+          "mean": 0.05105,
+          "std_population": 0.0033108911187171358,
+          "minimum": 0.0479,
+          "maximum": 0.057
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.06753499999999998,
+          "std_population": 0.005172499395843374,
+          "minimum": 0.06146499999999998,
+          "maximum": 0.07561
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.11976999999999952,
+          "std_population": 0.01586802562387625,
+          "minimum": 0.1021119999999999,
+          "maximum": 0.14404199999999967
+        },
+        "batch_32_samples_per_second": {
+          "mean": 588555.9458143262,
+          "std_population": 27671.857522547234,
+          "minimum": 539501.6353643322,
+          "maximum": 625311.4344058076
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 49091.0,
+          "std_population": 0.0,
+          "minimum": 49091.0,
+          "maximum": 49091.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 43597.0,
+          "std_population": 0.0,
+          "minimum": 43597.0,
+          "maximum": 43597.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 3860889.6,
+          "std_population": 3276.8,
+          "minimum": 3854336.0,
+          "maximum": 3862528.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 1354137.6,
+          "std_population": 30054.70527953984,
+          "minimum": 1314816.0,
+          "maximum": 1392640.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.04007,
+          "std_population": 0.0026673207531153786,
+          "minimum": 0.0362,
+          "maximum": 0.04355
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.05858799999999995,
+          "std_population": 0.010767660655871336,
+          "minimum": 0.045834999999999966,
+          "maximum": 0.0750049999999999
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.1041233999999999,
+          "std_population": 0.013908099548105103,
+          "minimum": 0.07914099999999978,
+          "maximum": 0.120817
+        },
+        "batch_1_samples_per_second": {
+          "mean": 23080.571385832296,
+          "std_population": 1894.725699257549,
+          "minimum": 21054.58189811267,
+          "maximum": 25985.77019224273
+        },
+        "batch_32_median_ms": {
+          "mean": 0.046340000000000006,
+          "std_population": 0.0014308738588708653,
+          "minimum": 0.04395,
+          "maximum": 0.048100000000000004
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.057247999999999945,
+          "std_population": 0.005192535604114775,
+          "minimum": 0.05301999999999999,
+          "maximum": 0.06714999999999988
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.11084759999999956,
+          "std_population": 0.04535025214306987,
+          "minimum": 0.06079099999999919,
+          "maximum": 0.1809529999999996
+        },
+        "batch_32_samples_per_second": {
+          "mean": 656150.7296020035,
+          "std_population": 28604.22967063589,
+          "minimum": 616148.8769723985,
+          "maximum": 694097.997961087
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-FP32-FT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 132453.0,
+          "std_population": 0.0,
+          "minimum": 132453.0,
+          "maximum": 132453.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 43597.0,
+          "std_population": 0.0,
+          "minimum": 43597.0,
+          "maximum": 43597.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 3895296.0,
+          "std_population": 2590.5378592099364,
+          "minimum": 3891200.0,
+          "maximum": 3899392.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 1372979.2,
+          "std_population": 77473.97496036976,
+          "minimum": 1331200.0,
+          "maximum": 1527808.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.03866000000000001,
+          "std_population": 0.001580632784678339,
+          "minimum": 0.0374,
+          "maximum": 0.0417
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.048155999999999984,
+          "std_population": 0.0035528050889402822,
+          "minimum": 0.04410999999999999,
+          "maximum": 0.05381999999999998
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.09904299999999985,
+          "std_population": 0.004174347469964594,
+          "minimum": 0.09553799999999997,
+          "maximum": 0.10617999999999993
+        },
+        "batch_1_samples_per_second": {
+          "mean": 24683.194631409493,
+          "std_population": 849.9522262592931,
+          "minimum": 23589.467774428074,
+          "maximum": 25438.301942468737
+        },
+        "batch_32_median_ms": {
+          "mean": 0.04561,
+          "std_population": 0.002354017841903495,
+          "minimum": 0.042050000000000004,
+          "maximum": 0.0486
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.05388899999999998,
+          "std_population": 0.0036423610474525846,
+          "minimum": 0.04822999999999999,
+          "maximum": 0.057384999999999936
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.09454699999999978,
+          "std_population": 0.03372952998783116,
+          "minimum": 0.05687399999999939,
+          "maximum": 0.13798199999999966
+        },
+        "batch_32_samples_per_second": {
+          "mean": 680229.5377788424,
+          "std_population": 31329.065136967907,
+          "minimum": 645538.7222367917,
+          "maximum": 730860.5883427736
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "DQ",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 33593.0,
+          "std_population": 0.0,
+          "minimum": 33593.0,
+          "maximum": 33593.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 32051.0,
+          "std_population": 0.0,
+          "minimum": 32051.0,
+          "maximum": 32051.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 4458905.6,
+          "std_population": 21299.2,
+          "minimum": 4431872.0,
+          "maximum": 4485120.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 7186022.4,
+          "std_population": 189704.50550432375,
+          "minimum": 6881280.0,
+          "maximum": 7458816.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.16024,
+          "std_population": 0.004842148283561752,
+          "minimum": 0.15505,
+          "maximum": 0.16805
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.2279939999999999,
+          "std_population": 0.009477156957653478,
+          "minimum": 0.21087499999999992,
+          "maximum": 0.238105
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.39395559999999985,
+          "std_population": 0.06077648199624576,
+          "minimum": 0.33724099999999996,
+          "maximum": 0.5095229999999996
+        },
+        "batch_1_samples_per_second": {
+          "mean": 5873.951967921428,
+          "std_population": 182.19980328121318,
+          "minimum": 5551.897471999006,
+          "maximum": 6046.936319713617
+        },
+        "batch_32_median_ms": {
+          "mean": 0.23081000000000002,
+          "std_population": 0.007287619638812117,
+          "minimum": 0.221,
+          "maximum": 0.23965
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.34076099999999987,
+          "std_population": 0.05045246529159901,
+          "minimum": 0.2773099999999997,
+          "maximum": 0.40927499999999983
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.5595621999999995,
+          "std_population": 0.08963228410656489,
+          "minimum": 0.44548999999999994,
+          "maximum": 0.680958999999999
+        },
+        "batch_32_samples_per_second": {
+          "mean": 129247.62388063656,
+          "std_population": 4618.639509319313,
+          "minimum": 121335.0648858218,
+          "maximum": 135425.94634170082
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "QAT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 40277.0,
+          "std_population": 0.0,
+          "minimum": 40277.0,
+          "maximum": 40277.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 38293.0,
+          "std_population": 0.0,
+          "minimum": 38293.0,
+          "maximum": 38293.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 6417612.8,
+          "std_population": 69578.97275010604,
+          "minimum": 6356992.0,
+          "maximum": 6524928.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 6545408.0,
+          "std_population": 458700.79714253824,
+          "minimum": 5873664.0,
+          "maximum": 7299072.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.13618999999999998,
+          "std_population": 0.0035238331402040056,
+          "minimum": 0.13055,
+          "maximum": 0.14045000000000002
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.21350799999999986,
+          "std_population": 0.01195305341743271,
+          "minimum": 0.19742999999999988,
+          "maximum": 0.22891499999999998
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.3418717999999996,
+          "std_population": 0.025981984430755063,
+          "minimum": 0.30858799999999964,
+          "maximum": 0.37407899999999983
+        },
+        "batch_1_samples_per_second": {
+          "mean": 6779.133555259012,
+          "std_population": 158.32426438334497,
+          "minimum": 6536.862018609139,
+          "maximum": 6930.304697776342
+        },
+        "batch_32_median_ms": {
+          "mean": 0.24238000000000004,
+          "std_population": 0.004764409722095698,
+          "minimum": 0.2333,
+          "maximum": 0.24735000000000001
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.3549939999999997,
+          "std_population": 0.0189555449407291,
+          "minimum": 0.33384499999999956,
+          "maximum": 0.38533499999999965
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.48959819999999976,
+          "std_population": 0.04074917900228178,
+          "minimum": 0.44915099999999963,
+          "maximum": 0.5641339999999997
+        },
+        "batch_32_samples_per_second": {
+          "mean": 124785.87654495964,
+          "std_population": 1960.7489444526182,
+          "minimum": 122870.87806601237,
+          "maximum": 127312.00592000828
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-QAT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 30997.0,
+          "std_population": 0.0,
+          "minimum": 30997.0,
+          "maximum": 30997.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 29013.0,
+          "std_population": 0.0,
+          "minimum": 29013.0,
+          "maximum": 29013.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 7728332.8,
+          "std_population": 338165.91875965265,
+          "minimum": 7053312.0,
+          "maximum": 7933952.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 6166937.6,
+          "std_population": 150777.31516590947,
+          "minimum": 6012928.0,
+          "maximum": 6443008.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.13628,
+          "std_population": 0.009490500513671552,
+          "minimum": 0.1182,
+          "maximum": 0.1455
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.18874699999999991,
+          "std_population": 0.019640577282758222,
+          "minimum": 0.1636199999999999,
+          "maximum": 0.21928999999999982
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.32410679999999986,
+          "std_population": 0.02986455347330688,
+          "minimum": 0.26555299999999965,
+          "maximum": 0.3463819999999999
+        },
+        "batch_1_samples_per_second": {
+          "mean": 6974.2843153529,
+          "std_population": 545.135113357596,
+          "minimum": 6505.22434567201,
+          "maximum": 8025.669300691332
+        },
+        "batch_32_median_ms": {
+          "mean": 0.23148,
+          "std_population": 0.016201870262411062,
+          "minimum": 0.201,
+          "maximum": 0.24685
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.3442979999999998,
+          "std_population": 0.03261907947812142,
+          "minimum": 0.3026149999999998,
+          "maximum": 0.3856399999999998
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.4798517999999996,
+          "std_population": 0.09702400658063944,
+          "minimum": 0.3694119999999999,
+          "maximum": 0.6467479999999994
+        },
+        "batch_32_samples_per_second": {
+          "mean": 131572.78763373004,
+          "std_population": 10522.359756611719,
+          "minimum": 123531.37600441625,
+          "maximum": 151704.0632985204
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-QAT",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 23061.0,
+          "std_population": 0.0,
+          "minimum": 23061.0,
+          "maximum": 23061.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 20949.0,
+          "std_population": 0.0,
+          "minimum": 20949.0,
+          "maximum": 20949.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 7452262.4,
+          "std_population": 45212.122239947996,
+          "minimum": 7413760.0,
+          "maximum": 7540736.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 5808947.2,
+          "std_population": 261264.44444080026,
+          "minimum": 5365760.0,
+          "maximum": 6090752.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.14221,
+          "std_population": 0.010430071907709936,
+          "minimum": 0.13375,
+          "maximum": 0.162
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.19055799999999995,
+          "std_population": 0.021072332239218342,
+          "minimum": 0.15913999999999995,
+          "maximum": 0.20992
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.2810659999999999,
+          "std_population": 0.04313916721495673,
+          "minimum": 0.22437699999999985,
+          "maximum": 0.35339399999999976
+        },
+        "batch_1_samples_per_second": {
+          "mean": 6708.006588814329,
+          "std_population": 388.89962606863435,
+          "minimum": 6074.972449999939,
+          "maximum": 7274.293229669805
+        },
+        "batch_32_median_ms": {
+          "mean": 0.23087999999999997,
+          "std_population": 0.008792360320187063,
+          "minimum": 0.21825,
+          "maximum": 0.2455
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.34429699999999985,
+          "std_population": 0.023318324682532313,
+          "minimum": 0.3112,
+          "maximum": 0.3771849999999996
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.5060839999999998,
+          "std_population": 0.04986325948832484,
+          "minimum": 0.4199229999999994,
+          "maximum": 0.5633279999999998
+        },
+        "batch_32_samples_per_second": {
+          "mean": 130032.86360280805,
+          "std_population": 4137.5339345810735,
+          "minimum": 123616.79565950527,
+          "maximum": 136626.60376150117
+        }
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "PTQ",
+      "run_count": 5,
+      "statistics": {
+        "checkpoint_file_bytes": {
+          "mean": 40309.0,
+          "std_population": 0.0,
+          "minimum": 40309.0,
+          "maximum": 40309.0
+        },
+        "serialized_state_dict_bytes": {
+          "mean": 38293.0,
+          "std_population": 0.0,
+          "minimum": 38293.0,
+          "maximum": 38293.0
+        },
+        "model_load_RSS_delta_bytes": {
+          "mean": 6751846.4,
+          "std_population": 34230.40703000769,
+          "minimum": 6701056.0,
+          "maximum": 6791168.0
+        },
+        "peak_inference_RSS_delta_bytes": {
+          "mean": 6359449.6,
+          "std_population": 437284.0183759749,
+          "minimum": 5849088.0,
+          "maximum": 7004160.0
+        },
+        "batch_1_median_ms": {
+          "mean": 0.13831000000000002,
+          "std_population": 0.004712685009630923,
+          "minimum": 0.1303,
+          "maximum": 0.14485
+        },
+        "batch_1_p95_ms": {
+          "mean": 0.1888459999999999,
+          "std_population": 0.012825383581008445,
+          "minimum": 0.17586499999999997,
+          "maximum": 0.20553999999999994
+        },
+        "batch_1_p99_ms": {
+          "mean": 0.3118729999999999,
+          "std_population": 0.0319193743673023,
+          "minimum": 0.27187199999999995,
+          "maximum": 0.3634679999999998
+        },
+        "batch_1_samples_per_second": {
+          "mean": 6815.223915474718,
+          "std_population": 202.98049319395037,
+          "minimum": 6616.81119987931,
+          "maximum": 7160.1027617948375
+        },
+        "batch_32_median_ms": {
+          "mean": 0.23318000000000003,
+          "std_population": 0.00549850888878066,
+          "minimum": 0.2257,
+          "maximum": 0.2413
+        },
+        "batch_32_p95_ms": {
+          "mean": 0.3387939999999997,
+          "std_population": 0.021015326169250823,
+          "minimum": 0.3116699999999998,
+          "maximum": 0.36737499999999984
+        },
+        "batch_32_p99_ms": {
+          "mean": 0.5590245999999991,
+          "std_population": 0.0709429129782528,
+          "minimum": 0.449939,
+          "maximum": 0.6513549999999998
+        },
+        "batch_32_samples_per_second": {
+          "mean": 127916.53885021154,
+          "std_population": 3718.585248683731,
+          "minimum": 123501.10186139318,
+          "maximum": 132554.30066215014
+        }
+      },
+      "all_checks_passed": true
+    }
+  ],
+  "source_artifacts": {
+    "protocol": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase6_deployment_benchmark_protocol_v3_2.json",
+      "size_bytes": 3406,
+      "sha256": "5cd3ef9080f15824ce5b6afe4705cc65d812f2bfa65ddb6d531669363b5a6f31"
+    },
+    "preflight_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_preflight_locked_v3_2.json",
+      "size_bytes": 1111,
+      "sha256": "e6ace2c5198a9b4d26ca45a9e56b9cd63cb264451800535ac8060e9d1ce2e748"
+    },
+    "loader_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_loader_smoke_test_locked_v3_2.json",
+      "size_bytes": 840,
+      "sha256": "a2fa8f4b5cfc0c173665ccbfbfd23a3756f9a9f795c91b4f9032811a3721b372"
+    },
+    "locked_matrix": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+      "size_bytes": 42063,
+      "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+    },
+    "all_runs_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_all_runs_v3_2.csv",
+      "size_bytes": 67445,
+      "sha256": "a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250"
+    },
+    "group_summary_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_group_summary_v3_2.csv",
+      "size_bytes": 7065,
+      "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf"
+    },
+    "summary_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_summary_v3_2.json",
+      "size_bytes": 1912,
+      "sha256": "da9a34e01207cfb98d1edb4064e0a0a0b0f3fe3adfcb199f4a73d5bb663b6016"
+    },
+    "completion_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_completed_v3_2.json",
+      "size_bytes": 1128,
+      "sha256": "d4fd0513da9dab4e78a562d37f61b8a7a5e17a66c81ff4681c0b3c0e58400366"
+    }
+  },
+  "ready_for_predeclared_statistics": true,
+  "ready_for_final_model_selection": false,
+  "all_checks_passed": true
+}

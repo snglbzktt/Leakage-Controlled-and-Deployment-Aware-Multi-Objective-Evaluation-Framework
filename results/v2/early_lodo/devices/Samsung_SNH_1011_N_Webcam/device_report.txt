@@ -1,0 +1,44 @@
+======================================================================================
+EARLY LODO DEVICE COMPLETION SUMMARY
+======================================================================================
+
+Held-out device       : Samsung_SNH_1011_N_Webcam
+Completed models      : 3/3
+Train fingerprints    : 1,486,393
+Validation fingerprints: 318,155
+Test fingerprints     : 359,368
+Test record count     : 375,222
+
+MODEL COMPARISON
+rank=1 | compact_dnn_b0 | Macro-F1=0.993996951 | Accuracy=0.986039380 | Gafgyt FNR=0.01611315358817852 | Mirai FNR=None | seconds=84.019 | local_severe=False
+rank=2 | tinyml_mlp_b0 | Macro-F1=0.993494249 | Accuracy=0.988112464 | Gafgyt FNR=0.013734268533193032 | Mirai FNR=None | seconds=39.755 | local_severe=False
+rank=3 | hist_gradient_boosting_b0 | Macro-F1=0.992206735 | Accuracy=0.977282340 | Gafgyt FNR=0.02635171993066696 | Mirai FNR=None | seconds=38.379 | local_severe=False
+
+DEVICE STATISTICS
+Mean Macro-F1        : 0.993232645
+Median Macro-F1      : 0.993494249
+Minimum Macro-F1     : 0.992206735
+Maximum Macro-F1     : 0.993996951
+Maximum attack FNR   : 0.026351720
+Local severe cells   : 0
+
+VALIDATION CHECKS
+protocol_locked: True
+exactly_three_device_runs: True
+expected_models_registered: True
+all_runs_seed_2026: True
+three_model_results_loaded: True
+three_lock_summaries_loaded: True
+three_run_results_loaded: True
+all_locks_locked: True
+all_results_completed: True
+lock_identities_match: True
+execution_ledger_has_three_rows: True
+execution_ledger_matches: True
+cache_validated: True
+cache_manifest_nonempty: True
+all_test_counts_identical: True
+all_test_class_counts_identical: True
+all_primary_metrics_valid: True
+all_fnr_values_valid: True
+ranking_contains_three_models: True

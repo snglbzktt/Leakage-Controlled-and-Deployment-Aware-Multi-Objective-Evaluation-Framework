@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "compact_dnn__p50__seed_123",
+  "architecture": "compact_dnn",
+  "variant": "P50",
+  "canonical_report_name": "P50-FP32-FT",
+  "source_variant": "P50-noFT",
+  "seed": 123,
+  "best_epoch": 8,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "test_predictions_sha256": "60d8739582253771b47c3d8aa6e8a4ee666282a63e70675134ee0846bcd8a6cd",
+  "metrics_sha256": "ffe38ac13b592843693833eb1c8ac77f533f811b909730db4af1f64fb978b089",
+  "run_manifest_sha256": "72b07541dd816aef292610e42237c946466e6a30d83a3dc00c56d5d503f6ed96",
+  "fragility_gate_triggered": false,
+  "completed_at_utc": "2026-08-06T18:34:00.233551+00:00"
+}

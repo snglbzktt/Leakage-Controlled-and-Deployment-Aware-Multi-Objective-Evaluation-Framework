@@ -1,0 +1,28 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "selected_PTQ_test_evaluation",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "PTQ_engine_version": "phase5_ptq_engine_v3_2",
+  "locked_at_utc": "2026-08-06T20:49:02.238738+00:00",
+  "run_count": 10,
+  "group_count": 2,
+  "selected_calibration_sizes": {
+    "tinyml_mlp": 4096,
+    "compact_dnn": 16384
+  },
+  "test_evaluation_count_per_run": 1,
+  "test_model_inference_repeated_by_verifier": false,
+  "verified_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_verified_runs_v3_2.csv",
+  "verified_runs_csv_sha256": "c4531d8ace32f4cdff927c92f07135e6b1e9d023224c6f9d12b3038a5382e35a",
+  "verification_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_verification_v3_2.json",
+  "verification_report_sha256": "4063663025d84955712d6e2cfa80b2b5cb0e26fed971040856c96ceb5f1fb5f8",
+  "selected_test_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_all_runs_v3_2.csv",
+  "selected_test_runs_csv_sha256": "b44b0691c6e8b51e575c5a5150cf212cfd106e706716db3994470727c2193d50",
+  "selected_test_group_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_group_summary_v3_2.csv",
+  "selected_test_group_csv_sha256": "c16f58e433cb12d63355d148c4c2b3aa4cc315edf7b0e31e4847b486409cdb09",
+  "selected_test_summary_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_summary_v3_2.json",
+  "selected_test_summary_json_sha256": "118c8f0f1e5f80ec403ebab950bc8c3281eec377f5b1fba411e89b32fd6b5d60",
+  "ready_for_phase5_compression_matrix_closure": true,
+  "all_checks_passed": true
+}

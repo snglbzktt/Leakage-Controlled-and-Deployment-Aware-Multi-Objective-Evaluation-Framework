@@ -1,0 +1,84 @@
+{
+  "status": "generated",
+  "phase": 13,
+  "asset_id": "figure_03_compression_tradeoff",
+  "generated_at_utc": "2026-08-07T07:39:29.985635+00:00",
+  "title": "Compression-Accuracy Trade-off",
+  "source_files": [
+    {
+      "source_id": "phase5_group_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_group_summary_v3_2.csv",
+      "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+    },
+    {
+      "source_id": "phase6_group_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_group_summary_v3_2.csv",
+      "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf"
+    }
+  ],
+  "outputs": {
+    "png": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_03_compression_tradeoff_v3_3.png",
+      "sha256": "1083c68f8b0f3f291f5ec23d60d0111a7482bdf6c4641c06b89ad063e57126b1",
+      "size_bytes": 143888
+    },
+    "svg": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_03_compression_tradeoff_v3_3.svg",
+      "sha256": "9f2283baba7a7f192babf9f303a59e95e1208563eae67494581ac2dd0835b780",
+      "size_bytes": 67799
+    },
+    "source_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\figure_03_compression_tradeoff_source_v3_3.csv",
+      "sha256": "39c6d1569281e6e046f4e6f50ebafedfa9f063d1312350ad32dbdab541ab293a",
+      "size_bytes": 4358
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\figure_03_compression_tradeoff_caption_v3_3.txt",
+      "sha256": "a2ba3ee4db2b292c484bbd090698ee10096c65b8af838883cd94fe5df90b5117",
+      "size_bytes": 484
+    }
+  },
+  "group_count": 22,
+  "architecture_counts": {
+    "tinyml_mlp": 11,
+    "compact_dnn": 11
+  },
+  "best_macro_f1_group_by_architecture": {
+    "tinyml_mlp": {
+      "variant": "FP32-FT",
+      "mean_test_fingerprint_macro_f1": 0.9993869819740098,
+      "mean_state_size_kib": 40.2080078125
+    },
+    "compact_dnn": {
+      "variant": "FP32-FT",
+      "mean_test_fingerprint_macro_f1": 0.999259629566686,
+      "mean_state_size_kib": 101.9501953125
+    }
+  },
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_lock_hash_matches": true,
+    "mapping_validated": true,
+    "mapping_lock_hash_matches": true,
+    "figure_03_mapped": true
+  },
+  "data_checks": {
+    "phase5_rows_22": true,
+    "phase6_rows_22": true,
+    "phase5_unique_22": true,
+    "phase6_unique_22": true,
+    "exact_join_key_match": true
+  },
+  "post_merge_checks": {
+    "merged_rows_22": true,
+    "tinyml_groups_11": true,
+    "compact_groups_11": true,
+    "all_macro_f1_in_unit_interval": true,
+    "all_state_sizes_positive": true,
+    "all_latency_positive": true
+  },
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "all_checks_passed": true
+}

@@ -1,0 +1,100 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T14:44:18.583555+00:00",
+  "source_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_completed_v3_2.json",
+      "size_bytes": 1202,
+      "sha256": "21845a70b6bdf481c6d75d27dc1a44872f7f0092b3af0f100d5079da8e83788d"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_lock_manifest_v3_2.json",
+      "size_bytes": 5190,
+      "sha256": "f9a2ceb84b6839ccc8e16c973c7fa67ff360a23bd1800ea3a3599da596f17cb1"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preflight_inventory_v3_2.json",
+      "size_bytes": 55268,
+      "sha256": "9bdaa62d38c0d834018f3e75d825bb2a6e90de3e957881e76d47b2d6ac16ff59"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_planned_configuration_matrix_v3_2.csv",
+      "size_bytes": 12525,
+      "sha256": "39eac157dd5c601accc199f4d6c80414a42298b29fa8d007c79d9994f225a80b"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\manifest.json",
+      "size_bytes": 12247,
+      "sha256": "c50fd55a14727f28759f9a96766f2dbb1d78fecd9dfb38abf340fd8b152f2bd0"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_final_cache_verification_v3_2.json",
+      "size_bytes": 12958,
+      "sha256": "4d477a139445c75310233307adeae198e39cd1c1489a2a2cb978c5acfc1e3c18"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\architecture\\nbaiot_model_registry_v1.json",
+      "size_bytes": 3420,
+      "sha256": "fa7b482eb024725be113142576fffc0c5f347b7e07596fb04604200405300ac2"
+    }
+  ],
+  "legacy_reference_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json",
+      "exists": true,
+      "size_bytes": 5030,
+      "sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_structured_pruning_protocol_v1.json",
+      "exists": true,
+      "size_bytes": 2241,
+      "sha256": "f2bec24161421c6665c91aaf821c75f7f43485b7b32f49e68b64425f8a3f499b"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_quantization_protocol_v1.json",
+      "exists": true,
+      "size_bytes": 2668,
+      "sha256": "2f5b9e29501d598ba6830173ce601983672731d7599da2eabb56f2c794bcf086"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_pruning_qat_protocol_v1.json",
+      "exists": true,
+      "size_bytes": 2847,
+      "sha256": "b34b2c23b9ba10958e7d788f53bddbc26a1df7900dd0ba5d6f144840ce0e8ae8"
+    }
+  ],
+  "generated_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase5_fair_budget_compression_protocol_v3_2.json",
+      "size_bytes": 21842,
+      "sha256": "1681aaa46ce286f498367a6c8a2ccb4c711c091fbb053ec4aa48f9bd1d10ab03"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_locked_configuration_matrix_v3_2.csv",
+      "size_bytes": 43039,
+      "sha256": "424bb76cd67006b930579182e08dc5f005bf86ae4adc75df04e0609df06aeed7"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_predeclared_comparisons_v3_2.csv",
+      "size_bytes": 4802,
+      "sha256": "74867f0806e428c44c3313f488ecc758c8dee44170b485230e5b6bccfa45eea9"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_protocol_locked_v3_2.json",
+      "size_bytes": 1398,
+      "sha256": "40a556f7e1555824d6b238aaedb5800f64c4a579e12bc6cc87668068859cfc88"
+    }
+  ],
+  "configuration_count": 110,
+  "immediate_phase5_test_count": 100,
+  "PTQ_test_count_deferred": 10,
+  "all_checks_passed": true
+}

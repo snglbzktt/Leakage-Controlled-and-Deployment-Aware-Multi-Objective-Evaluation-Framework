@@ -1,0 +1,105 @@
+{
+  "status": "passed",
+  "phase": 6,
+  "artifact_name": "deployment_loader_smoke_test",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "verified_at_utc": "2026-08-06T21:01:45.035985+00:00",
+  "run_count": 110,
+  "group_count": 22,
+  "smoke_batch_sizes": [
+    1,
+    32
+  ],
+  "input_policy": {
+    "source_split": "train_only",
+    "start_index": 2026,
+    "validation_data_access": false,
+    "test_data_access": false
+  },
+  "runtime_policy": {
+    "cpu_threads": 1,
+    "interop_threads": 1,
+    "deterministic_algorithms": true,
+    "strict_state_loading": true
+  },
+  "representation_counts": {
+    "static_int8": 40,
+    "float32": 60,
+    "dynamic_int8": 10
+  },
+  "entry_checks": {
+    "preflight_locked": true,
+    "phase6_matrix_hash_matches": true,
+    "phase6_matrix_110": true,
+    "phase5_matrix_110": true
+  },
+  "global_checks": {
+    "run_count_110": true,
+    "configuration_matrix_exact": true,
+    "all_strict_loads_passed": true,
+    "all_batch_1_passed": true,
+    "all_batch_32_passed": true,
+    "validation_access_zero": true,
+    "test_access_zero": true,
+    "all_checks_passed": true
+  },
+  "smoke_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_loader_smoke_matrix_v3_2.csv",
+    "size_bytes": 55534,
+    "sha256": "859608fcc4c59aaa558457ee081c586fb86bfb22d15b154bc81d5537519a7305"
+  },
+  "source_artifacts": {
+    "phase6_preflight_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_preflight_locked_v3_2.json",
+      "size_bytes": 1111,
+      "sha256": "e6ace2c5198a9b4d26ca45a9e56b9cd63cb264451800535ac8060e9d1ce2e748"
+    },
+    "phase6_locked_matrix": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+      "size_bytes": 42063,
+      "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+    },
+    "phase5_master_matrix": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv",
+      "size_bytes": 48909,
+      "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+    },
+    "B0_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_checkpoint_registry_v3_2.csv",
+      "size_bytes": 9616,
+      "sha256": "af2f62797979caa86d02fffb6ed3ca18e038d54550d89b559161832f7ae290ef"
+    },
+    "pruning_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_source_checkpoint_registry_v3_2.csv",
+      "size_bytes": 20143,
+      "sha256": "8c8ee86e88eba63858ae562183716323a3a972e29948a0f8f8dc83e15436deef"
+    },
+    "model_source": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+    },
+    "pruning_engine": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_physical_pruning_engine_v3_2.py",
+      "size_bytes": 11014,
+      "sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3"
+    },
+    "QAT_engine": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_qat_engine_v3_2.py",
+      "size_bytes": 5822,
+      "sha256": "d1e33943a31bd1b3e2ea83a64daee9a31a8b5a8616c97346c62fff3c03503273"
+    },
+    "PTQ_engine": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_ptq_engine_v3_2.py",
+      "size_bytes": 5364,
+      "sha256": "ccf19215d474accba0e4509659f7bdd3868a5ddb4a125e51c6e60527062ac428"
+    },
+    "scaler": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_standard_scaler_v3_2.npz",
+      "size_bytes": 5361,
+      "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+    }
+  },
+  "ready_for_isolated_deployment_benchmark": true,
+  "all_checks_passed": true
+}

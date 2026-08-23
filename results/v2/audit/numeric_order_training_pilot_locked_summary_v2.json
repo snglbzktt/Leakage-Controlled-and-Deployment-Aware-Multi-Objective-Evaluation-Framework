@@ -1,0 +1,102 @@
+{
+  "protocol_version": "numeric_order_training_pilot_release_v2_1",
+  "status": "locked_complete",
+  "locked_at": "2026-08-05T18:05:54.179272+00:00",
+  "objective": "Determine whether the source-float64 standardization order materially changes family-3 model performance.",
+  "run_count": 8,
+  "paired_count": 4,
+  "models": [
+    "tinyml_mlp",
+    "compact_dnn"
+  ],
+  "training_seeds": [
+    42,
+    123
+  ],
+  "computed_validation_deltas_b_minus_a": [
+    -0.0004392427617118111,
+    -0.0002660031281023212,
+    2.0280746647061143e-05,
+    -1.2752898719492478e-05
+  ],
+  "computed_median_validation_delta_b_minus_a": -0.00013937801341090683,
+  "pipeline_a_win_count": 3,
+  "pipeline_b_win_count": 1,
+  "practical_equivalence_margin": 0.001,
+  "decision": "practically_equivalent_retain_pipeline_a",
+  "selected_pipeline": "pipeline_a",
+  "decision_interpretation": "The two numeric processing orders are practically equivalent under the locked validation rule. Pipeline A is retained for continuity with the current model-facing pipeline and its lower split overlap in the no-training audit.",
+  "selection_used_test_metrics": false,
+  "pair_details": [
+    {
+      "model_name": "tinyml_mlp",
+      "seed": 42,
+      "pipeline_a_validation_macro_f1": 0.9996039392200209,
+      "pipeline_b_validation_macro_f1": 0.9991646964583091,
+      "validation_delta_b_minus_a": -0.0004392427617118111,
+      "pipeline_a_test_macro_f1": 0.9996450707940131,
+      "pipeline_b_test_macro_f1": 0.999288329678675,
+      "test_delta_b_minus_a": -0.0003567411153381217,
+      "initialization_match": true,
+      "winner": "pipeline_a"
+    },
+    {
+      "model_name": "tinyml_mlp",
+      "seed": 123,
+      "pipeline_a_validation_macro_f1": 0.9995753470279424,
+      "pipeline_b_validation_macro_f1": 0.99930934389984,
+      "validation_delta_b_minus_a": -0.0002660031281023212,
+      "pipeline_a_test_macro_f1": 0.99959935359422,
+      "pipeline_b_test_macro_f1": 0.9993434127009219,
+      "test_delta_b_minus_a": -0.0002559408932981677,
+      "initialization_match": true,
+      "winner": "pipeline_a"
+    },
+    {
+      "model_name": "compact_dnn",
+      "seed": 42,
+      "pipeline_a_validation_macro_f1": 0.9993981812769102,
+      "pipeline_b_validation_macro_f1": 0.9994184620235572,
+      "validation_delta_b_minus_a": 2.0280746647061143e-05,
+      "pipeline_a_test_macro_f1": 0.9994882638698367,
+      "pipeline_b_test_macro_f1": 0.9995119434617846,
+      "test_delta_b_minus_a": 2.3679591947933787e-05,
+      "initialization_match": true,
+      "winner": "pipeline_b"
+    },
+    {
+      "model_name": "compact_dnn",
+      "seed": 123,
+      "pipeline_a_validation_macro_f1": 0.9994782552480442,
+      "pipeline_b_validation_macro_f1": 0.9994655023493247,
+      "validation_delta_b_minus_a": -1.2752898719492478e-05,
+      "pipeline_a_test_macro_f1": 0.9995199492386164,
+      "pipeline_b_test_macro_f1": 0.9995199467704537,
+      "test_delta_b_minus_a": -2.4681626742406593e-09,
+      "initialization_match": true,
+      "winner": "pipeline_a"
+    }
+  ],
+  "validation_checks": {
+    "protocol_locked_before_training": true,
+    "protocol_run_count": true,
+    "cache_checks_passed": true,
+    "smoke_checks_passed": true,
+    "pilot_status_completed": true,
+    "pilot_checks_passed": true,
+    "run_count": true,
+    "paired_count": true,
+    "run_matrix_complete": true,
+    "all_initializations_match": true,
+    "all_test_evaluated_once": true,
+    "median_matches_summary": true,
+    "pipeline_a_wins_match": true,
+    "pipeline_b_wins_match": true,
+    "equivalence_margin": true,
+    "median_inside_equivalence_margin": true,
+    "decision_matches_protocol": true,
+    "selected_pipeline_a": true,
+    "test_not_used_for_selection": true
+  },
+  "all_checks_passed": true
+}

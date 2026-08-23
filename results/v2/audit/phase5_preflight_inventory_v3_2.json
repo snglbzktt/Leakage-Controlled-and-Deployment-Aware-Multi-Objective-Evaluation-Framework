@@ -1,0 +1,1540 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "phase_name": "fair_budget_compression_matrix",
+  "generated_at_utc": "2026-08-06T14:36:56.486626+00:00",
+  "entry_gate": {
+    "phase4_completed_and_locked": true,
+    "checks": {
+      "phase4_completion_locked": true,
+      "phase4_completion_all_checks": true,
+      "phase4_next_phase_ready": true,
+      "phase4_lock_manifest_locked": true,
+      "phase4_lock_all_checks": true,
+      "cache_verification_passed": true,
+      "cache_protocol_matches": true
+    }
+  },
+  "roadmap_scope": {
+    "architectures": [
+      "tinyml_mlp",
+      "compact_dnn"
+    ],
+    "core_variants": [
+      "B0",
+      "FP32-FT",
+      "P25-noFT",
+      "P25",
+      "P50-noFT",
+      "P50",
+      "DQ",
+      "PTQ",
+      "QAT",
+      "P25-QAT",
+      "P50-QAT"
+    ],
+    "seeds": [
+      42,
+      123,
+      2026,
+      3407,
+      8192
+    ],
+    "planned_configuration_count": 110,
+    "predeclared_comparisons": [
+      "QAT vs FP32-FT",
+      "P25 vs FP32-FT",
+      "P50 vs FP32-FT",
+      "P25-QAT vs P25-FP32-FT",
+      "P50-QAT vs P50-FP32-FT",
+      "P25-noFT vs P25",
+      "P50-noFT vs P50"
+    ],
+    "fp32_ft_budget": {
+      "source": "same matching B0 checkpoint",
+      "low_learning_rate": true,
+      "maximum_epochs": 8,
+      "early_stopping": true,
+      "pruning": false,
+      "fake_quantization": false
+    },
+    "pruning_no_ft_controls": [
+      "P25-noFT",
+      "P50-noFT"
+    ],
+    "pruning_equal_budget_controls_named_in_roadmap": [
+      "P25-FP32-FT",
+      "P50-FP32-FT"
+    ],
+    "naming_ambiguities": [
+      {
+        "issue": "Roadmap core variants contain P25 and P50, while predefined comparisons additionally name P25-FP32-FT and P50-FP32-FT.",
+        "resolution_status": "must_be_resolved_before_protocol_lock",
+        "silent_resolution_applied": false
+      }
+    ]
+  },
+  "final_cache": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2",
+    "manifest_sha256": "c50fd55a14727f28759f9a96766f2dbb1d78fecd9dfb38abf340fd8b152f2bd0",
+    "verification_sha256": "4d477a139445c75310233307adeae198e39cd1c1489a2a2cb978c5acfc1e3c18",
+    "split_inventory": [
+      {
+        "split": "train",
+        "fingerprint_rows": 1534583,
+        "feature_count": 115,
+        "x_dtype": "float32",
+        "represented_raw_rows": 4943823,
+        "all_checks_passed": true
+      },
+      {
+        "split": "validation",
+        "fingerprint_rows": 371797,
+        "feature_count": 115,
+        "x_dtype": "float32",
+        "represented_raw_rows": 1059390,
+        "all_checks_passed": true
+      },
+      {
+        "split": "test",
+        "fingerprint_rows": 371796,
+        "feature_count": 115,
+        "x_dtype": "float32",
+        "represented_raw_rows": 1059393,
+        "all_checks_passed": true
+      }
+    ],
+    "all_checks_passed": true
+  },
+  "environment": {
+    "python_version": "3.11.9",
+    "python_executable": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "logical_cpu_count": 20,
+    "free_disk_gib": 6.9033050537109375,
+    "package_versions": {
+      "torch": "2.11.0+cpu",
+      "torchvision": null,
+      "torchaudio": null,
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "pandas": "3.0.5",
+      "onnx": "1.22.0",
+      "onnxruntime": "1.27.0",
+      "torch-pruning": null
+    },
+    "torch_runtime": {
+      "importable": true,
+      "version": "2.11.0+cpu",
+      "cuda_available": false,
+      "cuda_device_count": 0,
+      "cuda_device_names": [],
+      "mps_available": false,
+      "quantized_engines": [
+        "onednn"
+      ],
+      "selected_quantized_engine": "onednn",
+      "thread_count": 14
+    },
+    "checks": {
+      "python_3_11": true,
+      "numpy_importable": true,
+      "torch_importable": true,
+      "model_source_exists": true,
+      "model_registry_exists": true,
+      "phase5_output_root_absent_or_empty": true
+    }
+  },
+  "neural_assets": {
+    "model_source": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+      "exists": true,
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+    },
+    "model_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\architecture\\nbaiot_model_registry_v1.json",
+      "exists": true,
+      "size_bytes": 3420,
+      "sha256": "fa7b482eb024725be113142576fffc0c5f347b7e07596fb04604200405300ac2",
+      "top_level_keys": [
+        "cnn_feature_order_note",
+        "dataset",
+        "generated_at_utc",
+        "input_feature_count",
+        "mac_definition",
+        "model_source_file",
+        "model_source_sha256",
+        "models",
+        "parameter_memory_note",
+        "primary_output_class_count",
+        "primary_task",
+        "primary_task_resource_statistics",
+        "registered_model_order",
+        "registry_status",
+        "registry_version"
+      ],
+      "dataset": "nbaiot_float32_canonical_seed2026",
+      "registry_status": "locked_before_training",
+      "registry_version": "1.0"
+    }
+  },
+  "legacy_inventory": {
+    "protocols": [
+      {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\architecture\\nbaiot_model_registry_v1.json",
+        "exists": true,
+        "size_bytes": 3420,
+        "sha256": "fa7b482eb024725be113142576fffc0c5f347b7e07596fb04604200405300ac2",
+        "top_level_keys": [
+          "cnn_feature_order_note",
+          "dataset",
+          "generated_at_utc",
+          "input_feature_count",
+          "mac_definition",
+          "model_source_file",
+          "model_source_sha256",
+          "models",
+          "parameter_memory_note",
+          "primary_output_class_count",
+          "primary_task",
+          "primary_task_resource_statistics",
+          "registered_model_order",
+          "registry_status",
+          "registry_version"
+        ],
+        "dataset": "nbaiot_float32_canonical_seed2026",
+        "registry_status": "locked_before_training",
+        "registry_version": "1.0"
+      },
+      {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json",
+        "exists": true,
+        "size_bytes": 5030,
+        "sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525",
+        "top_level_keys": [
+          "common_training_configuration",
+          "dataset",
+          "generated_at_utc",
+          "model_selection",
+          "model_specific_configuration",
+          "models",
+          "planned_run_count",
+          "protocol_change_policy",
+          "protocol_name",
+          "protocol_version",
+          "reporting_policy",
+          "seed_count",
+          "source_artifacts",
+          "status",
+          "target_classes",
+          "task",
+          "task_role",
+          "test_evaluation",
+          "training_seeds"
+        ],
+        "protocol_name": "N-BaIoT family_3 FP32 multi-seed baseline",
+        "protocol_version": "1.0",
+        "status": "locked_before_multi_seed_training",
+        "dataset": "nbaiot_float32_canonical_seed2026"
+      },
+      {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_structured_pruning_protocol_v1.json",
+        "exists": true,
+        "size_bytes": 2241,
+        "sha256": "f2bec24161421c6665c91aaf821c75f7f43485b7b32f49e68b64425f8a3f499b",
+        "top_level_keys": [
+          "fine_tuning",
+          "generated_at_utc",
+          "importance_method",
+          "mask_based_pruning",
+          "model_selection",
+          "models",
+          "physical_compaction",
+          "planned_run_count",
+          "protocol_name",
+          "protocol_version",
+          "pruning_names",
+          "pruning_ratios",
+          "source_artifacts",
+          "source_policy",
+          "status",
+          "task",
+          "test_evaluation",
+          "training_seeds"
+        ],
+        "protocol_name": "N-BaIoT family_3 physical structured pruning multi-seed",
+        "protocol_version": "1.0",
+        "status": "locked_before_pruning_main_experiments"
+      },
+      {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_pruning_qat_protocol_v1.json",
+        "exists": true,
+        "size_bytes": 2847,
+        "sha256": "b34b2c23b9ba10958e7d788f53bddbc26a1df7900dd0ba5d6f144840ce0e8ae8",
+        "top_level_keys": [
+          "generated_at_utc",
+          "models",
+          "planned_run_count",
+          "protocol_name",
+          "protocol_version",
+          "pruning_names",
+          "pruning_ratios",
+          "quantization_aware_training",
+          "source_artifacts",
+          "source_policy",
+          "status",
+          "structured_pruning",
+          "task",
+          "test_evaluation",
+          "training_seeds",
+          "variant_names"
+        ],
+        "protocol_name": "N-BaIoT family_3 physical structured pruning plus FX QAT multi-seed",
+        "protocol_version": "1.0",
+        "status": "locked_before_pruning_qat_main_experiments"
+      }
+    ],
+    "legacy_scaler": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\preprocessing\\nbaiot_standard_scaler_seed2026.npz",
+      "exists": true,
+      "sha256": "6809c84e46f1e859b888a8f64fdf37a10a55c5660ec3db67d093256986e4a7b8"
+    },
+    "artifact_count": 203,
+    "checkpoint_count": 99,
+    "artifacts": [
+      {
+        "relative_path": "configs\\experiments\\family3_tinyml_mlp_smoke.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 584,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_compact_dnn_seed123.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 520,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_compact_dnn_seed2026.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 523,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_compact_dnn_seed3407.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 523,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_compact_dnn_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 517,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_compact_dnn_seed8192.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 523,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_tinyml_mlp_seed123.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 517,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_tinyml_mlp_seed2026.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 520,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_tinyml_mlp_seed3407.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 520,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_tinyml_mlp_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 514,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\fp32_baseline_v1\\family3_tinyml_mlp_seed8192.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 520,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\learning_rate_sweep\\family3_compact_dnn_lr1em03_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 495,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\learning_rate_sweep\\family3_compact_dnn_lr3em03_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 495,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\learning_rate_sweep\\family3_compact_dnn_lr3em04_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 496,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\learning_rate_sweep\\family3_tinyml_mlp_lr1em03_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 492,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\learning_rate_sweep\\family3_tinyml_mlp_lr3em03_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 492,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\learning_rate_sweep\\family3_tinyml_mlp_lr3em04_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 493,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\pilots\\family3_compact_dnn_pilot_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 475,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\experiments\\pilots\\family3_tinyml_mlp_pilot_seed42.yaml",
+        "suffix": ".yaml",
+        "size_bytes": 472,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json",
+        "suffix": ".json",
+        "size_bytes": 5030,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\protocols\\nbaiot_family3_pruning_qat_protocol_v1.json",
+        "suffix": ".json",
+        "size_bytes": 2847,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\protocols\\nbaiot_family3_quantization_protocol_v1.json",
+        "suffix": ".json",
+        "size_bytes": 2668,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "configs\\protocols\\nbaiot_family3_structured_pruning_protocol_v1.json",
+        "suffix": ".json",
+        "size_bytes": 2241,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "models\\pruning\\nbaiot_structured_pruning_engine_v1.json",
+        "suffix": ".json",
+        "size_bytes": 21861,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "models\\quantization\\audit_v1\\compact_dnn\\seed42\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 102463,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "models\\quantization\\audit_v1\\compact_dnn\\seed42\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 35238,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "models\\quantization\\audit_v1\\tiny_1d_cnn\\seed42\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 9676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "models\\quantization\\audit_v1\\tiny_1d_cnn\\seed42\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15034,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "models\\quantization\\audit_v1\\tinyml_mlp\\seed42\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 39397,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "models\\quantization\\audit_v1\\tinyml_mlp\\seed42\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15921,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "models\\quantization\\qat_fx_validation_v1\\compact_dnn\\seed42\\prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 135269,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "models\\quantization\\qat_fx_validation_v1\\compact_dnn\\seed42\\qat_validation_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 1919,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 38965,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\qat_validation_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 1849,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "models\\quantization\\qat_fx_validation_v1\\tinyml_mlp\\seed42\\prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 59973,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "models\\quantization\\qat_fx_validation_v1\\tinyml_mlp\\seed42\\qat_validation_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 1859,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P25-QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 101676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P25-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 101676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P25-QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 101676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P25-QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 101676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P25-QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 101676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P50-QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 73132,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P50-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 73132,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P50-QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 73132,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P50-QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 73132,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P50-QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 73132,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P75-QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 49324,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P75-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 49324,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P75-QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 49324,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P75-QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 49324,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\compact_dnn\\P75-QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 49324,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P25-QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 36569,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P25-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 36569,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P25-QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 36569,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P25-QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 36569,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P25-QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 36569,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P50-QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 34265,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P50-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 34265,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P50-QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 34265,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P50-QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 34265,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P50-QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 34265,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 32601,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 32601,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 32601,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 32601,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 32601,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 48566,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 48566,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 48566,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 48566,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 48566,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P50-QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 38262,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P50-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 38262,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P50-QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 38262,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P50-QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 38262,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P50-QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 38262,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P75-QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 28598,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P75-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 28598,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P75-QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 28598,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P75-QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 28598,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P75-QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 28598,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\PTQ\\seed123\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 35238,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\PTQ\\seed2026\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 35239,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\PTQ\\seed3407\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 35238,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\PTQ\\seed42\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 35238,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\PTQ\\seed8192\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 35239,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 135724,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 135724,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 135724,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 135724,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 135724,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed123\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 856,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed123\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 102463,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed2026\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 858,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed2026\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 102463,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed3407\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 859,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed3407\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 102463,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed42\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 853,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed42\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 102463,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed8192\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 858,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed8192\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 102463,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\PTQ\\seed123\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15034,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\PTQ\\seed2026\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15034,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\PTQ\\seed3407\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15034,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\PTQ\\seed42\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15034,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\PTQ\\seed8192\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15034,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 39385,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 39385,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 39385,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 39385,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 39385,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed123\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 851,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed123\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 9676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed2026\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 859,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed2026\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 9676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed3407\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 854,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed3407\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 9676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed42\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 849,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed42\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 9676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed8192\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 856,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed8192\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 9676,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\PTQ\\seed123\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15920,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\PTQ\\seed2026\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15921,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\PTQ\\seed3407\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15921,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\PTQ\\seed42\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15921,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\PTQ\\seed8192\\model_static_ptq_int8.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 15921,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\QAT\\seed123\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 60278,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 60278,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\QAT\\seed3407\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 60278,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\QAT\\seed42\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 60278,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\QAT\\seed8192\\best_prepared_qat_state_dict.pt",
+        "suffix": ".pt",
+        "size_bytes": 60278,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed123\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 852,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed123\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 39397,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed2026\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 854,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed2026\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 39397,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed3407\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 855,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed3407\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 39397,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed42\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 849,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed42\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 39397,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed8192\\fp32_onnx_metadata.json",
+        "suffix": ".json",
+        "size_bytes": 853,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed8192\\model_fp32.onnx",
+        "suffix": ".onnx",
+        "size_bytes": 39397,
+        "is_checkpoint": true
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_baseline_aggregate.csv",
+        "suffix": ".csv",
+        "size_bytes": 4605,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_baseline_confusion_matrices.csv",
+        "suffix": ".csv",
+        "size_bytes": 5360,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_baseline_per_class_aggregate.csv",
+        "suffix": ".csv",
+        "size_bytes": 7066,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_baseline_per_class_runs.csv",
+        "suffix": ".csv",
+        "size_bytes": 5325,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_baseline_protocol.csv",
+        "suffix": ".csv",
+        "size_bytes": 631,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_baseline_protocol_summary.json",
+        "suffix": ".json",
+        "size_bytes": 1023,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_baseline_runs.csv",
+        "suffix": ".csv",
+        "size_bytes": 9560,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_baseline_summary.json",
+        "suffix": ".json",
+        "size_bytes": 2975,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_friedman_results.csv",
+        "suffix": ".csv",
+        "size_bytes": 1737,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_statistical_descriptives.csv",
+        "suffix": ".csv",
+        "size_bytes": 5654,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_statistical_summary.json",
+        "suffix": ".json",
+        "size_bytes": 5534,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_fp32_wilcoxon_holm_results.csv",
+        "suffix": ".csv",
+        "size_bytes": 10985,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_overall_paired_deltas_vs_b0.csv",
+        "suffix": ".csv",
+        "size_bytes": 51669,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_friedman_results.csv",
+        "suffix": ".csv",
+        "size_bytes": 3262,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_paired_deltas.csv",
+        "suffix": ".csv",
+        "size_bytes": 17205,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_qat_aggregate.csv",
+        "suffix": ".csv",
+        "size_bytes": 18156,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_qat_confusion_matrices.csv",
+        "suffix": ".csv",
+        "size_bytes": 22598,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_qat_per_class_aggregate.csv",
+        "suffix": ".csv",
+        "size_bytes": 20885,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_qat_per_class_runs.csv",
+        "suffix": ".csv",
+        "size_bytes": 17400,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_qat_runs.csv",
+        "suffix": ".csv",
+        "size_bytes": 26446,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_qat_summary.json",
+        "suffix": ".json",
+        "size_bytes": 4385,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_statistical_descriptives.csv",
+        "suffix": ".csv",
+        "size_bytes": 18466,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_statistical_summary.json",
+        "suffix": ".json",
+        "size_bytes": 11183,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_tradeoff_summary.csv",
+        "suffix": ".csv",
+        "size_bytes": 2836,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_pruning_wilcoxon_holm_results.csv",
+        "suffix": ".csv",
+        "size_bytes": 38427,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_quantization_aggregate.csv",
+        "suffix": ".csv",
+        "size_bytes": 15782,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_quantization_confusion_matrices.csv",
+        "suffix": ".csv",
+        "size_bytes": 17397,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_quantization_per_class_aggregate.csv",
+        "suffix": ".csv",
+        "size_bytes": 21075,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_quantization_per_class_runs.csv",
+        "suffix": ".csv",
+        "size_bytes": 16252,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_quantization_runs.csv",
+        "suffix": ".csv",
+        "size_bytes": 24180,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_quantization_summary.json",
+        "suffix": ".json",
+        "size_bytes": 4304,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_structured_pruning_aggregate.csv",
+        "suffix": ".csv",
+        "size_bytes": 15793,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_structured_pruning_confusion_matrices.csv",
+        "suffix": ".csv",
+        "size_bytes": 19345,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_structured_pruning_per_class_aggregate.csv",
+        "suffix": ".csv",
+        "size_bytes": 26665,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_structured_pruning_per_class_runs.csv",
+        "suffix": ".csv",
+        "size_bytes": 21801,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_structured_pruning_runs.csv",
+        "suffix": ".csv",
+        "size_bytes": 34799,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_family3_structured_pruning_summary.json",
+        "suffix": ".json",
+        "size_bytes": 4423,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_fx_qat_pipeline_validation.csv",
+        "suffix": ".csv",
+        "size_bytes": 968,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_fx_qat_pipeline_validation_summary.json",
+        "suffix": ".json",
+        "size_bytes": 7149,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_quantization_capability_audit.csv",
+        "suffix": ".csv",
+        "size_bytes": 2031,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_quantization_capability_audit_summary.json",
+        "suffix": ".json",
+        "size_bytes": 23997,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_quantization_environment.json",
+        "suffix": ".json",
+        "size_bytes": 6656,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_structured_pruning_validation.csv",
+        "suffix": ".csv",
+        "size_bytes": 2369,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\reports\\nbaiot_structured_pruning_validation_summary.json",
+        "suffix": ".json",
+        "size_bytes": 726,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\decision_tree_b0_aggregate_v3_2.json",
+        "suffix": ".json",
+        "size_bytes": 7221,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\decision_tree_b0_invalidation_v3_2.json",
+        "suffix": ".json",
+        "size_bytes": 878,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\decision_tree_b0_runs_v3_2.csv",
+        "suffix": ".csv",
+        "size_bytes": 1566,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\decision_tree_b0_verification_v3_2.json",
+        "suffix": ".json",
+        "size_bytes": 13402,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\device_lodo_compact_summary_v2.csv",
+        "suffix": ".csv",
+        "size_bytes": 1288,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\hist_gradient_boosting_b0_summary_v3_2.json",
+        "suffix": ".json",
+        "size_bytes": 1587,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\hist_gradient_boosting_b0_verification_v3_2.json",
+        "suffix": ".json",
+        "size_bytes": 11705,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\logistic_regression_b0_verification_v3_2.json",
+        "suffix": ".json",
+        "size_bytes": 16455,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\logistic_regression_b0_verification_v3_2_fixed.json",
+        "suffix": ".json",
+        "size_bytes": 16605,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\random_forest_b0_aggregate_v3_2.json",
+        "suffix": ".json",
+        "size_bytes": 7129,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\random_forest_b0_runs_v3_2.csv",
+        "suffix": ".csv",
+        "size_bytes": 1663,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\audit\\random_forest_b0_verification_v3_2.json",
+        "suffix": ".json",
+        "size_bytes": 11487,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\smoke\\early_lodo\\danmini_tinyml_mlp_smoke_v2.json",
+        "suffix": ".json",
+        "size_bytes": 4080,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\vs2_ablation\\leakage_ablation_b0_matched_aggregate.csv",
+        "suffix": ".csv",
+        "size_bytes": 6738,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\vs2_ablation\\leakage_ablation_b0_matched_exact_inference.json",
+        "suffix": ".json",
+        "size_bytes": 15375,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\vs2_ablation\\leakage_ablation_b0_matched_paired_deltas.csv",
+        "suffix": ".csv",
+        "size_bytes": 8258,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\vs2_ablation\\leakage_ablation_b0_matched_runs.csv",
+        "suffix": ".csv",
+        "size_bytes": 5267,
+        "is_checkpoint": false
+      },
+      {
+        "relative_path": "results\\v2\\vs2_ablation\\leakage_ablation_b0_matched_summary.json",
+        "suffix": ".json",
+        "size_bytes": 19976,
+        "is_checkpoint": false
+      }
+    ],
+    "direct_reuse_checks": {
+      "legacy_scaler_exists": true,
+      "legacy_fp32_protocol_exists": true,
+      "legacy_checkpoint_count_positive": true,
+      "legacy_protocol_names_final_v3_2_cache": false,
+      "legacy_artifacts_have_phase5_v2_path": false
+    },
+    "direct_reuse_eligible": false,
+    "scientific_decision": "Legacy neural artifacts are inventory evidence only and are not directly reusable unless their dataset, split, scaler, target, architecture, seed, and test-use manifests exactly match the final v3_2 cache."
+  },
+  "planned_matrix_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_planned_configuration_matrix_v3_2.csv",
+  "planned_matrix_csv_sha256": "39eac157dd5c601accc199f4d6c80414a42298b29fa8d007c79d9994f225a80b",
+  "next_required_action": "Resolve variant naming and lock a new Phase 5 protocol tied to the final v3_2 cache before any B0 or compression run.",
+  "all_checks_passed": true
+}

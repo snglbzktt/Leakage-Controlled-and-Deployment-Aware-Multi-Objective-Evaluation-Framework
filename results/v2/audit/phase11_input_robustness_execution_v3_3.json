@@ -1,0 +1,61 @@
+{
+  "status": "completed",
+  "phase": 11,
+  "artifact_name": "input_robustness_execution",
+  "protocol_version": "phase11_input_robustness_v3_3",
+  "execution_started_at_utc": "2026-08-06T23:35:05.004209+00:00",
+  "completed_at_utc": "2026-08-06T23:36:23.970115+00:00",
+  "elapsed_seconds": 78.96605879999697,
+  "model_count": 3,
+  "condition_count": 9,
+  "completed_evaluation_count": 27,
+  "results_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3",
+  "aggregate_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_all_runs_v3_3.csv",
+    "size_bytes": 10746,
+    "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090"
+  },
+  "summary": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_summary_v3_3.json",
+    "size_bytes": 2756,
+    "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4"
+  },
+  "detailed_results": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_detailed_results_v3_3.json",
+    "size_bytes": 57636,
+    "sha256": "0d4c143cd36cc71a85599e9bceee0c3406087ae08c1fe9d99272ba79338e0b76"
+  },
+  "condition_perturbation_sha256": {
+    "clean": "e6af62f3991d057d7515c76230719474f79ec7a6ff7cc2de2c11b2c4a635de47",
+    "gaussian_noise_1pct": "c4dc4d07de7966d966bbf89df7578feebda031d1e562fbb2121121be746a3ea6",
+    "gaussian_noise_5pct": "8d75426f97563f2b3deed810bdd215121b177e4ba1a703a9131baf8c2250269f",
+    "gaussian_noise_10pct": "c243d9e5abfb6105ff8a29d70e083ff2b79592b0e303d95ebd979f70c77be799",
+    "feature_mask_5pct": "f8695da929f130c82407212ee75aa2afb2a9fb8ec89c368281b924f869bf3e73",
+    "feature_mask_10pct": "d03975452217b835a4e29748530ddd74830732a22493f8652b84f2e0de1dbed2",
+    "feature_mask_20pct": "3e1a7a6925c739aba785e26e443a075cf9edcf3b1fa3aee0b1d674efd1c0571b",
+    "scale_drift_minus_10pct": "520997dcebacf4efc2c9f547d8f1c7dcb9cd33276274de0b8d6b8bd0f26ff4dd",
+    "scale_drift_plus_10pct": "426fb694a445a6ccd3f0203a4e13c0848935f3590bd274af242b56a18d07cc77"
+  },
+  "smoke_checks": {
+    "B0_batch32_shape": true,
+    "QAT_batch32_shape": true,
+    "HGB_batch32_shape": true
+  },
+  "execution_checks": {
+    "result_directory_created": true,
+    "aggregate_csv_created": true,
+    "summary_created": true,
+    "detailed_results_created": true,
+    "completed_evaluations_27": true,
+    "condition_hashes_9": true,
+    "clean_reproduction_passed": true,
+    "model_retraining_false": true,
+    "test_selection_false": true,
+    "final_model_unchanged": true
+  },
+  "model_retraining_performed": false,
+  "test_used_for_model_selection": false,
+  "final_model_changed": false,
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

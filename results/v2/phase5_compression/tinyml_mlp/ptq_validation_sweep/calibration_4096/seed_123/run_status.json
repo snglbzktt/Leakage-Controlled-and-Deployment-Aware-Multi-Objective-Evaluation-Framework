@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "tinyml_mlp__ptq_validation__seed_123__cal_4096",
+  "architecture": "tinyml_mlp",
+  "seed": 123,
+  "calibration_size": 4096,
+  "validation_access_count": 1,
+  "test_access_count": 0,
+  "INT8_checkpoint_sha256": "52c690a34218969c8dc5cf1a748d35c1644e754f299e60ffb046c797ee06ce12",
+  "validation_predictions_sha256": "09418ba020cc4fd39543d34da8b7cd7f77cf7cbd98b8408f70a24f7425099114",
+  "metrics_sha256": "926b9bf86f567ba9aa12c727f2cd29fff54606a9897f6485a16c7ae5366747a0",
+  "run_manifest_sha256": "b7641b6fd499d8dd4ad56ea6c7f2b974282abea7b3e508e73cb15476a0605d3d",
+  "completed_at_utc": "2026-08-06T20:35:29.962828+00:00"
+}

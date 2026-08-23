@@ -1,0 +1,110 @@
+{
+  "status": "locked",
+  "phase": 4,
+  "phase_name": "classical_tabular_baselines",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "locked_at_utc": "2026-08-06T14:32:47.477775+00:00",
+  "source_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_locked_v3.json",
+      "size_bytes": 10202,
+      "sha256": "d345b22bdf2e88201a057fae2e5c2e532af53e3fcbf539664637a22e26ddcb03"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_run_matrix_v3.csv",
+      "size_bytes": 2560,
+      "sha256": "c85e9a943f4834f4589dba43638c58da790b4080651b49f831f2b3e0cefbedef"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_lock_manifest_v3.json",
+      "size_bytes": 880,
+      "sha256": "6b6159027bee1ff69db9e0ffadaa53eb9acf31576795ce6812fe661b7a5e6034"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_final_cache_verification_v3_2.json",
+      "size_bytes": 12958,
+      "sha256": "4d477a139445c75310233307adeae198e39cd1c1489a2a2cb978c5acfc1e3c18"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\logistic_regression_b0_verification_v3_2_fixed.json",
+      "size_bytes": 16605,
+      "sha256": "46c26e9ec2d5a6d9884973bf653297f6808bfa6745255e1fcc274e054570b85b"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\decision_tree_b0_verification_v3_2.json",
+      "size_bytes": 13402,
+      "sha256": "fcc5fd8008da4e5fa3d16273d004261c4f6e9d79280fd7074b549db77244e010"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\random_forest_b0_verification_v3_2.json",
+      "size_bytes": 11487,
+      "sha256": "0d89397ee29713fe626b2901d57b07ca3c61f696bae9d99d4613d25feaa85b64"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_verification_v3_2.json",
+      "size_bytes": 11705,
+      "sha256": "80c8cc3bec0d58303e7557eb9223555ee9f9677ccfa52e0faad48ec6da7fd560"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\logistic_regression_b0__seed_2026\\metrics.json",
+      "size_bytes": 8501,
+      "sha256": "b78a3cf169bc7955470f88b2c28905c8bc5e02714c8e597f69ed9e6fe2f04916"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\logistic_regression_b0__seed_2026\\run_manifest.json",
+      "size_bytes": 5078,
+      "sha256": "797bb76b90d42df7c739cb39aef034be1b8aae1bd922b46f325155257e42dfd2"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\decision_tree_b0_aggregate_v3_2.json",
+      "size_bytes": 7221,
+      "sha256": "8b10db8787ebdf173e1c8bfc2ec777137a23656d793253b5d031a1b6047d9bc8"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\decision_tree_b0_runs_v3_2.csv",
+      "size_bytes": 1566,
+      "sha256": "8a8f83f1a4405bde9716a6f808b62d952df5ba1d8628e755646b68f827eccbc7"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\random_forest_b0_aggregate_v3_2.json",
+      "size_bytes": 7129,
+      "sha256": "0aae5ead04ef1e4a44a6c40f52169c2be51edb459fd8d5a5a88db172e33c9f87"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\random_forest_b0_runs_v3_2.csv",
+      "size_bytes": 1663,
+      "sha256": "5871077a2aab1b9bf825294402615f6d0c7467784b3f110d524a36995e0004cf"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_summary_v3_2.json",
+      "size_bytes": 1587,
+      "sha256": "cf1d3d3d7d543c71c06e6f170a4df62bfa3a1eae06e57db4653c78dcf77f0e21"
+    }
+  ],
+  "generated_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_summary_v3_2.json",
+      "size_bytes": 10405,
+      "sha256": "a64ead61fa0f4d56c586ed3cdf6922c212dd25423bbf7fc3b59343d2a800de98"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_model_summary_v3_2.csv",
+      "size_bytes": 1591,
+      "sha256": "51bd0a583fb50b8974bae822640ca8f4892beedc73edd587b651ef213b39f8cd"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_all_runs_v3_2.csv",
+      "size_bytes": 2793,
+      "sha256": "601f55b571ce5a59f09bff65c60ca1a0da4d9dd1f43c7fa34d1815909f2a0009"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_completed_v3_2.json",
+      "size_bytes": 1202,
+      "sha256": "21845a70b6bdf481c6d75d27dc1a44872f7f0092b3af0f100d5079da8e83788d"
+    }
+  ],
+  "model_count": 4,
+  "total_run_count": 12,
+  "next_phase_ready": true,
+  "all_checks_passed": true
+}

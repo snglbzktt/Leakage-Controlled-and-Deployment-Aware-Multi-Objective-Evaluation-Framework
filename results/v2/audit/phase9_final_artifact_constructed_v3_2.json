@@ -1,0 +1,20 @@
+{
+  "status": "constructed",
+  "phase": 9,
+  "artifact_name": "final_deployment_artifact",
+  "protocol_version": "phase9_final_artifact_v3_2",
+  "constructed_at_utc": "2026-08-06T22:55:02.789918+00:00",
+  "artifact_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2",
+  "artifact_manifest": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\artifact_manifest.json",
+  "artifact_manifest_sha256": "30e45287f9b23eed0d8939921a33f776d95c8f5fffe006d90556d5e478f86e31",
+  "inference_contract": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\inference_contract.json",
+  "inference_contract_sha256": "37865f4c8eb9ce1d7a2393638e33f9eaaa3eb6af6489f9aa7f4f88037fa05cec",
+  "checkpoint": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\model_int8_checkpoint.pt",
+  "checkpoint_sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+  "construction_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_artifact_construction_v3_2.json",
+  "construction_report_sha256": "69cbaaa51e59785ec94c3e31fa54d0229267691beb5bdcf961a17b999b930cb6",
+  "artifact_lock_present": false,
+  "single_checkpoint_locked": false,
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

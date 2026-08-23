@@ -1,0 +1,28 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "artifact_name": "exact_source_binding",
+  "protocol_version": "phase13_exact_source_binding_v3_3",
+  "locked_at_utc": "2026-08-07T00:08:14.353394+00:00",
+  "binding": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase13_exact_source_binding_v3_3.json",
+    "sha256": "e14b5496d0001298686faf8def01e69901054f271f440be0b6f919d874e2a9a6"
+  },
+  "binding_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_exact_source_binding_v3_3.csv",
+    "sha256": "b6aeb9a3ffdc26dac3a181c244338f1814c2cdcfe6f35bd42989d01af1259114"
+  },
+  "preflight": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_exact_source_binding_preflight_v3_3.json",
+    "sha256": "7a1fdd40c75219520b2ebd45d4e11d3e0ea04da3a03bcab5a57c87d06fff841b"
+  },
+  "asset_count": 12,
+  "unique_source_count": 22,
+  "binding_row_count": 39,
+  "asset_generation_performed": false,
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_asset_generation": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,44 @@
+======================================================================================
+EARLY LODO DEVICE COMPLETION SUMMARY
+======================================================================================
+
+Held-out device       : Ennio_Doorbell
+Completed models      : 3/3
+Train fingerprints    : 1,500,913
+Validation fingerprints: 321,267
+Test fingerprints     : 338,599
+Test record count     : 355,500
+
+MODEL COMPARISON
+rank=1 | compact_dnn_b0 | Macro-F1=0.993244568 | Accuracy=0.985829846 | Gafgyt FNR=0.015759146934750272 | Mirai FNR=None | seconds=124.928 | local_severe=False
+rank=2 | tinyml_mlp_b0 | Macro-F1=0.992445435 | Accuracy=0.982395105 | Gafgyt FNR=0.01958514326047449 | Mirai FNR=None | seconds=55.632 | local_severe=False
+rank=3 | hist_gradient_boosting_b0 | Macro-F1=0.903349652 | Accuracy=0.713631759 | Gafgyt FNR=0.3198137135582096 | Mirai FNR=None | seconds=40.554 | local_severe=False
+
+DEVICE STATISTICS
+Mean Macro-F1        : 0.963013218
+Median Macro-F1      : 0.992445435
+Minimum Macro-F1     : 0.903349652
+Maximum Macro-F1     : 0.993244568
+Maximum attack FNR   : 0.319813714
+Local severe cells   : 0
+
+VALIDATION CHECKS
+protocol_locked: True
+exactly_three_device_runs: True
+expected_models_registered: True
+all_runs_seed_2026: True
+three_model_results_loaded: True
+three_lock_summaries_loaded: True
+three_run_results_loaded: True
+all_locks_locked: True
+all_results_completed: True
+lock_identities_match: True
+execution_ledger_has_three_rows: True
+execution_ledger_matches: True
+cache_validated: True
+cache_manifest_nonempty: True
+all_test_counts_identical: True
+all_test_class_counts_identical: True
+all_primary_metrics_valid: True
+all_fnr_values_valid: True
+ranking_contains_three_models: True

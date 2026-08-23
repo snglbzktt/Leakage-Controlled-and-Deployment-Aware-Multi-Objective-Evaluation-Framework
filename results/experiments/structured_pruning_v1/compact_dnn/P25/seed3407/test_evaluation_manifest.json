@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-24T14:22:20.989368+00:00",
+  "status": "completed",
+  "model_name": "compact_dnn",
+  "seed": 3407,
+  "pruning_name": "P25",
+  "checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\compact_dnn\\P25\\seed3407\\best_checkpoint.pt",
+  "checkpoint_sha256": "bd4e26c95a131d55624e23e853a34839b317cf493066a8058cdd6c8e6644fe04",
+  "evaluation_attempt_count": 1,
+  "test_used_for_model_selection": false,
+  "completed_at_utc": "2026-07-24T14:22:21.877727+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\compact_dnn\\P25\\seed3407\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\compact_dnn\\P25\\seed3407\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\compact_dnn\\P25\\seed3407\\test_confusion_matrix.csv"
+}

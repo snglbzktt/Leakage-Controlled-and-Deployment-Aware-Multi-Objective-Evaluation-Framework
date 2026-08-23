@@ -1,0 +1,46 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "asset_id": "table_06_robustness_results",
+  "locked_at_utc": "2026-08-07T08:01:36.951074+00:00",
+  "metadata": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\table_06_robustness_results_metadata_v3_3.json",
+    "sha256": "e237ca5f25169b6c17f0969657d02669ccd4a711c146393871807c6caf2a4626"
+  },
+  "outputs": {
+    "csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_06_robustness_results_v3_3.csv",
+      "sha256": "8ad791fdba244796b7f95fef4b82d0d7740068db88be2d07c3d12efd445982bb",
+      "size_bytes": 839
+    },
+    "markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_06_robustness_results_v3_3.md",
+      "sha256": "fdcf5f4eedcf3fcbab0108308c37968517769ccae7f2d990a5ffb9edede7bdd5",
+      "size_bytes": 1075
+    },
+    "source_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_06_robustness_results_source_v3_3.csv",
+      "sha256": "eff337404c81ec20983cb4f2161bbdece3d88562da1144eac72d363516c6dd71",
+      "size_bytes": 6109
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\table_06_robustness_results_caption_v3_3.txt",
+      "sha256": "0904549d2e95f9932cfce4a8c0151338a009e80abb8c0c8d3852c50b08adbd0a",
+      "size_bytes": 473
+    }
+  },
+  "table_row_count": 9,
+  "evaluation_count": 27,
+  "model_count": 3,
+  "condition_count": 9,
+  "severe_fragility_evaluation_count": 5,
+  "material_sensitivity_evaluation_count": 9,
+  "model_retraining_performed": false,
+  "test_used_for_model_selection": false,
+  "final_model_changed": false,
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "artifact_name": "phase5_train_only_preprocessing",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "data_protocol_version": "tabular_baseline_protocol_v3_2",
+  "verified_at_utc": "2026-08-06T14:51:39.473865+00:00",
+  "verification_method": {
+    "scaler": "Independent float64 batch moment combination using a different chunk size from generation.",
+    "class_weights": "Independent exact class counting and inverse-square-root mean-one formula.",
+    "artifact_integrity": "SHA-256 and file-size verification against generation records.",
+    "independent_chunk_size": 73777,
+    "generation_chunk_size": 100000
+  },
+  "fit_scope_verified": {
+    "train_access_count": 1,
+    "validation_access_count": 0,
+    "test_access_count": 0,
+    "raw_occurrence_weight_used": false
+  },
+  "train_fingerprint_count": 1534583,
+  "feature_count": 115,
+  "class_labels": [
+    0,
+    1,
+    2
+  ],
+  "class_names": [
+    "benign",
+    "gafgyt",
+    "mirai"
+  ],
+  "class_counts": [
+    359439,
+    27221,
+    1147923
+  ],
+  "class_weights_float64": [
+    0.5776597631785849,
+    2.099097825582788,
+    0.3232424112386268
+  ],
+  "maximum_absolute_differences": {
+    "mean": 12.0,
+    "variance": 1.0435380768572724e+21,
+    "scale": 16676.0,
+    "class_weight": 0.0
+  },
+  "artifacts": {
+    "scaler": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_standard_scaler_v3_2.npz",
+      "size_bytes": 5361,
+      "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+    },
+    "class_weights_npz": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_class_weights_v3_2.npz",
+      "size_bytes": 1117,
+      "sha256": "81c0f102124d2839f4adaab844ef28e57a5778f0930910bb2fa89630a18cb313"
+    },
+    "class_weights_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_class_weights_v3_2.csv",
+      "size_bytes": 252,
+      "sha256": "0647cf1653acd7be8b404faae8ac38acfb2dc756c5804721ba25d02ba88d911f"
+    },
+    "generation_manifest": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_preprocessing_manifest_v3_2.json",
+      "size_bytes": 5499,
+      "sha256": "374d509da4420c2828470284844b23b73d23792674e235caf13581b77bd9d501"
+    },
+    "generation_report": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_generation_v3_2.json",
+      "size_bytes": 1702,
+      "sha256": "0a6723893ce9d8dd4fc5c7472ee88a4d875f4d844cc2627794f2ebcd3c7b70e3"
+    }
+  },
+  "checks": {
+    "protocol_locked": true,
+    "protocol_version_matches": true,
+    "protocol_completion_locked": true,
+    "protocol_completion_hash_matches": true,
+    "protocol_lock_manifest_locked": true,
+    "generation_report_completed": true,
+    "manifest_completed": true,
+    "manifest_protocol_matches": true,
+    "manifest_data_protocol_matches": true,
+    "train_only_scaler_fit_recorded": true,
+    "train_only_class_weight_fit_recorded": true,
+    "validation_access_is_zero": true,
+    "test_access_is_zero": true,
+    "raw_occurrence_weight_not_used": true,
+    "x_train_shape_matches": true,
+    "x_train_dtype_is_float32": true,
+    "y_train_shape_matches": true,
+    "label_set_matches": true,
+    "total_count_matches": true,
+    "saved_n_samples_matches": true,
+    "saved_feature_count_matches": true,
+    "saved_with_mean_true": true,
+    "saved_with_std_true": true,
+    "saved_array_shapes_match": true,
+    "independent_mean_matches": true,
+    "independent_variance_matches": true,
+    "independent_scale_matches": true,
+    "float32_mean_is_exact_cast": true,
+    "float32_scale_is_exact_cast": true,
+    "saved_class_labels_match": true,
+    "class_counts_match": true,
+    "class_count_total_matches": true,
+    "class_weights_float64_match": true,
+    "class_weights_float32_match": true,
+    "normalization_mean_is_one": true,
+    "all_saved_values_are_finite": true,
+    "saved_scales_are_positive": true,
+    "saved_class_weights_are_positive": true,
+    "manifest_scaler_record_matches": true,
+    "manifest_class_weights_npz_record_matches": true,
+    "manifest_class_weights_csv_record_matches": true,
+    "generation_scaler_record_matches": true,
+    "generation_class_weights_record_matches": true,
+    "generation_csv_record_matches": true,
+    "generation_manifest_record_matches": true,
+    "manifest_protocol_hash_matches": true,
+    "manifest_protocol_completion_hash_matches": true,
+    "manifest_protocol_lock_hash_matches": true,
+    "manifest_x_train_hash_matches": true,
+    "manifest_y_train_hash_matches": true,
+    "spot_transform_shape_matches": true,
+    "spot_transform_dtype_float32": true,
+    "spot_transform_finite": true
+  },
+  "all_checks_passed": true
+}

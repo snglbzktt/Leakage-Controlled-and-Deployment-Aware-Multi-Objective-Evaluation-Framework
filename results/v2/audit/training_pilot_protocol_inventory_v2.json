@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "target_files": [
+    "src\\models\\nbaiot_models.py",
+    "src\\training\\baseline_trainer.py",
+    "scripts\\22_lock_fp32_baseline_protocol.py",
+    "scripts\\23_run_fp32_baseline_experiments.py",
+    "scripts\\38_run_b0_matched_leakage_ablation.py"
+  ],
+  "constant_count": 12,
+  "config_file_count": 41,
+  "model_registry": {
+    "import_succeeded": true,
+    "registered_models": [
+      "tinyml_mlp",
+      "compact_dnn",
+      "tiny_1d_cnn"
+    ],
+    "model_details": [
+      {
+        "model_name": "tinyml_mlp",
+        "class_name": "TinyMLMLP",
+        "spec": {
+          "registry_name": "tinyml_mlp",
+          "display_name": "TinyML-MLP",
+          "architecture_family": "multilayer_perceptron",
+          "description": "Two-hidden-layer low-parameter MLP baseline.",
+          "order_sensitive": false,
+          "architecture": {
+            "hidden_units": [
+              64,
+              32
+            ],
+            "activation": "ReLU",
+            "dropout_probability": 0.0
+          }
+        },
+        "total_parameters": 9603,
+        "trainable_parameters": 9603,
+        "representation": "TinyMLMLP(\n  (network): Sequential(\n    (0): Linear(in_features=115, out_features=64, bias=True)\n    (1): ReLU()\n    (2): Linear(in_features=64, out_features=32, bias=True)\n    (3): ReLU()\n    (4): Linear(in_features=32, out_features=3, bias=True)\n  )\n)"
+      },
+      {
+        "model_name": "compact_dnn",
+        "class_name": "CompactDNN",
+        "spec": {
+          "registry_name": "compact_dnn",
+          "display_name": "Compact-DNN",
+          "architecture_family": "multilayer_perceptron",
+          "description": "Higher-capacity three-hidden-layer compact DNN.",
+          "order_sensitive": false,
+          "architecture": {
+            "hidden_units": [
+              128,
+              64,
+              32
+            ],
+            "activation": "ReLU",
+            "dropout_probability": 0.1
+          }
+        },
+        "total_parameters": 25283,
+        "trainable_parameters": 25283,
+        "representation": "CompactDNN(\n  (network): Sequential(\n    (0): Linear(in_features=115, out_features=128, bias=True)\n    (1): ReLU()\n    (2): Dropout(p=0.1, inplace=False)\n    (3): Linear(in_features=128, out_features=64, bias=True)\n    (4): ReLU()\n    (5): Dropout(p=0.1, inplace=False)\n    (6): Linear(in_features=64, out_features=32, bias=True)\n    (7): ReLU()\n    (8): Linear(in_features=32, out_features=3, bias=True)\n  )\n)"
+      }
+    ],
+    "error": null
+  },
+  "constants_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\training_pilot_protocol_constants_v2.csv",
+  "config_files_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\training_pilot_config_files_v2.csv",
+  "snippets_txt": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\training_pilot_protocol_snippets_v2.txt"
+}

@@ -1,0 +1,5 @@
+Rank,Model,Runs,Seed policy,Input space,Macro-F1 mean ± std,Raw-weighted Macro-F1,Gafgyt FNR,Mirai FNR,Scientific status / caveat
+1,HistGradientBoosting,1,single_seed_2026,canonical_float32_unscaled,0.999738 ± 0.000000,0.999043,0.000963,0.000000,completed. Single locked seed; descriptive comparison only.
+2,Decision Tree,5,five_locked_seeds,canonical_float32_unscaled,0.999583 ± 0.000027,0.999007,0.000947,0.000079,completed. None.
+3,Random Forest,5,five_locked_seeds,canonical_float32_unscaled,0.999460 ± 0.000014,0.998171,0.001709,0.000085,completed. None.
+4,Logistic Regression,1,single_seed_2026,train_only_standardized_float32,0.996992 ± 0.000000,0.996572,0.003279,0.001947,completed_with_convergence_warning. Locked max_iter=200 was reached; results retained without protocol modification.

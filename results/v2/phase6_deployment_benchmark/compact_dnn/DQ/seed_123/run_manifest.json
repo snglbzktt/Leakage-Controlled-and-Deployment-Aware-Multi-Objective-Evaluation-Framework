@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "phase": 6,
+  "artifact_name": "isolated_deployment_benchmark_run",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "measurement_order": 55,
+  "architecture": "compact_dnn",
+  "variant": "DQ",
+  "seed": 123,
+  "source_checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\dq\\seed_123\\dq_checkpoint.pt",
+    "size_bytes": 33593,
+    "sha256": "9fad2134425f27697a9c299c4aa65040c332122133357b06201fdae937b11c6e"
+  },
+  "source_metrics": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\dq\\seed_123\\metrics.json",
+    "size_bytes": 8082,
+    "sha256": "6dab6cb451e8bacf7943e19af01ef8831d082177a8934861cdc6bbd3e0821d24"
+  },
+  "phase6_protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase6_deployment_benchmark_protocol_v3_2.json",
+    "size_bytes": 3406,
+    "sha256": "5cd3ef9080f15824ce5b6afe4705cc65d812f2bfa65ddb6d531669363b5a6f31"
+  },
+  "phase6_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+    "size_bytes": 42063,
+    "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+  },
+  "artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase6_deployment_benchmark\\compact_dnn\\DQ\\seed_123\\deployment_metrics.json",
+      "size_bytes": 2259,
+      "sha256": "491b04cda0a778b30583fa36d07b4da927c2e2c8de77b2d8be3977ba400e5632",
+      "relative_path": "deployment_metrics.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase6_deployment_benchmark\\compact_dnn\\DQ\\seed_123\\raw_latencies_ns.npz",
+      "size_bytes": 2284,
+      "sha256": "ed0a2eeb86799b01a289e445a3073a4574d8ec5a5c2b7632f445ad5e4ebd871d",
+      "relative_path": "raw_latencies_ns.npz"
+    }
+  ],
+  "validation_data_access": false,
+  "test_data_access": false,
+  "all_integrity_checks_passed": true,
+  "completed_at_utc": "2026-08-06T21:08:09.719616+00:00"
+}

@@ -1,0 +1,13 @@
+section_order,section_id,section_title,asset_position_in_section,asset_id,asset_type,primary_placement
+3,III,Methodology and Evaluation Protocol,1,figure_01_methodology_overview,figure,True
+3,III,Methodology and Evaluation Protocol,2,table_01_dataset_protocol,table,True
+4,IV,Experimental Results,1,figure_02_lodo_generalization,figure,True
+4,IV,Experimental Results,2,table_02_classical_baselines,table,True
+4,IV,Experimental Results,3,figure_03_compression_tradeoff,figure,True
+4,IV,Experimental Results,4,table_03_compression_results,table,True
+4,IV,Experimental Results,5,table_04_deployment_benchmarks,table,True
+4,IV,Experimental Results,6,table_05_statistical_analysis,table,True
+4,IV,Experimental Results,7,figure_04_pareto_selection,figure,True
+4,IV,Experimental Results,8,figure_05_input_robustness,figure,True
+4,IV,Experimental Results,9,table_06_robustness_results,table,True
+5,V,Reproducibility and Release Integrity,1,table_07_reproducibility_release,table,True

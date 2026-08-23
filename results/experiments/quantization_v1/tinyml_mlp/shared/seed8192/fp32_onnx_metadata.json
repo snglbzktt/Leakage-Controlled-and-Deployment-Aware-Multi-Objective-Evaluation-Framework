@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-07-25T07:54:15.208812+00:00",
+  "model_name": "tinyml_mlp",
+  "seed": 8192,
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tinyml_mlp\\seed8192\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "e8e239f13c0619f533fa044cf8027c9f941d24149ca94cda1d3ac84fd5ce1add",
+  "fp32_onnx_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tinyml_mlp\\shared\\seed8192\\model_fp32.onnx",
+  "fp32_onnx_sha256": "0655d0276360725b010000a17458c19d59707a5d85cfabc3d2512586ba05121f",
+  "fp32_onnx_size_bytes": 39397,
+  "pytorch_onnx_parity": {
+    "allclose": true,
+    "maximum_absolute_difference": 9.5367431640625e-07,
+    "mean_absolute_difference": 8.12578946352005e-08,
+    "argmax_prediction_agreement": 1.0
+  }
+}

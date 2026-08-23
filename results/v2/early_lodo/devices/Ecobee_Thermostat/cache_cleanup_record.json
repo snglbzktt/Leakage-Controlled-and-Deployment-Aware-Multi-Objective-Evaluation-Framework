@@ -1,0 +1,103 @@
+{
+  "protocol_version": "early_lodo_cache_cleanup_v2_1",
+  "status": "completed",
+  "verified_at": "2026-08-05T21:15:29.107659+00:00",
+  "held_out_device": "Ecobee_Thermostat",
+  "cache_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat",
+  "retained_files": [
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\cache_summary.json",
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\scaler.npz"
+  ],
+  "removed_files": [
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\test_global_indices.npy",
+      "size_bytes": 6585200,
+      "sha256": "e914fbb5e331980ac057ca03458c9b3d5f5b832ecd5a1243664ce4bd2208b78c"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\test_occurrence_count.npy",
+      "size_bytes": 3292664,
+      "sha256": "25af504a4ebb7f203d9bb030c4dc0fa8012dbd5422a90d2c90c5010cecf635c7"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\test_source_split.npy",
+      "size_bytes": 823262,
+      "sha256": "623d809a0d5574e04b614c7a0a992220ea49ab226f75cc4877f3a9ac78a68237"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\train_global_indices.npy",
+      "size_bytes": 9296496,
+      "sha256": "01e61bc4a480b3b6111a76e677d5742681f951d657209f552167279b4af8e059"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\validation_global_indices.npy",
+      "size_bytes": 1986600,
+      "sha256": "584302f9468e9957a15f6ac3078334610b498738af8fe0d508f97f92698365cd"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\x_test.npy",
+      "size_bytes": 378641768,
+      "sha256": "033f1f1b89ec59e96fb463722f0c2dac91fca2d7cab9b598b0b5b54dd9236d76"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\x_train.npy",
+      "size_bytes": 534541288,
+      "sha256": "b91e2998d824cf9cd538ea3b728a3267bf90aede2e16112a871eb7ea1917a144"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\x_validation.npy",
+      "size_bytes": 114222268,
+      "sha256": "59c385860f5bcead5dfb410e75b646fa37ff3925f948cc4c1905788acd44f0f2"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\y_test.npy",
+      "size_bytes": 823262,
+      "sha256": "014874d09f32f1b39071dc73dc6a7411618c47b0db3d9c4f658c6280ae69cdd7"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\y_train.npy",
+      "size_bytes": 1162174,
+      "sha256": "cd46c1cb4249ee6a2a45114aafc3687578aea1c395cb0b1a8667b24be61af3c9"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ecobee_Thermostat\\y_validation.npy",
+      "size_bytes": 248437,
+      "sha256": "1e8bab6222e6da7c0d9c17293bdc7f8f54300c45eb9fa173cac0dff312a0016e"
+    }
+  ],
+  "expected_reclaimed_bytes": 1051623419,
+  "device_summary_sha256": "01faffd9b31b5bbebe18239bf40892275d0e04ca2f9847b52a12b357c1abf937",
+  "cache_manifest_sha256": "bf447ce8a23e99c7baca8cc00fcb720ae0178ea3970ac0cb58f99fb0f6e4a624",
+  "device_release_manifest_sha256": "416bafc4a4fd9c7b4f278d74b652613a4b044f9b25e92feedadec36546bbfb1c",
+  "pre_cleanup_validation_checks": {
+    "device_summary_complete": true,
+    "device_summary_checks_passed": true,
+    "three_models_completed": true,
+    "cache_cleanup_eligible": true,
+    "one_device_ledger_row": true,
+    "device_ledger_complete": true,
+    "device_ledger_cleanup_eligible": true,
+    "cache_directory_exists": true,
+    "cache_manifest_nonempty": true,
+    "manifest_paths_inside_cache": true,
+    "manifest_matches_cache_directory": true,
+    "manifest_sizes_match": true,
+    "manifest_hashes_match": true,
+    "removable_files_found": true,
+    "retained_files_present": true
+  },
+  "all_pre_cleanup_checks_passed": true,
+  "completed_at": "2026-08-05T21:15:29.236440+00:00",
+  "removed_file_count": 11,
+  "reclaimed_bytes": 1051623419,
+  "reclaimed_gb": 0.9794006301090121,
+  "post_cleanup_validation_checks": {
+    "all_removable_files_removed": true,
+    "retained_files_still_present": true,
+    "cache_directory_retained": true,
+    "device_summary_unchanged": true,
+    "cache_manifest_unchanged": true,
+    "device_release_manifest_unchanged": true
+  },
+  "all_post_cleanup_checks_passed": true
+}

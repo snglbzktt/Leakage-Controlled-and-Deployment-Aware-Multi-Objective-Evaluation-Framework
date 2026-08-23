@@ -1,0 +1,115 @@
+{
+  "status": "passed",
+  "phase": 8,
+  "artifact_name": "multi_objective_decision_independent_verification",
+  "protocol_version": "phase8_multi_objective_decision_v3_2",
+  "verified_at_utc": "2026-08-06T21:39:52.629236+00:00",
+  "verification_policy": {
+    "eligibility_recomputed": true,
+    "Pareto_dominance_recomputed": true,
+    "deterministic_selection_recomputed": true,
+    "weighted_score_used": false,
+    "pairwise_p_value_used_as_gate": false,
+    "model_inference_repeated": false
+  },
+  "profile_results": {
+    "strict": {
+      "eligible": 5,
+      "Pareto": 2,
+      "selection": "tinyml_mlp::P50-FP32-FT"
+    },
+    "balanced": {
+      "eligible": 11,
+      "Pareto": 5,
+      "selection": "tinyml_mlp::P50-QAT"
+    },
+    "relaxed": {
+      "eligible": 11,
+      "Pareto": 5,
+      "selection": "tinyml_mlp::P50-QAT"
+    }
+  },
+  "primary_profile": "balanced",
+  "verified_primary_model_family": {
+    "candidate_id": "tinyml_mlp::P50-QAT",
+    "architecture": "tinyml_mlp",
+    "variant": "P50-QAT",
+    "representation": "static_int8",
+    "mean_test_fingerprint_macro_f1": 0.9978555453698199,
+    "mean_serialized_state_dict_bytes": 12199.0,
+    "mean_batch_1_median_ms": 0.10766,
+    "mean_batch_32_samples_per_second": 168078.67334476035,
+    "mean_macro_f1_loss_vs_B0": 0.001393040557715941,
+    "worst_seed_macro_f1_loss_vs_B0": 0.002246463325223047,
+    "fragility_triggered": false,
+    "eligible_under_balanced": true,
+    "Pareto_nondominated_under_balanced": true
+  },
+  "sensitivity": {
+    "selection_stable_across_profiles": false,
+    "strict_profile_differs_from_primary": true,
+    "relaxed_profile_matches_primary": true
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "preflight_locked": true,
+    "summary_completed": true,
+    "completion_completed": true,
+    "eligibility_hash_matches": true,
+    "Pareto_hash_matches": true,
+    "selection_trace_hash_matches": true,
+    "summary_hash_matches": true,
+    "decision_rows_22": true,
+    "eligibility_rows_66": true,
+    "Pareto_rows_54": true,
+    "selection_rows_3": true,
+    "model_inference_not_performed": true,
+    "final_model_not_previously_locked": true
+  },
+  "summary_checks": {
+    "primary_profile": true,
+    "primary_candidate": true,
+    "primary_architecture": true,
+    "primary_variant": true,
+    "primary_representation": true,
+    "primary_eligible": true,
+    "primary_Pareto": true,
+    "strict_selection": true,
+    "balanced_selection": true,
+    "relaxed_selection": true,
+    "stability": true,
+    "weighted_score_false": true,
+    "p_value_gate_false": true,
+    "model_inference_false": true,
+    "final_model_false_before_verification": true
+  },
+  "global_checks": {
+    "eligibility_rows_verified_66": true,
+    "Pareto_rows_verified_54": true,
+    "profile_counts_match": true,
+    "strict_selection_verified": true,
+    "balanced_selection_verified": true,
+    "relaxed_selection_verified": true,
+    "selection_stability_false": true,
+    "primary_candidate_is_eligible": true,
+    "primary_candidate_is_Pareto": true,
+    "weighted_score_not_used": true,
+    "pairwise_p_not_used_as_gate": true,
+    "model_inference_not_repeated": true,
+    "single_seed_checkpoint_not_selected": true
+  },
+  "verified_eligibility_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_eligibility_verified_v3_2.csv",
+    "size_bytes": 4926,
+    "sha256": "fd58b29c21f626e47a4e45cf5fab9e68d871997bcde69845db316a06a967812e"
+  },
+  "verified_Pareto_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_pareto_verified_v3_2.csv",
+    "size_bytes": 2604,
+    "sha256": "b8629c9c9c535556c2e5b5bbeeb2b688990d19bc68ac5ffe8cb060cdad79069e"
+  },
+  "final_model_family_selected": true,
+  "single_seed_checkpoint_selected": false,
+  "ready_for_final_artifact_protocol": true,
+  "all_checks_passed": true
+}

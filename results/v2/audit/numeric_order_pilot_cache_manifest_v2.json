@@ -1,0 +1,105 @@
+{
+  "protocol_version": "numeric_order_pilot_cache_v2_1",
+  "created_at": "2026-08-05T17:28:55.146458+00:00",
+  "source_dependencies": [
+    {
+      "relative_path": "results\\v2\\audit\\numeric_pipeline_order_summary_v2.json",
+      "sha256": "33371fde0835a051c30bf13a7c58758c3d2fb6f62cb36efc5e73ac9b34530387"
+    },
+    {
+      "relative_path": "configs\\protocols\\nbaiot_numeric_order_training_pilot_v2.json",
+      "sha256": "deac93de154b75c72be4031399c81616db7c229c6d42c59ea4669acf51cec304"
+    },
+    {
+      "relative_path": "scripts\\52_build_numeric_order_pilot_cache_v2.py",
+      "sha256": "89c55989605f73bba30958f4a06bb4adac126521879ece8b37e5b7e0e3785f73"
+    }
+  ],
+  "cache_files": [
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_a\\scaler.npz",
+      "size_bytes": 3601,
+      "sha256": "6688bbc9b57bf27138f84fb74694671cd9221bc148c08fd77e1f187fbe5afd4f"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_b\\scaler.npz",
+      "size_bytes": 3597,
+      "sha256": "cf094af54826c4c88bf370e1a7e734320c464c435c4f07c3c871f718b7d03b84"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\shared\\schema.json",
+      "size_bytes": 3062,
+      "sha256": "23bf4c3e52d1d8605d56d67784b23427689ceca91da9eaee61bc12e343b48186"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\shared\\class_weights.npy",
+      "size_bytes": 140,
+      "sha256": "442e1e0c736ee78648145573a251c04b21b739d6a229c889553bcf2b3f6b7868"
+    },
+    {
+      "relative_path": "results\\v2\\audit\\numeric_order_pilot_cache_summary_v2.json",
+      "size_bytes": 8214,
+      "sha256": "8e0e3b1194388aaea7a0b64c923b301bc3af48f2f9dd4c3b750234fd2a41a01c"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_a\\x_train.npy",
+      "size_bytes": 799541308,
+      "sha256": "0c610753313aed45e5e1c73558a482674da31f62fbf201e4147fbbfd5bc91675"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_b\\x_train.npy",
+      "size_bytes": 799541308,
+      "sha256": "4c4acc2ab67a4f558789aa605a86b0af98f49e1f749947704978ef35c0692066"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\shared\\y_train.npy",
+      "size_bytes": 1738261,
+      "sha256": "af15b2c6fe7c38ca291f5327dd577ffc41c03cb82472c0ec52458f7e80f080b5"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\state\\train_complete.json",
+      "size_bytes": 1045,
+      "sha256": "d6ebe7c6e0086c7cb2397bc3a421b84b1ae2fec3c3b6ad41dcc0e7289a49c605"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_a\\x_validation.npy",
+      "size_bytes": 171066768,
+      "sha256": "c036a33128d89be0607d786307e367bcddd1c9c272a73ee3afde87b8c4c556db"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_b\\x_validation.npy",
+      "size_bytes": 171066768,
+      "sha256": "bd1d56c7291e6dad04af92d1f20a7eea8518b107e61ef5c69be992ce6f3d9fdb"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\shared\\y_validation.npy",
+      "size_bytes": 372012,
+      "sha256": "8a7fcac5ea179721bbca3abeaba750576465b69b09ee4950eb5320212f50cbe2"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\state\\validation_complete.json",
+      "size_bytes": 1058,
+      "sha256": "e0077c628cf328cdfe99ebfb109ee34a45e4bfdb1bfc2866edc743eb37e35350"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_a\\x_test.npy",
+      "size_bytes": 171423268,
+      "sha256": "37c686a39658c7dc767365caa6887ddb6a3a39be96b157c5664e8fc481245086"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_b\\x_test.npy",
+      "size_bytes": 171423268,
+      "sha256": "6e8f8a753742c7ee34a3649b57113fde409ac11c29334a98aef0f916fee30762"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\shared\\y_test.npy",
+      "size_bytes": 372787,
+      "sha256": "436ea52e0c4249b4fdc548a485e3c8c2354fa0ba37f45e2439a57ee05e56348f"
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\state\\test_complete.json",
+      "size_bytes": 1033,
+      "sha256": "493795b0f045a5e8c5898b7fa71fe6995ba262dab5bc5fd3f2baa1b11db3a6e0"
+    }
+  ]
+}

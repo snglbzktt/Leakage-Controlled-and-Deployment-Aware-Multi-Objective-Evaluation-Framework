@@ -1,0 +1,883 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T10:41:31.358942+00:00",
+  "canonical_metadata": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_float32_canonical_seed2026\\metadata.parquet",
+  "protocol_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v3.sqlite",
+  "database_quick_check": "ok",
+  "canonical_fingerprint_count": 2278174,
+  "protocol_fingerprint_count": 2278176,
+  "common_fingerprint_count": 0,
+  "database_only_fingerprint_count": 2278176,
+  "canonical_only_fingerprint_count": 2278174,
+  "canonical_vs_protocol_split_mismatch_count": 0,
+  "family_label_mismatch_count": 0,
+  "raw_occurrence_count_mismatch_count": 0,
+  "database_only_rows": [
+    {
+      "hash_forward": -9223325095388464792,
+      "hash_reverse": 7406631366543549792,
+      "raw_row_count": 2,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9223316910583020225,
+      "hash_reverse": 5489954232090998822,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9223262272002157947,
+      "hash_reverse": 8691146154920916671,
+      "raw_row_count": 2,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9223204054208997656,
+      "hash_reverse": -5801795994705330081,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9223191647259731422,
+      "hash_reverse": 421739619068149423,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9223185455385779116,
+      "hash_reverse": 7360455005671221848,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9223086460309915724,
+      "hash_reverse": -5629196338541618618,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9223055264861969258,
+      "hash_reverse": -7538713647368752622,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222955395724701025,
+      "hash_reverse": 7262051124995037118,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222924738226336383,
+      "hash_reverse": 8299890008093809579,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222894871105270961,
+      "hash_reverse": 6500968919824018646,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222795579681883101,
+      "hash_reverse": 4813680848337083807,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222782908125748450,
+      "hash_reverse": 2490016376687675702,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222736530675965274,
+      "hash_reverse": 7220856802780532904,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222693795807597340,
+      "hash_reverse": 6567864452087097289,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222508469735428320,
+      "hash_reverse": 5774067284297217857,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222504244039865109,
+      "hash_reverse": -3483400990534119755,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222471390311798039,
+      "hash_reverse": 1844563502547568921,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222436741914385561,
+      "hash_reverse": -253671549118361667,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222412522917775906,
+      "hash_reverse": -547818297373313979,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222335277876969854,
+      "hash_reverse": -8528369899325114844,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9222016308811552597,
+      "hash_reverse": -3807631610212325982,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221939305060195811,
+      "hash_reverse": 4625070617352158180,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221881356414551885,
+      "hash_reverse": 6233834458797730082,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221831618009048611,
+      "hash_reverse": 7355978001275962392,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221755028288708545,
+      "hash_reverse": -8384592027933678993,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221735932041191438,
+      "hash_reverse": -6026524846048760756,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221554913855759233,
+      "hash_reverse": 6077338967677337790,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221358988664454913,
+      "hash_reverse": -2340110709733476242,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221345238205652025,
+      "hash_reverse": -7776081737046715063,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221236395230518651,
+      "hash_reverse": 4545446529611535337,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221184618626973672,
+      "hash_reverse": -78949804491978303,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221170876140323844,
+      "hash_reverse": -8290356395442753826,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9221041833504579596,
+      "hash_reverse": 6722673941170088716,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220979696339660712,
+      "hash_reverse": -4851363083731235359,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220977914620294722,
+      "hash_reverse": -795762827577244113,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220949751197192199,
+      "hash_reverse": 7178432596983286033,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220921299022985702,
+      "hash_reverse": -1523087920502687149,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220887127159335304,
+      "hash_reverse": -2105296839834720851,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220877911835983666,
+      "hash_reverse": -6016301927471075718,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220834940687556401,
+      "hash_reverse": -1966713924482816950,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220825597968699961,
+      "hash_reverse": -3193095185762906900,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220789156346128950,
+      "hash_reverse": 2265814461486512380,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220750761387690969,
+      "hash_reverse": -3652977623330246768,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220685663165297702,
+      "hash_reverse": 7825281684574016783,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220680872850534809,
+      "hash_reverse": -8713551978482886425,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220658419801475067,
+      "hash_reverse": 6738401213276906952,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220656130442258015,
+      "hash_reverse": -4192811086039081528,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220654983347201386,
+      "hash_reverse": 1483511652739475018,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    },
+    {
+      "hash_forward": -9220595708901164387,
+      "hash_reverse": -4627361528605550101,
+      "raw_row_count": 1,
+      "grouped_split": 0,
+      "family_label_min": 0,
+      "family_label_max": 0
+    }
+  ],
+  "canonical_only_rows": [
+    {
+      "hash_forward": -9223336418509224935,
+      "hash_reverse": 5406210106141411241,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9223059389215008556,
+      "hash_reverse": -5908661287291475740,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9223023458347110362,
+      "hash_reverse": -6741678259301319982,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222965024115694755,
+      "hash_reverse": -6231462222694242935,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222963232952186187,
+      "hash_reverse": 545551781234611141,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222955091072399581,
+      "hash_reverse": 299421731439236993,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222895585207772777,
+      "hash_reverse": 22400448189046977,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222545199326452018,
+      "hash_reverse": -6053050835045351752,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222534264623427345,
+      "hash_reverse": 3447473061920591915,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222455560924036412,
+      "hash_reverse": 3142633642191771012,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222448861591685778,
+      "hash_reverse": -8516871422789290340,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222405492150675450,
+      "hash_reverse": 6645605151938139358,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222368318443316532,
+      "hash_reverse": 4585248085363555562,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222242041761697245,
+      "hash_reverse": -7786100114552975793,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222156805593984617,
+      "hash_reverse": 1446456770464217721,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222148870601357020,
+      "hash_reverse": 1754934409696124372,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222106331034784138,
+      "hash_reverse": -2291156699565905330,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222096199632471461,
+      "hash_reverse": -2859515736412961647,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9222041025455568578,
+      "hash_reverse": -2318966303873201586,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221947120252519648,
+      "hash_reverse": -2646513011373716770,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221890647005539829,
+      "hash_reverse": -5154553276814417361,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221877816488810855,
+      "hash_reverse": 3196323636476558457,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221870045145174758,
+      "hash_reverse": -981406670201976908,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221710109556298249,
+      "hash_reverse": -5636226245910339441,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221692662320975596,
+      "hash_reverse": -8192667752481345764,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221665812349880068,
+      "hash_reverse": 480067332915709534,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221625840712957414,
+      "hash_reverse": 4305022398631904598,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221615182551636681,
+      "hash_reverse": -3212357417151840653,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221571579539233507,
+      "hash_reverse": 4992631204935439405,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221556064036699910,
+      "hash_reverse": -6290019275540284788,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221508934537762613,
+      "hash_reverse": 5614602702785469289,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221478855792526321,
+      "hash_reverse": 390070789763923687,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221402191385508947,
+      "hash_reverse": -9083194546987497087,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221355393917335511,
+      "hash_reverse": -2276753718770189277,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221276496894081965,
+      "hash_reverse": 4037173979882749697,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221185853348551828,
+      "hash_reverse": 7784041696232136098,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9221155647589628707,
+      "hash_reverse": 4467165507741501837,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220928935923270150,
+      "hash_reverse": -1917653467174419912,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220875785128260833,
+      "hash_reverse": 6402640158571121881,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220856292233548942,
+      "hash_reverse": 6515160305438092880,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220836086800335495,
+      "hash_reverse": -4022808272004757323,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220824172968904290,
+      "hash_reverse": 5691078012483325184,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220812821512480584,
+      "hash_reverse": -5618435617982246848,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220786319787427457,
+      "hash_reverse": 3890908144815336409,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220742222581658989,
+      "hash_reverse": -6499494268324473441,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220727581465661735,
+      "hash_reverse": 4979440153576912161,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220714802735411224,
+      "hash_reverse": -6795001084208208642,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220701742859706203,
+      "hash_reverse": 6622280800112896807,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220661839574569671,
+      "hash_reverse": 6197529494384405953,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    },
+    {
+      "hash_forward": -9220555419455114095,
+      "hash_reverse": 6677765366797110625,
+      "raw_occurrence_count": 1,
+      "canonical_split": 0,
+      "family_label": 0
+    }
+  ],
+  "canonical_split_counts": [
+    {
+      "canonical_split": 0,
+      "family_label": 0,
+      "fingerprint_count": 359712,
+      "raw_row_count": 389532
+    },
+    {
+      "canonical_split": 0,
+      "family_label": 1,
+      "fingerprint_count": 87543,
+      "raw_row_count": 1564157
+    },
+    {
+      "canonical_split": 0,
+      "family_label": 2,
+      "fingerprint_count": 1148409,
+      "raw_row_count": 2569380
+    },
+    {
+      "canonical_split": 1,
+      "family_label": 0,
+      "fingerprint_count": 76695,
+      "raw_row_count": 82859
+    },
+    {
+      "canonical_split": 1,
+      "family_label": 1,
+      "fingerprint_count": 18699,
+      "raw_row_count": 154821
+    },
+    {
+      "canonical_split": 1,
+      "family_label": 2,
+      "fingerprint_count": 246023,
+      "raw_row_count": 550137
+    },
+    {
+      "canonical_split": 2,
+      "family_label": 0,
+      "fingerprint_count": 77075,
+      "raw_row_count": 83541
+    },
+    {
+      "canonical_split": 2,
+      "family_label": 1,
+      "fingerprint_count": 18563,
+      "raw_row_count": 153740
+    },
+    {
+      "canonical_split": 2,
+      "family_label": 2,
+      "fingerprint_count": 245455,
+      "raw_row_count": 548885
+    }
+  ],
+  "protocol_grouped_split_counts": [
+    {
+      "grouped_split": 0,
+      "family_label": 0,
+      "fingerprint_count": 359439,
+      "raw_row_count": 389152
+    },
+    {
+      "grouped_split": 0,
+      "family_label": 1,
+      "fingerprint_count": 27221,
+      "raw_row_count": 1986790
+    },
+    {
+      "grouped_split": 0,
+      "family_label": 2,
+      "fingerprint_count": 1147923,
+      "raw_row_count": 2567881
+    },
+    {
+      "grouped_split": 1,
+      "family_label": 0,
+      "fingerprint_count": 77021,
+      "raw_row_count": 83389
+    },
+    {
+      "grouped_split": 1,
+      "family_label": 1,
+      "fingerprint_count": 48793,
+      "raw_row_count": 425740
+    },
+    {
+      "grouped_split": 1,
+      "family_label": 2,
+      "fingerprint_count": 245982,
+      "raw_row_count": 550260
+    },
+    {
+      "grouped_split": 2,
+      "family_label": 0,
+      "fingerprint_count": 77022,
+      "raw_row_count": 83391
+    },
+    {
+      "grouped_split": 2,
+      "family_label": 1,
+      "fingerprint_count": 48793,
+      "raw_row_count": 425742
+    },
+    {
+      "grouped_split": 2,
+      "family_label": 2,
+      "fingerprint_count": 245982,
+      "raw_row_count": 550261
+    }
+  ],
+  "split_transition_matrix": [],
+  "elapsed_seconds": 62.30730380001478
+}

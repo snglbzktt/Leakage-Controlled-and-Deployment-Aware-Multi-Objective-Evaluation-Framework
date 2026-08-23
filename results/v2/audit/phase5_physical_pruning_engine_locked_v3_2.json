@@ -1,0 +1,21 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "physical_structured_pruning_engine",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "locked_at_utc": "2026-08-06T17:54:14.074137+00:00",
+  "engine_source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_physical_pruning_engine_v3_2.py",
+  "engine_source_sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3",
+  "verification_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_engine_verification_v3_2.json",
+  "verification_report_sha256": "3a86a540dc9ab57e5d3f3a0560740026e14f1def94f46eaf79fd6b323e43972e",
+  "selected_units_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_engine_selected_units_v3_2.csv",
+  "selected_units_csv_sha256": "3d8fd5efe3c1da5980f7fc841d593db0fb1d5b36bf6ebe60d6e359ec7c7f4ae2",
+  "importance_criterion": "For hidden unit j: score_j = L2([incoming weight row j, bias j]) * L2(outgoing weight column j). Scores are computed independently on the original B0 checkpoint. Ranking is descending by score, with ascending original unit index as the deterministic tie-break. P25 and P50 are each generated directly from the same B0 checkpoint.",
+  "B0_checkpoint_count_verified": 10,
+  "branch_test_count": 20,
+  "validation_access_count": 0,
+  "test_access_count": 0,
+  "ready_for_P25_noFT_and_P50_noFT_generation": true,
+  "all_checks_passed": true
+}

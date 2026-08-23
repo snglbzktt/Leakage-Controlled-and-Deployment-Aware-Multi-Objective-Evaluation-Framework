@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "P25_and_P50_FP32_fine_tuning",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "completed_at_utc": "2026-08-06T18:44:08.491587+00:00",
+  "run_count": 20,
+  "test_evaluation_count_per_run": 1,
+  "test_inference_total": 20,
+  "test_used_for_selection": false,
+  "aggregate_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_summary_v3_2.json",
+  "aggregate_json_sha256": "b3b59427ec3a6325955828c87ccbd1d866b5546d94265e005746486c13c6a56d",
+  "aggregate_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_all_runs_v3_2.csv",
+  "aggregate_runs_csv_sha256": "f5d8dbc330505cdabfd9bad627b20df1c7ef43f3d262d29c1ac1110460e0095b",
+  "group_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_group_summary_v3_2.csv",
+  "group_summary_csv_sha256": "bbe19c36ab8623cfbe5f3d8a27e2a8addc08726beb15cd15ad17c503ea04ae8f",
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

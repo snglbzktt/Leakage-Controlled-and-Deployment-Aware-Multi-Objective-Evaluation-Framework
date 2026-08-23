@@ -1,0 +1,1857 @@
+==========================================================================================
+src\models\nbaiot_models.py
+==========================================================================================
+00001: """
+00002: N-BaIoT TinyML model mimarileri ve model kayıt sistemi.
+00003: 
+00004: Kayıtlı modeller:
+00005: - tinyml_mlp
+00006: - compact_dnn
+00007: - tiny_1d_cnn
+00008: 
+00009: Bütün modeller:
+00010: - [batch_size, input_features] biçiminde float32 girdi kabul eder.
+00011: - Softmax uygulanmamış sınıf logitleri üretir.
+00012: - CrossEntropyLoss ile doğrudan kullanılabilir.
+00013: - Dinamik batch boyutunu destekler.
+00014: """
+... omitted ...
+00081: 
+00082: # ==========================================================
+00083: # TINYML MLP
+00084: # ==========================================================
+00085: 
+00086: class TinyMLMLP(nn.Module):
+00087:     """
+00088:     Küçük tam bağlantılı TinyML sınıflandırıcısı.
+00089: 
+00090:     Mimari:
+... omitted ...
+00097:     """
+00098: 
+00099:     registry_name = "tinyml_mlp"
+00100: 
+00101:     def __init__(
+... omitted ...
+00114:         if len(hidden_units) != 2:
+00115:             raise ValueError(
+00116:                 "TinyMLMLP için iki gizli katman boyutu gerekir."
+00117:             )
+00118: 
+... omitted ...
+00179: 
+00180: # ==========================================================
+00181: # COMPACT DNN
+00182: # ==========================================================
+00183: 
+00184: class CompactDNN(nn.Module):
+00185:     """
+00186:     Daha yüksek kapasiteli kompakt tam bağlantılı ağ.
+... omitted ...
+00202:     """
+00203: 
+00204:     registry_name = "compact_dnn"
+00205: 
+00206:     def __init__(
+... omitted ...
+00224:         if len(hidden_units) != 3:
+00225:             raise ValueError(
+00226:                 "CompactDNN için üç gizli katman boyutu gerekir."
+00227:             )
+00228: 
+... omitted ...
+00478: 
+00479: MODEL_SPECS: dict[str, ModelSpec] = {
+00480:     "tinyml_mlp": ModelSpec(
+00481:         registry_name="tinyml_mlp",
+00482:         display_name="TinyML-MLP",
+00483:         architecture_family="multilayer_perceptron",
+00484:         description=(
+... omitted ...
+00495:         },
+00496:     ),
+00497:     "compact_dnn": ModelSpec(
+00498:         registry_name="compact_dnn",
+00499:         display_name="Compact-DNN",
+00500:         architecture_family="multilayer_perceptron",
+00501:         description=(
+00502:             "Higher-capacity three-hidden-layer compact DNN."
+00503:         ),
+00504:         order_sensitive=False,
+... omitted ...
+00518:         architecture_family="one_dimensional_convolution",
+00519:         description=(
+00520:             "Order-sensitive compact 1D convolutional classifier."
+00521:         ),
+00522:         order_sensitive=True,
+... omitted ...
+00547:     Callable[..., nn.Module],
+00548: ] = {
+00549:     "tinyml_mlp": TinyMLMLP,
+00550:     "compact_dnn": CompactDNN,
+00551:     "tiny_1d_cnn": Tiny1DCNN,
+00552: }
+... omitted ...
+00577: 
+00578: 
+00579: def create_model(
+00580:     model_name: str,
+00581:     input_features: int,
+
+==========================================================================================
+src\training\baseline_trainer.py
+==========================================================================================
+00007: - Scaler yalnızca train verisinden öğrenilmiş artifacttan yüklenir.
+00008: - Sınıf ağırlıkları yalnızca train dağılımından hesaplanmış artifacttan alınır.
+00009: - Her epoch için eğitim ve validation karışıklık matrisi kaydedilir.
+00010: - En iyi model validation Macro F1 değerine göre saklanır.
+00011: - Smoke-test sonuçları nihai bilimsel sonuç olarak kullanılmaz.
+... omitted ...
+00030: from torch import Tensor, nn
+00031: from torch.nn.utils import clip_grad_norm_
+00032: from torch.optim import AdamW
+00033: 
+00034: from src.data.nbaiot_pipeline import (
+... omitted ...
+00036:     load_pipeline_assets,
+00037: )
+00038: from src.models.nbaiot_models import create_model
+00039: 
+00040: 
+... omitted ...
+00162: 
+00163: def set_reproducible_environment(
+00164:     seed: int,
+00165:     torch_threads: int,
+00166: ) -> None:
+... omitted ...
+00172:         )
+00173: 
+00174:     random.seed(seed)
+00175:     np.random.seed(seed)
+00176:     torch.manual_seed(seed)
+00177: 
+00178:     torch.set_num_threads(
+... omitted ...
+00307:     )
+00308: 
+00309:     macro_f1 = float(
+00310:         f1_score.mean()
+00311:     )
+... omitted ...
+00404:         "macro_precision": macro_precision,
+00405:         "macro_recall": macro_recall,
+00406:         "macro_f1": macro_f1,
+00407:         "weighted_f1": weighted_f1,
+00408:         "matthews_correlation_coefficient": (
+... omitted ...
+00414: 
+00415: 
+00416: def run_epoch(
+00417:     model: nn.Module,
+00418:     data_loader: Any,
+00419:     criterion: nn.Module,
+00420:     class_names: tuple[str, ...],
+00421:     optimizer: AdamW | None,
+00422:     gradient_clip_norm: float,
+00423:     maximum_batches: int | None,
+00424: ) -> dict[str, Any]:
+00425:     """Bir eğitim veya validation epochu çalıştırır."""
+00426: 
+00427:     training_mode = (
+... omitted ...
+00520:         )
+00521: 
+00522:         batch_size = int(
+00523:             targets.numel()
+00524:         )
+... omitted ...
+00526:         total_loss += float(
+00527:             loss.detach().item()
+00528:         ) * batch_size
+00529: 
+00530:         total_samples += batch_size
+00531:         processed_batches += 1
+00532: 
+... omitted ...
+00552:     if total_samples <= 0:
+00553:         raise RuntimeError(
+00554:             "Epoch sırasında örnek işlenmedi."
+00555:         )
+00556: 
+... omitted ...
+00607: 
+00608: 
+00609: def run_training(
+00610:     config_file: Path,
+00611: ) -> dict[str, Any]:
+... omitted ...
+00646:     )
+00647: 
+00648:     seed = int(
+00649:         experiment_config["seed"]
+00650:     )
+00651: 
+... omitted ...
+00657:     )
+00658: 
+00659:     batch_size = int(
+00660:         data_config["batch_size"]
+00661:     )
+00662: 
+00663:     num_workers = int(
+00664:         data_config.get(
+00665:             "num_workers",
+00666:             0,
+00667:         )
+00668:     )
+00669: 
+00670:     maximum_epochs = int(
+00671:         training_config["max_epochs"]
+00672:     )
+00673: 
+00674:     learning_rate = float(
+00675:         training_config["learning_rate"]
+00676:     )
+00677: 
+00678:     weight_decay = float(
+00679:         training_config["weight_decay"]
+00680:     )
+00681: 
+... omitted ...
+00687:     )
+00688: 
+00689:     patience = int(
+00690:         training_config.get(
+00691:             "patience",
+00692:             maximum_epochs,
+00693:         )
+00694:     )
+... omitted ...
+00762:     )
+00763: 
+00764:     if maximum_epochs <= 0:
+00765:         raise ValueError(
+00766:             "max_epochs sıfırdan büyük olmalıdır."
+00767:         )
+00768: 
+00769:     if learning_rate <= 0:
+00770:         raise ValueError(
+00771:             "learning_rate sıfırdan büyük olmalıdır."
+00772:         )
+00773: 
+00774:     if weight_decay < 0:
+00775:         raise ValueError(
+00776:             "weight_decay negatif olamaz."
+00777:         )
+00778: 
+00779:     if patience <= 0:
+00780:         raise ValueError(
+00781:             "patience sıfırdan büyük olmalıdır."
+00782:         )
+00783: 
+... omitted ...
+00788: 
+00789:     set_reproducible_environment(
+00790:         seed=seed,
+00791:         torch_threads=torch_threads,
+00792:     )
+... omitted ...
+00795:         task_name=task_name,
+00796:         weight_scheme=weight_scheme,
+00797:         expected_seed=2026,
+00798:     )
+00799: 
+... omitted ...
+00802:             assets=assets,
+00803:             split_name="train",
+00804:             batch_size=batch_size,
+00805:             shuffle=True,
+00806:             seed=seed,
+00807:             epoch=0,
+00808:             num_workers=num_workers,
+00809:             pin_memory=False,
+00810:         )
+... omitted ...
+00815:             assets=assets,
+00816:             split_name="validation",
+00817:             batch_size=batch_size,
+00818:             shuffle=False,
+00819:             seed=seed,
+00820:             epoch=0,
+00821:             num_workers=num_workers,
+00822:             pin_memory=False,
+00823:         )
+00824:     )
+00825: 
+00826:     model = create_model(
+00827:         model_name=model_name,
+00828:         input_features=assets.feature_count,
+... omitted ...
+00830:     )
+00831: 
+00832:     class_weights = torch.as_tensor(
+00833:         assets.class_weights,
+00834:         dtype=torch.float32,
+00835:     )
+00836: 
+00837:     criterion = nn.CrossEntropyLoss(
+00838:         weight=class_weights
+00839:     )
+00840: 
+00841:     optimizer = AdamW(
+00842:         model.parameters(),
+00843:         lr=learning_rate,
+00844:         weight_decay=weight_decay,
+00845:     )
+00846: 
+... omitted ...
+00859:     print(f"Görev           : {task_name}")
+00860:     print(f"Model           : {model_name}")
+00861:     print(f"Seed            : {seed}")
+00862:     print(f"Özellik sayısı  : {assets.feature_count}")
+00863:     print(f"Sınıf sayısı    : {assets.class_count}")
+00864:     print(f"Parametre       : {parameter_count:,}")
+00865:     print(f"Batch boyutu    : {batch_size:,}")
+00866:     print(f"Epoch           : {maximum_epochs}")
+00867:     print(f"Öğrenme oranı   : {learning_rate}")
+00868:     print(f"Weight decay    : {weight_decay}")
+00869:     print(f"Loss ağırlığı   : {weight_scheme}")
+00870:     print(f"Çıktı klasörü   : {output_directory}")
+... omitted ...
+00876:     ] = []
+00877: 
+00878:     best_validation_macro_f1 = (
+00879:         -np.inf
+00880:     )
+00881: 
+00882:     best_epoch = 0
+00883:     best_model_state: dict[
+00884:         str,
+... omitted ...
+00896:     ] | None = None
+00897: 
+00898:     epochs_without_improvement = 0
+00899: 
+00900:     training_start_time = (
+... omitted ...
+00902:     )
+00903: 
+00904:     for epoch in range(
+00905:         1,
+00906:         maximum_epochs + 1,
+00907:     ):
+00908:         train_dataset.set_epoch(
+00909:             epoch - 1
+00910:         )
+00911: 
+00912:         train_metrics = run_epoch(
+00913:             model=model,
+00914:             data_loader=train_loader,
+... omitted ...
+00920:         )
+00921: 
+00922:         validation_metrics = run_epoch(
+00923:             model=model,
+00924:             data_loader=validation_loader,
+... omitted ...
+00932:         )
+00933: 
+00934:         current_validation_macro_f1 = float(
+00935:             validation_metrics[
+00936:                 "macro_f1"
+00937:             ]
+00938:         )
+00939: 
+00940:         improved = bool(
+00941:             current_validation_macro_f1
+00942:             > (
+00943:                 best_validation_macro_f1
+00944:                 + minimum_improvement
+00945:             )
+... omitted ...
+00947: 
+00948:         if improved:
+00949:             best_validation_macro_f1 = (
+00950:                 current_validation_macro_f1
+00951:             )
+00952: 
+00953:             best_epoch = epoch
+00954: 
+00955:             best_model_state = {
+... omitted ...
+00973:             )
+00974: 
+00975:             epochs_without_improvement = 0
+00976: 
+00977:         else:
+00978:             epochs_without_improvement += 1
+00979: 
+00980:         history_records.append(
+00981:             {
+00982:                 "epoch": int(epoch),
+00983:                 "learning_rate": float(
+00984:                     optimizer.param_groups[
+00985:                         0
+... omitted ...
+00992:                     train_metrics["accuracy"]
+00993:                 ),
+00994:                 "train_macro_f1": float(
+00995:                     train_metrics["macro_f1"]
+00996:                 ),
+00997:                 "train_weighted_f1": float(
+... omitted ...
+01008:                     ]
+01009:                 ),
+01010:                 "validation_macro_f1": float(
+01011:                     validation_metrics[
+01012:                         "macro_f1"
+01013:                     ]
+01014:                 ),
+... omitted ...
+01050: 
+01051:         print(
+01052:             f"Epoch {epoch:02d}/{maximum_epochs:02d} | "
+01053:             f"train_loss={train_metrics['loss']:.6f} | "
+01054:             f"train_macro_f1={train_metrics['macro_f1']:.6f} | "
+01055:             f"val_loss={validation_metrics['loss']:.6f} | "
+01056:             f"val_macro_f1={validation_metrics['macro_f1']:.6f} | "
+01057:             f"best={best_validation_macro_f1:.6f}"
+01058:         )
+01059: 
+01060:         if (
+01061:             epochs_without_improvement
+01062:             >= patience
+01063:         ):
+01064:             print(
+... omitted ...
+01130:         "model_name": model_name,
+01131:         "task_name": task_name,
+01132:         "seed": seed,
+01133:         "feature_count": int(
+01134:             assets.feature_count
+... omitted ...
+01137:             assets.target_classes
+01138:         ),
+01139:         "class_weight_scheme": (
+01140:             weight_scheme
+01141:         ),
+01142:         "class_weights": (
+01143:             assets.class_weights.tolist()
+01144:         ),
+01145:         "best_epoch": int(
+01146:             best_epoch
+01147:         ),
+01148:         "best_validation_macro_f1": float(
+01149:             best_validation_macro_f1
+01150:         ),
+01151:         "model_state_dict": (
+... omitted ...
+01200:         ),
+01201:         "model_selection_metric": (
+01202:             "macro_f1"
+01203:         ),
+01204:         "model_name": model_name,
+01205:         "task_name": task_name,
+01206:         "seed": int(seed),
+01207:         "parameter_count": (
+01208:             parameter_count
+... omitted ...
+01217:             assets.target_classes
+01218:         ),
+01219:         "class_weight_scheme": (
+01220:             weight_scheme
+01221:         ),
+01222:         "best_epoch": int(
+01223:             best_epoch
+01224:         ),
+01225:         "best_validation_macro_f1": float(
+01226:             best_validation_macro_f1
+01227:         ),
+01228:         "epochs_completed": int(
+01229:             len(history_records)
+01230:         ),
+... omitted ...
+01264:     print("Baseline eğitim çalışması tamamlandı")
+01265:     print("=" * 78)
+01266:     print(f"En iyi epoch          : {best_epoch}")
+01267:     print(
+01268:         "En iyi validation Macro F1: "
+01269:         f"{best_validation_macro_f1:.6f}"
+01270:     )
+01271:     print(
+01272:         "Tamamlanan epoch      : "
+01273:         f"{len(history_records)}"
+01274:     )
+
+==========================================================================================
+scripts\22_lock_fp32_baseline_protocol.py
+==========================================================================================
+00010: Bilimsel kurallar:
+00011: - Öğrenme oranları yalnızca validation tabanlı tuning sonucundan alınır.
+00012: - Üç mimariye aynı maksimum epoch ve early-stopping bütçesi verilir.
+00013: - Ana deneyler beş bağımsız eğitim tohumu ile çalıştırılır.
+00014: - Her seed için checkpoint yalnızca validation Macro F1 ile seçilir.
+00015: - Test, seçilen checkpoint üzerinde yalnızca bir kez değerlendirilir.
+00016: - Test sonuçları hiçbir hiperparametre veya mimari seçimine katılmaz.
+... omitted ...
+00035:     / "results"
+00036:     / "reports"
+00037:     / "nbaiot_family3_learning_rate_sweep_selected.csv"
+00038: )
+00039: 
+... omitted ...
+00042:     / "models"
+00043:     / "preprocessing"
+00044:     / "nbaiot_task_definitions_seed2026.json"
+00045: )
+00046: 
+... omitted ...
+00056:     / "models"
+00057:     / "preprocessing"
+00058:     / "nbaiot_standard_scaler_seed2026.npz"
+00059: )
+00060: 
+... omitted ...
+00063:     / "models"
+00064:     / "preprocessing"
+00065:     / "nbaiot_task_class_weights_seed2026.npz"
+00066: )
+00067: 
+... omitted ...
+00079: 
+00080: EXPECTED_MODELS = (
+00081:     "tinyml_mlp",
+00082:     "compact_dnn",
+00083:     "tiny_1d_cnn",
+00084: )
+00085: 
+00086: MAIN_SEEDS = (
+00087:     42,
+00088:     123,
+... omitted ...
+00146: 
+00147:     parser.add_argument(
+00148:         "--max-epochs",
+00149:         type=int,
+00150:         default=15,
+... omitted ...
+00152: 
+00153:     parser.add_argument(
+00154:         "--patience",
+00155:         type=int,
+00156:         default=4,
+... omitted ...
+00303:     """Sayısal protokol parametrelerini doğrular."""
+00304: 
+00305:     if args.max_epochs <= 0:
+00306:         raise ValueError(
+00307:             "max-epochs sıfırdan büyük olmalıdır."
+00308:         )
+00309: 
+00310:     if args.patience <= 0:
+00311:         raise ValueError(
+00312:             "patience sıfırdan büyük olmalıdır."
+00313:         )
+00314: 
+00315:     if args.patience > args.max_epochs:
+00316:         raise ValueError(
+00317:             "patience, max-epochs değerinden büyük olamaz."
+00318:         )
+00319: 
+... omitted ...
+00323:         )
+00324: 
+00325:     if args.batch_size <= 0:
+00326:         raise ValueError(
+00327:             "batch-size sıfırdan büyük olmalıdır."
+00328:         )
+00329: 
+00330:     if args.weight_decay < 0:
+00331:         raise ValueError(
+00332:             "weight-decay negatif olamaz."
+... omitted ...
+00344: 
+00345: 
+00346: def load_selected_learning_rates(
+00347:     sweep_file: Path,
+00348: ) -> tuple[pd.DataFrame, dict[str, float]]:
+... omitted ...
+00358:     required_columns = {
+00359:         "model_name",
+00360:         "learning_rate",
+00361:         "best_epoch",
+00362:         "epochs_completed",
+00363:         "best_validation_macro_f1",
+00364:         "best_validation_loss",
+00365:         "test_split_evaluated",
+... omitted ...
+00384:     )
+00385: 
+00386:     frame["learning_rate"] = pd.to_numeric(
+00387:         frame["learning_rate"],
+00388:         errors="raise",
+00389:     )
+00390: 
+00391:     frame["best_epoch"] = pd.to_numeric(
+00392:         frame["best_epoch"],
+00393:         errors="raise",
+00394:     ).astype("int64")
+00395: 
+00396:     frame["epochs_completed"] = pd.to_numeric(
+00397:         frame["epochs_completed"],
+00398:         errors="raise",
+00399:     ).astype("int64")
+00400: 
+00401:     frame["best_validation_macro_f1"] = pd.to_numeric(
+00402:         frame["best_validation_macro_f1"],
+00403:         errors="raise",
+00404:     )
+... omitted ...
+00431: 
+00432:     if (
+00433:         frame["learning_rate"]
+00434:         <= 0
+00435:     ).any():
+... omitted ...
+00439: 
+00440:     if (
+00441:         frame["best_epoch"]
+00442:         <= 0
+00443:     ).any():
+00444:         raise ValueError(
+00445:             "Geçersiz best_epoch değeri var."
+00446:         )
+00447: 
+00448:     if (
+00449:         frame["best_epoch"]
+00450:         > frame["epochs_completed"]
+00451:     ).any():
+00452:         raise ValueError(
+00453:             "best_epoch, tamamlanan epoch sayısını aşıyor."
+00454:         )
+00455: 
+00456:     if (
+00457:         frame["best_validation_macro_f1"]
+00458:         < 0
+00459:     ).any() or (
+00460:         frame["best_validation_macro_f1"]
+00461:         > 1
+00462:     ).any():
+... omitted ...
+00491:     )
+00492: 
+00493:     selected_learning_rates = {
+00494:         str(row.model_name): float(
+00495:             row.learning_rate
+00496:         )
+00497:         for row in frame.itertuples(
+... omitted ...
+00502:     return (
+00503:         frame,
+00504:         selected_learning_rates,
+00505:     )
+00506: 
+... omitted ...
+00668:     (
+00669:         selected_frame,
+00670:         selected_learning_rates,
+00671:     ) = load_selected_learning_rates(
+00672:         sweep_file
+00673:     )
+... omitted ...
+00682: 
+00683:     source_files = {
+00684:         "learning_rate_selection": sweep_file,
+00685:         "task_definition": task_file,
+00686:         "model_registry": registry_file,
+... omitted ...
+00729:             model_name
+00730:         ] = {
+00731:             "learning_rate": float(
+00732:                 selected_learning_rates[
+00733:                     model_name
+00734:                 ]
+00735:             ),
+00736:             "learning_rate_source": (
+00737:                 "single-seed validation Macro F1 sweep"
+00738:             ),
+00739:             "tuning_seed": int(
+00740:                 selected_row[
+00741:                     "seed"
+00742:                 ]
+00743:             )
+00744:             if "seed" in selected_frame.columns
+00745:             else 42,
+00746:             "tuning_best_epoch": int(
+00747:                 selected_row[
+00748:                     "best_epoch"
+00749:                 ]
+00750:             ),
+00751:             "tuning_epochs_completed": int(
+00752:                 selected_row[
+00753:                     "epochs_completed"
+00754:                 ]
+00755:             ),
+00756:             "tuning_validation_macro_f1": float(
+00757:                 selected_row[
+00758:                     "best_validation_macro_f1"
+00759:                 ]
+00760:             ),
+... omitted ...
+00779:             {
+00780:                 "model_name": model_name,
+00781:                 "learning_rate": float(
+00782:                     selected_learning_rates[
+00783:                         model_name
+00784:                     ]
+00785:                 ),
+00786:                 "max_epochs": int(
+00787:                     args.max_epochs
+00788:                 ),
+00789:                 "patience": int(
+00790:                     args.patience
+00791:                 ),
+00792:                 "min_delta": float(
+00793:                     args.min_delta
+00794:                 ),
+00795:                 "batch_size": int(
+00796:                     args.batch_size
+00797:                 ),
+00798:                 "weight_decay": float(
+00799:                     args.weight_decay
+00800:                 ),
+00801:                 "gradient_clip_norm": float(
+... omitted ...
+00805:                     "inverse_square_root_frequency_mean1"
+00806:                 ),
+00807:                 "seed_count": int(
+00808:                     len(MAIN_SEEDS)
+00809:                 ),
+00810:                 "seeds": ",".join(
+00811:                     str(seed)
+00812:                     for seed in MAIN_SEEDS
+00813:                 ),
+00814:                 "model_selection_split": (
+... omitted ...
+00816:                 ),
+00817:                 "model_selection_metric": (
+00818:                     "macro_f1"
+00819:                 ),
+00820:                 "final_evaluation_split": (
+00821:                     "test"
+00822:                 ),
+00823:                 "test_evaluations_per_seed": 1,
+00824:             }
+00825:         )
+... omitted ...
+00833:         ).isoformat(),
+00834:         "protocol_name": (
+00835:             "N-BaIoT family_3 FP32 multi-seed baseline"
+00836:         ),
+00837:         "protocol_version": "1.0",
+00838:         "status": (
+00839:             "locked_before_multi_seed_training"
+00840:         ),
+00841:         "dataset": (
+00842:             "nbaiot_float32_canonical_seed2026"
+00843:         ),
+00844:         "task": "family_3",
+... omitted ...
+00854:             EXPECTED_MODELS
+00855:         ),
+00856:         "training_seeds": list(
+00857:             MAIN_SEEDS
+00858:         ),
+00859:         "seed_count": int(
+00860:             len(MAIN_SEEDS)
+00861:         ),
+00862:         "common_training_configuration": {
+00863:             "optimizer": "AdamW",
+00864:             "batch_size": int(
+00865:                 args.batch_size
+00866:             ),
+00867:             "max_epochs": int(
+00868:                 args.max_epochs
+00869:             ),
+00870:             "early_stopping_patience": int(
+00871:                 args.patience
+00872:             ),
+00873:             "early_stopping_min_delta": float(
+00874:                 args.min_delta
+00875:             ),
+00876:             "weight_decay": float(
+00877:                 args.weight_decay
+00878:             ),
+00879:             "gradient_clip_norm": float(
+... omitted ...
+00883:                 args.torch_threads
+00884:             ),
+00885:             "num_workers": 0,
+00886:             "loss": (
+00887:                 "CrossEntropyLoss"
+00888:             ),
+00889:             "class_weight_scheme": (
+00890:                 "inverse_square_root_frequency_mean1"
+00891:             ),
+00892:             "class_weights_fitted_from": (
+00893:                 "train_only"
+00894:             ),
+... omitted ...
+00902:         "model_selection": {
+00903:             "split": "validation",
+00904:             "primary_metric": "macro_f1",
+00905:             "selection_direction": "maximize",
+00906:             "checkpoint_policy": (
+00907:                 "Best epoch within each model-seed run"
+00908:             ),
+00909:             "test_used_for_selection": False,
+... omitted ...
+00914:                 "After loading the best validation checkpoint"
+00915:             ),
+00916:             "evaluations_per_model_seed": 1,
+00917:             "hyperparameter_changes_after_test": (
+00918:                 "forbidden"
+... omitted ...
+00923:                 "macro_precision",
+00924:                 "macro_recall",
+00925:                 "macro_f1",
+00926:                 "weighted_f1",
+00927:                 "matthews_correlation_coefficient",
+... omitted ...
+00937:                 len(EXPECTED_MODELS)
+00938:             ),
+00939:             "seed_count": int(
+00940:                 len(MAIN_SEEDS)
+00941:             ),
+00942:             "total_fp32_training_runs": int(
+00943:                 len(EXPECTED_MODELS)
+00944:                 * len(MAIN_SEEDS)
+00945:             ),
+00946:         },
+00947:         "reporting_policy": {
+00948:             "aggregation_unit": (
+00949:                 "independent training seed"
+00950:             ),
+00951:             "report_mean": True,
+... omitted ...
+01004:         "protocol_version": "1.0",
+01005:         "status": (
+01006:             "locked_before_multi_seed_training"
+01007:         ),
+01008:         "task": "family_3",
+... omitted ...
+01010:             EXPECTED_MODELS
+01011:         ),
+01012:         "seeds": list(
+01013:             MAIN_SEEDS
+01014:         ),
+01015:         "model_specific_learning_rates": (
+01016:             selected_learning_rates
+01017:         ),
+01018:         "max_epochs": int(
+01019:             args.max_epochs
+01020:         ),
+01021:         "patience": int(
+01022:             args.patience
+01023:         ),
+01024:         "planned_training_run_count": int(
+01025:             len(EXPECTED_MODELS)
+01026:             * len(MAIN_SEEDS)
+01027:         ),
+01028:         "test_selection_leakage_prevention": (
+... omitted ...
+01052:         print(
+01053:             f"{model_name:14s} | "
+01054:             f"LR={model_data['learning_rate']:g} | "
+01055:             f"tuning_best_epoch="
+01056:             f"{model_data['tuning_best_epoch']} | "
+01057:             f"tuning_val_macro_f1="
+01058:             f"{model_data['tuning_validation_macro_f1']:.6f}"
+01059:         )
+01060: 
+01061:     print()
+01062:     print(
+01063:         "Ana seedler        : "
+01064:         + ", ".join(
+01065:             str(seed)
+01066:             for seed in MAIN_SEEDS
+01067:         )
+01068:     )
+01069:     print(
+01070:         "Toplam FP32 çalışma: "
+01071:         f"{len(EXPECTED_MODELS) * len(MAIN_SEEDS)}"
+01072:     )
+01073:     print(
+01074:         "Maksimum epoch     : "
+01075:         f"{args.max_epochs}"
+01076:     )
+01077:     print(
+01078:         "Early stopping     : "
+01079:         f"patience={args.patience}, "
+01080:         f"min_delta={args.min_delta}"
+01081:     )
+... omitted ...
+01084:     )
+01085:     print(
+01086:         "Test politikası    : seçilen checkpointte seed başına bir kez"
+01087:     )
+01088:     print()
+
+==========================================================================================
+scripts\23_run_fp32_baseline_experiments.py
+==========================================================================================
+00001: """
+00002: N-BaIoT family_3 çok-seed FP32 ana baseline deneyleri.
+00003: 
+00004: Deney planı:
+00005: - Modeller:
+00006:     tinyml_mlp
+00007:     compact_dnn
+00008:     tiny_1d_cnn
+00009: - Seedler:
+00010:     42, 123, 2026, 3407, 8192
+00011: - Toplam:
+... omitted ...
+00063:     load_pipeline_assets,
+00064: )
+00065: from src.models.nbaiot_models import create_model  # noqa: E402
+00066: from src.training.baseline_trainer import (  # noqa: E402
+00067:     run_epoch,
+00068:     run_training,
+00069:     set_reproducible_environment,
+00070: )
+... omitted ...
+00099: 
+00100: EXPECTED_MODELS = (
+00101:     "tinyml_mlp",
+00102:     "compact_dnn",
+00103:     "tiny_1d_cnn",
+00104: )
+00105: 
+00106: EXPECTED_SEEDS = (
+00107:     42,
+00108:     123,
+... omitted ...
+00118:     "test_macro_precision",
+00119:     "test_macro_recall",
+00120:     "test_macro_f1",
+00121:     "test_weighted_f1",
+00122:     "test_mcc",
+... omitted ...
+00403:     if (
+00404:         protocol.get("status")
+00405:         != "locked_before_multi_seed_training"
+00406:     ):
+00407:         raise ValueError(
+... omitted ...
+00425:         )
+00426: 
+00427:     seeds = tuple(
+00428:         int(seed)
+00429:         for seed
+00430:         in protocol["training_seeds"]
+00431:     )
+00432: 
+00433:     if seeds != EXPECTED_SEEDS:
+00434:         raise ValueError(
+00435:             "Protokoldeki seed sırası beklenen sırayla uyuşmuyor."
+00436:         )
+00437: 
+... omitted ...
+00454: 
+00455:     required_common_fields = {
+00456:         "batch_size",
+00457:         "max_epochs",
+00458:         "early_stopping_patience",
+00459:         "early_stopping_min_delta",
+00460:         "weight_decay",
+00461:         "gradient_clip_norm",
+00462:         "torch_threads",
+00463:         "num_workers",
+00464:         "class_weight_scheme",
+00465:     }
+00466: 
+... omitted ...
+00490:             )
+00491: 
+00492:         learning_rate = float(
+00493:             model_configuration[
+00494:                 model_name
+00495:             ][
+00496:                 "learning_rate"
+00497:             ]
+00498:         )
+00499: 
+00500:         if learning_rate <= 0:
+00501:             raise ValueError(
+00502:                 f"{model_name} öğrenme oranı geçersiz."
+... omitted ...
+00520:     protocol: dict[str, Any],
+00521:     model_name: str,
+00522:     seed: int,
+00523:     output_directory: Path,
+00524: ) -> dict[str, Any]:
+00525:     """Tek bir model-seed ana deney yapılandırması oluşturur."""
+00526: 
+00527:     common = protocol[
+... omitted ...
+00534: 
+00535:     experiment_name = (
+00536:         f"fp32_family3_{model_name}_seed{seed}"
+00537:     )
+00538: 
+... omitted ...
+00543:             "task": "family_3",
+00544:             "model": model_name,
+00545:             "seed": int(seed),
+00546:         },
+00547:         "data": {
+00548:             "batch_size": int(
+00549:                 common["batch_size"]
+00550:             ),
+00551:             "num_workers": int(
+00552:                 common["num_workers"]
+00553:             ),
+00554:         },
+00555:         "training": {
+00556:             "max_epochs": int(
+00557:                 common["max_epochs"]
+00558:             ),
+00559:             "learning_rate": float(
+00560:                 model_configuration[
+00561:                     "learning_rate"
+00562:                 ]
+00563:             ),
+00564:             "weight_decay": float(
+00565:                 common["weight_decay"]
+00566:             ),
+00567:             "gradient_clip_norm": float(
+... omitted ...
+00570:                 ]
+00571:             ),
+00572:             "patience": int(
+00573:                 common[
+00574:                     "early_stopping_patience"
+00575:                 ]
+00576:             ),
+00577:             "min_delta": float(
+00578:                 common[
+00579:                     "early_stopping_min_delta"
+00580:                 ]
+00581:             ),
+... omitted ...
+00585:             "weight_scheme": str(
+00586:                 common[
+00587:                     "class_weight_scheme"
+00588:                 ]
+00589:             ),
+... omitted ...
+00607:     protocol_sha256: str,
+00608:     model_name: str,
+00609:     seed: int,
+00610:     run_summary: dict[str, Any],
+00611:     run_directory: Path,
+... omitted ...
+00728:         "status": "started",
+00729:         "model_name": model_name,
+00730:         "seed": int(seed),
+00731:         "protocol_sha256": protocol_sha256,
+00732:         "checkpoint_file": str(
+... omitted ...
+00757:     weight_scheme = str(
+00758:         common_configuration[
+00759:             "class_weight_scheme"
+00760:         ]
+00761:     )
+00762: 
+00763:     batch_size = int(
+00764:         common_configuration[
+00765:             "batch_size"
+00766:         ]
+00767:     )
+00768: 
+00769:     num_workers = int(
+00770:         common_configuration[
+00771:             "num_workers"
+00772:         ]
+00773:     )
+00774: 
+00775:     set_reproducible_environment(
+00776:         seed=seed,
+00777:         torch_threads=torch_threads,
+00778:     )
+... omitted ...
+00781:         task_name="family_3",
+00782:         weight_scheme=weight_scheme,
+00783:         expected_seed=2026,
+00784:     )
+00785: 
+... omitted ...
+00787:         assets=assets,
+00788:         split_name="test",
+00789:         batch_size=batch_size,
+00790:         shuffle=False,
+00791:         seed=seed,
+00792:         epoch=0,
+00793:         num_workers=num_workers,
+00794:         pin_memory=False,
+00795:     )
+00796: 
+00797:     model = create_model(
+00798:         model_name=model_name,
+00799:         input_features=assets.feature_count,
+... omitted ...
+00820: 
+00821:     if int(
+00822:         checkpoint["seed"]
+00823:     ) != seed:
+00824:         raise RuntimeError(
+00825:             "Checkpoint seed değeri deney seediyle uyuşmuyor."
+00826:         )
+00827: 
+... omitted ...
+00846:     )
+00847: 
+00848:     class_weights = torch.as_tensor(
+00849:         assets.class_weights,
+00850:         dtype=torch.float32,
+00851:     )
+00852: 
+00853:     criterion = nn.CrossEntropyLoss(
+00854:         weight=class_weights
+00855:     )
+00856: 
+00857:     test_metrics = run_epoch(
+00858:         model=model,
+00859:         data_loader=test_loader,
+... omitted ...
+00888:         "model_name": model_name,
+00889:         "task_name": "family_3",
+00890:         "seed": int(seed),
+00891:         "checkpoint_selection_split": (
+00892:             "validation"
+00893:         ),
+00894:         "checkpoint_selection_metric": (
+00895:             "macro_f1"
+00896:         ),
+00897:         "best_epoch": int(
+00898:             run_summary["best_epoch"]
+00899:         ),
+00900:         "best_validation_macro_f1": float(
+00901:             run_summary[
+00902:                 "best_validation_macro_f1"
+00903:             ]
+00904:         ),
+... omitted ...
+00929:             {
+00930:                 "model_name": model_name,
+00931:                 "seed": int(seed),
+00932:                 "class_index": int(
+00933:                     class_index
+... omitted ...
+01026:     values: np.ndarray,
+01027: ) -> dict[str, float | int]:
+01028:     """Bir metrik için seed tabanlı özet ve %95 güven aralığı hesaplar."""
+01029: 
+01030:     values = np.asarray(
+... omitted ...
+01118:     run_frame: pd.DataFrame,
+01119: ) -> pd.DataFrame:
+01120:     """Model bazında test metriklerini seedler üzerinden özetler."""
+01121: 
+01122:     records: list[
+... omitted ...
+01159:     per_class_frame: pd.DataFrame,
+01160: ) -> pd.DataFrame:
+01161:     """Her model ve hedef sınıf için çok-seed istatistikleri hesaplar."""
+01162: 
+01163:     records: list[
+... omitted ...
+01287:     total_run_count = (
+01288:         len(EXPECTED_MODELS)
+01289:         * len(EXPECTED_SEEDS)
+01290:     )
+01291: 
+... omitted ...
+01300:     )
+01301:     print(
+01302:         "Seedler         : "
+01303:         + ", ".join(
+01304:             str(seed)
+01305:             for seed in EXPECTED_SEEDS
+01306:         )
+01307:     )
+... omitted ...
+01323: 
+01324:     for model_name in EXPECTED_MODELS:
+01325:         for seed in EXPECTED_SEEDS:
+01326:             run_index += 1
+01327: 
+... omitted ...
+01329:                 experiment_directory
+01330:                 / model_name
+01331:                 / f"seed{seed}"
+01332:             )
+01333: 
+... omitted ...
+01336:                 / (
+01337:                     f"family3_{model_name}_"
+01338:                     f"seed{seed}.yaml"
+01339:                 )
+01340:             )
+... omitted ...
+01348:                 protocol=protocol,
+01349:                 model_name=model_name,
+01350:                 seed=seed,
+01351:                 output_directory=run_directory,
+01352:             )
+... omitted ...
+01363:             )
+01364:             print(f"Model : {model_name}")
+01365:             print(f"Seed  : {seed}")
+01366:             print("=" * 78)
+01367: 
+... omitted ...
+01390:                         "Tamamlanmış deneyin yapılandırması "
+01391:                         "mevcut protokolle uyuşmuyor: "
+01392:                         f"{model_name}/seed{seed}"
+01393:                     )
+01394: 
+... omitted ...
+01413:                         )
+01414: 
+01415:                 run_summary = run_training(
+01416:                     config_file=config_file
+01417:                 )
+... omitted ...
+01437: 
+01438:             if int(
+01439:                 run_summary["seed"]
+01440:             ) != seed:
+01441:                 raise RuntimeError(
+01442:                     "Run summary seed değeri uyuşmuyor."
+01443:                 )
+01444: 
+... omitted ...
+01453:                 ),
+01454:                 model_name=model_name,
+01455:                 seed=seed,
+01456:                 run_summary=run_summary,
+01457:                 run_directory=run_directory,
+... omitted ...
+01461:                 {
+01462:                     "model_name": model_name,
+01463:                     "seed": int(seed),
+01464:                     "parameter_count": int(
+01465:                         run_summary[
+... omitted ...
+01467:                         ]
+01468:                     ),
+01469:                     "learning_rate": float(
+01470:                         protocol[
+01471:                             "model_specific_configuration"
+01472:                         ][model_name][
+01473:                             "learning_rate"
+01474:                         ]
+01475:                     ),
+01476:                     "best_epoch": int(
+01477:                         run_summary[
+01478:                             "best_epoch"
+01479:                         ]
+01480:                     ),
+01481:                     "epochs_completed": int(
+01482:                         run_summary[
+01483:                             "epochs_completed"
+01484:                         ]
+01485:                     ),
+01486:                     "best_validation_macro_f1": float(
+01487:                         run_summary[
+01488:                             "best_validation_macro_f1"
+01489:                         ]
+01490:                     ),
+... omitted ...
+01527:                         ]
+01528:                     ),
+01529:                     "test_macro_f1": float(
+01530:                         test_metrics[
+01531:                             "macro_f1"
+01532:                         ]
+01533:                     ),
+... omitted ...
+01591:                     {
+01592:                         "model_name": model_name,
+01593:                         "seed": int(seed),
+01594:                         "class_index": int(
+01595:                             class_index
+... omitted ...
+01651:                                 model_name
+01652:                             ),
+01653:                             "seed": int(seed),
+01654:                             "true_class_index": int(
+01655:                                 true_index
+... omitted ...
+01675:             print(
+01676:                 f"Test Macro F1 : "
+01677:                 f"{test_metrics['macro_f1']:.6f}"
+01678:             )
+01679:             print(
+... omitted ...
+01711:         subset=[
+01712:             "model_name",
+01713:             "seed",
+01714:         ]
+01715:     ).any():
+01716:         raise RuntimeError(
+01717:             "Tekrarlanan model-seed sonucu bulundu."
+01718:         )
+01719: 
+... omitted ...
+01721:         (
+01722:             model_name,
+01723:             seed,
+01724:         )
+01725:         for model_name in EXPECTED_MODELS
+01726:         for seed in EXPECTED_SEEDS
+01727:     }
+01728: 
+... omitted ...
+01730:         (
+01731:             str(row.model_name),
+01732:             int(row.seed),
+01733:         )
+01734:         for row in run_frame.itertuples(
+... omitted ...
+01739:     if actual_pairs != expected_pairs:
+01740:         raise RuntimeError(
+01741:             "Tamamlanan model-seed kümesi protokolle uyuşmuyor."
+01742:         )
+01743: 
+... omitted ...
+01762: 
+01763:     for model_name in EXPECTED_MODELS:
+01764:         model_seed_count = int(
+01765:             run_frame[
+01766:                 run_frame[
+... omitted ...
+01769:                 == model_name
+01770:             ][
+01771:                 "seed"
+01772:             ].nunique()
+01773:         )
+01774: 
+01775:         if model_seed_count != len(
+01776:             EXPECTED_SEEDS
+01777:         ):
+01778:             raise RuntimeError(
+01779:                 f"{model_name} için beş bağımsız seed bulunmuyor."
+01780:             )
+01781: 
+... omitted ...
+01796:     # ======================================================
+01797: 
+01798:     macro_f1_aggregate = (
+01799:         aggregate_frame[
+01800:             aggregate_frame[
+01801:                 "metric"
+01802:             ]
+01803:             == "test_macro_f1"
+01804:         ]
+01805:         .copy()
+... omitted ...
+01819:     )
+01820: 
+01821:     macro_f1_aggregate.insert(
+01822:         0,
+01823:         "validation_rank",
+... omitted ...
+01825:             1,
+01826:             len(
+01827:                 macro_f1_aggregate
+01828:             )
+01829:             + 1,
+... omitted ...
+01898:                 row.model_name
+01899:             ),
+01900:             "mean_test_macro_f1": float(
+01901:                 row.mean
+01902:             ),
+... omitted ...
+01920:             ),
+01921:         }
+01922:         for row in macro_f1_aggregate.itertuples(
+01923:             index=False
+01924:         )
+... omitted ...
+01940:             len(EXPECTED_MODELS)
+01941:         ),
+01942:         "seed_count_per_model": int(
+01943:             len(EXPECTED_SEEDS)
+01944:         ),
+01945:         "total_training_run_count": int(
+... omitted ...
+01949:             len(run_frame)
+01950:         ),
+01951:         "test_evaluations_per_model_seed": 1,
+01952:         "test_used_for_model_selection": False,
+01953:         "models": list(
+01954:             EXPECTED_MODELS
+01955:         ),
+01956:         "seeds": list(
+01957:             EXPECTED_SEEDS
+01958:         ),
+01959:         "primary_test_metric": (
+01960:             "macro_f1"
+01961:         ),
+01962:         "security_metric": (
+... omitted ...
+01964:         ),
+01965:         "aggregation_unit": (
+01966:             "independent_training_seed"
+01967:         ),
+01968:         "confidence_interval_method": (
+01969:             "Two-sided 95% Student-t confidence interval "
+01970:             "over five independent training seeds."
+01971:         ),
+01972:         "macro_f1_ranking": (
+01973:             ranking_records
+01974:         ),
+01975:         "best_mean_test_macro_f1_model": (
+01976:             ranking_records[
+01977:                 0
+... omitted ...
+02017:             f"{record['model_name']:14s} | "
+02018:             f"Test Macro F1="
+02019:             f"{record['mean_test_macro_f1']:.6f} "
+02020:             f"± {record['standard_deviation']:.6f} | "
+02021:             f"%95 GA=["
+... omitted ...
+02034:     )
+02035:     print(
+02036:         "Seed başına test     : 1"
+02037:     )
+02038:     print(
+... omitted ...
+02043:     )
+02044:     print()
+02045:     print(f"Seed sonuçları       : {run_report_file}")
+02046:     print(f"Toplu istatistikler  : {aggregate_report_file}")
+02047:     print(f"Sınıf sonuçları      : {per_class_run_file}")
+
+==========================================================================================
+scripts\38_run_b0_matched_leakage_ablation.py
+==========================================================================================
+00001: """Run the corrected leakage ablation with the locked B0 training protocol.
+00002: 
+00003: The two arms produced by stage 37 contain the same raw N-BaIoT rows and differ
+00004: only in the split assignment unit.  Both arms use the B0 ``tinyml_mlp`` model,
+00005: AdamW, inverse-square-root class weights, train-only standardization, identical
+00006: early stopping, and the five locked seeds.
+00007: 
+00008: The experiment is an auxiliary raw-frequency leakage-sensitivity analysis.  It
+00009: does not replace or overwrite the 150 primary compression experiments.
+00010: Put this file in ``scripts/`` inside TinyML_IDS_IEEE.
+00011: """
+00012: 
+... omitted ...
+00042:     sys.path.insert(0, str(PROJECT_ROOT))
+00043: 
+00044: from src.models.nbaiot_models import create_model  # noqa: E402
+00045: 
+00046: 
+00047: DEFAULT_DATABASE = PROJECT_ROOT / "data" / "splits" / "vs2_float32_leakage_ablation_seed2026.sqlite"
+00048: DEFAULT_PROTOCOL = PROJECT_ROOT / "configs" / "protocols" / "nbaiot_family3_fp32_baseline_protocol_v1.json"
+00049: DEFAULT_CSV_ROOT = PROJECT_ROOT / "data" / "interim" / "nbaiot_unpacked"
+00050: DEFAULT_CACHE = PROJECT_ROOT / "data" / "processed" / "vs2_float32_leakage_ablation"
+00051: DEFAULT_OUTPUT = PROJECT_ROOT / "results" / "vs2" / "leakage_ablation_b0_matched"
+00052: 
+00053: ARMS = ("naive_row", "grouped_float32")
+00054: SPLITS = ("train", "validation", "test")
+00055: SPLIT_CODES = {"train": 0, "validation": 1, "test": 2}
+00056: SEEDS = (42, 123, 2026, 3407, 8192)
+00057: CLASS_NAMES = ("benign", "gafgyt", "mirai")
+00058: EXPECTED_FEATURE_COUNT = 115
+... omitted ...
+00062: EXPECTED_LARGEST_FLOAT32_GROUP_RAW_ROWS = 965_536
+00063: EXPECTED_SOURCE_FILE_COUNT = 89
+00064: LOCKED_SPLIT_SEED = 2026
+00065: PROTOCOL_VERSION = "2.1"
+00066: SCALER_AUDIT_TOLERANCE = 1e-4
+... omitted ...
+00071: 
+00072: def parse_arguments() -> argparse.Namespace:
+00073:     parser = argparse.ArgumentParser(description="Stage 38: B0-matched leakage ablation")
+00074:     parser.add_argument("--database", type=Path, default=DEFAULT_DATABASE)
+00075:     parser.add_argument("--protocol", type=Path, default=DEFAULT_PROTOCOL)
+... omitted ...
+00084:     parser.add_argument("--chunk-size", type=int, default=100_000)
+00085:     parser.add_argument("--arms", nargs="+", choices=ARMS, default=list(ARMS))
+00086:     parser.add_argument("--seeds", nargs="+", type=int, default=list(SEEDS))
+00087:     parser.add_argument("--prepare-only", action="store_true")
+00088:     parser.add_argument(
+... omitted ...
+00147:         "feature_count": "115",
+00148:         "task": "family_3",
+00149:         "seed": str(LOCKED_SPLIT_SEED),
+00150:         "validation_status": "passed",
+00151:         "source_file_count": str(EXPECTED_SOURCE_FILE_COUNT),
+... omitted ...
+00678:     mean = np.load(arm_directory / "mean.npy")
+00679:     scale = np.load(arm_directory / "std.npy")
+00680:     weights = np.load(arm_directory / "class_weights.npy")
+00681:     if mean.shape != (EXPECTED_FEATURE_COUNT,) or mean.dtype != np.float64:
+00682:         raise RuntimeError(f"Geçersiz scaler mean: {arm} {mean.shape} {mean.dtype}")
+... omitted ...
+00828:         raise RuntimeError(f"{arm}: StandardScaler pozitif olmayan ölçek üretti.")
+00829:     class_counts = np.bincount(y_train, minlength=3)
+00830:     class_weights = inverse_sqrt_mean1(class_counts)
+00831:     np.save(arm_directory / "mean.npy", mean)
+00832:     np.save(arm_directory / "std.npy", standard_deviation)
+00833:     np.save(arm_directory / "class_weights.npy", class_weights)
+00834: 
+00835:     scaled_sum = np.zeros(EXPECTED_FEATURE_COUNT, dtype=np.float64)
+... omitted ...
+00918:         "train_class_counts": class_counts.tolist(),
+00919:         "scaler_fit_split": "train_only",
+00920:         "class_weights_fit_split": "train_only",
+00921:         "class_weight_scheme": "inverse_square_root_frequency_mean1",
+00922:         "class_weights": class_weights.tolist(),
+00923:         "scaler_full_scan_audit": {
+00924:             "all_scaled_values_finite": scaled_finite,
+... omitted ...
+00951: 
+00952: 
+00953: def set_reproducible(seed: int, threads: int) -> None:
+00954:     random.seed(seed)
+00955:     np.random.seed(seed)
+00956:     torch.manual_seed(seed)
+00957:     torch.set_num_threads(threads)
+00958:     torch.use_deterministic_algorithms(True)
+... omitted ...
+00990:         "macro_precision": float(precision.mean()),
+00991:         "macro_recall": float(recall.mean()),
+00992:         "macro_f1": float(f1.mean()),
+00993:         "weighted_f1": float(np.average(f1, weights=support)),
+00994:         "mcc": multiclass_mcc(confusion),
+... omitted ...
+01031: def protocol_settings(path: Path) -> tuple[dict[str, Any], str]:
+01032:     protocol = read_json(path)
+01033:     if tuple(int(seed) for seed in protocol.get("seeds", ())) != SEEDS:
+01034:         raise RuntimeError(f"B0 protokol seed kümesi uyuşmuyor: {protocol.get('seeds')!r}")
+01035:     if str(protocol.get("task")) != "family_3":
+01036:         raise RuntimeError(f"B0 görev adı uyuşmuyor: {protocol.get('task')!r}")
+01037:     common = protocol["common_training_configuration"]
+01038:     model = protocol["model_specific_configuration"]["tinyml_mlp"]
+01039:     expected = {
+01040:         "optimizer": "AdamW",
+01041:         "class_weight_scheme": "inverse_square_root_frequency_mean1",
+01042:     }
+01043:     for key, value in expected.items():
+01044:         if str(common.get(key)) != value:
+01045:             raise RuntimeError(f"B0 protokolü uyuşmuyor: {key}={common.get(key)!r}")
+01046:     settings = {
+01047:         "optimizer": "AdamW",
+01048:         "model_name": "tinyml_mlp",
+01049:         "batch_size": int(common["batch_size"]),
+01050:         "num_workers": int(common["num_workers"]),
+01051:         "max_epochs": int(common["max_epochs"]),
+01052:         "learning_rate": float(model["learning_rate"]),
+01053:         "weight_decay": float(common["weight_decay"]),
+01054:         "gradient_clip_norm": float(common["gradient_clip_norm"]),
+01055:         "patience": int(common["early_stopping_patience"]),
+01056:         "min_delta": float(common["early_stopping_min_delta"]),
+01057:         "torch_threads": int(common["torch_threads"]),
+01058:         "class_weight_scheme": str(common["class_weight_scheme"]),
+01059:     }
+01060:     locked = {
+01061:         "batch_size": 4096,
+01062:         "num_workers": 0,
+01063:         "max_epochs": 15,
+01064:         "learning_rate": 0.003,
+01065:         "weight_decay": 0.0001,
+01066:         "gradient_clip_norm": 1.0,
+01067:         "patience": 4,
+01068:         "min_delta": 0.0002,
+01069:         "torch_threads": 4,
+... omitted ...
+01072:         if settings[key] != expected_value:
+01073:             raise RuntimeError(
+01074:                 f"Kilitli B0 ayarı değişmiş: {key}={settings[key]!r}, beklenen={expected_value!r}"
+01075:             )
+01076:     return settings, sha256(path)
+01077: 
+01078: 
+01079: def train_one(
+01080:     arm_directory: Path,
+01081:     run_directory: Path,
+01082:     arm: str,
+01083:     seed: int,
+01084:     cfg: dict[str, Any],
+01085:     protocol_sha256: str,
+... omitted ...
+01096:             "status": "completed",
+01097:             "arm": arm,
+01098:             "seed": seed,
+01099:             "model_name": "tinyml_mlp",
+01100:             "parameter_count": EXPECTED_PARAMETER_COUNT,
+01101:             "protocol_sha256": protocol_sha256,
+... omitted ...
+01111:         if mismatches:
+01112:             raise RuntimeError(f"Tamamlanmış VS2 sonucu uyumsuz: {result_file}: {mismatches}")
+01113:         print(f"[{arm}/seed{seed}] Tamamlanmış VS2 sonucu kullanılıyor.", flush=True)
+01114:         return result
+01115:     if run_directory.exists() and any(run_directory.iterdir()):
+... omitted ...
+01122:     run_directory.mkdir(parents=True, exist_ok=True)
+01123: 
+01124:     set_reproducible(seed, cfg["torch_threads"])
+01125:     train_dataset = MemmapDataset(arm_directory, "train")
+01126:     train_generator = torch.Generator().manual_seed(seed)
+01127:     train_loader = DataLoader(
+01128:         train_dataset,
+01129:         batch_size=cfg["batch_size"],
+01130:         shuffle=True,
+01131:         generator=train_generator,
+01132:         num_workers=cfg["num_workers"],
+01133:     )
+01134:     validation_loader = DataLoader(
+01135:         MemmapDataset(arm_directory, "validation"),
+01136:         batch_size=cfg["batch_size"],
+01137:         shuffle=False,
+01138:         num_workers=cfg["num_workers"],
+01139:     )
+01140:     test_loader = DataLoader(
+01141:         MemmapDataset(arm_directory, "test"),
+01142:         batch_size=cfg["batch_size"],
+01143:         shuffle=False,
+01144:         num_workers=cfg["num_workers"],
+01145:     )
+01146:     model = create_model(
+01147:         model_name="tinyml_mlp",
+01148:         input_features=EXPECTED_FEATURE_COUNT,
+01149:         num_classes=3,
+... omitted ...
+01152:     if parameter_count != EXPECTED_PARAMETER_COUNT:
+01153:         raise RuntimeError(
+01154:             f"B0 tinyml_mlp parametre sayısı değişmiş: {parameter_count:,} != {EXPECTED_PARAMETER_COUNT:,}"
+01155:         )
+01156:     weights = torch.from_numpy(np.load(arm_directory / "class_weights.npy"))
+01157:     criterion = nn.CrossEntropyLoss(weight=weights)
+01158:     optimizer = torch.optim.AdamW(
+01159:         model.parameters(),
+01160:         lr=cfg["learning_rate"],
+01161:         weight_decay=cfg["weight_decay"],
+01162:     )
+01163:     run_config = {
+... omitted ...
+01165:         "created_at_utc": utc_now(),
+01166:         "arm": arm,
+01167:         "seed": seed,
+01168:         "model_name": "tinyml_mlp",
+01169:         "parameter_count": parameter_count,
+01170:         "protocol_sha256": protocol_sha256,
+... omitted ...
+01178:     atomic_json(manifest_file, run_config)
+01179: 
+01180:     best_macro_f1 = -math.inf
+01181:     best_epoch = 0
+01182:     stale_epochs = 0
+01183:     history: list[dict[str, Any]] = []
+01184:     checkpoint_file = run_directory / "best_checkpoint.pt"
+01185:     training_started = time.perf_counter()
+01186:     for epoch in range(1, cfg["max_epochs"] + 1):
+01187:         model.train()
+01188:         running_loss = 0.0
+... omitted ...
+01201:         history.append(
+01202:             {
+01203:                 "epoch": epoch,
+01204:                 "train_loss": running_loss / sample_count,
+01205:                 "validation_loss": validation["loss"],
+01206:                 "validation_macro_f1": validation["macro_f1"],
+01207:                 "validation_accuracy": validation["accuracy"],
+01208:             }
+01209:         )
+01210:         print(
+01211:             f"[{arm}] seed={seed} epoch={epoch}: "
+01212:             f"val_macro_f1={validation['macro_f1']:.6f}",
+01213:             flush=True,
+01214:         )
+01215:         if validation["macro_f1"] > best_macro_f1 + cfg["min_delta"]:
+01216:             best_macro_f1 = float(validation["macro_f1"])
+01217:             best_epoch = epoch
+01218:             stale_epochs = 0
+01219:             torch.save(
+01220:                 {
+01221:                     "model_state_dict": model.state_dict(),
+01222:                     "model_name": "tinyml_mlp",
+01223:                     "task_name": "family_3",
+01224:                     "class_names": CLASS_NAMES,
+01225:                     "arm": arm,
+01226:                     "seed": seed,
+01227:                     "best_epoch": best_epoch,
+01228:                     "best_validation_macro_f1": best_macro_f1,
+01229:                     "protocol_sha256": protocol_sha256,
+01230:                     "assignment_database_sha256": database_sha256,
+... omitted ...
+01235:             )
+01236:         else:
+01237:             stale_epochs += 1
+01238:             if stale_epochs >= cfg["patience"]:
+01239:                 break
+01240: 
+... omitted ...
+01245:         "status": "test_started",
+01246:         "training_completed_at_utc": utc_now(),
+01247:         "best_epoch": best_epoch,
+01248:         "best_validation_macro_f1": best_macro_f1,
+01249:         "test_evaluation_attempt_count": 1,
+01250:     }
+... omitted ...
+01260:         "completed_at_utc": utc_now(),
+01261:         "arm": arm,
+01262:         "seed": seed,
+01263:         "model_name": "tinyml_mlp",
+01264:         "parameter_count": parameter_count,
+01265:         "protocol_sha256": protocol_sha256,
+... omitted ...
+01267:         "cache_manifest_sha256": cache_manifest_sha256,
+01268:         "stage38_script_sha256": stage38_script_sha256,
+01269:         "best_epoch": best_epoch,
+01270:         "epochs_completed": len(history),
+01271:         "best_validation_macro_f1": best_macro_f1,
+01272:         "training_seconds": training_seconds,
+01273:         "test": test,
+... omitted ...
+01348: ) -> None:
+01349:     output_directory.mkdir(parents=True, exist_ok=True)
+01350:     run_file = output_directory / "leakage_ablation_b0_matched_runs.csv"
+01351:     frame.to_csv(run_file, index=False)
+01352:     metrics = (
+... omitted ...
+01355:         "test_macro_precision",
+01356:         "test_macro_recall",
+01357:         "test_macro_f1",
+01358:         "test_weighted_f1",
+01359:         "test_mcc",
+... omitted ...
+01371:             )
+01372:     aggregate = pd.DataFrame(aggregate_records)
+01373:     aggregate_file = output_directory / "leakage_ablation_b0_matched_aggregate.csv"
+01374:     aggregate.to_csv(aggregate_file, index=False)
+01375: 
+... omitted ...
+01377:     exact_tests: dict[str, Any] = {}
+01378:     for metric in metrics:
+01379:         pivot = frame.pivot(index="seed", columns="arm", values=metric).loc[list(SEEDS)]
+01380:         differences = (
+01381:             pivot["naive_row"].to_numpy(dtype=np.float64)
+01382:             - pivot["grouped_float32"].to_numpy(dtype=np.float64)
+01383:         )
+01384:         for seed, naive, grouped, difference in zip(
+01385:             pivot.index,
+01386:             pivot["naive_row"],
+... omitted ...
+01391:                 {
+01392:                     "metric": metric,
+01393:                     "seed": int(seed),
+01394:                     "naive_row": float(naive),
+01395:                     "grouped_float32": float(grouped),
+... omitted ...
+01404:         }
+01405:     paired = pd.DataFrame(paired_records)
+01406:     paired_file = output_directory / "leakage_ablation_b0_matched_paired_deltas.csv"
+01407:     paired.to_csv(paired_file, index=False)
+01408:     exact_file = output_directory / "leakage_ablation_b0_matched_exact_inference.json"
+01409:     atomic_json(
+01410:         exact_file,
+01411:         {
+01412:             "generated_at_utc": utc_now(),
+01413:             "paired_unit": "locked training seed",
+01414:             "fixed_split_seed": LOCKED_SPLIT_SEED,
+01415:             "inference_scope": (
+01416:                 "Conditional on the single locked split seed; split-to-split uncertainty is not estimated."
+01417:             ),
+01418:             "pair_count": len(SEEDS),
+01419:             "interpretation_rule": (
+01420:                 "With five nonzero pairs the smallest attainable two-sided exact p-value is 0.0625; "
+... omitted ...
+01424:         },
+01425:     )
+01426:     summary_file = output_directory / "leakage_ablation_b0_matched_summary.json"
+01427:     atomic_json(
+01428:         summary_file,
+... omitted ...
+01430:             "generated_at_utc": utc_now(),
+01431:             "status": "completed",
+01432:             "protocol": "vs2_float32_leakage_ablation_b0_matched",
+01433:             "protocol_version": PROTOCOL_VERSION,
+01434:             "analysis_role": "auxiliary raw-frequency leakage-sensitivity analysis",
+01435:             "does_not_replace_primary_experiments": True,
+01436:             "model": "tinyml_mlp",
+01437:             "parameter_count": EXPECTED_PARAMETER_COUNT,
+01438:             "training_seeds": list(SEEDS),
+01439:             "fixed_split_seed": LOCKED_SPLIT_SEED,
+01440:             "inference_scope": (
+01441:                 "Training-seed variability conditional on split seed 2026; no split-seed generalization claim."
+01442:             ),
+01443:             "arms": list(ARMS),
+01444:             "total_training_run_count": len(ARMS) * len(SEEDS),
+01445:             "same_raw_row_universe_between_arms": True,
+01446:             "raw_row_count_per_arm": EXPECTED_RAW_ROW_COUNT,
+... omitted ...
+01452:             ),
+01453:             "training_configuration": cfg,
+01454:             "locked_b0_protocol_sha256": protocol_sha256,
+01455:             "assignment_database_sha256": database_sha256,
+01456:             "assignment_database_validation": database_validation,
+01457:             "stage38_script_sha256": stage38_script_sha256,
+01458:             "data_manifests": manifests,
+01459:             "test_evaluations_per_arm_seed": 1,
+01460:             "test_used_for_selection": False,
+01461:             "elapsed_minutes": elapsed_minutes,
+... omitted ...
+01475:     if args.chunk_size <= 0:
+01476:         raise ValueError("--chunk-size pozitif olmalıdır.")
+01477:     if tuple(args.seeds) != SEEDS:
+01478:         raise ValueError(f"Seed kümesi kilitli olmalıdır: {SEEDS}")
+01479:     if tuple(args.arms) != ARMS:
+01480:         print("UYARI: Yalnız seçili kollar çalıştırılıyor; nihai eşleştirilmiş rapor oluşmayabilir.")
+... omitted ...
+01514:     rows: list[dict[str, Any]] = []
+01515:     for arm in args.arms:
+01516:         for seed in args.seeds:
+01517:             run_directory = output / arm / f"seed{seed}"
+01518:             print(f"[{arm}/seed{seed}] B0-eşlenmiş eğitim başlıyor...", flush=True)
+01519:             result = train_one(
+01520:                 arm_directory=cache / arm,
+01521:                 run_directory=run_directory,
+01522:                 arm=arm,
+01523:                 seed=seed,
+01524:                 cfg=cfg,
+01525:                 protocol_sha256=protocol_sha256,
+... omitted ...
+01531:             row = {
+01532:                 "arm": arm,
+01533:                 "seed": seed,
+01534:                 "parameter_count": result["parameter_count"],
+01535:                 "best_epoch": result["best_epoch"],
+01536:                 "epochs_completed": result["epochs_completed"],
+01537:                 "best_validation_macro_f1": result["best_validation_macro_f1"],
+01538:                 "training_seconds": result["training_seconds"],
+01539:                 "test_evaluation_attempt_count": result["test_evaluation_attempt_count"],
+... omitted ...
+01551: 
+01552:     frame = pd.DataFrame(rows)
+01553:     if set(args.arms) == set(ARMS) and set(args.seeds) == set(SEEDS):
+01554:         write_reports(
+01555:             frame=frame,
+... omitted ...
+01563:             elapsed_minutes=(time.perf_counter() - started) / 60.0,
+01564:         )
+01565:         macro = frame.pivot(index="seed", columns="arm", values="test_macro_f1").loc[list(SEEDS)]
+01566:         differences = macro["naive_row"] - macro["grouped_float32"]
+01567:         print("=" * 78)
+01568:         print("38. aşama tamamlandı: B0-eşlenmiş float32 sızıntı ablasyonu")
+01569:         print(f"Naif Macro-F1 ortalaması : {macro['naive_row'].mean():.9f}")
+01570:         print(f"Gruplu Macro-F1 ortalaması: {macro['grouped_float32'].mean():.9f}")

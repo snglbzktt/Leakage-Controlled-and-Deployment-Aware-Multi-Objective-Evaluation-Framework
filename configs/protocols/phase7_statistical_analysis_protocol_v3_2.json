@@ -1,0 +1,174 @@
+{
+  "status": "locked",
+  "phase": 7,
+  "artifact_name": "statistical_analysis_protocol",
+  "protocol_version": "phase7_statistical_analysis_v3_2",
+  "locked_at_utc": "2026-08-06T21:17:22.072351+00:00",
+  "provenance_statement": {
+    "externally_preregistered": false,
+    "source_results_generated_before_protocol_lock": true,
+    "inferential_computation_performed_before_protocol_lock": false,
+    "scope_control": "All variants are compared with B0 under one uniform rule to reduce selective reporting."
+  },
+  "analysis_unit": {
+    "paired_unit": "seed",
+    "paired_seed_values": [
+      42,
+      123,
+      2026,
+      3407,
+      8192
+    ],
+    "paired_seed_count": 5,
+    "architectures_analyzed_separately": true,
+    "missing_value_policy": "hard_failure_no_imputation",
+    "duplicate_key_policy": "hard_failure"
+  },
+  "endpoints": {
+    "confirmatory": {
+      "test_fingerprint_macro_f1": {
+        "source_column": "test_fingerprint_macro_f1",
+        "domain": "predictive",
+        "direction": "higher_is_better",
+        "unit": "proportion"
+      },
+      "batch_1_median_ms": {
+        "source_column": "batch_1_median_ms",
+        "domain": "deployment",
+        "direction": "lower_is_better",
+        "unit": "milliseconds"
+      },
+      "batch_32_samples_per_second": {
+        "source_column": "batch_32_samples_per_second",
+        "domain": "deployment",
+        "direction": "higher_is_better",
+        "unit": "samples_per_second"
+      },
+      "serialized_state_dict_bytes": {
+        "source_column": "serialized_state_dict_bytes",
+        "domain": "deployment",
+        "direction": "lower_is_better",
+        "unit": "bytes"
+      }
+    },
+    "exploratory": {
+      "test_raw_weighted_macro_f1": {
+        "source_column": "test_raw_weighted_macro_f1",
+        "domain": "predictive",
+        "direction": "higher_is_better",
+        "unit": "proportion"
+      },
+      "batch_1_p95_ms": {
+        "source_column": "batch_1_p95_ms",
+        "domain": "deployment",
+        "direction": "lower_is_better",
+        "unit": "milliseconds"
+      },
+      "batch_32_p95_ms": {
+        "source_column": "batch_32_p95_ms",
+        "domain": "deployment",
+        "direction": "lower_is_better",
+        "unit": "milliseconds"
+      },
+      "peak_inference_RSS_delta_bytes": {
+        "source_column": "peak_inference_RSS_delta_bytes",
+        "domain": "deployment",
+        "direction": "lower_is_better",
+        "unit": "bytes"
+      }
+    }
+  },
+  "omnibus_analysis": {
+    "statistic": "Friedman rank statistic",
+    "null_randomization": "independent within-seed permutation of the 11 variant labels",
+    "monte_carlo_permutations": 100000,
+    "global_random_seed": 2026,
+    "p_value_correction": "plus_one",
+    "scipy_asymptotic_friedman": "reported_as_sensitivity_only"
+  },
+  "posthoc_analysis": {
+    "reference_variant": "B0",
+    "candidate_variants": [
+      "FP32-FT",
+      "P25-noFT",
+      "P25-FP32-FT",
+      "P50-noFT",
+      "P50-FP32-FT",
+      "DQ",
+      "QAT",
+      "P25-QAT",
+      "P50-QAT",
+      "PTQ"
+    ],
+    "test": "exact two-sided paired sign-flip randomization test on the mean raw paired delta",
+    "exact_assignments": 32,
+    "raw_delta_definition": "candidate_minus_B0",
+    "improvement_delta_definition": {
+      "higher_is_better": "candidate_minus_B0",
+      "lower_is_better": "B0_minus_candidate"
+    },
+    "effect_sizes": [
+      "mean_raw_delta",
+      "median_raw_delta",
+      "mean_improvement_delta",
+      "median_improvement_delta",
+      "paired_rank_biserial_correlation",
+      "win_tie_loss_counts"
+    ],
+    "confidence_interval": {
+      "target": "mean_raw_delta",
+      "method": "deterministic exhaustive paired bootstrap percentile interval",
+      "confidence_level": 0.95,
+      "resamples": 3125
+    }
+  },
+  "multiplicity": {
+    "method": "Holm step-down",
+    "family_definition": "ten B0 comparisons within each architecture and metric",
+    "confirmatory_and_exploratory_families_separate": true,
+    "alpha": 0.05
+  },
+  "small_sample_interpretation": {
+    "paired_seed_count": 5,
+    "minimum_possible_two_sided_exact_p": 0.0625,
+    "nominal_alpha": 0.05,
+    "consequence": "With five non-zero pairs, a two-sided exact sign-flip p-value cannot fall below 0.0625. Effect sizes, consistency, uncertainty, fragility, and Pareto trade-offs therefore receive primary interpretive emphasis; absence of p<0.05 is not treated as evidence of equivalence."
+  },
+  "reporting_rules": {
+    "report_all_planned_comparisons": true,
+    "report_raw_and_Holm_adjusted_p_values": true,
+    "report_all_effect_sizes": true,
+    "report_exact_zero_differences": true,
+    "no_significance_only_filtering": true,
+    "no_final_model_selection_in_phase7": true,
+    "final_selection_deferred_to": "locked multi-objective decision stage after statistical analysis"
+  },
+  "source_artifacts": {
+    "phase5_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_locked_v3_2.json",
+      "size_bytes": 1378,
+      "sha256": "a067b62e475c1648729819d994fdc59d4050d49dc5d7596b1953f60dc7d7fc7c"
+    },
+    "phase5_master_matrix": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv",
+      "size_bytes": 48909,
+      "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+    },
+    "phase6_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_v3_2.json",
+      "size_bytes": 1430,
+      "sha256": "41ecd92802dffe1b38cf0749b22683c47f0401d92d4d809bf2f63f92b51abbce"
+    },
+    "phase6_all_runs": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_all_runs_v3_2.csv",
+      "size_bytes": 67445,
+      "sha256": "a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250"
+    }
+  },
+  "environment": {
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "scipy_version": "1.17.1"
+  },
+  "all_checks_passed": true
+}

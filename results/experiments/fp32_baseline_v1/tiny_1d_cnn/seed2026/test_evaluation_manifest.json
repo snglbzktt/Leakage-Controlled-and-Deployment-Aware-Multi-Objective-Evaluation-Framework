@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-24T11:52:46.106561+00:00",
+  "status": "completed",
+  "model_name": "tiny_1d_cnn",
+  "seed": 2026,
+  "protocol_sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525",
+  "checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed2026\\best_checkpoint.pt",
+  "checkpoint_sha256": "176b05021581a8622d947a75ac8d6f5580a1efe0d6a9b44e597508d70c51d7db",
+  "evaluation_attempt_count": 1,
+  "test_used_for_model_selection": false,
+  "completed_at_utc": "2026-07-24T11:52:48.833560+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed2026\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed2026\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed2026\\test_confusion_matrix.csv"
+}

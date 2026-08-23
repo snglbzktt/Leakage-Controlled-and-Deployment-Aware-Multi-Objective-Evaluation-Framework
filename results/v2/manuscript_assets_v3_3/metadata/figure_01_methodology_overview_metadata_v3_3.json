@@ -1,0 +1,149 @@
+{
+  "status": "generated",
+  "phase": 13,
+  "asset_id": "figure_01_methodology_overview",
+  "generated_at_utc": "2026-08-07T07:47:52.030109+00:00",
+  "title": "Locked Experimental and Deployment Workflow",
+  "stage_count": 7,
+  "stages": [
+    {
+      "order": 1,
+      "stage": "Strict LODO generalization",
+      "phase": "Phase 3",
+      "detail": "9 devices \u00d7 3 models = 27 locked runs",
+      "evidence": "Global severe-fragility gate passed"
+    },
+    {
+      "order": 2,
+      "stage": "Compression matrix",
+      "phase": "Phase 5",
+      "detail": "2 architectures \u00d7 11 variants \u00d7 5 seeds = 110 runs",
+      "evidence": "22 grouped configurations"
+    },
+    {
+      "order": 3,
+      "stage": "Deployment benchmark",
+      "phase": "Phase 6",
+      "detail": "110 isolated CPU measurements",
+      "evidence": "Batch-1 latency + batch-32 throughput; no val/test access"
+    },
+    {
+      "order": 4,
+      "stage": "Multi-objective selection",
+      "phase": "Phase 8",
+      "detail": "Eligibility \u2192 Pareto \u2192 deployment ordering",
+      "evidence": "Selected family: TinyML-MLP P50-QAT"
+    },
+    {
+      "order": 5,
+      "stage": "Final deployment artifact",
+      "phase": "Phase 9",
+      "detail": "Canonical seed 2026",
+      "evidence": "Exact source/bundle and serialization round-trip"
+    },
+    {
+      "order": 6,
+      "stage": "Deterministic release",
+      "phase": "Phase 10",
+      "detail": "Locked release archive",
+      "evidence": "Deterministic rebuild exact"
+    },
+    {
+      "order": 7,
+      "stage": "Input robustness",
+      "phase": "Phase 11",
+      "detail": "3 models \u00d7 9 perturbation conditions = 27 evaluations",
+      "evidence": "No retraining, no model reselection, final model unchanged"
+    }
+  ],
+  "phase12_external_dataset": "deferred_optional",
+  "source_files": [
+    {
+      "source_id": "lodo_global_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\global\\early_lodo_global_summary_v2.json",
+      "sha256": "1edbff5dd484f4bcd8b4d651b33795b21748debaa3e9f643b720b6970bea4b77"
+    },
+    {
+      "source_id": "phase5_closure",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_closure_v3_2.json",
+      "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac"
+    },
+    {
+      "source_id": "phase6_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_summary_v3_2.json",
+      "sha256": "da9a34e01207cfb98d1edb4064e0a0a0b0f3fe3adfcb199f4a73d5bb663b6016"
+    },
+    {
+      "source_id": "phase8_final_model_lock",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_final_model_family_locked_v3_2.json",
+      "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9"
+    },
+    {
+      "source_id": "phase9_artifact_lock",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_deployment_artifact_locked_v3_2.json",
+      "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6"
+    },
+    {
+      "source_id": "phase10_release_lock",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase10_release_archive_locked_v3_3.json",
+      "sha256": "e7e5e3d6a44c65e96024c376daf7f81589aaea876d80775374dea5b9b8c47f3e"
+    },
+    {
+      "source_id": "phase11_lock",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_locked_v3_3.json",
+      "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+    }
+  ],
+  "outputs": {
+    "png": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_01_methodology_overview_v3_3.png",
+      "sha256": "3a1044b066242587ebaa601d0324c34c73c3a60bc26bd47819bf48801d69bea1",
+      "size_bytes": 269667
+    },
+    "svg": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_01_methodology_overview_v3_3.svg",
+      "sha256": "3aa54ff001d4bcef5ea788f590e872b522d2607025a96f1ce00aead952e9ee44",
+      "size_bytes": 103525
+    },
+    "source_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\figure_01_methodology_overview_source_v3_3.csv",
+      "sha256": "7deb27eefdb95b58887472b64e8741c9b756737dd6f3bacdc8069f8c8cbf0f99",
+      "size_bytes": 833
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\figure_01_methodology_overview_caption_v3_3.txt",
+      "sha256": "a7b9f9209357beb4bb69c5e4a9278c89dc90e31f1ad3bf41e2d22a30b2782241",
+      "size_bytes": 624
+    }
+  },
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_lock_hash_matches": true,
+    "mapping_validated": true,
+    "mapping_lock_hash_matches": true,
+    "figures_02_to_05_locked": true,
+    "figure_01_mapped": true
+  },
+  "data_checks": {
+    "lodo_9_devices": true,
+    "lodo_3_models": true,
+    "lodo_27_runs": true,
+    "lodo_gate_passed": true,
+    "phase5_110_runs": true,
+    "phase5_22_groups": true,
+    "phase6_110_runs": true,
+    "phase6_no_val_test_access": true,
+    "phase8_family_selected": true,
+    "phase8_selected_p50_qat": true,
+    "phase9_seed_2026": true,
+    "phase9_roundtrip_exact": true,
+    "phase10_release_locked": true,
+    "phase10_deterministic_exact": true,
+    "phase11_27_evaluations": true,
+    "phase11_locked": true
+  },
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "all_checks_passed": true
+}

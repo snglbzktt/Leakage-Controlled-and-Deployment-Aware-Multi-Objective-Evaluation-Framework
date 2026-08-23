@@ -1,0 +1,324 @@
+{
+  "protocol_version": "tabular_baseline_protocol_v3_1",
+  "status": "locked",
+  "locked_at": "2026-08-06T11:48:03.753947+00:00",
+  "task": {
+    "name": "family_3",
+    "classes": [
+      "benign",
+      "gafgyt",
+      "mirai"
+    ],
+    "feature_count": 115,
+    "source_raw_row_count": 7062606,
+    "training_fingerprint_count": 2278176
+  },
+  "software": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "scikit_learn": "1.9.0",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "data_policy": {
+    "split_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v3.sqlite",
+    "split_database_sha256": "b0ca085042243eb01b7b9080fd33aab11024c1b7f7138c7e49458e13ad550ad7",
+    "split_protocol_version": "2.3",
+    "split_arm": "grouped_float32",
+    "assignment_unit": "one row per paired VS2 float32 fingerprint",
+    "training_unit": "one representative row per exact float32 fingerprint",
+    "training_sample_weight": "none",
+    "primary_evaluation_view": "fingerprint_level",
+    "secondary_evaluation_view": "raw_record_weighted_by_raw_row_count",
+    "cross_family_group_count": 0,
+    "canonical_legacy_dataset_policy": "not used directly because it excludes two family-consistent groups spanning raw gafgyt subtype labels",
+    "protocol_only_recovered_groups": 2,
+    "protocol_only_recovered_raw_rows": 965554,
+    "cache_design": "float32 features plus labels, raw_row_count, and paired hashes for each grouped split"
+  },
+  "preprocessing_policy": {
+    "canonical_numeric_type": "float32",
+    "linear_model_pipeline": "canonical float32 -> train-only StandardScaler computed in float64 -> standardized float32",
+    "linear_scaled_overlap_policy": "fail closed: require zero paired exact float32 fingerprint overlap across train, validation, and test",
+    "tree_model_pipeline": "canonical float32 without standardization",
+    "feature_order": "locked 115-column order from N-BaIoT CSV/Parquet schema",
+    "non_finite_values_allowed": false
+  },
+  "selection_policy": {
+    "configuration": "fixed preregistered B0 configurations",
+    "validation_hyperparameter_tuning": false,
+    "test_hyperparameter_tuning": false,
+    "validation_usage": "diagnostic reporting only; no model or parameter selection",
+    "test_evaluation": "exactly once per completed run"
+  },
+  "models": [
+    {
+      "model_id": "logistic_regression_b0",
+      "model_family": "classical_linear",
+      "architecture": "logistic_regression",
+      "input_space": "train_only_standardized_float32",
+      "fit_sample_weight": "none",
+      "deterministic": true,
+      "seeds": [
+        2026
+      ],
+      "parameters": {
+        "penalty": "l2",
+        "C": 1.0,
+        "solver": "lbfgs",
+        "max_iter": 200,
+        "tol": 0.0001,
+        "fit_intercept": true,
+        "class_weight": "balanced",
+        "random_state": 2026
+      }
+    },
+    {
+      "model_id": "decision_tree_b0",
+      "model_family": "classical_tree",
+      "architecture": "decision_tree",
+      "input_space": "canonical_float32_unscaled",
+      "fit_sample_weight": "none",
+      "deterministic": false,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameters": {
+        "criterion": "gini",
+        "splitter": "best",
+        "max_depth": 20,
+        "min_samples_split": 40,
+        "min_samples_leaf": 20,
+        "max_features": null,
+        "class_weight": "balanced",
+        "ccp_alpha": 0.0
+      }
+    },
+    {
+      "model_id": "random_forest_b0",
+      "model_family": "classical_ensemble",
+      "architecture": "random_forest",
+      "input_space": "canonical_float32_unscaled",
+      "fit_sample_weight": "none",
+      "deterministic": false,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameters": {
+        "n_estimators": 100,
+        "criterion": "gini",
+        "max_depth": 20,
+        "min_samples_split": 40,
+        "min_samples_leaf": 20,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "max_samples": 0.5,
+        "class_weight": "balanced_subsample",
+        "n_jobs": 2,
+        "oob_score": false
+      }
+    },
+    {
+      "model_id": "hist_gradient_boosting_b0",
+      "model_family": "classical_boosting",
+      "architecture": "hist_gradient_boosting",
+      "input_space": "canonical_float32_unscaled",
+      "fit_sample_weight": "none",
+      "deterministic": true,
+      "seeds": [
+        2026
+      ],
+      "parameters": {
+        "loss": "log_loss",
+        "learning_rate": 0.1,
+        "max_iter": 100,
+        "max_leaf_nodes": 31,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "l2_regularization": 0.0001,
+        "max_bins": 255,
+        "categorical_features": null,
+        "early_stopping": false,
+        "class_weight": "balanced",
+        "random_state": 2026
+      }
+    }
+  ],
+  "run_policy": {
+    "deterministic_models": {
+      "model_ids": [
+        "logistic_regression_b0",
+        "hist_gradient_boosting_b0"
+      ],
+      "seed": 2026,
+      "run_count_per_model": 1
+    },
+    "seed_sensitive_models": {
+      "model_ids": [
+        "decision_tree_b0",
+        "random_forest_b0"
+      ],
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "run_count_per_model": 5
+    },
+    "total_expected_runs": 12,
+    "run_matrix_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_run_matrix_v3.csv"
+  },
+  "resource_policy": {
+    "observed_total_physical_ram_gb": 15.731,
+    "observed_free_physical_ram_gb": 4.734,
+    "observed_physical_cores": 14,
+    "observed_logical_processors": 20,
+    "random_forest_n_jobs": 2,
+    "random_forest_parallelism_reason": "bounded to reduce concurrent tree-building memory pressure on a 16 GB system",
+    "minimum_free_disk_before_cache_build_gib": 2.0,
+    "estimated_cache_with_margin_gib": 1.234839141368866
+  },
+  "reporting_policy": {
+    "required_metrics": [
+      "accuracy",
+      "balanced_accuracy",
+      "macro_f1",
+      "weighted_f1",
+      "per_class_precision",
+      "per_class_recall",
+      "per_class_f1",
+      "per_class_fnr",
+      "confusion_matrix",
+      "log_loss"
+    ],
+    "reporting_views": [
+      "fingerprint_level",
+      "raw_record_weighted"
+    ],
+    "prediction_artifacts": [
+      "test_predictions",
+      "test_probabilities"
+    ],
+    "timing_artifacts": [
+      "fit_seconds",
+      "validation_seconds",
+      "test_seconds",
+      "total_seconds"
+    ],
+    "model_size_artifact": "serialized_model_size_bytes",
+    "convergence_artifacts": [
+      "iteration_count_or_tree_count",
+      "convergence_warning_count"
+    ]
+  },
+  "split_counts": {
+    "train": {
+      "fingerprints": 1534583,
+      "raw_rows": 4943823
+    },
+    "validation": {
+      "fingerprints": 371796,
+      "raw_rows": 1059389
+    },
+    "test": {
+      "fingerprints": 371797,
+      "raw_rows": 1059394
+    }
+  },
+  "family_split_counts": [
+    {
+      "split": "test",
+      "family": "benign",
+      "fingerprints": 77022,
+      "raw_rows": 83391
+    },
+    {
+      "split": "test",
+      "family": "gafgyt",
+      "fingerprints": 48793,
+      "raw_rows": 425742
+    },
+    {
+      "split": "test",
+      "family": "mirai",
+      "fingerprints": 245982,
+      "raw_rows": 550261
+    },
+    {
+      "split": "train",
+      "family": "benign",
+      "fingerprints": 359439,
+      "raw_rows": 389152
+    },
+    {
+      "split": "train",
+      "family": "gafgyt",
+      "fingerprints": 27221,
+      "raw_rows": 1986790
+    },
+    {
+      "split": "train",
+      "family": "mirai",
+      "fingerprints": 1147923,
+      "raw_rows": 2567881
+    },
+    {
+      "split": "validation",
+      "family": "benign",
+      "fingerprints": 77021,
+      "raw_rows": 83389
+    },
+    {
+      "split": "validation",
+      "family": "gafgyt",
+      "fingerprints": 48793,
+      "raw_rows": 425740
+    },
+    {
+      "split": "validation",
+      "family": "mirai",
+      "fingerprints": 245982,
+      "raw_rows": 550260
+    }
+  ],
+  "validation_checks": {
+    "database_quick_check_ok": true,
+    "group_count_matches": true,
+    "raw_row_count_matches": true,
+    "cross_family_group_count_zero": true,
+    "split_counts_match": true,
+    "family_split_counts_match": true,
+    "cache_sizing_group_count_matches": true,
+    "cache_sizing_raw_rows_match": true,
+    "rehash_common_groups_match": true,
+    "rehash_protocol_only_groups_match": true,
+    "source_audit_protocol_only_rows_match": true,
+    "logistic_parameters_supported": true,
+    "decision_tree_parameters_supported": true,
+    "random_forest_parameters_supported": true,
+    "hgb_parameters_supported": true,
+    "run_count_is_12": true,
+    "run_ids_unique": true,
+    "random_forest_n_jobs_limited_to_2": true
+  },
+  "all_checks_passed": true,
+  "provenance": {
+    "cache_sizing_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_cache_sizing_v3.json",
+    "cache_sizing_report_sha256": "bc8b85d4ae185f3e0702d55d48c3add382c1f195e8b474e1e4dbade8ff124fe9",
+    "rehash_alignment_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_canonical_rehash_alignment_summary_v3.json",
+    "rehash_alignment_report_sha256": "5173e93c9e7bb2549e4b369a41e78cc82b135878e54198bfe651d45886af8a47",
+    "protocol_only_source_audit": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_protocol_only_source_audit_v3.json",
+    "protocol_only_source_audit_sha256": "6c4911a85b51b83f406df42ece7a78867e5f6c6669ec1eafca3dc1c80efbaaa6",
+    "locker_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\93_lock_tabular_baseline_protocol_v3.py",
+    "locker_script_sha256": "bdab9331641de4a9c46d21ae0c1127b4adc46ab99618803453d8262292e1b295"
+  }
+}

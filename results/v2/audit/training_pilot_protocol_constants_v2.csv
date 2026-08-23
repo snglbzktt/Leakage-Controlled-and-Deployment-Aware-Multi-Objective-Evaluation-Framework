@@ -1,0 +1,13 @@
+﻿relative_path,line_number,name,value
+src\models\nbaiot_models.py,479,MODEL_SPECS,"""{'tinyml_mlp': ModelSpec(registry_name='tinyml_mlp', display_name='TinyML-MLP', architecture_family='multilayer_perceptron', description='Two-hidden-layer low-parameter MLP baseline.', order_sensitive=False, architecture={'hidden_units': [64, 32], 'activation': 'ReLU', 'dropout_probability': 0.0}), 'compact_dnn': ModelSpec(registry_name='compact_dnn', display_name='Compact-DNN', architecture_family='multilayer_perceptron', description='Higher-capacity three-hidden-layer compact DNN.', order_sensitive=False, architecture={'hidden_units': [128, 64, 32], 'activation': 'ReLU', 'dropout_probability': 0.1}), 'tiny_1d_cnn': ModelSpec(registry_name='tiny_1d_cnn', display_name='Tiny-1D-CNN', architecture_family='one_dimensional_convolution', description='Order-sensitive compact 1D convolutional classifier.', order_sensitive=True, architecture={'channels': [8, 16, 24], 'kernel_sizes': [5, 3, 3], 'pooling': ['MaxPool1d(2)', 'MaxPool1d(2)', 'AdaptiveAvgPool1d(1)'], 'activation': 'ReLU'})}"""
+src\models\nbaiot_models.py,545,MODEL_FACTORIES,"""{'tinyml_mlp': TinyMLMLP, 'compact_dnn': CompactDNN, 'tiny_1d_cnn': Tiny1DCNN}"""
+scripts\22_lock_fp32_baseline_protocol.py,47,DEFAULT_MODEL_REGISTRY_FILE,"""PROJECT_ROOT / 'models' / 'architecture' / 'nbaiot_model_registry_v1.json'"""
+scripts\22_lock_fp32_baseline_protocol.py,61,DEFAULT_WEIGHT_FILE,"""PROJECT_ROOT / 'models' / 'preprocessing' / 'nbaiot_task_class_weights_seed2026.npz'"""
+scripts\22_lock_fp32_baseline_protocol.py,80,EXPECTED_MODELS,"('tinyml_mlp', 'compact_dnn', 'tiny_1d_cnn')"
+scripts\22_lock_fp32_baseline_protocol.py,86,MAIN_SEEDS,"(42, 123, 2026, 3407, 8192)"
+scripts\23_run_fp32_baseline_experiments.py,100,EXPECTED_MODELS,"('tinyml_mlp', 'compact_dnn', 'tiny_1d_cnn')"
+scripts\23_run_fp32_baseline_experiments.py,106,EXPECTED_SEEDS,"(42, 123, 2026, 3407, 8192)"
+scripts\23_run_fp32_baseline_experiments.py,125,PER_CLASS_METRICS,"('precision', 'recall', 'f1', 'false_negative_rate')"
+scripts\38_run_b0_matched_leakage_ablation.py,56,SEEDS,"(42, 123, 2026, 3407, 8192)"
+scripts\38_run_b0_matched_leakage_ablation.py,57,CLASS_NAMES,"('benign', 'gafgyt', 'mirai')"
+scripts\38_run_b0_matched_leakage_ablation.py,64,LOCKED_SPLIT_SEED,2026

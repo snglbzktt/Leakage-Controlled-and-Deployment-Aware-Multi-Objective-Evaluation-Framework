@@ -1,0 +1,64 @@
+{
+  "status": "completed",
+  "phase": 6,
+  "artifact_name": "isolated_deployment_benchmark_run",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "measurement_order": 30,
+  "architecture": "tinyml_mlp",
+  "variant": "PTQ",
+  "seed": 8192,
+  "representation": "static_int8",
+  "source_metrics": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_selected_test\\seed_8192\\metrics.json",
+    "sha256": "52d4a67546c2f2463564dc572055ee655dc0686740993063fb96ea49166b8f68"
+  },
+  "checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_4096\\seed_8192\\ptq_int8_checkpoint.pt",
+    "sha256": "fe3e77db100046121fa40c84a599c63ac04aa0d8d4b3586410c12977b2689cdc",
+    "file_bytes": 20205,
+    "serialized_state_dict_bytes": 18407
+  },
+  "runtime": {
+    "process_id": 19868,
+    "cpu_threads": 1,
+    "interop_threads": 1,
+    "load_elapsed_ms": 88.412,
+    "RSS_before_model_load_bytes": 270708736,
+    "RSS_after_model_load_bytes": 277098496,
+    "model_load_RSS_delta_bytes": 6389760,
+    "peak_process_RSS_bytes": 282394624,
+    "peak_inference_RSS_delta_bytes": 5296128
+  },
+  "batch_1": {
+    "warmup_iterations": 50,
+    "measured_iterations": 500,
+    "mean_ms": 0.10990000000000001,
+    "median_ms": 0.1019,
+    "std_ms": 0.05102872210824018,
+    "p95_ms": 0.12940999999999997,
+    "p99_ms": 0.25794599999999995,
+    "minimum_ms": 0.09,
+    "maximum_ms": 0.8206,
+    "samples_per_second": 9099.181073703367,
+    "output_sha256": "202a2223756b683fde8248211bd518cee7d406d87a42437b8cc97fd2fd406aea"
+  },
+  "batch_32": {
+    "warmup_iterations": 30,
+    "measured_iterations": 200,
+    "mean_ms": 0.184105,
+    "median_ms": 0.16505,
+    "std_ms": 0.07505772162142947,
+    "p95_ms": 0.2936349999999999,
+    "p99_ms": 0.4289299999999994,
+    "minimum_ms": 0.1397,
+    "maximum_ms": 0.9748,
+    "samples_per_second": 173813.8562233508,
+    "output_sha256": "6fa9d86b7aa8949794e866eff8f60e1bc9efb4c5a6d88bc56907fe6ca4609215"
+  },
+  "data_access": {
+    "train_data_access": true,
+    "validation_data_access": false,
+    "test_data_access": false
+  },
+  "completed_at_utc": "2026-08-06T21:06:58.992820+00:00"
+}

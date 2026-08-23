@@ -1,0 +1,58 @@
+{
+  "status": "locked",
+  "phase": 6,
+  "artifact_name": "deployment_benchmark_preflight",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "locked_at_utc": "2026-08-06T20:57:38.381689+00:00",
+  "source_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_locked_v3_2.json",
+      "size_bytes": 1378,
+      "sha256": "a067b62e475c1648729819d994fdc59d4050d49dc5d7596b1953f60dc7d7fc7c"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv",
+      "size_bytes": 48909,
+      "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_group_summary_v3_2.csv",
+      "size_bytes": 5849,
+      "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_closure_v3_2.json",
+      "size_bytes": 6336,
+      "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac"
+    }
+  ],
+  "generated_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase6_deployment_benchmark_protocol_v3_2.json",
+      "size_bytes": 3406,
+      "sha256": "5cd3ef9080f15824ce5b6afe4705cc65d812f2bfa65ddb6d531669363b5a6f31"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+      "size_bytes": 42063,
+      "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_preflight_v3_2.json",
+      "size_bytes": 2602,
+      "sha256": "f047a6f8b222ccb9291c53127b891fd63f7152eb1a4c81c88a84b2035dccea20"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_preflight_locked_v3_2.json",
+      "size_bytes": 1111,
+      "sha256": "e6ace2c5198a9b4d26ca45a9e56b9cd63cb264451800535ac8060e9d1ce2e748"
+    }
+  ],
+  "run_count": 110,
+  "group_count": 22,
+  "test_data_access": false,
+  "validation_data_access": false,
+  "final_model_selected": false,
+  "ready_for_loader_smoke_test": true,
+  "all_checks_passed": true
+}

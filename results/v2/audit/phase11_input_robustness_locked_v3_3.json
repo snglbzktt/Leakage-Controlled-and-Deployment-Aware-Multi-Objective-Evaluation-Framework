@@ -1,0 +1,92 @@
+{
+  "status": "locked",
+  "phase": 11,
+  "artifact_name": "input_robustness_analysis",
+  "protocol_version": "phase11_input_robustness_v3_3",
+  "locked_at_utc": "2026-08-06T23:41:58.721121+00:00",
+  "protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase11_input_robustness_protocol_v3_3.json",
+    "size_bytes": 12501,
+    "sha256": "77c8cca9dad7d0cacad4e1e7ed8668d835e360deb5ecec56f7b24e6e05d8c082"
+  },
+  "protocol_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_protocol_locked_v3_3.json",
+    "size_bytes": 1114,
+    "sha256": "ca64b4a01173bf8e9d1671f5dab394de5a59c14f9d6fb686755d855087ca87f2"
+  },
+  "run_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_run_matrix_v3_3.csv",
+    "size_bytes": 5957,
+    "sha256": "febe7298d59c43649037be7eea3e2a8bf1e4cb7e49b6ad86bc7be0bef9e71dcd"
+  },
+  "execution_report": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_execution_v3_3.json",
+    "size_bytes": 2910,
+    "sha256": "1fae6a5e4c1a224b00e8eee5e6ec35733ee3bc8ea834a75ea23f56fd3f8c2eec"
+  },
+  "completion": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_completed_v3_3.json",
+    "size_bytes": 1073,
+    "sha256": "d0f1d9c5c5d800544b359d6f5469ea3f2ae742cabbbbe270fb081538dbdd7d3a"
+  },
+  "aggregate_results": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_all_runs_v3_3.csv",
+    "size_bytes": 10746,
+    "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090"
+  },
+  "summary": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_summary_v3_3.json",
+    "size_bytes": 2756,
+    "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4"
+  },
+  "detailed_results": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_detailed_results_v3_3.json",
+    "size_bytes": 57636,
+    "sha256": "0d4c143cd36cc71a85599e9bceee0c3406087ae08c1fe9d99272ba79338e0b76"
+  },
+  "independent_verification": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_verification_v3_3.json",
+    "size_bytes": 3939,
+    "sha256": "14cb477291bada09b4a02760381c9d29264e42251a47d575bb711d61196ee058"
+  },
+  "model_count": 3,
+  "condition_count": 9,
+  "locked_evaluation_count": 27,
+  "severe_fragility_evaluation_count": 5,
+  "material_sensitivity_evaluation_count": 9,
+  "model_summaries": {
+    "tinyml_mlp_B0": {
+      "clean_fingerprint_macro_f1": 0.9992545342200568,
+      "clean_raw_weighted_macro_f1": 0.9980267703090027,
+      "worst_condition": "feature_mask_20pct",
+      "worst_fingerprint_macro_f1": 0.8874710311511499,
+      "maximum_macro_f1_drop": 0.11178350306890694,
+      "severe_fragility_condition_count": 0,
+      "material_sensitivity_condition_count": 2
+    },
+    "tinyml_mlp_P50_QAT": {
+      "clean_fingerprint_macro_f1": 0.9970080708948338,
+      "clean_raw_weighted_macro_f1": 0.9959473619503365,
+      "worst_condition": "feature_mask_20pct",
+      "worst_fingerprint_macro_f1": 0.8788134810282804,
+      "maximum_macro_f1_drop": 0.1181945898665534,
+      "severe_fragility_condition_count": 0,
+      "material_sensitivity_condition_count": 2
+    },
+    "hist_gradient_boosting_B0": {
+      "clean_fingerprint_macro_f1": 0.9997380683535377,
+      "clean_raw_weighted_macro_f1": 0.9990430947883375,
+      "worst_condition": "scale_drift_plus_10pct",
+      "worst_fingerprint_macro_f1": 0.45432326660478023,
+      "maximum_macro_f1_drop": 0.5454148017487574,
+      "severe_fragility_condition_count": 5,
+      "material_sensitivity_condition_count": 5
+    }
+  },
+  "model_retraining_performed": false,
+  "test_used_for_model_selection": false,
+  "final_model_changed": false,
+  "phase11_locked": true,
+  "ready_for_figures_and_reporting": true,
+  "all_checks_passed": true
+}

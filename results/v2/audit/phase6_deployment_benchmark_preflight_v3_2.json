@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "phase": 6,
+  "artifact_name": "deployment_benchmark_preflight",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "verified_at_utc": "2026-08-06T20:57:38.348103+00:00",
+  "phase5_checks": {
+    "phase5_status_locked": true,
+    "phase5_protocol_version_matches": true,
+    "phase5_run_count_110": true,
+    "phase5_group_count_22": true,
+    "phase5_ready_for_deployment": true,
+    "phase5_all_checks_passed": true,
+    "phase5_master_hash_matches": true,
+    "phase5_group_hash_matches": true,
+    "phase5_closure_hash_matches": true,
+    "phase5_final_model_not_selected": true
+  },
+  "matrix_checks": {
+    "master_row_count_110": true,
+    "master_configuration_matrix_exact": true,
+    "test_count_one_all_runs": true,
+    "test_not_used_for_selection": true
+  },
+  "preflight_checks": {
+    "psutil_available": true,
+    "perf_counter_resolution_positive": true,
+    "logical_cpu_count_available": true,
+    "matrix_row_count_110": true,
+    "measurement_order_unique": true,
+    "test_access_zero": true,
+    "validation_access_zero": true,
+    "final_model_not_selected": true
+  },
+  "environment": {
+    "captured_at_utc": "2026-08-06T20:57:38.317961+00:00",
+    "hostname": "song\u00fcl-bozkurt",
+    "operating_system": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "python_version": "3.11.9",
+    "python_executable": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\.venv\\Scripts\\python.exe",
+    "torch_version": "2.11.0+cpu",
+    "numpy_version": "2.4.6",
+    "psutil_version": "7.2.2",
+    "scikit_learn_version": "1.9.0",
+    "logical_cpu_count": 20,
+    "torch_default_threads": 14,
+    "torch_default_interop_threads": 14,
+    "quantized_engine_current": "onednn",
+    "quantized_engines_supported": [
+      "onednn"
+    ],
+    "perf_counter_resolution_seconds": 1e-07,
+    "free_disk_gib": 6.550884246826172
+  },
+  "protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase6_deployment_benchmark_protocol_v3_2.json",
+    "size_bytes": 3406,
+    "sha256": "5cd3ef9080f15824ce5b6afe4705cc65d812f2bfa65ddb6d531669363b5a6f31"
+  },
+  "locked_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+    "size_bytes": 42063,
+    "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+  },
+  "ready_for_loader_smoke_test": true,
+  "all_checks_passed": true
+}

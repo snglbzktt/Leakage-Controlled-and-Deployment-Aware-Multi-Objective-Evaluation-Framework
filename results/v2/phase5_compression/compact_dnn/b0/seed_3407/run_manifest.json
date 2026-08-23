@@ -1,0 +1,125 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-08-06T16:58:11.529727+00:00",
+  "run_id": "compact_dnn__b0__seed_3407",
+  "architecture": "compact_dnn",
+  "variant": "B0",
+  "seed": 3407,
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "data_protocol_version": "tabular_baseline_protocol_v3_2",
+  "model_symbol": "CompactDNN",
+  "model_source": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+    "size_bytes": 15283,
+    "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+  },
+  "phase5_protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase5_fair_budget_compression_protocol_v3_2.json",
+    "size_bytes": 21842,
+    "sha256": "1681aaa46ce286f498367a6c8a2ccb4c711c091fbb053ec4aa48f9bd1d10ab03"
+  },
+  "locked_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_locked_configuration_matrix_v3_2.csv",
+    "size_bytes": 43039,
+    "sha256": "424bb76cd67006b930579182e08dc5f005bf86ae4adc75df04e0609df06aeed7"
+  },
+  "scaler": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_standard_scaler_v3_2.npz",
+    "size_bytes": 5361,
+    "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+  },
+  "class_weights": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_class_weights_v3_2.npz",
+    "size_bytes": 1117,
+    "sha256": "81c0f102124d2839f4adaab844ef28e57a5778f0930910bb2fa89630a18cb313"
+  },
+  "smoke_test": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_neural_architecture_smoke_test_v3_2.json",
+    "size_bytes": 10736,
+    "sha256": "5cfff862f2af56345e9928a77eaa905c94ac5cd8a4963ac97eb538caccfd2ae0"
+  },
+  "legacy_checkpoint_reused": false,
+  "fit_scope": {
+    "train_used_for_updates": true,
+    "validation_used_for_selection": true,
+    "test_used_for_selection": false,
+    "test_evaluation_count": 1,
+    "raw_occurrence_weight_used_for_fit": false
+  },
+  "parameters": {
+    "optimizer": "AdamW",
+    "batch_size": 4096,
+    "max_epochs": 15,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "early_stopping_patience": 4,
+    "early_stopping_min_delta": 0.0002
+  },
+  "best_epoch": 9,
+  "best_validation_macro_f1": 0.9993005399853536,
+  "training_elapsed_seconds": 259.61668880004436,
+  "fragility_gate": {
+    "macro_f1_below_0_85": false,
+    "gafgyt_fnr_above_0_40": false,
+    "mirai_fnr_above_0_40": false,
+    "triggered": false
+  },
+  "artifacts": [
+    {
+      "relative_path": "best_checkpoint.pt",
+      "size_bytes": 313779,
+      "sha256": "79ac775ce6b798be6e1ecec074d116a2c3701fb8535ec48f03eac295a9445ea7"
+    },
+    {
+      "relative_path": "metrics.json",
+      "size_bytes": 7388,
+      "sha256": "d172716ae355e8d048bdba6dc3ef727e0ea0760e637ccd2691151bd4b3d54c5d"
+    },
+    {
+      "relative_path": "test_confusion_fingerprint.csv",
+      "size_bytes": 89,
+      "sha256": "cc06382a1eb4b86aec9a0ba5456de2ad0d7e09966285ae7e69bc4c6b3051c28f"
+    },
+    {
+      "relative_path": "test_confusion_raw_weighted.csv",
+      "size_bytes": 93,
+      "sha256": "3c0afed209b3936d3b094a00e8629bc3976d5f683af78d378aa4c70b4fed210f"
+    },
+    {
+      "relative_path": "test_per_class_metrics.csv",
+      "size_bytes": 756,
+      "sha256": "26168c026a3d3a51e4f1a139fd2d861a3ea5e185f3f9506be87893a867013fb7"
+    },
+    {
+      "relative_path": "test_predictions.npz",
+      "size_bytes": 3185802,
+      "sha256": "0861d3ef5d3331635239b59633195784d55142f77d5a2e43f335b57f2463c5b1"
+    },
+    {
+      "relative_path": "training_history.csv",
+      "size_bytes": 2415,
+      "sha256": "0a5b8564d0d5dc1fbc438acd54901419bbd286fec28d15fcd5c3dcfe67f46f3f"
+    },
+    {
+      "relative_path": "validation_confusion_fingerprint.csv",
+      "size_bytes": 89,
+      "sha256": "150715422dec65b39aeddb4a9fc107954a1b3a076ef2dfe2cf2d03170c0e69d0"
+    },
+    {
+      "relative_path": "validation_confusion_raw_weighted.csv",
+      "size_bytes": 93,
+      "sha256": "e45b9c193cdd1e98df9d5407462557194333666e0d11d794c9a7be3a916fe116"
+    },
+    {
+      "relative_path": "validation_per_class_metrics.csv",
+      "size_bytes": 764,
+      "sha256": "ce931f45389faf90d16dd14954742a0daacab410dac809e5333726ff597fe7f9"
+    },
+    {
+      "relative_path": "validation_predictions.npz",
+      "size_bytes": 3185203,
+      "sha256": "30c00ae52f1691e04a297e5f06d1a026eb126b2dd93e851aa1b9984abebc2f91"
+    }
+  ],
+  "all_integrity_checks_passed": true
+}

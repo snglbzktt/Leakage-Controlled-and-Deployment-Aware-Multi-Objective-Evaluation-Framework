@@ -1,0 +1,31 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "tinyml_mlp_B0_five_seed_runs",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T16:33:57.141077+00:00",
+  "architecture": "tinyml_mlp",
+  "variant": "B0",
+  "run_count": 5,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "mean_test_fingerprint_macro_f1": 0.9992485859275358,
+  "std_test_fingerprint_macro_f1": 7.03988518529849e-05,
+  "mean_test_raw_weighted_macro_f1": 0.9980857659484768,
+  "test_evaluation_count_per_run": 1,
+  "test_model_inference_repeated_by_verifier": false,
+  "fragility_triggered_in_any_run": false,
+  "verification_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_tinyml_mlp_b0_verification_v3_2.json",
+  "verification_sha256": "474e99d687e43b94ecc267ed4ec72b40474ca77635889502692489dfa7c046fe",
+  "aggregate_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_tinyml_mlp_b0_aggregate_v3_2.json",
+  "aggregate_json_sha256": "426d4b83a5e465eb19cb23cd442fe7de383245e9142ebcbccfe85fa326b165f5",
+  "aggregate_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_tinyml_mlp_b0_runs_v3_2.csv",
+  "aggregate_csv_sha256": "ca84c8de82eb6964e625a83315864b485370e77e754ce1f40f695bbd6029a2cc",
+  "ready_for_compact_dnn_B0_training": true,
+  "all_checks_passed": true
+}

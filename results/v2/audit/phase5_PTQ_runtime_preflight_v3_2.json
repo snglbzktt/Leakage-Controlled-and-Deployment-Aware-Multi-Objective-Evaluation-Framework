@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "PTQ_engine_runtime_and_calibration_preflight",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "PTQ_engine_version": "phase5_ptq_engine_v3_2",
+  "verified_at_utc": "2026-08-06T20:28:56.096162+00:00",
+  "architecture_count": 2,
+  "seed_count": 5,
+  "configuration_count": 10,
+  "calibration_sizes": [
+    4096,
+    16384,
+    65536,
+    262144
+  ],
+  "calibration_plan_count": 20,
+  "calibration_policy": {
+    "source_split": "train_only",
+    "sampling": "deterministic_stratified_nested",
+    "seed_specific": true,
+    "shared_between_architectures_for_same_seed": true,
+    "validation_used_for_calibration": false,
+    "test_used_for_calibration": false
+  },
+  "PTQ_policy": {
+    "selected_backend": "onednn",
+    "supported_backends": [
+      "onednn"
+    ],
+    "backend_attempts": [
+      {
+        "backend": "onednn",
+        "passed": true,
+        "error": null
+      }
+    ],
+    "weight_dtype": "torch.qint8",
+    "target_modules": [
+      "torch.nn.Linear"
+    ],
+    "source_checkpoint": "matching locked B0 checkpoint"
+  },
+  "data_access": {
+    "train_used_for_calibration_plan": true,
+    "validation_access_count": 0,
+    "test_access_count": 0
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "B0_pair_locked": true,
+    "B0_registry_hash_matches": true,
+    "QAT_locked": true,
+    "PTQ_matrix_has_ten_rows": true,
+    "B0_registry_has_ten_rows": true
+  },
+  "global_checks": {
+    "ten_B0_configurations_audited": true,
+    "twenty_calibration_plans_created": true,
+    "all_calibration_sizes_present": true,
+    "all_calibration_sets_nested": true,
+    "all_linears_converted_to_INT8": true,
+    "all_quantized_weights_qint8": true,
+    "all_conversions_deterministic": true,
+    "all_roundtrips_exact": true,
+    "all_sources_unchanged": true,
+    "validation_access_zero": true,
+    "test_access_zero": true
+  },
+  "PTQ_engine_source": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_ptq_engine_v3_2.py",
+    "size_bytes": 5364,
+    "sha256": "ccf19215d474accba0e4509659f7bdd3868a5ddb4a125e51c6e60527062ac428"
+  },
+  "calibration_index_npz": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\ptq\\phase5_PTQ_calibration_indices_v3_2.npz",
+    "size_bytes": 2791000,
+    "sha256": "4dbc4f898ed1d905a65fe541ddd3b97e168a181697e66ae97a51cbbcf11bd87b"
+  },
+  "calibration_index_summary_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_calibration_index_summary_v3_2.csv",
+    "size_bytes": 1524,
+    "sha256": "509e3794c0f7a7b636f08a0d8ce255fefc412a2ecf1806401de3f961f7beea9e"
+  },
+  "matrix_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_runtime_preflight_matrix_v3_2.csv",
+    "size_bytes": 4232,
+    "sha256": "775881a2e2ad3d9ea0a8b8aadf39efb063019c84f5c77348cc486ea4005573d1"
+  },
+  "ready_for_PTQ_validation_sweep": true,
+  "all_checks_passed": true
+}

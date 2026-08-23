@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T13:17:15.126291+00:00",
+  "final_cache": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2",
+  "evidence_archive": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\legacy_cache_evidence_v3_2",
+  "legacy_directories_removed": [
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building"
+  ],
+  "legacy_sizes_before_bytes": {
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building": 1174720608,
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building": 1233297967
+  },
+  "free_disk_before_bytes": 5190795264,
+  "free_disk_after_bytes": 7400345600,
+  "observed_freed_bytes": 2209550336,
+  "preflight_checks": {
+    "verification_status_passed": true,
+    "verification_all_checks_passed": true,
+    "verification_failed_checks_empty": true,
+    "final_manifest_completed": true,
+    "final_manifest_all_checks_passed": true,
+    "final_cache_path_matches": true,
+    "final_manifest_hash_matches_verification": true,
+    "final_scaled_overlap_zero": true,
+    "final_family_conflicts_zero": true
+  },
+  "post_checks": {
+    "final_cache_still_exists": true,
+    "final_manifest_still_exists": true,
+    "evidence_archive_exists": true,
+    "evidence_manifest_exists": true,
+    "all_legacy_directories_removed": true,
+    "final_manifest_hash_unchanged": true
+  },
+  "all_checks_passed": true
+}

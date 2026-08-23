@@ -1,0 +1,148 @@
+# ==========================================================
+# TinyML IDS IEEE Project
+# Python / PyTorch Research Project
+# ==========================================================
+
+# ----------------------------------------------------------
+# Python cache and compiled files
+# ----------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ----------------------------------------------------------
+# Virtual environments
+# ----------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+
+# ----------------------------------------------------------
+# Environment variables and secrets
+# ----------------------------------------------------------
+.env
+.env.*
+*.env
+secrets/
+credentials/
+
+# ----------------------------------------------------------
+# IDE and editor files
+# ----------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+.idea/
+*.code-workspace
+
+# ----------------------------------------------------------
+# Operating system files
+# ----------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----------------------------------------------------------
+# Jupyter Notebook temporary files
+# ----------------------------------------------------------
+.ipynb_checkpoints/
+
+# ----------------------------------------------------------
+# Raw and processed datasets
+# Veri setleri büyük olabileceği için Git'e eklenmez.
+# ----------------------------------------------------------
+data/raw/*
+data/processed/*
+data/cache/*
+data/interim/*
+data/splits/*
+
+# Klasörlerin Git içinde kalmasına izin ver
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/splits/.gitkeep
+
+# ----------------------------------------------------------
+# Trained model files and checkpoints
+# ----------------------------------------------------------
+models/checkpoints/*
+models/exported/*
+models/quantized/*
+models/pruned/*
+models/onnx/*
+models/preprocessing/*
+
+!models/checkpoints/.gitkeep
+!models/exported/.gitkeep
+!models/preprocessing/.gitkeep
+
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.tflite
+*.pkl
+*.joblib
+*.sqlite
+*.npz
+*.npy
+*.parquet
+*.zip
+
+# ----------------------------------------------------------
+# Experiment tracking and temporary logs
+# ----------------------------------------------------------
+logs/
+runs/
+wandb/
+mlruns/
+tensorboard/
+*.log
+
+# ----------------------------------------------------------
+# Generated experiment outputs
+# Ham ve büyük çıktılar Git'e eklenmez.
+# ----------------------------------------------------------
+results/raw/*
+results/metrics/*
+results/complexity/*
+results/latency/*
+results/statistics/*
+results/explainability/*
+results/reports/*
+
+# Nihai makale tablo ve şekilleri takip edilebilir.
+!results/tables/
+!results/figures/
+!results/tables/**
+!results/figures/**
+
+# ----------------------------------------------------------
+# Coverage and testing outputs
+# ----------------------------------------------------------
+.coverage
+coverage.xml
+htmlcov/
+test-results/
+
+# ----------------------------------------------------------
+# Build and packaging files
+# ----------------------------------------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ----------------------------------------------------------
+# Temporary files
+# ----------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*

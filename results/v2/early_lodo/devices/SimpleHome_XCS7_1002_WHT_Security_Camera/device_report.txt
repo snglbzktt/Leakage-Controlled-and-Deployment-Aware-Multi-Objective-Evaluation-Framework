@@ -1,0 +1,44 @@
+======================================================================================
+EARLY LODO DEVICE COMPLETION SUMMARY
+======================================================================================
+
+Held-out device       : SimpleHome_XCS7_1002_WHT_Security_Camera
+Completed models      : 3/3
+Train fingerprints    : 1,145,094
+Validation fingerprints: 244,988
+Test fingerprints     : 847,047
+Test record count     : 863,056
+
+MODEL COMPARISON
+rank=1 | hist_gradient_boosting_b0 | Macro-F1=0.995889158 | Accuracy=0.995507923 | Gafgyt FNR=0.012800027489991924 | Mirai FNR=0.00013638630837333997 | seconds=34.616 | local_severe=False
+rank=2 | compact_dnn_b0 | Macro-F1=0.987226238 | Accuracy=0.990109167 | Gafgyt FNR=0.016885727539817534 | Mirai FNR=0.0052664598790448285 | seconds=51.394 | local_severe=False
+rank=3 | tinyml_mlp_b0 | Macro-F1=0.984102342 | Accuracy=0.988288725 | Gafgyt FNR=0.01753861484803189 | Mirai FNR=0.00790650913398591 | seconds=19.781 | local_severe=False
+
+DEVICE STATISTICS
+Mean Macro-F1        : 0.989072579
+Median Macro-F1      : 0.987226238
+Minimum Macro-F1     : 0.984102342
+Maximum Macro-F1     : 0.995889158
+Maximum attack FNR   : 0.017538615
+Local severe cells   : 0
+
+VALIDATION CHECKS
+protocol_locked: True
+exactly_three_device_runs: True
+expected_models_registered: True
+all_runs_seed_2026: True
+three_model_results_loaded: True
+three_lock_summaries_loaded: True
+three_run_results_loaded: True
+all_locks_locked: True
+all_results_completed: True
+lock_identities_match: True
+execution_ledger_has_three_rows: True
+execution_ledger_matches: True
+cache_validated: True
+cache_manifest_nonempty: True
+all_test_counts_identical: True
+all_test_class_counts_identical: True
+all_primary_metrics_valid: True
+all_fnr_values_valid: True
+ranking_contains_three_models: True

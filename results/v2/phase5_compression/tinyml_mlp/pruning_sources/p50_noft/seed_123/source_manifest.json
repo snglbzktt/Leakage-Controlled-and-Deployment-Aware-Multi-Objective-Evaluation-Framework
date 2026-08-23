@@ -1,0 +1,58 @@
+{
+  "status": "completed",
+  "artifact_type": "phase5_physical_pruning_source",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "architecture": "tinyml_mlp",
+  "variant": "P50-noFT",
+  "seed": 123,
+  "model_symbol": "TinyMLMLP",
+  "pruning_ratio": 0.5,
+  "source_B0_checkpoint_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_123\\best_checkpoint.pt",
+  "source_B0_checkpoint_sha256": "eab045d2e16f00c850e93b72979e5e1e299c4e792944403cddd60df7c7fd371a",
+  "pruning_engine_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_physical_pruning_engine_v3_2.py",
+  "pruning_engine_sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3",
+  "source_checkpoint_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_123\\source_checkpoint.pt",
+  "source_checkpoint_sha256": "12bf406592c783b74d8a066ce1ec8676aacdd3a36f76b5044341b550a9de455d",
+  "source_checkpoint_size_bytes": 23921,
+  "source_linear_widths": [
+    [
+      115,
+      64
+    ],
+    [
+      64,
+      32
+    ],
+    [
+      32,
+      3
+    ]
+  ],
+  "compacted_linear_widths": [
+    [
+      115,
+      32
+    ],
+    [
+      32,
+      16
+    ],
+    [
+      16,
+      3
+    ]
+  ],
+  "source_parameter_count": 9603,
+  "compacted_parameter_count": 4291,
+  "source_linear_macs_per_sample": 9504,
+  "compacted_linear_macs_per_sample": 4240,
+  "generated_directly_from_B0": true,
+  "physical_compaction": true,
+  "mask_only_pruning": false,
+  "train_smoke_rows_used": 64,
+  "validation_access_count": 0,
+  "test_access_count": 0,
+  "generated_at_utc": "2026-08-06T17:57:49.914325+00:00",
+  "all_checks_passed": true
+}

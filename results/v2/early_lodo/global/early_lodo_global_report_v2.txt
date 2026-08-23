@@ -1,0 +1,55 @@
+======================================================================================
+EARLY LODO GLOBAL GATE
+======================================================================================
+Devices                  : 9/9
+Locked scientific runs   : 27/27
+Gate status              : PASS_NO_SEVERE_FRAGILITY
+Local severe cells       : 0
+Meaningful val-test drops: 0
+
+MODEL COMPARISON
+rank=1 | compact_dnn_b0 | mean Macro-F1=0.986932236 | min Macro-F1=0.962962680 | max attack FNR=0.095541864 | mean seconds=75.034 | device wins=5 | fastest=0
+rank=2 | tinyml_mlp_b0 | mean Macro-F1=0.986283143 | min Macro-F1=0.962982630 | max attack FNR=0.065431319 | mean seconds=34.797 | device wins=1 | fastest=5
+rank=3 | hist_gradient_boosting_b0 | mean Macro-F1=0.967404248 | min Macro-F1=0.903349652 | max attack FNR=0.319813714 | mean seconds=37.929 | device wins=3 | fastest=4
+
+GLOBAL STATISTICS
+Mean cell Macro-F1       : 0.980206542
+Median cell Macro-F1     : 0.990265033
+Minimum cell Macro-F1    : 0.903349652
+Maximum cell Macro-F1    : 0.995889158
+Maximum eligible attack FNR: 0.319813714
+
+CLASS COVERAGE NOTE
+Ennio and Samsung held-out tests contain no Mirai. Their Macro-F1 values use the classes present in test.
+
+VALIDATION CHECKS
+exactly_nine_device_summaries: True
+expected_devices_present: True
+all_summaries_complete: True
+all_summary_checks_passed: True
+all_seed_2026: True
+all_three_models: True
+expected_model_set_per_device: True
+exactly_27_model_rows: True
+unique_27_run_ids: True
+unique_device_model_cells: True
+all_primary_metrics_finite: True
+all_runtime_positive: True
+all_test_counts_positive: True
+class_coverage_matches_protocol: True
+all_local_severe_flags_match: True
+all_device_rankings_valid: True
+all_lock_files_exist: True
+all_run_result_files_exist: True
+device_ledger_exists: True
+device_ledger_has_nine_rows: True
+device_ledger_expected_devices: True
+device_ledger_rows_complete: True
+
+Summary : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\early_lodo\global\early_lodo_global_summary_v2.json
+Models  : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\early_lodo\global\early_lodo_model_summary_v2.csv
+Matrix  : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\early_lodo\global\early_lodo_device_model_matrix_v2.csv
+Report  : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\early_lodo\global\early_lodo_global_report_v2.txt
+Note    : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\docs\v2\early_lodo\EARLY_LODO_GLOBAL_COMPLETE.md
+
+EARLY LODO GLOBAL GATE PASSED

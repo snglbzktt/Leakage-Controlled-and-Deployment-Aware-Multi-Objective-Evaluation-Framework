@@ -1,0 +1,169 @@
+{
+  "status": "constructed",
+  "phase": 10,
+  "artifact_name": "deterministic_release_archive",
+  "protocol_version": "phase10_release_archive_v3_3",
+  "construction_started_at_utc": "2026-08-06T23:06:02.517119+00:00",
+  "constructed_at_utc": "2026-08-06T23:06:02.849218+00:00",
+  "release_name": "TinyML_IDS_IEEE_release_v3_3",
+  "release_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3",
+  "zip_archive": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3.zip",
+  "model_family": "tinyml_mlp::P50-QAT",
+  "representation": "static_int8",
+  "canonical_seed": 2026,
+  "payload_file_count": 15,
+  "archive_file_count": 16,
+  "release_manifest": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\release_manifest.json",
+    "size_bytes": 6065,
+    "sha256": "52be5fd33842ffd2b90e96219ed0dbab873788ebc43e9c74bfd9c8b9e5826bf5"
+  },
+  "zip_archive_record": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3.zip",
+    "size_bytes": 33787,
+    "sha256": "b3decdf91a16b0716aa04dce8f406edd0f7fad117216d7822e00f554a02950b5"
+  },
+  "release_directory_inventory": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\DATA_NOT_INCLUDED.md",
+      "size_bytes": 498,
+      "sha256": "6dc85ef51d351ac06823ce44f18bca4395ffd9e0c4be6a5cc50bb48b12e045ef",
+      "relative_path": "DATA_NOT_INCLUDED.md"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\README_RELEASE.md",
+      "size_bytes": 1497,
+      "sha256": "475179c011c4f9c574bfbc7f8e0b451b7e89a0985c8cb19a16cdc56e37c34184",
+      "relative_path": "README_RELEASE.md"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\audit\\phase8_final_model_family_locked_v3_2.json",
+      "size_bytes": 1699,
+      "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9",
+      "relative_path": "audit/phase8_final_model_family_locked_v3_2.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\audit\\phase9_final_artifact_protocol_v3_2.json",
+      "size_bytes": 5734,
+      "sha256": "890886970d392608805ccd51bcfc3cf6d75721529b717572f5bad02b9057c678",
+      "relative_path": "audit/phase9_final_artifact_protocol_v3_2.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\audit\\phase9_final_artifact_verification_v3_2.json",
+      "size_bytes": 4164,
+      "sha256": "f805fc77c0377ccf8372dc67bc50fb852c4b6a40077bd3857a390831ab4cee86",
+      "relative_path": "audit/phase9_final_artifact_verification_v3_2.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\audit\\phase9_final_deployment_artifact_lock_manifest_v3_2.json",
+      "size_bytes": 5716,
+      "sha256": "2be5f8e7ee282acfa536ebfd99f66208bda56b2cfe8edf2dbfdc127175debfe5",
+      "relative_path": "audit/phase9_final_deployment_artifact_lock_manifest_v3_2.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\audit\\phase9_final_deployment_artifact_locked_v3_2.json",
+      "size_bytes": 4353,
+      "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6",
+      "relative_path": "audit/phase9_final_deployment_artifact_locked_v3_2.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\deployment_artifact\\artifact_lock.json",
+      "size_bytes": 3717,
+      "sha256": "78f27e1a167d63fd0d603f757b4beec396a99d5813ba5638040a74b64611a837",
+      "relative_path": "deployment_artifact/artifact_lock.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\deployment_artifact\\artifact_manifest.json",
+      "size_bytes": 5990,
+      "sha256": "30e45287f9b23eed0d8939921a33f776d95c8f5fffe006d90556d5e478f86e31",
+      "relative_path": "deployment_artifact/artifact_manifest.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\deployment_artifact\\inference_contract.json",
+      "size_bytes": 1541,
+      "sha256": "37865f4c8eb9ce1d7a2393638e33f9eaaa3eb6af6489f9aa7f4f88037fa05cec",
+      "relative_path": "deployment_artifact/inference_contract.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\deployment_artifact\\model_int8_checkpoint.pt",
+      "size_bytes": 14023,
+      "sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+      "relative_path": "deployment_artifact/model_int8_checkpoint.pt"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\deployment_artifact\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd",
+      "relative_path": "deployment_artifact/nbaiot_models.py"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\deployment_artifact\\phase5_physical_pruning_engine_v3_2.py",
+      "size_bytes": 11014,
+      "sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3",
+      "relative_path": "deployment_artifact/phase5_physical_pruning_engine_v3_2.py"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\deployment_artifact\\phase5_qat_engine_v3_2.py",
+      "size_bytes": 5822,
+      "sha256": "d1e33943a31bd1b3e2ea83a64daee9a31a8b5a8616c97346c62fff3c03503273",
+      "relative_path": "deployment_artifact/phase5_qat_engine_v3_2.py"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\deployment_artifact\\train_only_standard_scaler_v3_2.npz",
+      "size_bytes": 5361,
+      "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6",
+      "relative_path": "deployment_artifact/train_only_standard_scaler_v3_2.npz"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\release_manifest.json",
+      "size_bytes": 6065,
+      "sha256": "52be5fd33842ffd2b90e96219ed0dbab873788ebc43e9c74bfd9c8b9e5826bf5",
+      "relative_path": "release_manifest.json"
+    }
+  ],
+  "zip_checks": {
+    "entry_count_16": true,
+    "entry_names_exact": true,
+    "entry_order_lexicographic": true,
+    "entry_names_unique": true,
+    "timestamps_fixed": true,
+    "all_entries_deflated": true,
+    "testzip_passed": true
+  },
+  "zip_content_hash_checks": {
+    "DATA_NOT_INCLUDED.md": true,
+    "README_RELEASE.md": true,
+    "audit/phase8_final_model_family_locked_v3_2.json": true,
+    "audit/phase9_final_artifact_protocol_v3_2.json": true,
+    "audit/phase9_final_artifact_verification_v3_2.json": true,
+    "audit/phase9_final_deployment_artifact_lock_manifest_v3_2.json": true,
+    "audit/phase9_final_deployment_artifact_locked_v3_2.json": true,
+    "deployment_artifact/artifact_lock.json": true,
+    "deployment_artifact/artifact_manifest.json": true,
+    "deployment_artifact/inference_contract.json": true,
+    "deployment_artifact/model_int8_checkpoint.pt": true,
+    "deployment_artifact/nbaiot_models.py": true,
+    "deployment_artifact/phase5_physical_pruning_engine_v3_2.py": true,
+    "deployment_artifact/phase5_qat_engine_v3_2.py": true,
+    "deployment_artifact/train_only_standard_scaler_v3_2.npz": true,
+    "release_manifest.json": true
+  },
+  "construction_checks": {
+    "copied_locked_source_files_13": true,
+    "payload_files_15": true,
+    "release_directory_files_16": true,
+    "manifest_present": true,
+    "zip_present": true,
+    "zip_checks_passed": true,
+    "zip_content_hashes_match_directory": true,
+    "external_final_lock_absent": true,
+    "release_not_finally_locked": true
+  },
+  "raw_dataset_included": false,
+  "processed_dataset_included": false,
+  "nonselected_checkpoints_included": false,
+  "external_final_lock_created": false,
+  "release_locked": false,
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

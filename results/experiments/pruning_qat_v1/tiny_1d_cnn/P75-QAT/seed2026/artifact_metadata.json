@@ -1,0 +1,77 @@
+{
+  "generated_at_utc": "2026-07-26T21:07:29.317157+00:00",
+  "method_name": "P75-QAT",
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed2026\\converted_int8_state_dict.pt",
+  "artifact_sha256": "621616a78a324548412d3f29896e75c8f57b0690fac233b855ffdeebc1be7a5d",
+  "artifact_size_bytes": 10201,
+  "prepared_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+  "prepared_state_sha256": "f59dfc3e46f735e33490f2c44058585513de859e52bbc9cdd6f2d4d325458765",
+  "quantized_module_count": 5,
+  "quantized_module_types": [
+    "torch.ao.nn.intrinsic.quantized.modules.conv_relu.ConvReLU1d",
+    "torch.ao.nn.quantized.modules.linear.Linear",
+    "torch.ao.nn.quantized.modules.linear.LinearPackedParams"
+  ],
+  "quantized_graph_node_count": 4,
+  "quantized_graph_targets": [
+    "<built-in method quantize_per_tensor of type object at 0x00007FFD1323D2D0>",
+    "dequantize"
+  ],
+  "graph_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed2026\\converted_fx_graph.txt",
+  "pruning_metadata": {
+    "model_name": "tiny_1d_cnn",
+    "requested_pruning_ratio": 0.75,
+    "pruning_name": "P75",
+    "input_features": 115,
+    "num_classes": 3,
+    "original_architecture": {
+      "channels": [
+        8,
+        16,
+        24
+      ]
+    },
+    "compact_architecture": {
+      "channels": [
+        2,
+        4,
+        6
+      ]
+    },
+    "selected_indices": {
+      "conv_1": [
+        2,
+        5
+      ],
+      "conv_2": [
+        0,
+        7,
+        11,
+        14
+      ],
+      "conv_3": [
+        2,
+        4,
+        7,
+        17,
+        18,
+        23
+      ]
+    },
+    "original_parameter_count": 1699,
+    "compact_parameter_count": 139,
+    "removed_parameter_count": 1560,
+    "parameter_reduction_ratio": 0.9181871689228959,
+    "original_weight_layer_macs": 58816,
+    "compact_weight_layer_macs": 4552,
+    "removed_weight_layer_macs": 54264,
+    "mac_reduction_ratio": 0.9226060935799782,
+    "importance_method": "Normalized incoming plus outgoing L1 magnitude",
+    "physical_compaction": true,
+    "mask_based_pruning": false,
+    "output_class_units_pruned": false
+  },
+  "physical_compaction": true,
+  "mask_based_pruning": false,
+  "native_artifact_note": "PyTorch quantized state_dict size is runtime-specific."
+}

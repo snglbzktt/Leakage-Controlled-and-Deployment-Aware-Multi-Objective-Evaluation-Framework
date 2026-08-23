@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "QAT_engine_and_runtime_preflight",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "QAT_engine_version": "phase5_qat_engine_v3_2",
+  "verified_at_utc": "2026-08-06T19:22:00.084979+00:00",
+  "architecture_count": 2,
+  "variant_count": 3,
+  "seed_count": 5,
+  "configuration_count": 30,
+  "variants": [
+    "QAT",
+    "P25-QAT",
+    "P50-QAT"
+  ],
+  "source_policy": {
+    "QAT": "matching locked B0 checkpoint",
+    "P25-QAT": "matching locked P25-noFT source",
+    "P50-QAT": "matching locked P50-noFT source"
+  },
+  "QAT_policy": {
+    "selected_backend": "onednn",
+    "supported_backends": [
+      "onednn"
+    ],
+    "backend_attempts": [
+      {
+        "backend": "onednn",
+        "passed": true,
+        "error": null
+      }
+    ],
+    "weight_dtype": "torch.qint8",
+    "activation_dtype": "backend_default_QAT_activation_dtype",
+    "target_modules": [
+      "torch.nn.Linear"
+    ],
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "learning_rates": {
+      "tinyml_mlp": 0.00030000000000000003,
+      "compact_dnn": 0.0001
+    }
+  },
+  "data_access": {
+    "train_smoke_rows_used_per_configuration": 257,
+    "validation_access_count": 0,
+    "test_access_count": 0
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "B0_pair_locked": true,
+    "B0_registry_hash_matches": true,
+    "pruning_engine_locked": true,
+    "pruning_engine_hash_matches": true,
+    "pruning_sources_locked": true,
+    "pruning_registry_hash_matches": true,
+    "FP32_FT_locked": true,
+    "DQ_locked": true,
+    "QAT_matrix_has_thirty_rows": true,
+    "B0_registry_complete": true,
+    "pruning_registry_complete": true,
+    "QAT_budget_matches": true
+  },
+  "global_checks": {
+    "thirty_configurations_audited": true,
+    "all_QAT_linears_prepared": true,
+    "all_linears_converted_to_INT8": true,
+    "all_quantized_weights_qint8": true,
+    "all_conversions_deterministic": true,
+    "all_roundtrips_exact": true,
+    "all_sources_unchanged": true,
+    "validation_access_zero": true,
+    "test_access_zero": true
+  },
+  "QAT_engine_source": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_qat_engine_v3_2.py",
+    "size_bytes": 5822,
+    "sha256": "d1e33943a31bd1b3e2ea83a64daee9a31a8b5a8616c97346c62fff3c03503273"
+  },
+  "matrix_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_QAT_runtime_preflight_matrix_v3_2.csv",
+    "size_bytes": 12803,
+    "sha256": "0b6a361922daf3728aab980887b34dec22cd200aba68059a9f7267cf11288db4"
+  },
+  "ready_for_QAT_Q25_Q50_training": true,
+  "all_checks_passed": true
+}

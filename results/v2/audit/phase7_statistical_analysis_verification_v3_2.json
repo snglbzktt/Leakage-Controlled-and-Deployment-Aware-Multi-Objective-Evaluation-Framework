@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "phase": 7,
+  "artifact_name": "statistical_analysis_independent_verification",
+  "protocol_version": "phase7_statistical_analysis_v3_2",
+  "verified_at_utc": "2026-08-06T21:23:51.103209+00:00",
+  "verification_policy": {
+    "descriptive_statistics_recomputed": true,
+    "monte_carlo_omnibus_recomputed": true,
+    "exact_sign_flip_recomputed": true,
+    "exhaustive_bootstrap_recomputed": true,
+    "Holm_adjustment_recomputed": true,
+    "model_inference_repeated": false
+  },
+  "counts": {
+    "descriptive_rows": 176,
+    "omnibus_analyses": 16,
+    "posthoc_comparisons": 160
+  },
+  "verified_findings": {
+    "confirmatory_omnibus_rejections_nominal": 8,
+    "exploratory_omnibus_rejections_nominal": 8,
+    "confirmatory_posthoc_Holm_rejections": 0,
+    "exploratory_posthoc_Holm_rejections": 0,
+    "minimum_raw_exact_p": 0.0625,
+    "minimum_Holm_adjusted_p": 0.625
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "preflight_locked": true,
+    "summary_completed": true,
+    "completion_completed": true,
+    "descriptive_hash_matches": true,
+    "omnibus_hash_matches": true,
+    "posthoc_hash_matches": true,
+    "summary_hash_matches": true,
+    "joined_row_count_110": true,
+    "plan_row_count_176": true,
+    "descriptive_row_count_176": true,
+    "omnibus_row_count_16": true,
+    "posthoc_row_count_160": true,
+    "final_model_not_selected": true
+  },
+  "summary_checks": {
+    "descriptive_count_matches": true,
+    "omnibus_count_matches": true,
+    "posthoc_count_matches": true,
+    "confirmatory_omnibus_matches": true,
+    "exploratory_omnibus_matches": true,
+    "confirmatory_Holm_matches": true,
+    "exploratory_Holm_matches": true,
+    "minimum_raw_p_matches": true,
+    "minimum_Holm_p_matches": true,
+    "final_model_not_selected": true
+  },
+  "global_checks": {
+    "descriptive_rows_verified_176": true,
+    "omnibus_rows_verified_16": true,
+    "posthoc_rows_verified_160": true,
+    "all_omnibus_checks_passed": true,
+    "all_posthoc_checks_passed": true,
+    "minimum_raw_exact_p_0_0625": true,
+    "minimum_Holm_p_0_625": true,
+    "no_posthoc_Holm_rejections": true,
+    "model_inference_not_repeated": true,
+    "final_model_not_selected": true
+  },
+  "verified_omnibus_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_omnibus_verified_v3_2.csv",
+    "size_bytes": 2329,
+    "sha256": "cd0845bc8ea754f328f293f335ce9ed55ad84bfe1f4bee0aa638c42258c1c070"
+  },
+  "verified_posthoc_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_posthoc_verified_v3_2.csv",
+    "size_bytes": 20131,
+    "sha256": "e654b3e8ded77dfab834754331cf5c9601e312bf4616b83c6f327730e68626bd"
+  },
+  "source_artifacts": {
+    "protocol": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase7_statistical_analysis_protocol_v3_2.json",
+      "size_bytes": 6367,
+      "sha256": "bd0bf99c7870d785d16511c41b9f1d16ddfd500d034b60a14bb098bd06ca384c"
+    },
+    "preflight_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_preflight_locked_v3_2.json",
+      "size_bytes": 1389,
+      "sha256": "e86dff2e18d96e38e96e5c5d86ae9897d07a5ba371206573cdeba0078c556619"
+    },
+    "joined_matrix": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_joined_matrix_v3_2.csv",
+      "size_bytes": 69695,
+      "sha256": "2fb465ad45209d5b47b54eaf00e3be4492c24f07cb3782fa80bef68d1178bc52"
+    },
+    "comparison_plan": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_comparison_plan_v3_2.csv",
+      "size_bytes": 46258,
+      "sha256": "cc57da764c3ef080b41caf7ad908fa945104160e4e2dad8ad4b8c294e297d6c1"
+    },
+    "descriptive_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_descriptive_summary_v3_2.csv",
+      "size_bytes": 30751,
+      "sha256": "49c8c6a37a265d346b1766972ae6c1d0fbb18a6a682ed4bdbdc7a4b06eda68e2"
+    },
+    "omnibus_results": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_omnibus_results_v3_2.csv",
+      "size_bytes": 4639,
+      "sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2"
+    },
+    "posthoc_results": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_posthoc_vs_B0_results_v3_2.csv",
+      "size_bytes": 56307,
+      "sha256": "9fff5dbbc1e455ef1c29c54d8e3762f1b01e6abfbe6027dd0c6c7a4118d19e47"
+    },
+    "summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_summary_v3_2.json",
+      "size_bytes": 2581,
+      "sha256": "0c3343af85283b4edf977e306dd8fc31356d860a231659c6b48cbb6ad289231d"
+    },
+    "completion": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_completed_v3_2.json",
+      "size_bytes": 1360,
+      "sha256": "eb9026bca8d7497d2f8f025cbdf5bd174354b84ece388ae23f7c729ae4c7a8c5"
+    }
+  },
+  "ready_for_multi_objective_decision_preflight": true,
+  "final_model_selected": false,
+  "all_checks_passed": true
+}

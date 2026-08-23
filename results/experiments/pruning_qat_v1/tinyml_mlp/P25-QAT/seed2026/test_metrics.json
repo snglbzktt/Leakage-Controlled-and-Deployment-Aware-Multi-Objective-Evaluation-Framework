@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-07-26T19:27:39.061388+00:00",
+  "model_name": "tinyml_mlp",
+  "method_name": "P25-QAT",
+  "seed": 2026,
+  "task_name": "family_3",
+  "test_evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "sample_count": 341093,
+  "accuracy": 0.9968249128536792,
+  "balanced_accuracy": 0.9888928053530219,
+  "macro_precision": 0.9899910746443035,
+  "macro_recall": 0.9888928053530219,
+  "macro_f1": 0.98944098218773,
+  "weighted_f1": 0.9968224742296877,
+  "matthews_correlation_coefficient": 0.992581284236076,
+  "per_class": {
+    "benign": {
+      "support": 77075,
+      "predicted_count": 77047,
+      "precision": 0.9992342336495905,
+      "recall": 0.9988712293220888,
+      "f1": 0.9990526985115686,
+      "false_negative_rate": 0.0011287706779111728
+    },
+    "gafgyt": {
+      "support": 18563,
+      "predicted_count": 18500,
+      "precision": 0.9728648648648649,
+      "recall": 0.9695631094111943,
+      "f1": 0.9712111809621454,
+      "false_negative_rate": 0.03043689058880572
+    },
+    "mirai": {
+      "support": 245455,
+      "predicted_count": 245546,
+      "precision": 0.9978741254184552,
+      "recall": 0.9982440773257827,
+      "f1": 0.9980590670894763,
+      "false_negative_rate": 0.001755922674217314
+    }
+  },
+  "confusion_matrix": [
+    [
+      76988,
+      84,
+      3
+    ],
+    [
+      46,
+      17998,
+      519
+    ],
+    [
+      13,
+      418,
+      245024
+    ]
+  ],
+  "loss": 0.01163432158166049,
+  "processed_batches": 95,
+  "elapsed_seconds": 1.0917903999798,
+  "throughput_samples_per_second": 312416.1927109002
+}

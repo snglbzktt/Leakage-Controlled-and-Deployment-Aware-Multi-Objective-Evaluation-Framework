@@ -1,0 +1,66 @@
+{
+  "status": "generated",
+  "phase": 13,
+  "asset_id": "table_02_classical_baselines",
+  "generated_at_utc": "2026-08-07T07:52:35.175077+00:00",
+  "title": "Classical Baseline Results",
+  "row_count": 4,
+  "descriptive_highest_model": {
+    "rank": 1,
+    "model_id": "hist_gradient_boosting_b0",
+    "display_name": "HistGradientBoosting",
+    "mean_test_fingerprint_macro_f1": 0.9997380683535377
+  },
+  "ranking_is_descriptive_only": true,
+  "ranking_is_not_model_selection": true,
+  "source_files": [
+    {
+      "source_id": "phase4_model_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_model_summary_v3_2.csv",
+      "sha256": "51bd0a583fb50b8974bae822640ca8f4892beedc73edd587b651ef213b39f8cd"
+    }
+  ],
+  "outputs": {
+    "csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_02_classical_baselines_v3_3.csv",
+      "sha256": "0bdec3f436a5efe9e3e8ad1c191e45a9fb89f53d969b3f325cbd1abf4df65180",
+      "size_bytes": 807
+    },
+    "markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_02_classical_baselines_v3_3.md",
+      "sha256": "de6ca852f018074c9560f08079834d55f09b66cd4852ead4a9d55ff7af24e921",
+      "size_bytes": 960
+    },
+    "source_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_02_classical_baselines_source_v3_3.csv",
+      "sha256": "51bd0a583fb50b8974bae822640ca8f4892beedc73edd587b651ef213b39f8cd",
+      "size_bytes": 1591
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\table_02_classical_baselines_caption_v3_3.txt",
+      "sha256": "51bfeb746f44a1645c4a967179efd2c8039291ed2b74f2ecf51ce1c2c9050310",
+      "size_bytes": 461
+    }
+  },
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_hash_matches": true,
+    "mapping_validated": true,
+    "mapping_hash_matches": true,
+    "table_01_locked": true,
+    "table_02_mapped": true
+  },
+  "data_checks": {
+    "source_rows_4": true,
+    "required_columns_present": true,
+    "ranks_1_to_4": true,
+    "ranking_not_model_selection_all": true,
+    "all_macro_f1_valid": true,
+    "all_weighted_macro_f1_valid": true
+  },
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

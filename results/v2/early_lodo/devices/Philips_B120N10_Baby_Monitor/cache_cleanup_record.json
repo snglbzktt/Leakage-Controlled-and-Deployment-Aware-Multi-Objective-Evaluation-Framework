@@ -1,0 +1,103 @@
+{
+  "protocol_version": "early_lodo_cache_cleanup_v2_1",
+  "status": "completed",
+  "verified_at": "2026-08-05T21:48:14.680779+00:00",
+  "held_out_device": "Philips_B120N10_Baby_Monitor",
+  "cache_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor",
+  "retained_files": [
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\cache_summary.json",
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\scaler.npz"
+  ],
+  "removed_files": [
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\test_global_indices.npy",
+      "size_bytes": 8607616,
+      "sha256": "8839cad95d7b62ecd6c4191730bd3b3b815107ef134dcfe9002a4bb6aa9165d2"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\test_occurrence_count.npy",
+      "size_bytes": 4303872,
+      "sha256": "ff58f51e4766ff013c2c2719a705eef32775a225df09d4279bc337fd8bf1dabd"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\test_source_split.npy",
+      "size_bytes": 1076064,
+      "sha256": "bed2f110205b05a44aedef22768bfe82056fcde0fe8266a79459cc5fc159e8b3"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\train_global_indices.npy",
+      "size_bytes": 7873192,
+      "sha256": "34758375d45afce4089cd3a3131cd8ef2f95d54c5e16488eb7f6c7a13bb670c4"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\validation_global_indices.npy",
+      "size_bytes": 1687952,
+      "sha256": "e0b94c2c3ed7aac50c62268f823e1d62642ad4f69327869f6c797257ebe8dae5"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\x_test.npy",
+      "size_bytes": 494930688,
+      "sha256": "37ec6c8e70e33a12453efc2d6c765a1d0c90b2fbc4dfa394fdb1aca4228c90c6"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\x_train.npy",
+      "size_bytes": 452701308,
+      "sha256": "f3de13915273a8d550bfce81881061e5fcf4f28017e9f7fd559c1c13174ec3f9"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\x_validation.npy",
+      "size_bytes": 97050008,
+      "sha256": "b731d2f7f334924a3f933ea2f82e6dbbc9911313a7124709eeb6709068e37566"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\y_test.npy",
+      "size_bytes": 1076064,
+      "sha256": "04f937d787a05d62e945e965892e12f2f7c6661390150da71357ccdee440f878"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\y_train.npy",
+      "size_bytes": 984261,
+      "sha256": "e2d5f2a61bf85e577f09df0b3c05a88e1cced5d24f80e8cb694597f42dbda1ea"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Philips_B120N10_Baby_Monitor\\y_validation.npy",
+      "size_bytes": 211106,
+      "sha256": "adef873e089d78a77dac778857149bfaa83a3e6019078d425ac995746f003871"
+    }
+  ],
+  "expected_reclaimed_bytes": 1070502131,
+  "device_summary_sha256": "b0fc64196d063cd4cf3f16e75112f867758f36bddfb9247a029e5746407adc83",
+  "cache_manifest_sha256": "b07d02264579ec2f4aebf844dae89cd97084e1ca2cdfab0d92d88726aef4e42c",
+  "device_release_manifest_sha256": "4f416d6c13203fafdd62430752e4796a984623b2164ae50933571ecc2b4f2a3b",
+  "pre_cleanup_validation_checks": {
+    "device_summary_complete": true,
+    "device_summary_checks_passed": true,
+    "three_models_completed": true,
+    "cache_cleanup_eligible": true,
+    "one_device_ledger_row": true,
+    "device_ledger_complete": true,
+    "device_ledger_cleanup_eligible": true,
+    "cache_directory_exists": true,
+    "cache_manifest_nonempty": true,
+    "manifest_paths_inside_cache": true,
+    "manifest_matches_cache_directory": true,
+    "manifest_sizes_match": true,
+    "manifest_hashes_match": true,
+    "removable_files_found": true,
+    "retained_files_present": true
+  },
+  "all_pre_cleanup_checks_passed": true,
+  "completed_at": "2026-08-05T21:48:14.820650+00:00",
+  "removed_file_count": 11,
+  "reclaimed_bytes": 1070502131,
+  "reclaimed_gb": 0.9969828007742763,
+  "post_cleanup_validation_checks": {
+    "all_removable_files_removed": true,
+    "retained_files_still_present": true,
+    "cache_directory_retained": true,
+    "device_summary_unchanged": true,
+    "cache_manifest_unchanged": true,
+    "device_release_manifest_unchanged": true
+  },
+  "all_post_cleanup_checks_passed": true
+}

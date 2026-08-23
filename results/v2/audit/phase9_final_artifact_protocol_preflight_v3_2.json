@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "phase": 9,
+  "artifact_name": "final_deployment_artifact_protocol_preflight",
+  "protocol_version": "phase9_final_artifact_v3_2",
+  "verified_at_utc": "2026-08-06T22:00:54.367863+00:00",
+  "entry_checks": {
+    "phase5_locked": true,
+    "phase5_master_hash_matches": true,
+    "phase8_family_locked": true,
+    "selected_family_matches_protocol": true,
+    "final_artifact_directory_absent": true
+  },
+  "checkpoint_checks": {
+    "checkpoint_is_dictionary": true,
+    "int8_state_dict_present": true,
+    "qat_backend_present": true,
+    "qat_backend_supported": true
+  },
+  "preflight_checks": {
+    "selected_family_tinyml_P50_QAT": true,
+    "canonical_seed_2026": true,
+    "source_registry_row_count_1": true,
+    "checkpoint_exists": true,
+    "checkpoint_hash_recorded": true,
+    "QAT_backend_supported": true,
+    "test_not_used_for_seed_selection": true,
+    "validation_not_used_for_seed_selection": true,
+    "deployment_not_used_for_seed_selection": true,
+    "artifact_directory_not_created": true,
+    "artifact_construction_not_performed": true,
+    "model_inference_not_performed": true,
+    "single_checkpoint_not_locked": true
+  },
+  "protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase9_final_artifact_protocol_v3_2.json",
+    "size_bytes": 5734,
+    "sha256": "890886970d392608805ccd51bcfc3cf6d75721529b717572f5bad02b9057c678"
+  },
+  "source_registry": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_artifact_source_registry_v3_2.csv",
+    "size_bytes": 965,
+    "sha256": "8eeefbaaa13c8bfbae85d1b49666be380b3b6e5f0e8e7a8115615f5b3067c645"
+  },
+  "artifact_construction_performed": false,
+  "model_inference_performed": false,
+  "single_checkpoint_locked": false,
+  "ready_for_artifact_construction": true,
+  "all_checks_passed": true
+}

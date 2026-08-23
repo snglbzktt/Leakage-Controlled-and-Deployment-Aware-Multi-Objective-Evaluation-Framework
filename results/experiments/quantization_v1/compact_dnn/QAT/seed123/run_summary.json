@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-07-25T08:01:12.344014+00:00",
+  "model_name": "compact_dnn",
+  "method_name": "QAT",
+  "seed": 123,
+  "quantization_protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_quantization_protocol_v1.json",
+  "quantization_protocol_sha256": "2f5b9e29501d598ba6830173ce601983672731d7599da2eabb56f2c794bcf086",
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\compact_dnn\\seed123\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "adec1a26cddf6e3190fc3b403c5315e504a3097f2b0131096549e1c76779888b",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\QAT\\seed123\\test_metrics.json",
+  "artifact_metadata_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\QAT\\seed123\\artifact_metadata.json",
+  "training_summary_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\QAT\\seed123\\training_summary.json",
+  "test_evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "validation_passed": true
+}

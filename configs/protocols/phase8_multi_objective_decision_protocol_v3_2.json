@@ -1,0 +1,200 @@
+{
+  "status": "locked",
+  "phase": 8,
+  "artifact_name": "multi_objective_decision_protocol",
+  "protocol_version": "phase8_multi_objective_decision_v3_2",
+  "locked_at_utc": "2026-08-06T21:28:30.663220+00:00",
+  "provenance_statement": {
+    "externally_preregistered": false,
+    "protocol_locked_after_phases_5_6_7": true,
+    "decision_computation_performed_before_lock": false,
+    "interpretation": "This is a transparent post-experiment engineering decision rule, not an external preregistration."
+  },
+  "decision_scope": {
+    "architecture_count": 2,
+    "variant_count": 11,
+    "group_count": 22,
+    "compressed_candidate_variants": [
+      "P25-noFT",
+      "P25-FP32-FT",
+      "P50-noFT",
+      "P50-FP32-FT",
+      "DQ",
+      "QAT",
+      "P25-QAT",
+      "P50-QAT",
+      "PTQ"
+    ],
+    "baseline_reference": "B0",
+    "uncompressed_control": "FP32-FT",
+    "seed_count": 5
+  },
+  "eligibility_profiles": {
+    "strict": {
+      "maximum_mean_macro_f1_loss": 0.001,
+      "maximum_worst_seed_macro_f1_loss": 0.0025,
+      "maximum_mean_raw_weighted_macro_f1_loss": 0.002
+    },
+    "balanced": {
+      "maximum_mean_macro_f1_loss": 0.002,
+      "maximum_worst_seed_macro_f1_loss": 0.005,
+      "maximum_mean_raw_weighted_macro_f1_loss": 0.003
+    },
+    "relaxed": {
+      "maximum_mean_macro_f1_loss": 0.005,
+      "maximum_worst_seed_macro_f1_loss": 0.01,
+      "maximum_mean_raw_weighted_macro_f1_loss": 0.007
+    }
+  },
+  "primary_profile": "balanced",
+  "common_hard_gates": {
+    "candidate_role": "compressed_candidate",
+    "fragility_triggered_in_any_run": false,
+    "minimum_deployment_improvement_count": 1,
+    "deployment_improvement_metrics": [
+      "state_size_reduction_fraction_vs_architecture_B0",
+      "batch_1_latency_reduction_fraction_vs_architecture_B0",
+      "batch_32_throughput_gain_fraction_vs_architecture_B0"
+    ],
+    "strict_positive_improvement_required": true
+  },
+  "Pareto_analysis": {
+    "performed_only_after_primary_eligibility": true,
+    "objectives": [
+      {
+        "metric": "mean_test_fingerprint_macro_f1",
+        "direction": "maximize",
+        "role": "predictive_quality"
+      },
+      {
+        "metric": "mean_serialized_state_dict_bytes",
+        "direction": "minimize",
+        "role": "storage"
+      },
+      {
+        "metric": "mean_batch_1_median_ms",
+        "direction": "minimize",
+        "role": "single_sample_latency"
+      },
+      {
+        "metric": "mean_batch_32_samples_per_second",
+        "direction": "maximize",
+        "role": "throughput"
+      }
+    ],
+    "dominance_rule": "Candidate A dominates B when A is no worse on all four objectives and strictly better on at least one objective.",
+    "cross_architecture_comparison": true
+  },
+  "primary_selection_rule": {
+    "weighted_score_used": false,
+    "selection_order": [
+      {
+        "criterion": "eligible_under_balanced_profile",
+        "direction": "required_true"
+      },
+      {
+        "criterion": "Pareto_nondominated",
+        "direction": "required_true"
+      },
+      {
+        "criterion": "mean_serialized_state_dict_bytes",
+        "direction": "ascending"
+      },
+      {
+        "criterion": "mean_batch_1_median_ms",
+        "direction": "ascending"
+      },
+      {
+        "criterion": "mean_batch_32_samples_per_second",
+        "direction": "descending"
+      },
+      {
+        "criterion": "mean_test_fingerprint_macro_f1",
+        "direction": "descending"
+      },
+      {
+        "criterion": "architecture",
+        "direction": "lexicographic_ascending"
+      },
+      {
+        "criterion": "variant",
+        "direction": "lexicographic_ascending"
+      }
+    ],
+    "interpretation": "Predictive quality and fragility are enforced as hard gates. Among eligible Pareto candidates, the smallest serialized model is preferred; latency, throughput, predictive quality, and stable lexical tie-breaks follow."
+  },
+  "sensitivity_analysis": {
+    "profiles_reported": [
+      "strict",
+      "balanced",
+      "relaxed"
+    ],
+    "primary_profile": "balanced",
+    "selection_stability_reported": true,
+    "primary_selection_not_changed_by_exploratory_profile": true
+  },
+  "statistical_interpretation": {
+    "Holm_adjusted_pairwise_rejections": 0,
+    "minimum_raw_exact_p": 0.0625,
+    "minimum_Holm_adjusted_p": 0.625,
+    "absence_of_significance_is_not_equivalence": true,
+    "p_values_used_as_exclusion_gate": false,
+    "effect_sizes_reported_descriptively": true
+  },
+  "reporting_rules": {
+    "report_all_22_groups": true,
+    "report_all_gate_failures": true,
+    "report_all_Pareto_candidates": true,
+    "report_profile_sensitivity": true,
+    "report_final_selection_trace": true,
+    "final_selection_requires_independent_verification": true,
+    "no_model_inference_in_phase8": true
+  },
+  "source_artifacts": {
+    "phase5_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_locked_v3_2.json",
+      "size_bytes": 1378,
+      "sha256": "a067b62e475c1648729819d994fdc59d4050d49dc5d7596b1953f60dc7d7fc7c"
+    },
+    "phase5_group_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_group_summary_v3_2.csv",
+      "size_bytes": 5849,
+      "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+    },
+    "phase5_master_matrix": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv",
+      "size_bytes": 48909,
+      "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+    },
+    "phase6_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_v3_2.json",
+      "size_bytes": 1430,
+      "sha256": "41ecd92802dffe1b38cf0749b22683c47f0401d92d4d809bf2f63f92b51abbce"
+    },
+    "phase6_group_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_group_summary_v3_2.csv",
+      "size_bytes": 7065,
+      "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf"
+    },
+    "phase6_all_runs": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_all_runs_v3_2.csv",
+      "size_bytes": 67445,
+      "sha256": "a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250"
+    },
+    "phase7_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_locked_v3_2.json",
+      "size_bytes": 1495,
+      "sha256": "2f182f7ef7d2885acc82c88252c4310e49ce8801045cf44f4dc8aef6cf036e48"
+    },
+    "phase7_posthoc": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_posthoc_vs_B0_results_v3_2.csv",
+      "size_bytes": 56307,
+      "sha256": "9fff5dbbc1e455ef1c29c54d8e3762f1b01e6abfbe6027dd0c6c7a4118d19e47"
+    }
+  },
+  "environment": {
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "all_checks_passed": true
+}

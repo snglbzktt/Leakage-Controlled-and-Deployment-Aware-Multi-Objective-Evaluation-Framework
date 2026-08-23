@@ -1,0 +1,5088 @@
+{
+  "status": "completed",
+  "phase": 11,
+  "artifact_name": "hgb_and_checkpoint_structure_inspection",
+  "hgb_summary_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_summary_v3_2.json",
+  "hgb_summary": {
+    "status": "completed",
+    "generated_at_utc": "2026-08-06T14:20:40.917762+00:00",
+    "run_id": "hist_gradient_boosting_b0__seed_2026",
+    "model_id": "hist_gradient_boosting_b0",
+    "seed": 2026,
+    "protocol_version": "tabular_baseline_protocol_v3_2",
+    "input_space": "canonical_float32_unscaled",
+    "parameters": {
+      "loss": "log_loss",
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 31,
+      "max_depth": null,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.0001,
+      "max_bins": 255,
+      "class_weight": "balanced",
+      "early_stopping": false
+    },
+    "training_elapsed_seconds": 47.99949769990053,
+    "n_iter": 100,
+    "test_evaluation_count": 1,
+    "test_used_for_selection": false,
+    "test_fingerprint_macro_f1": 0.9997380683535377,
+    "test_fingerprint_accuracy": 0.9998708969434852,
+    "test_raw_weighted_macro_f1": 0.9990430947883375,
+    "test_gafgyt_fnr": 0.0009632529256246025,
+    "test_mirai_fnr": 0.0,
+    "fragility_gate_triggered": false,
+    "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\hist_gradient_boosting_b0__seed_2026",
+    "metrics_sha256": "261cce68a967624c852b3ce608512950c232adab0831c87943ad25abb7dac7d4",
+    "run_manifest_sha256": "2f20f77b1b199c25dc4891b5771e64c640dfde9f4e1ddd3c242501680619b28e",
+    "runner_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\110_run_hist_gradient_boosting_b0_v3_2.py",
+    "runner_script_sha256": "db7c1a97b80539e14b71a230000cf6245a29ffd1a58c7d21902e7998b4a41cd2",
+    "all_integrity_checks_passed": true
+  },
+  "hgb_verification_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_verification_v3_2.json",
+  "hgb_verification": {
+    "status": "passed",
+    "generated_at_utc": "2026-08-06T14:28:22.419429+00:00",
+    "run_id": "hist_gradient_boosting_b0__seed_2026",
+    "model_id": "hist_gradient_boosting_b0",
+    "seed": 2026,
+    "protocol_version": "tabular_baseline_protocol_v3_2",
+    "input_space": "canonical_float32_unscaled",
+    "independent_unscaled_inference": true,
+    "test_evaluation_count": 1,
+    "test_fingerprint_macro_f1": 0.9997380683535377,
+    "test_fingerprint_accuracy": 0.9998708969434852,
+    "test_raw_weighted_macro_f1": 0.9990430947883375,
+    "test_gafgyt_fnr": 0.0009632529256246025,
+    "test_mirai_fnr": 0.0,
+    "artifact_count_verified": 11,
+    "global_checks": {
+      "cache_manifest_completed": true,
+      "cache_verification_passed": true,
+      "logistic_verification_passed": true,
+      "decision_tree_verification_passed": true,
+      "random_forest_verification_passed": true,
+      "base_protocol_locked": true,
+      "base_protocol_hash_matches": true,
+      "run_matrix_hash_matches": true,
+      "addendum_locked": true,
+      "addendum_hash_matches": true,
+      "run_matrix_model_matches": true,
+      "run_matrix_run_id_matches": true,
+      "run_matrix_seed_matches": true,
+      "run_matrix_input_space_matches": true,
+      "train_shape_matches": true,
+      "validation_shape_matches": true,
+      "test_shape_matches": true,
+      "validation_raw_total_matches": true,
+      "test_raw_total_matches": true,
+      "sklearn_version_is_1_9_0": true
+    },
+    "prediction_artifact_checks": {
+      "validation_y_matches_cache": true,
+      "validation_raw_counts_match_cache": true,
+      "test_y_matches_cache": true,
+      "test_raw_counts_match_cache": true,
+      "validation_probabilities_float32": true,
+      "test_probabilities_float32": true,
+      "validation_probability_shape_matches": true,
+      "test_probability_shape_matches": true,
+      "validation_probabilities_finite": true,
+      "test_probabilities_finite": true,
+      "validation_probability_rows_sum_to_one": true,
+      "test_probability_rows_sum_to_one": true
+    },
+    "independent_prediction_checks": {
+      "validation_predictions_match_unscaled_model": true,
+      "validation_probabilities_match_unscaled_model": true,
+      "test_predictions_match_unscaled_model": true,
+      "test_probabilities_match_unscaled_model": true
+    },
+    "metric_checks": {
+      "validation_primary_accuracy_matches": true,
+      "validation_primary_macro_precision_matches": true,
+      "validation_primary_macro_recall_matches": true,
+      "validation_primary_balanced_accuracy_matches": true,
+      "validation_primary_macro_f1_matches": true,
+      "validation_primary_weighted_f1_matches": true,
+      "validation_primary_log_loss_matches": true,
+      "validation_primary_roc_auc_ovr_macro_matches": true,
+      "validation_primary_confusion_matrix_matches": true,
+      "validation_primary_benign_precision_matches": true,
+      "validation_primary_benign_recall_matches": true,
+      "validation_primary_benign_f1_matches": true,
+      "validation_primary_benign_support_matches": true,
+      "validation_primary_benign_false_negative_rate_matches": true,
+      "validation_primary_gafgyt_precision_matches": true,
+      "validation_primary_gafgyt_recall_matches": true,
+      "validation_primary_gafgyt_f1_matches": true,
+      "validation_primary_gafgyt_support_matches": true,
+      "validation_primary_gafgyt_false_negative_rate_matches": true,
+      "validation_primary_mirai_precision_matches": true,
+      "validation_primary_mirai_recall_matches": true,
+      "validation_primary_mirai_f1_matches": true,
+      "validation_primary_mirai_support_matches": true,
+      "validation_primary_mirai_false_negative_rate_matches": true,
+      "validation_weighted_accuracy_matches": true,
+      "validation_weighted_macro_precision_matches": true,
+      "validation_weighted_macro_recall_matches": true,
+      "validation_weighted_balanced_accuracy_matches": true,
+      "validation_weighted_macro_f1_matches": true,
+      "validation_weighted_weighted_f1_matches": true,
+      "validation_weighted_log_loss_matches": true,
+      "validation_weighted_roc_auc_ovr_macro_matches": true,
+      "validation_weighted_confusion_matrix_matches": true,
+      "validation_weighted_benign_precision_matches": true,
+      "validation_weighted_benign_recall_matches": true,
+      "validation_weighted_benign_f1_matches": true,
+      "validation_weighted_benign_support_matches": true,
+      "validation_weighted_benign_false_negative_rate_matches": true,
+      "validation_weighted_gafgyt_precision_matches": true,
+      "validation_weighted_gafgyt_recall_matches": true,
+      "validation_weighted_gafgyt_f1_matches": true,
+      "validation_weighted_gafgyt_support_matches": true,
+      "validation_weighted_gafgyt_false_negative_rate_matches": true,
+      "validation_weighted_mirai_precision_matches": true,
+      "validation_weighted_mirai_recall_matches": true,
+      "validation_weighted_mirai_f1_matches": true,
+      "validation_weighted_mirai_support_matches": true,
+      "validation_weighted_mirai_false_negative_rate_matches": true,
+      "test_primary_accuracy_matches": true,
+      "test_primary_macro_precision_matches": true,
+      "test_primary_macro_recall_matches": true,
+      "test_primary_balanced_accuracy_matches": true,
+      "test_primary_macro_f1_matches": true,
+      "test_primary_weighted_f1_matches": true,
+      "test_primary_log_loss_matches": true,
+      "test_primary_roc_auc_ovr_macro_matches": true,
+      "test_primary_confusion_matrix_matches": true,
+      "test_primary_benign_precision_matches": true,
+      "test_primary_benign_recall_matches": true,
+      "test_primary_benign_f1_matches": true,
+      "test_primary_benign_support_matches": true,
+      "test_primary_benign_false_negative_rate_matches": true,
+      "test_primary_gafgyt_precision_matches": true,
+      "test_primary_gafgyt_recall_matches": true,
+      "test_primary_gafgyt_f1_matches": true,
+      "test_primary_gafgyt_support_matches": true,
+      "test_primary_gafgyt_false_negative_rate_matches": true,
+      "test_primary_mirai_precision_matches": true,
+      "test_primary_mirai_recall_matches": true,
+      "test_primary_mirai_f1_matches": true,
+      "test_primary_mirai_support_matches": true,
+      "test_primary_mirai_false_negative_rate_matches": true,
+      "test_weighted_accuracy_matches": true,
+      "test_weighted_macro_precision_matches": true,
+      "test_weighted_macro_recall_matches": true,
+      "test_weighted_balanced_accuracy_matches": true,
+      "test_weighted_macro_f1_matches": true,
+      "test_weighted_weighted_f1_matches": true,
+      "test_weighted_log_loss_matches": true,
+      "test_weighted_roc_auc_ovr_macro_matches": true,
+      "test_weighted_confusion_matrix_matches": true,
+      "test_weighted_benign_precision_matches": true,
+      "test_weighted_benign_recall_matches": true,
+      "test_weighted_benign_f1_matches": true,
+      "test_weighted_benign_support_matches": true,
+      "test_weighted_benign_false_negative_rate_matches": true,
+      "test_weighted_gafgyt_precision_matches": true,
+      "test_weighted_gafgyt_recall_matches": true,
+      "test_weighted_gafgyt_f1_matches": true,
+      "test_weighted_gafgyt_support_matches": true,
+      "test_weighted_gafgyt_false_negative_rate_matches": true,
+      "test_weighted_mirai_precision_matches": true,
+      "test_weighted_mirai_recall_matches": true,
+      "test_weighted_mirai_f1_matches": true,
+      "test_weighted_mirai_support_matches": true,
+      "test_weighted_mirai_false_negative_rate_matches": true
+    },
+    "parameter_checks": {
+      "classes_match": true,
+      "loss_matches": true,
+      "learning_rate_matches": true,
+      "max_iter_matches": true,
+      "max_leaf_nodes_matches": true,
+      "max_depth_matches": true,
+      "min_samples_leaf_matches": true,
+      "l2_regularization_matches": true,
+      "max_bins_matches": true,
+      "class_weight_matches": true,
+      "early_stopping_parameter_matches": true,
+      "random_state_matches": true,
+      "n_iter_is_100": true,
+      "n_trees_per_iteration_is_3": true,
+      "early_stopping_not_used": true,
+      "internal_iteration_count_matches": true,
+      "internal_total_tree_count_is_300": true
+    },
+    "summary_checks": {
+      "summary_completed": true,
+      "summary_integrity_passed": true,
+      "summary_run_id_matches": true,
+      "summary_model_id_matches": true,
+      "summary_seed_matches": true,
+      "summary_protocol_matches": true,
+      "summary_input_space_matches": true,
+      "summary_test_count_is_one": true,
+      "summary_test_not_used_for_selection": true,
+      "summary_metrics_hash_matches": true,
+      "summary_manifest_hash_matches": true,
+      "summary_runner_hash_matches": true,
+      "summary_macro_f1_matches": true,
+      "summary_accuracy_matches": true,
+      "summary_weighted_macro_f1_matches": true,
+      "summary_gafgyt_fnr_matches": true,
+      "summary_mirai_fnr_matches": true
+    },
+    "artifact_checks": [
+      {
+        "relative_path": "metrics.json",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "model.joblib",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "model_parameters.npz",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "test_confusion_fingerprint.csv",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "test_confusion_raw_weighted.csv",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "test_per_class_metrics.csv",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "test_predictions.npz",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "validation_confusion_fingerprint.csv",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "validation_confusion_raw_weighted.csv",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "validation_per_class_metrics.csv",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      },
+      {
+        "relative_path": "validation_predictions.npz",
+        "exists": true,
+        "size_matches": true,
+        "sha256_matches": true
+      }
+    ],
+    "run_checks": {
+      "manifest_completed": true,
+      "status_completed": true,
+      "run_id_matches": true,
+      "model_id_matches": true,
+      "seed_matches": true,
+      "protocol_version_matches": true,
+      "input_space_exact_unscaled": true,
+      "input_parser_policy_exact": true,
+      "training_count_matches": true,
+      "training_weight_is_none": true,
+      "test_evaluation_count_is_one": true,
+      "fragility_not_triggered": true,
+      "runner_hash_matches": true,
+      "run_matrix_hash_matches": true,
+      "cache_manifest_hash_matches": true,
+      "all_prediction_artifact_checks_pass": true,
+      "all_unscaled_prediction_checks_pass": true,
+      "all_metric_recomputations_match": true,
+      "all_parameter_checks_pass": true,
+      "all_summary_checks_pass": true,
+      "all_artifacts_exist": true,
+      "all_artifact_sizes_match": true,
+      "all_artifact_hashes_match": true,
+      "manifest_integrity_passed": true
+    },
+    "final_checks": {
+      "all_global_checks_pass": true,
+      "all_run_checks_pass": true,
+      "fragility_gate_not_triggered": true
+    },
+    "failed_checks": [],
+    "free_disk_gib": 6.905616760253906,
+    "all_checks_passed": true
+  },
+  "cache_manifest_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\manifest.json",
+  "cache_manifest": {
+    "status": "completed",
+    "protocol_version": "tabular_baseline_protocol_v3_2",
+    "created_at_utc": "2026-08-06T13:08:43.666585+00:00",
+    "repair_iterations_completed": 2,
+    "iteration1_move_count": 353,
+    "iteration2_move_count": 3,
+    "cumulative_move_count": 356,
+    "cumulative_moved_raw_row_count": 356,
+    "cache_role": "final family_3 classical tabular baseline cache",
+    "cache_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2",
+    "source_iteration1_cache": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+    "source_iteration1_cache_mutated": false,
+    "locked_split_database_mutated": false,
+    "assignment_unit": "one representative row per paired VS2 float32 fingerprint",
+    "feature_count": 115,
+    "feature_dtype": "float32",
+    "label_dtype": "int8",
+    "raw_row_count_dtype": "int64",
+    "hash_dtype": "int64",
+    "classes": [
+      "benign",
+      "gafgyt",
+      "mirai"
+    ],
+    "split_counts": {
+      "train": {
+        "fingerprints": 1534583,
+        "raw_rows": 4943823
+      },
+      "validation": {
+        "fingerprints": 371797,
+        "raw_rows": 1059390
+      },
+      "test": {
+        "fingerprints": 371796,
+        "raw_rows": 1059393
+      }
+    },
+    "training_sample_weight": null,
+    "primary_evaluation_view": "fingerprint_level",
+    "secondary_evaluation_view": "raw-record weighted by raw_row_count",
+    "provenance": {
+      "addendum": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_scaled_collision_addendum_v3_2.json",
+      "addendum_sha256": "8e40e329b278974c0cf2d134ce97ee684c62877335eaf1a220b8714a40a8aff6",
+      "iteration2_plan": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_iteration2_plan_v3_2.json",
+      "iteration2_plan_sha256": "9705ea0e42fb6cce684fa5d7bb87ec2c9f91658401a5514aa2b23e2b6fdff5a8",
+      "iteration2_components": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_iteration2_components_v3_2.csv",
+      "iteration2_components_sha256": "071868e2d5520bfd59fe8db1e45f9dae03d80664fdddb82830df8c5715700967",
+      "iteration2_moves": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_iteration2_moves_v3_2.csv",
+      "iteration2_moves_sha256": "e07c3936d9acea346d7de7d8565b15e43c17d14531682a661f4cb878c2510c0a",
+      "builder_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\99_apply_scaled_collision_repair_iteration2_v3_2.py",
+      "builder_script_sha256": "5a03e715f16ff662d731ef78bf202ec4c038292d8e375c409ae8c613ca3fce6a"
+    },
+    "input_validation": {
+      "addendum_locked": true,
+      "addendum_version_matches": true,
+      "addendum_hash_matches_manifest": true,
+      "iteration_policy_allows_repeat": true,
+      "iteration1_failure_has_three_components": true,
+      "iteration1_family_conflicts_zero": true,
+      "iteration1_training_blocked": true,
+      "iteration2_plan_not_applied": true,
+      "iteration2_plan_number_matches": true,
+      "iteration2_plan_checks_passed": true,
+      "iteration2_component_count_matches": true,
+      "iteration2_move_count_matches": true,
+      "iteration2_moved_raw_rows_match": true,
+      "moves_hash_matches_plan": true,
+      "components_hash_matches_plan": true,
+      "all_moves_cross_splits": true,
+      "all_moves_benign": true,
+      "all_moves_have_unit_weight": true,
+      "proposed_total_fingerprints_preserved": true,
+      "proposed_total_raw_rows_preserved": true,
+      "source_total_fingerprints_match": true,
+      "source_total_raw_rows_match": true
+    },
+    "materialization": {
+      "splits": [
+        {
+          "split": "train",
+          "source_count": 1534583,
+          "outgoing_count": 1,
+          "incoming_count": 1,
+          "target_count": 1534583
+        },
+        {
+          "split": "validation",
+          "source_count": 371796,
+          "outgoing_count": 1,
+          "incoming_count": 2,
+          "target_count": 371797
+        },
+        {
+          "split": "test",
+          "source_count": 371797,
+          "outgoing_count": 1,
+          "incoming_count": 0,
+          "target_count": 371796
+        }
+      ],
+      "total_outgoing": 3,
+      "total_incoming": 3
+    },
+    "unscaled_validation": {
+      "splits": [
+        {
+          "split": "train",
+          "fingerprint_count": 1534583,
+          "raw_row_count": 4943823,
+          "class_fingerprint_counts": [
+            359439,
+            27221,
+            1147923
+          ],
+          "class_raw_row_counts": [
+            389152,
+            1986790,
+            2567881
+          ],
+          "all_values_finite": true,
+          "minimum_value": -284888.625,
+          "maximum_value": 5.879999893979791e+17,
+          "hash_mismatch_count": 0,
+          "shape_dtype_checks": {
+            "X": true,
+            "y": true,
+            "raw_row_count": true,
+            "hash_forward": true,
+            "hash_reverse": true
+          }
+        },
+        {
+          "split": "validation",
+          "fingerprint_count": 371797,
+          "raw_row_count": 1059390,
+          "class_fingerprint_counts": [
+            77022,
+            48793,
+            245982
+          ],
+          "class_raw_row_counts": [
+            83390,
+            425740,
+            550260
+          ],
+          "all_values_finite": true,
+          "minimum_value": -267010.28125,
+          "maximum_value": 5.879999893979791e+17,
+          "hash_mismatch_count": 0,
+          "shape_dtype_checks": {
+            "X": true,
+            "y": true,
+            "raw_row_count": true,
+            "hash_forward": true,
+            "hash_reverse": true
+          }
+        },
+        {
+          "split": "test",
+          "fingerprint_count": 371796,
+          "raw_row_count": 1059393,
+          "class_fingerprint_counts": [
+            77021,
+            48793,
+            245982
+          ],
+          "class_raw_row_counts": [
+            83390,
+            425742,
+            550261
+          ],
+          "all_values_finite": true,
+          "minimum_value": -250018.375,
+          "maximum_value": 5.879999893979791e+17,
+          "hash_mismatch_count": 0,
+          "shape_dtype_checks": {
+            "X": true,
+            "y": true,
+            "raw_row_count": true,
+            "hash_forward": true,
+            "hash_reverse": true
+          }
+        }
+      ],
+      "total_fingerprint_count": 2278176,
+      "total_raw_row_count": 7062606,
+      "checks": {
+        "total_fingerprints_preserved": true,
+        "total_raw_rows_preserved": true,
+        "all_values_finite": true,
+        "all_hashes_match": true
+      }
+    },
+    "original_hash_audit": {
+      "processed_fingerprint_rows": 2278176,
+      "stored_unique_fingerprints": 2278176,
+      "cross_split_original_hash_overlap_count": 0,
+      "database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2_iteration2.building\\unscaled_hash_overlap_audit.sqlite",
+      "database_quick_check": "ok",
+      "elapsed_seconds": 15.324970799963921,
+      "checks": {
+        "processed_count_matches": true,
+        "stored_unique_count_matches": true,
+        "quick_check_ok": true
+      },
+      "passed": true
+    },
+    "scaler_audit": {
+      "fit_split": "train",
+      "fit_sample_count": 1534583,
+      "sample_weight": null,
+      "method": "sklearn.preprocessing.StandardScaler.partial_fit",
+      "parameter_dtype": "float64",
+      "scaled_model_input_dtype": "float32",
+      "all_scaled_values_finite": true,
+      "maximum_absolute_scaled_mean": 5.518937039479038e-13,
+      "maximum_scaled_standard_deviation_error": 1.443178909710241e-12,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    "scaled_overlap_audit": {
+      "repair_iteration": 2,
+      "feature_space": "iteration-2 repaired train-only StandardScaler float64 parameters then final float32 model input",
+      "processed_fingerprint_rows": 2278176,
+      "unique_scaled_fingerprints_by_split": {
+        "train": 1533500,
+        "validation": 371597,
+        "test": 371596
+      },
+      "collapsed_within_split_rows": 1483,
+      "cross_split_model_input_fingerprint_count": 0,
+      "within_split_family_conflict_count": 0,
+      "global_family_conflict_count": 0,
+      "database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2_iteration2.building\\scaled_model_input_overlap_audit.sqlite",
+      "database_quick_check": "ok",
+      "elapsed_seconds": 23.78688830009196,
+      "checks": {
+        "processed_rows_match": true,
+        "cross_split_overlap_zero": true,
+        "within_split_family_conflicts_zero": true,
+        "global_family_conflicts_zero": true,
+        "quick_check_ok": true
+      },
+      "passed": true
+    },
+    "artifacts": [
+      {
+        "relative_path": "hash_forward_test.npy",
+        "size_bytes": 2974496,
+        "sha256": "45ba291f386f974e25b22d3e54ffdc6d11a948d7938ae56d23c89c0329dfcd01"
+      },
+      {
+        "relative_path": "hash_forward_train.npy",
+        "size_bytes": 12276792,
+        "sha256": "a5351ecad48641048fcf18f94df3e77a3bda00b38833393a9329ef74ac0be1fa"
+      },
+      {
+        "relative_path": "hash_forward_validation.npy",
+        "size_bytes": 2974504,
+        "sha256": "f3f78bc788480153026d303d6184ff5e3599a3caa6fcad4a8dba5d97b9f9b535"
+      },
+      {
+        "relative_path": "hash_reverse_test.npy",
+        "size_bytes": 2974496,
+        "sha256": "d69366b6206052dbc612580aae83effa7536bee2b8c2b5bcf41fa26c8a0ec9c1"
+      },
+      {
+        "relative_path": "hash_reverse_train.npy",
+        "size_bytes": 12276792,
+        "sha256": "349f56e9d39ab3101a1330be5115757c718280e5f7e8d48215b14ed2de70d8f6"
+      },
+      {
+        "relative_path": "hash_reverse_validation.npy",
+        "size_bytes": 2974504,
+        "sha256": "8bc464a9f06f71be0643e0ad60b1fec79ab0f0d1a07783723d6d070ef436dc30"
+      },
+      {
+        "relative_path": "raw_row_count_test.npy",
+        "size_bytes": 2974496,
+        "sha256": "394a809ff2770d3f8ce360bdd63ec856e54a4b95be53d666f29f77c7bdf13037"
+      },
+      {
+        "relative_path": "raw_row_count_train.npy",
+        "size_bytes": 12276792,
+        "sha256": "2924fa2ac8149d732a6ae92a66176457c922a4d94603421bf1a96d0de93abca7"
+      },
+      {
+        "relative_path": "raw_row_count_validation.npy",
+        "size_bytes": 2974504,
+        "sha256": "ed332d5585451f96d9b5230905aefa3fb53a8c678196d6c7ad5e9b50c92db1b7"
+      },
+      {
+        "relative_path": "scaled_model_input_overlap_audit.sqlite",
+        "size_bytes": 69980160,
+        "sha256": "db9c02577f6bec79def7de03d86b4cdefa37a8e8d2a4efc4688b284827e8eaae"
+      },
+      {
+        "relative_path": "scaler_mean.npy",
+        "size_bytes": 1048,
+        "sha256": "32f6c0a6b2b7913c76267bc70bb48fd3ae83d2083d3c2d83182c9b16590b1a38"
+      },
+      {
+        "relative_path": "scaler_scale.npy",
+        "size_bytes": 1048,
+        "sha256": "cfc15a35e5dd61943526a8a7dea63a7d7cb3fe36c3882e8b9d61654ac949b339"
+      },
+      {
+        "relative_path": "unscaled_hash_overlap_audit.sqlite",
+        "size_bytes": 58576896,
+        "sha256": "237adf7ccd8cf2cdaa9dac9dcffff0d4564f54f6d73e5d9c76fb3356e00379c4"
+      },
+      {
+        "relative_path": "X_test.npy",
+        "size_bytes": 171026288,
+        "sha256": "36efbc12218b97d71585526d943057ee6857e6289fa81d6f7c3a9c6e0b10c75c"
+      },
+      {
+        "relative_path": "X_train.npy",
+        "size_bytes": 705908308,
+        "sha256": "3b55d29d91a74b17ea47aa4217bd101dbcf22322efd43660499e70a9d6afc2aa"
+      },
+      {
+        "relative_path": "X_validation.npy",
+        "size_bytes": 171026748,
+        "sha256": "9120401ec4cc957b8bff735d53999e1f45384201a471896870e26ebf5ba0f4f1"
+      },
+      {
+        "relative_path": "y_test.npy",
+        "size_bytes": 371924,
+        "sha256": "d186ab606138b8457a8459758ecb2de526867faa5381f760003742d3331157b7"
+      },
+      {
+        "relative_path": "y_train.npy",
+        "size_bytes": 1534711,
+        "sha256": "05921bcb8cac84d5052ee1214e9af944235302fe008ed68ad922a0d4fa8609c2"
+      },
+      {
+        "relative_path": "y_validation.npy",
+        "size_bytes": 371925,
+        "sha256": "d0141bf063fd24002703122ab91a04cc6675a070381310c016a008aeb52d6204"
+      }
+    ],
+    "free_disk_before_build_gib": 5.984138488769531,
+    "elapsed_seconds": 49.53141809999943,
+    "all_checks_passed": true
+  },
+  "tinyml_B0_checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+    "top_level_type": "dict",
+    "top_level_keys": [
+      "architecture",
+      "best_epoch",
+      "best_validation_macro_f1",
+      "linear_macs_per_sample",
+      "linear_widths",
+      "model_state_dict",
+      "model_symbol",
+      "optimizer_state_dict",
+      "parameter_count",
+      "protocol_version",
+      "run_id",
+      "seed",
+      "variant"
+    ],
+    "summarized_top_level": {
+      "run_id": "tinyml_mlp__b0__seed_2026",
+      "architecture": "tinyml_mlp",
+      "variant": "B0",
+      "seed": 2026,
+      "protocol_version": "phase5_fair_budget_compression_v3_2",
+      "model_symbol": "TinyMLMLP",
+      "best_epoch": 8,
+      "best_validation_macro_f1": 0.9992691105662223,
+      "linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504
+    },
+    "model_state_dict": {
+      "entry_count": 6,
+      "keys": [
+        "network.0.weight",
+        "network.0.bias",
+        "network.2.weight",
+        "network.2.bias",
+        "network.4.weight",
+        "network.4.bias"
+      ],
+      "entries": {
+        "network.0.weight": {
+          "type": "torch.Tensor",
+          "shape": [
+            64,
+            115
+          ],
+          "dtype": "torch.float32"
+        },
+        "network.0.bias": {
+          "type": "torch.Tensor",
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "network.2.weight": {
+          "type": "torch.Tensor",
+          "shape": [
+            32,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "network.2.bias": {
+          "type": "torch.Tensor",
+          "shape": [
+            32
+          ],
+          "dtype": "torch.float32"
+        },
+        "network.4.weight": {
+          "type": "torch.Tensor",
+          "shape": [
+            3,
+            32
+          ],
+          "dtype": "torch.float32"
+        },
+        "network.4.bias": {
+          "type": "torch.Tensor",
+          "shape": [
+            3
+          ],
+          "dtype": "torch.float32"
+        }
+      }
+    }
+  },
+  "tinyml_P50_QAT_checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\best_int8_checkpoint.pt",
+    "top_level_type": "dict",
+    "top_level_keys": [
+      "INT8_model_state_dict",
+      "INT8_state_bytes",
+      "QAT_backend",
+      "QAT_engine_version",
+      "architecture",
+      "artifact_type",
+      "best_epoch",
+      "best_validation_INT8_macro_f1",
+      "created_at_utc",
+      "float_linear_macs_per_sample",
+      "float_linear_widths",
+      "float_parameter_count",
+      "float_state_bytes",
+      "model_symbol",
+      "protocol_version",
+      "quantized_weight_dtype",
+      "run_id",
+      "seed",
+      "source_checkpoint_path",
+      "source_checkpoint_sha256",
+      "source_variant",
+      "variant"
+    ],
+    "summarized_top_level": {
+      "artifact_type": "phase5_best_static_INT8_checkpoint",
+      "protocol_version": "phase5_fair_budget_compression_v3_2",
+      "QAT_engine_version": "phase5_qat_engine_v3_2",
+      "run_id": "tinyml_mlp__p50_qat__seed_2026",
+      "architecture": "tinyml_mlp",
+      "variant": "P50-QAT",
+      "source_variant": "P50-noFT",
+      "seed": 2026,
+      "model_symbol": "TinyMLMLP",
+      "QAT_backend": "onednn",
+      "quantized_weight_dtype": "torch.qint8",
+      "best_epoch": 4,
+      "best_validation_INT8_macro_f1": 0.996966181737415,
+      "source_checkpoint_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_2026\\source_checkpoint.pt",
+      "source_checkpoint_sha256": "fa5f955c224305819349730df21763cbf67d68b8ec8b2e8fde1c172fb593a7ee",
+      "float_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "float_parameter_count": 4291,
+      "float_linear_macs_per_sample": 4240,
+      "float_state_bytes": 19925,
+      "INT8_state_bytes": 12199,
+      "created_at_utc": "2026-08-06T19:44:53.988290+00:00"
+    },
+    "INT8_model_state_dict": {
+      "entry_count": 14,
+      "keys": [
+        "quant.scale",
+        "quant.zero_point",
+        "model.network.0.scale",
+        "model.network.0.zero_point",
+        "model.network.0._packed_params.dtype",
+        "model.network.0._packed_params._packed_params",
+        "model.network.2.scale",
+        "model.network.2.zero_point",
+        "model.network.2._packed_params.dtype",
+        "model.network.2._packed_params._packed_params",
+        "model.network.4.scale",
+        "model.network.4.zero_point",
+        "model.network.4._packed_params.dtype",
+        "model.network.4._packed_params._packed_params"
+      ],
+      "entries": {
+        "quant.scale": {
+          "type": "torch.Tensor",
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        },
+        "quant.zero_point": {
+          "type": "torch.Tensor",
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64"
+        },
+        "model.network.0.scale": {
+          "type": "torch.Tensor",
+          "shape": [],
+          "dtype": "torch.float32"
+        },
+        "model.network.0.zero_point": {
+          "type": "torch.Tensor",
+          "shape": [],
+          "dtype": "torch.int64"
+        },
+        "model.network.0._packed_params.dtype": {
+          "type": "dtype",
+          "repr": "torch.qint8"
+        },
+        "model.network.0._packed_params._packed_params": [
+          {
+            "type": "torch.Tensor",
+            "shape": [
+              32,
+              115
+            ],
+            "dtype": "torch.qint8"
+          },
+          {
+            "type": "torch.Tensor",
+            "shape": [
+              32
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "model.network.2.scale": {
+          "type": "torch.Tensor",
+          "shape": [],
+          "dtype": "torch.float32"
+        },
+        "model.network.2.zero_point": {
+          "type": "torch.Tensor",
+          "shape": [],
+          "dtype": "torch.int64"
+        },
+        "model.network.2._packed_params.dtype": {
+          "type": "dtype",
+          "repr": "torch.qint8"
+        },
+        "model.network.2._packed_params._packed_params": [
+          {
+            "type": "torch.Tensor",
+            "shape": [
+              16,
+              32
+            ],
+            "dtype": "torch.qint8"
+          },
+          {
+            "type": "torch.Tensor",
+            "shape": [
+              16
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "model.network.4.scale": {
+          "type": "torch.Tensor",
+          "shape": [],
+          "dtype": "torch.float32"
+        },
+        "model.network.4.zero_point": {
+          "type": "torch.Tensor",
+          "shape": [],
+          "dtype": "torch.int64"
+        },
+        "model.network.4._packed_params.dtype": {
+          "type": "dtype",
+          "repr": "torch.qint8"
+        },
+        "model.network.4._packed_params._packed_params": [
+          {
+            "type": "torch.Tensor",
+            "shape": [
+              3,
+              16
+            ],
+            "dtype": "torch.qint8"
+          },
+          {
+            "type": "torch.Tensor",
+            "shape": [
+              3
+            ],
+            "dtype": "torch.float32"
+          }
+        ]
+      }
+    }
+  },
+  "source_hits": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\100_verify_final_tabular_cache_v3_2.py",
+      "matches": [
+        {
+          "line_number": 104,
+          "text": "\"hist_gradient_boosting_b0\": 1,"
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\100_verify_final_tabular_cache_v3_2_fixed.py",
+      "matches": [
+        {
+          "line_number": 108,
+          "text": "\"hist_gradient_boosting_b0\": 1,"
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\102_run_logistic_regression_b0_v3_2.py",
+      "matches": [
+        {
+          "line_number": 100,
+          "text": "\"max_iter\": 200,"
+        },
+        {
+          "line_number": 103,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 851,
+          "text": "max_iter=LOCKED_PARAMETERS[\"max_iter\"],"
+        },
+        {
+          "line_number": 856,
+          "text": "class_weight=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 857,
+          "text": "\"class_weight\""
+        },
+        {
+          "line_number": 905,
+          "text": "< LOCKED_PARAMETERS[\"max_iter\"]"
+        }
+      ],
+      "match_count": 6
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\103_verify_logistic_regression_b0_v3_2.py",
+      "matches": [
+        {
+          "line_number": 120,
+          "text": "\"max_iter\": 200,"
+        },
+        {
+          "line_number": 123,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 752,
+          "text": "\"model_max_iter_matches\": ("
+        },
+        {
+          "line_number": 753,
+          "text": "model.max_iter"
+        },
+        {
+          "line_number": 754,
+          "text": "== LOCKED_PARAMETERS[\"max_iter\"]"
+        },
+        {
+          "line_number": 767,
+          "text": "\"model_class_weight_matches\": ("
+        },
+        {
+          "line_number": 768,
+          "text": "model.class_weight"
+        },
+        {
+          "line_number": 769,
+          "text": "== LOCKED_PARAMETERS[\"class_weight\"]"
+        },
+        {
+          "line_number": 1065,
+          "text": "\"The locked max_iter=200 run reached the \""
+        }
+      ],
+      "match_count": 9
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\103_verify_logistic_regression_b0_v3_2_fixed.py",
+      "matches": [
+        {
+          "line_number": 120,
+          "text": "\"max_iter\": 200,"
+        },
+        {
+          "line_number": 123,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 752,
+          "text": "\"model_max_iter_matches\": ("
+        },
+        {
+          "line_number": 753,
+          "text": "model.max_iter"
+        },
+        {
+          "line_number": 754,
+          "text": "== LOCKED_PARAMETERS[\"max_iter\"]"
+        },
+        {
+          "line_number": 767,
+          "text": "\"model_class_weight_matches\": ("
+        },
+        {
+          "line_number": 768,
+          "text": "model.class_weight"
+        },
+        {
+          "line_number": 769,
+          "text": "== LOCKED_PARAMETERS[\"class_weight\"]"
+        },
+        {
+          "line_number": 1065,
+          "text": "\"The locked max_iter=200 run reached the \""
+        }
+      ],
+      "match_count": 9
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\104_run_decision_tree_b0_five_seeds_v3_2.py",
+      "matches": [
+        {
+          "line_number": 125,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 127,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 944,
+          "text": "min_samples_leaf=("
+        },
+        {
+          "line_number": 946,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 952,
+          "text": "class_weight=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 953,
+          "text": "\"class_weight\""
+        }
+      ],
+      "match_count": 6
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\106_run_decision_tree_b0_five_seeds_v3_2_fixed.py",
+      "matches": [
+        {
+          "line_number": 142,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 144,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 1025,
+          "text": "min_samples_leaf=("
+        },
+        {
+          "line_number": 1027,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 1033,
+          "text": "class_weight=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 1034,
+          "text": "\"class_weight\""
+        }
+      ],
+      "match_count": 6
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\107_verify_decision_tree_b0_five_seeds_v3_2.py",
+      "matches": [
+        {
+          "line_number": 146,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 148,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 1148,
+          "text": "\"min_samples_leaf_matches\": ("
+        },
+        {
+          "line_number": 1149,
+          "text": "model.min_samples_leaf"
+        },
+        {
+          "line_number": 1151,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 1158,
+          "text": "\"class_weight_matches\": ("
+        },
+        {
+          "line_number": 1159,
+          "text": "model.class_weight"
+        },
+        {
+          "line_number": 1161,
+          "text": "\"class_weight\""
+        }
+      ],
+      "match_count": 8
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\108_run_random_forest_b0_five_seeds_v3_2.py",
+      "matches": [
+        {
+          "line_number": 135,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 139,
+          "text": "\"class_weight\": \"balanced_subsample\","
+        },
+        {
+          "line_number": 900,
+          "text": "min_samples_leaf=("
+        },
+        {
+          "line_number": 902,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 914,
+          "text": "class_weight=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 915,
+          "text": "\"class_weight\""
+        }
+      ],
+      "match_count": 6
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\109_verify_random_forest_b0_five_seeds_v3_2.py",
+      "matches": [
+        {
+          "line_number": 135,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 139,
+          "text": "\"class_weight\": \"balanced_subsample\","
+        },
+        {
+          "line_number": 1144,
+          "text": "\"min_samples_leaf_matches\": ("
+        },
+        {
+          "line_number": 1145,
+          "text": "model.min_samples_leaf"
+        },
+        {
+          "line_number": 1147,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 1167,
+          "text": "\"class_weight_matches\": ("
+        },
+        {
+          "line_number": 1168,
+          "text": "model.class_weight"
+        },
+        {
+          "line_number": 1170,
+          "text": "\"class_weight\""
+        }
+      ],
+      "match_count": 8
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\110_run_hist_gradient_boosting_b0_v3_2.py",
+      "matches": [
+        {
+          "line_number": 23,
+          "text": "from sklearn.ensemble import HistGradientBoostingClassifier"
+        },
+        {
+          "line_number": 113,
+          "text": "/ \"hist_gradient_boosting_b0_summary_v3_2.json\""
+        },
+        {
+          "line_number": 116,
+          "text": "MODEL_ID = \"hist_gradient_boosting_b0\""
+        },
+        {
+          "line_number": 130,
+          "text": "\"max_iter\": 100,"
+        },
+        {
+          "line_number": 131,
+          "text": "\"max_leaf_nodes\": 31,"
+        },
+        {
+          "line_number": 133,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 134,
+          "text": "\"l2_regularization\": 0.0001,"
+        },
+        {
+          "line_number": 136,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 137,
+          "text": "\"early_stopping\": False,"
+        },
+        {
+          "line_number": 374,
+          "text": "model: HistGradientBoostingClassifier,"
+        },
+        {
+          "line_number": 805,
+          "text": "model = HistGradientBoostingClassifier("
+        },
+        {
+          "line_number": 810,
+          "text": "max_iter=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 811,
+          "text": "\"max_iter\""
+        },
+        {
+          "line_number": 813,
+          "text": "max_leaf_nodes=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 814,
+          "text": "\"max_leaf_nodes\""
+        },
+        {
+          "line_number": 819,
+          "text": "min_samples_leaf=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 820,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 822,
+          "text": "l2_regularization=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 823,
+          "text": "\"l2_regularization\""
+        },
+        {
+          "line_number": 828,
+          "text": "class_weight=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 829,
+          "text": "\"class_weight\""
+        },
+        {
+          "line_number": 831,
+          "text": "early_stopping=LOCKED_PARAMETERS["
+        },
+        {
+          "line_number": 832,
+          "text": "\"early_stopping\""
+        },
+        {
+          "line_number": 883,
+          "text": "do_early_stopping=np.asarray("
+        },
+        {
+          "line_number": 884,
+          "text": "[bool(model.do_early_stopping_)],"
+        },
+        {
+          "line_number": 983,
+          "text": "\"do_early_stopping\": bool("
+        },
+        {
+          "line_number": 984,
+          "text": "model.do_early_stopping_"
+        },
+        {
+          "line_number": 1216,
+          "text": "f\"{model.do_early_stopping_}\""
+        }
+      ],
+      "match_count": 28
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\111_verify_hist_gradient_boosting_b0_v3_2.py",
+      "matches": [
+        {
+          "line_number": 15,
+          "text": "from sklearn.ensemble import HistGradientBoostingClassifier"
+        },
+        {
+          "line_number": 103,
+          "text": "/ \"110_run_hist_gradient_boosting_b0_v3_2.py\""
+        },
+        {
+          "line_number": 111,
+          "text": "/ \"hist_gradient_boosting_b0_summary_v3_2.json\""
+        },
+        {
+          "line_number": 119,
+          "text": "/ \"hist_gradient_boosting_b0_verification_v3_2.json\""
+        },
+        {
+          "line_number": 122,
+          "text": "MODEL_ID = \"hist_gradient_boosting_b0\""
+        },
+        {
+          "line_number": 124,
+          "text": "\"hist_gradient_boosting_b0__seed_2026\""
+        },
+        {
+          "line_number": 161,
+          "text": "\"max_iter\": 100,"
+        },
+        {
+          "line_number": 162,
+          "text": "\"max_leaf_nodes\": 31,"
+        },
+        {
+          "line_number": 164,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 165,
+          "text": "\"l2_regularization\": 0.0001,"
+        },
+        {
+          "line_number": 167,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 168,
+          "text": "\"early_stopping\": False,"
+        },
+        {
+          "line_number": 846,
+          "text": "HistGradientBoostingClassifier,"
+        },
+        {
+          "line_number": 874,
+          "text": "saved_do_early_stopping = bool("
+        },
+        {
+          "line_number": 876,
+          "text": "\"do_early_stopping\""
+        },
+        {
+          "line_number": 1238,
+          "text": "\"max_iter_matches\": ("
+        },
+        {
+          "line_number": 1239,
+          "text": "model.max_iter"
+        },
+        {
+          "line_number": 1241,
+          "text": "\"max_iter\""
+        },
+        {
+          "line_number": 1244,
+          "text": "\"max_leaf_nodes_matches\": ("
+        },
+        {
+          "line_number": 1245,
+          "text": "model.max_leaf_nodes"
+        },
+        {
+          "line_number": 1247,
+          "text": "\"max_leaf_nodes\""
+        },
+        {
+          "line_number": 1256,
+          "text": "\"min_samples_leaf_matches\": ("
+        },
+        {
+          "line_number": 1257,
+          "text": "model.min_samples_leaf"
+        },
+        {
+          "line_number": 1259,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 1262,
+          "text": "\"l2_regularization_matches\": ("
+        },
+        {
+          "line_number": 1264,
+          "text": "model.l2_regularization,"
+        },
+        {
+          "line_number": 1266,
+          "text": "\"l2_regularization\""
+        },
+        {
+          "line_number": 1277,
+          "text": "\"class_weight_matches\": ("
+        },
+        {
+          "line_number": 1278,
+          "text": "model.class_weight"
+        },
+        {
+          "line_number": 1280,
+          "text": "\"class_weight\""
+        },
+        {
+          "line_number": 1283,
+          "text": "\"early_stopping_parameter_matches\": ("
+        },
+        {
+          "line_number": 1284,
+          "text": "model.early_stopping"
+        },
+        {
+          "line_number": 1286,
+          "text": "\"early_stopping\""
+        },
+        {
+          "line_number": 1315,
+          "text": "\"early_stopping_not_used\": ("
+        },
+        {
+          "line_number": 1317,
+          "text": "model.do_early_stopping_"
+        },
+        {
+          "line_number": 1320,
+          "text": "and saved_do_early_stopping"
+        },
+        {
+          "line_number": 1323,
+          "text": "\"do_early_stopping\""
+        }
+      ],
+      "match_count": 37
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\112_close_and_lock_phase4_classical_baselines_v3_2.py",
+      "matches": [
+        {
+          "line_number": 62,
+          "text": "/ \"hist_gradient_boosting_b0_verification_v3_2.json\""
+        },
+        {
+          "line_number": 102,
+          "text": "/ \"hist_gradient_boosting_b0_summary_v3_2.json\""
+        },
+        {
+          "line_number": 138,
+          "text": "\"hist_gradient_boosting_b0\","
+        },
+        {
+          "line_number": 147,
+          "text": "\"hist_gradient_boosting_b0\": 0.999738068,"
+        },
+        {
+          "line_number": 154,
+          "text": "\"hist_gradient_boosting_b0\": 1,"
+        },
+        {
+          "line_number": 645,
+          "text": "\"Locked max_iter=200 was \""
+        },
+        {
+          "line_number": 823,
+          "text": "\"hist_gradient_boosting_b0\""
+        },
+        {
+          "line_number": 1195,
+          "text": "\"hist_gradient_boosting_b0\""
+        },
+        {
+          "line_number": 1406,
+          "text": "\"the locked max_iter=200 limit; \""
+        }
+      ],
+      "match_count": 9
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\113_phase5_preflight_inventory_v3_2.py",
+      "matches": [
+        {
+          "line_number": 966,
+          "text": "\"early_stopping\": True,"
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\114_lock_phase5_fair_budget_compression_protocol_v3_2.py",
+      "matches": [
+        {
+          "line_number": 205,
+          "text": "\"early_stopping_patience\": 4,"
+        },
+        {
+          "line_number": 206,
+          "text": "\"early_stopping_min_delta\": 0.0002,"
+        },
+        {
+          "line_number": 220,
+          "text": "\"early_stopping_patience\": 3,"
+        },
+        {
+          "line_number": 221,
+          "text": "\"early_stopping_min_delta\": 0.0002,"
+        },
+        {
+          "line_number": 1023,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1026,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 1039,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1044,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 1143,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 1146,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 1346,
+          "text": "\"early_stopping_patience\","
+        },
+        {
+          "line_number": 1347,
+          "text": "\"early_stopping_min_delta\","
+        },
+        {
+          "line_number": 1503,
+          "text": "\"class_weight_policy\": {"
+        },
+        {
+          "line_number": 1629,
+          "text": "\"test_used_for_early_stopping\": False,"
+        },
+        {
+          "line_number": 1643,
+          "text": "\"class_weight_manifest\","
+        },
+        {
+          "line_number": 1714,
+          "text": "\"generate_and_lock_train_only_scaler_and_class_weights\","
+        }
+      ],
+      "match_count": 16
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\115_generate_phase5_train_only_preprocessing_v3_2.py",
+      "matches": [
+        {
+          "line_number": 70,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 72,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 75,
+          "text": "CLASS_WEIGHTS_CSV = ("
+        },
+        {
+          "line_number": 77,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.csv\""
+        },
+        {
+          "line_number": 236,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 237,
+          "text": "CLASS_WEIGHTS_CSV,"
+        },
+        {
+          "line_number": 350,
+          "text": "\"class_weight_scheme_matches\": ("
+        },
+        {
+          "line_number": 352,
+          "text": "\"class_weight_policy\""
+        },
+        {
+          "line_number": 361,
+          "text": "\"class_weight_policy\""
+        },
+        {
+          "line_number": 545,
+          "text": "class_weights = ("
+        },
+        {
+          "line_number": 643,
+          "text": "\"class_weights_are_finite\": ("
+        },
+        {
+          "line_number": 646,
+          "text": "class_weights"
+        },
+        {
+          "line_number": 650,
+          "text": "\"class_weights_are_positive\": ("
+        },
+        {
+          "line_number": 653,
+          "text": "class_weights > 0.0"
+        },
+        {
+          "line_number": 657,
+          "text": "\"class_weights_mean_is_one\": ("
+        },
+        {
+          "line_number": 661,
+          "text": "class_weights"
+        },
+        {
+          "line_number": 719,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 724,
+          "text": "class_weights_float64=("
+        },
+        {
+          "line_number": 725,
+          "text": "class_weights.astype("
+        },
+        {
+          "line_number": 729,
+          "text": "class_weights_float32=("
+        },
+        {
+          "line_number": 730,
+          "text": "class_weights.astype("
+        },
+        {
+          "line_number": 738,
+          "text": "class_weights"
+        },
+        {
+          "line_number": 746,
+          "text": "class_weight_rows = []"
+        },
+        {
+          "line_number": 751,
+          "text": "class_weight_rows.append("
+        },
+        {
+          "line_number": 762,
+          "text": "\"class_weight_float64\": float("
+        },
+        {
+          "line_number": 763,
+          "text": "class_weights[index]"
+        },
+        {
+          "line_number": 765,
+          "text": "\"class_weight_float32\": float("
+        },
+        {
+          "line_number": 766,
+          "text": "class_weights.astype("
+        },
+        {
+          "line_number": 774,
+          "text": "CLASS_WEIGHTS_CSV,"
+        },
+        {
+          "line_number": 775,
+          "text": "class_weight_rows,"
+        },
+        {
+          "line_number": 780,
+          "text": "\"class_weight_float64\","
+        },
+        {
+          "line_number": 781,
+          "text": "\"class_weight_float32\","
+        },
+        {
+          "line_number": 804,
+          "text": "\"class_weight_fit_split\": ("
+        },
+        {
+          "line_number": 854,
+          "text": "\"class_weights\": {"
+        },
+        {
+          "line_number": 872,
+          "text": "\"class_weights_float64\": ("
+        },
+        {
+          "line_number": 873,
+          "text": "class_weights.tolist()"
+        },
+        {
+          "line_number": 877,
+          "text": "class_weights"
+        },
+        {
+          "line_number": 881,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 884,
+          "text": "CLASS_WEIGHTS_CSV"
+        },
+        {
+          "line_number": 926,
+          "text": "\"class_weights_artifact\": ("
+        },
+        {
+          "line_number": 928,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 931,
+          "text": "\"class_weights_csv\": file_record("
+        },
+        {
+          "line_number": 932,
+          "text": "CLASS_WEIGHTS_CSV"
+        },
+        {
+          "line_number": 946,
+          "text": "\"class_weights_float64\": ("
+        },
+        {
+          "line_number": 947,
+          "text": "class_weights.tolist()"
+        },
+        {
+          "line_number": 981,
+          "text": "for value in class_weights"
+        },
+        {
+          "line_number": 987,
+          "text": "f\"{np.mean(class_weights):.12f}\""
+        },
+        {
+          "line_number": 1001,
+          "text": "f\"{CLASS_WEIGHTS_NPZ}\""
+        }
+      ],
+      "match_count": 48
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\116_verify_and_lock_phase5_preprocessing_v3_2.py",
+      "matches": [
+        {
+          "line_number": 60,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 62,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 65,
+          "text": "CLASS_WEIGHTS_CSV = ("
+        },
+        {
+          "line_number": 67,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.csv\""
+        },
+        {
+          "line_number": 270,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 271,
+          "text": "CLASS_WEIGHTS_CSV,"
+        },
+        {
+          "line_number": 381,
+          "text": "\"train_only_class_weight_fit_recorded\": ("
+        },
+        {
+          "line_number": 383,
+          "text": "\"class_weight_fit_split\""
+        },
+        {
+          "line_number": 540,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 553,
+          "text": "values[\"class_weights_float64\"],"
+        },
+        {
+          "line_number": 558,
+          "text": "values[\"class_weights_float32\"],"
+        },
+        {
+          "line_number": 814,
+          "text": "\"class_weights_float64_match\": ("
+        },
+        {
+          "line_number": 822,
+          "text": "\"class_weights_float32_match\": ("
+        },
+        {
+          "line_number": 869,
+          "text": "\"saved_class_weights_are_positive\": ("
+        },
+        {
+          "line_number": 943,
+          "text": "\"manifest_class_weights_npz_record_matches\": ("
+        },
+        {
+          "line_number": 946,
+          "text": "\"class_weights\""
+        },
+        {
+          "line_number": 948,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 951,
+          "text": "\"manifest_class_weights_csv_record_matches\": ("
+        },
+        {
+          "line_number": 954,
+          "text": "\"class_weights\""
+        },
+        {
+          "line_number": 956,
+          "text": "CLASS_WEIGHTS_CSV,"
+        },
+        {
+          "line_number": 967,
+          "text": "\"generation_class_weights_record_matches\": ("
+        },
+        {
+          "line_number": 970,
+          "text": "\"class_weights_artifact\""
+        },
+        {
+          "line_number": 972,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 978,
+          "text": "\"class_weights_csv\""
+        },
+        {
+          "line_number": 980,
+          "text": "CLASS_WEIGHTS_CSV,"
+        },
+        {
+          "line_number": 1140,
+          "text": "\"class_weights\": ("
+        },
+        {
+          "line_number": 1180,
+          "text": "\"class_weights_float64\": ("
+        },
+        {
+          "line_number": 1208,
+          "text": "\"class_weight\": float("
+        },
+        {
+          "line_number": 1221,
+          "text": "\"class_weights_npz\": file_record("
+        },
+        {
+          "line_number": 1222,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1224,
+          "text": "\"class_weights_csv\": file_record("
+        },
+        {
+          "line_number": 1225,
+          "text": "CLASS_WEIGHTS_CSV"
+        },
+        {
+          "line_number": 1254,
+          "text": "\"class_weight_fit_split\": ("
+        },
+        {
+          "line_number": 1274,
+          "text": "\"class_weights_artifact\": str("
+        },
+        {
+          "line_number": 1275,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1277,
+          "text": "\"class_weights_sha256\": ("
+        },
+        {
+          "line_number": 1279,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1333,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1336,
+          "text": "CLASS_WEIGHTS_CSV"
+        }
+      ],
+      "match_count": 39
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\117_phase5_neural_architecture_smoke_test_v3_2.py",
+      "matches": [
+        {
+          "line_number": 65,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 67,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 827,
+          "text": "class_weights: torch.Tensor,"
+        },
+        {
+          "line_number": 898,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 1136,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1390,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1397,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1398,
+          "text": "values[\"class_weights_float32\"],"
+        },
+        {
+          "line_number": 1441,
+          "text": "\"class_weights_shape_matches\": ("
+        },
+        {
+          "line_number": 1442,
+          "text": "class_weights32.shape"
+        },
+        {
+          "line_number": 1445,
+          "text": "\"class_weights_finite_positive\": ("
+        },
+        {
+          "line_number": 1448,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1451,
+          "text": "class_weights32 > 0.0"
+        },
+        {
+          "line_number": 1559,
+          "text": "class_weight_tensor = ("
+        },
+        {
+          "line_number": 1561,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1615,
+          "text": "class_weights=("
+        },
+        {
+          "line_number": 1616,
+          "text": "class_weight_tensor"
+        },
+        {
+          "line_number": 1769,
+          "text": "\"class_weights\": file_record("
+        },
+        {
+          "line_number": 1770,
+          "text": "CLASS_WEIGHTS_NPZ"
+        }
+      ],
+      "match_count": 19
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\118_phase5_neural_architecture_smoke_test_v3_2_fixed.py",
+      "matches": [
+        {
+          "line_number": 66,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 68,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 839,
+          "text": "class_weights: torch.Tensor,"
+        },
+        {
+          "line_number": 910,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 1148,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1402,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1409,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1410,
+          "text": "values[\"class_weights_float32\"],"
+        },
+        {
+          "line_number": 1453,
+          "text": "\"class_weights_shape_matches\": ("
+        },
+        {
+          "line_number": 1454,
+          "text": "class_weights32.shape"
+        },
+        {
+          "line_number": 1457,
+          "text": "\"class_weights_finite_positive\": ("
+        },
+        {
+          "line_number": 1460,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1463,
+          "text": "class_weights32 > 0.0"
+        },
+        {
+          "line_number": 1571,
+          "text": "class_weight_tensor = ("
+        },
+        {
+          "line_number": 1573,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1627,
+          "text": "class_weights=("
+        },
+        {
+          "line_number": 1628,
+          "text": "class_weight_tensor"
+        },
+        {
+          "line_number": 1781,
+          "text": "\"class_weights\": file_record("
+        },
+        {
+          "line_number": 1782,
+          "text": "CLASS_WEIGHTS_NPZ"
+        }
+      ],
+      "match_count": 19
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\119_phase5_neural_architecture_smoke_test_v3_2_fixed2.py",
+      "matches": [
+        {
+          "line_number": 66,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 68,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 873,
+          "text": "class_weights: torch.Tensor,"
+        },
+        {
+          "line_number": 944,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 1182,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1436,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1443,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1444,
+          "text": "values[\"class_weights_float32\"],"
+        },
+        {
+          "line_number": 1487,
+          "text": "\"class_weights_shape_matches\": ("
+        },
+        {
+          "line_number": 1488,
+          "text": "class_weights32.shape"
+        },
+        {
+          "line_number": 1491,
+          "text": "\"class_weights_finite_positive\": ("
+        },
+        {
+          "line_number": 1494,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1497,
+          "text": "class_weights32 > 0.0"
+        },
+        {
+          "line_number": 1605,
+          "text": "class_weight_tensor = ("
+        },
+        {
+          "line_number": 1607,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1661,
+          "text": "class_weights=("
+        },
+        {
+          "line_number": 1662,
+          "text": "class_weight_tensor"
+        },
+        {
+          "line_number": 1815,
+          "text": "\"class_weights\": file_record("
+        },
+        {
+          "line_number": 1816,
+          "text": "CLASS_WEIGHTS_NPZ"
+        }
+      ],
+      "match_count": 19
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\120_run_phase5_tinyml_mlp_b0_five_seeds_v3_2.py",
+      "matches": [
+        {
+          "line_number": 87,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 89,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 165,
+          "text": "EARLY_STOPPING_PATIENCE = 4"
+        },
+        {
+          "line_number": 166,
+          "text": "EARLY_STOPPING_MIN_DELTA = 0.0002"
+        },
+        {
+          "line_number": 798,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 961,
+          "text": "and int(row[\"early_stopping_patience\"])"
+        },
+        {
+          "line_number": 962,
+          "text": "== EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 964,
+          "text": "float(row[\"early_stopping_min_delta\"]),"
+        },
+        {
+          "line_number": 965,
+          "text": "EARLY_STOPPING_MIN_DELTA,"
+        },
+        {
+          "line_number": 1112,
+          "text": "with np.load(CLASS_WEIGHTS_NPZ) as values:"
+        },
+        {
+          "line_number": 1113,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1114,
+          "text": "values[\"class_weights_float32\"],"
+        },
+        {
+          "line_number": 1121,
+          "text": "or class_weights32.shape != (EXPECTED_CLASS_COUNT,)"
+        },
+        {
+          "line_number": 1128,
+          "text": "class_weight_tensor = torch.from_numpy("
+        },
+        {
+          "line_number": 1129,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1190,
+          "text": "weight=class_weight_tensor"
+        },
+        {
+          "line_number": 1326,
+          "text": "+ EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 1394,
+          "text": "f\"{EARLY_STOPPING_PATIENCE} | \""
+        },
+        {
+          "line_number": 1401,
+          "text": ">= EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 1656,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 1657,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 1659,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 1660,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 1727,
+          "text": "\"class_weights\": file_record("
+        },
+        {
+          "line_number": 1728,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1747,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 1748,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 1750,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 1751,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        }
+      ],
+      "match_count": 29
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\121_verify_and_lock_phase5_tinyml_mlp_b0_v3_2.py",
+      "matches": [
+        {
+          "line_number": 79,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 81,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 886,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1622,
+          "text": "\"class_weights\""
+        },
+        {
+          "line_number": 1624,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1672,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1678,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 2395,
+          "text": "\"class_weights\": ("
+        },
+        {
+          "line_number": 2397,
+          "text": "CLASS_WEIGHTS_NPZ"
+        }
+      ],
+      "match_count": 9
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\122_run_phase5_compact_dnn_b0_five_seeds_v3_2.py",
+      "matches": [
+        {
+          "line_number": 87,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 89,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 171,
+          "text": "EARLY_STOPPING_PATIENCE = 4"
+        },
+        {
+          "line_number": 172,
+          "text": "EARLY_STOPPING_MIN_DELTA = 0.0002"
+        },
+        {
+          "line_number": 804,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 980,
+          "text": "and int(row[\"early_stopping_patience\"])"
+        },
+        {
+          "line_number": 981,
+          "text": "== EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 983,
+          "text": "float(row[\"early_stopping_min_delta\"]),"
+        },
+        {
+          "line_number": 984,
+          "text": "EARLY_STOPPING_MIN_DELTA,"
+        },
+        {
+          "line_number": 1131,
+          "text": "with np.load(CLASS_WEIGHTS_NPZ) as values:"
+        },
+        {
+          "line_number": 1132,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1133,
+          "text": "values[\"class_weights_float32\"],"
+        },
+        {
+          "line_number": 1140,
+          "text": "or class_weights32.shape != (EXPECTED_CLASS_COUNT,)"
+        },
+        {
+          "line_number": 1147,
+          "text": "class_weight_tensor = torch.from_numpy("
+        },
+        {
+          "line_number": 1148,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1209,
+          "text": "weight=class_weight_tensor"
+        },
+        {
+          "line_number": 1345,
+          "text": "+ EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 1413,
+          "text": "f\"{EARLY_STOPPING_PATIENCE} | \""
+        },
+        {
+          "line_number": 1420,
+          "text": ">= EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 1675,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 1676,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 1678,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 1679,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 1746,
+          "text": "\"class_weights\": file_record("
+        },
+        {
+          "line_number": 1747,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1766,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 1767,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 1769,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 1770,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        }
+      ],
+      "match_count": 29
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\123_verify_and_lock_phase5_compact_dnn_b0_v3_2.py",
+      "matches": [
+        {
+          "line_number": 79,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 81,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 892,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1643,
+          "text": "\"class_weights\""
+        },
+        {
+          "line_number": 1645,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1693,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1699,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 2408,
+          "text": "\"class_weights\": ("
+        },
+        {
+          "line_number": 2410,
+          "text": "CLASS_WEIGHTS_NPZ"
+        }
+      ],
+      "match_count": 9
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\124_verify_and_lock_phase5_compact_dnn_b0_v3_2_fixed.py",
+      "matches": [
+        {
+          "line_number": 79,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 81,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 892,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1643,
+          "text": "\"class_weights\""
+        },
+        {
+          "line_number": 1645,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1693,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1699,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 2408,
+          "text": "\"class_weights\": ("
+        },
+        {
+          "line_number": 2410,
+          "text": "CLASS_WEIGHTS_NPZ"
+        }
+      ],
+      "match_count": 9
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\132_run_phase5_P25_and_P50_FP32_fine_tuning_v3_2.py",
+      "matches": [
+        {
+          "line_number": 114,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 116,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 247,
+          "text": "EARLY_STOPPING_PATIENCE = 3"
+        },
+        {
+          "line_number": 248,
+          "text": "EARLY_STOPPING_MIN_DELTA = 0.0002"
+        },
+        {
+          "line_number": 1326,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1527,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1530,
+          "text": "== EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 1534,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 1537,
+          "text": "EARLY_STOPPING_MIN_DELTA,"
+        },
+        {
+          "line_number": 1730,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1732,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1734,
+          "text": "\"class_weights_float32\""
+        },
+        {
+          "line_number": 1748,
+          "text": "or class_weights32.shape"
+        },
+        {
+          "line_number": 1758,
+          "text": "class_weight_tensor = ("
+        },
+        {
+          "line_number": 1760,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1826,
+          "text": "f\"patience={EARLY_STOPPING_PATIENCE}, \""
+        },
+        {
+          "line_number": 1827,
+          "text": "f\"min_delta={EARLY_STOPPING_MIN_DELTA}\""
+        },
+        {
+          "line_number": 2148,
+          "text": "weight=class_weight_tensor"
+        },
+        {
+          "line_number": 2316,
+          "text": "+ EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 2437,
+          "text": "f\"{EARLY_STOPPING_PATIENCE} | \""
+        },
+        {
+          "line_number": 2445,
+          "text": ">= EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 2962,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 2963,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 2965,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 2966,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 3122,
+          "text": "\"class_weights\": ("
+        },
+        {
+          "line_number": 3124,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 3158,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 3159,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 3161,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 3162,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 3627,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 3628,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 3630,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 3631,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        }
+      ],
+      "match_count": 35
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\133_verify_and_lock_phase5_P25_and_P50_FP32_fine_tuning_v3_2.py",
+      "matches": [
+        {
+          "line_number": 107,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 109,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 253,
+          "text": "EARLY_STOPPING_PATIENCE = 3"
+        },
+        {
+          "line_number": 254,
+          "text": "EARLY_STOPPING_MIN_DELTA = 0.0002"
+        },
+        {
+          "line_number": 1013,
+          "text": "+ EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 1088,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1410,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1412,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1414,
+          "text": "\"class_weights_float32\""
+        },
+        {
+          "line_number": 1464,
+          "text": "and class_weights32.shape"
+        },
+        {
+          "line_number": 2137,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 2140,
+          "text": "== EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 2145,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 2147,
+          "text": "EARLY_STOPPING_MIN_DELTA,"
+        },
+        {
+          "line_number": 3253,
+          "text": "CLASS_WEIGHTS_NPZ"
+        }
+      ],
+      "match_count": 15
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\134_run_phase5_FP32_FT_from_B0_five_seeds_v3_2.py",
+      "matches": [
+        {
+          "line_number": 100,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 102,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 199,
+          "text": "EARLY_STOPPING_PATIENCE = 3"
+        },
+        {
+          "line_number": 200,
+          "text": "EARLY_STOPPING_MIN_DELTA = 0.0002"
+        },
+        {
+          "line_number": 1306,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1477,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1480,
+          "text": "== EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 1484,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 1487,
+          "text": "EARLY_STOPPING_MIN_DELTA,"
+        },
+        {
+          "line_number": 1676,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1678,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1680,
+          "text": "\"class_weights_float32\""
+        },
+        {
+          "line_number": 1694,
+          "text": "or class_weights32.shape"
+        },
+        {
+          "line_number": 1704,
+          "text": "class_weight_tensor = ("
+        },
+        {
+          "line_number": 1706,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1754,
+          "text": "f\"patience={EARLY_STOPPING_PATIENCE}, \""
+        },
+        {
+          "line_number": 1755,
+          "text": "f\"min_delta={EARLY_STOPPING_MIN_DELTA}\""
+        },
+        {
+          "line_number": 1974,
+          "text": "weight=class_weight_tensor"
+        },
+        {
+          "line_number": 2142,
+          "text": "+ EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 2253,
+          "text": "f\"{EARLY_STOPPING_PATIENCE} | \""
+        },
+        {
+          "line_number": 2261,
+          "text": ">= EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 2695,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 2696,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 2698,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 2699,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 2827,
+          "text": "\"class_weights\": ("
+        },
+        {
+          "line_number": 2829,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 2863,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 2864,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 2866,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 2867,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 3290,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 3291,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 3293,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 3294,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        }
+      ],
+      "match_count": 35
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\135_verify_and_lock_phase5_FP32_FT_from_B0_v3_2.py",
+      "matches": [
+        {
+          "line_number": 93,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 95,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 209,
+          "text": "EARLY_STOPPING_PATIENCE = 3"
+        },
+        {
+          "line_number": 210,
+          "text": "EARLY_STOPPING_MIN_DELTA = 0.0002"
+        },
+        {
+          "line_number": 1025,
+          "text": "+ EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 1098,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1392,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1394,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1396,
+          "text": "\"class_weights_float32\""
+        },
+        {
+          "line_number": 1446,
+          "text": "and class_weights32.shape"
+        },
+        {
+          "line_number": 2019,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 2022,
+          "text": "== EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 2027,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 2029,
+          "text": "EARLY_STOPPING_MIN_DELTA,"
+        },
+        {
+          "line_number": 3095,
+          "text": "CLASS_WEIGHTS_NPZ"
+        }
+      ],
+      "match_count": 15
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\139_phase5_QAT_engine_and_runtime_preflight_v3_2.py",
+      "matches": [
+        {
+          "line_number": 123,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 130,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 267,
+          "text": "EARLY_STOPPING_PATIENCE = 3"
+        },
+        {
+          "line_number": 268,
+          "text": "EARLY_STOPPING_MIN_DELTA = 0.0002"
+        },
+        {
+          "line_number": 850,
+          "text": "class_weights: torch.Tensor,"
+        },
+        {
+          "line_number": 870,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 965,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 1192,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1195,
+          "text": "== EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 1199,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 1202,
+          "text": "EARLY_STOPPING_MIN_DELTA,"
+        },
+        {
+          "line_number": 1278,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 1280,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 1282,
+          "text": "\"class_weights_float32\""
+        },
+        {
+          "line_number": 1322,
+          "text": "class_weights = torch.from_numpy("
+        },
+        {
+          "line_number": 1323,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 1611,
+          "text": "class_weights,"
+        },
+        {
+          "line_number": 1622,
+          "text": "class_weights,"
+        },
+        {
+          "line_number": 2302,
+          "text": "CLASS_WEIGHTS_NPZ"
+        }
+      ],
+      "match_count": 19
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\140_run_phase5_QAT_P25_QAT_P50_QAT_training_v3_2.py",
+      "matches": [
+        {
+          "line_number": 147,
+          "text": "CLASS_WEIGHTS_NPZ = ("
+        },
+        {
+          "line_number": 149,
+          "text": "/ \"phase5_train_only_class_weights_v3_2.npz\""
+        },
+        {
+          "line_number": 307,
+          "text": "EARLY_STOPPING_PATIENCE = 3"
+        },
+        {
+          "line_number": 308,
+          "text": "EARLY_STOPPING_MIN_DELTA = 0.0002"
+        },
+        {
+          "line_number": 1617,
+          "text": "CLASS_WEIGHTS_NPZ,"
+        },
+        {
+          "line_number": 2033,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 2035,
+          "text": "class_weights32 = np.array("
+        },
+        {
+          "line_number": 2037,
+          "text": "\"class_weights_float32\""
+        },
+        {
+          "line_number": 2051,
+          "text": "or class_weights32.shape"
+        },
+        {
+          "line_number": 2061,
+          "text": "class_weight_tensor = ("
+        },
+        {
+          "line_number": 2063,
+          "text": "class_weights32"
+        },
+        {
+          "line_number": 2130,
+          "text": "f\"patience={EARLY_STOPPING_PATIENCE}, \""
+        },
+        {
+          "line_number": 2131,
+          "text": "f\"min_delta={EARLY_STOPPING_MIN_DELTA}\""
+        },
+        {
+          "line_number": 2368,
+          "text": "weight=class_weight_tensor"
+        },
+        {
+          "line_number": 2558,
+          "text": "+ EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 2681,
+          "text": "f\"{EARLY_STOPPING_PATIENCE} | \""
+        },
+        {
+          "line_number": 2693,
+          "text": ">= EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 3310,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 3311,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 3313,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 3314,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        },
+        {
+          "line_number": 3477,
+          "text": "\"class_weights\": ("
+        },
+        {
+          "line_number": 3479,
+          "text": "CLASS_WEIGHTS_NPZ"
+        },
+        {
+          "line_number": 3989,
+          "text": "\"early_stopping_patience\": ("
+        },
+        {
+          "line_number": 3990,
+          "text": "EARLY_STOPPING_PATIENCE"
+        },
+        {
+          "line_number": 3992,
+          "text": "\"early_stopping_min_delta\": ("
+        },
+        {
+          "line_number": 3993,
+          "text": "EARLY_STOPPING_MIN_DELTA"
+        }
+      ],
+      "match_count": 27
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\141_verify_and_lock_phase5_QAT_P25_QAT_P50_QAT_v3_2.py",
+      "matches": [
+        {
+          "line_number": 711,
+          "text": "and int(metrics[\"training\"][\"early_stopping_patience\"]) == PATIENCE"
+        },
+        {
+          "line_number": 712,
+          "text": "and close(metrics[\"training\"][\"early_stopping_min_delta\"], MIN_DELTA)"
+        }
+      ],
+      "match_count": 2
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\15_build_label_mapping_and_class_weights.py",
+      "matches": [
+        {
+          "line_number": 14,
+          "text": "models/preprocessing/nbaiot_class_weights_seed2026.npz"
+        },
+        {
+          "line_number": 16,
+          "text": "results/reports/nbaiot_label_and_class_weight_summary.json"
+        },
+        {
+          "line_number": 716,
+          "text": "/ f\"nbaiot_class_weights_seed{args.seed}.npz\""
+        },
+        {
+          "line_number": 726,
+          "text": "/ \"nbaiot_label_and_class_weight_summary.json\""
+        },
+        {
+          "line_number": 1067,
+          "text": "\"class_weight_file\": str("
+        },
+        {
+          "line_number": 1078,
+          "text": "\"class_weight_sha256\": ("
+        }
+      ],
+      "match_count": 6
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\16_build_task_definitions.py",
+      "matches": [
+        {
+          "line_number": 911,
+          "text": "/ f\"nbaiot_task_class_weights_seed{args.seed}.npz\""
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\171_phase11_inspect_hgb_protocol_and_checkpoints_v3_3.py",
+      "matches": [
+        {
+          "line_number": 17,
+          "text": "/ \"hist_gradient_boosting_b0_summary_v3_2.json\""
+        },
+        {
+          "line_number": 22,
+          "text": "/ \"hist_gradient_boosting_b0_verification_v3_2.json\""
+        },
+        {
+          "line_number": 71,
+          "text": "r\"(HistGradientBoostingClassifier|hist_gradient_boosting|\""
+        },
+        {
+          "line_number": 72,
+          "text": "r\"max_leaf_nodes|max_iter|min_samples_leaf|\""
+        },
+        {
+          "line_number": 73,
+          "text": "r\"l2_regularization|class_weight|early_stopping)\","
+        }
+      ],
+      "match_count": 5
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\17_validate_pytorch_data_pipeline.py",
+      "matches": [
+        {
+          "line_number": 767,
+          "text": "class_weights = torch.as_tensor("
+        },
+        {
+          "line_number": 768,
+          "text": "assets.class_weights,"
+        },
+        {
+          "line_number": 773,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 816,
+          "text": "assets.class_weight_scheme"
+        },
+        {
+          "line_number": 818,
+          "text": "\"class_weights\": {"
+        },
+        {
+          "line_number": 820,
+          "text": "assets.class_weights["
+        },
+        {
+          "line_number": 829,
+          "text": "\"class_weight_mean\": float("
+        },
+        {
+          "line_number": 830,
+          "text": "assets.class_weights.mean()"
+        },
+        {
+          "line_number": 901,
+          "text": "f\"{assets.class_weight_scheme}\""
+        },
+        {
+          "line_number": 1067,
+          "text": "\"class_weight_scheme\": ("
+        },
+        {
+          "line_number": 1068,
+          "text": "assets.class_weight_scheme"
+        }
+      ],
+      "match_count": 11
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\18_validate_model_registry.py",
+      "matches": [
+        {
+          "line_number": 464,
+          "text": "class_weights: np.ndarray,"
+        },
+        {
+          "line_number": 600,
+          "text": "class_weights,"
+        },
+        {
+          "line_number": 970,
+          "text": "class_weights=("
+        },
+        {
+          "line_number": 971,
+          "text": "assets.class_weights"
+        }
+      ],
+      "match_count": 4
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\22_lock_fp32_baseline_protocol.py",
+      "matches": [
+        {
+          "line_number": 65,
+          "text": "/ \"nbaiot_task_class_weights_seed2026.npz\""
+        },
+        {
+          "line_number": 870,
+          "text": "\"early_stopping_patience\": int("
+        },
+        {
+          "line_number": 873,
+          "text": "\"early_stopping_min_delta\": float("
+        },
+        {
+          "line_number": 889,
+          "text": "\"class_weight_scheme\": ("
+        },
+        {
+          "line_number": 892,
+          "text": "\"class_weights_fitted_from\": ("
+        }
+      ],
+      "match_count": 5
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\23_run_fp32_baseline_experiments.py",
+      "matches": [
+        {
+          "line_number": 458,
+          "text": "\"early_stopping_patience\","
+        },
+        {
+          "line_number": 459,
+          "text": "\"early_stopping_min_delta\","
+        },
+        {
+          "line_number": 464,
+          "text": "\"class_weight_scheme\","
+        },
+        {
+          "line_number": 574,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 579,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 587,
+          "text": "\"class_weight_scheme\""
+        },
+        {
+          "line_number": 759,
+          "text": "\"class_weight_scheme\""
+        },
+        {
+          "line_number": 848,
+          "text": "class_weights = torch.as_tensor("
+        },
+        {
+          "line_number": 849,
+          "text": "assets.class_weights,"
+        },
+        {
+          "line_number": 854,
+          "text": "weight=class_weights"
+        }
+      ],
+      "match_count": 10
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\25_validate_structured_pruning.py",
+      "matches": [
+        {
+          "line_number": 676,
+          "text": "class_weights = torch.as_tensor("
+        },
+        {
+          "line_number": 677,
+          "text": "assets.class_weights,"
+        },
+        {
+          "line_number": 682,
+          "text": "weight=class_weights"
+        }
+      ],
+      "match_count": 3
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\26_run_pruning_experiments.py",
+      "matches": [
+        {
+          "line_number": 732,
+          "text": "\"early_stopping_patience\": int("
+        },
+        {
+          "line_number": 735,
+          "text": "\"early_stopping_min_delta\": float("
+        },
+        {
+          "line_number": 766,
+          "text": "\"class_weight_scheme\": str("
+        },
+        {
+          "line_number": 768,
+          "text": "\"class_weight_scheme\""
+        },
+        {
+          "line_number": 774,
+          "text": "\"class_weights_fitted_from\": ("
+        },
+        {
+          "line_number": 1144,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1149,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 1179,
+          "text": "\"class_weight_scheme\""
+        },
+        {
+          "line_number": 1279,
+          "text": "class_weights = torch.as_tensor("
+        },
+        {
+          "line_number": 1280,
+          "text": "assets.class_weights,"
+        },
+        {
+          "line_number": 1285,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 1787,
+          "text": "class_weights = torch.as_tensor("
+        },
+        {
+          "line_number": 1788,
+          "text": "assets.class_weights,"
+        },
+        {
+          "line_number": 1793,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 2392,
+          "text": "\"class_weight_scheme\""
+        }
+      ],
+      "match_count": 15
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\29b_run_quantization_experiments.py",
+      "matches": [
+        {
+          "line_number": 480,
+          "text": "\"early_stopping_patience\": int(args.qat_patience),"
+        },
+        {
+          "line_number": 481,
+          "text": "\"early_stopping_min_delta\": float(args.qat_min_delta),"
+        },
+        {
+          "line_number": 1183,
+          "text": "class_weights: torch.Tensor,"
+        },
+        {
+          "line_number": 1229,
+          "text": "weight=class_weights,"
+        },
+        {
+          "line_number": 1235,
+          "text": "class_weights[target_cpu].double().sum().item()"
+        },
+        {
+          "line_number": 1479,
+          "text": "class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)"
+        },
+        {
+          "line_number": 1480,
+          "text": "criterion = nn.CrossEntropyLoss(weight=class_weights)"
+        },
+        {
+          "line_number": 1566,
+          "text": "> best_validation_macro_f1 + float(qat_config[\"early_stopping_min_delta\"])"
+        },
+        {
+          "line_number": 1610,
+          "text": "qat_config[\"early_stopping_patience\"]"
+        },
+        {
+          "line_number": 1744,
+          "text": "class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)"
+        },
+        {
+          "line_number": 1745,
+          "text": "criterion = nn.CrossEntropyLoss(weight=class_weights)"
+        },
+        {
+          "line_number": 1889,
+          "text": "class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)"
+        },
+        {
+          "line_number": 1898,
+          "text": "class_weights=class_weights,"
+        }
+      ],
+      "match_count": 13
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\29_validate_fx_qat_pipeline.py",
+      "matches": [
+        {
+          "line_number": 1017,
+          "text": "class_weights = torch.as_tensor("
+        },
+        {
+          "line_number": 1018,
+          "text": "assets.class_weights,"
+        },
+        {
+          "line_number": 1023,
+          "text": "weight=class_weights"
+        }
+      ],
+      "match_count": 3
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\30_run_pruning_qat_experiments.py",
+      "matches": [
+        {
+          "line_number": 432,
+          "text": "\"early_stopping_patience\": int("
+        },
+        {
+          "line_number": 435,
+          "text": "\"early_stopping_min_delta\": float("
+        },
+        {
+          "line_number": 780,
+          "text": "class_weights = torch.as_tensor("
+        },
+        {
+          "line_number": 781,
+          "text": "assets.class_weights,"
+        },
+        {
+          "line_number": 786,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 928,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 1001,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1253,
+          "text": "class_weights = torch.as_tensor("
+        },
+        {
+          "line_number": 1254,
+          "text": "assets.class_weights,"
+        },
+        {
+          "line_number": 1259,
+          "text": "weight=class_weights"
+        }
+      ],
+      "match_count": 10
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\35_build_leakage_ablation_splits.py",
+      "matches": [
+        {
+          "line_number": 438,
+          "text": "\"scaler_and_class_weights_must_be_fitted_separately_from_each_arm_train_only\": True,"
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\36_run_leakage_ablation.py",
+      "matches": [
+        {
+          "line_number": 235,
+          "text": "np.save(arm_dir / \"class_weights.npy\", weights.astype(np.float32))"
+        },
+        {
+          "line_number": 240,
+          "text": "\"scaler_fit_split\": \"train\", \"class_weights_fit_split\": \"train\","
+        },
+        {
+          "line_number": 300,
+          "text": "\"patience\": int(common[\"early_stopping_patience\"]),"
+        },
+        {
+          "line_number": 301,
+          "text": "\"min_delta\": float(common[\"early_stopping_min_delta\"]),"
+        },
+        {
+          "line_number": 317,
+          "text": "weights = torch.from_numpy(np.load(arm_dir / \"class_weights.npy\"))"
+        }
+      ],
+      "match_count": 5
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\37_build_float32_leakage_ablation_splits.py",
+      "matches": [
+        {
+          "line_number": 817,
+          "text": "\"train_only_scaler_and_class_weight_fit_per_arm\": True,"
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\38_run_b0_matched_leakage_ablation.py",
+      "matches": [
+        {
+          "line_number": 680,
+          "text": "weights = np.load(arm_directory / \"class_weights.npy\")"
+        },
+        {
+          "line_number": 830,
+          "text": "class_weights = inverse_sqrt_mean1(class_counts)"
+        },
+        {
+          "line_number": 833,
+          "text": "np.save(arm_directory / \"class_weights.npy\", class_weights)"
+        },
+        {
+          "line_number": 920,
+          "text": "\"class_weights_fit_split\": \"train_only\","
+        },
+        {
+          "line_number": 921,
+          "text": "\"class_weight_scheme\": \"inverse_square_root_frequency_mean1\","
+        },
+        {
+          "line_number": 922,
+          "text": "\"class_weights\": class_weights.tolist(),"
+        },
+        {
+          "line_number": 1041,
+          "text": "\"class_weight_scheme\": \"inverse_square_root_frequency_mean1\","
+        },
+        {
+          "line_number": 1055,
+          "text": "\"patience\": int(common[\"early_stopping_patience\"]),"
+        },
+        {
+          "line_number": 1056,
+          "text": "\"min_delta\": float(common[\"early_stopping_min_delta\"]),"
+        },
+        {
+          "line_number": 1058,
+          "text": "\"class_weight_scheme\": str(common[\"class_weight_scheme\"]),"
+        },
+        {
+          "line_number": 1156,
+          "text": "weights = torch.from_numpy(np.load(arm_directory / \"class_weights.npy\"))"
+        }
+      ],
+      "match_count": 11
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\38_run_b0_matched_leakage_ablation_before_training_seeds_fix.py",
+      "matches": [
+        {
+          "line_number": 680,
+          "text": "weights = np.load(arm_directory / \"class_weights.npy\")"
+        },
+        {
+          "line_number": 830,
+          "text": "class_weights = inverse_sqrt_mean1(class_counts)"
+        },
+        {
+          "line_number": 833,
+          "text": "np.save(arm_directory / \"class_weights.npy\", class_weights)"
+        },
+        {
+          "line_number": 920,
+          "text": "\"class_weights_fit_split\": \"train_only\","
+        },
+        {
+          "line_number": 921,
+          "text": "\"class_weight_scheme\": \"inverse_square_root_frequency_mean1\","
+        },
+        {
+          "line_number": 922,
+          "text": "\"class_weights\": class_weights.tolist(),"
+        },
+        {
+          "line_number": 1041,
+          "text": "\"class_weight_scheme\": \"inverse_square_root_frequency_mean1\","
+        },
+        {
+          "line_number": 1055,
+          "text": "\"patience\": int(common[\"early_stopping_patience\"]),"
+        },
+        {
+          "line_number": 1056,
+          "text": "\"min_delta\": float(common[\"early_stopping_min_delta\"]),"
+        },
+        {
+          "line_number": 1058,
+          "text": "\"class_weight_scheme\": str(common[\"class_weight_scheme\"]),"
+        },
+        {
+          "line_number": 1156,
+          "text": "weights = torch.from_numpy(np.load(arm_directory / \"class_weights.npy\"))"
+        }
+      ],
+      "match_count": 11
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\46_inspect_numeric_pipeline_v2.py",
+      "matches": [
+        {
+          "line_number": 180,
+          "text": "r\"(scaler|standard|preprocess|normaliz|float32|float64|split|class_weight)\","
+        },
+        {
+          "line_number": 348,
+          "text": "\"*class_weight*\","
+        }
+      ],
+      "match_count": 2
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\49_preflight_numeric_order_training_pilot_v2.py",
+      "matches": [
+        {
+          "line_number": 236,
+          "text": "r\"DataLoader|macro_f1|class_weight)\","
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\50_inspect_training_pilot_protocol_v2.py",
+      "matches": [
+        {
+          "line_number": 88,
+          "text": "r\"early_stopping|AdamW?|CrossEntropyLoss|\""
+        },
+        {
+          "line_number": 89,
+          "text": "r\"class_weight|macro_f1|train_one|\""
+        }
+      ],
+      "match_count": 2
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\51_lock_numeric_order_training_pilot_protocol_v2.py",
+      "matches": [
+        {
+          "line_number": 261,
+          "text": "\"early_stopping_patience\","
+        },
+        {
+          "line_number": 266,
+          "text": "\"early_stopping_min_delta\","
+        },
+        {
+          "line_number": 593,
+          "text": "\"early_stopping_patience\":"
+        },
+        {
+          "line_number": 596,
+          "text": "\"early_stopping_min_delta\":"
+        },
+        {
+          "line_number": 605,
+          "text": "\"class_weight_scheme\":"
+        },
+        {
+          "line_number": 611,
+          "text": "\"class_weights_fitted_from\":"
+        },
+        {
+          "line_number": 614,
+          "text": "\"class_weights_shared_between_numeric_pipelines\":"
+        },
+        {
+          "line_number": 640,
+          "text": "\"same_class_weights\":"
+        }
+      ],
+      "match_count": 8
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\52_build_numeric_order_pilot_cache_v2.py",
+      "matches": [
+        {
+          "line_number": 1278,
+          "text": "class_weights = ("
+        },
+        {
+          "line_number": 1287,
+          "text": "/ \"class_weights.npy\","
+        },
+        {
+          "line_number": 1288,
+          "text": "class_weights,"
+        },
+        {
+          "line_number": 1426,
+          "text": "\"class_weights_finite\":"
+        },
+        {
+          "line_number": 1429,
+          "text": "class_weights"
+        },
+        {
+          "line_number": 1433,
+          "text": "\"class_weights_positive\":"
+        },
+        {
+          "line_number": 1436,
+          "text": "class_weights > 0"
+        },
+        {
+          "line_number": 1538,
+          "text": "\"class_weights\": {"
+        },
+        {
+          "line_number": 1541,
+          "text": "class_weights[index]"
+        },
+        {
+          "line_number": 1627,
+          "text": "/ \"class_weights.npy\","
+        },
+        {
+          "line_number": 1795,
+          "text": "f\"{summary['class_weights'][class_name]:.9f}\""
+        }
+      ],
+      "match_count": 11
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\53_run_numeric_order_training_pilot_v2.py",
+      "matches": [
+        {
+          "line_number": 352,
+          "text": "\"class_weights\""
+        },
+        {
+          "line_number": 355,
+          "text": "/ \"class_weights.npy\","
+        },
+        {
+          "line_number": 724,
+          "text": "class_weights = torch.from_numpy("
+        },
+        {
+          "line_number": 727,
+          "text": "\"class_weights\""
+        },
+        {
+          "line_number": 735,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 1114,
+          "text": "class_weights_array = np.array("
+        },
+        {
+          "line_number": 1116,
+          "text": "\"class_weights\""
+        },
+        {
+          "line_number": 1122,
+          "text": "class_weights = torch.from_numpy("
+        },
+        {
+          "line_number": 1123,
+          "text": "class_weights_array"
+        },
+        {
+          "line_number": 1127,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 1150,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 1156,
+          "text": "\"early_stopping_min_delta\""
+        }
+      ],
+      "match_count": 12
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\55_preflight_early_lodo_v2.py",
+      "matches": [
+        {
+          "line_number": 475,
+          "text": "\"HistGradientBoostingClassifier\":"
+        },
+        {
+          "line_number": 491,
+          "text": "HistGradientBoostingClassifier,"
+        },
+        {
+          "line_number": 500,
+          "text": "\"HistGradientBoostingClassifier\""
+        },
+        {
+          "line_number": 502,
+          "text": "HistGradientBoostingClassifier"
+        },
+        {
+          "line_number": 893,
+          "text": "\"HistGradientBoostingClassifier\""
+        },
+        {
+          "line_number": 896,
+          "text": "\"HistGradientBoostingClassifier\""
+        }
+      ],
+      "match_count": 6
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\64_lock_early_lodo_protocol_v2.py",
+      "matches": [
+        {
+          "line_number": 17,
+          "text": "HistGradientBoostingClassifier,"
+        },
+        {
+          "line_number": 131,
+          "text": "\"early_stopping_patience\":"
+        },
+        {
+          "line_number": 134,
+          "text": "\"early_stopping_min_delta\":"
+        },
+        {
+          "line_number": 137,
+          "text": "\"class_weight\":"
+        },
+        {
+          "line_number": 174,
+          "text": "\"early_stopping_patience\":"
+        },
+        {
+          "line_number": 177,
+          "text": "\"early_stopping_min_delta\":"
+        },
+        {
+          "line_number": 180,
+          "text": "\"class_weight\":"
+        },
+        {
+          "line_number": 185,
+          "text": "\"hist_gradient_boosting_b0\","
+        },
+        {
+          "line_number": 191,
+          "text": "\"hist_gradient_boosting\","
+        },
+        {
+          "line_number": 196,
+          "text": "\"max_iter\":"
+        },
+        {
+          "line_number": 199,
+          "text": "\"max_leaf_nodes\":"
+        },
+        {
+          "line_number": 205,
+          "text": "\"min_samples_leaf\":"
+        },
+        {
+          "line_number": 208,
+          "text": "\"l2_regularization\":"
+        },
+        {
+          "line_number": 214,
+          "text": "\"class_weight\":"
+        },
+        {
+          "line_number": 217,
+          "text": "\"early_stopping\":"
+        },
+        {
+          "line_number": 523,
+          "text": "HistGradientBoostingClassifier"
+        },
+        {
+          "line_number": 533,
+          "text": "\"max_iter\","
+        },
+        {
+          "line_number": 534,
+          "text": "\"max_leaf_nodes\","
+        },
+        {
+          "line_number": 536,
+          "text": "\"min_samples_leaf\","
+        },
+        {
+          "line_number": 537,
+          "text": "\"l2_regularization\","
+        },
+        {
+          "line_number": 539,
+          "text": "\"class_weight\","
+        },
+        {
+          "line_number": 540,
+          "text": "\"early_stopping\","
+        },
+        {
+          "line_number": 1105,
+          "text": "3. `hist_gradient_boosting_b0`"
+        }
+      ],
+      "match_count": 23
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\69_run_early_lodo_smoke_test_v2.py",
+      "matches": [
+        {
+          "line_number": 1157,
+          "text": "class_weights = ("
+        },
+        {
+          "line_number": 1164,
+          "text": "class_weights = ("
+        },
+        {
+          "line_number": 1165,
+          "text": "class_weights"
+        },
+        {
+          "line_number": 1166,
+          "text": "/ class_weights.mean()"
+        },
+        {
+          "line_number": 1171,
+          "text": "class_weights,"
+        }
+      ],
+      "match_count": 5
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\72_run_early_lodo_neural_experiment_v2.py",
+      "matches": [
+        {
+          "line_number": 964,
+          "text": "\"early_stopping_patience\""
+        },
+        {
+          "line_number": 970,
+          "text": "\"early_stopping_min_delta\""
+        },
+        {
+          "line_number": 1227,
+          "text": "class_weights = ("
+        },
+        {
+          "line_number": 1234,
+          "text": "class_weights = ("
+        },
+        {
+          "line_number": 1235,
+          "text": "class_weights"
+        },
+        {
+          "line_number": 1236,
+          "text": "/ class_weights.mean()"
+        },
+        {
+          "line_number": 1284,
+          "text": "class_weights,"
+        },
+        {
+          "line_number": 1769,
+          "text": "\"class_weights\":"
+        },
+        {
+          "line_number": 1770,
+          "text": "class_weights,"
+        },
+        {
+          "line_number": 1873,
+          "text": "\"class_weights_finite\":"
+        },
+        {
+          "line_number": 1876,
+          "text": "class_weights"
+        },
+        {
+          "line_number": 2040,
+          "text": "\"early_stopping_patience\":"
+        },
+        {
+          "line_number": 2043,
+          "text": "\"early_stopping_min_delta\":"
+        },
+        {
+          "line_number": 2046,
+          "text": "\"class_weights\":"
+        },
+        {
+          "line_number": 2047,
+          "text": "class_weights.tolist(),"
+        }
+      ],
+      "match_count": 15
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\73_lock_early_lodo_scientific_run_v2.py",
+      "matches": [
+        {
+          "line_number": 688,
+          "text": "\"early_stopping_patience\","
+        },
+        {
+          "line_number": 826,
+          "text": "\"early_stopping_consistent\":"
+        }
+      ],
+      "match_count": 2
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\73_lock_early_lodo_scientific_run_v2_before_ledger_fix.py",
+      "matches": [
+        {
+          "line_number": 688,
+          "text": "\"early_stopping_patience\","
+        },
+        {
+          "line_number": 826,
+          "text": "\"early_stopping_consistent\":"
+        }
+      ],
+      "match_count": 2
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\74_run_early_lodo_hgb_smoke_test_v2.py",
+      "matches": [
+        {
+          "line_number": 17,
+          "text": "HistGradientBoostingClassifier,"
+        },
+        {
+          "line_number": 25,
+          "text": "MODEL_ID = \"hist_gradient_boosting_b0\""
+        },
+        {
+          "line_number": 456,
+          "text": "HistGradientBoostingClassifier"
+        },
+        {
+          "line_number": 463,
+          "text": "\"max_iter\","
+        },
+        {
+          "line_number": 464,
+          "text": "\"max_leaf_nodes\","
+        },
+        {
+          "line_number": 466,
+          "text": "\"min_samples_leaf\","
+        },
+        {
+          "line_number": 467,
+          "text": "\"l2_regularization\","
+        },
+        {
+          "line_number": 469,
+          "text": "\"early_stopping\","
+        },
+        {
+          "line_number": 470,
+          "text": "\"class_weight\","
+        },
+        {
+          "line_number": 675,
+          "text": "model = HistGradientBoostingClassifier("
+        },
+        {
+          "line_number": 678,
+          "text": "max_iter=5,"
+        },
+        {
+          "line_number": 679,
+          "text": "max_leaf_nodes=31,"
+        },
+        {
+          "line_number": 681,
+          "text": "min_samples_leaf=20,"
+        },
+        {
+          "line_number": 682,
+          "text": "l2_regularization=0.0001,"
+        },
+        {
+          "line_number": 685,
+          "text": "early_stopping=False,"
+        },
+        {
+          "line_number": 686,
+          "text": "class_weight=\"balanced\","
+        },
+        {
+          "line_number": 924,
+          "text": "\"max_iter\":"
+        }
+      ],
+      "match_count": 17
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\75_run_early_lodo_hgb_experiment_v2.py",
+      "matches": [
+        {
+          "line_number": 21,
+          "text": "from sklearn.ensemble import HistGradientBoostingClassifier"
+        },
+        {
+          "line_number": 561,
+          "text": "\"hist_gradient_boosting_b0\""
+        },
+        {
+          "line_number": 565,
+          "text": "\"hist_gradient_boosting_b0.\""
+        },
+        {
+          "line_number": 602,
+          "text": "\"max_iter\":"
+        },
+        {
+          "line_number": 606,
+          "text": "\"max_iter\","
+        },
+        {
+          "line_number": 611,
+          "text": "\"max_leaf_nodes\":"
+        },
+        {
+          "line_number": 615,
+          "text": "\"max_leaf_nodes\","
+        },
+        {
+          "line_number": 625,
+          "text": "\"min_samples_leaf\":"
+        },
+        {
+          "line_number": 629,
+          "text": "\"min_samples_leaf\","
+        },
+        {
+          "line_number": 633,
+          "text": "\"l2_regularization\":"
+        },
+        {
+          "line_number": 637,
+          "text": "\"l2_regularization\","
+        },
+        {
+          "line_number": 650,
+          "text": "\"early_stopping\":"
+        },
+        {
+          "line_number": 654,
+          "text": "\"early_stopping\","
+        },
+        {
+          "line_number": 658,
+          "text": "\"class_weight\":"
+        },
+        {
+          "line_number": 662,
+          "text": "\"class_weight\","
+        },
+        {
+          "line_number": 683,
+          "text": "\"max_iter_100\":"
+        },
+        {
+          "line_number": 685,
+          "text": "\"max_iter\""
+        },
+        {
+          "line_number": 689,
+          "text": "\"max_leaf_nodes_31\":"
+        },
+        {
+          "line_number": 691,
+          "text": "\"max_leaf_nodes\""
+        },
+        {
+          "line_number": 701,
+          "text": "\"min_samples_leaf_20\":"
+        },
+        {
+          "line_number": 703,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 710,
+          "text": "\"l2_regularization\""
+        },
+        {
+          "line_number": 723,
+          "text": "\"early_stopping_false\":"
+        },
+        {
+          "line_number": 725,
+          "text": "\"early_stopping\""
+        },
+        {
+          "line_number": 729,
+          "text": "\"class_weight_balanced\":"
+        },
+        {
+          "line_number": 731,
+          "text": "\"class_weight\""
+        },
+        {
+          "line_number": 754,
+          "text": "HistGradientBoostingClassifier"
+        },
+        {
+          "line_number": 761,
+          "text": "\"max_iter\","
+        },
+        {
+          "line_number": 762,
+          "text": "\"max_leaf_nodes\","
+        },
+        {
+          "line_number": 764,
+          "text": "\"min_samples_leaf\","
+        },
+        {
+          "line_number": 765,
+          "text": "\"l2_regularization\","
+        },
+        {
+          "line_number": 767,
+          "text": "\"early_stopping\","
+        },
+        {
+          "line_number": 768,
+          "text": "\"class_weight\","
+        },
+        {
+          "line_number": 1114,
+          "text": "model = HistGradientBoostingClassifier("
+        },
+        {
+          "line_number": 1119,
+          "text": "max_iter=locked_parameters["
+        },
+        {
+          "line_number": 1120,
+          "text": "\"max_iter\""
+        },
+        {
+          "line_number": 1122,
+          "text": "max_leaf_nodes=locked_parameters["
+        },
+        {
+          "line_number": 1123,
+          "text": "\"max_leaf_nodes\""
+        },
+        {
+          "line_number": 1128,
+          "text": "min_samples_leaf=locked_parameters["
+        },
+        {
+          "line_number": 1129,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 1131,
+          "text": "l2_regularization=locked_parameters["
+        },
+        {
+          "line_number": 1132,
+          "text": "\"l2_regularization\""
+        },
+        {
+          "line_number": 1138,
+          "text": "early_stopping=locked_parameters["
+        },
+        {
+          "line_number": 1139,
+          "text": "\"early_stopping\""
+        },
+        {
+          "line_number": 1141,
+          "text": "class_weight=locked_parameters["
+        },
+        {
+          "line_number": 1142,
+          "text": "\"class_weight\""
+        },
+        {
+          "line_number": 1461,
+          "text": "== \"hist_gradient_boosting_b0\","
+        },
+        {
+          "line_number": 1528,
+          "text": "\"max_iter\""
+        },
+        {
+          "line_number": 1720,
+          "text": "\"HistGradientBoostingClassifier\""
+        }
+      ],
+      "match_count": 49
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\76_lock_early_lodo_hgb_scientific_run_v2.py",
+      "matches": [
+        {
+          "line_number": 669,
+          "text": "\"hist_gradient_boosting_b0\""
+        },
+        {
+          "line_number": 748,
+          "text": "\"max_iter\":"
+        },
+        {
+          "line_number": 752,
+          "text": "\"max_iter\","
+        },
+        {
+          "line_number": 757,
+          "text": "\"max_leaf_nodes\":"
+        },
+        {
+          "line_number": 761,
+          "text": "\"max_leaf_nodes\","
+        },
+        {
+          "line_number": 771,
+          "text": "\"min_samples_leaf\":"
+        },
+        {
+          "line_number": 775,
+          "text": "\"min_samples_leaf\","
+        },
+        {
+          "line_number": 779,
+          "text": "\"l2_regularization\":"
+        },
+        {
+          "line_number": 783,
+          "text": "\"l2_regularization\","
+        },
+        {
+          "line_number": 796,
+          "text": "\"early_stopping\":"
+        },
+        {
+          "line_number": 800,
+          "text": "\"early_stopping\","
+        },
+        {
+          "line_number": 804,
+          "text": "\"class_weight\":"
+        },
+        {
+          "line_number": 808,
+          "text": "\"class_weight\","
+        },
+        {
+          "line_number": 1086,
+          "text": "\"max_iter\":"
+        },
+        {
+          "line_number": 1088,
+          "text": "model_parameters[\"max_iter\"]"
+        },
+        {
+          "line_number": 1090,
+          "text": "== locked_parameters[\"max_iter\"],"
+        },
+        {
+          "line_number": 1092,
+          "text": "\"max_leaf_nodes\":"
+        },
+        {
+          "line_number": 1095,
+          "text": "\"max_leaf_nodes\""
+        },
+        {
+          "line_number": 1099,
+          "text": "\"max_leaf_nodes\""
+        },
+        {
+          "line_number": 1108,
+          "text": "\"min_samples_leaf\":"
+        },
+        {
+          "line_number": 1111,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 1115,
+          "text": "\"min_samples_leaf\""
+        },
+        {
+          "line_number": 1118,
+          "text": "\"l2_regularization\":"
+        },
+        {
+          "line_number": 1122,
+          "text": "\"l2_regularization\""
+        },
+        {
+          "line_number": 1126,
+          "text": "\"l2_regularization\""
+        },
+        {
+          "line_number": 1138,
+          "text": "\"early_stopping\":"
+        },
+        {
+          "line_number": 1141,
+          "text": "\"early_stopping\""
+        },
+        {
+          "line_number": 1145,
+          "text": "\"early_stopping\""
+        },
+        {
+          "line_number": 1148,
+          "text": "\"class_weight\":"
+        },
+        {
+          "line_number": 1149,
+          "text": "model_parameters[\"class_weight\"]"
+        },
+        {
+          "line_number": 1151,
+          "text": "\"class_weight\""
+        }
+      ],
+      "match_count": 31
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\77_finalize_early_lodo_device_v2.py",
+      "matches": [
+        {
+          "line_number": 93,
+          "text": "\"hist_gradient_boosting_b0\","
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\79_finalize_early_lodo_global_gate_v2.py",
+      "matches": [
+        {
+          "line_number": 35,
+          "text": "\"hist_gradient_boosting_b0\","
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\85_run_b0_matched_leakage_ablation_repaired_v2.py",
+      "matches": [
+        {
+          "line_number": 680,
+          "text": "weights = np.load(arm_directory / \"class_weights.npy\")"
+        },
+        {
+          "line_number": 830,
+          "text": "class_weights = inverse_sqrt_mean1(class_counts)"
+        },
+        {
+          "line_number": 833,
+          "text": "np.save(arm_directory / \"class_weights.npy\", class_weights)"
+        },
+        {
+          "line_number": 920,
+          "text": "\"class_weights_fit_split\": \"train_only\","
+        },
+        {
+          "line_number": 921,
+          "text": "\"class_weight_scheme\": \"inverse_square_root_frequency_mean1\","
+        },
+        {
+          "line_number": 922,
+          "text": "\"class_weights\": class_weights.tolist(),"
+        },
+        {
+          "line_number": 1041,
+          "text": "\"class_weight_scheme\": \"inverse_square_root_frequency_mean1\","
+        },
+        {
+          "line_number": 1055,
+          "text": "\"patience\": int(common[\"early_stopping_patience\"]),"
+        },
+        {
+          "line_number": 1056,
+          "text": "\"min_delta\": float(common[\"early_stopping_min_delta\"]),"
+        },
+        {
+          "line_number": 1058,
+          "text": "\"class_weight_scheme\": str(common[\"class_weight_scheme\"]),"
+        },
+        {
+          "line_number": 1156,
+          "text": "weights = torch.from_numpy(np.load(arm_directory / \"class_weights.npy\"))"
+        }
+      ],
+      "match_count": 11
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\88_run_b0_matched_leakage_ablation_repaired_v3.py",
+      "matches": [
+        {
+          "line_number": 680,
+          "text": "weights = np.load(arm_directory / \"class_weights.npy\")"
+        },
+        {
+          "line_number": 830,
+          "text": "class_weights = inverse_sqrt_mean1(class_counts)"
+        },
+        {
+          "line_number": 833,
+          "text": "np.save(arm_directory / \"class_weights.npy\", class_weights)"
+        },
+        {
+          "line_number": 920,
+          "text": "\"class_weights_fit_split\": \"train_only\","
+        },
+        {
+          "line_number": 921,
+          "text": "\"class_weight_scheme\": \"inverse_square_root_frequency_mean1\","
+        },
+        {
+          "line_number": 922,
+          "text": "\"class_weights\": class_weights.tolist(),"
+        },
+        {
+          "line_number": 1041,
+          "text": "\"class_weight_scheme\": \"inverse_square_root_frequency_mean1\","
+        },
+        {
+          "line_number": 1055,
+          "text": "\"patience\": int(common[\"early_stopping_patience\"]),"
+        },
+        {
+          "line_number": 1056,
+          "text": "\"min_delta\": float(common[\"early_stopping_min_delta\"]),"
+        },
+        {
+          "line_number": 1058,
+          "text": "\"class_weight_scheme\": str(common[\"class_weight_scheme\"]),"
+        },
+        {
+          "line_number": 1156,
+          "text": "weights = torch.from_numpy(np.load(arm_directory / \"class_weights.npy\"))"
+        }
+      ],
+      "match_count": 11
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\93_lock_tabular_baseline_protocol_v3.py",
+      "matches": [
+        {
+          "line_number": 17,
+          "text": "HistGradientBoostingClassifier,"
+        },
+        {
+          "line_number": 399,
+          "text": "\"max_iter\": 200,"
+        },
+        {
+          "line_number": 402,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 419,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 421,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 438,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 442,
+          "text": "\"class_weight\": \"balanced_subsample\","
+        },
+        {
+          "line_number": 448,
+          "text": "\"model_id\": \"hist_gradient_boosting_b0\","
+        },
+        {
+          "line_number": 450,
+          "text": "\"architecture\": \"hist_gradient_boosting\","
+        },
+        {
+          "line_number": 458,
+          "text": "\"max_iter\": 100,"
+        },
+        {
+          "line_number": 459,
+          "text": "\"max_leaf_nodes\": 31,"
+        },
+        {
+          "line_number": 461,
+          "text": "\"min_samples_leaf\": 20,"
+        },
+        {
+          "line_number": 462,
+          "text": "\"l2_regularization\": 0.0001,"
+        },
+        {
+          "line_number": 465,
+          "text": "\"early_stopping\": False,"
+        },
+        {
+          "line_number": 466,
+          "text": "\"class_weight\": \"balanced\","
+        },
+        {
+          "line_number": 570,
+          "text": "\"max_iter\","
+        },
+        {
+          "line_number": 573,
+          "text": "\"class_weight\","
+        },
+        {
+          "line_number": 587,
+          "text": "\"min_samples_leaf\","
+        },
+        {
+          "line_number": 589,
+          "text": "\"class_weight\","
+        },
+        {
+          "line_number": 604,
+          "text": "\"min_samples_leaf\","
+        },
+        {
+          "line_number": 608,
+          "text": "\"class_weight\","
+        },
+        {
+          "line_number": 617,
+          "text": "HistGradientBoostingClassifier"
+        },
+        {
+          "line_number": 622,
+          "text": "\"max_iter\","
+        },
+        {
+          "line_number": 623,
+          "text": "\"max_leaf_nodes\","
+        },
+        {
+          "line_number": 625,
+          "text": "\"min_samples_leaf\","
+        },
+        {
+          "line_number": 626,
+          "text": "\"l2_regularization\","
+        },
+        {
+          "line_number": 629,
+          "text": "\"early_stopping\","
+        },
+        {
+          "line_number": 630,
+          "text": "\"class_weight\","
+        },
+        {
+          "line_number": 765,
+          "text": "\"hist_gradient_boosting_b0\","
+        }
+      ],
+      "match_count": 29
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\data\\nbaiot_pipeline.py",
+      "matches": [
+        {
+          "line_number": 61,
+          "text": "/ \"nbaiot_task_class_weights_seed2026.npz\""
+        },
+        {
+          "line_number": 98,
+          "text": "class_weight_scheme: str"
+        },
+        {
+          "line_number": 99,
+          "text": "class_weights: np.ndarray"
+        },
+        {
+          "line_number": 378,
+          "text": "class_weight_key = ("
+        },
+        {
+          "line_number": 392,
+          "text": "if class_weight_key not in weight_data:"
+        },
+        {
+          "line_number": 395,
+          "text": "f\"{class_weight_key}\""
+        },
+        {
+          "line_number": 406,
+          "text": "class_weights = np.asarray("
+        },
+        {
+          "line_number": 408,
+          "text": "class_weight_key"
+        },
+        {
+          "line_number": 430,
+          "text": "if class_weights.shape != ("
+        },
+        {
+          "line_number": 439,
+          "text": "class_weights"
+        },
+        {
+          "line_number": 446,
+          "text": "class_weights <= 0"
+        },
+        {
+          "line_number": 454,
+          "text": "class_weights.mean()"
+        },
+        {
+          "line_number": 482,
+          "text": "class_weight_scheme=weight_scheme,"
+        },
+        {
+          "line_number": 483,
+          "text": "class_weights=class_weights,"
+        }
+      ],
+      "match_count": 14
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\training\\baseline_trainer.py",
+      "matches": [
+        {
+          "line_number": 832,
+          "text": "class_weights = torch.as_tensor("
+        },
+        {
+          "line_number": 833,
+          "text": "assets.class_weights,"
+        },
+        {
+          "line_number": 838,
+          "text": "weight=class_weights"
+        },
+        {
+          "line_number": 1139,
+          "text": "\"class_weight_scheme\": ("
+        },
+        {
+          "line_number": 1142,
+          "text": "\"class_weights\": ("
+        },
+        {
+          "line_number": 1143,
+          "text": "assets.class_weights.tolist()"
+        },
+        {
+          "line_number": 1219,
+          "text": "\"class_weight_scheme\": ("
+        }
+      ],
+      "match_count": 7
+    }
+  ],
+  "non_lodo_hgb_model_candidates": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_123\\model.joblib",
+      "size_bytes": 4992,
+      "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_2026\\model.joblib",
+      "size_bytes": 5005,
+      "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_3407\\model.joblib",
+      "size_bytes": 4871,
+      "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_42\\model.joblib",
+      "size_bytes": 4977,
+      "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_8192\\model.joblib",
+      "size_bytes": 4914,
+      "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\hist_gradient_boosting_b0__seed_2026\\model.joblib",
+      "size_bytes": 367362,
+      "loaded_type": "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.HistGradientBoostingClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\logistic_regression_b0__seed_2026\\model.joblib",
+      "size_bytes": 1897,
+      "loaded_type": "sklearn.linear_model._logistic.LogisticRegression"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_123\\model.joblib",
+      "size_bytes": 399074,
+      "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_2026\\model.joblib",
+      "size_bytes": 392816,
+      "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_3407\\model.joblib",
+      "size_bytes": 392988,
+      "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_42\\model.joblib",
+      "size_bytes": 399454,
+      "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_8192\\model.joblib",
+      "size_bytes": 402513,
+      "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+    }
+  ],
+  "all_checks_passed": true
+}

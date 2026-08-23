@@ -1,0 +1,44 @@
+======================================================================================
+EARLY LODO DEVICE COMPLETION SUMMARY
+======================================================================================
+
+Held-out device       : Philips_B120N10_Baby_Monitor
+Completed models      : 3/3
+Train fingerprints    : 984,133
+Validation fingerprints: 210,978
+Test fingerprints     : 1,075,936
+Test record count     : 1,098,677
+
+MODEL COMPARISON
+rank=1 | compact_dnn_b0 | Macro-F1=0.993263010 | Accuracy=0.993567461 | Gafgyt FNR=0.018664960460675617 | Mirai FNR=6.22222513320474e-05 | seconds=75.490 | local_severe=False
+rank=2 | tinyml_mlp_b0 | Macro-F1=0.990533447 | Accuracy=0.990697402 | Gafgyt FNR=0.02835234486688594 | Mirai FNR=6.22222513320474e-05 | seconds=36.500 | local_severe=False
+rank=3 | hist_gradient_boosting_b0 | Macro-F1=0.975964181 | Accuracy=0.973872052 | Gafgyt FNR=0.09364138349312352 | Mirai FNR=0.0 | seconds=36.395 | local_severe=False
+
+DEVICE STATISTICS
+Mean Macro-F1        : 0.986586879
+Median Macro-F1      : 0.990533447
+Minimum Macro-F1     : 0.975964181
+Maximum Macro-F1     : 0.993263010
+Maximum attack FNR   : 0.093641383
+Local severe cells   : 0
+
+VALIDATION CHECKS
+protocol_locked: True
+exactly_three_device_runs: True
+expected_models_registered: True
+all_runs_seed_2026: True
+three_model_results_loaded: True
+three_lock_summaries_loaded: True
+three_run_results_loaded: True
+all_locks_locked: True
+all_results_completed: True
+lock_identities_match: True
+execution_ledger_has_three_rows: True
+execution_ledger_matches: True
+cache_validated: True
+cache_manifest_nonempty: True
+all_test_counts_identical: True
+all_test_class_counts_identical: True
+all_primary_metrics_valid: True
+all_fnr_values_valid: True
+ranking_contains_three_models: True

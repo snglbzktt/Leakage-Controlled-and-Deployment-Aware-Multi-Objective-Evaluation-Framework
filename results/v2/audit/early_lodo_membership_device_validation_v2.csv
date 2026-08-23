@@ -1,0 +1,10 @@
+﻿device_id,device,expected_fingerprint_count,observed_fingerprint_count,expected_raw_occurrence_count,observed_raw_occurrence_count,benign_fingerprint_count,gafgyt_fingerprint_count,mirai_fingerprint_count,benign_raw_occurrence_count,gafgyt_raw_occurrence_count,mirai_raw_occurrence_count,summary_match,family_match
+0,Danmini_Doorbell,996539,996539,1018298,1018298,40395,304044,652100,49548,316650,652100,True,True
+1,Ecobee_Thermostat,823134,823134,835876,835876,13111,297890,512133,13113,310630,512133,True,True
+2,Ennio_Doorbell,338599,338599,355500,355500,35410,303189,0,39100,316400,0,True,True
+3,Philips_B120N10_Baby_Monitor,1075936,1075936,1098677,1098677,165141,300081,610714,175240,312723,610714,True,True
+4,Provision_PT_737E_Security_Camera,807836,807836,828260,828260,55169,316657,436010,62154,330096,436010,True,True
+5,Provision_PT_838_Security_Camera,820042,820042,836891,836891,93995,296710,429337,98514,309040,429337,True,True
+6,Samsung_SNH_1011_N_Webcam,359368,359368,375222,375222,49559,309809,0,52150,323072,0,True,True
+7,SimpleHome_XCS7_1002_WHT_Security_Camera,847047,847047,863056,863056,42784,291015,513248,46585,303223,513248,True,True
+8,SimpleHome_XCS7_1003_WHT_Security_Camera,836326,836326,850826,850826,17936,303530,514860,19528,316438,514860,True,True

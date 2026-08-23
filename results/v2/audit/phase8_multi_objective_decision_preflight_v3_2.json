@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "phase": 8,
+  "artifact_name": "multi_objective_decision_preflight",
+  "protocol_version": "phase8_multi_objective_decision_v3_2",
+  "verified_at_utc": "2026-08-06T21:28:30.724914+00:00",
+  "entry_checks": {
+    "phase5_locked": true,
+    "phase6_locked": true,
+    "phase7_locked": true,
+    "phase5_group_hash_matches": true,
+    "phase5_master_hash_matches": true,
+    "phase6_group_hash_matches": true,
+    "phase6_runs_hash_matches": true,
+    "phase7_posthoc_hash_matches": true,
+    "phase5_final_model_not_selected": true,
+    "phase6_final_model_not_selected": true,
+    "phase7_final_model_not_selected": true
+  },
+  "preflight_checks": {
+    "decision_input_rows_22": true,
+    "decision_group_keys_exact": true,
+    "compressed_candidate_groups_18": true,
+    "baseline_groups_2": true,
+    "uncompressed_control_groups_2": true,
+    "all_decision_values_finite": true,
+    "primary_profile_balanced": true,
+    "gate_profile_count_3": true,
+    "Pareto_objective_count_4": true,
+    "weighted_score_disabled": true,
+    "decision_computation_not_performed": true,
+    "model_inference_not_performed": true,
+    "final_model_not_selected": true
+  },
+  "protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase8_multi_objective_decision_protocol_v3_2.json",
+    "size_bytes": 7378,
+    "sha256": "cbbf08a8a9ffcd7d69e6d3dad7d9819b089d534c61d350dc9ac86498a7518f9e"
+  },
+  "decision_input_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_decision_input_matrix_v3_2.csv",
+    "size_bytes": 9076,
+    "sha256": "aa3213d72488093da08f6e4f5536c51e15d883d8e22b0fde697bb243b3f2d96f"
+  },
+  "criteria": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_decision_criteria_v3_2.csv",
+    "size_bytes": 2894,
+    "sha256": "bb9ab9fce3bc94f07af7be920380aaeb6f1b7a5fb2e63a49fe26164f3900ff98"
+  },
+  "decision_computation_performed": false,
+  "model_inference_performed": false,
+  "final_model_selected": false,
+  "ready_for_locked_decision_execution": true,
+  "all_checks_passed": true
+}

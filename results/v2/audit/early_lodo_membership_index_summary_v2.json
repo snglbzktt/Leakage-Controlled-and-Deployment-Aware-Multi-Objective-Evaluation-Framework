@@ -1,0 +1,61 @@
+{
+  "protocol_version": "early_lodo_membership_index_v2_1",
+  "status": "completed",
+  "completed_at": "2026-08-05T18:45:28.762585+00:00",
+  "elapsed_seconds": 79.56204210000578,
+  "metadata_row_count": 2482676,
+  "vector_group_count": 2482676,
+  "vector_device_row_count": 6904827,
+  "returned_membership_count": 6904827,
+  "membership_count_from_index": 6904827,
+  "raw_record_count_from_index": 7062606,
+  "device_count": 9,
+  "devices": [
+    "Danmini_Doorbell",
+    "Ecobee_Thermostat",
+    "Ennio_Doorbell",
+    "Philips_B120N10_Baby_Monitor",
+    "Provision_PT_737E_Security_Camera",
+    "Provision_PT_838_Security_Camera",
+    "Samsung_SNH_1011_N_Webcam",
+    "SimpleHome_XCS7_1002_WHT_Security_Camera",
+    "SimpleHome_XCS7_1003_WHT_Security_Camera"
+  ],
+  "missing_membership_rows": 0,
+  "membership_count_mismatch_rows": 0,
+  "label_conflict_rows": 0,
+  "family_mismatch_rows": 0,
+  "unknown_device_rows": 0,
+  "fold_policy_candidate": {
+    "test": "Every fingerprint containing the held-out device.",
+    "train": "Existing locked train rows after removing every held-out-device fingerprint.",
+    "validation": "Existing locked validation rows after removing every held-out-device fingerprint.",
+    "unused": "Existing non-held-out test rows are not used by the early LODO pilot.",
+    "fingerprint_overlap": "zero by construction"
+  },
+  "validation_checks": {
+    "metadata_row_count": true,
+    "database_group_count": true,
+    "database_membership_row_count": true,
+    "returned_membership_count": true,
+    "membership_count_from_index": true,
+    "raw_record_count_from_index": true,
+    "no_missing_membership_rows": true,
+    "source_device_count_matches": true,
+    "no_label_conflicts": true,
+    "no_family_mismatches": true,
+    "no_unknown_devices": true,
+    "all_device_summary_counts_match": true,
+    "all_device_family_counts_match": true,
+    "all_train_classes_present": true,
+    "all_validation_classes_present": true,
+    "all_tests_nonempty": true,
+    "all_fold_fingerprint_overlap_zero": true
+  },
+  "all_checks_passed": true,
+  "outputs": {
+    "alignment": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_early_lodo_membership_v2\\alignment.json",
+    "device_validation": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_membership_device_validation_v2.csv",
+    "fold_feasibility": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_fold_feasibility_v2.csv"
+  }
+}

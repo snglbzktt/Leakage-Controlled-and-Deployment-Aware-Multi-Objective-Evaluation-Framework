@@ -1,0 +1,28 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "artifact_name": "manuscript_section_asset_plan",
+  "locked_at_utc": "2026-08-07T08:27:45.477012+00:00",
+  "plan_json": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase13_manuscript_section_asset_plan_v3_3.json",
+    "sha256": "70f8c4e253a1de0c3a2aa14412aa08aa8227ca2df2c480a4aa2c98ed3a533f3b"
+  },
+  "plan_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_section_asset_plan_v3_3.csv",
+    "sha256": "5c096fd0ad8bb822cbd6206f1525552124c276d0b52c56937a797eeb4e7ddac8"
+  },
+  "plan_markdown": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_section_asset_plan_v3_3.md",
+    "sha256": "1ecd351b993a7d399622240303d704bb755878208ef2cbc1af470da4f7f732fa"
+  },
+  "section_count": 8,
+  "result_subsection_count": 7,
+  "asset_count": 12,
+  "all_12_assets_placed_exactly_once": true,
+  "phase12_external_dataset": "deferred_optional",
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript_drafting": true,
+  "all_checks_passed": true
+}

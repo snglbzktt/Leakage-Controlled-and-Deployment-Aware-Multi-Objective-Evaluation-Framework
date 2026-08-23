@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "measurement_order": 46,
+  "architecture": "compact_dnn",
+  "variant": "P25-FP32-FT",
+  "seed": 123,
+  "deployment_metrics_sha256": "5766c65360a6f0c788851241b31a55ba645ad7f975cbcf8232852b7cf9b5dceb",
+  "raw_latencies_sha256": "39cf4dc9c3ef356ddbe3a83e019e9fc0fdfb47bafcbc33113381b307470b3737",
+  "run_manifest_sha256": "60a65bd0fbe409bac80bc0dcb117849eaccd14a8a2bf998cb7c854d63b7d72e5",
+  "validation_data_access": false,
+  "test_data_access": false,
+  "completed_at_utc": "2026-08-06T21:07:44.021643+00:00"
+}

@@ -1,0 +1,120 @@
+{
+  "generated_at_utc": "2026-07-27T17:08:02.053550+00:00",
+  "protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_efficiency_profile_quickcheck_v1.json",
+  "protocol_sha256": "d0bb29a80de32b49b9446cb13cdaaf614e41df6c845a45378af111c826dc3ae0",
+  "record": {
+    "model_name": "tinyml_mlp",
+    "variant_name": "P75-QAT",
+    "seed": 3407,
+    "analysis_role": "primary",
+    "runtime_name": "pytorch_fx_quantized_onednn_cpu",
+    "runtime_version": "2.13.0+cpu",
+    "precision": "INT8",
+    "quantized": true,
+    "physical_compaction": true,
+    "parameter_count": 2019,
+    "weight_layer_macs": 1992,
+    "deployment_artifact_size_bytes": 9191,
+    "source_artifact_size_bytes": 10121,
+    "source_artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P75-QAT\\seed3407\\converted_int8_state_dict.pt",
+    "source_artifact_sha256": "9354c500d0773a015fe0b0c8e37985a9f927bb84801945a1f1ef58eeac451145",
+    "test_macro_f1": 0.9841143208446392,
+    "input_source": "deterministic_synthetic_standard_normal",
+    "train_split_used": false,
+    "validation_split_used": false,
+    "test_split_used_for_profiling": false,
+    "host_cpu_profile_only": true,
+    "mcu_measurement": false,
+    "latency_warmup_count": 5,
+    "latency_repetition_count": 20,
+    "latency_batch_size": 1,
+    "latency_mean_ms": 0.36726500000000006,
+    "latency_median_ms": 0.3349,
+    "latency_p95_ms": 0.4275150000000002,
+    "latency_p99_ms": 0.6405429999999996,
+    "latency_minimum_ms": 0.3248,
+    "latency_standard_deviation_ms": 0.08221938736024939,
+    "throughput_warmup_count": 3,
+    "throughput_repetition_count": 10,
+    "throughput_batch_size": 512,
+    "throughput_batch_mean_ms": 1.06446,
+    "throughput_samples_per_second": 480995.0585273284,
+    "rss_before_load_bytes": 470843392,
+    "rss_after_load_bytes": 471003136,
+    "rss_after_warmup_bytes": 471007232,
+    "rss_peak_timed_bytes": 471027712,
+    "model_load_rss_delta_bytes": 159744,
+    "peak_rss_delta_vs_before_load_bytes": 184320
+  },
+  "runner_metadata": {
+    "precision": "INT8",
+    "physical_compaction": true,
+    "quantized": true,
+    "quantization_method": "QAT",
+    "pruning_name": "P75",
+    "backend": "onednn",
+    "backend_config_source": "torch.ao.quantization.backend_config.get_onednn_backend_config",
+    "pruning_metadata": {
+      "model_name": "tinyml_mlp",
+      "requested_pruning_ratio": 0.75,
+      "pruning_name": "P75",
+      "input_features": 115,
+      "num_classes": 3,
+      "original_architecture": {
+        "hidden_units": [
+          64,
+          32
+        ]
+      },
+      "compact_architecture": {
+        "hidden_units": [
+          16,
+          8
+        ]
+      },
+      "selected_indices": {
+        "hidden_1": [
+          1,
+          4,
+          10,
+          15,
+          16,
+          17,
+          19,
+          20,
+          27,
+          28,
+          29,
+          32,
+          41,
+          43,
+          46,
+          53
+        ],
+        "hidden_2": [
+          6,
+          12,
+          13,
+          16,
+          18,
+          20,
+          23,
+          27
+        ]
+      },
+      "original_parameter_count": 9603,
+      "compact_parameter_count": 2019,
+      "removed_parameter_count": 7584,
+      "parameter_reduction_ratio": 0.7897532021243362,
+      "original_weight_layer_macs": 9504,
+      "compact_weight_layer_macs": 1992,
+      "removed_weight_layer_macs": 7512,
+      "mac_reduction_ratio": 0.7904040404040404,
+      "importance_method": "Normalized incoming plus outgoing L1 magnitude",
+      "physical_compaction": true,
+      "mask_based_pruning": false,
+      "output_class_units_pruned": false
+    }
+  },
+  "validation_passed": true
+}

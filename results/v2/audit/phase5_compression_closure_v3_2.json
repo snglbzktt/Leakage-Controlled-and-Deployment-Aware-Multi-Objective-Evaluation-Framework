@@ -1,0 +1,168 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "fair_budget_compression_matrix_closure",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "closed_at_utc": "2026-08-06T20:55:09.552037+00:00",
+  "architecture_count": 2,
+  "variant_count": 11,
+  "seed_count": 5,
+  "final_run_count": 110,
+  "group_count": 22,
+  "test_evaluation_count_total": 110,
+  "variants": [
+    "B0",
+    "FP32-FT",
+    "P25-noFT",
+    "P25-FP32-FT",
+    "P50-noFT",
+    "P50-FP32-FT",
+    "DQ",
+    "QAT",
+    "P25-QAT",
+    "P50-QAT",
+    "PTQ"
+  ],
+  "architectures": [
+    "tinyml_mlp",
+    "compact_dnn"
+  ],
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "final_model_selected": false,
+  "selection_deferred_until": "deployment_measurements_and_predeclared_statistical_comparisons",
+  "fragility_groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT"
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "DQ"
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT"
+    }
+  ],
+  "metrics_files_discovered": 150,
+  "nonfinal_validation_only_metrics_skipped": 40,
+  "protocol_checks": {
+    "status_locked": true,
+    "protocol_version_matches": true
+  },
+  "source_lock_checks": {
+    "preprocessing_status_locked": true,
+    "preprocessing_checks_passed": true,
+    "B0_pair_status_locked": true,
+    "B0_pair_checks_passed": true,
+    "pruning_engine_status_locked": true,
+    "pruning_engine_checks_passed": true,
+    "pruning_sources_status_locked": true,
+    "pruning_sources_checks_passed": true,
+    "pruning_noFT_status_locked": true,
+    "pruning_noFT_checks_passed": true,
+    "pruning_FP32_FT_status_locked": true,
+    "pruning_FP32_FT_checks_passed": true,
+    "FP32_FT_status_locked": true,
+    "FP32_FT_checks_passed": true,
+    "DQ_status_locked": true,
+    "DQ_checks_passed": true,
+    "QAT_status_locked": true,
+    "QAT_checks_passed": true,
+    "PTQ_selection_status_locked": true,
+    "PTQ_selection_checks_passed": true,
+    "PTQ_test_status_locked": true,
+    "PTQ_test_checks_passed": true
+  },
+  "final_checks": {
+    "final_run_count_110": true,
+    "group_count_22": true,
+    "configuration_matrix_exact": true,
+    "test_evaluation_count_one_all_runs": true,
+    "test_evaluation_total_110": true,
+    "test_not_used_for_selection": true,
+    "paired_delta_rows_100": true,
+    "final_model_not_selected": true
+  },
+  "master_run_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv",
+    "size_bytes": 48909,
+    "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+  },
+  "group_summary": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_group_summary_v3_2.csv",
+    "size_bytes": 5849,
+    "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+  },
+  "paired_deltas_vs_B0": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_paired_delta_vs_B0_v3_2.csv",
+    "size_bytes": 19205,
+    "sha256": "22a5b964c60f767333eebdceac9784a11b13864ea29d53889092964bf9367fdb"
+  },
+  "source_locks": {
+    "preprocessing": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_locked_v3_2.json",
+      "size_bytes": 1422,
+      "sha256": "abc86751c43f92b9fe6e14a030dc3bc25584fe23eb34ac586684624a446b1efa"
+    },
+    "B0_pair": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_locked_v3_2.json",
+      "size_bytes": 1241,
+      "sha256": "af730f4071ea0db3a4c910231d1964a70d81967838f9448a8b180455537a9a2b"
+    },
+    "pruning_engine": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_engine_locked_v3_2.json",
+      "size_bytes": 1563,
+      "sha256": "79554d61db40ccd1b9478a111d6723ae5d3fc0e6f6d4a6bbd0fa98ab57882371"
+    },
+    "pruning_sources": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_sources_verified_locked_v3_2.json",
+      "size_bytes": 968,
+      "sha256": "f51da00617882c021417c4f41a0eca92aaa0bcae8db18bb7f279b786fc5215a2"
+    },
+    "pruning_noFT": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_locked_v3_2.json",
+      "size_bytes": 1495,
+      "sha256": "83af36bb484ed2acc0bbdf709d8d517c9bb653365abd5871c293a561c17aef1c"
+    },
+    "pruning_FP32_FT": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_locked_v3_2.json",
+      "size_bytes": 1710,
+      "sha256": "bee8e0c7ea9e06f539e772b52907b187f80e471f257755c01cba738b65abd1b7"
+    },
+    "FP32_FT": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_locked_v3_2.json",
+      "size_bytes": 1590,
+      "sha256": "25ade6e7c594f707babd6cbc0869b70e71d78831f77f7e8d3328ab0134964608"
+    },
+    "DQ": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_DQ_locked_v3_2.json",
+      "size_bytes": 1606,
+      "sha256": "9a887ea8327f4109d09a89f3e649160a4607dc4cc3e7c7726dded3b23b49fb6a"
+    },
+    "QAT": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_QAT_locked_v3_2.json",
+      "size_bytes": 1644,
+      "sha256": "f416df1460c738453294cb25b7a5ad79e146091b876b2ba1a4cac4d8a9ff9ee6"
+    },
+    "PTQ_selection": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_validation_selection_locked_v3_2.json",
+      "size_bytes": 1955,
+      "sha256": "c8c7193cac4fbfe1802dc1b29b3741e579cee2dc91e1e7a58dd5c564db88b4c2"
+    },
+    "PTQ_test": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_locked_v3_2.json",
+      "size_bytes": 1799,
+      "sha256": "7909178bd48a1ce8ea1a8e3aee76faa5167ee26233b363b8dc0dc2cde245e62e"
+    }
+  },
+  "ready_for_deployment_measurements": true,
+  "ready_for_predeclared_statistics": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,80 @@
+{
+  "status": "completed",
+  "phase": 11,
+  "protocol_version": "phase11_input_robustness_v3_3",
+  "run_id": "tinyml_mlp_P50_QAT__feature_mask_5pct",
+  "model_id": "tinyml_mlp_P50_QAT",
+  "condition_id": "feature_mask_5pct",
+  "condition_family": "feature_masking",
+  "severity": 0.05,
+  "perturbation_seed": 2205,
+  "perturbed_feature_array_sha256": "f8695da929f130c82407212ee75aa2afb2a9fb8ec89c368281b924f869bf3e73",
+  "test_rows": 371796,
+  "represented_raw_rows": 1059393,
+  "fingerprint_macro_f1": 0.9593561664661663,
+  "fingerprint_accuracy": 0.9728507030737286,
+  "fingerprint_class_precision": [
+    0.9972386536146155,
+    0.9058956450287592,
+    0.9785086581490369
+  ],
+  "fingerprint_class_recall": [
+    0.9893535529271238,
+    0.9037976758961327,
+    0.981380751437097
+  ],
+  "fingerprint_class_f1": [
+    0.9932804546609921,
+    0.9048454443794692,
+    0.9799426003580374
+  ],
+  "gafgyt_fnr": 0.09620232410386731,
+  "mirai_fnr": 0.01861924856290298,
+  "raw_weighted_macro_f1": 0.9592837840459998,
+  "raw_weighted_accuracy": 0.9507397160449427,
+  "raw_weighted_class_recall": [
+    0.988991485789663,
+    0.9036388235128318,
+    0.9813851972064166
+  ],
+  "confusion_matrix": [
+    [
+      76201,
+      36,
+      784
+    ],
+    [
+      176,
+      44099,
+      4518
+    ],
+    [
+      35,
+      4545,
+      241402
+    ]
+  ],
+  "raw_weighted_confusion_matrix": [
+    [
+      82472,
+      46,
+      872
+    ],
+    [
+      1512,
+      384717,
+      39513
+    ],
+    [
+      70,
+      10173,
+      540018
+    ]
+  ],
+  "severe_fragility": false,
+  "model_retraining": false,
+  "test_used_for_model_selection": false,
+  "final_model_changed": false,
+  "condition_elapsed_seconds": 8.892106300103478,
+  "all_checks_passed": true
+}

@@ -1,0 +1,107 @@
+============================================================================================
+PHASE 13 MANUSCRIPT EVIDENCE INVENTORY
+============================================================================================
+Phase 12 external dataset       : DEFERRED / OPTIONAL
+Phase 11 locked                 : True
+Ready for figures/reporting     : True
+Evidence files found           : 74
+Missing evidence sections      : 0
+
+SECTION COUNTS
+--------------------------------------------------------------------------------------------
+phase3_lodo                         : 3
+phase4_classical_baselines          : 8
+phase5_compression                  : 5
+phase6_deployment_benchmarks        : 16
+phase7_statistics                   : 15
+phase8_selection                    : 15
+phase9_deployment_artifact          : 3
+phase10_release                     : 2
+phase11_robustness                  : 7
+
+EVIDENCE FILES
+--------------------------------------------------------------------------------------------
+[01] phase10_release                    | keys=28              | results/v2/audit/phase10_release_archive_locked_v3_3.json
+[02] phase10_release                    | keys=34              | results/v2/audit/phase10_release_archive_verification_v3_3.json
+[03] phase11_robustness                 | keys=16              | results/v2/audit/phase11_input_robustness_completed_v3_3.json
+[04] phase11_robustness                 | keys=22              | results/v2/audit/phase11_input_robustness_execution_v3_3.json
+[05] phase11_robustness                 | keys=26              | results/v2/audit/phase11_input_robustness_locked_v3_3.json
+[06] phase11_robustness                 | keys=23              | results/v2/audit/phase11_input_robustness_verification_v3_3.json
+[07] phase11_robustness                 | rows=27 columns=23   | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv
+[08] phase11_robustness                 | keys=5               | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_detailed_results_v3_3.json
+[09] phase11_robustness                 | keys=20              | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json
+[10] phase3_lodo                        | keys=15              | results/v2/audit/early_lodo_feature_alignment_summary_v2.json
+[11] phase3_lodo                        | keys=21              | results/v2/audit/early_lodo_membership_index_summary_v2.json
+[12] phase3_lodo                        | keys=13              | results/v2/audit/early_lodo_smoke_test_locked_summary_v2.json
+[13] phase4_classical_baselines         | keys=24              | results/v2/audit/hist_gradient_boosting_b0_summary_v3_2.json
+[14] phase4_classical_baselines         | rows=12 columns=13   | results/v2/audit/phase4_classical_baselines_all_runs_v3_2.csv
+[15] phase4_classical_baselines         | keys=20              | results/v2/audit/phase4_classical_baselines_completed_v3_2.json
+[16] phase4_classical_baselines         | keys=11              | results/v2/audit/phase4_classical_baselines_lock_manifest_v3_2.json
+[17] phase4_classical_baselines         | rows=4 columns=18    | results/v2/audit/phase4_classical_baselines_model_summary_v3_2.csv
+[18] phase4_classical_baselines         | keys=18              | results/v2/audit/phase4_classical_baselines_summary_v3_2.json
+[19] phase4_classical_baselines         | keys=8               | results/v2/audit/tabular_baseline_scaled_repair_iteration1_summary_v3_2.json
+[20] phase4_classical_baselines         | keys=17              | results/v2/audit/tabular_baseline_scaled_repair_iteration2_summary_v3_2.json
+[21] phase5_compression                 | keys=29              | results/v2/audit/phase5_compression_closure_v3_2.json
+[22] phase5_compression                 | rows=22 columns=18   | results/v2/audit/phase5_compression_group_summary_v3_2.csv
+[23] phase5_compression                 | keys=20              | results/v2/audit/phase5_compression_locked_v3_2.json
+[24] phase5_compression                 | rows=110 columns=18  | results/v2/audit/phase5_compression_master_run_matrix_v3_2.csv
+[25] phase5_compression                 | rows=100 columns=13  | results/v2/audit/phase5_compression_paired_delta_vs_B0_v3_2.csv
+[26] phase6_deployment_benchmarks       | rows=110 columns=32  | results/v2/audit/phase6_deployment_benchmark_all_runs_v3_2.csv
+[27] phase6_deployment_benchmarks       | keys=18              | results/v2/audit/phase6_deployment_benchmark_completed_v3_2.json
+[28] phase6_deployment_benchmarks       | rows=22 columns=22   | results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv
+[29] phase6_deployment_benchmarks       | keys=15              | results/v2/audit/phase6_deployment_benchmark_lock_manifest_v3_2.json
+[30] phase6_deployment_benchmarks       | rows=110 columns=20  | results/v2/audit/phase6_deployment_benchmark_locked_matrix_v3_2.csv
+[31] phase6_deployment_benchmarks       | keys=21              | results/v2/audit/phase6_deployment_benchmark_locked_v3_2.json
+[32] phase6_deployment_benchmarks       | keys=14              | results/v2/audit/phase6_deployment_benchmark_preflight_lock_manifest_v3_2.json
+[33] phase6_deployment_benchmarks       | keys=18              | results/v2/audit/phase6_deployment_benchmark_preflight_locked_v3_2.json
+[34] phase6_deployment_benchmarks       | keys=13              | results/v2/audit/phase6_deployment_benchmark_preflight_v3_2.json
+[35] phase6_deployment_benchmarks       | keys=19              | results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json
+[36] phase6_deployment_benchmarks       | keys=16              | results/v2/audit/phase6_deployment_benchmark_verification_v3_2.json
+[37] phase6_deployment_benchmarks       | rows=110 columns=24  | results/v2/audit/phase6_deployment_benchmark_verified_runs_v3_2.csv
+[38] phase6_deployment_benchmarks       | rows=110 columns=24  | results/v2/audit/phase6_deployment_loader_smoke_matrix_v3_2.csv
+[39] phase6_deployment_benchmarks       | keys=13              | results/v2/audit/phase6_deployment_loader_smoke_test_lock_manifest_v3_2.json
+[40] phase6_deployment_benchmarks       | keys=15              | results/v2/audit/phase6_deployment_loader_smoke_test_locked_v3_2.json
+[41] phase6_deployment_benchmarks       | keys=17              | results/v2/audit/phase6_deployment_loader_smoke_test_v3_2.json
+[42] phase7_statistics                  | keys=19              | results/v2/audit/phase7_statistical_analysis_completed_v3_2.json
+[43] phase7_statistics                  | rows=110 columns=30  | results/v2/audit/phase7_statistical_analysis_joined_matrix_v3_2.csv
+[44] phase7_statistics                  | keys=14              | results/v2/audit/phase7_statistical_analysis_lock_manifest_v3_2.json
+[45] phase7_statistics                  | keys=21              | results/v2/audit/phase7_statistical_analysis_locked_v3_2.json
+[46] phase7_statistics                  | keys=14              | results/v2/audit/phase7_statistical_analysis_preflight_lock_manifest_v3_2.json
+[47] phase7_statistics                  | keys=20              | results/v2/audit/phase7_statistical_analysis_preflight_locked_v3_2.json
+[48] phase7_statistics                  | keys=12              | results/v2/audit/phase7_statistical_analysis_preflight_v3_2.json
+[49] phase7_statistics                  | keys=22              | results/v2/audit/phase7_statistical_analysis_summary_v3_2.json
+[50] phase7_statistics                  | keys=17              | results/v2/audit/phase7_statistical_analysis_verification_v3_2.json
+[51] phase7_statistics                  | rows=176 columns=15  | results/v2/audit/phase7_statistical_comparison_plan_v3_2.csv
+[52] phase7_statistics                  | rows=176 columns=13  | results/v2/audit/phase7_statistical_descriptive_summary_v3_2.csv
+[53] phase7_statistics                  | rows=16 columns=20   | results/v2/audit/phase7_statistical_omnibus_results_v3_2.csv
+[54] phase7_statistics                  | rows=16 columns=9    | results/v2/audit/phase7_statistical_omnibus_verified_v3_2.csv
+[55] phase7_statistics                  | rows=160 columns=12  | results/v2/audit/phase7_statistical_posthoc_verified_v3_2.csv
+[56] phase7_statistics                  | rows=160 columns=29  | results/v2/audit/phase7_statistical_posthoc_vs_B0_results_v3_2.csv
+[57] phase8_selection                   | keys=12              | results/v2/audit/phase8_final_model_family_lock_manifest_v3_2.json
+[58] phase8_selection                   | keys=22              | results/v2/audit/phase8_final_model_family_locked_v3_2.json
+[59] phase8_selection                   | keys=21              | results/v2/audit/phase8_multi_objective_decision_completed_v3_2.json
+[60] phase8_selection                   | rows=30 columns=7    | results/v2/audit/phase8_multi_objective_decision_criteria_v3_2.csv
+[61] phase8_selection                   | rows=22 columns=26   | results/v2/audit/phase8_multi_objective_decision_input_matrix_v3_2.csv
+[62] phase8_selection                   | keys=15              | results/v2/audit/phase8_multi_objective_decision_preflight_lock_manifest_v3_2.json
+[63] phase8_selection                   | keys=21              | results/v2/audit/phase8_multi_objective_decision_preflight_locked_v3_2.json
+[64] phase8_selection                   | keys=15              | results/v2/audit/phase8_multi_objective_decision_preflight_v3_2.json
+[65] phase8_selection                   | keys=19              | results/v2/audit/phase8_multi_objective_decision_summary_v3_2.json
+[66] phase8_selection                   | keys=19              | results/v2/audit/phase8_multi_objective_decision_verification_v3_2.json
+[67] phase8_selection                   | rows=66 columns=25   | results/v2/audit/phase8_multi_objective_eligibility_results_v3_2.csv
+[68] phase8_selection                   | rows=66 columns=7    | results/v2/audit/phase8_multi_objective_eligibility_verified_v3_2.csv
+[69] phase8_selection                   | rows=54 columns=15   | results/v2/audit/phase8_multi_objective_pareto_results_v3_2.csv
+[70] phase8_selection                   | rows=54 columns=7    | results/v2/audit/phase8_multi_objective_pareto_verified_v3_2.csv
+[71] phase8_selection                   | rows=3 columns=21    | results/v2/audit/phase8_multi_objective_selection_trace_v3_2.csv
+[72] phase9_deployment_artifact         | rows=1 columns=18    | results/v2/audit/phase9_final_artifact_source_registry_v3_2.csv
+[73] phase9_deployment_artifact         | keys=27              | results/v2/audit/phase9_final_artifact_verification_v3_2.json
+[74] phase9_deployment_artifact         | keys=26              | results/v2/audit/phase9_final_deployment_artifact_locked_v3_2.json
+
+============================================================================================
+INVENTORY COMPLETE
+============================================================================================
+JSON output                     : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\phase13_manuscript_evidence_inventory_v3_3.json
+Model inference performed      : False
+Test data accessed             : False
+Source files mutated           : False
+Ready for asset plan           : True
+All checks passed              : True

@@ -1,0 +1,181 @@
+{
+  "project_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE",
+  "candidate_count": 4,
+  "database_with_files_table": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\nbaiot_duplicate_audit.sqlite",
+  "databases": [
+    {
+      "database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\nbaiot_duplicate_audit.sqlite",
+      "size_gb": 2.221214,
+      "tables": [
+        "files",
+        "fingerprints",
+        "metadata",
+        "primary_representatives",
+        "vector_device",
+        "vector_groups"
+      ],
+      "table_columns": {
+        "files": [
+          "file_id",
+          "relative_path",
+          "device",
+          "class_label",
+          "expected_row_count",
+          "inserted_row_count",
+          "status",
+          "error"
+        ],
+        "fingerprints": [
+          "hash_forward",
+          "hash_reverse",
+          "file_id",
+          "row_number"
+        ],
+        "metadata": [
+          "key",
+          "value"
+        ],
+        "primary_representatives": [
+          "hash_forward",
+          "hash_reverse",
+          "file_id",
+          "row_number"
+        ],
+        "vector_device": [
+          "hash_forward",
+          "hash_reverse",
+          "device",
+          "class_label",
+          "occurrence_count"
+        ],
+        "vector_groups": [
+          "hash_forward",
+          "hash_reverse",
+          "occurrence_count",
+          "device_count",
+          "class_count"
+        ]
+      },
+      "files_table_row_count": 89,
+      "file_statuses": {
+        "done": 89
+      },
+      "sum_expected_row_count": 7062606,
+      "sum_inserted_row_count": 7062606
+    },
+    {
+      "database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\nbaiot_float32_canonical.sqlite",
+      "size_gb": 0.384933,
+      "tables": [
+        "canonical_assignments",
+        "float32_groups",
+        "run_metadata"
+      ],
+      "table_columns": {
+        "canonical_assignments": [
+          "hash_forward",
+          "hash_reverse",
+          "class_code",
+          "new_split_code",
+          "representative_location",
+          "float64_unique_occurrence_count",
+          "raw_occurrence_count",
+          "old_split_mask"
+        ],
+        "float32_groups": [
+          "hash_forward",
+          "hash_reverse",
+          "class_code",
+          "class_mask",
+          "float64_unique_occurrence_count",
+          "raw_occurrence_count",
+          "old_split_mask",
+          "representative_location"
+        ],
+        "run_metadata": [
+          "key",
+          "value"
+        ]
+      }
+    },
+    {
+      "database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs1_leakage_ablation_seed2026.sqlite",
+      "size_gb": 0.912971,
+      "tables": [
+        "assignments",
+        "fingerprint_stats",
+        "metadata"
+      ],
+      "table_columns": {
+        "assignments": [
+          "file_id",
+          "row_number",
+          "hash_forward",
+          "hash_reverse",
+          "device",
+          "class_label",
+          "naive_row_split",
+          "grouped_split"
+        ],
+        "fingerprint_stats": [
+          "hash_forward",
+          "hash_reverse",
+          "naive_train_rows",
+          "naive_validation_rows",
+          "naive_test_rows",
+          "grouped_split"
+        ],
+        "metadata": [
+          "key",
+          "value"
+        ]
+      }
+    },
+    {
+      "database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_seed2026.sqlite",
+      "size_gb": 0.77121,
+      "tables": [
+        "assignments",
+        "fingerprint_stats",
+        "metadata",
+        "source_file_integrity"
+      ],
+      "table_columns": {
+        "assignments": [
+          "file_id",
+          "row_number",
+          "hash_forward",
+          "hash_reverse",
+          "family_label",
+          "naive_row_split",
+          "group_order_key"
+        ],
+        "fingerprint_stats": [
+          "hash_forward",
+          "hash_reverse",
+          "group_order_key",
+          "raw_row_count",
+          "naive_train_rows",
+          "naive_validation_rows",
+          "naive_test_rows",
+          "grouped_split",
+          "family_label_min",
+          "family_label_max"
+        ],
+        "metadata": [
+          "key",
+          "value"
+        ],
+        "source_file_integrity": [
+          "file_id",
+          "file_path",
+          "class_label",
+          "expected_row_count",
+          "file_size_bytes",
+          "file_mtime_ns",
+          "sha256"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T00:07:26.619887+00:00",
+  "protocol": "vs2_float32_leakage_ablation",
+  "parent_protocol_version": "2.2",
+  "repaired_protocol_version": "2.3",
+  "repair_role": "Versioned residual split-database repair before VS2 training; protocol-v2.2 parent database preserved.",
+  "source_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v2.sqlite",
+  "source_database_sha256": "230192fc247e4eafd352b39b711d0356966ab5ecc4ea2c194468755b6e5b41ee",
+  "output_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v3.sqlite",
+  "output_database_sha256": "b0ca085042243eb01b7b9080fd33aab11024c1b7f7138c7e49458e13ad550ad7",
+  "output_database_bytes": 829677568,
+  "plan_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_residual_overlap_repair_plan_v3.csv",
+  "plan_csv_sha256": "411e9b2eb91a452fc8123f3daac8b53608098738ff921cb12f7ae34dfd73b8f3",
+  "plan_summary": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_residual_overlap_repair_plan_summary_v3.json",
+  "plan_summary_sha256": "c9c1bfb65974c94ac6d46f483f53b5a8545d569c5d7044dfa720e2415e09df0e",
+  "repair_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\87_apply_vs2_residual_overlap_repair_v3.py",
+  "repair_script_sha256": "bc3ab0d0390386765391dee47c7bb699eff92166378a4a1305d133319a680442",
+  "repair_counts": {
+    "residual_scaled_collision_components": 4,
+    "affected_original_fingerprint_groups": 12,
+    "affected_raw_rows": 12,
+    "moved_original_fingerprint_groups": 4,
+    "moved_raw_rows": 4
+  },
+  "validation": {
+    "quick_check_before": "ok",
+    "quick_check_after": "ok",
+    "integrity_check": "ok",
+    "old_grouped_split_counts": {
+      "train": 4943823,
+      "validation": 1059389,
+      "test": 1059394
+    },
+    "new_grouped_split_counts": {
+      "train": 4943823,
+      "validation": 1059389,
+      "test": 1059394
+    },
+    "old_grouped_split_family_counts": {
+      "train:benign": 389152,
+      "train:gafgyt": 1986790,
+      "train:mirai": 2567881,
+      "validation:benign": 83389,
+      "validation:gafgyt": 425740,
+      "validation:mirai": 550260,
+      "test:benign": 83391,
+      "test:gafgyt": 425742,
+      "test:mirai": 550261
+    },
+    "new_grouped_split_family_counts": {
+      "train:benign": 389152,
+      "train:gafgyt": 1986790,
+      "train:mirai": 2567881,
+      "validation:benign": 83389,
+      "validation:gafgyt": 425740,
+      "validation:mirai": 550260,
+      "test:benign": 83391,
+      "test:gafgyt": 425742,
+      "test:mirai": 550261
+    },
+    "updated_fingerprint_group_count": 4,
+    "residual_repair_plan_table_row_count": 12,
+    "parent_v2_2_repair_table_row_count": 1036,
+    "post_repair_plan_mismatch_count": 0,
+    "planned_residual_component_overlap_count": 0,
+    "largest_group_raw_row_count": 965536,
+    "largest_group_split": "train"
+  },
+  "source_plan_summary": {
+    "status": "completed",
+    "analysis_role": "repair_plan_only_no_input_artifact_mutation",
+    "parent_protocol_version": "2.2",
+    "planned_protocol_version": "2.3",
+    "residual_scaled_collision_component_count": 4,
+    "affected_original_fingerprint_group_count": 12,
+    "affected_raw_row_count": 12,
+    "label_conflict_component_count": 0,
+    "affected_class_names": [
+      "benign"
+    ],
+    "minimum_moved_raw_rows": 4,
+    "moved_original_fingerprint_group_count": 4,
+    "planned_cross_split_scaled_overlap_count": 0,
+    "affected_rows_by_family_and_split": {
+      "benign": {
+        "train": 8,
+        "validation": 2,
+        "test": 2
+      }
+    },
+    "validation_checks": {
+      "audit_database_quick_check_ok": true,
+      "all_residual_components_mapped": true,
+      "no_cross_family_label_conflicts": true,
+      "each_original_group_currently_in_one_split": true,
+      "per_family_affected_split_totals_preserved_exactly": true,
+      "minimum_move_objective_consistent": true,
+      "planned_zero_scaled_overlap_for_current_components": true
+    },
+    "source_sha256": {
+      "parent_assignment_database": "230192fc247e4eafd352b39b711d0356966ab5ecc4ea2c194468755b6e5b41ee",
+      "residual_scaled_overlap_audit_database": "c81e846380434f7b460887b10739f1b6371d1082432f02e5fda856586e271923",
+      "runner_script": "ab6f85eaaaf194ebf8e820cff23044de26362eb01cb7d7bf8514f4c6ee199297"
+    },
+    "outputs": {
+      "repair_plan_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_residual_overlap_repair_plan_v3.csv",
+      "component_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_residual_overlap_components_v3.csv",
+      "summary_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_residual_overlap_repair_plan_summary_v3.json",
+      "report_txt": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_residual_overlap_repair_plan_report_v3.txt"
+    }
+  }
+}

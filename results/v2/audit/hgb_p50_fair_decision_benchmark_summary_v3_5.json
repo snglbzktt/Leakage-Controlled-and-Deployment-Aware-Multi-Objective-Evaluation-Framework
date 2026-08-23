@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "protocol_version": "hgb_p50_fair_decision_benchmark_v3_5",
+  "scientific_role": "post-selection operation-matched CPU comparison",
+  "comparison_definition": {
+    "same_model_seed": 2026,
+    "same_repeat_unit": "five isolated process repeats per locked model",
+    "same_output_semantics": "predicted class labels",
+    "preprocessing_inside_timed_region": false,
+    "model_loading_inside_timed_region": false,
+    "native_storage_format_neutral": false
+  },
+  "models": {
+    "tinyml_mlp_P50_QAT": {
+      "repeat_count": 5,
+      "batch_1_median_ms": {
+        "mean": 0.35012,
+        "std_population": 0.1112789135460982,
+        "minimum": 0.2091,
+        "maximum": 0.47505
+      },
+      "batch_1_p95_ms": {
+        "mean": 0.7601209999999994,
+        "std_population": 0.1758111085056917,
+        "minimum": 0.48769999999999875,
+        "maximum": 0.9431649999999994
+      },
+      "batch_32_samples_per_second": {
+        "mean": 42490.07491835523,
+        "std_population": 14683.22471176889,
+        "minimum": 31742.426083545073,
+        "maximum": 71585.64439383737
+      },
+      "native_artifact_bytes": 12199,
+      "native_artifact_kind": "PyTorch serialized state_dict"
+    },
+    "hist_gradient_boosting_B0": {
+      "repeat_count": 5,
+      "batch_1_median_ms": {
+        "mean": 46.22673999999999,
+        "std_population": 0.5653167796908203,
+        "minimum": 45.6931,
+        "maximum": 47.1263
+      },
+      "batch_1_p95_ms": {
+        "mean": 57.17845799999999,
+        "std_population": 2.2861820860084627,
+        "minimum": 53.86934999999999,
+        "maximum": 60.579035
+      },
+      "batch_32_samples_per_second": {
+        "mean": 662.6341275948354,
+        "std_population": 14.258751617402373,
+        "minimum": 643.569403238405,
+        "maximum": 678.3302730745701
+      },
+      "native_artifact_bytes": 367362,
+      "native_artifact_kind": "compressed joblib file"
+    }
+  },
+  "descriptive_ratios": {
+    "hgb_over_p50_batch1_latency": 132.03113218325143,
+    "p50_over_hgb_batch32_throughput": 64.12298001097764
+  },
+  "data_access": {
+    "validation_data_access": false,
+    "test_data_access": false
+  },
+  "tinyml_model_family_reselected": false,
+  "all_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hgb_p50_fair_decision_benchmark_all_runs_v3_5.csv",
+    "sha256": "5c6995bef04c0b213dd2239ea695749c3cef2c37f71f7808fad6684fb59b57e7"
+  },
+  "completed_at_utc": "2026-08-13T10:35:27.787424+00:00",
+  "all_checks_passed": true
+}

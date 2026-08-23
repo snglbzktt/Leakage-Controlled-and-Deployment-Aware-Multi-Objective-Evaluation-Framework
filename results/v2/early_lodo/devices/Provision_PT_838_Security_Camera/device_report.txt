@@ -1,0 +1,44 @@
+======================================================================================
+EARLY LODO DEVICE COMPLETION SUMMARY
+======================================================================================
+
+Held-out device       : Provision_PT_838_Security_Camera
+Completed models      : 3/3
+Train fingerprints    : 1,164,353
+Validation fingerprints: 249,102
+Test fingerprints     : 820,042
+Test record count     : 836,891
+
+MODEL COMPARISON
+rank=1 | compact_dnn_b0 | Macro-F1=0.993238069 | Accuracy=0.992367464 | Gafgyt FNR=0.020400390954130296 | Mirai FNR=0.0003517050708417863 | seconds=74.447 | local_severe=False
+rank=2 | tinyml_mlp_b0 | Macro-F1=0.992204182 | Accuracy=0.991250448 | Gafgyt FNR=0.023029220450945367 | Mirai FNR=0.0006312057893915502 | seconds=33.674 | local_severe=False
+rank=3 | hist_gradient_boosting_b0 | Macro-F1=0.962810801 | Accuracy=0.953759685 | Gafgyt FNR=0.12779818678170604 | Mirai FNR=0.0 | seconds=38.211 | local_severe=False
+
+DEVICE STATISTICS
+Mean Macro-F1        : 0.982751018
+Median Macro-F1      : 0.992204182
+Minimum Macro-F1     : 0.962810801
+Maximum Macro-F1     : 0.993238069
+Maximum attack FNR   : 0.127798187
+Local severe cells   : 0
+
+VALIDATION CHECKS
+protocol_locked: True
+exactly_three_device_runs: True
+expected_models_registered: True
+all_runs_seed_2026: True
+three_model_results_loaded: True
+three_lock_summaries_loaded: True
+three_run_results_loaded: True
+all_locks_locked: True
+all_results_completed: True
+lock_identities_match: True
+execution_ledger_has_three_rows: True
+execution_ledger_matches: True
+cache_validated: True
+cache_manifest_nonempty: True
+all_test_counts_identical: True
+all_test_class_counts_identical: True
+all_primary_metrics_valid: True
+all_fnr_values_valid: True
+ranking_contains_three_models: True

@@ -1,0 +1,841 @@
+{
+  "protocol_version": "early_lodo_smoke_interface_inspection_v2_1",
+  "status": "passed",
+  "completed_at": "2026-08-05T19:03:09.165519+00:00",
+  "model_ast": {
+    "functions": [
+      {
+        "name": "validate_model_dimensions",
+        "line": 44,
+        "arguments": [
+          "input_features",
+          "num_classes"
+        ]
+      },
+      {
+        "name": "validate_forward_input",
+        "line": 61,
+        "arguments": [
+          "inputs",
+          "expected_feature_count",
+          "model_name"
+        ]
+      },
+      {
+        "name": "list_registered_models",
+        "line": 555,
+        "arguments": []
+      },
+      {
+        "name": "get_model_spec",
+        "line": 563,
+        "arguments": [
+          "model_name"
+        ]
+      },
+      {
+        "name": "create_model",
+        "line": 579,
+        "arguments": [
+          "model_name",
+          "input_features",
+          "num_classes"
+        ]
+      },
+      {
+        "name": "get_registry_manifest",
+        "line": 606,
+        "arguments": []
+      }
+    ],
+    "classes": [
+      {
+        "name": "ModelSpec",
+        "line": 29,
+        "methods": []
+      },
+      {
+        "name": "TinyMLMLP",
+        "line": 86,
+        "methods": [
+          "__init__",
+          "forward"
+        ]
+      },
+      {
+        "name": "CompactDNN",
+        "line": 184,
+        "methods": [
+          "__init__",
+          "forward"
+        ]
+      },
+      {
+        "name": "Tiny1DCNN",
+        "line": 318,
+        "methods": [
+          "__init__",
+          "forward"
+        ]
+      }
+    ],
+    "assignments": [
+      {
+        "name": "MODEL_SPECS",
+        "line": 479
+      },
+      {
+        "name": "MODEL_FACTORIES",
+        "line": 545
+      }
+    ],
+    "source_contains_tinyml_mlp": true,
+    "source_contains_compact_dnn": true,
+    "source_contains_model_registry": false,
+    "source_contains_build_model": false
+  },
+  "pilot_ast": {
+    "functions": [
+      {
+        "name": "utc_now",
+        "line": 135,
+        "arguments": []
+      },
+      {
+        "name": "load_json",
+        "line": 141,
+        "arguments": [
+          "path"
+        ]
+      },
+      {
+        "name": "save_json",
+        "line": 151,
+        "arguments": [
+          "path",
+          "value"
+        ]
+      },
+      {
+        "name": "write_csv",
+        "line": 179,
+        "arguments": [
+          "path",
+          "rows",
+          "fieldnames"
+        ]
+      },
+      {
+        "name": "set_reproducible_seed",
+        "line": 212,
+        "arguments": [
+          "seed"
+        ]
+      },
+      {
+        "name": "state_dict_sha256",
+        "line": 228,
+        "arguments": [
+          "model"
+        ]
+      },
+      {
+        "name": "open_memmap",
+        "line": 270,
+        "arguments": [
+          "path",
+          "expected_shape",
+          "expected_dtype"
+        ]
+      },
+      {
+        "name": "load_arrays",
+        "line": 305,
+        "arguments": [
+          "pipeline_name"
+        ]
+      },
+      {
+        "name": "numpy_batch",
+        "line": 365,
+        "arguments": [
+          "features",
+          "labels",
+          "indexes"
+        ]
+      },
+      {
+        "name": "confusion_from_predictions",
+        "line": 397,
+        "arguments": [
+          "targets",
+          "predictions"
+        ]
+      },
+      {
+        "name": "metrics_from_confusion",
+        "line": 433,
+        "arguments": [
+          "confusion"
+        ]
+      },
+      {
+        "name": "evaluate",
+        "line": 567,
+        "arguments": [
+          "model",
+          "features",
+          "labels",
+          "criterion",
+          "batch_size"
+        ]
+      },
+      {
+        "name": "build_model_and_optimizer",
+        "line": 654,
+        "arguments": [
+          "model_name",
+          "seed",
+          "learning_rate",
+          "weight_decay"
+        ]
+      },
+      {
+        "name": "run_smoke_test",
+        "line": 691,
+        "arguments": [
+          "protocol"
+        ]
+      },
+      {
+        "name": "save_checkpoint",
+        "line": 991,
+        "arguments": [
+          "path",
+          "checkpoint"
+        ]
+      },
+      {
+        "name": "run_training_condition",
+        "line": 1010,
+        "arguments": [
+          "protocol",
+          "run_spec"
+        ]
+      },
+      {
+        "name": "aggregate_results",
+        "line": 1692,
+        "arguments": [
+          "protocol",
+          "results"
+        ]
+      },
+      {
+        "name": "run_full_training",
+        "line": 2210,
+        "arguments": [
+          "protocol",
+          "requested_run_id"
+        ]
+      },
+      {
+        "name": "validate_inputs",
+        "line": 2258,
+        "arguments": []
+      },
+      {
+        "name": "main",
+        "line": 2356,
+        "arguments": []
+      }
+    ],
+    "classes": [],
+    "assignments": [
+      {
+        "name": "PROJECT_ROOT_BOOTSTRAP",
+        "line": 26
+      },
+      {
+        "name": "PROJECT_ROOT",
+        "line": 37
+      },
+      {
+        "name": "PROTOCOL_FILE",
+        "line": 39
+      },
+      {
+        "name": "CACHE_ROOT",
+        "line": 46
+      },
+      {
+        "name": "CACHE_SUMMARY_FILE",
+        "line": 53
+      },
+      {
+        "name": "CACHE_MANIFEST_FILE",
+        "line": 61
+      },
+      {
+        "name": "OUTPUT_ROOT",
+        "line": 69
+      },
+      {
+        "name": "AUDIT_DIRECTORY",
+        "line": 76
+      },
+      {
+        "name": "SMOKE_SUMMARY_FILE",
+        "line": 83
+      },
+      {
+        "name": "RUN_SUMMARY_CSV",
+        "line": 88
+      },
+      {
+        "name": "PAIRED_DELTA_CSV",
+        "line": 93
+      },
+      {
+        "name": "FINAL_SUMMARY_JSON",
+        "line": 98
+      },
+      {
+        "name": "FEATURE_COUNT",
+        "line": 104
+      },
+      {
+        "name": "CLASS_COUNT",
+        "line": 105
+      },
+      {
+        "name": "CLASS_NAMES",
+        "line": 107
+      },
+      {
+        "name": "EXPECTED_ROWS",
+        "line": 113
+      },
+      {
+        "name": "EXPECTED_PIPELINES",
+        "line": 119
+      },
+      {
+        "name": "EXPECTED_MODELS",
+        "line": 124
+      },
+      {
+        "name": "EXPECTED_SEEDS",
+        "line": 129
+      }
+    ],
+    "source_contains_tinyml_mlp": true,
+    "source_contains_compact_dnn": true,
+    "source_contains_model_registry": false,
+    "source_contains_build_model": true
+  },
+  "module_import_error": null,
+  "module_callables": [
+    {
+      "name": "CompactDNN",
+      "kind": "class",
+      "signature": "(input_features: 'int', num_classes: 'int', hidden_units: 'tuple[int, int, int]' = (128, 64, 32), dropout_probability: 'float' = 0.1) -> 'None'"
+    },
+    {
+      "name": "ModelSpec",
+      "kind": "class",
+      "signature": "(registry_name: 'str', display_name: 'str', architecture_family: 'str', description: 'str', order_sensitive: 'bool', architecture: 'dict[str, Any]') -> None"
+    },
+    {
+      "name": "Tiny1DCNN",
+      "kind": "class",
+      "signature": "(input_features: 'int', num_classes: 'int', channels: 'tuple[int, int, int]' = (8, 16, 24)) -> 'None'"
+    },
+    {
+      "name": "TinyMLMLP",
+      "kind": "class",
+      "signature": "(input_features: 'int', num_classes: 'int', hidden_units: 'tuple[int, int]' = (64, 32)) -> 'None'"
+    },
+    {
+      "name": "create_model",
+      "kind": "function",
+      "signature": "(model_name: 'str', input_features: 'int', num_classes: 'int', **model_kwargs: 'Any') -> 'nn.Module'"
+    },
+    {
+      "name": "get_model_spec",
+      "kind": "function",
+      "signature": "(model_name: 'str') -> 'ModelSpec'"
+    },
+    {
+      "name": "get_registry_manifest",
+      "kind": "function",
+      "signature": "() -> 'dict[str, Any]'"
+    },
+    {
+      "name": "list_registered_models",
+      "kind": "function",
+      "signature": "() -> 'tuple[str, ...]'"
+    },
+    {
+      "name": "validate_forward_input",
+      "kind": "function",
+      "signature": "(inputs: 'Tensor', expected_feature_count: 'int', model_name: 'str') -> 'None'"
+    },
+    {
+      "name": "validate_model_dimensions",
+      "kind": "function",
+      "signature": "(input_features: 'int', num_classes: 'int') -> 'None'"
+    }
+  ],
+  "module_registries": [
+    {
+      "name": "MODEL_FACTORIES",
+      "keys": [
+        "tinyml_mlp",
+        "compact_dnn",
+        "tiny_1d_cnn"
+      ],
+      "value_types": {
+        "tinyml_mlp": "type",
+        "compact_dnn": "type",
+        "tiny_1d_cnn": "type"
+      }
+    },
+    {
+      "name": "MODEL_SPECS",
+      "keys": [
+        "tinyml_mlp",
+        "compact_dnn",
+        "tiny_1d_cnn"
+      ],
+      "value_types": {
+        "tinyml_mlp": "ModelSpec",
+        "compact_dnn": "ModelSpec",
+        "tiny_1d_cnn": "ModelSpec"
+      }
+    }
+  ],
+  "pilot_relevant_functions": [
+    {
+      "name": "set_reproducible_seed",
+      "line": 212,
+      "arguments": [
+        "seed"
+      ]
+    },
+    {
+      "name": "metrics_from_confusion",
+      "line": 433,
+      "arguments": [
+        "confusion"
+      ]
+    },
+    {
+      "name": "evaluate",
+      "line": 567,
+      "arguments": [
+        "model",
+        "features",
+        "labels",
+        "criterion",
+        "batch_size"
+      ]
+    },
+    {
+      "name": "build_model_and_optimizer",
+      "line": 654,
+      "arguments": [
+        "model_name",
+        "seed",
+        "learning_rate",
+        "weight_decay"
+      ]
+    },
+    {
+      "name": "run_training_condition",
+      "line": 1010,
+      "arguments": [
+        "protocol",
+        "run_spec"
+      ]
+    },
+    {
+      "name": "run_full_training",
+      "line": 2210,
+      "arguments": [
+        "protocol",
+        "requested_run_id"
+      ]
+    }
+  ],
+  "parquet_layout": [
+    {
+      "split": "train",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_primary_seed2026\\train.parquet",
+      "valid": true,
+      "row_count": 1738133,
+      "column_count": 116,
+      "row_group_count": 110,
+      "row_group_sizes": [
+        28299,
+        35033,
+        6843,
+        20457,
+        20921,
+        32164,
+        27503,
+        33023,
+        33196,
+        3894,
+        34925,
+        34950,
+        1533,
+        35032,
+        35024,
+        5415,
+        35011,
+        35105,
+        15845,
+        35060,
+        35086,
+        35046,
+        34985,
+        26438,
+        35115,
+        22298,
+        9218,
+        1234,
+        1,
+        1029,
+        851,
+        2,
+        761,
+        3130,
+        34911,
+        34996,
+        9269,
+        30210,
+        35099,
+        34880,
+        11778,
+        34927,
+        34870,
+        34984,
+        1046,
+        35104,
+        26115,
+        24768,
+        4,
+        130,
+        7,
+        753,
+        2507,
+        998,
+        3,
+        34999,
+        35113,
+        31539,
+        14146,
+        6,
+        999,
+        215,
+        1,
+        726,
+        5,
+        817,
+        2,
+        1,
+        31743,
+        6853,
+        750,
+        214,
+        77,
+        1852,
+        34955,
+        7374,
+        34847,
+        32840,
+        34829,
+        11027,
+        34873,
+        34927,
+        34929,
+        4404,
+        35141,
+        4727,
+        35027,
+        30671,
+        3216,
+        1836,
+        34388,
+        269,
+        1317,
+        30085,
+        1,
+        369,
+        2022,
+        1459,
+        4746,
+        2005,
+        1336,
+        5,
+        12589,
+        3,
+        763,
+        101,
+        2484,
+        1321,
+        2241,
+        3162
+      ],
+      "feature_count": 115,
+      "error": null
+    },
+    {
+      "split": "validation",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_primary_seed2026\\validation.parquet",
+      "valid": true,
+      "row_count": 371884,
+      "column_count": 116,
+      "row_group_count": 101,
+      "row_group_sizes": [
+        6020,
+        7465,
+        1376,
+        4299,
+        4459,
+        7013,
+        5785,
+        7061,
+        7124,
+        882,
+        7539,
+        7428,
+        325,
+        7436,
+        7340,
+        1156,
+        7579,
+        7519,
+        3399,
+        7558,
+        7534,
+        7471,
+        7468,
+        5645,
+        7404,
+        4801,
+        1973,
+        263,
+        215,
+        190,
+        158,
+        686,
+        7609,
+        7535,
+        2000,
+        6499,
+        7409,
+        7487,
+        2538,
+        7508,
+        7609,
+        7552,
+        219,
+        7422,
+        5653,
+        5244,
+        24,
+        2,
+        153,
+        542,
+        210,
+        2,
+        7439,
+        7476,
+        6818,
+        3027,
+        212,
+        42,
+        133,
+        2,
+        164,
+        1,
+        6784,
+        1480,
+        154,
+        46,
+        17,
+        445,
+        7443,
+        1631,
+        7528,
+        7022,
+        7600,
+        2274,
+        7594,
+        7525,
+        7563,
+        930,
+        7280,
+        971,
+        7448,
+        6693,
+        657,
+        398,
+        7372,
+        49,
+        261,
+        6275,
+        100,
+        400,
+        359,
+        987,
+        444,
+        256,
+        2634,
+        176,
+        23,
+        528,
+        305,
+        477,
+        653
+      ],
+      "feature_count": 115,
+      "error": null
+    },
+    {
+      "split": "test",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_primary_seed2026\\test.parquet",
+      "valid": true,
+      "row_count": 372659,
+      "column_count": 116,
+      "row_group_count": 102,
+      "row_group_sizes": [
+        6076,
+        7502,
+        1499,
+        4312,
+        4469,
+        7026,
+        5736,
+        7162,
+        7031,
+        809,
+        7536,
+        7622,
+        337,
+        7532,
+        7636,
+        1114,
+        7410,
+        7376,
+        3329,
+        7382,
+        7380,
+        7483,
+        7547,
+        5582,
+        7481,
+        4883,
+        1920,
+        251,
+        209,
+        156,
+        163,
+        725,
+        7480,
+        7469,
+        2016,
+        6483,
+        7492,
+        7633,
+        2491,
+        7565,
+        7521,
+        7464,
+        216,
+        7474,
+        5600,
+        5398,
+        1,
+        17,
+        3,
+        142,
+        527,
+        206,
+        1,
+        7562,
+        7380,
+        6608,
+        3034,
+        202,
+        39,
+        1,
+        143,
+        192,
+        6815,
+        1494,
+        164,
+        46,
+        16,
+        377,
+        7602,
+        1549,
+        7625,
+        6919,
+        7571,
+        2445,
+        7533,
+        7548,
+        7508,
+        914,
+        7579,
+        983,
+        7524,
+        6629,
+        772,
+        383,
+        7426,
+        55,
+        274,
+        6424,
+        89,
+        424,
+        296,
+        1072,
+        412,
+        287,
+        1,
+        2713,
+        175,
+        21,
+        538,
+        264,
+        501,
+        655
+      ],
+      "feature_count": 115,
+      "error": null
+    }
+  ],
+  "danmini_device": {
+    "device_id": 0,
+    "device": "Danmini_Doorbell",
+    "bit_value": 1
+  },
+  "validation_checks": {
+    "protocol_locked": true,
+    "protocol_checks_passed": true,
+    "model_module_imported": true,
+    "model_module_callables_found": true,
+    "tinyml_model_token_found": true,
+    "compact_model_token_found": true,
+    "all_feature_splits_valid": true,
+    "all_feature_counts_115": true,
+    "danmini_device_found": true,
+    "torch_cpu_available": true,
+    "pilot_training_helpers_found": true
+  },
+  "all_checks_passed": true
+}

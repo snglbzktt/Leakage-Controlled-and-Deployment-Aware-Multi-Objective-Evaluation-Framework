@@ -1,0 +1,121 @@
+{
+  "generated_at_utc": "2026-07-27T18:32:09.683566+00:00",
+  "stage": 33,
+  "task": "family_3",
+  "models": [
+    "tinyml_mlp",
+    "compact_dnn",
+    "tiny_1d_cnn"
+  ],
+  "variants": [
+    "B0",
+    "P25",
+    "P50",
+    "P75",
+    "DQ",
+    "PTQ",
+    "QAT",
+    "P25-QAT",
+    "P50-QAT",
+    "P75-QAT"
+  ],
+  "class_names": [
+    "benign",
+    "gafgyt",
+    "mirai"
+  ],
+  "input_artifacts": {
+    "descriptives": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_family3_overall_statistical_descriptives.csv",
+      "sha256": "35b5fbc8f878ccae2d599d050ee049e9ee55f7fe2ae7ae95e0370398a01263ba"
+    },
+    "efficiency": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_family3_overall_efficiency_tradeoff.csv",
+      "sha256": "4479a4dc74f0c807bed4e41c60f5149bc02baf04e32a1c282ff8599c8c490e1b"
+    },
+    "friedman": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_family3_overall_friedman_results.csv",
+      "sha256": "b4e769f51e7f9262d9d30a2481d12cdb9befd35d76ccf4659abf2c23c08e9221"
+    },
+    "wilcoxon": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_family3_overall_wilcoxon_holm_results.csv",
+      "sha256": "cf7d568f18b636b194838eb1ade0b2e7ce77b38de86400e67a228d187af5394c"
+    },
+    "per_class": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_family3_overall_per_class_runs.csv",
+      "sha256": "885ece7b8fe8f16a7c5bf41488cb5fb2a5097e126152b518b80d1bd693d3d2e2"
+    },
+    "pareto": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_family3_overall_pareto_front.csv",
+      "sha256": "7b032f0676fd6aa9263b8cdbbf84a76c38f8c2eab63aaeabb2417c9afcfe02f6"
+    }
+  },
+  "generated_artifacts": {
+    "table_1_performance_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_1_performance_summary.csv",
+      "sha256": "674a38cb1183fdb59f58193b6f46da8b60d1cec7b44efeacb91c411668e810c3"
+    },
+    "table_2_efficiency_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_2_efficiency_summary.csv",
+      "sha256": "7caab9ec3dd16d90a927648054dc576af452f7ee85cc642c13a34edbf2b77f29"
+    },
+    "table_3_statistical_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_3_statistical_summary.csv",
+      "sha256": "576a5d388a566feaee379f51af360b8a8cd896a076fc1695bf96afd1442cf135"
+    },
+    "table_4_classwise_fnr_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_4_classwise_fnr_summary.csv",
+      "sha256": "531bba0b11441b0aec0ea2a5ad1b71fce608a7fedd5d510c236252508b283b82"
+    },
+    "table_5_pareto_optimal_solutions": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_5_pareto_optimal_solutions.csv",
+      "sha256": "27187c63486f6728912fe46205a698b4a112b68264f10e4dc294337dcc30b525"
+    },
+    "figure_1_png": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\figure_1_macro_f1_vs_artifact.png",
+      "sha256": "e07495afc7679f19abe1a4dd8cdf7f4788d4929311fbd94b201f6ee510899e18"
+    },
+    "figure_1_pdf": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\figure_1_macro_f1_vs_artifact.pdf",
+      "sha256": "6fff66bb08cac7ced51253ec6d942a330147b378e908b14d6a67de9b96fed551"
+    },
+    "figure_2_png": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\figure_2_macro_f1_vs_latency.png",
+      "sha256": "8af6575d184d12fd4e141aebcb7379cbb72612c7e2bbb7cfae0f4624f5e88908"
+    },
+    "figure_2_pdf": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\figure_2_macro_f1_vs_latency.pdf",
+      "sha256": "a6ee47c1df649c68ae84aa06cde6ac86f763f1b975a24b5cdc4db429dd0eb8cb"
+    },
+    "figure_3_png": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\figure_3_macro_f1_heatmap.png",
+      "sha256": "3013083a64a29a88991738b149b566c0f5cbcd79f651f36fc24ff28c25017eff"
+    },
+    "figure_3_pdf": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\figure_3_macro_f1_heatmap.pdf",
+      "sha256": "df8a123aeb516675a32caec0d83d6211e721ebd67924f72e733e8a152e1ad95a"
+    },
+    "results_summary_markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\stage33_results_summary_tr.md",
+      "sha256": "a5cfc5d6f37820c70b90db8e3ccea52b0f98102ee53d564c93750f5313f03476"
+    }
+  },
+  "table_row_counts": {
+    "performance_summary": 30,
+    "efficiency_summary": 30,
+    "statistical_summary": 3,
+    "classwise_fnr_summary": 30,
+    "pareto_optimal_solutions": 46
+  },
+  "figure_count": 3,
+  "figure_formats": [
+    "PNG",
+    "PDF"
+  ],
+  "png_dpi": 300,
+  "host_cpu_efficiency_only": true,
+  "mcu_measurement": false,
+  "test_re_evaluated": false,
+  "model_retrained": false,
+  "validation_passed": true
+}

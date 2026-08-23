@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-25T08:01:14.314045+00:00",
+  "status": "completed",
+  "model_name": "compact_dnn",
+  "method_name": "PTQ",
+  "seed": 2026,
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\PTQ\\seed2026\\model_static_ptq_int8.onnx",
+  "artifact_sha256": "44ab858bc40d78c636100835dcea9e4f84dcd3c870098ca6821f4164ad403537",
+  "evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "completed_at_utc": "2026-07-25T08:01:15.786224+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\PTQ\\seed2026\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\PTQ\\seed2026\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\PTQ\\seed2026\\test_confusion_matrix.csv"
+}

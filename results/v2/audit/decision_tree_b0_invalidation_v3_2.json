@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T13:44:09.858180+00:00",
+  "model_id": "decision_tree_b0",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "invalid_run_count": 5,
+  "invalid_seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "archive": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\invalid_runs\\decision_tree_b0_input_space_parser_bug_v3_2",
+  "temporary_file_deleted": true,
+  "temporary_file_size_bytes": 705908308,
+  "free_disk_before_bytes": 6683344896,
+  "free_disk_after_bytes": 7389298688,
+  "post_checks": {
+    "archive_exists": true,
+    "invalidation_manifest_exists": true,
+    "all_active_run_directories_removed": true,
+    "temporary_scaled_train_removed": true,
+    "active_aggregate_files_removed": true
+  },
+  "rerun_required": true,
+  "all_checks_passed": true
+}

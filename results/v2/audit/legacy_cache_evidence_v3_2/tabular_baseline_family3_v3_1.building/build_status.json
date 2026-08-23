@@ -1,0 +1,8 @@
+{
+  "status": "building",
+  "started_at_utc": "2026-08-06T11:59:10.043787+00:00",
+  "builder_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\94_build_tabular_baseline_cache_v3.py",
+  "builder_script_sha256": "e72a1c204d6a3d9b25f9110728fdbd880a2193055200871a8abea82171e24aae",
+  "locked_protocol_sha256": "d345b22bdf2e88201a057fae2e5c2e532af53e3fcbf539664637a22e26ddcb03",
+  "protocol_database_sha256": "b0ca085042243eb01b7b9080fd33aab11024c1b7f7138c7e49458e13ad550ad7"
+}

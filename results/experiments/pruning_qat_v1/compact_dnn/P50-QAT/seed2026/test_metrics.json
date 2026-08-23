@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-07-26T19:59:08.489715+00:00",
+  "model_name": "compact_dnn",
+  "method_name": "P50-QAT",
+  "seed": 2026,
+  "task_name": "family_3",
+  "test_evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "sample_count": 341093,
+  "accuracy": 0.9952798796809081,
+  "balanced_accuracy": 0.9733413651719981,
+  "macro_precision": 0.995641538347103,
+  "macro_recall": 0.9733413651719981,
+  "macro_f1": 0.9840317192436161,
+  "weighted_f1": 0.995198787368673,
+  "matthews_correlation_coefficient": 0.9889625260231569,
+  "per_class": {
+    "benign": {
+      "support": 77075,
+      "predicted_count": 77086,
+      "precision": 0.9989621980644994,
+      "recall": 0.999104768083036,
+      "f1": 0.999033477987299,
+      "false_negative_rate": 0.0008952319169639456
+    },
+    "gafgyt": {
+      "support": 18563,
+      "predicted_count": 17209,
+      "precision": 0.993724214074031,
+      "recall": 0.9212411786887895,
+      "f1": 0.9561109247456111,
+      "false_negative_rate": 0.07875882131121048
+    },
+    "mirai": {
+      "support": 245455,
+      "predicted_count": 246798,
+      "precision": 0.9942382029027788,
+      "recall": 0.9996781487441689,
+      "f1": 0.9969507549979381,
+      "false_negative_rate": 0.00032185125583106267
+    }
+  },
+  "confusion_matrix": [
+    [
+      77006,
+      51,
+      18
+    ],
+    [
+      58,
+      17101,
+      1404
+    ],
+    [
+      22,
+      57,
+      245376
+    ]
+  ],
+  "loss": 0.015469455787738815,
+  "processed_batches": 95,
+  "elapsed_seconds": 1.118248799990397,
+  "throughput_samples_per_second": 305024.2486313682
+}

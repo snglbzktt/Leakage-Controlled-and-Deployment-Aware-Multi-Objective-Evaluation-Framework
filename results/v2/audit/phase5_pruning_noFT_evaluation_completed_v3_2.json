@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "P25_noFT_and_P50_noFT_evaluation",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "completed_at_utc": "2026-08-06T18:13:48.773632+00:00",
+  "run_count": 20,
+  "test_evaluation_count_per_run": 1,
+  "test_inference_total": 20,
+  "test_used_for_selection": false,
+  "fine_tuning_performed": false,
+  "aggregate_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_summary_v3_2.json",
+  "aggregate_json_sha256": "9daeecb7b637f4f804ca87b0561ff6b44a0353c5d80a60170acd51440287a656",
+  "aggregate_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_all_runs_v3_2.csv",
+  "aggregate_runs_csv_sha256": "8a2daf059b5b15f749120a1df09767b64e4eb41e7361bc34af1c901a41fc46fa",
+  "group_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_group_summary_v3_2.csv",
+  "group_summary_csv_sha256": "f97b550dd2684038a37b9360ba28ac1797bc9f1f3152f6b17647dcdce78370ee",
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

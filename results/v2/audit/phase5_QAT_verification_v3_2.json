@@ -1,0 +1,253 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "QAT_P25_QAT_P50_QAT_independent_verification",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "QAT_engine_version": "phase5_qat_engine_v3_2",
+  "verified_at_utc": "2026-08-06T20:24:11.363497+00:00",
+  "run_count": 30,
+  "group_count": 6,
+  "QAT_backend": "onednn",
+  "verification_policy": {
+    "QAT_checkpoint_loading_performed": true,
+    "INT8_checkpoint_loading_performed": true,
+    "optimizer_state_loading_performed": true,
+    "independent_validation_inference_repeated": true,
+    "test_model_inference_repeated": false,
+    "saved_test_metrics_recomputed": true,
+    "test_evaluation_count_verified_per_run": 1
+  },
+  "verified_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_QAT_verified_runs_v3_2.csv",
+    "size_bytes": 17440,
+    "sha256": "f8c7da265800e8dc08e311b433f14bebe3671d3de86d0cc6d9fc96b5d0cb929c"
+  },
+  "verified_groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "QAT",
+      "source_variant": "B0",
+      "run_count": 5,
+      "validation_macro_f1": {
+        "mean": 0.9982591142135577,
+        "std_population": 0.00038939047755451024,
+        "minimum": 0.99771903790132,
+        "maximum": 0.998799622925056
+      },
+      "test_macro_f1": {
+        "mean": 0.9982103802573974,
+        "std_population": 0.0003876923018597152,
+        "minimum": 0.9977151375596214,
+        "maximum": 0.9988494120065642
+      },
+      "test_raw_weighted_macro_f1": {
+        "mean": 0.9970950606241722,
+        "std_population": 0.0003900733563661368,
+        "minimum": 0.9966321145405862,
+        "maximum": 0.9977211510265712
+      },
+      "INT8_to_float_state_size_ratio": {
+        "mean": 0.4470648240351687,
+        "std_population": 0.0,
+        "minimum": 0.4470648240351687,
+        "maximum": 0.4470648240351687
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-QAT",
+      "source_variant": "P25-noFT",
+      "run_count": 5,
+      "validation_macro_f1": {
+        "mean": 0.9981793334782438,
+        "std_population": 0.00022869353524510253,
+        "minimum": 0.9977568809233172,
+        "maximum": 0.9983757869780856
+      },
+      "test_macro_f1": {
+        "mean": 0.9980622942844194,
+        "std_population": 0.00024594799585758454,
+        "minimum": 0.9976165757765143,
+        "maximum": 0.998335351575974
+      },
+      "test_raw_weighted_macro_f1": {
+        "mean": 0.9966948606225075,
+        "std_population": 0.00025065542705913596,
+        "minimum": 0.9962607005513219,
+        "maximum": 0.9970376729707991
+      },
+      "INT8_to_float_state_size_ratio": {
+        "mean": 0.505199162818511,
+        "std_population": 0.0,
+        "minimum": 0.505199162818511,
+        "maximum": 0.505199162818511
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-QAT",
+      "source_variant": "P50-noFT",
+      "run_count": 5,
+      "validation_macro_f1": {
+        "mean": 0.99787259572749,
+        "std_population": 0.0005193841002530172,
+        "minimum": 0.996966181737415,
+        "maximum": 0.9983159583785666
+      },
+      "test_macro_f1": {
+        "mean": 0.9978555453698199,
+        "std_population": 0.0004956603432279483,
+        "minimum": 0.9970080708948338,
+        "maximum": 0.998321844873542
+      },
+      "test_raw_weighted_macro_f1": {
+        "mean": 0.9965766930824035,
+        "std_population": 0.0004696400755487555,
+        "minimum": 0.9959473619503365,
+        "maximum": 0.997123473761949
+      },
+      "INT8_to_float_state_size_ratio": {
+        "mean": 0.612245922208281,
+        "std_population": 0.0,
+        "minimum": 0.612245922208281,
+        "maximum": 0.612245922208281
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "QAT",
+      "source_variant": "B0",
+      "run_count": 5,
+      "validation_macro_f1": {
+        "mean": 0.9980331994586609,
+        "std_population": 0.0005719764914927571,
+        "minimum": 0.9970365670263875,
+        "maximum": 0.9986468413003428
+      },
+      "test_macro_f1": {
+        "mean": 0.9980903197215032,
+        "std_population": 0.0005097027294194836,
+        "minimum": 0.9971715239986688,
+        "maximum": 0.9986237817541056
+      },
+      "test_raw_weighted_macro_f1": {
+        "mean": 0.9971471045335791,
+        "std_population": 0.0004876512775857182,
+        "minimum": 0.9965518746156571,
+        "maximum": 0.9977587773999574
+      },
+      "INT8_to_float_state_size_ratio": {
+        "mean": 0.3668017280190044,
+        "std_population": 0.0,
+        "minimum": 0.3668017280190044,
+        "maximum": 0.3668017280190044
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-QAT",
+      "source_variant": "P25-noFT",
+      "run_count": 5,
+      "validation_macro_f1": {
+        "mean": 0.9981352897368673,
+        "std_population": 0.0001546361677640834,
+        "minimum": 0.9979825359769245,
+        "maximum": 0.9984148328409561
+      },
+      "test_macro_f1": {
+        "mean": 0.9982271247954844,
+        "std_population": 8.861105831029475e-05,
+        "minimum": 0.998118725469589,
+        "maximum": 0.9983578343614036
+      },
+      "test_raw_weighted_macro_f1": {
+        "mean": 0.9970109404936525,
+        "std_population": 0.0001617358949191795,
+        "minimum": 0.996814166531366,
+        "maximum": 0.997219442528562
+      },
+      "INT8_to_float_state_size_ratio": {
+        "mean": 0.40577054866365503,
+        "std_population": 0.0,
+        "minimum": 0.40577054866365503,
+        "maximum": 0.40577054866365503
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-QAT",
+      "source_variant": "P50-noFT",
+      "run_count": 5,
+      "validation_macro_f1": {
+        "mean": 0.9975727469148452,
+        "std_population": 0.00030136986322057744,
+        "minimum": 0.9970502414515533,
+        "maximum": 0.9978246142107886
+      },
+      "test_macro_f1": {
+        "mean": 0.9976074501406412,
+        "std_population": 0.0002895179318035198,
+        "minimum": 0.9971487561590487,
+        "maximum": 0.9978619405806191
+      },
+      "test_raw_weighted_macro_f1": {
+        "mean": 0.9961596111751702,
+        "std_population": 0.000455458815993694,
+        "minimum": 0.9957334663351852,
+        "maximum": 0.9969355230936227
+      },
+      "INT8_to_float_state_size_ratio": {
+        "mean": 0.4805147143152052,
+        "std_population": 5.551115123125783e-17,
+        "minimum": 0.48051471431520515,
+        "maximum": 0.48051471431520515
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    }
+  ],
+  "entry_checks": {
+    "protocol_locked": true,
+    "B0_pair_locked": true,
+    "pruning_engine_locked": true,
+    "pruning_engine_hash": true,
+    "pruning_sources_locked": true,
+    "QAT_preflight_locked": true,
+    "QAT_engine_hash": true,
+    "QAT_preflight_matrix_hash": true,
+    "summary_complete": true,
+    "completion_complete": true,
+    "aggregate_hashes": true,
+    "run_matrix_complete": true,
+    "group_matrix_complete": true,
+    "locked_matrix_complete": true,
+    "preflight_matrix_complete": true
+  },
+  "cache_checks": {
+    "validation_shapes": true,
+    "test_shapes": true,
+    "raw_totals": true,
+    "scaler_shapes": true
+  },
+  "global_checks": {
+    "thirty_runs": true,
+    "six_groups": true,
+    "all_runs_passed": true,
+    "all_groups_passed": true,
+    "test_count_one": true,
+    "test_not_repeated": true,
+    "no_fragility": true
+  },
+  "ready_for_PTQ_branch": true,
+  "all_checks_passed": true
+}

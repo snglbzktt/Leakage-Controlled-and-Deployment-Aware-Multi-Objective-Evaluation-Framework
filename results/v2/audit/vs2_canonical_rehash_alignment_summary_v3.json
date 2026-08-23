@@ -1,0 +1,246 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T10:55:55.110251+00:00",
+  "canonical_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_float32_canonical_seed2026",
+  "protocol_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v3.sqlite",
+  "audit_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_canonical_rehash_alignment_work_v3.sqlite",
+  "protocol_database_quick_check": "ok",
+  "protocol_database_sha256_before": "b0ca085042243eb01b7b9080fd33aab11024c1b7f7138c7e49458e13ad550ad7",
+  "protocol_database_sha256_after": "b0ca085042243eb01b7b9080fd33aab11024c1b7f7138c7e49458e13ad550ad7",
+  "protocol_database_unchanged": true,
+  "canonical_row_count": 2278174,
+  "canonical_rehashed_group_count": 2278174,
+  "protocol_group_count": 2278176,
+  "common_group_count": 2278174,
+  "protocol_only_group_count": 2,
+  "canonical_only_group_count": 0,
+  "duplicate_rehash_group_count": 0,
+  "duplicate_rehash_excess_rows": 0,
+  "rehash_cross_split_group_count": 0,
+  "rehash_cross_family_group_count": 0,
+  "family_mismatch_count": 0,
+  "raw_occurrence_mismatch_count": 0,
+  "canonical_split_vs_protocol_grouped_split_mismatch_count": 1092621,
+  "common_protocol_raw_row_count": 6097052,
+  "all_protocol_groups_recoverable_from_canonical_parquet": false,
+  "protocol_only_rows": [
+    {
+      "hash_forward": 1186489340052016147,
+      "hash_reverse": -1525303275089350591,
+      "raw_row_count": 965536,
+      "grouped_split": 0,
+      "family_label_min": 1,
+      "family_label_max": 1,
+      "representative_file_id": 5,
+      "representative_row_number": 4,
+      "representative_file_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\interim\\nbaiot_unpacked\\Danmini_Doorbell\\gafgyt_attacks\\tcp.csv",
+      "representative_raw_label": "gafgyt_tcp"
+    },
+    {
+      "hash_forward": -8335912226089688891,
+      "hash_reverse": -5292541076826449816,
+      "raw_row_count": 18,
+      "grouped_split": 2,
+      "family_label_min": 1,
+      "family_label_max": 1,
+      "representative_file_id": 5,
+      "representative_row_number": 0,
+      "representative_file_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\interim\\nbaiot_unpacked\\Danmini_Doorbell\\gafgyt_attacks\\tcp.csv",
+      "representative_raw_label": "gafgyt_tcp"
+    }
+  ],
+  "canonical_only_rows": [],
+  "duplicate_rehash_rows": [],
+  "split_transition_matrix": [
+    {
+      "canonical_split": 0,
+      "protocol_split": 0,
+      "family_label": 0,
+      "fingerprint_count": 251924,
+      "raw_row_count": 272836
+    },
+    {
+      "canonical_split": 0,
+      "protocol_split": 0,
+      "family_label": 1,
+      "fingerprint_count": 19082,
+      "raw_row_count": 967060
+    },
+    {
+      "canonical_split": 0,
+      "protocol_split": 0,
+      "family_label": 2,
+      "fingerprint_count": 803327,
+      "raw_row_count": 1797173
+    },
+    {
+      "canonical_split": 0,
+      "protocol_split": 1,
+      "family_label": 0,
+      "fingerprint_count": 53956,
+      "raw_row_count": 58427
+    },
+    {
+      "canonical_split": 0,
+      "protocol_split": 1,
+      "family_label": 1,
+      "fingerprint_count": 34312,
+      "raw_row_count": 299237
+    },
+    {
+      "canonical_split": 0,
+      "protocol_split": 1,
+      "family_label": 2,
+      "fingerprint_count": 172677,
+      "raw_row_count": 386447
+    },
+    {
+      "canonical_split": 0,
+      "protocol_split": 2,
+      "family_label": 0,
+      "fingerprint_count": 53832,
+      "raw_row_count": 58269
+    },
+    {
+      "canonical_split": 0,
+      "protocol_split": 2,
+      "family_label": 1,
+      "fingerprint_count": 34149,
+      "raw_row_count": 297860
+    },
+    {
+      "canonical_split": 0,
+      "protocol_split": 2,
+      "family_label": 2,
+      "fingerprint_count": 172405,
+      "raw_row_count": 385760
+    },
+    {
+      "canonical_split": 1,
+      "protocol_split": 0,
+      "family_label": 0,
+      "fingerprint_count": 53531,
+      "raw_row_count": 57845
+    },
+    {
+      "canonical_split": 1,
+      "protocol_split": 0,
+      "family_label": 1,
+      "fingerprint_count": 4035,
+      "raw_row_count": 26773
+    },
+    {
+      "canonical_split": 1,
+      "protocol_split": 0,
+      "family_label": 2,
+      "fingerprint_count": 172501,
+      "raw_row_count": 385832
+    },
+    {
+      "canonical_split": 1,
+      "protocol_split": 1,
+      "family_label": 0,
+      "fingerprint_count": 11557,
+      "raw_row_count": 12484
+    },
+    {
+      "canonical_split": 1,
+      "protocol_split": 1,
+      "family_label": 1,
+      "fingerprint_count": 7293,
+      "raw_row_count": 63797
+    },
+    {
+      "canonical_split": 1,
+      "protocol_split": 1,
+      "family_label": 2,
+      "fingerprint_count": 36730,
+      "raw_row_count": 82072
+    },
+    {
+      "canonical_split": 1,
+      "protocol_split": 2,
+      "family_label": 0,
+      "fingerprint_count": 11607,
+      "raw_row_count": 12530
+    },
+    {
+      "canonical_split": 1,
+      "protocol_split": 2,
+      "family_label": 1,
+      "fingerprint_count": 7371,
+      "raw_row_count": 64251
+    },
+    {
+      "canonical_split": 1,
+      "protocol_split": 2,
+      "family_label": 2,
+      "fingerprint_count": 36792,
+      "raw_row_count": 82233
+    },
+    {
+      "canonical_split": 2,
+      "protocol_split": 0,
+      "family_label": 0,
+      "fingerprint_count": 53984,
+      "raw_row_count": 58471
+    },
+    {
+      "canonical_split": 2,
+      "protocol_split": 0,
+      "family_label": 1,
+      "fingerprint_count": 4103,
+      "raw_row_count": 27421
+    },
+    {
+      "canonical_split": 2,
+      "protocol_split": 0,
+      "family_label": 2,
+      "fingerprint_count": 172095,
+      "raw_row_count": 384876
+    },
+    {
+      "canonical_split": 2,
+      "protocol_split": 1,
+      "family_label": 0,
+      "fingerprint_count": 11508,
+      "raw_row_count": 12478
+    },
+    {
+      "canonical_split": 2,
+      "protocol_split": 1,
+      "family_label": 1,
+      "fingerprint_count": 7188,
+      "raw_row_count": 62706
+    },
+    {
+      "canonical_split": 2,
+      "protocol_split": 1,
+      "family_label": 2,
+      "fingerprint_count": 36575,
+      "raw_row_count": 81741
+    },
+    {
+      "canonical_split": 2,
+      "protocol_split": 2,
+      "family_label": 0,
+      "fingerprint_count": 11583,
+      "raw_row_count": 12592
+    },
+    {
+      "canonical_split": 2,
+      "protocol_split": 2,
+      "family_label": 1,
+      "fingerprint_count": 7272,
+      "raw_row_count": 63613
+    },
+    {
+      "canonical_split": 2,
+      "protocol_split": 2,
+      "family_label": 2,
+      "fingerprint_count": 36785,
+      "raw_row_count": 82268
+    }
+  ],
+  "elapsed_seconds": 56.54164039995521
+}

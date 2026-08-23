@@ -1,0 +1,193 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "selected_PTQ_test_evaluation",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "PTQ_engine_version": "phase5_ptq_engine_v3_2",
+  "completed_at_utc": "2026-08-06T20:45:48.573911+00:00",
+  "run_count": 10,
+  "group_count": 2,
+  "selected_calibration_sizes": {
+    "tinyml_mlp": 4096,
+    "compact_dnn": 16384
+  },
+  "selection_policy": {
+    "source": "locked_validation_only_sweep",
+    "architecture_level_selection": true,
+    "test_used_for_selection": false
+  },
+  "test_policy": {
+    "test_evaluation_count_per_run": 1,
+    "test_inference_total": 10,
+    "validation_inference_repeated": false
+  },
+  "groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "calibration_size": 4096,
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "mean_test_fingerprint_accuracy": 0.9961807012447685,
+      "mean_test_fingerprint_macro_f1": 0.9938503114007465,
+      "std_test_fingerprint_macro_f1": 0.006775609061374789,
+      "min_test_fingerprint_macro_f1": 0.9803717233673384,
+      "max_test_fingerprint_macro_f1": 0.9983673355552791,
+      "mean_test_raw_weighted_macro_f1": 0.9899852269090379,
+      "mean_test_gafgyt_fnr": 0.026618572336195755,
+      "mean_test_mirai_fnr": 0.00033498386060766273,
+      "mean_INT8_to_float_state_size_ratio": 0.4470648240351687,
+      "mean_test_elapsed_seconds": 0.46676195999607445,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "test_fingerprint_accuracy": {
+          "mean": 0.9961807012447685,
+          "std_population": 0.004289449524929215,
+          "minimum": 0.9876491409267448,
+          "maximum": 0.9990182788410849
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9938503114007465,
+          "std_population": 0.006775609061374789,
+          "minimum": 0.9803717233673384,
+          "maximum": 0.9983673355552791
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9899852269090379,
+          "std_population": 0.009332916348035347,
+          "minimum": 0.971476266097878,
+          "maximum": 0.9967018873205844
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.026618572336195755,
+          "std_population": 0.033203435570036674,
+          "minimum": 0.005984464984731375,
+          "maximum": 0.0925132703461562
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00033498386060766273,
+          "std_population": 0.0004429883122078243,
+          "minimum": 7.724142416920543e-05,
+          "maximum": 0.0012196014342512607
+        },
+        "INT8_to_float_state_size_ratio": {
+          "mean": 0.4470648240351687,
+          "std_population": 0.0,
+          "minimum": 0.4470648240351687,
+          "maximum": 0.4470648240351687
+        },
+        "test_elapsed_seconds": {
+          "mean": 0.46676195999607445,
+          "std_population": 0.020316928594833222,
+          "minimum": 0.4380383000243455,
+          "maximum": 0.4877477999543771
+        }
+      }
+    },
+    {
+      "architecture": "compact_dnn",
+      "calibration_size": 16384,
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "mean_test_fingerprint_accuracy": 0.9970806571345575,
+      "mean_test_fingerprint_macro_f1": 0.9953797075666587,
+      "std_test_fingerprint_macro_f1": 0.0034467434718497246,
+      "min_test_fingerprint_macro_f1": 0.9891385416028364,
+      "max_test_fingerprint_macro_f1": 0.9987496062376242,
+      "mean_test_raw_weighted_macro_f1": 0.9922901894667845,
+      "mean_test_gafgyt_fnr": 0.02110958539134713,
+      "mean_test_mirai_fnr": 0.000143912969241633,
+      "mean_INT8_to_float_state_size_ratio": 0.3668017280190044,
+      "mean_test_elapsed_seconds": 0.5323093199869617,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "test_fingerprint_accuracy": {
+          "mean": 0.9970806571345575,
+          "std_population": 0.0022118572496741176,
+          "minimum": 0.9930795382414012,
+          "maximum": 0.9992415195429751
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9953797075666587,
+          "std_population": 0.0034467434718497246,
+          "minimum": 0.9891385416028364,
+          "maximum": 0.9987496062376242
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9922901894667845,
+          "std_population": 0.004944314060808106,
+          "minimum": 0.9833015010011144,
+          "maximum": 0.9972514690757358
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.02110958539134713,
+          "std_population": 0.016818006666288583,
+          "minimum": 0.004877748857418096,
+          "maximum": 0.051667247351054435
+        },
+        "test_mirai_fnr": {
+          "mean": 0.000143912969241633,
+          "std_population": 3.861857237371133e-05,
+          "minimum": 8.943743851175245e-05,
+          "maximum": 0.00019513622948019727
+        },
+        "INT8_to_float_state_size_ratio": {
+          "mean": 0.3668017280190044,
+          "std_population": 0.0,
+          "minimum": 0.3668017280190044,
+          "maximum": 0.3668017280190044
+        },
+        "test_elapsed_seconds": {
+          "mean": 0.5323093199869617,
+          "std_population": 0.037796587351819226,
+          "minimum": 0.46072109998203814,
+          "maximum": 0.5723351000342518
+        }
+      }
+    }
+  ],
+  "fragility_triggered_in_any_run": false,
+  "entry_checks": {
+    "protocol_locked": true,
+    "B0_pair_locked": true,
+    "PTQ_preflight_locked": true,
+    "PTQ_selection_locked": true,
+    "verified_candidate_hash_matches": true,
+    "PTQ_engine_hash_matches": true,
+    "calibration_indices_hash_matches": true,
+    "selected_sizes_match_expected": true,
+    "B0_registry_complete": true,
+    "selected_candidates_verified": true
+  },
+  "global_checks": {
+    "ten_runs_completed": true,
+    "two_groups_completed": true,
+    "test_count_one_all_runs": true,
+    "selected_sizes_unchanged": true
+  },
+  "aggregate_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_all_runs_v3_2.csv",
+    "size_bytes": 7850,
+    "sha256": "b44b0691c6e8b51e575c5a5150cf212cfd106e706716db3994470727c2193d50"
+  },
+  "group_summary_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_group_summary_v3_2.csv",
+    "size_bytes": 898,
+    "sha256": "c16f58e433cb12d63355d148c4c2b3aa4cc315edf7b0e31e4847b486409cdb09"
+  },
+  "ready_for_independent_verification": true,
+  "all_integrity_checks_passed": true
+}

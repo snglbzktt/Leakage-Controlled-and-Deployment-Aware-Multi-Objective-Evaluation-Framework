@@ -1,0 +1,103 @@
+{
+  "protocol_version": "early_lodo_cache_cleanup_v2_1",
+  "status": "completed",
+  "verified_at": "2026-08-05T22:13:26.937642+00:00",
+  "held_out_device": "Provision_PT_838_Security_Camera",
+  "cache_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera",
+  "retained_files": [
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\cache_summary.json",
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\scaler.npz"
+  ],
+  "removed_files": [
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\test_global_indices.npy",
+      "size_bytes": 6560464,
+      "sha256": "ac977759dbbfe6507978be1fb2d4b08a9323a5aeb80aa077319cf6c613316e1f"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\test_occurrence_count.npy",
+      "size_bytes": 3280296,
+      "sha256": "51d762ea3203176f815f65c86871dcf7e080b896b441cff28c75b4769dc2126f"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\test_source_split.npy",
+      "size_bytes": 820170,
+      "sha256": "6660c36d716a9d316dc58af01c65b1dfb79db37f28da9d612d649bd2d6ebae02"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\train_global_indices.npy",
+      "size_bytes": 9314952,
+      "sha256": "e2188476d6ee554e5c1c751d099008b98577c0ce9f1850ba03292e73124f80bf"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\validation_global_indices.npy",
+      "size_bytes": 1992944,
+      "sha256": "6ae3e4260ec54e3910fcc16baab81d06c600cdbe2903217a603b2a4d3dde1718"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\x_test.npy",
+      "size_bytes": 377219448,
+      "sha256": "12724cb36a0996ba7b2462ec477295f6ec7b52b38a658b24ab25c8969e75fa1d"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\x_train.npy",
+      "size_bytes": 535602508,
+      "sha256": "86f92ecf4a20c5ec9bdfa2577c8d7fd6e282c29c0315d0329b2a78dad05c5664"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\x_validation.npy",
+      "size_bytes": 114587048,
+      "sha256": "d9a83b4f251daa47727ff34e697f92d94ba51767438d38e5ea5dcf0cc19901e5"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\y_test.npy",
+      "size_bytes": 820170,
+      "sha256": "f3955f0fa0de2d15d54f672a95ebd87fd7bdee69eaf2f8921932ed7954c0c9a0"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\y_train.npy",
+      "size_bytes": 1164481,
+      "sha256": "f1397dc035bace3e7c0d56295f54fee1bf7b7fa35117d3019367f8c0d36ad92a"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Provision_PT_838_Security_Camera\\y_validation.npy",
+      "size_bytes": 249230,
+      "sha256": "53cface59e7e904feeb8088c9edda8d67b93113736983363b0ddba9815095c1b"
+    }
+  ],
+  "expected_reclaimed_bytes": 1051611711,
+  "device_summary_sha256": "6512a6d37ecf4cc1a5b5f8ac9975ab93ea601b54fa5f03d6f2e44dfa68564bb7",
+  "cache_manifest_sha256": "06081ab89b7442b9daa8c547492b56297d4d9ad6e0029ad31a5889c9a42d82b0",
+  "device_release_manifest_sha256": "a11d78863f76db9571505ebdb33a794134cacfae866a5868f546d775780dc40c",
+  "pre_cleanup_validation_checks": {
+    "device_summary_complete": true,
+    "device_summary_checks_passed": true,
+    "three_models_completed": true,
+    "cache_cleanup_eligible": true,
+    "one_device_ledger_row": true,
+    "device_ledger_complete": true,
+    "device_ledger_cleanup_eligible": true,
+    "cache_directory_exists": true,
+    "cache_manifest_nonempty": true,
+    "manifest_paths_inside_cache": true,
+    "manifest_matches_cache_directory": true,
+    "manifest_sizes_match": true,
+    "manifest_hashes_match": true,
+    "removable_files_found": true,
+    "retained_files_present": true
+  },
+  "all_pre_cleanup_checks_passed": true,
+  "completed_at": "2026-08-05T22:13:27.062607+00:00",
+  "removed_file_count": 11,
+  "reclaimed_bytes": 1051611711,
+  "reclaimed_gb": 0.9793897261843085,
+  "post_cleanup_validation_checks": {
+    "all_removable_files_removed": true,
+    "retained_files_still_present": true,
+    "cache_directory_retained": true,
+    "device_summary_unchanged": true,
+    "cache_manifest_unchanged": true,
+    "device_release_manifest_unchanged": true
+  },
+  "all_post_cleanup_checks_passed": true
+}

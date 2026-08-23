@@ -1,0 +1,86 @@
+{
+  "generated_at_utc": "2026-07-25T07:49:51.640503+00:00",
+  "protocol_name": "N-BaIoT family_3 DQ PTQ QAT multi-seed",
+  "protocol_version": "1.0",
+  "status": "locked_before_quantization_main_experiments",
+  "task": "family_3",
+  "models": [
+    "tinyml_mlp",
+    "compact_dnn",
+    "tiny_1d_cnn"
+  ],
+  "methods": [
+    "DQ",
+    "PTQ",
+    "QAT"
+  ],
+  "training_seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "planned_run_count": 45,
+  "source_policy": "Every quantized artifact is produced from the matching validation-selected FP32 model-seed checkpoint.",
+  "dynamic_quantization": {
+    "runtime": "ONNX Runtime",
+    "method": "dynamic_int8",
+    "weight_type": "QInt8",
+    "per_channel": true,
+    "calibration_required": false
+  },
+  "post_training_static_quantization": {
+    "runtime": "ONNX Runtime",
+    "method": "static_QDQ_INT8",
+    "quant_format": "QDQ",
+    "activation_type": "QUInt8",
+    "weight_type": "QInt8",
+    "per_channel": true,
+    "calibration_method": "MinMax",
+    "calibration_split": "train",
+    "calibration_seed": 2026,
+    "calibration_batch_size": 1024,
+    "calibration_batch_count": 4,
+    "calibration_sample_count": 4096
+  },
+  "quantization_aware_training": {
+    "framework": "PyTorch FX Graph Mode QAT",
+    "backend": "onednn",
+    "optimizer": "AdamW",
+    "learning_rate_rule": "fp32_learning_rate_times_factor",
+    "learning_rate_factor": 0.1,
+    "max_epochs": 8,
+    "early_stopping_patience": 3,
+    "early_stopping_min_delta": 0.0002,
+    "batch_size": 4096,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "torch_threads": 4,
+    "num_workers": 0,
+    "training_split": "train",
+    "selection_split": "validation",
+    "selection_metric": "converted_int8_macro_f1",
+    "test_used_for_selection": false
+  },
+  "onnx_export": {
+    "opset_version": 17,
+    "dynamic_batch_axis": true
+  },
+  "test_evaluation": {
+    "evaluations_per_model_method_seed": 1,
+    "test_used_for_training": false,
+    "test_used_for_calibration": false,
+    "test_used_for_model_selection": false
+  },
+  "source_artifacts": {
+    "fp32_protocol": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json",
+      "sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525"
+    },
+    "qat_validation": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_fx_qat_pipeline_validation_summary.json",
+      "sha256": "0a38bcfb1b853e965e0d4b1b921cf2ea4f3b7692a2be6b5a8f03d590c1bc203e"
+    }
+  }
+}

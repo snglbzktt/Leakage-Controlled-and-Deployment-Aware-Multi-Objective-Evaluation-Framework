@@ -1,0 +1,47 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "artifact_name": "manuscript_asset_plan",
+  "protocol_version": "phase13_manuscript_asset_plan_v3_3",
+  "locked_at_utc": "2026-08-06T23:47:10.984897+00:00",
+  "source_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_evidence_inventory_v3_3.json",
+      "size_bytes": 171909,
+      "sha256": "d1207ad1a76404cb272c0fb066ce435725019a4522cb634d29ce628ac2bf27ca"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_locked_v3_3.json",
+      "size_bytes": 4179,
+      "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+    }
+  ],
+  "generated_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase13_manuscript_asset_plan_v3_3.json",
+      "size_bytes": 68864,
+      "sha256": "5eef7414399eae36dae3fe2925f8e369c7b3599042a863cec08219821dd0f592"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_asset_plan_v3_3.csv",
+      "size_bytes": 3595,
+      "sha256": "a3d1165b0bf5ccb88a4ae7954d54b03c16a32c152e1f9d4bced9f79d1095b0ea"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_asset_plan_preflight_v3_3.json",
+      "size_bytes": 1588,
+      "sha256": "c504b57ccfe7f4d9420ef05da051b8ccfa61ac2e5a1cc621b688af758a28f525"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_asset_plan_locked_v3_3.json",
+      "size_bytes": 1212,
+      "sha256": "6cc6831b25e24cd26e7b2c74bdc40aa23d0eab98c90f25475aab1b55f625455c"
+    }
+  ],
+  "figure_count": 5,
+  "table_count": 7,
+  "total_asset_count": 12,
+  "generation_performed": false,
+  "ready_for_asset_generation": true,
+  "all_checks_passed": true
+}

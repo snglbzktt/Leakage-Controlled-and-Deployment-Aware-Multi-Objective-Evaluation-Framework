@@ -1,0 +1,160 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "run_id": "tinyml_mlp__fp32_ft__seed_8192",
+  "architecture": "tinyml_mlp",
+  "variant": "FP32-FT",
+  "seed": 8192,
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "model_symbol": "TinyMLMLP",
+  "source_B0_checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_8192\\best_checkpoint.pt",
+    "size_bytes": 123467,
+    "sha256": "cb2e01cfae3b36651853cbe4dab841cedabed53a57d25c508ef4b1e011ddb69b"
+  },
+  "phase5_protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase5_fair_budget_compression_protocol_v3_2.json",
+    "size_bytes": 21842,
+    "sha256": "1681aaa46ce286f498367a6c8a2ccb4c711c091fbb053ec4aa48f9bd1d10ab03"
+  },
+  "locked_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_locked_configuration_matrix_v3_2.csv",
+    "size_bytes": 43039,
+    "sha256": "424bb76cd67006b930579182e08dc5f005bf86ae4adc75df04e0609df06aeed7"
+  },
+  "scaler": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_standard_scaler_v3_2.npz",
+    "size_bytes": 5361,
+    "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+  },
+  "class_weights": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_class_weights_v3_2.npz",
+    "size_bytes": 1117,
+    "sha256": "81c0f102124d2839f4adaab844ef28e57a5778f0930910bb2fa89630a18cb313"
+  },
+  "B0_pair_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_locked_v3_2.json",
+    "size_bytes": 1241,
+    "sha256": "af730f4071ea0db3a4c910231d1964a70d81967838f9448a8b180455537a9a2b"
+  },
+  "pruning_FP32_FT_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_locked_v3_2.json",
+    "size_bytes": 1710,
+    "sha256": "bee8e0c7ea9e06f539e772b52907b187f80e471f257755c01cba738b65abd1b7"
+  },
+  "fit_scope": {
+    "train_used_for_updates": true,
+    "validation_used_for_selection": true,
+    "test_used_for_selection": false,
+    "test_evaluation_count": 1,
+    "raw_occurrence_weight_used_for_fit": false
+  },
+  "parameters": {
+    "optimizer": "AdamW",
+    "batch_size": 4096,
+    "max_epochs": 8,
+    "learning_rate": 0.00030000000000000003,
+    "weight_decay": 0.0001,
+    "early_stopping_patience": 3,
+    "early_stopping_min_delta": 0.0002
+  },
+  "best_epoch": 1,
+  "best_validation_macro_f1": 0.9994347449567399,
+  "training_elapsed_seconds": 13.80777960002888,
+  "model_complexity": {
+    "linear_widths": [
+      [
+        115,
+        64
+      ],
+      [
+        64,
+        32
+      ],
+      [
+        32,
+        3
+      ]
+    ],
+    "parameter_count": 9603,
+    "linear_macs_per_sample": 9504,
+    "raw_tensor_bytes": 38412,
+    "serialized_checkpoint_bytes": 123877
+  },
+  "fragility_gate": {
+    "macro_f1_threshold": 0.85,
+    "attack_FNR_threshold": 0.4,
+    "triggered": false,
+    "reasons": []
+  },
+  "artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\best_checkpoint.pt",
+      "size_bytes": 123877,
+      "sha256": "25f5ee7510310936a126e48636f5b54508e04b6a134e0060ef0a6fd6dbb02fe6",
+      "relative_path": "best_checkpoint.pt"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\metrics.json",
+      "size_bytes": 8132,
+      "sha256": "1970ee86f0e5d0929f3822f08d7956450a521901e2316778f69d48711976ff15",
+      "relative_path": "metrics.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\test_confusion_fingerprint.csv",
+      "size_bytes": 105,
+      "sha256": "b72b4158fa0cf67824ecb71da1aa0558549c3bd12b196a0ae2b3a8483d24724e",
+      "relative_path": "test_confusion_fingerprint.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\test_confusion_raw_weighted.csv",
+      "size_bytes": 109,
+      "sha256": "216a789bf5e151e926ac95773eccfa1cf88d5dcac5c376cde31ad4157fc3129a",
+      "relative_path": "test_confusion_raw_weighted.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\test_per_class_metrics.csv",
+      "size_bytes": 757,
+      "sha256": "cbda5c562851012afe881ca4fec0a529190a29487c1d9527bdecf78a463c7219",
+      "relative_path": "test_per_class_metrics.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\test_predictions.npz",
+      "size_bytes": 3151550,
+      "sha256": "fde65c4fafdbdaf4fbe87ebf9b16e3fdb3c52b17ef79d06886a9a58c90163f34",
+      "relative_path": "test_predictions.npz"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\training_history.csv",
+      "size_bytes": 889,
+      "sha256": "d807b1bbbb6abc1ee3d4310b776bcd0b9859938e428577004721c492f70d9536",
+      "relative_path": "training_history.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\validation_confusion_fingerprint.csv",
+      "size_bytes": 104,
+      "sha256": "46913565c0c97b70fb39c919583d52f7f87acdc4e616efc610082c162372bfe0",
+      "relative_path": "validation_confusion_fingerprint.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\validation_confusion_raw_weighted.csv",
+      "size_bytes": 109,
+      "sha256": "3d5bdb187081c8145188503d46e95028ed46f9a124c87530b5e02ecaebd02cd0",
+      "relative_path": "validation_confusion_raw_weighted.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\validation_per_class_metrics.csv",
+      "size_bytes": 762,
+      "sha256": "5a8d8446fc8d0d355917dcf367a691e73dd5bfe26d309bb8bcd3e3c9f2f68a73",
+      "relative_path": "validation_per_class_metrics.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\validation_predictions.npz",
+      "size_bytes": 3150968,
+      "sha256": "4b947df07ca7001e71f41c9207deac14392043a1ab76e782a505cc3224093872",
+      "relative_path": "validation_predictions.npz"
+    }
+  ],
+  "all_integrity_checks_passed": true,
+  "completed_at_utc": "2026-08-06T18:57:53.586163+00:00"
+}

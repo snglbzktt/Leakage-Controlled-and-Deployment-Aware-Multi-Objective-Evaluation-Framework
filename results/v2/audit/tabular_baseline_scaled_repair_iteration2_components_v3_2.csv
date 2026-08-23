@@ -1,0 +1,4 @@
+component_number,scaled_hash_forward,scaled_hash_reverse,family,split_span,source_fingerprint_count,source_raw_row_count,train_fingerprint_count,validation_fingerprint_count,test_fingerprint_count,train_raw_row_count,validation_raw_row_count,test_raw_row_count,destination_split_code,destination_split,moved_fingerprint_count,moved_raw_row_count
+1,-1219696022103122907,9113710661834464725,0,2,2,2,0,1,1,0,1,1,1,validation,1,1
+2,200960410419187103,-146418049500930453,0,2,2,2,1,1,0,1,1,0,1,validation,1,1
+3,6230801249474060384,224496539320364957,0,2,4,4,3,1,0,3,1,0,0,train,1,1

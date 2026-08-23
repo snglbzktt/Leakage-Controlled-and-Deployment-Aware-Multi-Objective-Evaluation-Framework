@@ -1,0 +1,35 @@
+{
+  "generated_at_utc": "2026-07-25T07:59:20.604632+00:00",
+  "method_name": "DQ",
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\DQ\\seed123\\model_dynamic_int8.onnx",
+  "artifact_sha256": "79d377a0e5e92b1aea30e5d7957bbad882b2cd972b2198d93b61a5c769261f2c",
+  "artifact_size_bytes": 33259,
+  "fp32_onnx_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed123\\model_fp32.onnx",
+  "fp32_onnx_sha256": "a55cfc8a6076a1d004c394a7ccec81c2d903336b10158ea17f84720e6d8b399a",
+  "fp32_onnx_size_bytes": 102463,
+  "size_ratio_vs_fp32_onnx": 0.3245952197378566,
+  "graph_summary": {
+    "node_count": 27,
+    "node_type_counts": {
+      "Add": 4,
+      "Cast": 4,
+      "DynamicQuantizeLinear": 4,
+      "MatMulInteger": 4,
+      "Mul": 8,
+      "Relu": 3
+    },
+    "quantized_node_count": 8,
+    "quantized_node_types_present": [
+      "DynamicQuantizeLinear",
+      "MatMulInteger"
+    ]
+  },
+  "conversion_details": {
+    "function_signature": "(model_input: 'str | Path | onnx.ModelProto', model_output: 'str | Path', op_types_to_quantize=None, per_channel=False, reduce_range=False, weight_type=<QuantType.QInt8: 0>, nodes_to_quantize=None, nodes_to_exclude=None, use_external_data_format=False, extra_options=None)",
+    "used_arguments": {
+      "weight_type": "QInt8",
+      "per_channel": "True",
+      "reduce_range": "False"
+    }
+  }
+}

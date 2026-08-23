@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "tinyml_mlp__p50__seed_42",
+  "architecture": "tinyml_mlp",
+  "variant": "P50",
+  "canonical_report_name": "P50-FP32-FT",
+  "source_variant": "P50-noFT",
+  "seed": 42,
+  "best_epoch": 2,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "test_predictions_sha256": "d992bc95f8bf6c92b87d80b445dbffd86836b4fa4e75c38583bd4faa9bbc4b8f",
+  "metrics_sha256": "826f3d2ee348839516583c45bec031a6787e70b340463c98f40a191b8221cd8b",
+  "run_manifest_sha256": "ab8df5de28a2a53446b34f3ffbd6750b5a829e9fab90199151b811ff375d8b2a",
+  "fragility_gate_triggered": false,
+  "completed_at_utc": "2026-08-06T18:41:11.424704+00:00"
+}

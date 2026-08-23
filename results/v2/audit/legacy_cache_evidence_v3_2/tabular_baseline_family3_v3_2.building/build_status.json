@@ -1,0 +1,11 @@
+{
+  "status": "building",
+  "iteration": 1,
+  "started_at_utc": "2026-08-06T12:56:50.648850+00:00",
+  "builder_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\97_apply_scaled_collision_repair_v3_2.py",
+  "builder_script_sha256": "694d0bebd26aa829c57ebe02c3814bf9689eb68f19803d511d4a16e62f8e8762",
+  "base_cache": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+  "addendum": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_scaled_collision_addendum_v3_2.json",
+  "repair_plan": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_plan_v3.json",
+  "moves_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_moves_v3.csv"
+}

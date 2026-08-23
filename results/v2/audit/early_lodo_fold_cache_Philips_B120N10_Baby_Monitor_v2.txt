@@ -1,0 +1,39 @@
+==================================================================================
+PHASE 2G-0 EARLY LODO FOLD CACHE
+==================================================================================
+
+Held-out device : Philips_B120N10_Baby_Monitor
+Elapsed seconds : 6.119
+
+CACHE COUNTS
+Train           : 984,133
+Validation      : 210,978
+Test            : 1,075,936
+Test occurrence : 1,098,677
+
+CLASS COUNTS
+train: [243910, 20452, 719771]
+validation: [51972, 4429, 154577]
+test: [165141, 300081, 610714]
+
+VALIDATION CHECKS
+write_counts_match: True
+train_shape_matches: True
+validation_shape_matches: True
+test_shape_matches: True
+all_features_finite: True
+class_counts_match: True
+stream_class_counts_match: True
+train_excludes_heldout: True
+validation_excludes_heldout: True
+test_contains_heldout: True
+train_internal_duplicates_zero: True
+train_validation_overlap_zero: True
+train_validation_test_overlap_zero: True
+test_occurrences_positive: True
+test_occurrence_total_matches: True
+scaler_feature_count_115: True
+scaler_sample_count_matches: True
+scaler_values_finite: True
+scaler_scales_positive: True
+all_cache_files_exist: True

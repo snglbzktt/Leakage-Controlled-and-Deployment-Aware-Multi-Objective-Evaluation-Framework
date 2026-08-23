@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "compact_dnn__qat__seed_42",
+  "architecture": "compact_dnn",
+  "variant": "QAT",
+  "source_variant": "B0",
+  "seed": 42,
+  "best_epoch": 2,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "QAT_checkpoint_sha256": "963807cd62bf8539f3cfc11bd0bafdd9015d42a7075b94e6eeac4df4c1df97c1",
+  "INT8_checkpoint_sha256": "a938ae62bf4991a8893eecd5a40ecd43b9935ecce2bdf14ac4624534777a5a3d",
+  "validation_predictions_sha256": "e694f15feaf5a3285f3f0d6c26da31b16f0e26fa3ab0fabfe946fd145df59211",
+  "test_predictions_sha256": "397390ca82eecad0300eab92a7b5caa443185c92448a8243a15e03658f4372cc",
+  "metrics_sha256": "2a2beb659e6f8b70b6bb803d691d95777af2d1aa830523f58f15c7e34cdb2c9a",
+  "run_manifest_sha256": "2f4ecf2001d26c35deb752ae547108f9e04f995b3569f328a5b1a019489e93a0",
+  "fragility_gate_triggered": false,
+  "completed_at_utc": "2026-08-06T19:36:51.774622+00:00"
+}

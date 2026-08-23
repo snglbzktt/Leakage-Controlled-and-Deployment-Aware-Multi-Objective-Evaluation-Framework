@@ -1,0 +1,85 @@
+{
+  "status": "plan_only_not_applied",
+  "repair_iteration": 2,
+  "generated_at_utc": "2026-08-06T13:02:41.717805+00:00",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "source_derived_build_cache": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+  "cross_split_scaled_component_count": 3,
+  "affected_original_fingerprint_row_count": 8,
+  "proposed_moved_fingerprint_count": 3,
+  "proposed_moved_raw_row_count": 3,
+  "global_objective": {
+    "moved_fingerprint_count": 3,
+    "moved_raw_row_count": 3,
+    "sum_absolute_raw_row_split_delta": 2,
+    "sum_absolute_fingerprint_split_delta": 2,
+    "destination_split_codes": [
+      1,
+      1,
+      0
+    ]
+  },
+  "split_plan": [
+    {
+      "split_code": 0,
+      "split": "train",
+      "original_fingerprint_count": 1534583,
+      "fingerprint_delta": 0,
+      "proposed_fingerprint_count": 1534583,
+      "original_raw_row_count": 4943823,
+      "raw_row_delta": 0,
+      "proposed_raw_row_count": 4943823
+    },
+    {
+      "split_code": 1,
+      "split": "validation",
+      "original_fingerprint_count": 371796,
+      "fingerprint_delta": 1,
+      "proposed_fingerprint_count": 371797,
+      "original_raw_row_count": 1059389,
+      "raw_row_delta": 1,
+      "proposed_raw_row_count": 1059390
+    },
+    {
+      "split_code": 2,
+      "split": "test",
+      "original_fingerprint_count": 371797,
+      "fingerprint_delta": -1,
+      "proposed_fingerprint_count": 371796,
+      "original_raw_row_count": 1059394,
+      "raw_row_delta": -1,
+      "proposed_raw_row_count": 1059393
+    }
+  ],
+  "component_span_distribution": {
+    "2": 3,
+    "3": 0
+  },
+  "family_distribution": {
+    "0": 3,
+    "1": 0,
+    "2": 0
+  },
+  "components_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_iteration2_components_v3_2.csv",
+  "moves_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_iteration2_moves_v3_2.csv",
+  "checks": {
+    "failure_report_failed": true,
+    "failure_report_component_count_matches": true,
+    "failure_report_family_conflicts_zero": true,
+    "iteration_report_blocks_training": true,
+    "addendum_locked": true,
+    "addendum_iteration_policy_present": true,
+    "addendum_manifest_locked": true,
+    "all_components_recovered": true,
+    "all_components_single_family": true,
+    "all_components_span_multiple_splits": true,
+    "fingerprint_total_preserved": true,
+    "raw_row_total_preserved": true,
+    "all_proposed_split_counts_positive": true,
+    "objective_move_count_matches_records": true,
+    "objective_raw_rows_match_records": true
+  },
+  "all_checks_passed": true,
+  "elapsed_seconds": 6.017874300014228,
+  "scientific_note": "Iteration 2 follows the already locked v3_2 deterministic iteration policy. It is a plan only and does not mutate cache arrays, the split database, the locked protocol, or model results."
+}

@@ -1,0 +1,22 @@
+{
+  "status": "locked",
+  "phase": 7,
+  "artifact_name": "statistical_analysis_preflight",
+  "protocol_version": "phase7_statistical_analysis_v3_2",
+  "locked_at_utc": "2026-08-06T21:17:22.161333+00:00",
+  "joined_row_count": 110,
+  "omnibus_comparison_count": 16,
+  "posthoc_comparison_count": 160,
+  "protocol": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase7_statistical_analysis_protocol_v3_2.json",
+  "protocol_sha256": "bd0bf99c7870d785d16511c41b9f1d16ddfd500d034b60a14bb098bd06ca384c",
+  "joined_matrix": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_joined_matrix_v3_2.csv",
+  "joined_matrix_sha256": "2fb465ad45209d5b47b54eaf00e3be4492c24f07cb3782fa80bef68d1178bc52",
+  "comparison_plan": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_comparison_plan_v3_2.csv",
+  "comparison_plan_sha256": "cc57da764c3ef080b41caf7ad908fa945104160e4e2dad8ad4b8c294e297d6c1",
+  "preflight_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_preflight_v3_2.json",
+  "preflight_report_sha256": "542ab965dbe11b4649f27fbbe49533d02868082c388cb1d62c0d66bc039561df",
+  "inferential_computation_performed": false,
+  "final_model_selected": false,
+  "ready_for_locked_statistical_execution": true,
+  "all_checks_passed": true
+}

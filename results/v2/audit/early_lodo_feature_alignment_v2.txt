@@ -1,0 +1,29 @@
+==================================================================================
+PHASE 2E-2 EARLY LODO FEATURE ALIGNMENT
+==================================================================================
+
+Metadata rows          : 2,482,676
+Feature count          : 115
+Split-code mismatches  : 0
+Family mismatches      : 0
+Uncovered global rows  : 0
+Duplicate global rows  : 0
+
+SPLIT VALIDATION
+- train | feature_rows=1,738,133 | metadata_rows=1,738,133 | features=115 | label_mismatches=0 | aligned=True
+- validation | feature_rows=371,884 | metadata_rows=371,884 | features=115 | label_mismatches=0 | aligned=True
+- test | feature_rows=372,659 | metadata_rows=372,659 | features=115 | label_mismatches=0 | aligned=True
+
+VALIDATION CHECKS
+metadata_row_count: True
+metadata_processed_completely: True
+all_split_counts_match: True
+all_feature_schemas_match: True
+all_numeric_feature_counts_115: True
+all_label_sequences_match: True
+locked_split_code_exact_match: True
+locked_family3_exact_match: True
+all_global_rows_covered: True
+no_duplicate_global_indices: True
+total_split_rows: True
+index_files_created: True

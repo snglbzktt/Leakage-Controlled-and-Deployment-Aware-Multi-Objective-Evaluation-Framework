@@ -1,0 +1,47 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "asset_id": "table_07_reproducibility_release",
+  "locked_at_utc": "2026-08-07T08:04:16.567655+00:00",
+  "metadata": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\table_07_reproducibility_release_metadata_v3_3.json",
+    "sha256": "14dee030448b30644d4e4c92afc47f0c9a7d7b14e1c16f07b0dc92469ab564a7"
+  },
+  "outputs": {
+    "csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_07_reproducibility_release_v3_3.csv",
+      "sha256": "615a4b348db880d9b541ceabd9542616af3ecbf0224fd878d5cf56317e7bb173",
+      "size_bytes": 2259
+    },
+    "markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_07_reproducibility_release_v3_3.md",
+      "sha256": "202ffd431de4f0fb348bde08b82beef2ebb0d540368ccb8179dbeec8aa69ca0b",
+      "size_bytes": 2453
+    },
+    "source_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_07_reproducibility_release_source_v3_3.json",
+      "sha256": "214cb9276306674deecafa58eca0562dc254c404b3db5597903546a4b2736aaa",
+      "size_bytes": 2768
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\table_07_reproducibility_release_caption_v3_3.txt",
+      "sha256": "910f642ca03c53715a1ae3fe23cac48f6758a2c8aee9bb78449c5a02905b9255",
+      "size_bytes": 459
+    }
+  },
+  "row_count": 19,
+  "selected_model_family": "tinyml_mlp::P50-QAT",
+  "canonical_seed": 2026,
+  "checkpoint_sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+  "release_tree_sha256": "6348e0329c6f926863fadf5ce6be2d8a7f27cad927b0dfe8165811e538faa255",
+  "zip_archive_sha256": "b3decdf91a16b0716aa04dce8f406edd0f7fad117216d7822e00f554a02950b5",
+  "deterministic_rebuild_exact": true,
+  "model_retraining_performed": false,
+  "test_used_for_model_selection": false,
+  "final_model_changed": false,
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

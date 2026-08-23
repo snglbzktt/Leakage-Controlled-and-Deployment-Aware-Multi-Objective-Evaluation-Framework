@@ -1,0 +1,20 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "dynamic_quantization_runtime_preflight",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T19:07:18.955602+00:00",
+  "run_count": 10,
+  "variant": "DQ",
+  "source_policy": "matching locked B0 checkpoint",
+  "quantized_dtype": "torch.qint8",
+  "quantization_engine": "onednn",
+  "validation_access_count": 0,
+  "test_access_count": 0,
+  "matrix_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_DQ_runtime_preflight_matrix_v3_2.csv",
+  "matrix_csv_sha256": "06e80ac0c4abbca9ffc88fd53608da303c0bef613a5bfcf60667356d79939553",
+  "report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_DQ_runtime_preflight_v3_2.json",
+  "report_sha256": "75a80d5243cdbc89f1872ca11fde4d46260e21c611098e19d1ac9017be617cda",
+  "ready_for_DQ_evaluation": true,
+  "all_checks_passed": true
+}

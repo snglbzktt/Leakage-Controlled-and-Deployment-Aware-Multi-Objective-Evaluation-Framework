@@ -1,0 +1,10 @@
+﻿device_id,device,benign_fingerprint_count,benign_raw_occurrence_count,gafgyt_fingerprint_count,gafgyt_raw_occurrence_count,mirai_fingerprint_count,mirai_raw_occurrence_count,present_family_count,present_families,missing_families,family3_macro_f1_coverage
+D01,Danmini_Doorbell,40395,49548,304044,316650,652100,652100,3,benign|gafgyt|mirai,,3_of_3
+D02,Ecobee_Thermostat,13111,13113,297890,310630,512133,512133,3,benign|gafgyt|mirai,,3_of_3
+D03,Ennio_Doorbell,35410,39100,303189,316400,0,0,2,benign|gafgyt,mirai,2_of_3
+D04,Philips_B120N10_Baby_Monitor,165141,175240,300081,312723,610714,610714,3,benign|gafgyt|mirai,,3_of_3
+D05,Provision_PT_737E_Security_Camera,55169,62154,316657,330096,436010,436010,3,benign|gafgyt|mirai,,3_of_3
+D06,Provision_PT_838_Security_Camera,93995,98514,296710,309040,429337,429337,3,benign|gafgyt|mirai,,3_of_3
+D07,Samsung_SNH_1011_N_Webcam,49559,52150,309809,323072,0,0,2,benign|gafgyt,mirai,2_of_3
+D08,SimpleHome_XCS7_1002_WHT_Security_Camera,42784,46585,291015,303223,513248,513248,3,benign|gafgyt|mirai,,3_of_3
+D09,SimpleHome_XCS7_1003_WHT_Security_Camera,17936,19528,303530,316438,514860,514860,3,benign|gafgyt|mirai,,3_of_3

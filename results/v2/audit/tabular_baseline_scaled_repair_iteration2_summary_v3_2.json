@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T13:08:43.666585+00:00",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "repair_iterations_completed": 2,
+  "iteration2_move_count": 3,
+  "cumulative_move_count": 356,
+  "fingerprint_count": 2278176,
+  "represented_raw_row_count": 7062606,
+  "final_split_counts": {
+    "train": {
+      "fingerprints": 1534583,
+      "raw_rows": 4943823
+    },
+    "validation": {
+      "fingerprints": 371797,
+      "raw_rows": 1059390
+    },
+    "test": {
+      "fingerprints": 371796,
+      "raw_rows": 1059393
+    }
+  },
+  "scaled_cross_split_overlap_count": 0,
+  "scaled_global_family_conflict_count": 0,
+  "final_cache": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2",
+  "manifest": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\manifest.json",
+  "manifest_sha256": "c50fd55a14727f28759f9a96766f2dbb1d78fecd9dfb38abf340fd8b152f2bd0",
+  "cache_size_bytes": 1233488679,
+  "elapsed_seconds": 49.54847639997024,
+  "all_checks_passed": true
+}

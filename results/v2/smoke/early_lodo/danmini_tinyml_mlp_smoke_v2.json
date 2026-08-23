@@ -1,0 +1,172 @@
+{
+  "protocol_version": "early_lodo_smoke_test_v2_1",
+  "status": "passed",
+  "completed_at": "2026-08-05T19:09:26.885858+00:00",
+  "scientific_result": false,
+  "purpose": "Pipeline smoke test only. Do not use these metrics in the manuscript.",
+  "held_out_device": "Danmini_Doorbell",
+  "held_out_device_id": 0,
+  "model_name": "tinyml_mlp",
+  "seed": 2026,
+  "epoch_count": 1,
+  "sample_sizes": {
+    "train": 12288,
+    "validation": 6144,
+    "test": 6144
+  },
+  "sample_class_counts": {
+    "train": [
+      4096,
+      4096,
+      4096
+    ],
+    "validation": [
+      2048,
+      2048,
+      2048
+    ],
+    "test": [
+      2048,
+      2048,
+      2048
+    ]
+  },
+  "test_source_distribution": {
+    "train": 4300,
+    "validation": 923,
+    "test": 921
+  },
+  "overlap_counts": {
+    "train_test": 0,
+    "validation_test": 0,
+    "train_validation": 0
+  },
+  "scaler": {
+    "fit_source": "smoke training sample only",
+    "feature_count": 115,
+    "maximum_absolute_mean": 6301090566874293.0,
+    "minimum_scale": 0.07181893846745804,
+    "maximum_scale": 5.547934719381307e+16
+  },
+  "model": {
+    "parameter_count": 9603,
+    "parameter_change_sum": 71.96720562875271
+  },
+  "losses": {
+    "training": 1.0150253971417744,
+    "validation": 0.8822072148323059,
+    "test": 0.901481032371521
+  },
+  "validation_metrics": {
+    "accuracy": 0.5699869791666666,
+    "balanced_accuracy": 0.5699869791666666,
+    "macro_f1_present_classes": 0.5249218055235051,
+    "weighted_f1": 0.5249218055235051,
+    "confusion_matrix": [
+      [
+        302,
+        1584,
+        162
+      ],
+      [
+        2,
+        1706,
+        340
+      ],
+      [
+        0,
+        554,
+        1494
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "support": 2048,
+        "recall": 0.1474609375,
+        "fnr": 0.8525390625,
+        "f1": 0.2568027210884354
+      },
+      "gafgyt": {
+        "support": 2048,
+        "recall": 0.8330078125,
+        "fnr": 0.1669921875,
+        "f1": 0.5790902919212492
+      },
+      "mirai": {
+        "support": 2048,
+        "recall": 0.7294921875,
+        "fnr": 0.2705078125,
+        "f1": 0.7388724035608308
+      }
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.5016276041666666,
+    "balanced_accuracy": 0.5016276041666666,
+    "macro_f1_present_classes": 0.41821856309277833,
+    "weighted_f1": 0.41821856309277833,
+    "confusion_matrix": [
+      [
+        0,
+        2048,
+        0
+      ],
+      [
+        1,
+        1551,
+        496
+      ],
+      [
+        0,
+        517,
+        1531
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "support": 2048,
+        "recall": 0.0,
+        "fnr": 1.0,
+        "f1": 0.0
+      },
+      "gafgyt": {
+        "support": 2048,
+        "recall": 0.75732421875,
+        "fnr": 0.24267578125,
+        "f1": 0.5032446463335496
+      },
+      "mirai": {
+        "support": 2048,
+        "recall": 0.74755859375,
+        "fnr": 0.25244140625,
+        "f1": 0.7514110429447852
+      }
+    }
+  },
+  "elapsed_seconds": 2.106015200028196,
+  "validation_checks": {
+    "train_quota_met": true,
+    "validation_quota_met": true,
+    "test_quota_met": true,
+    "all_train_classes_present": true,
+    "all_validation_classes_present": true,
+    "all_test_classes_present": true,
+    "train_test_overlap_zero": true,
+    "validation_test_overlap_zero": true,
+    "train_validation_overlap_zero": true,
+    "train_rows_exclude_heldout": true,
+    "validation_rows_exclude_heldout": true,
+    "test_rows_include_heldout": true,
+    "raw_features_finite": true,
+    "scaled_features_finite": true,
+    "scaler_has_115_features": true,
+    "model_parameter_count_positive": true,
+    "training_loss_finite": true,
+    "validation_loss_finite": true,
+    "test_loss_finite": true,
+    "model_parameters_changed": true,
+    "validation_metrics_finite": true,
+    "test_metrics_finite": true
+  },
+  "all_checks_passed": true
+}

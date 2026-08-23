@@ -1,0 +1,205 @@
+{
+  "protocol_name": "N-BaIoT numeric processing order training pilot",
+  "protocol_version": "numeric_order_training_pilot_v2_1",
+  "status": "locked_before_training",
+  "locked_at": "2026-08-05T17:21:02.912601+00:00",
+  "objective": "Determine whether float32 conversion before standardization or after standardization produces a meaningful and repeatable change in family-3 classification performance.",
+  "selection_scope": "This pilot selects only the numeric processing order. It is not a final model-comparison study.",
+  "dataset": {
+    "name": "nbaiot_primary_seed2026",
+    "source_precision": "float64",
+    "split_seed": 2026,
+    "split_assignment": "existing locked primary splits",
+    "train_rows": 1738133,
+    "validation_rows": 371884,
+    "test_rows": 372659,
+    "feature_count": 115
+  },
+  "task": {
+    "name": "family_3",
+    "classes": [
+      "benign",
+      "gafgyt",
+      "mirai"
+    ],
+    "label_mapping": {
+      "benign": "benign",
+      "gafgyt_*": "gafgyt",
+      "mirai_*": "mirai"
+    }
+  },
+  "numeric_pipelines": {
+    "pipeline_a": {
+      "description": "source float64 -> float32 -> promote to float64 for train-only StandardScaler -> final float32 model input",
+      "scaler_fit_split": "train_only",
+      "scaler_parameter_dtype": "float64",
+      "model_input_dtype": "float32"
+    },
+    "pipeline_b": {
+      "description": "source float64 -> train-only StandardScaler in float64 -> final float32 model input",
+      "scaler_fit_split": "train_only",
+      "scaler_parameter_dtype": "float64",
+      "model_input_dtype": "float32"
+    }
+  },
+  "models": {
+    "tinyml_mlp": {
+      "display_name": "TinyML-MLP",
+      "parameter_count": 9603,
+      "learning_rate": 0.003
+    },
+    "compact_dnn": {
+      "display_name": "Compact-DNN",
+      "parameter_count": 25283,
+      "learning_rate": 0.001
+    }
+  },
+  "training_seeds": [
+    42,
+    123
+  ],
+  "seed_selection_rationale": "Seeds 42 and 123 are the first two seeds in the locked five-seed baseline protocol. Seed 42 is the historical tuning seed; seed 123 provides an independent matched replication.",
+  "run_count": 8,
+  "run_matrix": [
+    {
+      "run_id": "pipeline_a__tinyml_mlp__seed42",
+      "numeric_pipeline": "pipeline_a",
+      "model_name": "tinyml_mlp",
+      "seed": 42,
+      "learning_rate": 0.003
+    },
+    {
+      "run_id": "pipeline_a__tinyml_mlp__seed123",
+      "numeric_pipeline": "pipeline_a",
+      "model_name": "tinyml_mlp",
+      "seed": 123,
+      "learning_rate": 0.003
+    },
+    {
+      "run_id": "pipeline_a__compact_dnn__seed42",
+      "numeric_pipeline": "pipeline_a",
+      "model_name": "compact_dnn",
+      "seed": 42,
+      "learning_rate": 0.001
+    },
+    {
+      "run_id": "pipeline_a__compact_dnn__seed123",
+      "numeric_pipeline": "pipeline_a",
+      "model_name": "compact_dnn",
+      "seed": 123,
+      "learning_rate": 0.001
+    },
+    {
+      "run_id": "pipeline_b__tinyml_mlp__seed42",
+      "numeric_pipeline": "pipeline_b",
+      "model_name": "tinyml_mlp",
+      "seed": 42,
+      "learning_rate": 0.003
+    },
+    {
+      "run_id": "pipeline_b__tinyml_mlp__seed123",
+      "numeric_pipeline": "pipeline_b",
+      "model_name": "tinyml_mlp",
+      "seed": 123,
+      "learning_rate": 0.003
+    },
+    {
+      "run_id": "pipeline_b__compact_dnn__seed42",
+      "numeric_pipeline": "pipeline_b",
+      "model_name": "compact_dnn",
+      "seed": 42,
+      "learning_rate": 0.001
+    },
+    {
+      "run_id": "pipeline_b__compact_dnn__seed123",
+      "numeric_pipeline": "pipeline_b",
+      "model_name": "compact_dnn",
+      "seed": 123,
+      "learning_rate": 0.001
+    }
+  ],
+  "training": {
+    "optimizer": "AdamW",
+    "batch_size": 4096,
+    "max_epochs": 15,
+    "early_stopping_patience": 4,
+    "early_stopping_min_delta": 0.0002,
+    "weight_decay": 0.0001,
+    "loss": "CrossEntropyLoss",
+    "class_weight_scheme": "inverse square root frequency normalized to mean 1",
+    "class_weights_fitted_from": "primary train split only",
+    "class_weights_shared_between_numeric_pipelines": true,
+    "num_workers": 0,
+    "device": "cpu",
+    "best_checkpoint_metric": "validation_macro_f1",
+    "test_evaluations_per_run": 1
+  },
+  "fairness_controls": {
+    "same_source_rows": true,
+    "same_split_assignments": true,
+    "same_label_mapping": true,
+    "same_class_weights": true,
+    "same_model_initialization_for_matched_seed": true,
+    "same_training_order_for_matched_seed": true,
+    "same_optimizer_and_stopping_rules": true,
+    "only_intended_difference": "numeric processing order"
+  },
+  "primary_analysis": {
+    "unit": "matched model-seed pair",
+    "pair_count": 4,
+    "metric": "best validation Macro-F1",
+    "delta_direction": "pipeline_b_minus_pipeline_a",
+    "practical_equivalence_margin": 0.001,
+    "pipeline_b_selection_rule": "Select pipeline B only when the median paired validation Macro-F1 delta is at least +0.001 and pipeline B wins at least 3 of 4 matched pairs.",
+    "pipeline_a_selection_rule": "Select pipeline A when the median paired validation Macro-F1 delta is at most -0.001 and pipeline A wins at least 3 of 4 matched pairs.",
+    "inconclusive_rule": "Otherwise classify the two orders as practically equivalent for this pilot and retain pipeline A for continuity with the current model-facing pipeline and because it produced lower split overlap in the no-training audit.",
+    "test_set_policy": "Test metrics are recorded once from each validation-selected checkpoint but are not used to choose the numeric processing order."
+  },
+  "reporting": {
+    "required_validation_metrics": [
+      "loss",
+      "accuracy",
+      "macro_f1",
+      "per_class_recall",
+      "per_class_fnr",
+      "confusion_matrix"
+    ],
+    "required_test_metrics": [
+      "loss",
+      "accuracy",
+      "macro_f1",
+      "per_class_recall",
+      "per_class_fnr",
+      "confusion_matrix"
+    ],
+    "required_runtime_fields": [
+      "training_seconds",
+      "best_epoch",
+      "epochs_completed",
+      "peak_process_memory_mb"
+    ]
+  },
+  "source_artifacts": {
+    "baseline_protocol": "configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json",
+    "model_registry": "models\\architecture\\nbaiot_model_registry_v1.json",
+    "phase_1d_summary": "results\\v2\\audit\\numeric_pipeline_order_summary_v2.json"
+  },
+  "validation_checks": {
+    "phase_1d_completed": true,
+    "phase_1d_checks_passed": true,
+    "phase_1d_pilot_required": true,
+    "optimizer_adamw": true,
+    "batch_size_4096": true,
+    "max_epochs_15": true,
+    "patience_4": true,
+    "minimum_delta_0_0002": true,
+    "weight_decay_0_0001": true,
+    "main_seed_set_available": true,
+    "pilot_seeds_available": true,
+    "tinyml_mlp_registered": true,
+    "compact_dnn_registered": true,
+    "tinyml_learning_rate": true,
+    "compact_learning_rate": true
+  },
+  "all_checks_passed": true
+}

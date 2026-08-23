@@ -1,0 +1,60 @@
+{
+  "status": "completed",
+  "phase": 11,
+  "artifact_name": "input_robustness_analysis",
+  "protocol_version": "phase11_input_robustness_v3_3",
+  "completed_at_utc": "2026-08-06T23:36:23.967109+00:00",
+  "model_count": 3,
+  "condition_count": 9,
+  "evaluation_count": 27,
+  "test_rows": 371796,
+  "represented_raw_rows": 1059393,
+  "condition_perturbation_sha256": {
+    "clean": "e6af62f3991d057d7515c76230719474f79ec7a6ff7cc2de2c11b2c4a635de47",
+    "gaussian_noise_1pct": "c4dc4d07de7966d966bbf89df7578feebda031d1e562fbb2121121be746a3ea6",
+    "gaussian_noise_5pct": "8d75426f97563f2b3deed810bdd215121b177e4ba1a703a9131baf8c2250269f",
+    "gaussian_noise_10pct": "c243d9e5abfb6105ff8a29d70e083ff2b79592b0e303d95ebd979f70c77be799",
+    "feature_mask_5pct": "f8695da929f130c82407212ee75aa2afb2a9fb8ec89c368281b924f869bf3e73",
+    "feature_mask_10pct": "d03975452217b835a4e29748530ddd74830732a22493f8652b84f2e0de1dbed2",
+    "feature_mask_20pct": "3e1a7a6925c739aba785e26e443a075cf9edcf3b1fa3aee0b1d674efd1c0571b",
+    "scale_drift_minus_10pct": "520997dcebacf4efc2c9f547d8f1c7dcb9cd33276274de0b8d6b8bd0f26ff4dd",
+    "scale_drift_plus_10pct": "426fb694a445a6ccd3f0203a4e13c0848935f3590bd274af242b56a18d07cc77"
+  },
+  "clean_reproduction_gate_passed": true,
+  "model_summaries": {
+    "tinyml_mlp_B0": {
+      "clean_fingerprint_macro_f1": 0.9992545342200568,
+      "clean_raw_weighted_macro_f1": 0.9980267703090027,
+      "worst_condition": "feature_mask_20pct",
+      "worst_fingerprint_macro_f1": 0.8874710311511499,
+      "maximum_macro_f1_drop": 0.11178350306890694,
+      "severe_fragility_condition_count": 0,
+      "material_sensitivity_condition_count": 2
+    },
+    "tinyml_mlp_P50_QAT": {
+      "clean_fingerprint_macro_f1": 0.9970080708948338,
+      "clean_raw_weighted_macro_f1": 0.9959473619503365,
+      "worst_condition": "feature_mask_20pct",
+      "worst_fingerprint_macro_f1": 0.8788134810282804,
+      "maximum_macro_f1_drop": 0.1181945898665534,
+      "severe_fragility_condition_count": 0,
+      "material_sensitivity_condition_count": 2
+    },
+    "hist_gradient_boosting_B0": {
+      "clean_fingerprint_macro_f1": 0.9997380683535377,
+      "clean_raw_weighted_macro_f1": 0.9990430947883375,
+      "worst_condition": "scale_drift_plus_10pct",
+      "worst_fingerprint_macro_f1": 0.45432326660478023,
+      "maximum_macro_f1_drop": 0.5454148017487574,
+      "severe_fragility_condition_count": 5,
+      "material_sensitivity_condition_count": 5
+    }
+  },
+  "severe_fragility_evaluation_count": 5,
+  "material_sensitivity_evaluation_count": 9,
+  "model_retraining_performed": false,
+  "test_used_for_model_selection": false,
+  "final_model_changed": false,
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

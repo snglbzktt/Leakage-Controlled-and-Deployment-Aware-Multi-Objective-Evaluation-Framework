@@ -1,0 +1,140 @@
+{
+  "protocol_version": "early_lodo_preflight_v2_1",
+  "status": "completed",
+  "completed_at": "2026-08-05T18:15:23.095392+00:00",
+  "selected_numeric_pipeline": "pipeline_a",
+  "device_lodo_summary": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\device_lodo_compact_summary_v2.csv",
+    "row_count": 9,
+    "columns": [
+      "device_id",
+      "device",
+      "fingerprint_count",
+      "raw_occurrence_count",
+      "novel_fingerprint_count",
+      "novel_fingerprint_pct",
+      "novel_occurrence_count",
+      "novel_occurrence_pct",
+      "train_exposed_fingerprint_count",
+      "train_exposed_fingerprint_pct",
+      "train_exposed_occurrence_count",
+      "train_exposed_occurrence_pct"
+    ],
+    "device_column": "device"
+  },
+  "device_family_support": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\device_family_support_v2.csv",
+    "row_count": 9,
+    "columns": [
+      "device_id",
+      "device",
+      "benign_fingerprint_count",
+      "benign_raw_occurrence_count",
+      "gafgyt_fingerprint_count",
+      "gafgyt_raw_occurrence_count",
+      "mirai_fingerprint_count",
+      "mirai_raw_occurrence_count",
+      "present_family_count",
+      "present_families",
+      "missing_families",
+      "family3_macro_f1_coverage"
+    ],
+    "device_column": "device"
+  },
+  "devices": [
+    "Danmini_Doorbell",
+    "Ecobee_Thermostat",
+    "Ennio_Doorbell",
+    "Philips_B120N10_Baby_Monitor",
+    "Provision_PT_737E_Security_Camera",
+    "Provision_PT_838_Security_Camera",
+    "Samsung_SNH_1011_N_Webcam",
+    "SimpleHome_XCS7_1002_WHT_Security_Camera",
+    "SimpleHome_XCS7_1003_WHT_Security_Camera"
+  ],
+  "device_count": 9,
+  "registered_pilot_models": [
+    "compact_dnn",
+    "tinyml_mlp"
+  ],
+  "packages": {
+    "scikit_learn": {
+      "available": true,
+      "version": "1.9.0",
+      "error": null
+    },
+    "lightgbm": {
+      "available": false,
+      "version": null,
+      "error": null
+    },
+    "xgboost": {
+      "available": false,
+      "version": null,
+      "error": null
+    },
+    "pandas": {
+      "available": true,
+      "version": "3.0.5",
+      "error": null
+    },
+    "numpy": {
+      "available": true,
+      "version": "2.4.6",
+      "error": null
+    },
+    "torch": {
+      "available": true,
+      "version": "2.11.0+cpu",
+      "error": null
+    }
+  },
+  "sklearn_estimators": {
+    "HistGradientBoostingClassifier": true,
+    "RandomForestClassifier": true,
+    "ExtraTreesClassifier": true,
+    "LogisticRegression": true
+  },
+  "strong_baseline_candidates": [
+    "HistGradientBoostingClassifier",
+    "ExtraTreesClassifier",
+    "RandomForestClassifier"
+  ],
+  "sqlite_database": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\nbaiot_exact_byte_audit_v2.sqlite",
+    "size_gb": 2.834705352783203,
+    "table_count": 3,
+    "candidate_table_count": 1
+  },
+  "parquet_inventory": {
+    "file_count": 8,
+    "candidate_file_count": 2
+  },
+  "resources": {
+    "python_version": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpu_count": 20,
+    "available_ram_gb": 5.056812286376953,
+    "free_disk_gb": 10.217964172363281
+  },
+  "validation_checks": {
+    "phase_1e_locked": true,
+    "pipeline_a_selected": true,
+    "test_not_used_for_numeric_selection": true,
+    "device_summary_not_empty": true,
+    "device_support_not_empty": true,
+    "exact_device_count": true,
+    "tinyml_and_compact_registered": true,
+    "sqlite_database_readable": true,
+    "strong_baseline_available": true,
+    "available_ram_at_least_3_gb": true,
+    "free_disk_at_least_3_gb": true
+  },
+  "all_checks_passed": true,
+  "outputs": {
+    "sqlite_inventory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_sqlite_inventory_v2.csv",
+    "parquet_inventory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_parquet_inventory_v2.csv",
+    "code_hits": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_device_code_hits_v2.txt",
+    "report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_preflight_v2.txt"
+  }
+}

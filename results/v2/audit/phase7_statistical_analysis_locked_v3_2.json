@@ -1,0 +1,23 @@
+{
+  "status": "locked",
+  "phase": 7,
+  "artifact_name": "statistical_analysis",
+  "protocol_version": "phase7_statistical_analysis_v3_2",
+  "locked_at_utc": "2026-08-06T21:23:51.169361+00:00",
+  "descriptive_row_count": 176,
+  "omnibus_analysis_count": 16,
+  "posthoc_comparison_count": 160,
+  "verified_omnibus_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_omnibus_verified_v3_2.csv",
+  "verified_omnibus_csv_sha256": "cd0845bc8ea754f328f293f335ce9ed55ad84bfe1f4bee0aa638c42258c1c070",
+  "verified_posthoc_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_posthoc_verified_v3_2.csv",
+  "verified_posthoc_csv_sha256": "e654b3e8ded77dfab834754331cf5c9601e312bf4616b83c6f327730e68626bd",
+  "verification_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_verification_v3_2.json",
+  "verification_report_sha256": "538ad1da336ed198924e45dc5834c94b98d0b4e5902cf2d1105cbe916f0c9eab",
+  "descriptive_summary_sha256": "49c8c6a37a265d346b1766972ae6c1d0fbb18a6a682ed4bdbdc7a4b06eda68e2",
+  "omnibus_results_sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2",
+  "posthoc_results_sha256": "9fff5dbbc1e455ef1c29c54d8e3762f1b01e6abfbe6027dd0c6c7a4118d19e47",
+  "model_inference_repeated_by_verifier": false,
+  "final_model_selected": false,
+  "ready_for_multi_objective_decision_preflight": true,
+  "all_checks_passed": true
+}

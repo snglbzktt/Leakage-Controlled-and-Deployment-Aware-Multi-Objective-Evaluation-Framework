@@ -1,0 +1,7 @@
+arm,split,row_count,unique_fingerprint_count,row_percentage
+naive_row,train,4945117,2194846,70.0183048580085
+naive_row,validation,1058940,817069,14.993615671042672
+naive_row,test,1058549,817196,14.988079470948826
+fingerprint_grouped,train,4945425,1738133,70.02266585450187
+fingerprint_grouped,validation,1057969,371884,14.979867204824961
+fingerprint_grouped,test,1059212,372659,14.997466940673174

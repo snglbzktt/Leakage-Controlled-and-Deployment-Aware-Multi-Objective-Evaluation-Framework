@@ -1,0 +1,388 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T13:17:14.927579+00:00",
+  "purpose": "Preserve compact audit evidence and cryptographic inventory before deleting failed/intermediate cache directories.",
+  "final_cache": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2",
+  "final_cache_manifest": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\manifest.json",
+  "final_cache_manifest_sha256": "c50fd55a14727f28759f9a96766f2dbb1d78fecd9dfb38abf340fd8b152f2bd0",
+  "final_verification_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_final_cache_verification_v3_2.json",
+  "final_verification_report_sha256": "4d477a139445c75310233307adeae198e39cd1c1489a2a2cb978c5acfc1e3c18",
+  "legacy_directories": [
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building"
+  ],
+  "legacy_sizes_before_bytes": {
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building": 1174720608,
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building": 1233297967
+  },
+  "source_file_inventory": [
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "build_status.json",
+      "size_bytes": 492,
+      "sha256": "888dbe73d9976d950e070b9f3bf879d4400d082fb4768cb9c1cfc44835e6c36d",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "hash_forward_test.npy",
+      "size_bytes": 2974504,
+      "sha256": "131ad3295b08b3288784d2fe67fa9b7cd4440be553332c364ffa70c686d352b1",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "hash_forward_train.npy",
+      "size_bytes": 12276792,
+      "sha256": "ddb012dadeb76900aa9440d8ed0613b796a0a3f3fa30a3afb9a19381c815ba79",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "hash_forward_validation.npy",
+      "size_bytes": 2974496,
+      "sha256": "1b1a0b8b4bf02678a460ae3d1ed5c4d0318f6e62dc07c7bae9fffa11a719166c",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "hash_reverse_test.npy",
+      "size_bytes": 2974504,
+      "sha256": "06c1bb977f721d26886b32485d28d4cdc6bdf35fe21f5a277ec46b5a2937d64d",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "hash_reverse_train.npy",
+      "size_bytes": 12276792,
+      "sha256": "9ed4a2aebb7f352aabe2780bb98dffe971d643f0666a7cffa8b2c40cd721f983",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "hash_reverse_validation.npy",
+      "size_bytes": 2974496,
+      "sha256": "da3eaa7d9572cebb1d3453a109e723b868cee02070e9c6b642c5c49f9f230ce3",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "raw_row_count_test.npy",
+      "size_bytes": 2974504,
+      "sha256": "536899afae3e8e7e9d3d527a5888946f72e6b9580bc2399fb07d4afa646e20f1",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "raw_row_count_train.npy",
+      "size_bytes": 12276792,
+      "sha256": "a77c0cf401ded307da9bae8d6822451a22b7fad836fc2bf7effaccc701108aa3",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "raw_row_count_validation.npy",
+      "size_bytes": 2974496,
+      "sha256": "54448da6c6f70dcbadbb361f45f1c963f433f50d734f9c11dc0f35c9e80ee3cc",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "scaled_model_input_overlap_audit.sqlite",
+      "size_bytes": 69799936,
+      "sha256": "12124a625d896ac4f8fad5d09b2c3977ca81c9d0f34a4c1d82c5e4d886b74f9d",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "scaled_overlap_failure.json",
+      "size_bytes": 804,
+      "sha256": "ae71c5a86abe649f35debcb0337a43e6ff05d9c82bae48fe4901ba545ae712ed",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "scaler_mean.npy",
+      "size_bytes": 1048,
+      "sha256": "64e91934b4a6e074d37c7ec04c48b5e598ca55bae78c7cee3cad6a541a2a8fa7",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "scaler_scale.npy",
+      "size_bytes": 1048,
+      "sha256": "c256e1b96c2e3a17ba0517bcdd3609d299a2e184b182d0c0bd325c31c4c90d66",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "X_test.npy",
+      "size_bytes": 171026748,
+      "sha256": "2c35826f82bb17ae5b8ebb5ad04b053c3c3801e4aace1523a7264346bfbe5124",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "X_train.npy",
+      "size_bytes": 705908308,
+      "sha256": "9e5dc61617caa0217a7d8d29869a125af8427dadf494a30d029daa3c8e696219",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "X_validation.npy",
+      "size_bytes": 171026288,
+      "sha256": "8083deab3b4222c5bfa9235842eccd8d7f47081f004906aff4e1002c403c072f",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "y_test.npy",
+      "size_bytes": 371925,
+      "sha256": "a1d28f2dc235e99fb9c1f574a0d7dfb99366cf61598f6a7e5b99d6b88b24d0fb",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "y_train.npy",
+      "size_bytes": 1534711,
+      "sha256": "b8f4a448e2c5ede6c856617cfeff3f9038f040771be933e3f9f1ce37f4398f08",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "relative_path": "y_validation.npy",
+      "size_bytes": 371924,
+      "sha256": "f93126531b62970749799b53c93fd46b3575e800b8af2e9d6fbbc20d7d3ead25",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "build_status.json",
+      "size_bytes": 834,
+      "sha256": "dbdae18ebec1a22562bc4e0ac1f292d5239bfcc02b68bc2c7e2d8ff1a63915dd",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "hash_forward_test.npy",
+      "size_bytes": 2974504,
+      "sha256": "440e577dc070d44d5cd36556d64ba677896bd168c211eb9242eec46fd3239c0f",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "hash_forward_train.npy",
+      "size_bytes": 12276792,
+      "sha256": "36020398bb0986bb19cacc6166c2a3ae8347476f1a7b3d2edde28a5ba69e5291",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "hash_forward_validation.npy",
+      "size_bytes": 2974496,
+      "sha256": "a5093ec9015c43be402a97e6087a0ccfc1a88eef1c3fc22f2455af8744cc0e5e",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "hash_reverse_test.npy",
+      "size_bytes": 2974504,
+      "sha256": "12ee9d236665635456d9ed433729f6cd91c177e76d85bb66c2e65646ee0b774c",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "hash_reverse_train.npy",
+      "size_bytes": 12276792,
+      "sha256": "3cb7e28cec428de948dacb42058f4b1cacaf9534c4ca35584ae621246d41895d",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "hash_reverse_validation.npy",
+      "size_bytes": 2974496,
+      "sha256": "5a857a86e9e870774d694e9de9d3a59751d13728b16c2864e991f17a9adbaec3",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "raw_row_count_test.npy",
+      "size_bytes": 2974504,
+      "sha256": "748168f2ee667d122a17f3771288021c588406f0b53b1413e015f66c33b6ced3",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "raw_row_count_train.npy",
+      "size_bytes": 12276792,
+      "sha256": "68dbb1ce817563ea623235a34f4fed4076701b350d48c3138b7db327bb4087f4",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "raw_row_count_validation.npy",
+      "size_bytes": 2974496,
+      "sha256": "23eb0983701ff2779e11c2b7331e218c440989f9dfd98af3d98719bc5db054f9",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "scaled_model_input_overlap_audit.sqlite",
+      "size_bytes": 69758976,
+      "sha256": "a15f279d43f7791378c62b6b3e71950795e974086ffd8838fbee9f4fc020c47d",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "scaled_overlap_failure_iteration1.json",
+      "size_bytes": 925,
+      "sha256": "98556025c1086196c112219de7f430ee131a0b9fbf7ab8a502e1944e5249f72b",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "scaler_mean.npy",
+      "size_bytes": 1048,
+      "sha256": "8778949e1f52fdce9fde4df4db61c7d44a5b180b8b0560ba60eb7810c1b8d30e",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "scaler_scale.npy",
+      "size_bytes": 1048,
+      "sha256": "c60db6a3cb8b8494b0b0d94cafc0d1703110ca1621c7a184cdbf7729559e1059",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "unscaled_hash_overlap_audit.sqlite",
+      "size_bytes": 58617856,
+      "sha256": "c981e8de10c7ef0aec09e641271ba5826d119e87ca4d0abf919ec9ae9eae2d53",
+      "copied_to_evidence_archive": true
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "X_test.npy",
+      "size_bytes": 171026748,
+      "sha256": "9da3defcfb0b3ba27494737d3418a8f3e0c50ba5cd9ffebb3fa57ff84adf9916",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "X_train.npy",
+      "size_bytes": 705908308,
+      "sha256": "2e9024d213b4387bb2fee67cc43801de50e9ef3ee38761a82e62bacfc5c705b2",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "X_validation.npy",
+      "size_bytes": 171026288,
+      "sha256": "bf308f25052c9d0a5a0ee6e649bd2e089980171cd29501a55908095828f04719",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "y_test.npy",
+      "size_bytes": 371925,
+      "sha256": "d0236270278c00b9aaf49f3b142a46735bf2f403dd5a1f6aaa4b9a3ce6042259",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "y_train.npy",
+      "size_bytes": 1534711,
+      "sha256": "439dd5006fd10f2273ea60c194b82656199a1b90b6bf08b6724c5c19d2663eef",
+      "copied_to_evidence_archive": false
+    },
+    {
+      "legacy_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "relative_path": "y_validation.npy",
+      "size_bytes": 371924,
+      "sha256": "f9dca3e5c30c28652166f4c48a7841003c8ea47a3d7c40e90b89d91fef0fbee4",
+      "copied_to_evidence_archive": false
+    }
+  ],
+  "copied_evidence": [
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building\\build_status.json",
+      "destination_relative_path": "tabular_baseline_family3_v3_1.building\\build_status.json",
+      "size_bytes": 492,
+      "sha256": "888dbe73d9976d950e070b9f3bf879d4400d082fb4768cb9c1cfc44835e6c36d"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building\\scaled_model_input_overlap_audit.sqlite",
+      "destination_relative_path": "tabular_baseline_family3_v3_1.building\\scaled_model_input_overlap_audit.sqlite",
+      "size_bytes": 69799936,
+      "sha256": "12124a625d896ac4f8fad5d09b2c3977ca81c9d0f34a4c1d82c5e4d886b74f9d"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building\\scaled_overlap_failure.json",
+      "destination_relative_path": "tabular_baseline_family3_v3_1.building\\scaled_overlap_failure.json",
+      "size_bytes": 804,
+      "sha256": "ae71c5a86abe649f35debcb0337a43e6ff05d9c82bae48fe4901ba545ae712ed"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building\\scaler_mean.npy",
+      "destination_relative_path": "tabular_baseline_family3_v3_1.building\\scaler_mean.npy",
+      "size_bytes": 1048,
+      "sha256": "64e91934b4a6e074d37c7ec04c48b5e598ca55bae78c7cee3cad6a541a2a8fa7"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building\\scaler_scale.npy",
+      "destination_relative_path": "tabular_baseline_family3_v3_1.building\\scaler_scale.npy",
+      "size_bytes": 1048,
+      "sha256": "c256e1b96c2e3a17ba0517bcdd3609d299a2e184b182d0c0bd325c31c4c90d66"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building\\build_status.json",
+      "destination_relative_path": "tabular_baseline_family3_v3_2.building\\build_status.json",
+      "size_bytes": 834,
+      "sha256": "dbdae18ebec1a22562bc4e0ac1f292d5239bfcc02b68bc2c7e2d8ff1a63915dd"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building\\scaled_model_input_overlap_audit.sqlite",
+      "destination_relative_path": "tabular_baseline_family3_v3_2.building\\scaled_model_input_overlap_audit.sqlite",
+      "size_bytes": 69758976,
+      "sha256": "a15f279d43f7791378c62b6b3e71950795e974086ffd8838fbee9f4fc020c47d"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building\\scaled_overlap_failure_iteration1.json",
+      "destination_relative_path": "tabular_baseline_family3_v3_2.building\\scaled_overlap_failure_iteration1.json",
+      "size_bytes": 925,
+      "sha256": "98556025c1086196c112219de7f430ee131a0b9fbf7ab8a502e1944e5249f72b"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building\\scaler_mean.npy",
+      "destination_relative_path": "tabular_baseline_family3_v3_2.building\\scaler_mean.npy",
+      "size_bytes": 1048,
+      "sha256": "8778949e1f52fdce9fde4df4db61c7d44a5b180b8b0560ba60eb7810c1b8d30e"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building\\scaler_scale.npy",
+      "destination_relative_path": "tabular_baseline_family3_v3_2.building\\scaler_scale.npy",
+      "size_bytes": 1048,
+      "sha256": "c60db6a3cb8b8494b0b0d94cafc0d1703110ca1621c7a184cdbf7729559e1059"
+    },
+    {
+      "source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building\\unscaled_hash_overlap_audit.sqlite",
+      "destination_relative_path": "tabular_baseline_family3_v3_2.building\\unscaled_hash_overlap_audit.sqlite",
+      "size_bytes": 58617856,
+      "sha256": "c981e8de10c7ef0aec09e641271ba5826d119e87ca4d0abf919ec9ae9eae2d53"
+    }
+  ],
+  "copied_evidence_count": 11,
+  "preflight_checks": {
+    "verification_status_passed": true,
+    "verification_all_checks_passed": true,
+    "verification_failed_checks_empty": true,
+    "final_manifest_completed": true,
+    "final_manifest_all_checks_passed": true,
+    "final_cache_path_matches": true,
+    "final_manifest_hash_matches_verification": true,
+    "final_scaled_overlap_zero": true,
+    "final_family_conflicts_zero": true
+  },
+  "all_checks_passed": true
+}

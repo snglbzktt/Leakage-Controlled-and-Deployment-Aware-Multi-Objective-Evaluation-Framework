@@ -1,0 +1,13 @@
+graph():
+    %inputs : 'Tensor' [num_users=1] = placeholder[target=inputs]
+    %network_0_input_scale_0 : [num_users=1] = get_attr[target=network_0_input_scale_0]
+    %network_0_input_zero_point_0 : [num_users=1] = get_attr[target=network_0_input_zero_point_0]
+    %quantize_per_tensor : [num_users=1] = call_function[target=torch.quantize_per_tensor](args = (%inputs, %network_0_input_scale_0, %network_0_input_zero_point_0, torch.quint8), kwargs = {})
+    %network_0 : [num_users=1] = call_module[target=network.0](args = (%quantize_per_tensor,), kwargs = {})
+    %network_2 : [num_users=1] = call_module[target=network.2](args = (%network_0,), kwargs = {})
+    %network_3 : [num_users=1] = call_module[target=network.3](args = (%network_2,), kwargs = {})
+    %network_5 : [num_users=1] = call_module[target=network.5](args = (%network_3,), kwargs = {})
+    %network_6 : [num_users=1] = call_module[target=network.6](args = (%network_5,), kwargs = {})
+    %network_8 : [num_users=1] = call_module[target=network.8](args = (%network_6,), kwargs = {})
+    %dequantize_6 : [num_users=1] = call_method[target=dequantize](args = (%network_8,), kwargs = {})
+    return dequantize_6

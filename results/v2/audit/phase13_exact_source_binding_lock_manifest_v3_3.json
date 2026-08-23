@@ -1,0 +1,146 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "artifact_name": "exact_source_binding",
+  "protocol_version": "phase13_exact_source_binding_v3_3",
+  "locked_at_utc": "2026-08-07T00:08:14.382390+00:00",
+  "source_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\global\\early_lodo_device_model_matrix_v2.csv",
+      "size_bytes": 13891,
+      "sha256": "63021a73dde31ac38d03e2924cb48f49ce2b483aff00cfe3137056312e3e41dc"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\global\\early_lodo_global_summary_v2.json",
+      "size_bytes": 6404,
+      "sha256": "1edbff5dd484f4bcd8b4d651b33795b21748debaa3e9f643b720b6970bea4b77"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase10_release_archive_locked_v3_3.json",
+      "size_bytes": 1728,
+      "sha256": "e7e5e3d6a44c65e96024c376daf7f81589aaea876d80775374dea5b9b8c47f3e"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_all_runs_v3_3.csv",
+      "size_bytes": 10746,
+      "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_locked_v3_3.json",
+      "size_bytes": 4179,
+      "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_summary_v3_3.json",
+      "size_bytes": 2756,
+      "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_model_summary_v3_2.csv",
+      "size_bytes": 1591,
+      "sha256": "51bd0a583fb50b8974bae822640ca8f4892beedc73edd587b651ef213b39f8cd"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_summary_v3_2.json",
+      "size_bytes": 10405,
+      "sha256": "a64ead61fa0f4d56c586ed3cdf6922c212dd25423bbf7fc3b59343d2a800de98"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_closure_v3_2.json",
+      "size_bytes": 6336,
+      "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_group_summary_v3_2.csv",
+      "size_bytes": 5849,
+      "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv",
+      "size_bytes": 48909,
+      "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_group_summary_v3_2.csv",
+      "size_bytes": 7065,
+      "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+      "size_bytes": 42063,
+      "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_summary_v3_2.json",
+      "size_bytes": 1912,
+      "sha256": "da9a34e01207cfb98d1edb4064e0a0a0b0f3fe3adfcb199f4a73d5bb663b6016"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_omnibus_results_v3_2.csv",
+      "size_bytes": 4639,
+      "sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_posthoc_verified_v3_2.csv",
+      "size_bytes": 20131,
+      "sha256": "e654b3e8ded77dfab834754331cf5c9601e312bf4616b83c6f327730e68626bd"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_summary_v3_2.json",
+      "size_bytes": 2581,
+      "sha256": "0c3343af85283b4edf977e306dd8fc31356d860a231659c6b48cbb6ad289231d"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_final_model_family_locked_v3_2.json",
+      "size_bytes": 1699,
+      "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_decision_input_matrix_v3_2.csv",
+      "size_bytes": 9076,
+      "sha256": "aa3213d72488093da08f6e4f5536c51e15d883d8e22b0fde697bb243b3f2d96f"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_pareto_results_v3_2.csv",
+      "size_bytes": 9149,
+      "sha256": "2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_selection_trace_v3_2.csv",
+      "size_bytes": 1322,
+      "sha256": "79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_deployment_artifact_locked_v3_2.json",
+      "size_bytes": 4353,
+      "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6"
+    }
+  ],
+  "generated_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase13_exact_source_binding_v3_3.json",
+      "size_bytes": 87736,
+      "sha256": "e14b5496d0001298686faf8def01e69901054f271f440be0b6f919d874e2a9a6"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_exact_source_binding_v3_3.csv",
+      "size_bytes": 8185,
+      "sha256": "b6aeb9a3ffdc26dac3a181c244338f1814c2cdcfe6f35bd42989d01af1259114"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_exact_source_binding_preflight_v3_3.json",
+      "size_bytes": 1471,
+      "sha256": "7a1fdd40c75219520b2ebd45d4e11d3e0ea04da3a03bcab5a57c87d06fff841b"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_exact_source_binding_locked_v3_3.json",
+      "size_bytes": 1156,
+      "sha256": "ee96bd218f95762dc8dd08dd9abc7d174af7d57600238af842e33fa692170bcd"
+    }
+  ],
+  "asset_count": 12,
+  "unique_source_count": 22,
+  "binding_row_count": 39,
+  "ready_for_asset_generation": true,
+  "all_checks_passed": true
+}

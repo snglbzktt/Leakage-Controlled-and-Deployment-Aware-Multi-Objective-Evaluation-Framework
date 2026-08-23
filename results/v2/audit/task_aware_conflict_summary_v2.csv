@@ -1,0 +1,4 @@
+﻿task,group_count,conflict_group_count,conflict_group_rate,occurrence_count,conflict_occurrence_count,conflict_occurrence_rate,maximum_target_labels_per_group
+binary,2482676,0,0.0,7062606,0,0.0,1
+family_3,2482676,0,0.0,7062606,0,0.0,1
+multiclass_11,2482676,0,0.0,7062606,0,0.0,1

@@ -1,0 +1,1402 @@
+============================================================================================
+PHASE 11 HGB AND CHECKPOINT STRUCTURE INSPECTION
+============================================================================================
+
+HGB SUMMARY
+--------------------------------------------------------------------------------------------
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T14:20:40.917762+00:00",
+  "run_id": "hist_gradient_boosting_b0__seed_2026",
+  "model_id": "hist_gradient_boosting_b0",
+  "seed": 2026,
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "input_space": "canonical_float32_unscaled",
+  "parameters": {
+    "loss": "log_loss",
+    "learning_rate": 0.1,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "max_depth": null,
+    "min_samples_leaf": 20,
+    "l2_regularization": 0.0001,
+    "max_bins": 255,
+    "class_weight": "balanced",
+    "early_stopping": false
+  },
+  "training_elapsed_seconds": 47.99949769990053,
+  "n_iter": 100,
+  "test_evaluation_count": 1,
+  "test_used_for_selection": false,
+  "test_fingerprint_macro_f1": 0.9997380683535377,
+  "test_fingerprint_accuracy": 0.9998708969434852,
+  "test_raw_weighted_macro_f1": 0.9990430947883375,
+  "test_gafgyt_fnr": 0.0009632529256246025,
+  "test_mirai_fnr": 0.0,
+  "fragility_gate_triggered": false,
+  "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\hist_gradient_boosting_b0__seed_2026",
+  "metrics_sha256": "261cce68a967624c852b3ce608512950c232adab0831c87943ad25abb7dac7d4",
+  "run_manifest_sha256": "2f20f77b1b199c25dc4891b5771e64c640dfde9f4e1ddd3c242501680619b28e",
+  "runner_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\110_run_hist_gradient_boosting_b0_v3_2.py",
+  "runner_script_sha256": "db7c1a97b80539e14b71a230000cf6245a29ffd1a58c7d21902e7998b4a41cd2",
+  "all_integrity_checks_passed": true
+}
+
+HGB VERIFICATION TOP-LEVEL KEYS
+--------------------------------------------------------------------------------------------
+["all_checks_passed", "artifact_checks", "artifact_count_verified", "failed_checks", "final_checks", "free_disk_gib", "generated_at_utc", "global_checks", "independent_prediction_checks", "independent_unscaled_inference", "input_space", "metric_checks", "model_id", "parameter_checks", "prediction_artifact_checks", "protocol_version", "run_checks", "run_id", "seed", "status", "summary_checks", "test_evaluation_count", "test_fingerprint_accuracy", "test_fingerprint_macro_f1", "test_gafgyt_fnr", "test_mirai_fnr", "test_raw_weighted_macro_f1"]
+
+CACHE MANIFEST TOP-LEVEL KEYS
+--------------------------------------------------------------------------------------------
+["all_checks_passed", "artifacts", "assignment_unit", "cache_directory", "cache_role", "classes", "created_at_utc", "cumulative_move_count", "cumulative_moved_raw_row_count", "elapsed_seconds", "feature_count", "feature_dtype", "free_disk_before_build_gib", "hash_dtype", "input_validation", "iteration1_move_count", "iteration2_move_count", "label_dtype", "locked_split_database_mutated", "materialization", "original_hash_audit", "primary_evaluation_view", "protocol_version", "provenance", "raw_row_count_dtype", "repair_iterations_completed", "scaled_overlap_audit", "scaler_audit", "secondary_evaluation_view", "source_iteration1_cache", "source_iteration1_cache_mutated", "split_counts", "status", "training_sample_weight", "unscaled_validation"]
+
+TINYML B0 CHECKPOINT
+--------------------------------------------------------------------------------------------
+{
+  "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+  "top_level_type": "dict",
+  "top_level_keys": [
+    "architecture",
+    "best_epoch",
+    "best_validation_macro_f1",
+    "linear_macs_per_sample",
+    "linear_widths",
+    "model_state_dict",
+    "model_symbol",
+    "optimizer_state_dict",
+    "parameter_count",
+    "protocol_version",
+    "run_id",
+    "seed",
+    "variant"
+  ],
+  "summarized_top_level": {
+    "run_id": "tinyml_mlp__b0__seed_2026",
+    "architecture": "tinyml_mlp",
+    "variant": "B0",
+    "seed": 2026,
+    "protocol_version": "phase5_fair_budget_compression_v3_2",
+    "model_symbol": "TinyMLMLP",
+    "best_epoch": 8,
+    "best_validation_macro_f1": 0.9992691105662223,
+    "linear_widths": [
+      [
+        115,
+        64
+      ],
+      [
+        64,
+        32
+      ],
+      [
+        32,
+        3
+      ]
+    ],
+    "parameter_count": 9603,
+    "linear_macs_per_sample": 9504
+  },
+  "model_state_dict": {
+    "entry_count": 6,
+    "keys": [
+      "network.0.weight",
+      "network.0.bias",
+      "network.2.weight",
+      "network.2.bias",
+      "network.4.weight",
+      "network.4.bias"
+    ],
+    "entries": {
+      "network.0.weight": {
+        "type": "torch.Tensor",
+        "shape": [
+          64,
+          115
+        ],
+        "dtype": "torch.float32"
+      },
+      "network.0.bias": {
+        "type": "torch.Tensor",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "network.2.weight": {
+        "type": "torch.Tensor",
+        "shape": [
+          32,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "network.2.bias": {
+        "type": "torch.Tensor",
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32"
+      },
+      "network.4.weight": {
+        "type": "torch.Tensor",
+        "shape": [
+          3,
+          32
+        ],
+        "dtype": "torch.float32"
+      },
+      "network.4.bias": {
+        "type": "torch.Tensor",
+        "shape": [
+          3
+        ],
+        "dtype": "torch.float32"
+      }
+    }
+  }
+}
+
+TINYML P50-QAT CHECKPOINT
+--------------------------------------------------------------------------------------------
+{
+  "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\best_int8_checkpoint.pt",
+  "top_level_type": "dict",
+  "top_level_keys": [
+    "INT8_model_state_dict",
+    "INT8_state_bytes",
+    "QAT_backend",
+    "QAT_engine_version",
+    "architecture",
+    "artifact_type",
+    "best_epoch",
+    "best_validation_INT8_macro_f1",
+    "created_at_utc",
+    "float_linear_macs_per_sample",
+    "float_linear_widths",
+    "float_parameter_count",
+    "float_state_bytes",
+    "model_symbol",
+    "protocol_version",
+    "quantized_weight_dtype",
+    "run_id",
+    "seed",
+    "source_checkpoint_path",
+    "source_checkpoint_sha256",
+    "source_variant",
+    "variant"
+  ],
+  "summarized_top_level": {
+    "artifact_type": "phase5_best_static_INT8_checkpoint",
+    "protocol_version": "phase5_fair_budget_compression_v3_2",
+    "QAT_engine_version": "phase5_qat_engine_v3_2",
+    "run_id": "tinyml_mlp__p50_qat__seed_2026",
+    "architecture": "tinyml_mlp",
+    "variant": "P50-QAT",
+    "source_variant": "P50-noFT",
+    "seed": 2026,
+    "model_symbol": "TinyMLMLP",
+    "QAT_backend": "onednn",
+    "quantized_weight_dtype": "torch.qint8",
+    "best_epoch": 4,
+    "best_validation_INT8_macro_f1": 0.996966181737415,
+    "source_checkpoint_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_2026\\source_checkpoint.pt",
+    "source_checkpoint_sha256": "fa5f955c224305819349730df21763cbf67d68b8ec8b2e8fde1c172fb593a7ee",
+    "float_linear_widths": [
+      [
+        115,
+        32
+      ],
+      [
+        32,
+        16
+      ],
+      [
+        16,
+        3
+      ]
+    ],
+    "float_parameter_count": 4291,
+    "float_linear_macs_per_sample": 4240,
+    "float_state_bytes": 19925,
+    "INT8_state_bytes": 12199,
+    "created_at_utc": "2026-08-06T19:44:53.988290+00:00"
+  },
+  "INT8_model_state_dict": {
+    "entry_count": 14,
+    "keys": [
+      "quant.scale",
+      "quant.zero_point",
+      "model.network.0.scale",
+      "model.network.0.zero_point",
+      "model.network.0._packed_params.dtype",
+      "model.network.0._packed_params._packed_params",
+      "model.network.2.scale",
+      "model.network.2.zero_point",
+      "model.network.2._packed_params.dtype",
+      "model.network.2._packed_params._packed_params",
+      "model.network.4.scale",
+      "model.network.4.zero_point",
+      "model.network.4._packed_params.dtype",
+      "model.network.4._packed_params._packed_params"
+    ],
+    "entries": {
+      "quant.scale": {
+        "type": "torch.Tensor",
+        "shape": [
+          1
+        ],
+        "dtype": "torch.float32"
+      },
+      "quant.zero_point": {
+        "type": "torch.Tensor",
+        "shape": [
+          1
+        ],
+        "dtype": "torch.int64"
+      },
+      "model.network.0.scale": {
+        "type": "torch.Tensor",
+        "shape": [],
+        "dtype": "torch.float32"
+      },
+      "model.network.0.zero_point": {
+        "type": "torch.Tensor",
+        "shape": [],
+        "dtype": "torch.int64"
+      },
+      "model.network.0._packed_params.dtype": {
+        "type": "dtype",
+        "repr": "torch.qint8"
+      },
+      "model.network.0._packed_params._packed_params": [
+        {
+          "type": "torch.Tensor",
+          "shape": [
+            32,
+            115
+          ],
+          "dtype": "torch.qint8"
+        },
+        {
+          "type": "torch.Tensor",
+          "shape": [
+            32
+          ],
+          "dtype": "torch.float32"
+        }
+      ],
+      "model.network.2.scale": {
+        "type": "torch.Tensor",
+        "shape": [],
+        "dtype": "torch.float32"
+      },
+      "model.network.2.zero_point": {
+        "type": "torch.Tensor",
+        "shape": [],
+        "dtype": "torch.int64"
+      },
+      "model.network.2._packed_params.dtype": {
+        "type": "dtype",
+        "repr": "torch.qint8"
+      },
+      "model.network.2._packed_params._packed_params": [
+        {
+          "type": "torch.Tensor",
+          "shape": [
+            16,
+            32
+          ],
+          "dtype": "torch.qint8"
+        },
+        {
+          "type": "torch.Tensor",
+          "shape": [
+            16
+          ],
+          "dtype": "torch.float32"
+        }
+      ],
+      "model.network.4.scale": {
+        "type": "torch.Tensor",
+        "shape": [],
+        "dtype": "torch.float32"
+      },
+      "model.network.4.zero_point": {
+        "type": "torch.Tensor",
+        "shape": [],
+        "dtype": "torch.int64"
+      },
+      "model.network.4._packed_params.dtype": {
+        "type": "dtype",
+        "repr": "torch.qint8"
+      },
+      "model.network.4._packed_params._packed_params": [
+        {
+          "type": "torch.Tensor",
+          "shape": [
+            3,
+            16
+          ],
+          "dtype": "torch.qint8"
+        },
+        {
+          "type": "torch.Tensor",
+          "shape": [
+            3
+          ],
+          "dtype": "torch.float32"
+        }
+      ]
+    }
+  }
+}
+
+NON-LODO HGB MODEL CANDIDATES
+--------------------------------------------------------------------------------------------
+[
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_123\\model.joblib",
+    "size_bytes": 4992,
+    "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_2026\\model.joblib",
+    "size_bytes": 5005,
+    "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_3407\\model.joblib",
+    "size_bytes": 4871,
+    "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_42\\model.joblib",
+    "size_bytes": 4977,
+    "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_8192\\model.joblib",
+    "size_bytes": 4914,
+    "loaded_type": "sklearn.tree._classes.DecisionTreeClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\hist_gradient_boosting_b0__seed_2026\\model.joblib",
+    "size_bytes": 367362,
+    "loaded_type": "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.HistGradientBoostingClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\logistic_regression_b0__seed_2026\\model.joblib",
+    "size_bytes": 1897,
+    "loaded_type": "sklearn.linear_model._logistic.LogisticRegression"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_123\\model.joblib",
+    "size_bytes": 399074,
+    "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_2026\\model.joblib",
+    "size_bytes": 392816,
+    "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_3407\\model.joblib",
+    "size_bytes": 392988,
+    "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_42\\model.joblib",
+    "size_bytes": 399454,
+    "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+  },
+  {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_8192\\model.joblib",
+    "size_bytes": 402513,
+    "loaded_type": "sklearn.ensemble._forest.RandomForestClassifier"
+  }
+]
+
+HGB SOURCE HITS
+--------------------------------------------------------------------------------------------
+[1] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\100_verify_final_tabular_cache_v3_2.py (matches=1)
+    L104: "hist_gradient_boosting_b0": 1,
+[2] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\100_verify_final_tabular_cache_v3_2_fixed.py (matches=1)
+    L108: "hist_gradient_boosting_b0": 1,
+[3] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\102_run_logistic_regression_b0_v3_2.py (matches=6)
+    L100: "max_iter": 200,
+    L103: "class_weight": "balanced",
+    L851: max_iter=LOCKED_PARAMETERS["max_iter"],
+    L856: class_weight=LOCKED_PARAMETERS[
+    L857: "class_weight"
+    L905: < LOCKED_PARAMETERS["max_iter"]
+[4] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\103_verify_logistic_regression_b0_v3_2.py (matches=9)
+    L120: "max_iter": 200,
+    L123: "class_weight": "balanced",
+    L752: "model_max_iter_matches": (
+    L753: model.max_iter
+    L754: == LOCKED_PARAMETERS["max_iter"]
+    L767: "model_class_weight_matches": (
+    L768: model.class_weight
+    L769: == LOCKED_PARAMETERS["class_weight"]
+    L1065: "The locked max_iter=200 run reached the "
+[5] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\103_verify_logistic_regression_b0_v3_2_fixed.py (matches=9)
+    L120: "max_iter": 200,
+    L123: "class_weight": "balanced",
+    L752: "model_max_iter_matches": (
+    L753: model.max_iter
+    L754: == LOCKED_PARAMETERS["max_iter"]
+    L767: "model_class_weight_matches": (
+    L768: model.class_weight
+    L769: == LOCKED_PARAMETERS["class_weight"]
+    L1065: "The locked max_iter=200 run reached the "
+[6] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\104_run_decision_tree_b0_five_seeds_v3_2.py (matches=6)
+    L125: "min_samples_leaf": 20,
+    L127: "class_weight": "balanced",
+    L944: min_samples_leaf=(
+    L946: "min_samples_leaf"
+    L952: class_weight=LOCKED_PARAMETERS[
+    L953: "class_weight"
+[7] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\106_run_decision_tree_b0_five_seeds_v3_2_fixed.py (matches=6)
+    L142: "min_samples_leaf": 20,
+    L144: "class_weight": "balanced",
+    L1025: min_samples_leaf=(
+    L1027: "min_samples_leaf"
+    L1033: class_weight=LOCKED_PARAMETERS[
+    L1034: "class_weight"
+[8] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\107_verify_decision_tree_b0_five_seeds_v3_2.py (matches=8)
+    L146: "min_samples_leaf": 20,
+    L148: "class_weight": "balanced",
+    L1148: "min_samples_leaf_matches": (
+    L1149: model.min_samples_leaf
+    L1151: "min_samples_leaf"
+    L1158: "class_weight_matches": (
+    L1159: model.class_weight
+    L1161: "class_weight"
+[9] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\108_run_random_forest_b0_five_seeds_v3_2.py (matches=6)
+    L135: "min_samples_leaf": 20,
+    L139: "class_weight": "balanced_subsample",
+    L900: min_samples_leaf=(
+    L902: "min_samples_leaf"
+    L914: class_weight=LOCKED_PARAMETERS[
+    L915: "class_weight"
+[10] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\109_verify_random_forest_b0_five_seeds_v3_2.py (matches=8)
+    L135: "min_samples_leaf": 20,
+    L139: "class_weight": "balanced_subsample",
+    L1144: "min_samples_leaf_matches": (
+    L1145: model.min_samples_leaf
+    L1147: "min_samples_leaf"
+    L1167: "class_weight_matches": (
+    L1168: model.class_weight
+    L1170: "class_weight"
+[11] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\110_run_hist_gradient_boosting_b0_v3_2.py (matches=28)
+    L23: from sklearn.ensemble import HistGradientBoostingClassifier
+    L113: / "hist_gradient_boosting_b0_summary_v3_2.json"
+    L116: MODEL_ID = "hist_gradient_boosting_b0"
+    L130: "max_iter": 100,
+    L131: "max_leaf_nodes": 31,
+    L133: "min_samples_leaf": 20,
+    L134: "l2_regularization": 0.0001,
+    L136: "class_weight": "balanced",
+    L137: "early_stopping": False,
+    L374: model: HistGradientBoostingClassifier,
+    L805: model = HistGradientBoostingClassifier(
+    L810: max_iter=LOCKED_PARAMETERS[
+    L811: "max_iter"
+    L813: max_leaf_nodes=LOCKED_PARAMETERS[
+    L814: "max_leaf_nodes"
+    L819: min_samples_leaf=LOCKED_PARAMETERS[
+    L820: "min_samples_leaf"
+    L822: l2_regularization=LOCKED_PARAMETERS[
+    L823: "l2_regularization"
+    L828: class_weight=LOCKED_PARAMETERS[
+    L829: "class_weight"
+    L831: early_stopping=LOCKED_PARAMETERS[
+    L832: "early_stopping"
+    L883: do_early_stopping=np.asarray(
+    L884: [bool(model.do_early_stopping_)],
+    L983: "do_early_stopping": bool(
+    L984: model.do_early_stopping_
+    L1216: f"{model.do_early_stopping_}"
+[12] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\111_verify_hist_gradient_boosting_b0_v3_2.py (matches=37)
+    L15: from sklearn.ensemble import HistGradientBoostingClassifier
+    L103: / "110_run_hist_gradient_boosting_b0_v3_2.py"
+    L111: / "hist_gradient_boosting_b0_summary_v3_2.json"
+    L119: / "hist_gradient_boosting_b0_verification_v3_2.json"
+    L122: MODEL_ID = "hist_gradient_boosting_b0"
+    L124: "hist_gradient_boosting_b0__seed_2026"
+    L161: "max_iter": 100,
+    L162: "max_leaf_nodes": 31,
+    L164: "min_samples_leaf": 20,
+    L165: "l2_regularization": 0.0001,
+    L167: "class_weight": "balanced",
+    L168: "early_stopping": False,
+    L846: HistGradientBoostingClassifier,
+    L874: saved_do_early_stopping = bool(
+    L876: "do_early_stopping"
+    L1238: "max_iter_matches": (
+    L1239: model.max_iter
+    L1241: "max_iter"
+    L1244: "max_leaf_nodes_matches": (
+    L1245: model.max_leaf_nodes
+    L1247: "max_leaf_nodes"
+    L1256: "min_samples_leaf_matches": (
+    L1257: model.min_samples_leaf
+    L1259: "min_samples_leaf"
+    L1262: "l2_regularization_matches": (
+    L1264: model.l2_regularization,
+    L1266: "l2_regularization"
+    L1277: "class_weight_matches": (
+    L1278: model.class_weight
+    L1280: "class_weight"
+    L1283: "early_stopping_parameter_matches": (
+    L1284: model.early_stopping
+    L1286: "early_stopping"
+    L1315: "early_stopping_not_used": (
+    L1317: model.do_early_stopping_
+    L1320: and saved_do_early_stopping
+    L1323: "do_early_stopping"
+[13] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\112_close_and_lock_phase4_classical_baselines_v3_2.py (matches=9)
+    L62: / "hist_gradient_boosting_b0_verification_v3_2.json"
+    L102: / "hist_gradient_boosting_b0_summary_v3_2.json"
+    L138: "hist_gradient_boosting_b0",
+    L147: "hist_gradient_boosting_b0": 0.999738068,
+    L154: "hist_gradient_boosting_b0": 1,
+    L645: "Locked max_iter=200 was "
+    L823: "hist_gradient_boosting_b0"
+    L1195: "hist_gradient_boosting_b0"
+    L1406: "the locked max_iter=200 limit; "
+[14] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\113_phase5_preflight_inventory_v3_2.py (matches=1)
+    L966: "early_stopping": True,
+[15] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\114_lock_phase5_fair_budget_compression_protocol_v3_2.py (matches=16)
+    L205: "early_stopping_patience": 4,
+    L206: "early_stopping_min_delta": 0.0002,
+    L220: "early_stopping_patience": 3,
+    L221: "early_stopping_min_delta": 0.0002,
+    L1023: "early_stopping_patience"
+    L1026: "early_stopping_min_delta"
+    L1039: "early_stopping_patience"
+    L1044: "early_stopping_min_delta"
+    L1143: "early_stopping_patience": (
+    L1146: "early_stopping_min_delta": (
+    L1346: "early_stopping_patience",
+    L1347: "early_stopping_min_delta",
+    L1503: "class_weight_policy": {
+    L1629: "test_used_for_early_stopping": False,
+    L1643: "class_weight_manifest",
+    L1714: "generate_and_lock_train_only_scaler_and_class_weights",
+[16] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\115_generate_phase5_train_only_preprocessing_v3_2.py (matches=48)
+    L70: CLASS_WEIGHTS_NPZ = (
+    L72: / "phase5_train_only_class_weights_v3_2.npz"
+    L75: CLASS_WEIGHTS_CSV = (
+    L77: / "phase5_train_only_class_weights_v3_2.csv"
+    L236: CLASS_WEIGHTS_NPZ,
+    L237: CLASS_WEIGHTS_CSV,
+    L350: "class_weight_scheme_matches": (
+    L352: "class_weight_policy"
+    L361: "class_weight_policy"
+    L545: class_weights = (
+    L643: "class_weights_are_finite": (
+    L646: class_weights
+    L650: "class_weights_are_positive": (
+    L653: class_weights > 0.0
+    L657: "class_weights_mean_is_one": (
+    L661: class_weights
+    L719: CLASS_WEIGHTS_NPZ,
+    L724: class_weights_float64=(
+    L725: class_weights.astype(
+    L729: class_weights_float32=(
+    L730: class_weights.astype(
+    L738: class_weights
+    L746: class_weight_rows = []
+    L751: class_weight_rows.append(
+    L762: "class_weight_float64": float(
+    L763: class_weights[index]
+    L765: "class_weight_float32": float(
+    L766: class_weights.astype(
+    L774: CLASS_WEIGHTS_CSV,
+    L775: class_weight_rows,
+    L780: "class_weight_float64",
+    L781: "class_weight_float32",
+    L804: "class_weight_fit_split": (
+    L854: "class_weights": {
+    L872: "class_weights_float64": (
+    L873: class_weights.tolist()
+    L877: class_weights
+    L881: CLASS_WEIGHTS_NPZ
+    L884: CLASS_WEIGHTS_CSV
+    L926: "class_weights_artifact": (
+    L928: CLASS_WEIGHTS_NPZ
+    L931: "class_weights_csv": file_record(
+    L932: CLASS_WEIGHTS_CSV
+    L946: "class_weights_float64": (
+    L947: class_weights.tolist()
+    L981: for value in class_weights
+    L987: f"{np.mean(class_weights):.12f}"
+    L1001: f"{CLASS_WEIGHTS_NPZ}"
+[17] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\116_verify_and_lock_phase5_preprocessing_v3_2.py (matches=39)
+    L60: CLASS_WEIGHTS_NPZ = (
+    L62: / "phase5_train_only_class_weights_v3_2.npz"
+    L65: CLASS_WEIGHTS_CSV = (
+    L67: / "phase5_train_only_class_weights_v3_2.csv"
+    L270: CLASS_WEIGHTS_NPZ,
+    L271: CLASS_WEIGHTS_CSV,
+    L381: "train_only_class_weight_fit_recorded": (
+    L383: "class_weight_fit_split"
+    L540: CLASS_WEIGHTS_NPZ
+    L553: values["class_weights_float64"],
+    L558: values["class_weights_float32"],
+    L814: "class_weights_float64_match": (
+    L822: "class_weights_float32_match": (
+    L869: "saved_class_weights_are_positive": (
+    L943: "manifest_class_weights_npz_record_matches": (
+    L946: "class_weights"
+    L948: CLASS_WEIGHTS_NPZ,
+    L951: "manifest_class_weights_csv_record_matches": (
+    L954: "class_weights"
+    L956: CLASS_WEIGHTS_CSV,
+    L967: "generation_class_weights_record_matches": (
+    L970: "class_weights_artifact"
+    L972: CLASS_WEIGHTS_NPZ,
+    L978: "class_weights_csv"
+    L980: CLASS_WEIGHTS_CSV,
+    L1140: "class_weights": (
+    L1180: "class_weights_float64": (
+    L1208: "class_weight": float(
+    L1221: "class_weights_npz": file_record(
+    L1222: CLASS_WEIGHTS_NPZ
+    L1224: "class_weights_csv": file_record(
+    L1225: CLASS_WEIGHTS_CSV
+    L1254: "class_weight_fit_split": (
+    L1274: "class_weights_artifact": str(
+    L1275: CLASS_WEIGHTS_NPZ
+    L1277: "class_weights_sha256": (
+    L1279: CLASS_WEIGHTS_NPZ
+    L1333: CLASS_WEIGHTS_NPZ
+    L1336: CLASS_WEIGHTS_CSV
+[18] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\117_phase5_neural_architecture_smoke_test_v3_2.py (matches=19)
+    L65: CLASS_WEIGHTS_NPZ = (
+    L67: / "phase5_train_only_class_weights_v3_2.npz"
+    L827: class_weights: torch.Tensor,
+    L898: weight=class_weights
+    L1136: CLASS_WEIGHTS_NPZ,
+    L1390: CLASS_WEIGHTS_NPZ
+    L1397: class_weights32 = np.array(
+    L1398: values["class_weights_float32"],
+    L1441: "class_weights_shape_matches": (
+    L1442: class_weights32.shape
+    L1445: "class_weights_finite_positive": (
+    L1448: class_weights32
+    L1451: class_weights32 > 0.0
+    L1559: class_weight_tensor = (
+    L1561: class_weights32
+    L1615: class_weights=(
+    L1616: class_weight_tensor
+    L1769: "class_weights": file_record(
+    L1770: CLASS_WEIGHTS_NPZ
+[19] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\118_phase5_neural_architecture_smoke_test_v3_2_fixed.py (matches=19)
+    L66: CLASS_WEIGHTS_NPZ = (
+    L68: / "phase5_train_only_class_weights_v3_2.npz"
+    L839: class_weights: torch.Tensor,
+    L910: weight=class_weights
+    L1148: CLASS_WEIGHTS_NPZ,
+    L1402: CLASS_WEIGHTS_NPZ
+    L1409: class_weights32 = np.array(
+    L1410: values["class_weights_float32"],
+    L1453: "class_weights_shape_matches": (
+    L1454: class_weights32.shape
+    L1457: "class_weights_finite_positive": (
+    L1460: class_weights32
+    L1463: class_weights32 > 0.0
+    L1571: class_weight_tensor = (
+    L1573: class_weights32
+    L1627: class_weights=(
+    L1628: class_weight_tensor
+    L1781: "class_weights": file_record(
+    L1782: CLASS_WEIGHTS_NPZ
+[20] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\119_phase5_neural_architecture_smoke_test_v3_2_fixed2.py (matches=19)
+    L66: CLASS_WEIGHTS_NPZ = (
+    L68: / "phase5_train_only_class_weights_v3_2.npz"
+    L873: class_weights: torch.Tensor,
+    L944: weight=class_weights
+    L1182: CLASS_WEIGHTS_NPZ,
+    L1436: CLASS_WEIGHTS_NPZ
+    L1443: class_weights32 = np.array(
+    L1444: values["class_weights_float32"],
+    L1487: "class_weights_shape_matches": (
+    L1488: class_weights32.shape
+    L1491: "class_weights_finite_positive": (
+    L1494: class_weights32
+    L1497: class_weights32 > 0.0
+    L1605: class_weight_tensor = (
+    L1607: class_weights32
+    L1661: class_weights=(
+    L1662: class_weight_tensor
+    L1815: "class_weights": file_record(
+    L1816: CLASS_WEIGHTS_NPZ
+[21] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\120_run_phase5_tinyml_mlp_b0_five_seeds_v3_2.py (matches=29)
+    L87: CLASS_WEIGHTS_NPZ = (
+    L89: / "phase5_train_only_class_weights_v3_2.npz"
+    L165: EARLY_STOPPING_PATIENCE = 4
+    L166: EARLY_STOPPING_MIN_DELTA = 0.0002
+    L798: CLASS_WEIGHTS_NPZ,
+    L961: and int(row["early_stopping_patience"])
+    L962: == EARLY_STOPPING_PATIENCE
+    L964: float(row["early_stopping_min_delta"]),
+    L965: EARLY_STOPPING_MIN_DELTA,
+    L1112: with np.load(CLASS_WEIGHTS_NPZ) as values:
+    L1113: class_weights32 = np.array(
+    L1114: values["class_weights_float32"],
+    L1121: or class_weights32.shape != (EXPECTED_CLASS_COUNT,)
+    L1128: class_weight_tensor = torch.from_numpy(
+    L1129: class_weights32
+    L1190: weight=class_weight_tensor
+    L1326: + EARLY_STOPPING_MIN_DELTA
+    L1394: f"{EARLY_STOPPING_PATIENCE} | "
+    L1401: >= EARLY_STOPPING_PATIENCE
+    L1656: "early_stopping_patience": (
+    L1657: EARLY_STOPPING_PATIENCE
+    L1659: "early_stopping_min_delta": (
+    L1660: EARLY_STOPPING_MIN_DELTA
+    L1727: "class_weights": file_record(
+    L1728: CLASS_WEIGHTS_NPZ
+    L1747: "early_stopping_patience": (
+    L1748: EARLY_STOPPING_PATIENCE
+    L1750: "early_stopping_min_delta": (
+    L1751: EARLY_STOPPING_MIN_DELTA
+[22] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\121_verify_and_lock_phase5_tinyml_mlp_b0_v3_2.py (matches=9)
+    L79: CLASS_WEIGHTS_NPZ = (
+    L81: / "phase5_train_only_class_weights_v3_2.npz"
+    L886: CLASS_WEIGHTS_NPZ,
+    L1622: "class_weights"
+    L1624: CLASS_WEIGHTS_NPZ,
+    L1672: "early_stopping_patience"
+    L1678: "early_stopping_min_delta"
+    L2395: "class_weights": (
+    L2397: CLASS_WEIGHTS_NPZ
+[23] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\122_run_phase5_compact_dnn_b0_five_seeds_v3_2.py (matches=29)
+    L87: CLASS_WEIGHTS_NPZ = (
+    L89: / "phase5_train_only_class_weights_v3_2.npz"
+    L171: EARLY_STOPPING_PATIENCE = 4
+    L172: EARLY_STOPPING_MIN_DELTA = 0.0002
+    L804: CLASS_WEIGHTS_NPZ,
+    L980: and int(row["early_stopping_patience"])
+    L981: == EARLY_STOPPING_PATIENCE
+    L983: float(row["early_stopping_min_delta"]),
+    L984: EARLY_STOPPING_MIN_DELTA,
+    L1131: with np.load(CLASS_WEIGHTS_NPZ) as values:
+    L1132: class_weights32 = np.array(
+    L1133: values["class_weights_float32"],
+    L1140: or class_weights32.shape != (EXPECTED_CLASS_COUNT,)
+    L1147: class_weight_tensor = torch.from_numpy(
+    L1148: class_weights32
+    L1209: weight=class_weight_tensor
+    L1345: + EARLY_STOPPING_MIN_DELTA
+    L1413: f"{EARLY_STOPPING_PATIENCE} | "
+    L1420: >= EARLY_STOPPING_PATIENCE
+    L1675: "early_stopping_patience": (
+    L1676: EARLY_STOPPING_PATIENCE
+    L1678: "early_stopping_min_delta": (
+    L1679: EARLY_STOPPING_MIN_DELTA
+    L1746: "class_weights": file_record(
+    L1747: CLASS_WEIGHTS_NPZ
+    L1766: "early_stopping_patience": (
+    L1767: EARLY_STOPPING_PATIENCE
+    L1769: "early_stopping_min_delta": (
+    L1770: EARLY_STOPPING_MIN_DELTA
+[24] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\123_verify_and_lock_phase5_compact_dnn_b0_v3_2.py (matches=9)
+    L79: CLASS_WEIGHTS_NPZ = (
+    L81: / "phase5_train_only_class_weights_v3_2.npz"
+    L892: CLASS_WEIGHTS_NPZ,
+    L1643: "class_weights"
+    L1645: CLASS_WEIGHTS_NPZ,
+    L1693: "early_stopping_patience"
+    L1699: "early_stopping_min_delta"
+    L2408: "class_weights": (
+    L2410: CLASS_WEIGHTS_NPZ
+[25] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\124_verify_and_lock_phase5_compact_dnn_b0_v3_2_fixed.py (matches=9)
+    L79: CLASS_WEIGHTS_NPZ = (
+    L81: / "phase5_train_only_class_weights_v3_2.npz"
+    L892: CLASS_WEIGHTS_NPZ,
+    L1643: "class_weights"
+    L1645: CLASS_WEIGHTS_NPZ,
+    L1693: "early_stopping_patience"
+    L1699: "early_stopping_min_delta"
+    L2408: "class_weights": (
+    L2410: CLASS_WEIGHTS_NPZ
+[26] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\132_run_phase5_P25_and_P50_FP32_fine_tuning_v3_2.py (matches=35)
+    L114: CLASS_WEIGHTS_NPZ = (
+    L116: / "phase5_train_only_class_weights_v3_2.npz"
+    L247: EARLY_STOPPING_PATIENCE = 3
+    L248: EARLY_STOPPING_MIN_DELTA = 0.0002
+    L1326: CLASS_WEIGHTS_NPZ,
+    L1527: "early_stopping_patience"
+    L1530: == EARLY_STOPPING_PATIENCE
+    L1534: "early_stopping_min_delta"
+    L1537: EARLY_STOPPING_MIN_DELTA,
+    L1730: CLASS_WEIGHTS_NPZ
+    L1732: class_weights32 = np.array(
+    L1734: "class_weights_float32"
+    L1748: or class_weights32.shape
+    L1758: class_weight_tensor = (
+    L1760: class_weights32
+    L1826: f"patience={EARLY_STOPPING_PATIENCE}, "
+    L1827: f"min_delta={EARLY_STOPPING_MIN_DELTA}"
+    L2148: weight=class_weight_tensor
+    L2316: + EARLY_STOPPING_MIN_DELTA
+    L2437: f"{EARLY_STOPPING_PATIENCE} | "
+    L2445: >= EARLY_STOPPING_PATIENCE
+    L2962: "early_stopping_patience": (
+    L2963: EARLY_STOPPING_PATIENCE
+    L2965: "early_stopping_min_delta": (
+    L2966: EARLY_STOPPING_MIN_DELTA
+    L3122: "class_weights": (
+    L3124: CLASS_WEIGHTS_NPZ
+    L3158: "early_stopping_patience": (
+    L3159: EARLY_STOPPING_PATIENCE
+    L3161: "early_stopping_min_delta": (
+    L3162: EARLY_STOPPING_MIN_DELTA
+    L3627: "early_stopping_patience": (
+    L3628: EARLY_STOPPING_PATIENCE
+    L3630: "early_stopping_min_delta": (
+    L3631: EARLY_STOPPING_MIN_DELTA
+[27] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\133_verify_and_lock_phase5_P25_and_P50_FP32_fine_tuning_v3_2.py (matches=15)
+    L107: CLASS_WEIGHTS_NPZ = (
+    L109: / "phase5_train_only_class_weights_v3_2.npz"
+    L253: EARLY_STOPPING_PATIENCE = 3
+    L254: EARLY_STOPPING_MIN_DELTA = 0.0002
+    L1013: + EARLY_STOPPING_MIN_DELTA
+    L1088: CLASS_WEIGHTS_NPZ,
+    L1410: CLASS_WEIGHTS_NPZ
+    L1412: class_weights32 = np.array(
+    L1414: "class_weights_float32"
+    L1464: and class_weights32.shape
+    L2137: "early_stopping_patience"
+    L2140: == EARLY_STOPPING_PATIENCE
+    L2145: "early_stopping_min_delta"
+    L2147: EARLY_STOPPING_MIN_DELTA,
+    L3253: CLASS_WEIGHTS_NPZ
+[28] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\134_run_phase5_FP32_FT_from_B0_five_seeds_v3_2.py (matches=35)
+    L100: CLASS_WEIGHTS_NPZ = (
+    L102: / "phase5_train_only_class_weights_v3_2.npz"
+    L199: EARLY_STOPPING_PATIENCE = 3
+    L200: EARLY_STOPPING_MIN_DELTA = 0.0002
+    L1306: CLASS_WEIGHTS_NPZ,
+    L1477: "early_stopping_patience"
+    L1480: == EARLY_STOPPING_PATIENCE
+    L1484: "early_stopping_min_delta"
+    L1487: EARLY_STOPPING_MIN_DELTA,
+    L1676: CLASS_WEIGHTS_NPZ
+    L1678: class_weights32 = np.array(
+    L1680: "class_weights_float32"
+    L1694: or class_weights32.shape
+    L1704: class_weight_tensor = (
+    L1706: class_weights32
+    L1754: f"patience={EARLY_STOPPING_PATIENCE}, "
+    L1755: f"min_delta={EARLY_STOPPING_MIN_DELTA}"
+    L1974: weight=class_weight_tensor
+    L2142: + EARLY_STOPPING_MIN_DELTA
+    L2253: f"{EARLY_STOPPING_PATIENCE} | "
+    L2261: >= EARLY_STOPPING_PATIENCE
+    L2695: "early_stopping_patience": (
+    L2696: EARLY_STOPPING_PATIENCE
+    L2698: "early_stopping_min_delta": (
+    L2699: EARLY_STOPPING_MIN_DELTA
+    L2827: "class_weights": (
+    L2829: CLASS_WEIGHTS_NPZ
+    L2863: "early_stopping_patience": (
+    L2864: EARLY_STOPPING_PATIENCE
+    L2866: "early_stopping_min_delta": (
+    L2867: EARLY_STOPPING_MIN_DELTA
+    L3290: "early_stopping_patience": (
+    L3291: EARLY_STOPPING_PATIENCE
+    L3293: "early_stopping_min_delta": (
+    L3294: EARLY_STOPPING_MIN_DELTA
+[29] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\135_verify_and_lock_phase5_FP32_FT_from_B0_v3_2.py (matches=15)
+    L93: CLASS_WEIGHTS_NPZ = (
+    L95: / "phase5_train_only_class_weights_v3_2.npz"
+    L209: EARLY_STOPPING_PATIENCE = 3
+    L210: EARLY_STOPPING_MIN_DELTA = 0.0002
+    L1025: + EARLY_STOPPING_MIN_DELTA
+    L1098: CLASS_WEIGHTS_NPZ,
+    L1392: CLASS_WEIGHTS_NPZ
+    L1394: class_weights32 = np.array(
+    L1396: "class_weights_float32"
+    L1446: and class_weights32.shape
+    L2019: "early_stopping_patience"
+    L2022: == EARLY_STOPPING_PATIENCE
+    L2027: "early_stopping_min_delta"
+    L2029: EARLY_STOPPING_MIN_DELTA,
+    L3095: CLASS_WEIGHTS_NPZ
+[30] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\139_phase5_QAT_engine_and_runtime_preflight_v3_2.py (matches=19)
+    L123: CLASS_WEIGHTS_NPZ = (
+    L130: / "phase5_train_only_class_weights_v3_2.npz"
+    L267: EARLY_STOPPING_PATIENCE = 3
+    L268: EARLY_STOPPING_MIN_DELTA = 0.0002
+    L850: class_weights: torch.Tensor,
+    L870: weight=class_weights
+    L965: CLASS_WEIGHTS_NPZ,
+    L1192: "early_stopping_patience"
+    L1195: == EARLY_STOPPING_PATIENCE
+    L1199: "early_stopping_min_delta"
+    L1202: EARLY_STOPPING_MIN_DELTA,
+    L1278: CLASS_WEIGHTS_NPZ
+    L1280: class_weights32 = np.array(
+    L1282: "class_weights_float32"
+    L1322: class_weights = torch.from_numpy(
+    L1323: class_weights32
+    L1611: class_weights,
+    L1622: class_weights,
+    L2302: CLASS_WEIGHTS_NPZ
+[31] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\140_run_phase5_QAT_P25_QAT_P50_QAT_training_v3_2.py (matches=27)
+    L147: CLASS_WEIGHTS_NPZ = (
+    L149: / "phase5_train_only_class_weights_v3_2.npz"
+    L307: EARLY_STOPPING_PATIENCE = 3
+    L308: EARLY_STOPPING_MIN_DELTA = 0.0002
+    L1617: CLASS_WEIGHTS_NPZ,
+    L2033: CLASS_WEIGHTS_NPZ
+    L2035: class_weights32 = np.array(
+    L2037: "class_weights_float32"
+    L2051: or class_weights32.shape
+    L2061: class_weight_tensor = (
+    L2063: class_weights32
+    L2130: f"patience={EARLY_STOPPING_PATIENCE}, "
+    L2131: f"min_delta={EARLY_STOPPING_MIN_DELTA}"
+    L2368: weight=class_weight_tensor
+    L2558: + EARLY_STOPPING_MIN_DELTA
+    L2681: f"{EARLY_STOPPING_PATIENCE} | "
+    L2693: >= EARLY_STOPPING_PATIENCE
+    L3310: "early_stopping_patience": (
+    L3311: EARLY_STOPPING_PATIENCE
+    L3313: "early_stopping_min_delta": (
+    L3314: EARLY_STOPPING_MIN_DELTA
+    L3477: "class_weights": (
+    L3479: CLASS_WEIGHTS_NPZ
+    L3989: "early_stopping_patience": (
+    L3990: EARLY_STOPPING_PATIENCE
+    L3992: "early_stopping_min_delta": (
+    L3993: EARLY_STOPPING_MIN_DELTA
+[32] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\141_verify_and_lock_phase5_QAT_P25_QAT_P50_QAT_v3_2.py (matches=2)
+    L711: and int(metrics["training"]["early_stopping_patience"]) == PATIENCE
+    L712: and close(metrics["training"]["early_stopping_min_delta"], MIN_DELTA)
+[33] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\15_build_label_mapping_and_class_weights.py (matches=6)
+    L14: models/preprocessing/nbaiot_class_weights_seed2026.npz
+    L16: results/reports/nbaiot_label_and_class_weight_summary.json
+    L716: / f"nbaiot_class_weights_seed{args.seed}.npz"
+    L726: / "nbaiot_label_and_class_weight_summary.json"
+    L1067: "class_weight_file": str(
+    L1078: "class_weight_sha256": (
+[34] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\16_build_task_definitions.py (matches=1)
+    L911: / f"nbaiot_task_class_weights_seed{args.seed}.npz"
+[35] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\171_phase11_inspect_hgb_protocol_and_checkpoints_v3_3.py (matches=5)
+    L17: / "hist_gradient_boosting_b0_summary_v3_2.json"
+    L22: / "hist_gradient_boosting_b0_verification_v3_2.json"
+    L71: r"(HistGradientBoostingClassifier|hist_gradient_boosting|"
+    L72: r"max_leaf_nodes|max_iter|min_samples_leaf|"
+    L73: r"l2_regularization|class_weight|early_stopping)",
+[36] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\17_validate_pytorch_data_pipeline.py (matches=11)
+    L767: class_weights = torch.as_tensor(
+    L768: assets.class_weights,
+    L773: weight=class_weights
+    L816: assets.class_weight_scheme
+    L818: "class_weights": {
+    L820: assets.class_weights[
+    L829: "class_weight_mean": float(
+    L830: assets.class_weights.mean()
+    L901: f"{assets.class_weight_scheme}"
+    L1067: "class_weight_scheme": (
+    L1068: assets.class_weight_scheme
+[37] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\18_validate_model_registry.py (matches=4)
+    L464: class_weights: np.ndarray,
+    L600: class_weights,
+    L970: class_weights=(
+    L971: assets.class_weights
+[38] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\22_lock_fp32_baseline_protocol.py (matches=5)
+    L65: / "nbaiot_task_class_weights_seed2026.npz"
+    L870: "early_stopping_patience": int(
+    L873: "early_stopping_min_delta": float(
+    L889: "class_weight_scheme": (
+    L892: "class_weights_fitted_from": (
+[39] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\23_run_fp32_baseline_experiments.py (matches=10)
+    L458: "early_stopping_patience",
+    L459: "early_stopping_min_delta",
+    L464: "class_weight_scheme",
+    L574: "early_stopping_patience"
+    L579: "early_stopping_min_delta"
+    L587: "class_weight_scheme"
+    L759: "class_weight_scheme"
+    L848: class_weights = torch.as_tensor(
+    L849: assets.class_weights,
+    L854: weight=class_weights
+[40] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\25_validate_structured_pruning.py (matches=3)
+    L676: class_weights = torch.as_tensor(
+    L677: assets.class_weights,
+    L682: weight=class_weights
+[41] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\26_run_pruning_experiments.py (matches=15)
+    L732: "early_stopping_patience": int(
+    L735: "early_stopping_min_delta": float(
+    L766: "class_weight_scheme": str(
+    L768: "class_weight_scheme"
+    L774: "class_weights_fitted_from": (
+    L1144: "early_stopping_patience"
+    L1149: "early_stopping_min_delta"
+    L1179: "class_weight_scheme"
+    L1279: class_weights = torch.as_tensor(
+    L1280: assets.class_weights,
+    L1285: weight=class_weights
+    L1787: class_weights = torch.as_tensor(
+    L1788: assets.class_weights,
+    L1793: weight=class_weights
+    L2392: "class_weight_scheme"
+[42] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\29b_run_quantization_experiments.py (matches=13)
+    L480: "early_stopping_patience": int(args.qat_patience),
+    L481: "early_stopping_min_delta": float(args.qat_min_delta),
+    L1183: class_weights: torch.Tensor,
+    L1229: weight=class_weights,
+    L1235: class_weights[target_cpu].double().sum().item()
+    L1479: class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)
+    L1480: criterion = nn.CrossEntropyLoss(weight=class_weights)
+    L1566: > best_validation_macro_f1 + float(qat_config["early_stopping_min_delta"])
+    L1610: qat_config["early_stopping_patience"]
+    L1744: class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)
+    L1745: criterion = nn.CrossEntropyLoss(weight=class_weights)
+    L1889: class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)
+    L1898: class_weights=class_weights,
+[43] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\29_validate_fx_qat_pipeline.py (matches=3)
+    L1017: class_weights = torch.as_tensor(
+    L1018: assets.class_weights,
+    L1023: weight=class_weights
+[44] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\30_run_pruning_qat_experiments.py (matches=10)
+    L432: "early_stopping_patience": int(
+    L435: "early_stopping_min_delta": float(
+    L780: class_weights = torch.as_tensor(
+    L781: assets.class_weights,
+    L786: weight=class_weights
+    L928: "early_stopping_min_delta"
+    L1001: "early_stopping_patience"
+    L1253: class_weights = torch.as_tensor(
+    L1254: assets.class_weights,
+    L1259: weight=class_weights
+[45] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\35_build_leakage_ablation_splits.py (matches=1)
+    L438: "scaler_and_class_weights_must_be_fitted_separately_from_each_arm_train_only": True,
+[46] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\36_run_leakage_ablation.py (matches=5)
+    L235: np.save(arm_dir / "class_weights.npy", weights.astype(np.float32))
+    L240: "scaler_fit_split": "train", "class_weights_fit_split": "train",
+    L300: "patience": int(common["early_stopping_patience"]),
+    L301: "min_delta": float(common["early_stopping_min_delta"]),
+    L317: weights = torch.from_numpy(np.load(arm_dir / "class_weights.npy"))
+[47] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\37_build_float32_leakage_ablation_splits.py (matches=1)
+    L817: "train_only_scaler_and_class_weight_fit_per_arm": True,
+[48] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\38_run_b0_matched_leakage_ablation.py (matches=11)
+    L680: weights = np.load(arm_directory / "class_weights.npy")
+    L830: class_weights = inverse_sqrt_mean1(class_counts)
+    L833: np.save(arm_directory / "class_weights.npy", class_weights)
+    L920: "class_weights_fit_split": "train_only",
+    L921: "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    L922: "class_weights": class_weights.tolist(),
+    L1041: "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    L1055: "patience": int(common["early_stopping_patience"]),
+    L1056: "min_delta": float(common["early_stopping_min_delta"]),
+    L1058: "class_weight_scheme": str(common["class_weight_scheme"]),
+    L1156: weights = torch.from_numpy(np.load(arm_directory / "class_weights.npy"))
+[49] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\38_run_b0_matched_leakage_ablation_before_training_seeds_fix.py (matches=11)
+    L680: weights = np.load(arm_directory / "class_weights.npy")
+    L830: class_weights = inverse_sqrt_mean1(class_counts)
+    L833: np.save(arm_directory / "class_weights.npy", class_weights)
+    L920: "class_weights_fit_split": "train_only",
+    L921: "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    L922: "class_weights": class_weights.tolist(),
+    L1041: "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    L1055: "patience": int(common["early_stopping_patience"]),
+    L1056: "min_delta": float(common["early_stopping_min_delta"]),
+    L1058: "class_weight_scheme": str(common["class_weight_scheme"]),
+    L1156: weights = torch.from_numpy(np.load(arm_directory / "class_weights.npy"))
+[50] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\46_inspect_numeric_pipeline_v2.py (matches=2)
+    L180: r"(scaler|standard|preprocess|normaliz|float32|float64|split|class_weight)",
+    L348: "*class_weight*",
+[51] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\49_preflight_numeric_order_training_pilot_v2.py (matches=1)
+    L236: r"DataLoader|macro_f1|class_weight)",
+[52] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\50_inspect_training_pilot_protocol_v2.py (matches=2)
+    L88: r"early_stopping|AdamW?|CrossEntropyLoss|"
+    L89: r"class_weight|macro_f1|train_one|"
+[53] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\51_lock_numeric_order_training_pilot_protocol_v2.py (matches=8)
+    L261: "early_stopping_patience",
+    L266: "early_stopping_min_delta",
+    L593: "early_stopping_patience":
+    L596: "early_stopping_min_delta":
+    L605: "class_weight_scheme":
+    L611: "class_weights_fitted_from":
+    L614: "class_weights_shared_between_numeric_pipelines":
+    L640: "same_class_weights":
+[54] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\52_build_numeric_order_pilot_cache_v2.py (matches=11)
+    L1278: class_weights = (
+    L1287: / "class_weights.npy",
+    L1288: class_weights,
+    L1426: "class_weights_finite":
+    L1429: class_weights
+    L1433: "class_weights_positive":
+    L1436: class_weights > 0
+    L1538: "class_weights": {
+    L1541: class_weights[index]
+    L1627: / "class_weights.npy",
+    L1795: f"{summary['class_weights'][class_name]:.9f}"
+[55] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\53_run_numeric_order_training_pilot_v2.py (matches=12)
+    L352: "class_weights"
+    L355: / "class_weights.npy",
+    L724: class_weights = torch.from_numpy(
+    L727: "class_weights"
+    L735: weight=class_weights
+    L1114: class_weights_array = np.array(
+    L1116: "class_weights"
+    L1122: class_weights = torch.from_numpy(
+    L1123: class_weights_array
+    L1127: weight=class_weights
+    L1150: "early_stopping_patience"
+    L1156: "early_stopping_min_delta"
+[56] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\55_preflight_early_lodo_v2.py (matches=6)
+    L475: "HistGradientBoostingClassifier":
+    L491: HistGradientBoostingClassifier,
+    L500: "HistGradientBoostingClassifier"
+    L502: HistGradientBoostingClassifier
+    L893: "HistGradientBoostingClassifier"
+    L896: "HistGradientBoostingClassifier"
+[57] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\64_lock_early_lodo_protocol_v2.py (matches=23)
+    L17: HistGradientBoostingClassifier,
+    L131: "early_stopping_patience":
+    L134: "early_stopping_min_delta":
+    L137: "class_weight":
+    L174: "early_stopping_patience":
+    L177: "early_stopping_min_delta":
+    L180: "class_weight":
+    L185: "hist_gradient_boosting_b0",
+    L191: "hist_gradient_boosting",
+    L196: "max_iter":
+    L199: "max_leaf_nodes":
+    L205: "min_samples_leaf":
+    L208: "l2_regularization":
+    L214: "class_weight":
+    L217: "early_stopping":
+    L523: HistGradientBoostingClassifier
+    L533: "max_iter",
+    L534: "max_leaf_nodes",
+    L536: "min_samples_leaf",
+    L537: "l2_regularization",
+    L539: "class_weight",
+    L540: "early_stopping",
+    L1105: 3. `hist_gradient_boosting_b0`
+[58] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\69_run_early_lodo_smoke_test_v2.py (matches=5)
+    L1157: class_weights = (
+    L1164: class_weights = (
+    L1165: class_weights
+    L1166: / class_weights.mean()
+    L1171: class_weights,
+[59] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\72_run_early_lodo_neural_experiment_v2.py (matches=15)
+    L964: "early_stopping_patience"
+    L970: "early_stopping_min_delta"
+    L1227: class_weights = (
+    L1234: class_weights = (
+    L1235: class_weights
+    L1236: / class_weights.mean()
+    L1284: class_weights,
+    L1769: "class_weights":
+    L1770: class_weights,
+    L1873: "class_weights_finite":
+    L1876: class_weights
+    L2040: "early_stopping_patience":
+    L2043: "early_stopping_min_delta":
+    L2046: "class_weights":
+    L2047: class_weights.tolist(),
+[60] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\73_lock_early_lodo_scientific_run_v2.py (matches=2)
+    L688: "early_stopping_patience",
+    L826: "early_stopping_consistent":
+[61] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\73_lock_early_lodo_scientific_run_v2_before_ledger_fix.py (matches=2)
+    L688: "early_stopping_patience",
+    L826: "early_stopping_consistent":
+[62] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\74_run_early_lodo_hgb_smoke_test_v2.py (matches=17)
+    L17: HistGradientBoostingClassifier,
+    L25: MODEL_ID = "hist_gradient_boosting_b0"
+    L456: HistGradientBoostingClassifier
+    L463: "max_iter",
+    L464: "max_leaf_nodes",
+    L466: "min_samples_leaf",
+    L467: "l2_regularization",
+    L469: "early_stopping",
+    L470: "class_weight",
+    L675: model = HistGradientBoostingClassifier(
+    L678: max_iter=5,
+    L679: max_leaf_nodes=31,
+    L681: min_samples_leaf=20,
+    L682: l2_regularization=0.0001,
+    L685: early_stopping=False,
+    L686: class_weight="balanced",
+    L924: "max_iter":
+[63] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\75_run_early_lodo_hgb_experiment_v2.py (matches=49)
+    L21: from sklearn.ensemble import HistGradientBoostingClassifier
+    L561: "hist_gradient_boosting_b0"
+    L565: "hist_gradient_boosting_b0."
+    L602: "max_iter":
+    L606: "max_iter",
+    L611: "max_leaf_nodes":
+    L615: "max_leaf_nodes",
+    L625: "min_samples_leaf":
+    L629: "min_samples_leaf",
+    L633: "l2_regularization":
+    L637: "l2_regularization",
+    L650: "early_stopping":
+    L654: "early_stopping",
+    L658: "class_weight":
+    L662: "class_weight",
+    L683: "max_iter_100":
+    L685: "max_iter"
+    L689: "max_leaf_nodes_31":
+    L691: "max_leaf_nodes"
+    L701: "min_samples_leaf_20":
+    L703: "min_samples_leaf"
+    L710: "l2_regularization"
+    L723: "early_stopping_false":
+    L725: "early_stopping"
+    L729: "class_weight_balanced":
+    L731: "class_weight"
+    L754: HistGradientBoostingClassifier
+    L761: "max_iter",
+    L762: "max_leaf_nodes",
+    L764: "min_samples_leaf",
+    L765: "l2_regularization",
+    L767: "early_stopping",
+    L768: "class_weight",
+    L1114: model = HistGradientBoostingClassifier(
+    L1119: max_iter=locked_parameters[
+    L1120: "max_iter"
+    L1122: max_leaf_nodes=locked_parameters[
+    L1123: "max_leaf_nodes"
+    L1128: min_samples_leaf=locked_parameters[
+    L1129: "min_samples_leaf"
+    L1131: l2_regularization=locked_parameters[
+    L1132: "l2_regularization"
+    L1138: early_stopping=locked_parameters[
+    L1139: "early_stopping"
+    L1141: class_weight=locked_parameters[
+    L1142: "class_weight"
+    L1461: == "hist_gradient_boosting_b0",
+    L1528: "max_iter"
+    L1720: "HistGradientBoostingClassifier"
+[64] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\76_lock_early_lodo_hgb_scientific_run_v2.py (matches=31)
+    L669: "hist_gradient_boosting_b0"
+    L748: "max_iter":
+    L752: "max_iter",
+    L757: "max_leaf_nodes":
+    L761: "max_leaf_nodes",
+    L771: "min_samples_leaf":
+    L775: "min_samples_leaf",
+    L779: "l2_regularization":
+    L783: "l2_regularization",
+    L796: "early_stopping":
+    L800: "early_stopping",
+    L804: "class_weight":
+    L808: "class_weight",
+    L1086: "max_iter":
+    L1088: model_parameters["max_iter"]
+    L1090: == locked_parameters["max_iter"],
+    L1092: "max_leaf_nodes":
+    L1095: "max_leaf_nodes"
+    L1099: "max_leaf_nodes"
+    L1108: "min_samples_leaf":
+    L1111: "min_samples_leaf"
+    L1115: "min_samples_leaf"
+    L1118: "l2_regularization":
+    L1122: "l2_regularization"
+    L1126: "l2_regularization"
+    L1138: "early_stopping":
+    L1141: "early_stopping"
+    L1145: "early_stopping"
+    L1148: "class_weight":
+    L1149: model_parameters["class_weight"]
+    L1151: "class_weight"
+[65] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\77_finalize_early_lodo_device_v2.py (matches=1)
+    L93: "hist_gradient_boosting_b0",
+[66] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\79_finalize_early_lodo_global_gate_v2.py (matches=1)
+    L35: "hist_gradient_boosting_b0",
+[67] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\85_run_b0_matched_leakage_ablation_repaired_v2.py (matches=11)
+    L680: weights = np.load(arm_directory / "class_weights.npy")
+    L830: class_weights = inverse_sqrt_mean1(class_counts)
+    L833: np.save(arm_directory / "class_weights.npy", class_weights)
+    L920: "class_weights_fit_split": "train_only",
+    L921: "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    L922: "class_weights": class_weights.tolist(),
+    L1041: "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    L1055: "patience": int(common["early_stopping_patience"]),
+    L1056: "min_delta": float(common["early_stopping_min_delta"]),
+    L1058: "class_weight_scheme": str(common["class_weight_scheme"]),
+    L1156: weights = torch.from_numpy(np.load(arm_directory / "class_weights.npy"))
+[68] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\88_run_b0_matched_leakage_ablation_repaired_v3.py (matches=11)
+    L680: weights = np.load(arm_directory / "class_weights.npy")
+    L830: class_weights = inverse_sqrt_mean1(class_counts)
+    L833: np.save(arm_directory / "class_weights.npy", class_weights)
+    L920: "class_weights_fit_split": "train_only",
+    L921: "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    L922: "class_weights": class_weights.tolist(),
+    L1041: "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    L1055: "patience": int(common["early_stopping_patience"]),
+    L1056: "min_delta": float(common["early_stopping_min_delta"]),
+    L1058: "class_weight_scheme": str(common["class_weight_scheme"]),
+    L1156: weights = torch.from_numpy(np.load(arm_directory / "class_weights.npy"))
+[69] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\93_lock_tabular_baseline_protocol_v3.py (matches=29)
+    L17: HistGradientBoostingClassifier,
+    L399: "max_iter": 200,
+    L402: "class_weight": "balanced",
+    L419: "min_samples_leaf": 20,
+    L421: "class_weight": "balanced",
+    L438: "min_samples_leaf": 20,
+    L442: "class_weight": "balanced_subsample",
+    L448: "model_id": "hist_gradient_boosting_b0",
+    L450: "architecture": "hist_gradient_boosting",
+    L458: "max_iter": 100,
+    L459: "max_leaf_nodes": 31,
+    L461: "min_samples_leaf": 20,
+    L462: "l2_regularization": 0.0001,
+    L465: "early_stopping": False,
+    L466: "class_weight": "balanced",
+    L570: "max_iter",
+    L573: "class_weight",
+    L587: "min_samples_leaf",
+    L589: "class_weight",
+    L604: "min_samples_leaf",
+    L608: "class_weight",
+    L617: HistGradientBoostingClassifier
+    L622: "max_iter",
+    L623: "max_leaf_nodes",
+    L625: "min_samples_leaf",
+    L626: "l2_regularization",
+    L629: "early_stopping",
+    L630: "class_weight",
+    L765: "hist_gradient_boosting_b0",
+[70] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\src\data\nbaiot_pipeline.py (matches=14)
+    L61: / "nbaiot_task_class_weights_seed2026.npz"
+    L98: class_weight_scheme: str
+    L99: class_weights: np.ndarray
+    L378: class_weight_key = (
+    L392: if class_weight_key not in weight_data:
+    L395: f"{class_weight_key}"
+    L406: class_weights = np.asarray(
+    L408: class_weight_key
+    L430: if class_weights.shape != (
+    L439: class_weights
+    L446: class_weights <= 0
+    L454: class_weights.mean()
+    L482: class_weight_scheme=weight_scheme,
+    L483: class_weights=class_weights,
+[71] C:\Users\bozku\Desktop\TinyML_IDS_IEEE\src\training\baseline_trainer.py (matches=7)
+    L832: class_weights = torch.as_tensor(
+    L833: assets.class_weights,
+    L838: weight=class_weights
+    L1139: "class_weight_scheme": (
+    L1142: "class_weights": (
+    L1143: assets.class_weights.tolist()
+    L1219: "class_weight_scheme": (
+
+============================================================================================
+INSPECTION COMPLETE
+============================================================================================
+Non-LODO HGB model candidates  : 12
+HGB source files with matches  : 71
+JSON output                     : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\phase11_hgb_and_checkpoint_structure_inspection_v3_3.json
+All checks passed               : True

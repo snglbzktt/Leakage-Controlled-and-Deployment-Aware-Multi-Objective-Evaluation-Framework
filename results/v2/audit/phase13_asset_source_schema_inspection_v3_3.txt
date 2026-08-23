@@ -1,0 +1,138 @@
+============================================================================================
+PHASE 13 ASSET SOURCE-SCHEMA INSPECTION
+============================================================================================
+Assets inspected                : 12
+Unique evidence files inspected : 74
+Model inference performed       : False
+Test arrays accessed             : False
+Source files mutated             : False
+Asset generation performed       : False
+
+FIGURE_01_METHODOLOGY_OVERVIEW
+--------------------------------------------------------------------------------------------
+[1] score=52  | keys=26                | results/v2/audit/phase11_input_robustness_locked_v3_3.json
+[2] score=52  | keys=23                | results/v2/audit/phase11_input_robustness_verification_v3_3.json
+[3] score=51  | keys=29                | results/v2/audit/phase5_compression_closure_v3_2.json
+[4] score=51  | keys=13                | results/v2/audit/phase6_deployment_benchmark_preflight_v3_2.json
+[5] score=42  | keys=28                | results/v2/audit/phase10_release_archive_locked_v3_3.json
+[6] score=42  | keys=34                | results/v2/audit/phase10_release_archive_verification_v3_3.json
+[7] score=42  | keys=19                | results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json
+[8] score=42  | keys=16                | results/v2/audit/phase6_deployment_benchmark_verification_v3_2.json
+
+FIGURE_02_LODO_GENERALIZATION
+--------------------------------------------------------------------------------------------
+[1] score=41  | keys=13                | results/v2/audit/early_lodo_smoke_test_locked_summary_v2.json
+[2] score=31  | keys=15                | results/v2/audit/early_lodo_feature_alignment_summary_v2.json
+[3] score=30  | keys=21                | results/v2/audit/early_lodo_membership_index_summary_v2.json
+
+FIGURE_03_COMPRESSION_TRADEOFF
+--------------------------------------------------------------------------------------------
+[1] score=52  | keys=16                | results/v2/audit/phase6_deployment_benchmark_verification_v3_2.json
+[2] score=40  | rows=22; cols=18; keys=0 | results/v2/audit/phase5_compression_group_summary_v3_2.csv
+[3] score=32  | keys=19                | results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json
+[4] score=31  | keys=29                | results/v2/audit/phase5_compression_closure_v3_2.json
+[5] score=30  | rows=110; cols=18; keys=0 | results/v2/audit/phase5_compression_master_run_matrix_v3_2.csv
+[6] score=30  | rows=100; cols=13; keys=0 | results/v2/audit/phase5_compression_paired_delta_vs_B0_v3_2.csv
+[7] score=22  | keys=21                | results/v2/audit/phase6_deployment_benchmark_locked_v3_2.json
+[8] score=21  | keys=20                | results/v2/audit/phase5_compression_locked_v3_2.json
+
+FIGURE_04_PARETO_SELECTION
+--------------------------------------------------------------------------------------------
+[1] score=42  | keys=19                | results/v2/audit/phase8_multi_objective_decision_summary_v3_2.json
+[2] score=42  | keys=19                | results/v2/audit/phase8_multi_objective_decision_verification_v3_2.json
+[3] score=41  | rows=3; cols=21; keys=0 | results/v2/audit/phase8_multi_objective_selection_trace_v3_2.csv
+[4] score=40  | rows=22; cols=26; keys=0 | results/v2/audit/phase8_multi_objective_decision_input_matrix_v3_2.csv
+[5] score=40  | rows=66; cols=25; keys=0 | results/v2/audit/phase8_multi_objective_eligibility_results_v3_2.csv
+[6] score=40  | rows=54; cols=15; keys=0 | results/v2/audit/phase8_multi_objective_pareto_results_v3_2.csv
+[7] score=32  | keys=16                | results/v2/audit/phase6_deployment_benchmark_verification_v3_2.json
+[8] score=32  | keys=22                | results/v2/audit/phase8_final_model_family_locked_v3_2.json
+
+FIGURE_05_INPUT_ROBUSTNESS
+--------------------------------------------------------------------------------------------
+[1] score=50  | rows=27; cols=23; keys=0 | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv
+[2] score=42  | keys=26                | results/v2/audit/phase11_input_robustness_locked_v3_3.json
+[3] score=42  | keys=23                | results/v2/audit/phase11_input_robustness_verification_v3_3.json
+[4] score=41  | keys=20                | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json
+[5] score=40  | keys=5                 | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_detailed_results_v3_3.json
+[6] score=21  | keys=22                | results/v2/audit/phase11_input_robustness_execution_v3_3.json
+[7] score=11  | keys=16                | results/v2/audit/phase11_input_robustness_completed_v3_3.json
+
+TABLE_01_DATASET_PROTOCOL
+--------------------------------------------------------------------------------------------
+[1] score=40  | keys=17                | results/v2/audit/tabular_baseline_scaled_repair_iteration2_summary_v3_2.json
+[2] score=31  | keys=29                | results/v2/audit/phase5_compression_closure_v3_2.json
+[3] score=31  | keys=8                 | results/v2/audit/tabular_baseline_scaled_repair_iteration1_summary_v3_2.json
+[4] score=22  | keys=18                | results/v2/audit/phase4_classical_baselines_summary_v3_2.json
+[5] score=21  | keys=15                | results/v2/audit/early_lodo_feature_alignment_summary_v2.json
+[6] score=21  | keys=11                | results/v2/audit/phase4_classical_baselines_lock_manifest_v3_2.json
+[7] score=21  | keys=20                | results/v2/audit/phase5_compression_locked_v3_2.json
+[8] score=20  | keys=24                | results/v2/audit/hist_gradient_boosting_b0_summary_v3_2.json
+
+TABLE_02_CLASSICAL_BASELINES
+--------------------------------------------------------------------------------------------
+[1] score=62  | keys=18                | results/v2/audit/phase4_classical_baselines_summary_v3_2.json
+[2] score=30  | keys=24                | results/v2/audit/hist_gradient_boosting_b0_summary_v3_2.json
+[3] score=21  | keys=20                | results/v2/audit/phase4_classical_baselines_completed_v3_2.json
+[4] score=21  | keys=8                 | results/v2/audit/tabular_baseline_scaled_repair_iteration1_summary_v3_2.json
+[5] score=20  | rows=4; cols=18; keys=0 | results/v2/audit/phase4_classical_baselines_model_summary_v3_2.csv
+[6] score=20  | keys=17                | results/v2/audit/tabular_baseline_scaled_repair_iteration2_summary_v3_2.json
+[7] score=11  | keys=11                | results/v2/audit/phase4_classical_baselines_lock_manifest_v3_2.json
+[8] score=10  | rows=12; cols=13; keys=0 | results/v2/audit/phase4_classical_baselines_all_runs_v3_2.csv
+
+TABLE_03_COMPRESSION_RESULTS
+--------------------------------------------------------------------------------------------
+[1] score=41  | keys=29                | results/v2/audit/phase5_compression_closure_v3_2.json
+[2] score=41  | keys=20                | results/v2/audit/phase5_compression_locked_v3_2.json
+[3] score=20  | rows=22; cols=18; keys=0 | results/v2/audit/phase5_compression_group_summary_v3_2.csv
+[4] score=20  | rows=110; cols=18; keys=0 | results/v2/audit/phase5_compression_master_run_matrix_v3_2.csv
+[5] score=20  | rows=100; cols=13; keys=0 | results/v2/audit/phase5_compression_paired_delta_vs_B0_v3_2.csv
+
+TABLE_04_DEPLOYMENT_BENCHMARKS
+--------------------------------------------------------------------------------------------
+[1] score=52  | keys=16                | results/v2/audit/phase6_deployment_benchmark_verification_v3_2.json
+[2] score=32  | keys=21                | results/v2/audit/phase6_deployment_benchmark_locked_v3_2.json
+[3] score=32  | keys=19                | results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json
+[4] score=31  | keys=18                | results/v2/audit/phase6_deployment_benchmark_completed_v3_2.json
+[5] score=30  | rows=22; cols=22; keys=0 | results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv
+[6] score=21  | keys=15                | results/v2/audit/phase6_deployment_benchmark_lock_manifest_v3_2.json
+[7] score=21  | rows=110; cols=20; keys=0 | results/v2/audit/phase6_deployment_benchmark_locked_matrix_v3_2.csv
+[8] score=21  | keys=14                | results/v2/audit/phase6_deployment_benchmark_preflight_lock_manifest_v3_2.json
+
+TABLE_05_STATISTICAL_ANALYSIS
+--------------------------------------------------------------------------------------------
+[1] score=52  | keys=22                | results/v2/audit/phase7_statistical_analysis_summary_v3_2.json
+[2] score=52  | keys=17                | results/v2/audit/phase7_statistical_analysis_verification_v3_2.json
+[3] score=50  | rows=160; cols=29; keys=0 | results/v2/audit/phase7_statistical_posthoc_vs_B0_results_v3_2.csv
+[4] score=42  | keys=21                | results/v2/audit/phase7_statistical_analysis_locked_v3_2.json
+[5] score=41  | keys=19                | results/v2/audit/phase7_statistical_analysis_completed_v3_2.json
+[6] score=41  | keys=14                | results/v2/audit/phase7_statistical_analysis_lock_manifest_v3_2.json
+[7] score=41  | keys=14                | results/v2/audit/phase7_statistical_analysis_preflight_lock_manifest_v3_2.json
+[8] score=41  | keys=20                | results/v2/audit/phase7_statistical_analysis_preflight_locked_v3_2.json
+
+TABLE_06_ROBUSTNESS_RESULTS
+--------------------------------------------------------------------------------------------
+[1] score=42  | keys=26                | results/v2/audit/phase11_input_robustness_locked_v3_3.json
+[2] score=32  | keys=23                | results/v2/audit/phase11_input_robustness_verification_v3_3.json
+[3] score=31  | keys=16                | results/v2/audit/phase11_input_robustness_completed_v3_3.json
+[4] score=31  | keys=22                | results/v2/audit/phase11_input_robustness_execution_v3_3.json
+[5] score=31  | keys=20                | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json
+[6] score=30  | rows=27; cols=23; keys=0 | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv
+[7] score=30  | keys=5                 | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_detailed_results_v3_3.json
+
+TABLE_07_REPRODUCIBILITY_RELEASE
+--------------------------------------------------------------------------------------------
+[1] score=72  | keys=34                | results/v2/audit/phase10_release_archive_verification_v3_3.json
+[2] score=52  | keys=28                | results/v2/audit/phase10_release_archive_locked_v3_3.json
+[3] score=52  | keys=26                | results/v2/audit/phase9_final_deployment_artifact_locked_v3_2.json
+[4] score=42  | keys=22                | results/v2/audit/phase8_final_model_family_locked_v3_2.json
+[5] score=42  | keys=19                | results/v2/audit/phase8_multi_objective_decision_summary_v3_2.json
+[6] score=42  | keys=19                | results/v2/audit/phase8_multi_objective_decision_verification_v3_2.json
+[7] score=42  | keys=27                | results/v2/audit/phase9_final_artifact_verification_v3_2.json
+[8] score=32  | keys=26                | results/v2/audit/phase11_input_robustness_locked_v3_3.json
+
+============================================================================================
+INSPECTION COMPLETE
+============================================================================================
+JSON output                     : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\phase13_asset_source_schema_inspection_v3_3.json
+Ready for exact source binding  : True
+All checks passed               : True

@@ -1,0 +1,87 @@
+==============================================================================
+PHASE 1E - TRAINING PILOT PREFLIGHT
+==============================================================================
+Project root: C:\Users\bozku\Desktop\TinyML_IDS_IEEE
+Python: 3.11.9
+CPU count: 20
+Torch available: True
+Torch version: 2.11.0+cpu
+CUDA available: False
+CUDA devices: []
+Available RAM GB: 5.499
+Free disk GB: 13.346
+Phase 1D pilot required: True
+
+REQUIRED ARTIFACTS
+------------------------------------------------------------------------------
+primary_train: exists=True | C:\Users\bozku\Desktop\TinyML_IDS_IEEE\data\processed\nbaiot_primary_seed2026\train.parquet
+primary_validation: exists=True | C:\Users\bozku\Desktop\TinyML_IDS_IEEE\data\processed\nbaiot_primary_seed2026\validation.parquet
+primary_test: exists=True | C:\Users\bozku\Desktop\TinyML_IDS_IEEE\data\processed\nbaiot_primary_seed2026\test.parquet
+historical_scaler: exists=True | C:\Users\bozku\Desktop\TinyML_IDS_IEEE\models\preprocessing\nbaiot_standard_scaler_seed2026.npz
+baseline_trainer: exists=True | C:\Users\bozku\Desktop\TinyML_IDS_IEEE\src\training\baseline_trainer.py
+data_pipeline: exists=True | C:\Users\bozku\Desktop\TinyML_IDS_IEEE\src\data\nbaiot_pipeline.py
+b0_script: exists=True | C:\Users\bozku\Desktop\TinyML_IDS_IEEE\scripts\38_run_b0_matched_leakage_ablation.py
+phase_1d_summary: exists=True | C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\numeric_pipeline_order_summary_v2.json
+
+MODEL AND TRAINING SYMBOLS
+------------------------------------------------------------------------------
+src\compression\structured_pruning.py:128 | function | count_model_parameters | args=model | bases=
+src\compression\structured_pruning.py:782 | function | _prune_tinyml_mlp | args=original_model|pruning_ratio | bases=
+src\compression\structured_pruning.py:914 | function | _prune_compact_dnn | args=original_model|pruning_ratio | bases=
+src\compression\structured_pruning.py:1078 | function | _prune_tiny_1d_cnn | args=original_model|pruning_ratio | bases=
+src\compression\structured_pruning.py:1227 | function | physically_prune_model | args= | bases=
+src\compression\structured_pruning.py:1274 | function | recreate_compact_model | args=pruning_metadata | bases=
+src\data\nbaiot_pipeline.py:488 | class | NBaiotParquetBatchDataset | args= | bases=IterableDataset[tuple[Tensor, Tensor]]
+src\data\nbaiot_pipeline.py:912 | function | create_nbaiot_dataloader | args=assets|split_name|batch_size|shuffle|seed|epoch|num_workers|pin_memory|prefetch_factor | bases=
+src\models\nbaiot_models.py:29 | class | ModelSpec | args= | bases=
+src\models\nbaiot_models.py:44 | function | validate_model_dimensions | args=input_features|num_classes | bases=
+src\models\nbaiot_models.py:86 | class | TinyMLMLP | args= | bases=nn.Module
+src\models\nbaiot_models.py:184 | class | CompactDNN | args= | bases=nn.Module
+src\models\nbaiot_models.py:318 | class | Tiny1DCNN | args= | bases=nn.Module
+src\models\nbaiot_models.py:555 | function | list_registered_models | args= | bases=
+src\models\nbaiot_models.py:563 | function | get_model_spec | args=model_name | bases=
+src\models\nbaiot_models.py:579 | function | create_model | args=model_name|input_features|num_classes | bases=
+src\training\baseline_trainer.py:609 | function | run_training | args=config_file | bases=
+scripts\14_fit_training_standardizer.py:345 | function | fit_training_standardizer | args=train_file|feature_columns|batch_size | bases=
+scripts\18_validate_model_registry.py:458 | function | validate_model | args=model_name|features|targets|feature_count|class_count|class_weights|seed | bases=
+scripts\22_lock_fp32_baseline_protocol.py:563 | function | validate_model_registry | args=registry_file | bases=
+scripts\23_run_fp32_baseline_experiments.py:604 | function | evaluate_test_once | args= | bases=
+scripts\26_run_pruning_experiments.py:1254 | function | train_pruned_model | args= | bases=
+scripts\26_run_pruning_experiments.py:1651 | function | evaluate_pruned_test_once | args= | bases=
+scripts\28_audit_quantization_capabilities.py:553 | function | obtain_train_batches | args= | bases=
+scripts\28_audit_quantization_capabilities.py:614 | function | export_model_to_onnx | args= | bases=
+scripts\28_audit_quantization_capabilities.py:680 | function | validate_onnx_model | args=model_file | bases=
+scripts\28_audit_quantization_capabilities.py:826 | function | run_ort_model | args= | bases=
+scripts\28_audit_quantization_capabilities.py:978 | class | TrainOnlyCalibrationReader | args= | bases=calibration_reader_base
+scripts\29_validate_fx_qat_pipeline.py:461 | function | create_model_from_checkpoint | args= | bases=
+scripts\29_validate_fx_qat_pipeline.py:486 | function | get_train_batch | args= | bases=
+scripts\29_validate_fx_qat_pipeline.py:767 | function | prepare_qat_model | args= | bases=
+scripts\29_validate_fx_qat_pipeline.py:862 | function | convert_qat_model | args= | bases=
+scripts\29b_run_quantization_experiments.py:593 | function | create_model_from_state | args= | bases=
+scripts\29b_run_quantization_experiments.py:632 | function | prepare_qat_model | args= | bases=
+scripts\29b_run_quantization_experiments.py:682 | function | convert_qat_model | args= | bases=
+scripts\29b_run_quantization_experiments.py:775 | function | export_model_to_onnx | args= | bases=
+scripts\29b_run_quantization_experiments.py:810 | function | validate_onnx_model | args=model_file | bases=
+scripts\29b_run_quantization_experiments.py:1174 | function | evaluate_onnx_split | args= | bases=
+scripts\29b_run_quantization_experiments.py:1418 | function | train_qat_model | args= | bases=
+scripts\29b_run_quantization_experiments.py:1654 | function | evaluate_qat_test_once | args= | bases=
+scripts\29b_run_quantization_experiments.py:962 | class | TrainOnlyCalibrationReader | args= | bases=CalibrationDataReader
+scripts\30_run_pruning_qat_experiments.py:606 | function | create_compact_model_from_state | args= | bases=
+scripts\30_run_pruning_qat_experiments.py:626 | function | create_compact_prepared_snapshot | args= | bases=
+scripts\30_run_pruning_qat_experiments.py:688 | function | train_pruning_qat_model | args= | bases=
+scripts\30_run_pruning_qat_experiments.py:1109 | function | evaluate_pruning_qat_test_once | args= | bases=
+scripts\31_profile_efficiency.py:983 | function | load_fp32_model | args= | bases=
+scripts\31_profile_efficiency.py:1011 | function | create_baseline_resource_counts | args=model_name | bases=
+scripts\36_run_leakage_ablation.py:246 | class | MemmapDataset | args= | bases=Dataset[tuple[torch.Tensor, torch.Tensor]]
+scripts\36_run_leakage_ablation.py:281 | function | evaluate | args=model|loader|criterion | bases=
+scripts\36_run_leakage_ablation.py:306 | function | train_one | args=arm_dir|output|seed|cfg | bases=
+scripts\38_run_b0_matched_leakage_ablation.py:937 | class | MemmapDataset | args= | bases=Dataset[tuple[torch.Tensor, torch.Tensor]]
+scripts\38_run_b0_matched_leakage_ablation.py:1011 | function | evaluate | args=model|loader|criterion | bases=
+scripts\38_run_b0_matched_leakage_ablation.py:1079 | function | train_one | args=arm_directory|run_directory|arm|seed|cfg|protocol_sha256|database_sha256|cache_manifest_sha256|stage38_script_sha256|restart_incomplete | bases=
+
+VALIDATION
+------------------------------------------------------------------------------
+all_required_artifacts_exist: True
+torch_available: True
+phase_1d_training_pilot_required: True
+preflight_passed: True

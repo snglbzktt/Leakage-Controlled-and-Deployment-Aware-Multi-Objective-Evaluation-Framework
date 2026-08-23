@@ -1,0 +1,33 @@
+{
+  "status": "locked",
+  "phase": 8,
+  "artifact_name": "final_model_family_selection",
+  "protocol_version": "phase8_multi_objective_decision_v3_2",
+  "locked_at_utc": "2026-08-06T21:39:52.654574+00:00",
+  "primary_profile": "balanced",
+  "selected_model_family": {
+    "candidate_id": "tinyml_mlp::P50-QAT",
+    "architecture": "tinyml_mlp",
+    "variant": "P50-QAT",
+    "representation": "static_int8"
+  },
+  "sensitivity_profile_selections": {
+    "strict": "tinyml_mlp::P50-FP32-FT",
+    "balanced": "tinyml_mlp::P50-QAT",
+    "relaxed": "tinyml_mlp::P50-QAT"
+  },
+  "selection_stable_across_profiles": false,
+  "weighted_score_used": false,
+  "pairwise_p_value_used_as_gate": false,
+  "model_inference_repeated_by_verifier": false,
+  "final_model_family_selected": true,
+  "single_seed_checkpoint_selected": false,
+  "single_seed_checkpoint_selection_note": "The architecture-variant family is locked. A concrete deployment checkpoint must be chosen under a separate test-independent artifact protocol; no best-test-seed selection is permitted.",
+  "verification_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_decision_verification_v3_2.json",
+  "verification_report_sha256": "1ab1cc62c6099eb9522de66f762dba43558935c2c78dad90f52bc6645dca6670",
+  "eligibility_results_sha256": "c6ec23de0246555b9f127a6436dee22d6a4da4502de4a08bef473304a56c0a96",
+  "Pareto_results_sha256": "2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306",
+  "selection_trace_sha256": "79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55",
+  "ready_for_final_artifact_protocol": true,
+  "all_checks_passed": true
+}

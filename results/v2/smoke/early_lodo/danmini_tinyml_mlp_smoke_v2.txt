@@ -1,0 +1,52 @@
+==================================================================================
+PHASE 2F-1 EARLY LODO SMOKE TEST
+==================================================================================
+
+Held-out device      : Danmini_Doorbell
+Model                : tinyml_mlp
+Parameters           : 9,603
+Elapsed seconds      : 2.106
+
+SAMPLE COUNTS
+Train                : 12,288 | [4096, 4096, 4096]
+Validation           : 6,144 | [2048, 2048, 2048]
+Test                 : 6,144 | [2048, 2048, 2048]
+
+OVERLAP COUNTS
+Train-Test           : 0
+Validation-Test      : 0
+Train-Validation     : 0
+
+LOSSES
+Training             : 1.015025397
+Validation           : 0.882207215
+Test                 : 0.901481032
+
+SMOKE METRICS - NOT SCIENTIFIC RESULTS
+Validation Macro-F1  : 0.524921806
+Test Macro-F1        : 0.418218563
+Test accuracy        : 0.501627604
+
+VALIDATION CHECKS
+train_quota_met: True
+validation_quota_met: True
+test_quota_met: True
+all_train_classes_present: True
+all_validation_classes_present: True
+all_test_classes_present: True
+train_test_overlap_zero: True
+validation_test_overlap_zero: True
+train_validation_overlap_zero: True
+train_rows_exclude_heldout: True
+validation_rows_exclude_heldout: True
+test_rows_include_heldout: True
+raw_features_finite: True
+scaled_features_finite: True
+scaler_has_115_features: True
+model_parameter_count_positive: True
+training_loss_finite: True
+validation_loss_finite: True
+test_loss_finite: True
+model_parameters_changed: True
+validation_metrics_finite: True
+test_metrics_finite: True

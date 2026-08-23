@@ -1,0 +1,131 @@
+{
+  "status": "locked",
+  "phase": 9,
+  "artifact_name": "final_deployment_artifact_protocol",
+  "protocol_version": "phase9_final_artifact_v3_2",
+  "locked_at_utc": "2026-08-06T22:00:54.286385+00:00",
+  "upstream_selection": {
+    "model_family": "tinyml_mlp::P50-QAT",
+    "architecture": "tinyml_mlp",
+    "variant": "P50-QAT",
+    "representation": "static_int8",
+    "primary_decision_profile": "balanced"
+  },
+  "checkpoint_selection_policy": {
+    "canonical_seed": 2026,
+    "method": "fixed project canonical seed",
+    "test_metric_ranking_used": false,
+    "validation_metric_ranking_used": false,
+    "deployment_metric_ranking_used": false,
+    "best_seed_selection_used": false,
+    "rationale": "The model family was selected from aggregate five-seed evidence. The deployment checkpoint is fixed to seed 2026 without ranking seeds by test, validation, or deployment outcomes."
+  },
+  "artifact_construction_policy": {
+    "planned_artifact_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2",
+    "copy_checkpoint_byte_for_byte": true,
+    "copy_model_source_byte_for_byte": true,
+    "copy_pruning_engine_byte_for_byte": true,
+    "copy_QAT_engine_byte_for_byte": true,
+    "copy_scaler_byte_for_byte": true,
+    "planned_bundle_files": [
+      "model_int8_checkpoint.pt",
+      "nbaiot_models.py",
+      "phase5_physical_pruning_engine_v3_2.py",
+      "phase5_qat_engine_v3_2.py",
+      "train_only_standard_scaler_v3_2.npz",
+      "inference_contract.json",
+      "artifact_manifest.json",
+      "artifact_lock.json"
+    ],
+    "overwrite_existing_artifact": false,
+    "source_hash_verification_required": true,
+    "bundle_hash_manifest_required": true
+  },
+  "inference_contract": {
+    "input_feature_count": 115,
+    "input_dtype": "float32",
+    "input_shape": "[batch, 115]",
+    "preprocessing": "locked train-only StandardScaler",
+    "output_class_count": 3,
+    "output_shape": "[batch, 3]",
+    "output_semantics": "logits; class-label order must be copied verbatim from a locked training artifact and hard-failed if unavailable",
+    "device": "CPU",
+    "quantization": "eager static INT8 QAT",
+    "batch_sizes_for_artifact_smoke": [
+      1,
+      32
+    ]
+  },
+  "verification_policy": {
+    "construct_model_from_bundled_sources": true,
+    "strict_state_dict_loading": true,
+    "batch_1_inference_required": true,
+    "batch_32_inference_required": true,
+    "finite_output_required": true,
+    "serialized_roundtrip_required": true,
+    "source_checkpoint_output_match_required": true,
+    "validation_data_access": false,
+    "test_data_access": false,
+    "independent_manifest_verification_required": true
+  },
+  "source_artifacts": {
+    "phase5_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_locked_v3_2.json",
+      "size_bytes": 1378,
+      "sha256": "a067b62e475c1648729819d994fdc59d4050d49dc5d7596b1953f60dc7d7fc7c"
+    },
+    "phase5_master_matrix": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv",
+      "size_bytes": 48909,
+      "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+    },
+    "phase8_final_family_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_final_model_family_locked_v3_2.json",
+      "size_bytes": 1699,
+      "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9"
+    },
+    "selected_metrics": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\metrics.json",
+      "size_bytes": 19236,
+      "sha256": "cfa1b73e475fe1e18d25ece9f1c1a898bde2e7eb88d8da0b4baf2004c56dc311"
+    },
+    "selected_checkpoint": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\best_int8_checkpoint.pt",
+      "size_bytes": 14023,
+      "sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a"
+    },
+    "model_source": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+    },
+    "pruning_engine": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_physical_pruning_engine_v3_2.py",
+      "size_bytes": 11014,
+      "sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3"
+    },
+    "QAT_engine": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_qat_engine_v3_2.py",
+      "size_bytes": 5822,
+      "sha256": "d1e33943a31bd1b3e2ea83a64daee9a31a8b5a8616c97346c62fff3c03503273"
+    },
+    "scaler": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_standard_scaler_v3_2.npz",
+      "size_bytes": 5361,
+      "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+    }
+  },
+  "environment": {
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch_version": "2.11.0+cpu",
+    "quantized_engine_current": "onednn",
+    "quantized_engines_supported": [
+      "onednn"
+    ]
+  },
+  "artifact_construction_performed": false,
+  "model_inference_performed": false,
+  "single_checkpoint_locked": false,
+  "all_checks_passed": true
+}

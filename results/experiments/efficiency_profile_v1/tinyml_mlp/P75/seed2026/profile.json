@@ -1,0 +1,116 @@
+{
+  "generated_at_utc": "2026-07-27T07:05:55.777895+00:00",
+  "protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_efficiency_profile_protocol_v1.json",
+  "protocol_sha256": "32a555b12e868f96c32064812502e16f8bf67b205083a16a6866266457f496fc",
+  "record": {
+    "model_name": "tinyml_mlp",
+    "variant_name": "P75",
+    "seed": 2026,
+    "analysis_role": "primary",
+    "runtime_name": "pytorch_fp32_cpu",
+    "runtime_version": "2.13.0+cpu",
+    "precision": "FP32",
+    "quantized": false,
+    "physical_compaction": true,
+    "parameter_count": 2019,
+    "weight_layer_macs": 1992,
+    "deployment_artifact_size_bytes": 10901,
+    "source_artifact_size_bytes": 34469,
+    "source_artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tinyml_mlp\\P75\\seed2026\\best_checkpoint.pt",
+    "source_artifact_sha256": "090633cc7a5bfe4cf3465fe0f928d3ff2b6bf6facd5cd8ad83339595393c5d94",
+    "test_macro_f1": 0.986371612247398,
+    "input_source": "deterministic_synthetic_standard_normal",
+    "train_split_used": false,
+    "validation_split_used": false,
+    "test_split_used_for_profiling": false,
+    "host_cpu_profile_only": true,
+    "mcu_measurement": false,
+    "latency_warmup_count": 30,
+    "latency_repetition_count": 300,
+    "latency_batch_size": 1,
+    "latency_mean_ms": 0.061687,
+    "latency_median_ms": 0.06075,
+    "latency_p95_ms": 0.09138000000000003,
+    "latency_p99_ms": 0.20026199999999947,
+    "latency_minimum_ms": 0.0395,
+    "latency_standard_deviation_ms": 0.028685556204867436,
+    "throughput_warmup_count": 10,
+    "throughput_repetition_count": 50,
+    "throughput_batch_size": 512,
+    "throughput_batch_mean_ms": 0.09276999999999999,
+    "throughput_samples_per_second": 5519025.547051849,
+    "rss_before_load_bytes": 345800704,
+    "rss_after_load_bytes": 345800704,
+    "rss_after_warmup_bytes": 345800704,
+    "rss_peak_timed_bytes": 345821184,
+    "model_load_rss_delta_bytes": 0,
+    "peak_rss_delta_vs_before_load_bytes": 20480
+  },
+  "runner_metadata": {
+    "precision": "FP32",
+    "physical_compaction": true,
+    "quantized": false,
+    "pruning_metadata": {
+      "model_name": "tinyml_mlp",
+      "requested_pruning_ratio": 0.75,
+      "pruning_name": "P75",
+      "input_features": 115,
+      "num_classes": 3,
+      "original_architecture": {
+        "hidden_units": [
+          64,
+          32
+        ]
+      },
+      "compact_architecture": {
+        "hidden_units": [
+          16,
+          8
+        ]
+      },
+      "selected_indices": {
+        "hidden_1": [
+          1,
+          7,
+          8,
+          13,
+          15,
+          17,
+          22,
+          24,
+          25,
+          30,
+          39,
+          45,
+          46,
+          52,
+          57,
+          61
+        ],
+        "hidden_2": [
+          1,
+          2,
+          4,
+          11,
+          16,
+          21,
+          22,
+          30
+        ]
+      },
+      "original_parameter_count": 9603,
+      "compact_parameter_count": 2019,
+      "removed_parameter_count": 7584,
+      "parameter_reduction_ratio": 0.7897532021243362,
+      "original_weight_layer_macs": 9504,
+      "compact_weight_layer_macs": 1992,
+      "removed_weight_layer_macs": 7512,
+      "mac_reduction_ratio": 0.7904040404040404,
+      "importance_method": "Normalized incoming plus outgoing L1 magnitude",
+      "physical_compaction": true,
+      "mask_based_pruning": false,
+      "output_class_units_pruned": false
+    }
+  },
+  "validation_passed": true
+}

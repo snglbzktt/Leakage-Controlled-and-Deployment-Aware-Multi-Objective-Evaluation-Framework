@@ -1,0 +1,296 @@
+{
+  "protocol_version": "early_lodo_membership_inspection_v2_1",
+  "status": "failed",
+  "completed_at": "2026-08-05T18:18:52.361532+00:00",
+  "metadata_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_primary_seed2026\\metadata.parquet",
+  "metadata_row_count": 2482676,
+  "schema": [
+    {
+      "column": "hash_forward",
+      "type": "int64"
+    },
+    {
+      "column": "hash_reverse",
+      "type": "int64"
+    },
+    {
+      "column": "split",
+      "type": "string"
+    },
+    {
+      "column": "class_label",
+      "type": "string"
+    },
+    {
+      "column": "source_device",
+      "type": "string"
+    },
+    {
+      "column": "source_relative_path",
+      "type": "string"
+    },
+    {
+      "column": "source_row_number",
+      "type": "int64"
+    },
+    {
+      "column": "original_occurrence_count",
+      "type": "int64"
+    },
+    {
+      "column": "source_device_count",
+      "type": "int64"
+    }
+  ],
+  "source_device_column": "source_device",
+  "source_device_count_column": "source_device_count",
+  "label_candidate_columns": [
+    "class_label"
+  ],
+  "likely_family3_columns": [],
+  "hash_columns": [
+    "hash_forward",
+    "hash_reverse"
+  ],
+  "occurrence_columns": [
+    "original_occurrence_count",
+    "source_device_count"
+  ],
+  "selected_columns": [
+    "source_device",
+    "source_device_count",
+    "class_label",
+    "hash_forward",
+    "hash_reverse",
+    "original_occurrence_count"
+  ],
+  "source_device_count_distribution": {
+    "1": 611623,
+    "2": 1073595,
+    "3": 493272,
+    "4": 3675,
+    "5": 3560,
+    "6": 5392,
+    "7": 8186,
+    "8": 6313,
+    "9": 277060
+  },
+  "maximum_source_device_count": 9,
+  "device_membership": {
+    "Danmini_Doorbell": {
+      "expected_fingerprint_count": 996539,
+      "observed_fingerprint_count": 996539,
+      "shared_fingerprint_count": 911645,
+      "count_matches": true
+    },
+    "Ecobee_Thermostat": {
+      "expected_fingerprint_count": 823134,
+      "observed_fingerprint_count": 535268,
+      "shared_fingerprint_count": 513152,
+      "count_matches": false
+    },
+    "Ennio_Doorbell": {
+      "expected_fingerprint_count": 338599,
+      "observed_fingerprint_count": 41642,
+      "shared_fingerprint_count": 5835,
+      "count_matches": false
+    },
+    "Philips_B120N10_Baby_Monitor": {
+      "expected_fingerprint_count": 1075936,
+      "observed_fingerprint_count": 169044,
+      "shared_fingerprint_count": 1715,
+      "count_matches": false
+    },
+    "Provision_PT_737E_Security_Camera": {
+      "expected_fingerprint_count": 807836,
+      "observed_fingerprint_count": 495337,
+      "shared_fingerprint_count": 425054,
+      "count_matches": false
+    },
+    "Provision_PT_838_Security_Camera": {
+      "expected_fingerprint_count": 820042,
+      "observed_fingerprint_count": 101254,
+      "shared_fingerprint_count": 0,
+      "count_matches": false
+    },
+    "Samsung_SNH_1011_N_Webcam": {
+      "expected_fingerprint_count": 359368,
+      "observed_fingerprint_count": 51411,
+      "shared_fingerprint_count": 0,
+      "count_matches": false
+    },
+    "SimpleHome_XCS7_1002_WHT_Security_Camera": {
+      "expected_fingerprint_count": 847047,
+      "observed_fingerprint_count": 59854,
+      "shared_fingerprint_count": 13652,
+      "count_matches": false
+    },
+    "SimpleHome_XCS7_1003_WHT_Security_Camera": {
+      "expected_fingerprint_count": 836326,
+      "observed_fingerprint_count": 32327,
+      "shared_fingerprint_count": 0,
+      "count_matches": false
+    }
+  },
+  "label_unique_values": {
+    "class_label": [
+      "benign",
+      "gafgyt_combo",
+      "gafgyt_junk",
+      "gafgyt_scan",
+      "gafgyt_tcp",
+      "gafgyt_udp",
+      "mirai_ack",
+      "mirai_scan",
+      "mirai_syn",
+      "mirai_udp",
+      "mirai_udpplain"
+    ]
+  },
+  "single_device_samples": [
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "1",
+      "class_label": "benign",
+      "hash_forward": "-5635523411592872385",
+      "hash_reverse": "7433340958982268529",
+      "original_occurrence_count": "4"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "1",
+      "class_label": "benign",
+      "hash_forward": "6309785476492270297",
+      "hash_reverse": "-8037337333456679227",
+      "original_occurrence_count": "4"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "1",
+      "class_label": "benign",
+      "hash_forward": "-6758900912423598437",
+      "hash_reverse": "1792256668686766427",
+      "original_occurrence_count": "4"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "1",
+      "class_label": "benign",
+      "hash_forward": "3084717697153075391",
+      "hash_reverse": "-6398201855244281353",
+      "original_occurrence_count": "4"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "1",
+      "class_label": "benign",
+      "hash_forward": "-1197779216895548593",
+      "hash_reverse": "4034584223728405909",
+      "original_occurrence_count": "4"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "1",
+      "class_label": "benign",
+      "hash_forward": "-6688152544993946145",
+      "hash_reverse": "-4463610923416872693",
+      "original_occurrence_count": "4"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "1",
+      "class_label": "benign",
+      "hash_forward": "3540825489471816671",
+      "hash_reverse": "-1622524344232721085",
+      "original_occurrence_count": "4"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "1",
+      "class_label": "benign",
+      "hash_forward": "-1628841979661514008",
+      "hash_reverse": "-2734909657000467944",
+      "original_occurrence_count": "4"
+    }
+  ],
+  "multi_device_samples": [
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "9",
+      "class_label": "gafgyt_combo",
+      "hash_forward": "3397411188687606930",
+      "hash_reverse": "-1768664837809509188",
+      "original_occurrence_count": "9"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "9",
+      "class_label": "gafgyt_combo",
+      "hash_forward": "-2269578245661536150",
+      "hash_reverse": "-3062282974775549506",
+      "original_occurrence_count": "9"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "9",
+      "class_label": "gafgyt_combo",
+      "hash_forward": "6428895126505147021",
+      "hash_reverse": "-30690441044044481",
+      "original_occurrence_count": "9"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "9",
+      "class_label": "gafgyt_combo",
+      "hash_forward": "-3891518909083364510",
+      "hash_reverse": "5986119117739420114",
+      "original_occurrence_count": "9"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "9",
+      "class_label": "gafgyt_combo",
+      "hash_forward": "3266141685691349640",
+      "hash_reverse": "-2762740641319337388",
+      "original_occurrence_count": "9"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "8",
+      "class_label": "gafgyt_combo",
+      "hash_forward": "-2578820741238134337",
+      "hash_reverse": "3656445026669290477",
+      "original_occurrence_count": "8"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "2",
+      "class_label": "gafgyt_combo",
+      "hash_forward": "-8090783180804555376",
+      "hash_reverse": "4244241463982820456",
+      "original_occurrence_count": "2"
+    },
+    {
+      "source_device": "Danmini_Doorbell",
+      "source_device_count": "2",
+      "class_label": "gafgyt_combo",
+      "hash_forward": "-6563226155378424592",
+      "hash_reverse": "-8344959861537599960",
+      "original_occurrence_count": "2"
+    }
+  ],
+  "validation_checks": {
+    "metadata_row_count": true,
+    "device_count": true,
+    "source_device_column": true,
+    "source_device_count_column": true,
+    "all_device_fingerprint_counts_match": false,
+    "device_count_distribution_complete": true,
+    "no_invalid_source_device_count": true,
+    "multi_device_rows_exist": true,
+    "family3_column_detected": false,
+    "single_device_samples_collected": true,
+    "multi_device_samples_collected": true
+  },
+  "all_checks_passed": false
+}

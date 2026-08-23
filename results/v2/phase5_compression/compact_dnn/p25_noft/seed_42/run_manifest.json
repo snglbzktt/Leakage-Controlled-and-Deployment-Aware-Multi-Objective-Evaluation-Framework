@@ -1,0 +1,140 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "run_id": "compact_dnn__p25_noft__seed_42",
+  "architecture": "compact_dnn",
+  "variant": "P25-noFT",
+  "seed": 42,
+  "evaluation_mode": "fixed_no_fine_tuning",
+  "source_checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_42\\source_checkpoint.pt",
+    "size_bytes": 77699,
+    "sha256": "e24df211106f2e5302cb532bc693d64a9e7faf5e9f4818327a54961216d5af35"
+  },
+  "source_manifest": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_42\\source_manifest.json",
+    "size_bytes": 1952,
+    "sha256": "211231fa76da40729f4e63bc516ad6b0e0c6f077868ed9a741434b3c54f6d575"
+  },
+  "source_B0_checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_42\\best_checkpoint.pt",
+    "size_bytes": 313779,
+    "sha256": "bfaa7bf463eb749ac96c61b2c1053ab23e9e96b7f6fbf23b35e18041a1a583f4"
+  },
+  "pruning_engine": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_physical_pruning_engine_v3_2.py",
+    "size_bytes": 11014,
+    "sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3"
+  },
+  "phase5_protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase5_fair_budget_compression_protocol_v3_2.json",
+    "size_bytes": 21842,
+    "sha256": "1681aaa46ce286f498367a6c8a2ccb4c711c091fbb053ec4aa48f9bd1d10ab03"
+  },
+  "locked_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_locked_configuration_matrix_v3_2.csv",
+    "size_bytes": 43039,
+    "sha256": "424bb76cd67006b930579182e08dc5f005bf86ae4adc75df04e0609df06aeed7"
+  },
+  "scaler": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_standard_scaler_v3_2.npz",
+    "size_bytes": 5361,
+    "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+  },
+  "verified_sources_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_sources_verified_locked_v3_2.json",
+    "size_bytes": 968,
+    "sha256": "f51da00617882c021417c4f41a0eca92aaa0bcae8db18bb7f279b786fc5215a2"
+  },
+  "model_complexity": {
+    "linear_widths": [
+      [
+        115,
+        96
+      ],
+      [
+        96,
+        48
+      ],
+      [
+        48,
+        24
+      ],
+      [
+        24,
+        3
+      ]
+    ],
+    "parameter_count": 17043,
+    "linear_macs_per_sample": 16872,
+    "serialized_source_checkpoint_bytes": 77699
+  },
+  "fit_scope": {
+    "fine_tuning_performed": false,
+    "train_access_count": 0,
+    "validation_inference_count": 1,
+    "test_evaluation_count": 1,
+    "test_used_for_selection": false
+  },
+  "fragility_gate_triggered": false,
+  "artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_noft\\seed_42\\validation_predictions.npz",
+      "size_bytes": 3661133,
+      "sha256": "d0f85c8203bd9584fbbf478db37695fe998d6921c62321983f57751c582528a0",
+      "relative_path": "validation_predictions.npz"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_noft\\seed_42\\test_predictions.npz",
+      "size_bytes": 3662245,
+      "sha256": "96151e99b688e274c8a0fb36027337f5eaafa764714a6b0d4a9fe9d20e6104f3",
+      "relative_path": "test_predictions.npz"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_noft\\seed_42\\validation_confusion_matrix.csv",
+      "size_bytes": 106,
+      "sha256": "c2b06dca770401bc0cbac9a6ad3f726cea353ec77c87002c41895eb29426c7dc",
+      "relative_path": "validation_confusion_matrix.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_noft\\seed_42\\validation_raw_weighted_confusion_matrix.csv",
+      "size_bytes": 109,
+      "sha256": "88ee2eb89bcbcd67a1bb99337be3bccd0d11aee1c67688d9e10f67ce3ef1969b",
+      "relative_path": "validation_raw_weighted_confusion_matrix.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_noft\\seed_42\\validation_per_class_metrics.csv",
+      "size_bytes": 760,
+      "sha256": "5fc1a3882370f892c991cb2e615944d7dbbf1406870b75eb171c1bf0a2514d61",
+      "relative_path": "validation_per_class_metrics.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_noft\\seed_42\\test_confusion_matrix.csv",
+      "size_bytes": 106,
+      "sha256": "297c6c265d3a7ff2082f6254266a73bc101b8543dc8f286db3faaa4530730bfd",
+      "relative_path": "test_confusion_matrix.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_noft\\seed_42\\test_raw_weighted_confusion_matrix.csv",
+      "size_bytes": 109,
+      "sha256": "a8de66c89e0c3bbd19035db3a297fd4aa7c4eb19add9acc8041be1d658c4997f",
+      "relative_path": "test_raw_weighted_confusion_matrix.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_noft\\seed_42\\test_per_class_metrics.csv",
+      "size_bytes": 760,
+      "sha256": "0fa9c794a22819243bf11854e891b295d7c5edf409b43e8f676a4728e1361655",
+      "relative_path": "test_per_class_metrics.csv"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_noft\\seed_42\\metrics.json",
+      "size_bytes": 8002,
+      "sha256": "b08e2e979b176deb045cf62a0068539f9659cf255b1360c7042aecdfa9decda2",
+      "relative_path": "metrics.json"
+    }
+  ],
+  "all_integrity_checks_passed": true,
+  "completed_at_utc": "2026-08-06T18:11:34.070089+00:00"
+}

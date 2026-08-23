@@ -1,0 +1,1638 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "physical_structured_pruning_engine",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "verified_at_utc": "2026-08-06T17:54:13.955794+00:00",
+  "importance_criterion": "For hidden unit j: score_j = L2([incoming weight row j, bias j]) * L2(outgoing weight column j). Scores are computed independently on the original B0 checkpoint. Ranking is descending by score, with ascending original unit index as the deterministic tie-break. P25 and P50 are each generated directly from the same B0 checkpoint.",
+  "tie_break_policy": "ascending original hidden-unit index",
+  "source_policy": {
+    "P25_generated_directly_from_B0": true,
+    "P50_generated_directly_from_B0": true,
+    "P50_generated_from_P25": false,
+    "scores_computed_on_original_B0": true,
+    "mask_only_pruning": false,
+    "physical_linear_dimension_replacement": true
+  },
+  "verification_scope": {
+    "B0_checkpoint_count": 10,
+    "pruning_ratio_count": 2,
+    "branch_test_count": 20,
+    "train_rows_used_for_smoke": 64,
+    "validation_access_count": 0,
+    "test_access_count": 0
+  },
+  "architecture_ratio_summary": [
+    {
+      "architecture": "tinyml_mlp",
+      "pruning_ratio": 0.25,
+      "variant": "P25-noFT",
+      "run_count": 5,
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 6819,
+      "parameter_reduction_fraction": 0.2899094033114652,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 6744,
+      "MAC_reduction_fraction": 0.29040404040404044
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "pruning_ratio": 0.5,
+      "variant": "P50-noFT",
+      "run_count": 5,
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 4291,
+      "parameter_reduction_fraction": 0.5531604706862439,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 4240,
+      "MAC_reduction_fraction": 0.5538720538720538
+    },
+    {
+      "architecture": "compact_dnn",
+      "pruning_ratio": 0.25,
+      "variant": "P25-noFT",
+      "run_count": 5,
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 17043,
+      "parameter_reduction_fraction": 0.32591069097812764,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 16872,
+      "MAC_reduction_fraction": 0.32662835249042144
+    },
+    {
+      "architecture": "compact_dnn",
+      "pruning_ratio": 0.5,
+      "variant": "P50-noFT",
+      "run_count": 5,
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 10083,
+      "parameter_reduction_fraction": 0.6011944785033422,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 9968,
+      "MAC_reduction_fraction": 0.6021711366538953
+    }
+  ],
+  "branch_reports": [
+    {
+      "architecture": "compact_dnn",
+      "seed": 42,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "bfaa7bf463eb749ac96c61b2c1053ab23e9e96b7f6fbf23b35e18041a1a583f4"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 17043,
+      "parameter_reduction_fraction": 0.32591069097812764,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 16872,
+      "MAC_reduction_fraction": 0.32662835249042144,
+      "serialized_state_bytes": 76365,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 42,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "bfaa7bf463eb749ac96c61b2c1053ab23e9e96b7f6fbf23b35e18041a1a583f4"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 10083,
+      "parameter_reduction_fraction": 0.6011944785033422,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 9968,
+      "MAC_reduction_fraction": 0.6021711366538953,
+      "serialized_state_bytes": 47629,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 123,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "846daa7d293dc3485b0343cd0f3b2f78b5e80872923162019cd3b68e21ace6de"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 17043,
+      "parameter_reduction_fraction": 0.32591069097812764,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 16872,
+      "MAC_reduction_fraction": 0.32662835249042144,
+      "serialized_state_bytes": 76365,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 123,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "846daa7d293dc3485b0343cd0f3b2f78b5e80872923162019cd3b68e21ace6de"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 10083,
+      "parameter_reduction_fraction": 0.6011944785033422,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 9968,
+      "MAC_reduction_fraction": 0.6021711366538953,
+      "serialized_state_bytes": 47629,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 2026,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "7404110900abe7bf20e384481f693da8abde7fb316436556b680f7786080da9a"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 17043,
+      "parameter_reduction_fraction": 0.32591069097812764,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 16872,
+      "MAC_reduction_fraction": 0.32662835249042144,
+      "serialized_state_bytes": 76365,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 2026,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "7404110900abe7bf20e384481f693da8abde7fb316436556b680f7786080da9a"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 10083,
+      "parameter_reduction_fraction": 0.6011944785033422,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 9968,
+      "MAC_reduction_fraction": 0.6021711366538953,
+      "serialized_state_bytes": 47629,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 3407,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "79ac775ce6b798be6e1ecec074d116a2c3701fb8535ec48f03eac295a9445ea7"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 17043,
+      "parameter_reduction_fraction": 0.32591069097812764,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 16872,
+      "MAC_reduction_fraction": 0.32662835249042144,
+      "serialized_state_bytes": 76365,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 3407,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "79ac775ce6b798be6e1ecec074d116a2c3701fb8535ec48f03eac295a9445ea7"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 10083,
+      "parameter_reduction_fraction": 0.6011944785033422,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 9968,
+      "MAC_reduction_fraction": 0.6021711366538953,
+      "serialized_state_bytes": 47629,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 8192,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "822635e009b505e48e0e03fc4944bcf087624692af90451888302a9528024fa8"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 17043,
+      "parameter_reduction_fraction": 0.32591069097812764,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 16872,
+      "MAC_reduction_fraction": 0.32662835249042144,
+      "serialized_state_bytes": 76365,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "seed": 8192,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "822635e009b505e48e0e03fc4944bcf087624692af90451888302a9528024fa8"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 10083,
+      "parameter_reduction_fraction": 0.6011944785033422,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 9968,
+      "MAC_reduction_fraction": 0.6021711366538953,
+      "serialized_state_bytes": 47629,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 42,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "5abfac0829d550c2e2f452f992e5cc4b53b79412f506e8ef38d2335285aefa1f"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 6819,
+      "parameter_reduction_fraction": 0.2899094033114652,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 6744,
+      "MAC_reduction_fraction": 0.29040404040404044,
+      "serialized_state_bytes": 33173,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 42,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "5abfac0829d550c2e2f452f992e5cc4b53b79412f506e8ef38d2335285aefa1f"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 4291,
+      "parameter_reduction_fraction": 0.5531604706862439,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 4240,
+      "MAC_reduction_fraction": 0.5538720538720538,
+      "serialized_state_bytes": 22613,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 123,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "eab045d2e16f00c850e93b72979e5e1e299c4e792944403cddd60df7c7fd371a"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 6819,
+      "parameter_reduction_fraction": 0.2899094033114652,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 6744,
+      "MAC_reduction_fraction": 0.29040404040404044,
+      "serialized_state_bytes": 33173,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 123,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "eab045d2e16f00c850e93b72979e5e1e299c4e792944403cddd60df7c7fd371a"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 4291,
+      "parameter_reduction_fraction": 0.5531604706862439,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 4240,
+      "MAC_reduction_fraction": 0.5538720538720538,
+      "serialized_state_bytes": 22613,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 2026,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "6b60c988f01ec53e91ea7d9288ebd06cb4fd825ed093476150986c96d4223fa9"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 6819,
+      "parameter_reduction_fraction": 0.2899094033114652,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 6744,
+      "MAC_reduction_fraction": 0.29040404040404044,
+      "serialized_state_bytes": 33173,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 2026,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "6b60c988f01ec53e91ea7d9288ebd06cb4fd825ed093476150986c96d4223fa9"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 4291,
+      "parameter_reduction_fraction": 0.5531604706862439,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 4240,
+      "MAC_reduction_fraction": 0.5538720538720538,
+      "serialized_state_bytes": 22613,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 3407,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "d8e8c6350d2a580b0942dcdbb47f5c42850d52313f3eb8724244ca0b84ed5fb0"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 6819,
+      "parameter_reduction_fraction": 0.2899094033114652,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 6744,
+      "MAC_reduction_fraction": 0.29040404040404044,
+      "serialized_state_bytes": 33173,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 3407,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "d8e8c6350d2a580b0942dcdbb47f5c42850d52313f3eb8724244ca0b84ed5fb0"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 4291,
+      "parameter_reduction_fraction": 0.5531604706862439,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 4240,
+      "MAC_reduction_fraction": 0.5538720538720538,
+      "serialized_state_bytes": 22613,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 8192,
+      "variant": "P25-noFT",
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "cb2e01cfae3b36651853cbe4dab841cedabed53a57d25c508ef4b1e011ddb69b"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 6819,
+      "parameter_reduction_fraction": 0.2899094033114652,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 6744,
+      "MAC_reduction_fraction": 0.29040404040404044,
+      "serialized_state_bytes": 33173,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "seed": 8192,
+      "variant": "P50-noFT",
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "cb2e01cfae3b36651853cbe4dab841cedabed53a57d25c508ef4b1e011ddb69b"
+      },
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 4291,
+      "parameter_reduction_fraction": 0.5531604706862439,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 4240,
+      "MAC_reduction_fraction": 0.5538720538720538,
+      "serialized_state_bytes": 22613,
+      "checks": {
+        "source_checkpoint_hash_matches": true,
+        "generated_directly_from_B0": true,
+        "physical_compaction_true": true,
+        "compacted_widths_match_expected": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "copied_weights_match_exactly": true,
+        "source_model_unchanged": true,
+        "source_output_unchanged": true,
+        "no_shared_parameter_storage": true,
+        "deterministic_selection": true,
+        "deterministic_weights": true,
+        "output_shape_preserved": true,
+        "output_is_finite": true,
+        "serialization_roundtrip_metadata_matches": true,
+        "serialization_roundtrip_output_matches": true,
+        "serialization_roundtrip_state_matches": true
+      },
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "all_checks_passed": true
+    }
+  ],
+  "nested_selection_checks": {
+    "tinyml_mlp_seed_42_network.0_P50_subset_P25": true,
+    "tinyml_mlp_seed_42_network.2_P50_subset_P25": true,
+    "tinyml_mlp_seed_123_network.0_P50_subset_P25": true,
+    "tinyml_mlp_seed_123_network.2_P50_subset_P25": true,
+    "tinyml_mlp_seed_2026_network.0_P50_subset_P25": true,
+    "tinyml_mlp_seed_2026_network.2_P50_subset_P25": true,
+    "tinyml_mlp_seed_3407_network.0_P50_subset_P25": true,
+    "tinyml_mlp_seed_3407_network.2_P50_subset_P25": true,
+    "tinyml_mlp_seed_8192_network.0_P50_subset_P25": true,
+    "tinyml_mlp_seed_8192_network.2_P50_subset_P25": true,
+    "compact_dnn_seed_42_network.0_P50_subset_P25": true,
+    "compact_dnn_seed_42_network.3_P50_subset_P25": true,
+    "compact_dnn_seed_42_network.6_P50_subset_P25": true,
+    "compact_dnn_seed_123_network.0_P50_subset_P25": true,
+    "compact_dnn_seed_123_network.3_P50_subset_P25": true,
+    "compact_dnn_seed_123_network.6_P50_subset_P25": true,
+    "compact_dnn_seed_2026_network.0_P50_subset_P25": true,
+    "compact_dnn_seed_2026_network.3_P50_subset_P25": true,
+    "compact_dnn_seed_2026_network.6_P50_subset_P25": true,
+    "compact_dnn_seed_3407_network.0_P50_subset_P25": true,
+    "compact_dnn_seed_3407_network.3_P50_subset_P25": true,
+    "compact_dnn_seed_3407_network.6_P50_subset_P25": true,
+    "compact_dnn_seed_8192_network.0_P50_subset_P25": true,
+    "compact_dnn_seed_8192_network.3_P50_subset_P25": true,
+    "compact_dnn_seed_8192_network.6_P50_subset_P25": true
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "physical_pruning_required": true,
+    "mask_only_disallowed": true,
+    "preflight_passed": true,
+    "preflight_locked": true,
+    "B0_pair_locked": true,
+    "registry_hash_matches": true,
+    "registry_has_ten_rows": true
+  },
+  "global_checks": {
+    "twenty_branch_tests_completed": true,
+    "all_branch_checks_passed": true,
+    "all_P50_selections_subset_of_P25": true,
+    "validation_access_count_zero": true,
+    "test_access_count_zero": true
+  },
+  "engine_source": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_physical_pruning_engine_v3_2.py",
+    "size_bytes": 11014,
+    "sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3"
+  },
+  "selected_units_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_engine_selected_units_v3_2.csv",
+    "size_bytes": 81733,
+    "sha256": "3d8fd5efe3c1da5980f7fc841d593db0fb1d5b36bf6ebe60d6e359ec7c7f4ae2"
+  },
+  "ready_for_P25_noFT_and_P50_noFT_generation": true,
+  "all_checks_passed": true
+}

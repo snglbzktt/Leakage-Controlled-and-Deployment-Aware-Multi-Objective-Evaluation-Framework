@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-07-24T11:28:55.248855+00:00",
+  "experiment_name": "fp32_family3_compact_dnn_seed2026",
+  "run_mode": "main",
+  "scientific_result_status": "candidate_experiment",
+  "test_split_evaluated": false,
+  "model_selection_split": "validation",
+  "model_selection_metric": "macro_f1",
+  "model_name": "compact_dnn",
+  "task_name": "family_3",
+  "seed": 2026,
+  "parameter_count": 25283,
+  "feature_count": 115,
+  "class_count": 3,
+  "class_names": [
+    "benign",
+    "gafgyt",
+    "mirai"
+  ],
+  "class_weight_scheme": "inverse_square_root_frequency_mean1",
+  "best_epoch": 15,
+  "best_validation_macro_f1": 0.987873622895325,
+  "epochs_completed": 15,
+  "total_training_seconds": 180.08100319997175,
+  "config_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\experiments\\fp32_baseline_v1\\family3_compact_dnn_seed2026.yaml",
+  "config_sha256": "04cbd52102834c080e074cfc10ed226de7f6b9bd3fe8db799992e4013f67f477",
+  "history_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\compact_dnn\\seed2026\\training_history.csv",
+  "best_validation_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\compact_dnn\\seed2026\\best_validation_metrics.json",
+  "checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\compact_dnn\\seed2026\\best_checkpoint.pt",
+  "checkpoint_size_bytes": 314661,
+  "validation_passed": true
+}

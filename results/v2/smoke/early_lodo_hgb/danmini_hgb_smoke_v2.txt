@@ -1,0 +1,30 @@
+==================================================================================
+PHASE 2G-5 EARLY LODO HGB SMOKE TEST
+==================================================================================
+
+Held-out device     : Danmini_Doorbell
+Model               : hist_gradient_boosting_b0
+Train samples       : 30,000
+Validation samples  : 6,000
+Test samples        : 6,000
+Fit seconds         : 11.003
+Validation Macro-F1 : 0.998833333
+Test Macro-F1       : 0.972166878
+
+VALIDATION CHECKS
+cache_validated: True
+hgb_parameters_supported: True
+train_quota_met: True
+validation_quota_met: True
+test_quota_met: True
+all_features_have_115_columns: True
+all_features_finite: True
+all_train_classes_present: True
+model_classes_valid: True
+five_iterations_completed: True
+train_validation_overlap_zero: True
+train_test_overlap_zero: True
+validation_test_overlap_zero: True
+validation_metric_finite: True
+test_metric_finite: True
+model_file_created: True

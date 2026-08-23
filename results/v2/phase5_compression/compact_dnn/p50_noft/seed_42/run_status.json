@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "compact_dnn__p50_noft__seed_42",
+  "architecture": "compact_dnn",
+  "variant": "P50-noFT",
+  "seed": 42,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "validation_predictions_sha256": "201886f6cfe2a80b37f52ec7d331c6388acce561b7f1d46eb24f02a434fa78d6",
+  "test_predictions_sha256": "cd30a878a5473b2d533b7cece8a575f3712a5ab88498dc5b025f58b6abbb9718",
+  "metrics_sha256": "18eeeb127dcf914c5f9bb4709a41d7c3f75b762edfc6d3e05f0b779251fb5bcb",
+  "run_manifest_sha256": "5cd9fe7b07bf5041b59ffdd68d9fecc6b3a4d34ec86ed2686d8c8baaff288f91",
+  "test_fingerprint_macro_f1": 0.9950565551069036,
+  "test_raw_weighted_macro_f1": 0.9963450514777034,
+  "fragility_gate_triggered": false,
+  "completed_at_utc": "2026-08-06T18:12:02.355244+00:00"
+}

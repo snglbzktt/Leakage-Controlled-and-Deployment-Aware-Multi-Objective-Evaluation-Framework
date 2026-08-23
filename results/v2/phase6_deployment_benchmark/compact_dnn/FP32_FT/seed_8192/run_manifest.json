@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "phase": 6,
+  "artifact_name": "isolated_deployment_benchmark_run",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "measurement_order": 75,
+  "architecture": "compact_dnn",
+  "variant": "FP32-FT",
+  "seed": 8192,
+  "source_checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\fp32_ft\\seed_8192\\best_checkpoint.pt",
+    "size_bytes": 314149,
+    "sha256": "c01a2a736487d2fbe72dec52269b0980846af2b96b616434a5a0262cc5b698d2"
+  },
+  "source_metrics": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\fp32_ft\\seed_8192\\metrics.json",
+    "size_bytes": 8166,
+    "sha256": "3fb19bfe51922871c242233cbef4f2e794e2365a5213fc2b71e1fd7c9b451650"
+  },
+  "phase6_protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase6_deployment_benchmark_protocol_v3_2.json",
+    "size_bytes": 3406,
+    "sha256": "5cd3ef9080f15824ce5b6afe4705cc65d812f2bfa65ddb6d531669363b5a6f31"
+  },
+  "phase6_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+    "size_bytes": 42063,
+    "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+  },
+  "artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase6_deployment_benchmark\\compact_dnn\\FP32_FT\\seed_8192\\deployment_metrics.json",
+      "size_bytes": 2261,
+      "sha256": "b019d90b4e2b1618ac85a8671bf822a5e150cd4d67fd6571e2f6136773076d2e",
+      "relative_path": "deployment_metrics.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase6_deployment_benchmark\\compact_dnn\\FP32_FT\\seed_8192\\raw_latencies_ns.npz",
+      "size_bytes": 1958,
+      "sha256": "09ed482d9c4ea4c8eada5d958f4d032d10b7566a9412a03bcd52af3dc5718a09",
+      "relative_path": "raw_latencies_ns.npz"
+    }
+  ],
+  "validation_data_access": false,
+  "test_data_access": false,
+  "all_integrity_checks_passed": true,
+  "completed_at_utc": "2026-08-06T21:09:06.073806+00:00"
+}

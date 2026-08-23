@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-07-25T08:23:21.150106+00:00",
+  "model_name": "tiny_1d_cnn",
+  "method_name": "PTQ",
+  "seed": 2026,
+  "quantization_protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_quantization_protocol_v1.json",
+  "quantization_protocol_sha256": "2f5b9e29501d598ba6830173ce601983672731d7599da2eabb56f2c794bcf086",
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed2026\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "176b05021581a8622d947a75ac8d6f5580a1efe0d6a9b44e597508d70c51d7db",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\PTQ\\seed2026\\test_metrics.json",
+  "artifact_metadata_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\PTQ\\seed2026\\artifact_metadata.json",
+  "training_summary_file": null,
+  "test_evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "validation_passed": true
+}

@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "measurement_order": 48,
+  "architecture": "tinyml_mlp",
+  "variant": "P25-noFT",
+  "seed": 2026,
+  "deployment_metrics_sha256": "d7c808f4505f5b69c71d5cbd9790bfa1e9cdede5357ffc9d92301e1d317a2f94",
+  "raw_latencies_sha256": "7fd72022f8a99a0f09b371b2ef3b55c0ef0117e4e5718a3d0ed63ae4f3d6cf31",
+  "run_manifest_sha256": "fb785d85fba95d76a0a818b654c721d78570e7013d8039299762cf574d406556",
+  "validation_data_access": false,
+  "test_data_access": false,
+  "completed_at_utc": "2026-08-06T21:07:49.614832+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "QAT_P25_QAT_P50_QAT_evaluation",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "QAT_engine_version": "phase5_qat_engine_v3_2",
+  "completed_at_utc": "2026-08-06T19:48:38.867066+00:00",
+  "run_count": 30,
+  "test_evaluation_count_per_run": 1,
+  "test_inference_total": 30,
+  "test_used_for_selection": false,
+  "aggregate_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_QAT_summary_v3_2.json",
+  "aggregate_json_sha256": "f210e4ec53d66efaed86f184bf39362555f506bc6fdfa4606b38b7787fb37fd1",
+  "aggregate_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_QAT_all_runs_v3_2.csv",
+  "aggregate_runs_csv_sha256": "0b3e530e17226a80d72dbf2dbce8ab69f21a37bc34d23813d0dbadb05c36068c",
+  "group_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_QAT_group_summary_v3_2.csv",
+  "group_summary_csv_sha256": "8b50a1bbe90eda4a429c318868560b2e5fa197e4bd96d1c11f8d591c18f22c49",
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

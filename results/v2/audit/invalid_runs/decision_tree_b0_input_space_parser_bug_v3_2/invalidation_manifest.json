@@ -1,0 +1,117 @@
+{
+  "status": "invalidated_and_quarantined",
+  "generated_at_utc": "2026-08-06T13:44:09.858180+00:00",
+  "model_id": "decision_tree_b0",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "scientific_reason": "The locked run matrix declared 'canonical_float32_unscaled', but the runner used substring parsing: 'scaled' in input_space. Because 'unscaled' contains 'scaled', all five runs were trained and evaluated in the scaled feature space. These results therefore do not conform to the locked unscaled Decision Tree protocol and must not be used.",
+  "runner_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\104_run_decision_tree_b0_five_seeds_v3_2.py",
+  "runner_script_sha256": "555e032c0c84cdf6a435b8bca965ec6efd335c48319f107ea97137cdd8ad042a",
+  "bug_expression_confirmed": true,
+  "run_inventory": [
+    {
+      "run_id": "decision_tree_b0__seed_42",
+      "seed": 42,
+      "source_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_42",
+      "size_bytes": 54674,
+      "metrics_sha256": "4f0ec73b36edb7086e87d5548795ed0cc8ae5d82177caed53ff24f656e4afa2d",
+      "run_manifest_sha256": "f6f7e0bfb003eb0c69aadac54c54443fd69558650b2dfb8310f367bb5cd4a8ec",
+      "run_status_sha256": "b1b2297c8120c8e930d01035639b8e3dcf0c8506eedd3f40b1838aa67bf0eaa7",
+      "declared_input_space": "canonical_float32_unscaled",
+      "test_fingerprint_macro_f1": 0.9995433268452801,
+      "checks": {
+        "model_id_matches": true,
+        "seed_matches": true,
+        "protocol_version_matches": true,
+        "declared_input_space_is_unscaled": true,
+        "run_completed": true,
+        "test_evaluation_count_is_one": true
+      }
+    },
+    {
+      "run_id": "decision_tree_b0__seed_123",
+      "seed": 123,
+      "source_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_123",
+      "size_bytes": 54800,
+      "metrics_sha256": "1b3a9a3f3ba010b39258595dfd3953ced5cbd4aa00c93b329fec2597209a3d16",
+      "run_manifest_sha256": "c3c9bfa63b12f4b2cca430582cb22cb7285c6512d786922f429145eb310caf66",
+      "run_status_sha256": "cc9316618bc3c4be322374d18550afb71aa5c8ed042aa53d7c9c6db3c3627797",
+      "declared_input_space": "canonical_float32_unscaled",
+      "test_fingerprint_macro_f1": 0.9995459612418566,
+      "checks": {
+        "model_id_matches": true,
+        "seed_matches": true,
+        "protocol_version_matches": true,
+        "declared_input_space_is_unscaled": true,
+        "run_completed": true,
+        "test_evaluation_count_is_one": true
+      }
+    },
+    {
+      "run_id": "decision_tree_b0__seed_2026",
+      "seed": 2026,
+      "source_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_2026",
+      "size_bytes": 54698,
+      "metrics_sha256": "9f132683149011f51b23df6dea2cb9e9f17f149db262baa3c4fd02a22b5a3c29",
+      "run_manifest_sha256": "c0d8947ad3255c3f1f4a0591141802bb6e9052ac34be3d99417ce0278d1798b8",
+      "run_status_sha256": "f60a99de59873d9af0829f383a1105759b896a11ecd371b8250dd5c9a169b6ca",
+      "declared_input_space": "canonical_float32_unscaled",
+      "test_fingerprint_macro_f1": 0.9995184091478938,
+      "checks": {
+        "model_id_matches": true,
+        "seed_matches": true,
+        "protocol_version_matches": true,
+        "declared_input_space_is_unscaled": true,
+        "run_completed": true,
+        "test_evaluation_count_is_one": true
+      }
+    },
+    {
+      "run_id": "decision_tree_b0__seed_3407",
+      "seed": 3407,
+      "source_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_3407",
+      "size_bytes": 54786,
+      "metrics_sha256": "c83a6a10e7f3c51412c92ffd0e7213e8c9eb4efe34a9ecee324a7af02344aea3",
+      "run_manifest_sha256": "bf2b5064cf46310677dc71d8a94087fd9eaa5fc729c3b4b5dbe3e9d84dbd5b0d",
+      "run_status_sha256": "079e457dca87e3f98057d17507f921454723399f363262d7632790252a13d88e",
+      "declared_input_space": "canonical_float32_unscaled",
+      "test_fingerprint_macro_f1": 0.9996058635244399,
+      "checks": {
+        "model_id_matches": true,
+        "seed_matches": true,
+        "protocol_version_matches": true,
+        "declared_input_space_is_unscaled": true,
+        "run_completed": true,
+        "test_evaluation_count_is_one": true
+      }
+    },
+    {
+      "run_id": "decision_tree_b0__seed_8192",
+      "seed": 8192,
+      "source_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_8192",
+      "size_bytes": 54741,
+      "metrics_sha256": "9b99a99226ccb703b4cf4bac997e9738210e87514a40e7f0c4531fc766775ec5",
+      "run_manifest_sha256": "81f1fa982845ab632454d1c826291de1b80ca94abfa1218e46122e12eee8a6ab",
+      "run_status_sha256": "93e82348cf1bdb1a167da38c40187323e093bcacab9fb7fb7353d168ba3584b8",
+      "declared_input_space": "canonical_float32_unscaled",
+      "test_fingerprint_macro_f1": 0.9995333151353089,
+      "checks": {
+        "model_id_matches": true,
+        "seed_matches": true,
+        "protocol_version_matches": true,
+        "declared_input_space_is_unscaled": true,
+        "run_completed": true,
+        "test_evaluation_count_is_one": true
+      }
+    }
+  ],
+  "temporary_scaled_train": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\decision_tree_b0_scaled_train_float32.tmp.npy",
+    "exists": true,
+    "size_bytes": 705908308,
+    "sha256": "32163492cb4658527815fd3a62d1924974b3db31f96b665156d2b1d4011a9743"
+  },
+  "partial_aggregate_inventory": [],
+  "test_metrics_must_not_be_reported": true,
+  "rerun_required": true,
+  "all_quarantine_prechecks_passed": true
+}

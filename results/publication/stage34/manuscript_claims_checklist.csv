@@ -1,0 +1,11 @@
+﻿İddia ID,İddia,Kanıt,İzin Verilen Dil,Kaçınılacak Dil
+C01,En yüksek ortalama Macro F1 Compact-DNN/QAT ile 0.991846 olarak elde edilmiştir.,Table 1 ve Table 2,Bu deney protokolünde elde edilmiştir.,Evrensel olarak en iyi
+C02,En küçük artifact Tiny-1D-CNN/P75 için 4.200 KiB'dir.,Table 2,Ölçülen deployment artifact,Tüm cihazlarda en küçük
+C03,En düşük host CPU medyan gecikmesi TinyML-MLP/PTQ için 0.018750 ms'dir.,Table 2,Host CPU ortamında,MCU gecikmesi
+C04,En yüksek host CPU throughput TinyML-MLP/P75 ile 4276226.411 örnek/s'dir.,Table 2,Ölçülen host ortamında,Gerçek cihaz throughput
+C05,Her üç modelde varyantların Macro F1 üzerindeki etkisi Friedman testine göre anlamlıdır.,Table 3,Omnibus varyant etkisi,Bütün ikili farklar anlamlıdır
+C06,"En yüksek doğruluk, en küçük artifact, en düşük gecikme ve en yüksek throughput farklı çözümlerde elde edilmiştir.",Table 2 ve Table 5,Mühendislik ödünleşimi vardır,Tek evrensel en iyi model
+C07,Gecikme ve throughput sonuçları host CPU ölçümleridir.,Stage33 manifest,Host CPU profili,MCU veya enerji ölçümü
+C08,Beş seed ikili Wilcoxon test gücünü sınırlar.,Stage32 summary,P-değeri etki büyüklüğüyle birlikte yorumlanmalıdır,Anlamlı değilse fark yoktur
+C09,Yüksek tekrar oranı güçlü bir veri sızıntısı adayı ve geçerlilik tehdididir.,Duplicate audit,Tekrar/sızıntı adayı,Kesin veri sızıntısı kanıtlandı
+C10,Gerçek MCU dağıtımı ve enerji ölçümü kapsam dışıdır.,Stage32 summary ve Stage33 manifest,Simülasyon ve host profilleme,Gerçek cihazda doğrulandı

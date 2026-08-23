@@ -1,0 +1,20 @@
+{
+  "generated_at_utc": "2026-07-26T21:07:29.317157+00:00",
+  "model_name": "tiny_1d_cnn",
+  "pruning_name": "P75",
+  "variant_name": "P75-QAT",
+  "pruning_ratio": 0.75,
+  "seed": 2026,
+  "pruning_qat_protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_pruning_qat_protocol_v1.json",
+  "pruning_qat_protocol_sha256": "b34b2c23b9ba10958e7d788f53bddbc26a1df7900dd0ba5d6f144840ce0e8ae8",
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed2026\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "176b05021581a8622d947a75ac8d6f5580a1efe0d6a9b44e597508d70c51d7db",
+  "training_summary_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed2026\\training_summary.json",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed2026\\test_metrics.json",
+  "artifact_metadata_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed2026\\artifact_metadata.json",
+  "test_evaluation_attempt_count": 1,
+  "test_used_for_model_selection": false,
+  "physical_compaction": true,
+  "mask_based_pruning": false,
+  "validation_passed": true
+}

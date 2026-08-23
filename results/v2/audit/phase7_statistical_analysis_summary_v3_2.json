@@ -1,0 +1,65 @@
+{
+  "status": "completed",
+  "phase": 7,
+  "artifact_name": "locked_statistical_analysis",
+  "protocol_version": "phase7_statistical_analysis_v3_2",
+  "completed_at_utc": "2026-08-06T21:20:32.301637+00:00",
+  "descriptive_row_count": 176,
+  "omnibus_analysis_count": 16,
+  "posthoc_comparison_count": 160,
+  "confirmatory_omnibus_rejections_nominal": 8,
+  "exploratory_omnibus_rejections_nominal": 8,
+  "confirmatory_posthoc_Holm_rejections": 0,
+  "exploratory_posthoc_Holm_rejections": 0,
+  "minimum_raw_posthoc_p": 0.0625,
+  "minimum_Holm_adjusted_p": 0.625,
+  "small_sample_interpretation": {
+    "paired_seed_count": 5,
+    "minimum_possible_two_sided_exact_p": 0.0625,
+    "absence_of_p_below_0_05_is_not_equivalence": true,
+    "effect_sizes_and_consistency_required": true
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "preflight_locked": true,
+    "protocol_hash_matches": true,
+    "joined_matrix_hash_matches": true,
+    "comparison_plan_hash_matches": true,
+    "joined_row_count_110": true,
+    "comparison_plan_row_count_176": true,
+    "inferential_computation_was_not_previously_run": true,
+    "final_model_not_selected": true
+  },
+  "global_checks": {
+    "descriptive_rows_176": true,
+    "omnibus_rows_16": true,
+    "posthoc_rows_160": true,
+    "all_omnibus_values_finite": true,
+    "all_posthoc_values_finite": true,
+    "all_exact_p_values_at_least_0_0625": true,
+    "Holm_p_not_below_raw_p": true,
+    "wins_ties_losses_sum_to_5": true,
+    "final_model_not_selected": true
+  },
+  "artifacts": {
+    "descriptive_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_descriptive_summary_v3_2.csv",
+      "size_bytes": 30751,
+      "sha256": "49c8c6a37a265d346b1766972ae6c1d0fbb18a6a682ed4bdbdc7a4b06eda68e2"
+    },
+    "omnibus_results": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_omnibus_results_v3_2.csv",
+      "size_bytes": 4639,
+      "sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2"
+    },
+    "posthoc_results": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_posthoc_vs_B0_results_v3_2.csv",
+      "size_bytes": 56307,
+      "sha256": "9fff5dbbc1e455ef1c29c54d8e3762f1b01e6abfbe6027dd0c6c7a4118d19e47"
+    }
+  },
+  "final_model_selected": false,
+  "ready_for_independent_verification": true,
+  "ready_for_multi_objective_decision_preflight": false,
+  "all_checks_passed": true
+}

@@ -1,0 +1,14 @@
+﻿Bölüm No,Bölüm,Amaç,Kanıt Kaynağı,Tablo/Şekil,Durum
+1,Giriş,"Problemi, boşluğu ve katkıları tanımlamak",Stage32 summary,Yok,Literatür atıfları gerekli
+2,İlgili Çalışmalar,"IoT IDS, TinyML, budama ve kuantizasyon literatürü",Hakemli kaynaklar,Karşılaştırma tablosu,35. aşamada yazılacak
+3,Veri Seti ve Ön İşleme,"N-BaIoT, kalite, tekrar ve family_3 görevi",Veri kalite ve tekrar raporları,Veri tablosu,Deney kayıtları mevcut
+4,Önerilen Yöntem,Üç mimari ve on varyantı açıklamak,Model registry ve protokoller,Mimari tablosu ve akış şeması,Hazır
+5,Deneysel Tasarım,"Seed, split, metrik ve ölçüm protokolü",Stage32 summary ve stage33 manifest,Deney matrisi,Doğrulanmış
+6,Sınıflandırma Bulguları,"Macro F1, MCC ve balanced accuracy",Table 1,Tablo 1 ve Şekil 3,Hazır
+7,İstatistiksel Analiz,"Friedman, Kendall W ve Wilcoxon-Holm",Table 3 ve overall Wilcoxon CSV,Tablo 3,Hazır
+8,Sınıf Bazlı Güvenlik Analizi,"Benign, Gafgyt ve Mirai FNR",Table 4,Tablo 4,Hazır
+9,Verimlilik ve Pareto,"Boyut, MAC, gecikme ve throughput ödünleşimi",Table 2 ve Table 5,"Tablo 2, 5; Şekil 1, 2",Hazır
+10,Tartışma,Model ailelerine göre sıkıştırma davranışını yorumlamak,Stage32/33 sonuçları,Önceki tablo ve şekiller,İskelet hazır
+11,Geçerlilik Tehditleri,"Tekrar, tek veri seti, n=5 ve host CPU sınırları",Duplicate audit ve manifestler,Yok,Hazır
+12,Sonuç,Bilimsel ve mühendislik çıkarımlarını özetlemek,Stage32/33 sonuçları,Yok,İskelet hazır
+13,Tekrarlanabilirlik,"Kod, protokol, seed, manifest ve SHA-256",Tüm manifestler,Ek materyal tablosu,Hazır

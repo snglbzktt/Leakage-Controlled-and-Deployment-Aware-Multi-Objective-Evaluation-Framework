@@ -1,0 +1,307 @@
+﻿scripts\12_materialize_float32_canonical_dataset.py:2 | float32 | N-BaIoT float32 kanonik ve sızıntısız veri setini oluşturur.
+scripts\12_materialize_float32_canonical_dataset.py:5 | float32 | 1. Float32 kanonik SQLite gruplarını doğrular.
+scripts\12_materialize_float32_canonical_dataset.py:7 | float32 | 3. Kalan her float32 vektörü için deterministik train/validation/test
+scripts\12_materialize_float32_canonical_dataset.py:9 | float64 | 4. Temsilci satırları eski float64 Parquet dosyalarından okur.
+scripts\12_materialize_float32_canonical_dataset.py:10 | float32 | 5. Özellikleri float32 biçiminde kaydeder.
+scripts\12_materialize_float32_canonical_dataset.py:14 | float64 | Yeni splitler eski float64 splitlerinden bağımsızdır. Atama doğrudan
+scripts\12_materialize_float32_canonical_dataset.py:15 | float32 | float32 kanonik parmak izleri üzerinden yapılır.
+scripts\12_materialize_float32_canonical_dataset.py:46 | nbaiot_primary_seed2026 | / "nbaiot_primary_seed2026"
+scripts\12_materialize_float32_canonical_dataset.py:53 | float32|nbaiot_float32_canonical | / "nbaiot_float32_canonical.sqlite"
+scripts\12_materialize_float32_canonical_dataset.py:117 | float32 | "N-BaIoT float32 kanonik ve "
+scripts\12_materialize_float32_canonical_dataset.py:126 | float64 | help="Eski float64 Parquet veri klasörü.",
+scripts\12_materialize_float32_canonical_dataset.py:133 | float32 | help="Float32 kanonik SQLite veritabanı.",
+scripts\12_materialize_float32_canonical_dataset.py:161 | float32 | help="Yeni float32 split tohumu.",
+scripts\12_materialize_float32_canonical_dataset.py:346 | float32 | Float32 parmak izlerinden deterministik split kodu üretir.
+scripts\12_materialize_float32_canonical_dataset.py:411 | float32 | # FLOAT32 FINGERPRINTS
+scripts\12_materialize_float32_canonical_dataset.py:414 | float32 | def create_float32_features_and_hashes(
+scripts\12_materialize_float32_canonical_dataset.py:417 | float32 | """Float32 kanonik özellik tablosu ve parmak izlerini üretir."""
+scripts\12_materialize_float32_canonical_dataset.py:420 | float32 | dtype=np.float32,
+scripts\12_materialize_float32_canonical_dataset.py:426 | float32 | "Float32 dönüşümünden sonra sonlu olmayan değer oluştu."
+scripts\12_materialize_float32_canonical_dataset.py:431 | float32 | values == np.float32(0.0)
+scripts\12_materialize_float32_canonical_dataset.py:432 | float32 | ] = np.float32(0.0)
+scripts\12_materialize_float32_canonical_dataset.py:434 | float32 | float32_frame = pd.DataFrame(
+scripts\12_materialize_float32_canonical_dataset.py:440 | float32 | float32_frame,
+scripts\12_materialize_float32_canonical_dataset.py:448 | float32 | float32_frame.iloc[:, ::-1],
+scripts\12_materialize_float32_canonical_dataset.py:456 | float32 | float32_frame,
+scripts\12_materialize_float32_canonical_dataset.py:586 | float32 | toplam float32 grup,
+scripts\12_materialize_float32_canonical_dataset.py:593 | float32 | "float32_groups",
+scripts\12_materialize_float32_canonical_dataset.py:615 | float32 | FROM float32_groups
+scripts\12_materialize_float32_canonical_dataset.py:623 | float32 | FROM float32_groups
+scripts\12_materialize_float32_canonical_dataset.py:635 | float32 | FROM float32_groups
+scripts\12_materialize_float32_canonical_dataset.py:649 | float32 | "Float32 grup sayıları kendi içinde uyuşmuyor."
+scripts\12_materialize_float32_canonical_dataset.py:710 | float32 | "Float32 kanonik split atamaları oluşturuluyor..."
+scripts\12_materialize_float32_canonical_dataset.py:727 | float64 | float64_unique_occurrence_count INTEGER NOT NULL,
+scripts\12_materialize_float32_canonical_dataset.py:747 | float64 | float64_unique_occurrence_count,
+scripts\12_materialize_float32_canonical_dataset.py:751 | float32 | FROM float32_groups
+scripts\12_materialize_float32_canonical_dataset.py:831 | float64 | float64_unique_occurrence_count,
+scripts\12_materialize_float32_canonical_dataset.py:924 | float32 | 'SplitMix64 from float32 composite fingerprint'
+scripts\12_materialize_float32_canonical_dataset.py:944 | float32 | pa.float32(),
+scripts\12_materialize_float32_canonical_dataset.py:991 | float64 | "float64_unique_occurrence_count",
+scripts\12_materialize_float32_canonical_dataset.py:1118 | float32 | "Float32 kanonik SQLite bulunamadı: "
+scripts\12_materialize_float32_canonical_dataset.py:1128 | float32|nbaiot_float32_canonical | / f"nbaiot_float32_canonical_seed{args.seed}"
+scripts\12_materialize_float32_canonical_dataset.py:1134 | float32|nbaiot_float32_canonical | "nbaiot_float32_canonical_"
+scripts\12_materialize_float32_canonical_dataset.py:1174 | float32 | print("N-BaIoT Float32 Kanonik Parquet Veri Seti")
+scripts\12_materialize_float32_canonical_dataset.py:1339 | float64 | # Scan original float64 Parquet files
+scripts\12_materialize_float32_canonical_dataset.py:1379 | float64 | if arrow_type != pa.float64():
+scripts\12_materialize_float32_canonical_dataset.py:1382 | float64 | f"float64 değil: {arrow_type}"
+scripts\12_materialize_float32_canonical_dataset.py:1444 | float64 | float64_unique_occurrence_count,
+scripts\12_materialize_float32_canonical_dataset.py:1509 | float32 | float32_features,
+scripts\12_materialize_float32_canonical_dataset.py:1512 | float32 | ) = create_float32_features_and_hashes(
+scripts\12_materialize_float32_canonical_dataset.py:1546 | float32 | "Float32 ileri parmak izleri "
+scripts\12_materialize_float32_canonical_dataset.py:1562 | float32 | "Float32 ters parmak izleri "
+scripts\12_materialize_float32_canonical_dataset.py:1665 | float32 | float32_features.iloc[
+scripts\12_materialize_float32_canonical_dataset.py:1744 | float64 | float64_unique_counts = np.asarray(
+scripts\12_materialize_float32_canonical_dataset.py:1798 | float64 | "float64_unique_occurrence_count": (
+scripts\12_materialize_float32_canonical_dataset.py:1799 | float64 | float64_unique_counts
+scripts\12_materialize_float32_canonical_dataset.py:1995 | float32|nbaiot_float32_canonical | / "nbaiot_float32_canonical_class_distribution.csv"
+scripts\12_materialize_float32_canonical_dataset.py:2000 | float32|nbaiot_float32_canonical | / "nbaiot_float32_canonical_materialization_summary.json"
+scripts\12_materialize_float32_canonical_dataset.py:2025 | float32 | "float32"
+scripts\12_materialize_float32_canonical_dataset.py:2031 | float32 | "original_float32_group_count": int(
+scripts\12_materialize_float32_canonical_dataset.py:2042 | float32 | "the float32 composite fingerprint"
+scripts\12_materialize_float32_canonical_dataset.py:2060 | float32 | "Every conflict-free float32 feature vector "
+scripts\12_materialize_float32_canonical_dataset.py:2064 | float32 | "All float32 groups containing multiple class "
+scripts\12_materialize_float32_canonical_dataset.py:2080 | float32 | print("Float32 kanonik veri seti tamamlandı")
+scripts\12_materialize_float32_canonical_dataset.py:2093 | float32 | "Toplam float32 grup      : "
+scripts\14_fit_training_standardizer.py:2 | StandardScaler|scaler | N-BaIoT eğitim verisinden StandardScaler parametrelerini üretir.
+scripts\14_fit_training_standardizer.py:12 | scaler | models/preprocessing/nbaiot_standard_scaler_seed2026.npz
+scripts\14_fit_training_standardizer.py:13 | standardizer | results/reports/nbaiot_training_standardizer_statistics.csv
+scripts\14_fit_training_standardizer.py:14 | standardizer | results/reports/nbaiot_training_standardizer_summary.json
+scripts\14_fit_training_standardizer.py:30 | StandardScaler|scaler | from sklearn.preprocessing import StandardScaler
+scripts\14_fit_training_standardizer.py:44 | float32|nbaiot_float32_canonical | / "nbaiot_float32_canonical_seed2026"
+scripts\14_fit_training_standardizer.py:82 | StandardScaler|scaler | "N-BaIoT train splitinden StandardScaler "
+scripts\14_fit_training_standardizer.py:91 | float32 | help="Float32 kanonik veri klasörü.",
+scripts\14_fit_training_standardizer.py:316 | float32 | if feature_type != pa.float32():
+scripts\14_fit_training_standardizer.py:318 | float32 | f"{split_name}/{feature_name} float32 değil: "
+scripts\14_fit_training_standardizer.py:345 | standardizer | def fit_training_standardizer(
+scripts\14_fit_training_standardizer.py:350 | StandardScaler|scaler | StandardScaler,
+scripts\14_fit_training_standardizer.py:355 | StandardScaler|scaler | """StandardScaler parametrelerini yalnızca train verisinden öğrenir."""
+scripts\14_fit_training_standardizer.py:374 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:380 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:383 | StandardScaler|scaler | scaler = StandardScaler(
+scripts\14_fit_training_standardizer.py:393 | StandardScaler|scaler | desc="StandardScaler train verisine fit ediliyor",
+scripts\14_fit_training_standardizer.py:404 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:418 | scaler | scaler.partial_fit(
+scripts\14_fit_training_standardizer.py:455 | scaler | scaler.n_samples_seen_
+scripts\14_fit_training_standardizer.py:461 | StandardScaler|scaler | "StandardScaler örnek sayısı uyuşmuyor: "
+scripts\14_fit_training_standardizer.py:463 | scaler | f"scaler={fitted_sample_count:,}"
+scripts\14_fit_training_standardizer.py:467 | scaler | scaler.mean_ is None
+scripts\14_fit_training_standardizer.py:468 | scaler | or scaler.var_ is None
+scripts\14_fit_training_standardizer.py:469 | scaler | or scaler.scale_ is None
+scripts\14_fit_training_standardizer.py:472 | StandardScaler|scaler | "StandardScaler parametreleri oluşturulamadı."
+scripts\14_fit_training_standardizer.py:476 | scaler | scaler.mean_
+scripts\14_fit_training_standardizer.py:479 | scaler | "Scaler ortalamalarında sonlu olmayan değer var."
+scripts\14_fit_training_standardizer.py:483 | scaler | scaler.var_
+scripts\14_fit_training_standardizer.py:486 | scaler | "Scaler varyanslarında sonlu olmayan değer var."
+scripts\14_fit_training_standardizer.py:490 | scaler | scaler.scale_
+scripts\14_fit_training_standardizer.py:493 | scaler | "Scaler ölçeklerinde sonlu olmayan değer var."
+scripts\14_fit_training_standardizer.py:497 | scaler | scaler.scale_ <= 0
+scripts\14_fit_training_standardizer.py:500 | scaler | "Scaler içinde sıfır veya negatif ölçek bulundu."
+scripts\14_fit_training_standardizer.py:504 | scaler | scaler,
+scripts\14_fit_training_standardizer.py:542 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:547 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:576 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:582 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:602 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:666 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:675 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:768 | scaler | def save_scaler_artifact(
+scripts\14_fit_training_standardizer.py:796 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:800 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:804 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:808 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:812 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:823 | float32 | ["float32"],
+scripts\14_fit_training_standardizer.py:827 | float64 | ["float64"],
+scripts\14_fit_training_standardizer.py:831 | StandardScaler|scaler | ["StandardScaler population variance ddof=0"],
+scripts\14_fit_training_standardizer.py:886 | scaler | / f"nbaiot_standard_scaler_seed{args.seed}.npz"
+scripts\14_fit_training_standardizer.py:891 | standardizer | / "nbaiot_training_standardizer_statistics.csv"
+scripts\14_fit_training_standardizer.py:896 | standardizer | / "nbaiot_training_standardizer_summary.json"
+scripts\14_fit_training_standardizer.py:943 | scaler | scaler,
+scripts\14_fit_training_standardizer.py:947 | standardizer | ) = fit_training_standardizer(
+scripts\14_fit_training_standardizer.py:954 | scaler | scaler.mean_,
+scripts\14_fit_training_standardizer.py:955 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:959 | scaler | scaler.var_,
+scripts\14_fit_training_standardizer.py:960 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:964 | scaler | scaler.scale_,
+scripts\14_fit_training_standardizer.py:965 | float64 | dtype=np.float64,
+scripts\14_fit_training_standardizer.py:1082 | scaler | "scaler_scale": scale,
+scripts\14_fit_training_standardizer.py:1106 | scaler | save_scaler_artifact(
+scripts\14_fit_training_standardizer.py:1122 | float64 | parameter_memory_float64_bytes = int(
+scripts\14_fit_training_standardizer.py:1127 | float32 | parameter_memory_float32_bytes = int(
+scripts\14_fit_training_standardizer.py:1131 | float32 | np.float32
+scripts\14_fit_training_standardizer.py:1153 | StandardScaler|scaler | "method": "StandardScaler",
+scripts\14_fit_training_standardizer.py:1159 | float32 | "source_feature_dtype": "float32",
+scripts\14_fit_training_standardizer.py:1160 | float64 | "parameter_storage_dtype": "float64",
+scripts\14_fit_training_standardizer.py:1162 | float32 | "Scaled arrays will be converted to float32 "
+scripts\14_fit_training_standardizer.py:1207 | scaler | "scaler_artifact": str(
+scripts\14_fit_training_standardizer.py:1210 | scaler | "scaler_artifact_sha256": (
+scripts\14_fit_training_standardizer.py:1216 | float64 | "mean_and_scale_memory_float64_bytes": (
+scripts\14_fit_training_standardizer.py:1217 | float64 | parameter_memory_float64_bytes
+scripts\14_fit_training_standardizer.py:1219 | float32 | "mean_and_scale_memory_float32_bytes": (
+scripts\14_fit_training_standardizer.py:1220 | float32 | parameter_memory_float32_bytes
+scripts\14_fit_training_standardizer.py:1269 | scaler | print(f"Scaler artifactı : {artifact_file}")
+scripts\17_validate_pytorch_data_pipeline.py:5 | scaler | - Scaler, görev tanımı ve sınıf ağırlıkları yüklenebiliyor mu?
+scripts\17_validate_pytorch_data_pipeline.py:6 | float32 | - Model girdileri [batch, 115] ve float32 mi?
+scripts\17_validate_pytorch_data_pipeline.py:263 | float32 | if features.dtype != torch.float32:
+scripts\17_validate_pytorch_data_pipeline.py:265 | float32 | f"{split_name} özellik dtype float32 değil: "
+scripts\17_validate_pytorch_data_pipeline.py:560 | float32 | "feature_dtype": "torch.float32",
+scripts\17_validate_pytorch_data_pipeline.py:769 | float32 | dtype=torch.float32,
+scripts\17_validate_pytorch_data_pipeline.py:781 | float32 | dtype=torch.float32,
+scripts\17_validate_pytorch_data_pipeline.py:1061 | float32 | "feature_dtype": "torch.float32",
+scripts\17_validate_pytorch_data_pipeline.py:1063 | scaler | "scaler_fit_sample_count": int(
+scripts\17_validate_pytorch_data_pipeline.py:1064 | scaler | assets.scaler_train_sample_count
+scripts\17_validate_pytorch_data_pipeline.py:1066 | scaler | "scaler_fit_split": "train",
+scripts\38_run_b0_matched_leakage_ablation.py:35 | StandardScaler|scaler | from sklearn.preprocessing import StandardScaler
+scripts\38_run_b0_matched_leakage_ablation.py:47 | float32 | DEFAULT_DATABASE = PROJECT_ROOT / "data" / "splits" / "vs2_float32_leakage_ablation_seed2026.sqlite"
+scripts\38_run_b0_matched_leakage_ablation.py:50 | float32 | DEFAULT_CACHE = PROJECT_ROOT / "data" / "processed" / "vs2_float32_leakage_ablation"
+scripts\38_run_b0_matched_leakage_ablation.py:53 | float32 | ARMS = ("naive_row", "grouped_float32")
+scripts\38_run_b0_matched_leakage_ablation.py:61 | float32 | EXPECTED_FLOAT32_GROUP_COUNT = 2_278_176
+scripts\38_run_b0_matched_leakage_ablation.py:62 | float32 | EXPECTED_LARGEST_FLOAT32_GROUP_RAW_ROWS = 965_536
+scripts\38_run_b0_matched_leakage_ablation.py:66 | scaler | SCALER_AUDIT_TOLERANCE = 1e-4
+scripts\38_run_b0_matched_leakage_ablation.py:144 | float32 | "protocol": "vs2_float32_leakage_ablation",
+scripts\38_run_b0_matched_leakage_ablation.py:146 | float32 | "feature_dtype": "float32",
+scripts\38_run_b0_matched_leakage_ablation.py:216 | float32 | if arm == "grouped_float32":
+scripts\38_run_b0_matched_leakage_ablation.py:227 | float32 | elif arm == "grouped_float32":
+scripts\38_run_b0_matched_leakage_ablation.py:250 | float32 | elif arm == "grouped_float32":
+scripts\38_run_b0_matched_leakage_ablation.py:275 | float32 | elif arm == "grouped_float32":
+scripts\38_run_b0_matched_leakage_ablation.py:370 | float32 | "grouped_float32",
+scripts\38_run_b0_matched_leakage_ablation.py:390 | float32 | "group_count": group_count == EXPECTED_FLOAT32_GROUP_COUNT,
+scripts\38_run_b0_matched_leakage_ablation.py:398 | float32 | "largest_group_count": int(largest_size) == EXPECTED_LARGEST_FLOAT32_GROUP_RAW_ROWS,
+scripts\38_run_b0_matched_leakage_ablation.py:410 | float32 | "float32_group_count": group_count,
+scripts\38_run_b0_matched_leakage_ablation.py:476 | float64 | counts = np.asarray(class_counts, dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:480 | float32|astype(np.float32 | return (raw / raw.mean()).astype(np.float32)
+scripts\38_run_b0_matched_leakage_ablation.py:483 | float32 | def float32_fingerprints(values: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+scripts\38_run_b0_matched_leakage_ablation.py:484 | float32 | """Paired order-sensitive fingerprints of the exact model-facing float32 rows."""
+scripts\38_run_b0_matched_leakage_ablation.py:514 | float32|StandardScaler|scaler | """Prove zero overlap after StandardScaler and final float32 conversion."""
+scripts\38_run_b0_matched_leakage_ablation.py:546 | float64 | raw = np.asarray(x[start : start + chunk_size], dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:547 | float32|astype(np.float32 | scaled = ((raw - mean) / scale).astype(np.float32)
+scripts\38_run_b0_matched_leakage_ablation.py:548 | float32 | forward, reverse = float32_fingerprints(scaled)
+scripts\38_run_b0_matched_leakage_ablation.py:561 | float32 | f"[grouped_float32 gerçek model-girdisi denetimi] {split}: "
+scripts\38_run_b0_matched_leakage_ablation.py:594 | float32|StandardScaler|scaler | "Grouped kolda StandardScaler ve float32 dönüşümü sonrasında splitler arası "
+scripts\38_run_b0_matched_leakage_ablation.py:598 | float32|float64|StandardScaler|scaler | "feature_space": "StandardScaler(float64 parameters) then float32 model input",
+scripts\38_run_b0_matched_leakage_ablation.py:653 | float32 | "feature_dtype": "float32",
+scripts\38_run_b0_matched_leakage_ablation.py:654 | float64|scaler | "scaler_parameter_dtype": "float64",
+scripts\38_run_b0_matched_leakage_ablation.py:668 | float32 | if x.shape != (counts[split], EXPECTED_FEATURE_COUNT) or x.dtype != np.float32:
+scripts\38_run_b0_matched_leakage_ablation.py:681 | float64 | if mean.shape != (EXPECTED_FEATURE_COUNT,) or mean.dtype != np.float64:
+scripts\38_run_b0_matched_leakage_ablation.py:682 | scaler | raise RuntimeError(f"Geçersiz scaler mean: {arm} {mean.shape} {mean.dtype}")
+scripts\38_run_b0_matched_leakage_ablation.py:683 | float64 | if scale.shape != (EXPECTED_FEATURE_COUNT,) or scale.dtype != np.float64:
+scripts\38_run_b0_matched_leakage_ablation.py:684 | scaler | raise RuntimeError(f"Geçersiz scaler scale: {arm} {scale.shape} {scale.dtype}")
+scripts\38_run_b0_matched_leakage_ablation.py:685 | float32 | if weights.shape != (3,) or weights.dtype != np.float32:
+scripts\38_run_b0_matched_leakage_ablation.py:688 | scaler | raise RuntimeError(f"Sonlu/pozitif olmayan scaler parametresi: {arm}")
+scripts\38_run_b0_matched_leakage_ablation.py:698 | float32 | or item.get("model_input_dtype") != "float32"
+scripts\38_run_b0_matched_leakage_ablation.py:702 | float32 | if arm == "grouped_float32":
+scripts\38_run_b0_matched_leakage_ablation.py:755 | float32 | dtype=np.float32,
+scripts\38_run_b0_matched_leakage_ablation.py:772 | float32|to_numpy(dtype=np.float32 | values = frame.to_numpy(dtype=np.float32, copy=False)
+scripts\38_run_b0_matched_leakage_ablation.py:816 | StandardScaler|scaler | scaler = StandardScaler(with_mean=True, with_std=True)
+scripts\38_run_b0_matched_leakage_ablation.py:818 | float32|scaler | scaler.partial_fit(np.asarray(x_train[start : start + chunk_size], dtype=np.float32))
+scripts\38_run_b0_matched_leakage_ablation.py:819 | float64|scaler | mean = np.asarray(scaler.mean_, dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:820 | float64|scaler | standard_deviation = np.asarray(scaler.scale_, dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:824 | StandardScaler|scaler | raise RuntimeError(f"{arm}: StandardScaler parametre boyutu geçersiz.")
+scripts\38_run_b0_matched_leakage_ablation.py:826 | StandardScaler|scaler | raise RuntimeError(f"{arm}: StandardScaler sonlu olmayan parametre üretti.")
+scripts\38_run_b0_matched_leakage_ablation.py:828 | StandardScaler|scaler | raise RuntimeError(f"{arm}: StandardScaler pozitif olmayan ölçek üretti.")
+scripts\38_run_b0_matched_leakage_ablation.py:835 | float64 | scaled_sum = np.zeros(EXPECTED_FEATURE_COUNT, dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:836 | float64 | scaled_square = np.zeros(EXPECTED_FEATURE_COUNT, dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:839 | float64 | raw = np.asarray(x_train[start : start + chunk_size], dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:851 | scaler | scaler_audit_passed = (
+scripts\38_run_b0_matched_leakage_ablation.py:853 | scaler | and max_abs_scaled_mean <= SCALER_AUDIT_TOLERANCE
+scripts\38_run_b0_matched_leakage_ablation.py:854 | scaler | and max_scaled_std_error <= SCALER_AUDIT_TOLERANCE
+scripts\38_run_b0_matched_leakage_ablation.py:856 | scaler | if not scaler_audit_passed:
+scripts\38_run_b0_matched_leakage_ablation.py:858 | StandardScaler|scaler | f"{arm}: StandardScaler tam tarama denetimi başarısız; "
+scripts\38_run_b0_matched_leakage_ablation.py:869 | float64 | raw = np.asarray(x_split[start : start + chunk_size], dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:870 | float32|astype(np.float32 | scaled32 = ((raw - mean) / standard_deviation).astype(np.float32)
+scripts\38_run_b0_matched_leakage_ablation.py:884 | float32 | "model_input_dtype": "float32",
+scripts\38_run_b0_matched_leakage_ablation.py:886 | float32 | if arm == "grouped_float32":
+scripts\38_run_b0_matched_leakage_ablation.py:888 | float32|StandardScaler|scaler | "[grouped_float32] StandardScaler sonrası gerçek float32 model-girdisi "
+scripts\38_run_b0_matched_leakage_ablation.py:895 | float32|float64|StandardScaler|scaler | "feature_space": "StandardScaler(float64 parameters) then float32 model input",
+scripts\38_run_b0_matched_leakage_ablation.py:904 | float32 | "protocol": "vs2_float32_leakage_ablation",
+scripts\38_run_b0_matched_leakage_ablation.py:910 | float32 | "feature_dtype": "float32",
+scripts\38_run_b0_matched_leakage_ablation.py:911 | StandardScaler|scaler | "scaler_method": "sklearn.preprocessing.StandardScaler.partial_fit",
+scripts\38_run_b0_matched_leakage_ablation.py:912 | float64|scaler | "scaler_parameter_dtype": "float64",
+scripts\38_run_b0_matched_leakage_ablation.py:913 | float32 | "scaled_model_input_dtype": "float32",
+scripts\38_run_b0_matched_leakage_ablation.py:919 | scaler | "scaler_fit_split": "train_only",
+scripts\38_run_b0_matched_leakage_ablation.py:923 | scaler | "scaler_full_scan_audit": {
+scripts\38_run_b0_matched_leakage_ablation.py:927 | scaler | "tolerance": SCALER_AUDIT_TOLERANCE,
+scripts\38_run_b0_matched_leakage_ablation.py:928 | scaler | "passed": scaler_audit_passed,
+scripts\38_run_b0_matched_leakage_ablation.py:948 | float64 | raw = np.asarray(self.x[index], dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:949 | float32|astype(np.float32 | scaled = ((raw - self.mean) / self.std).astype(np.float32)
+scripts\38_run_b0_matched_leakage_ablation.py:962 | float64 | matrix = np.asarray(confusion, dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:1292 | float64 | values = np.asarray(values, dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:1311 | float64 | differences = np.asarray(differences, dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:1315 | float64|to_numpy(dtype=np.float64 | ranks = pd.Series(np.abs(differences)).rank(method="average").to_numpy(dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:1381 | float64|to_numpy(dtype=np.float64 | pivot["naive_row"].to_numpy(dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:1382 | float32|float64|to_numpy(dtype=np.float64 | - pivot["grouped_float32"].to_numpy(dtype=np.float64)
+scripts\38_run_b0_matched_leakage_ablation.py:1387 | float32 | pivot["grouped_float32"],
+scripts\38_run_b0_matched_leakage_ablation.py:1395 | float32 | "grouped_float32": float(grouped),
+scripts\38_run_b0_matched_leakage_ablation.py:1400 | float32 | "difference_direction": "naive_row_minus_grouped_float32",
+scripts\38_run_b0_matched_leakage_ablation.py:1432 | float32 | "protocol": "vs2_float32_leakage_ablation_b0_matched",
+scripts\38_run_b0_matched_leakage_ablation.py:1448 | float32 | "split assignment unit: raw row vs identical float32 vector group"
+scripts\38_run_b0_matched_leakage_ablation.py:1566 | float32 | differences = macro["naive_row"] - macro["grouped_float32"]
+scripts\38_run_b0_matched_leakage_ablation.py:1568 | float32 | print("38. aşama tamamlandı: B0-eşlenmiş float32 sızıntı ablasyonu")
+scripts\38_run_b0_matched_leakage_ablation.py:1570 | float32 | print(f"Gruplu Macro-F1 ortalaması: {macro['grouped_float32'].mean():.9f}")
+src\data\nbaiot_pipeline.py:7 | scaler | - Standardizasyonu train tabanlı scaler parametreleriyle uygular.
+src\data\nbaiot_pipeline.py:40 | float32|nbaiot_float32_canonical | / "nbaiot_float32_canonical_seed2026"
+src\data\nbaiot_pipeline.py:43 | scaler | DEFAULT_SCALER_FILE = (
+src\data\nbaiot_pipeline.py:47 | scaler | / "nbaiot_standard_scaler_seed2026.npz"
+src\data\nbaiot_pipeline.py:82 | scaler | scaler_file: Path
+src\data\nbaiot_pipeline.py:90 | scaler | scaler_mean: np.ndarray
+src\data\nbaiot_pipeline.py:91 | scaler | scaler_scale: np.ndarray
+src\data\nbaiot_pipeline.py:92 | scaler | scaler_train_sample_count: int
+src\data\nbaiot_pipeline.py:140 | scaler | scaler_file: Path = DEFAULT_SCALER_FILE,
+src\data\nbaiot_pipeline.py:147 | scaler | """Scaler, görev eşleme ve sınıf ağırlıklarını yükler."""
+src\data\nbaiot_pipeline.py:150 | scaler | scaler_file = scaler_file.resolve()
+src\data\nbaiot_pipeline.py:170 | scaler | if not scaler_file.exists():
+src\data\nbaiot_pipeline.py:172 | scaler | f"Scaler artifactı bulunamadı: {scaler_file}"
+src\data\nbaiot_pipeline.py:277 | scaler | scaler_file,
+src\data\nbaiot_pipeline.py:279 | scaler | ) as scaler_data:
+src\data\nbaiot_pipeline.py:283 | scaler | in scaler_data[
+src\data\nbaiot_pipeline.py:288 | scaler | scaler_mean = np.asarray(
+src\data\nbaiot_pipeline.py:289 | scaler | scaler_data["mean"],
+src\data\nbaiot_pipeline.py:290 | float64 | dtype=np.float64,
+src\data\nbaiot_pipeline.py:293 | scaler | scaler_scale = np.asarray(
+src\data\nbaiot_pipeline.py:294 | scaler | scaler_data["scale"],
+src\data\nbaiot_pipeline.py:295 | float64 | dtype=np.float64,
+src\data\nbaiot_pipeline.py:298 | scaler | scaler_train_sample_count = int(
+src\data\nbaiot_pipeline.py:300 | scaler | scaler_data[
+src\data\nbaiot_pipeline.py:306 | scaler | scaler_seed = int(
+src\data\nbaiot_pipeline.py:308 | scaler | scaler_data["seed"]
+src\data\nbaiot_pipeline.py:312 | scaler | if scaler_seed != expected_seed:
+src\data\nbaiot_pipeline.py:314 | scaler | "Scaler seed değeri uyuşmuyor: "
+src\data\nbaiot_pipeline.py:315 | scaler | f"scaler={scaler_seed}, beklenen={expected_seed}"
+src\data\nbaiot_pipeline.py:320 | scaler | "Scaler özellik listesi boş."
+src\data\nbaiot_pipeline.py:327 | scaler | "Scaler özellik listesinde tekrar var."
+src\data\nbaiot_pipeline.py:334 | scaler | if scaler_mean.shape != (
+src\data\nbaiot_pipeline.py:338 | scaler | "Scaler mean boyutu özellik sayısıyla uyuşmuyor."
+src\data\nbaiot_pipeline.py:341 | scaler | if scaler_scale.shape != (
+src\data\nbaiot_pipeline.py:345 | scaler | "Scaler scale boyutu özellik sayısıyla uyuşmuyor."
+src\data\nbaiot_pipeline.py:349 | scaler | scaler_mean
+src\data\nbaiot_pipeline.py:352 | scaler | "Scaler mean içinde sonlu olmayan değer var."
+src\data\nbaiot_pipeline.py:356 | scaler | scaler_scale
+src\data\nbaiot_pipeline.py:359 | scaler | "Scaler scale içinde sonlu olmayan değer var."
+src\data\nbaiot_pipeline.py:363 | scaler | scaler_scale <= 0
+src\data\nbaiot_pipeline.py:366 | scaler | "Scaler scale içinde sıfır veya negatif değer var."
+src\data\nbaiot_pipeline.py:410 | float32 | dtype=np.float32,
+src\data\nbaiot_pipeline.py:466 | scaler | scaler_file=scaler_file,
+src\data\nbaiot_pipeline.py:472 | scaler | scaler_mean=scaler_mean,
+src\data\nbaiot_pipeline.py:473 | scaler | scaler_scale=scaler_scale,
+src\data\nbaiot_pipeline.py:474 | scaler | scaler_train_sample_count=(
+src\data\nbaiot_pipeline.py:475 | scaler | scaler_train_sample_count
+src\data\nbaiot_pipeline.py:573 | float32 | if feature_type != pa.float32():
+src\data\nbaiot_pipeline.py:576 | float32 | f"float32 değil: {feature_type}"
+src\data\nbaiot_pipeline.py:690 | float32 | dtype=np.float32,
+src\data\nbaiot_pipeline.py:703 | float64 | scaled_float64 = (
+src\data\nbaiot_pipeline.py:705 | float64 | np.float64,
+src\data\nbaiot_pipeline.py:708 | scaler | - self.assets.scaler_mean
+src\data\nbaiot_pipeline.py:709 | scaler | ) / self.assets.scaler_scale
+src\data\nbaiot_pipeline.py:712 | float64 | scaled_float64
+src\data\nbaiot_pipeline.py:719 | float32 | scaled_float32 = np.asarray(
+src\data\nbaiot_pipeline.py:720 | float64 | scaled_float64,
+src\data\nbaiot_pipeline.py:721 | float32 | dtype=np.float32,
+src\data\nbaiot_pipeline.py:725 | float32 | return scaled_float32
+src\data\nbaiot_pipeline.py:876 | float32 | dtype=np.float32,
+src\training\baseline_trainer.py:7 | scaler | - Scaler yalnızca train verisinden öğrenilmiş artifacttan yüklenir.
+src\training\baseline_trainer.py:252 | float64|astype(np.float64 | ).astype(np.float64)
+src\training\baseline_trainer.py:256 | float64|astype(np.float64 | ).astype(np.float64)
+src\training\baseline_trainer.py:260 | float64|astype(np.float64 | ).astype(np.float64)
+src\training\baseline_trainer.py:455 | float32 | if features.dtype != torch.float32:
+src\training\baseline_trainer.py:457 | float32 | "Model girdisi float32 değil."
+src\training\baseline_trainer.py:834 | float32 | dtype=torch.float32,

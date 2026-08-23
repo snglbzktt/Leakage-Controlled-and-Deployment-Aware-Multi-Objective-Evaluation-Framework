@@ -1,0 +1,39 @@
+==================================================================================
+PHASE 2G-0 EARLY LODO FOLD CACHE
+==================================================================================
+
+Held-out device : Danmini_Doorbell
+Elapsed seconds : 4.124
+
+CACHE COUNTS
+Train           : 1,039,932
+Validation      : 222,798
+Test            : 996,539
+Test occurrence : 1,018,298
+
+CLASS COUNTS
+train: [331408, 17708, 690816]
+validation: [70712, 3821, 148265]
+test: [40395, 304044, 652100]
+
+VALIDATION CHECKS
+write_counts_match: True
+train_shape_matches: True
+validation_shape_matches: True
+test_shape_matches: True
+all_features_finite: True
+class_counts_match: True
+stream_class_counts_match: True
+train_excludes_heldout: True
+validation_excludes_heldout: True
+test_contains_heldout: True
+train_internal_duplicates_zero: True
+train_validation_overlap_zero: True
+train_validation_test_overlap_zero: True
+test_occurrences_positive: True
+test_occurrence_total_matches: True
+scaler_feature_count_115: True
+scaler_sample_count_matches: True
+scaler_values_finite: True
+scaler_scales_positive: True
+all_cache_files_exist: True

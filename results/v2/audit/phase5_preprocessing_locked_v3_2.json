@@ -1,0 +1,27 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "train_only_preprocessing",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T14:51:39.491517+00:00",
+  "scaler_fit_split": "train_only",
+  "class_weight_fit_split": "train_only",
+  "validation_access_count": 0,
+  "test_access_count": 0,
+  "train_fingerprint_count": 1534583,
+  "feature_count": 115,
+  "class_counts": [
+    359439,
+    27221,
+    1147923
+  ],
+  "scaler_artifact": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_standard_scaler_v3_2.npz",
+  "scaler_sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6",
+  "class_weights_artifact": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_class_weights_v3_2.npz",
+  "class_weights_sha256": "81c0f102124d2839f4adaab844ef28e57a5778f0930910bb2fa89630a18cb313",
+  "verification_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_verification_v3_2.json",
+  "verification_sha256": "30615e7b1bd63fc0240dd9807ff4323aa9eb0bb48ff3ea8bd0f0a49d85da7fac",
+  "ready_for_B0_training": true,
+  "next_action": "Run a fail-closed neural architecture and one-batch execution smoke test before the ten B0 training runs.",
+  "all_checks_passed": true
+}

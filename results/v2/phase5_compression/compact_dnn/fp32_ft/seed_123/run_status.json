@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "compact_dnn__fp32_ft__seed_123",
+  "architecture": "compact_dnn",
+  "variant": "FP32-FT",
+  "seed": 123,
+  "best_epoch": 1,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "test_predictions_sha256": "a45074a44abd838a4ae9609fd79c9ad520a090db873e1de6c49edabe53921370",
+  "metrics_sha256": "6ffdf44d3844f412b251a594afbc4518845acddcaea064b410096330e05d984a",
+  "run_manifest_sha256": "6b15145df25e4b4b2da70fe9ad6c504c3af24f9f399584bfe1484d22071a4ab5",
+  "fragility_gate_triggered": false,
+  "completed_at_utc": "2026-08-06T18:55:08.400909+00:00"
+}

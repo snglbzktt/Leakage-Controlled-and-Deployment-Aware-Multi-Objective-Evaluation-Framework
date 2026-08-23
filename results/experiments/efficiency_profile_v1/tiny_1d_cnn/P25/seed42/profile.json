@@ -1,0 +1,132 @@
+{
+  "generated_at_utc": "2026-07-27T07:06:41.844298+00:00",
+  "protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_efficiency_profile_protocol_v1.json",
+  "protocol_sha256": "32a555b12e868f96c32064812502e16f8bf67b205083a16a6866266457f496fc",
+  "record": {
+    "model_name": "tiny_1d_cnn",
+    "variant_name": "P25",
+    "seed": 42,
+    "analysis_role": "primary",
+    "runtime_name": "pytorch_fp32_cpu",
+    "runtime_version": "2.13.0+cpu",
+    "precision": "FP32",
+    "quantized": false,
+    "physical_compaction": true,
+    "parameter_count": 987,
+    "weight_layer_macs": 33960,
+    "deployment_artifact_size_bytes": 7629,
+    "source_artifact_size_bytes": 24421,
+    "source_artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tiny_1d_cnn\\P25\\seed42\\best_checkpoint.pt",
+    "source_artifact_sha256": "3924fb2c43cb389d8c0c644ed0bd4914a4e6340e3984d7f3952f3f44a56c8fb4",
+    "test_macro_f1": 0.943608544897534,
+    "input_source": "deterministic_synthetic_standard_normal",
+    "train_split_used": false,
+    "validation_split_used": false,
+    "test_split_used_for_profiling": false,
+    "host_cpu_profile_only": true,
+    "mcu_measurement": false,
+    "latency_warmup_count": 30,
+    "latency_repetition_count": 300,
+    "latency_batch_size": 1,
+    "latency_mean_ms": 0.199191,
+    "latency_median_ms": 0.1263,
+    "latency_p95_ms": 0.5096450000000002,
+    "latency_p99_ms": 1.1304079999999992,
+    "latency_minimum_ms": 0.1057,
+    "latency_standard_deviation_ms": 0.194543768198357,
+    "throughput_warmup_count": 10,
+    "throughput_repetition_count": 50,
+    "throughput_batch_size": 512,
+    "throughput_batch_mean_ms": 9.074054,
+    "throughput_samples_per_second": 56424.61462098418,
+    "rss_before_load_bytes": 492896256,
+    "rss_after_load_bytes": 492978176,
+    "rss_after_warmup_bytes": 497807360,
+    "rss_peak_timed_bytes": 497827840,
+    "model_load_rss_delta_bytes": 81920,
+    "peak_rss_delta_vs_before_load_bytes": 4931584
+  },
+  "runner_metadata": {
+    "precision": "FP32",
+    "physical_compaction": true,
+    "quantized": false,
+    "pruning_metadata": {
+      "model_name": "tiny_1d_cnn",
+      "requested_pruning_ratio": 0.25,
+      "pruning_name": "P25",
+      "input_features": 115,
+      "num_classes": 3,
+      "original_architecture": {
+        "channels": [
+          8,
+          16,
+          24
+        ]
+      },
+      "compact_architecture": {
+        "channels": [
+          6,
+          12,
+          18
+        ]
+      },
+      "selected_indices": {
+        "conv_1": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          7
+        ],
+        "conv_2": [
+          1,
+          2,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "conv_3": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          11,
+          13,
+          15,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ]
+      },
+      "original_parameter_count": 1699,
+      "compact_parameter_count": 987,
+      "removed_parameter_count": 712,
+      "parameter_reduction_ratio": 0.4190700412007063,
+      "original_weight_layer_macs": 58816,
+      "compact_weight_layer_macs": 33960,
+      "removed_weight_layer_macs": 24856,
+      "mac_reduction_ratio": 0.42260609357997825,
+      "importance_method": "Normalized incoming plus outgoing L1 magnitude",
+      "physical_compaction": true,
+      "mask_based_pruning": false,
+      "output_class_units_pruned": false
+    }
+  },
+  "validation_passed": true
+}

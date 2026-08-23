@@ -1,0 +1,61 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "neural_architecture_one_batch_smoke_test",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T14:59:19.914773+00:00",
+  "architecture_count": 2,
+  "architectures": [
+    {
+      "architecture": "tinyml_mlp",
+      "selected_symbol": "TinyMLMLP",
+      "linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504
+    },
+    {
+      "architecture": "compact_dnn",
+      "selected_symbol": "CompactDNN",
+      "linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 25283,
+      "linear_macs_per_sample": 25056
+    }
+  ],
+  "validation_access_count": 0,
+  "test_access_count": 0,
+  "report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_neural_architecture_smoke_test_v3_2.json",
+  "report_sha256": "5cfff862f2af56345e9928a77eaa905c94ac5cd8a4963ac97eb538caccfd2ae0",
+  "ready_for_B0_training_runs": true,
+  "next_action": "Run and verify the ten locked B0 training configurations.",
+  "all_checks_passed": true
+}

@@ -1,0 +1,18 @@
+{
+  "status": "locked",
+  "phase": 8,
+  "artifact_name": "validation_only_corrected_multi_objective_selection",
+  "protocol_version": "phase8_validation_only_selection_v3_3",
+  "locked_at_utc": "2026-08-12T15:47:31.603010+00:00",
+  "primary_profile": "balanced",
+  "selected_candidate_id": "tinyml_mlp::P50-QAT",
+  "test_metrics_used_for_selection": false,
+  "phase7_p_values_used_for_selection": false,
+  "robustness_used_for_selection": false,
+  "original_phase8_artifacts_modified": false,
+  "protocol": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase8_validation_only_selection_protocol_v3_3.json",
+  "protocol_sha256": "85d1e7aad3ea524f444f44efdb2e20abc44dfe27eb43efdb2df9f139e27dbf2b",
+  "summary": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_validation_only_selection_summary_v3_3.json",
+  "summary_sha256": "de7b064b8c161f9b5f9c6b46459151323da03bb00f40a771c58a4b8f1d1893fe",
+  "all_checks_passed": true
+}

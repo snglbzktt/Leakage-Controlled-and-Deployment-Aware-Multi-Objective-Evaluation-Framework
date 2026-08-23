@@ -1,0 +1,83 @@
+{
+  "generated_at_utc": "2026-07-26T21:07:27.410739+00:00",
+  "model_name": "tiny_1d_cnn",
+  "pruning_name": "P75",
+  "variant_name": "P75-QAT",
+  "pruning_ratio": 0.75,
+  "seed": 2026,
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed2026\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "176b05021581a8622d947a75ac8d6f5580a1efe0d6a9b44e597508d70c51d7db",
+  "pruning_qat_protocol_sha256": "b34b2c23b9ba10958e7d788f53bddbc26a1df7900dd0ba5d6f144840ce0e8ae8",
+  "backend": "onednn",
+  "backend_config_source": "torch.ao.quantization.backend_config.get_onednn_backend_config",
+  "fp32_learning_rate": 0.003,
+  "qat_learning_rate": 0.00030000000000000003,
+  "best_epoch": 7,
+  "epochs_completed": 8,
+  "best_validation_macro_f1_converted_int8": 0.6117924204172613,
+  "fake_quant_module_count": 10,
+  "total_training_seconds": 166.60993650002638,
+  "best_prepared_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+  "best_prepared_state_sha256": "f59dfc3e46f735e33490f2c44058585513de859e52bbc9cdd6f2d4d325458765",
+  "history_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tiny_1d_cnn\\P75-QAT\\seed2026\\training_history.csv",
+  "pruning_metadata": {
+    "model_name": "tiny_1d_cnn",
+    "requested_pruning_ratio": 0.75,
+    "pruning_name": "P75",
+    "input_features": 115,
+    "num_classes": 3,
+    "original_architecture": {
+      "channels": [
+        8,
+        16,
+        24
+      ]
+    },
+    "compact_architecture": {
+      "channels": [
+        2,
+        4,
+        6
+      ]
+    },
+    "selected_indices": {
+      "conv_1": [
+        2,
+        5
+      ],
+      "conv_2": [
+        0,
+        7,
+        11,
+        14
+      ],
+      "conv_3": [
+        2,
+        4,
+        7,
+        17,
+        18,
+        23
+      ]
+    },
+    "original_parameter_count": 1699,
+    "compact_parameter_count": 139,
+    "removed_parameter_count": 1560,
+    "parameter_reduction_ratio": 0.9181871689228959,
+    "original_weight_layer_macs": 58816,
+    "compact_weight_layer_macs": 4552,
+    "removed_weight_layer_macs": 54264,
+    "mac_reduction_ratio": 0.9226060935799782,
+    "importance_method": "Normalized incoming plus outgoing L1 magnitude",
+    "physical_compaction": true,
+    "mask_based_pruning": false,
+    "output_class_units_pruned": false
+  },
+  "physical_compaction": true,
+  "mask_based_pruning": false,
+  "training_split": "train",
+  "selection_split": "validation",
+  "selection_metric": "converted_int8_macro_f1",
+  "test_split_evaluated": false,
+  "training_completed": true
+}

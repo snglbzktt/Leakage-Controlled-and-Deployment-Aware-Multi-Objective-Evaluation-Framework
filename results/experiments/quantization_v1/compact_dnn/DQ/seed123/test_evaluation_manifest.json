@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-25T07:59:19.330987+00:00",
+  "status": "completed",
+  "model_name": "compact_dnn",
+  "method_name": "DQ",
+  "seed": 123,
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\DQ\\seed123\\model_dynamic_int8.onnx",
+  "artifact_sha256": "79d377a0e5e92b1aea30e5d7957bbad882b2cd972b2198d93b61a5c769261f2c",
+  "evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "completed_at_utc": "2026-07-25T07:59:20.604632+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\DQ\\seed123\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\DQ\\seed123\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\DQ\\seed123\\test_confusion_matrix.csv"
+}

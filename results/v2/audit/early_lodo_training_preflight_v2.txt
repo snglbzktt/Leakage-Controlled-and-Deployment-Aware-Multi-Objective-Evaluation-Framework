@@ -1,0 +1,63 @@
+==================================================================================
+PHASE 2E EARLY LODO TRAINING PREFLIGHT
+==================================================================================
+
+SYSTEM RESOURCES
+Available RAM : 4.720 GB
+Free disk     : 10.123 GB
+Feature matrix estimate: 1.064 GB
+
+RUN MATRIX
+Runs    : 27
+Models  : compact_dnn_b0=9 | hist_gradient_boosting_b0=9 | tinyml_mlp_b0=9
+Devices : 9
+Seeds   : 2026
+
+MEMBERSHIP ARRAYS
+- device_mask.npy | shape=[2482676] | dtype=uint16 | valid=True
+- device_occurrence_counts.npy | shape=[2482676, 9] | dtype=uint32 | valid=True
+- family3.npy | shape=[2482676] | dtype=int8 | valid=True
+- split_code.npy | shape=[2482676] | dtype=uint8 | valid=True
+- source_device_count.npy | shape=[2482676] | dtype=uint8 | valid=True
+
+FEATURE MATRIX CANDIDATES
+- No exact candidate detected.
+
+TOP CODE MATCHES
+- scripts\38_run_b0_matched_leakage_ablation.py | matches=46
+- scripts\53_run_numeric_order_training_pilot_v2.py | matches=35
+- scripts\51_lock_numeric_order_training_pilot_protocol_v2.py | matches=27
+- scripts\47_audit_numeric_pipeline_order_v2.py | matches=25
+- scripts\52_build_numeric_order_pilot_cache_v2.py | matches=19
+- scripts\54_lock_numeric_order_training_pilot_v2.py | matches=18
+- scripts\36_run_leakage_ablation.py | matches=17
+- scripts\65_preflight_early_lodo_training_v2.py | matches=17
+- src\compression\structured_pruning.py | matches=16
+- scripts\63_build_early_lodo_membership_index_v2.py | matches=13
+- scripts\14_fit_training_standardizer.py | matches=11
+- scripts\18_validate_model_registry.py | matches=10
+- scripts\55_preflight_early_lodo_v2.py | matches=10
+- src\models\nbaiot_models.py | matches=10
+- scripts\22_lock_fp32_baseline_protocol.py | matches=9
+
+VALIDATION CHECKS
+protocol_status_locked: True
+protocol_all_checks_passed: True
+protocol_internal_checks_true: True
+run_matrix_has_27_rows: True
+run_ids_are_unique: True
+three_models_in_run_matrix: True
+nine_devices_in_run_matrix: True
+single_seed_2026: True
+all_runs_pending: True
+membership_arrays_valid: True
+alignment_row_count_matches: True
+primary_metadata_row_count: True
+family_column_available: True
+split_column_available: True
+tinyml_model_code_found: True
+compact_model_code_found: True
+standard_scaler_code_found: True
+feature_matrix_candidate_found: False
+minimum_free_disk_8gb: True
+minimum_available_ram_4gb: True

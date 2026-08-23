@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "tinyml_mlp__fp32_ft__seed_2026",
+  "architecture": "tinyml_mlp",
+  "variant": "FP32-FT",
+  "seed": 2026,
+  "best_epoch": 1,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "test_predictions_sha256": "c30e7fce1adf7bca25df46137c3beaa39d7bab7ace9cd85a342aeac0b924637d",
+  "metrics_sha256": "7bde4c267ad2a78bd42d39522ab1a5db3380ad95d2ceca1dd62d85ca7f84e36f",
+  "run_manifest_sha256": "2424aec5d07741c767fd905a15ffafe7e917f4ce5015ee661e339cda18b1bf30",
+  "fragility_gate_triggered": false,
+  "completed_at_utc": "2026-08-06T18:57:20.793905+00:00"
+}

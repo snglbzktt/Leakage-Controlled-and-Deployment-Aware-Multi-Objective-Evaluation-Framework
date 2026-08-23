@@ -1,0 +1,199 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "physical_pruning_source_checkpoints",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "generated_at_utc": "2026-08-06T17:57:50.563919+00:00",
+  "checkpoint_count": 20,
+  "newly_generated_count": 20,
+  "resumed_existing_count": 0,
+  "architecture_count": 2,
+  "variant_count": 2,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 6819,
+      "parameter_reduction_fraction": 0.2899094033114652,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 6744,
+      "MAC_reduction_fraction": 0.29040404040404044
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 4291,
+      "parameter_reduction_fraction": 0.5531604706862439,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 4240,
+      "MAC_reduction_fraction": 0.5538720538720538
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 17043,
+      "parameter_reduction_fraction": 0.32591069097812764,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 16872,
+      "MAC_reduction_fraction": 0.32662835249042144
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 25283,
+      "compacted_parameter_count": 10083,
+      "parameter_reduction_fraction": 0.6011944785033422,
+      "source_linear_macs_per_sample": 25056,
+      "compacted_linear_macs_per_sample": 9968,
+      "MAC_reduction_fraction": 0.6021711366538953
+    }
+  ],
+  "source_policy": {
+    "P25_generated_directly_from_B0": true,
+    "P50_generated_directly_from_B0": true,
+    "P50_generated_from_P25": false,
+    "same_P25_source_reserved_for_P25_and_P25_QAT": true,
+    "same_P50_source_reserved_for_P50_and_P50_QAT": true,
+    "physical_compaction": true,
+    "mask_only_pruning": false
+  },
+  "data_access": {
+    "train_smoke_rows_used_per_generation": 64,
+    "validation_access_count": 0,
+    "test_access_count": 0
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "B0_pair_locked": true,
+    "B0_registry_hash_matches": true,
+    "pruning_preflight_locked": true,
+    "pruning_engine_locked": true,
+    "engine_source_hash_matches": true,
+    "engine_report_hash_matches": true,
+    "registry_has_ten_B0_rows": true,
+    "registry_architecture_seed_matrix_matches": true
+  },
+  "registry_checks": {
+    "twenty_rows_present": true,
+    "architecture_variant_seed_matrix_complete": true,
+    "all_checkpoint_hashes_unique": true,
+    "all_source_B0_hashes_match_registry": true,
+    "all_generated_directly_from_B0": true,
+    "all_physical_not_mask_only": true,
+    "all_validation_counts_zero": true,
+    "all_test_counts_zero": true
+  },
+  "registry_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_source_checkpoint_registry_v3_2.csv",
+    "size_bytes": 20143,
+    "sha256": "8c8ee86e88eba63858ae562183716323a3a972e29948a0f8f8dc83e15436deef"
+  },
+  "all_checks_passed": true
+}

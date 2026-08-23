@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-07-25T11:46:34.222388+00:00",
+  "method_name": "QAT",
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed2026\\converted_int8_state_dict.pt",
+  "artifact_sha256": "de91a8ca91ff1d8c5c94096a22b8b5bab3fe869fcd493be867657cdbe56bba05",
+  "artifact_size_bytes": 12505,
+  "prepared_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+  "prepared_state_sha256": "5259401a5d2dfefd8c4560e44b80257609134318729fe6c26f3840dc63d76711",
+  "quantized_module_count": 5,
+  "quantized_module_types": [
+    "torch.ao.nn.intrinsic.quantized.modules.conv_relu.ConvReLU1d",
+    "torch.ao.nn.quantized.modules.linear.Linear",
+    "torch.ao.nn.quantized.modules.linear.LinearPackedParams"
+  ],
+  "quantized_graph_node_count": 4,
+  "quantized_graph_targets": [
+    "<built-in method quantize_per_tensor of type object at 0x00007FFCE9D7D2D0>",
+    "dequantize"
+  ],
+  "graph_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed2026\\converted_fx_graph.txt",
+  "native_artifact_note": "PyTorch quantized state_dict size is runtime-specific and is not directly comparable with ONNX file size."
+}

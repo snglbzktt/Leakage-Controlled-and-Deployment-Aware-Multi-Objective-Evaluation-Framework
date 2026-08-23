@@ -1,0 +1,173 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "PTQ_validation_candidate",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "PTQ_engine_version": "phase5_ptq_engine_v3_2",
+  "run_id": "compact_dnn__ptq_validation__seed_42__cal_65536",
+  "architecture": "compact_dnn",
+  "seed": 42,
+  "source": {
+    "source_variant": "B0",
+    "source_B0_checkpoint_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_42\\best_checkpoint.pt",
+    "source_B0_checkpoint_sha256": "bfaa7bf463eb749ac96c61b2c1053ab23e9e96b7f6fbf23b35e18041a1a583f4"
+  },
+  "calibration": {
+    "source_split": "train_only",
+    "size": 65536,
+    "key": "seed_42_size_65536",
+    "indices_sha256": "471a2de630adeea7049785cac88f182ff78fda8d48f27c7d86ecfa0d12c01611",
+    "sampling": "deterministic_stratified_nested",
+    "elapsed_seconds": 0.18223520007450134
+  },
+  "quantization": {
+    "method": "post_training_static_quantization",
+    "backend": "onednn",
+    "target_modules": [
+      "torch.nn.Linear"
+    ],
+    "quantized_weight_dtype": "torch.qint8",
+    "training_performed": false
+  },
+  "validation": {
+    "primary_fingerprint_level": {
+      "accuracy": 0.9981253210757484,
+      "macro_precision": 0.998345636748041,
+      "macro_recall": 0.9956995086471757,
+      "balanced_accuracy": 0.9956995086471757,
+      "macro_f1": 0.9970113875282224,
+      "weighted_f1": 0.9981210639747269,
+      "mcc": 0.9962663337139759,
+      "log_loss": 0.00649878429248929,
+      "roc_auc_ovr_macro": 0.9999567669129323,
+      "confusion_matrix": [
+        [
+          77015,
+          7,
+          0
+        ],
+        [
+          102,
+          48184,
+          507
+        ],
+        [
+          31,
+          50,
+          245901
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.9982760408565355,
+          "recall": 0.9999091168756978,
+          "f1": 0.9990919115262372,
+          "support": 77022.0,
+          "false_negative_rate": 9.088312430216572e-05
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.9988184324537219,
+          "recall": 0.9875187014530773,
+          "f1": 0.9931364264072386,
+          "support": 48793.0,
+          "false_negative_rate": 0.012481298546922703
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.9979424369338658,
+          "recall": 0.9996707076127521,
+          "f1": 0.9988058246511912,
+          "support": 245982.0,
+          "false_negative_rate": 0.00032929238724788146
+        }
+      }
+    },
+    "secondary_raw_record_weighted": {
+      "accuracy": 0.9948649694635592,
+      "macro_precision": 0.9936626116707968,
+      "macro_recall": 0.9957277925393925,
+      "balanced_accuracy": 0.9957277925393925,
+      "macro_f1": 0.9946691498582108,
+      "weighted_f1": 0.9948602642112959,
+      "mcc": 0.9909028434239664,
+      "log_loss": 0.017584838190552662,
+      "roc_auc_ovr_macro": 0.9999439901167969,
+      "confusion_matrix": [
+        [
+          83375,
+          15,
+          0
+        ],
+        [
+          840,
+          420514,
+          4386
+        ],
+        [
+          66,
+          133,
+          550061
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.9892502462002112,
+          "recall": 0.9998201223168246,
+          "f1": 0.9945071002141098,
+          "support": 83390.0,
+          "false_negative_rate": 0.0001798776831754001
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.9996481735930509,
+          "recall": 0.9877249025226664,
+          "f1": 0.993650771146571,
+          "support": 425740.0,
+          "false_negative_rate": 0.012275097477333574
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.9920894152191283,
+          "recall": 0.9996383527786864,
+          "f1": 0.9958495782139517,
+          "support": 550260.0,
+          "false_negative_rate": 0.00036164722131359905
+        }
+      }
+    },
+    "elapsed_seconds": 0.5681549999862909,
+    "used_for_calibration_size_selection": true
+  },
+  "model_complexity": {
+    "float_linear_widths": [
+      [
+        115,
+        128
+      ],
+      [
+        128,
+        64
+      ],
+      [
+        64,
+        32
+      ],
+      [
+        32,
+        3
+      ]
+    ],
+    "float_linear_count": 4,
+    "INT8_linear_count": 4,
+    "float_state_bytes": 104397,
+    "INT8_state_bytes": 38293,
+    "INT8_to_float_state_size_ratio": 0.3668017280190044
+  },
+  "validation_access_count": 1,
+  "test_access_count": 0,
+  "test_used_for_selection": false,
+  "completed_at_utc": "2026-08-06T20:33:18.157751+00:00"
+}

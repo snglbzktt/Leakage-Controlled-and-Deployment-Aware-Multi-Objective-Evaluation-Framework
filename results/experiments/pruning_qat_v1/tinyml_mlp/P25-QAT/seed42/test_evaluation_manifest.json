@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-26T19:25:55.447362+00:00",
+  "status": "completed",
+  "model_name": "tinyml_mlp",
+  "method_name": "P25-QAT",
+  "seed": 42,
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed42\\converted_int8_state_dict.pt",
+  "artifact_sha256": "6e4a5aad12a036c1ee2eb27173e6c4eb71c75173d50f970a77e3038beded1fbd",
+  "evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "completed_at_utc": "2026-07-26T19:25:56.992580+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed42\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed42\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed42\\test_confusion_matrix.csv"
+}

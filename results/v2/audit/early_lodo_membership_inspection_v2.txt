@@ -1,0 +1,80 @@
+==============================================================================
+PHASE 2B LODO MEMBERSHIP INSPECTION
+==============================================================================
+
+Metadata rows              : 2,482,676
+Source device column       : source_device
+Source device count column : source_device_count
+Likely family-3 columns    : 
+Maximum device count       : 9
+
+SCHEMA
+- hash_forward: int64
+- hash_reverse: int64
+- split: string
+- class_label: string
+- source_device: string
+- source_relative_path: string
+- source_row_number: int64
+- original_occurrence_count: int64
+- source_device_count: int64
+
+SOURCE DEVICE COUNT DISTRIBUTION
+- 1: 611,623
+- 2: 1,073,595
+- 3: 493,272
+- 4: 3,675
+- 5: 3,560
+- 6: 5,392
+- 7: 8,186
+- 8: 6,313
+- 9: 277,060
+
+DEVICE COUNT MATCH
+- Danmini_Doorbell | expected=996,539 | observed=996,539 | shared=911,645 | match=True
+- Ecobee_Thermostat | expected=823,134 | observed=535,268 | shared=513,152 | match=False
+- Ennio_Doorbell | expected=338,599 | observed=41,642 | shared=5,835 | match=False
+- Philips_B120N10_Baby_Monitor | expected=1,075,936 | observed=169,044 | shared=1,715 | match=False
+- Provision_PT_737E_Security_Camera | expected=807,836 | observed=495,337 | shared=425,054 | match=False
+- Provision_PT_838_Security_Camera | expected=820,042 | observed=101,254 | shared=0 | match=False
+- Samsung_SNH_1011_N_Webcam | expected=359,368 | observed=51,411 | shared=0 | match=False
+- SimpleHome_XCS7_1002_WHT_Security_Camera | expected=847,047 | observed=59,854 | shared=13,652 | match=False
+- SimpleHome_XCS7_1003_WHT_Security_Camera | expected=836,326 | observed=32,327 | shared=0 | match=False
+
+LABEL CANDIDATES
+- class_label: benign | gafgyt_combo | gafgyt_junk | gafgyt_scan | gafgyt_tcp | gafgyt_udp | mirai_ack | mirai_scan | mirai_syn | mirai_udp | mirai_udpplain
+
+SINGLE DEVICE SAMPLES
+{"source_device": "Danmini_Doorbell", "source_device_count": "1", "class_label": "benign", "hash_forward": "-5635523411592872385", "hash_reverse": "7433340958982268529", "original_occurrence_count": "4"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "1", "class_label": "benign", "hash_forward": "6309785476492270297", "hash_reverse": "-8037337333456679227", "original_occurrence_count": "4"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "1", "class_label": "benign", "hash_forward": "-6758900912423598437", "hash_reverse": "1792256668686766427", "original_occurrence_count": "4"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "1", "class_label": "benign", "hash_forward": "3084717697153075391", "hash_reverse": "-6398201855244281353", "original_occurrence_count": "4"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "1", "class_label": "benign", "hash_forward": "-1197779216895548593", "hash_reverse": "4034584223728405909", "original_occurrence_count": "4"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "1", "class_label": "benign", "hash_forward": "-6688152544993946145", "hash_reverse": "-4463610923416872693", "original_occurrence_count": "4"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "1", "class_label": "benign", "hash_forward": "3540825489471816671", "hash_reverse": "-1622524344232721085", "original_occurrence_count": "4"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "1", "class_label": "benign", "hash_forward": "-1628841979661514008", "hash_reverse": "-2734909657000467944", "original_occurrence_count": "4"}
+
+MULTI DEVICE SAMPLES
+{"source_device": "Danmini_Doorbell", "source_device_count": "9", "class_label": "gafgyt_combo", "hash_forward": "3397411188687606930", "hash_reverse": "-1768664837809509188", "original_occurrence_count": "9"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "9", "class_label": "gafgyt_combo", "hash_forward": "-2269578245661536150", "hash_reverse": "-3062282974775549506", "original_occurrence_count": "9"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "9", "class_label": "gafgyt_combo", "hash_forward": "6428895126505147021", "hash_reverse": "-30690441044044481", "original_occurrence_count": "9"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "9", "class_label": "gafgyt_combo", "hash_forward": "-3891518909083364510", "hash_reverse": "5986119117739420114", "original_occurrence_count": "9"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "9", "class_label": "gafgyt_combo", "hash_forward": "3266141685691349640", "hash_reverse": "-2762740641319337388", "original_occurrence_count": "9"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "8", "class_label": "gafgyt_combo", "hash_forward": "-2578820741238134337", "hash_reverse": "3656445026669290477", "original_occurrence_count": "8"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "2", "class_label": "gafgyt_combo", "hash_forward": "-8090783180804555376", "hash_reverse": "4244241463982820456", "original_occurrence_count": "2"}
+{"source_device": "Danmini_Doorbell", "source_device_count": "2", "class_label": "gafgyt_combo", "hash_forward": "-6563226155378424592", "hash_reverse": "-8344959861537599960", "original_occurrence_count": "2"}
+
+VALIDATION CHECKS
+metadata_row_count: True
+device_count: True
+source_device_column: True
+source_device_count_column: True
+all_device_fingerprint_counts_match: False
+device_count_distribution_complete: True
+no_invalid_source_device_count: True
+multi_device_rows_exist: True
+family3_column_detected: False
+single_device_samples_collected: True
+multi_device_samples_collected: True
+
+Preflight passed: False

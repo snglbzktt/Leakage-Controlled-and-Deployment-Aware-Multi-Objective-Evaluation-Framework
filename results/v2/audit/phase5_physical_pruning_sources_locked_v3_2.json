@@ -1,0 +1,17 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "physical_pruning_source_checkpoints",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "locked_at_utc": "2026-08-06T17:57:50.595540+00:00",
+  "checkpoint_count": 20,
+  "registry": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_source_checkpoint_registry_v3_2.csv",
+  "registry_sha256": "8c8ee86e88eba63858ae562183716323a3a972e29948a0f8f8dc83e15436deef",
+  "summary": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_sources_summary_v3_2.json",
+  "summary_sha256": "6aaea47a122ed4faeae67033a850c3440e4ed1e336457661731daa9084a329aa",
+  "validation_access_count": 0,
+  "test_access_count": 0,
+  "ready_for_independent_pruning_source_verification": true,
+  "all_checks_passed": true
+}

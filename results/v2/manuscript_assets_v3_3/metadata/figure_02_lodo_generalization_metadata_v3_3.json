@@ -1,0 +1,79 @@
+{
+  "status": "generated",
+  "phase": 13,
+  "asset_id": "figure_02_lodo_generalization",
+  "generated_at_utc": "2026-08-07T07:34:42.211591+00:00",
+  "title": "Leave-One-Device-Out Generalization",
+  "source_files": [
+    {
+      "source_id": "lodo_device_model_matrix",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\global\\early_lodo_device_model_matrix_v2.csv",
+      "sha256": "63021a73dde31ac38d03e2924cb48f49ce2b483aff00cfe3137056312e3e41dc"
+    },
+    {
+      "source_id": "lodo_global_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\global\\early_lodo_global_summary_v2.json",
+      "sha256": "1edbff5dd484f4bcd8b4d651b33795b21748debaa3e9f643b720b6970bea4b77"
+    }
+  ],
+  "outputs": {
+    "png": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_02_lodo_generalization_v3_3.png",
+      "sha256": "a123c0f1bdcd0d26cff9bf4b83a1bfd79a66140992b28e1d260839f50ef4ac44",
+      "size_bytes": 249705
+    },
+    "svg": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_02_lodo_generalization_v3_3.svg",
+      "sha256": "5ac5a306fbadec88b455294c6dccb4495ef7d21b253079e57d17faf3c774a657",
+      "size_bytes": 103365
+    },
+    "source_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\figure_02_lodo_generalization_source_v3_3.csv",
+      "sha256": "0c0c24d1c1503e085eae400fd351c777c55a6e69e43feeea29ce86cd86e1fa8f",
+      "size_bytes": 5890
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\figure_02_lodo_generalization_caption_v3_3.txt",
+      "sha256": "f4b1000ecfc999974b34f5e5d1829158fdc32a0be2edc8107b142da95af1d485",
+      "size_bytes": 602
+    }
+  },
+  "source_row_count": 27,
+  "device_count": 9,
+  "model_count": 3,
+  "computed_model_means": {
+    "tinyml_mlp_b0": 0.986283143363278,
+    "compact_dnn_b0": 0.9869322360394737,
+    "hist_gradient_boosting_b0": 0.9674042478734339
+  },
+  "reported_model_means": {
+    "compact_dnn_b0": 0.9869322360394737,
+    "tinyml_mlp_b0": 0.986283143363278,
+    "hist_gradient_boosting_b0": 0.9674042478734339
+  },
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_lock_hash_matches": true,
+    "mapping_validated": true,
+    "mapping_lock_hash_matches": true,
+    "figure_02_mapped": true
+  },
+  "data_checks": {
+    "row_count_27": true,
+    "device_count_9": true,
+    "model_count_3": true,
+    "expected_model_set": true,
+    "unique_device_model_cells": true,
+    "no_severe_cells": true,
+    "global_gate_passed": true
+  },
+  "mean_checks": {
+    "tinyml_mlp_b0": true,
+    "compact_dnn_b0": true,
+    "hist_gradient_boosting_b0": true
+  },
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "all_checks_passed": true
+}

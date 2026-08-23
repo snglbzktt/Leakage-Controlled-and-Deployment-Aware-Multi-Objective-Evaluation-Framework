@@ -1,0 +1,115 @@
+{
+  "protocol_version": "numeric_order_training_run_v2_1",
+  "status": "completed",
+  "completed_at": "2026-08-05T17:52:30.103031+00:00",
+  "run_id": "pipeline_b__tinyml_mlp__seed123",
+  "pipeline": "pipeline_b",
+  "model_name": "tinyml_mlp",
+  "seed": 123,
+  "learning_rate": 0.003,
+  "weight_decay": 0.0001,
+  "batch_size": 4096,
+  "max_epochs": 15,
+  "patience": 4,
+  "minimum_delta": 0.0002,
+  "initial_state_sha256": "400cc22af48709b88dd92a05a600b0298f5bd5faf621f21af82cae28153a9e8e",
+  "best_epoch": 6,
+  "epochs_completed": 10,
+  "training_seconds": 43.47964620008133,
+  "peak_process_memory_mb": 1383.40625,
+  "validation": {
+    "accuracy": 0.9995858923750417,
+    "macro_f1": 0.99930934389984,
+    "per_class": {
+      "benign": {
+        "support": 76732,
+        "precision": 0.9995178650543379,
+        "recall": 0.999648125944847,
+        "fnr": 0.00035187405515302306,
+        "f1": 0.9995829912558478
+      },
+      "gafgyt": {
+        "support": 49285,
+        "precision": 0.9977110678982337,
+        "recall": 0.9993912955260221,
+        "fnr": 0.0006087044739778724,
+        "f1": 0.9985504748968608
+      },
+      "mirai": {
+        "support": 245867,
+        "precision": 0.9999837248854638,
+        "recall": 0.9996054777583002,
+        "fnr": 0.00039452224169977956,
+        "f1": 0.9997945655468116
+      }
+    },
+    "confusion_matrix": [
+      [
+        76705,
+        26,
+        1
+      ],
+      [
+        27,
+        49255,
+        3
+      ],
+      [
+        10,
+        87,
+        245770
+      ]
+    ],
+    "loss": 0.0020387721273801094,
+    "row_count": 371884
+  },
+  "test": {
+    "accuracy": 0.9996162711755251,
+    "macro_f1": 0.9993434127009219,
+    "per_class": {
+      "benign": {
+        "support": 77058,
+        "precision": 0.9994290978448443,
+        "recall": 0.9995977056243349,
+        "fnr": 0.00040229437566507986,
+        "f1": 0.9995133946239838
+      },
+      "gafgyt": {
+        "support": 49261,
+        "precision": 0.9980940408361889,
+        "recall": 0.9992691987576379,
+        "fnr": 0.0007308012423621335,
+        "f1": 0.9986812740921079
+      },
+      "mirai": {
+        "support": 246340,
+        "precision": 0.9999796969979982,
+        "recall": 0.9996914833157424,
+        "fnr": 0.00030851668425757595,
+        "f1": 0.9998355693866738
+      }
+    },
+    "confusion_matrix": [
+      [
+        77027,
+        28,
+        3
+      ],
+      [
+        34,
+        49225,
+        2
+      ],
+      [
+        10,
+        66,
+        246264
+      ]
+    ],
+    "loss": 0.0016564111511876522,
+    "row_count": 372659
+  },
+  "test_evaluation_count": 1,
+  "checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_b\\tinyml_mlp\\seed123\\best_checkpoint.pt",
+  "history_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_b\\tinyml_mlp\\seed123\\history.csv"
+}

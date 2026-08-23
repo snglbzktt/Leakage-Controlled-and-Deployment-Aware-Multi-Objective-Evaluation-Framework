@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "compact_dnn__dq__seed_2026",
+  "architecture": "compact_dnn",
+  "variant": "DQ",
+  "seed": 2026,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "DQ_checkpoint_sha256": "a248363e1960796de66b7c8212c063d28045766add94f146760d18055e204fc4",
+  "validation_predictions_sha256": "35b84a6a3b62f57deb2a8307da68c5d630f29eba52d5533f17ca21bc390dac8b",
+  "test_predictions_sha256": "8496a55460aca7e834e5efe7c960b17d3ad67d07a0b349372712a5221ac666cd",
+  "metrics_sha256": "fbdf24f7397166f4e0ceadd36e777af734385d5061e3148b54ceda487126387c",
+  "run_manifest_sha256": "e03323c3d02b907bed39dcaf98dac3fb29213cc96c58b86ea466e335b8968ff7",
+  "fragility_gate_triggered": false,
+  "completed_at_utc": "2026-08-06T19:11:33.559354+00:00"
+}

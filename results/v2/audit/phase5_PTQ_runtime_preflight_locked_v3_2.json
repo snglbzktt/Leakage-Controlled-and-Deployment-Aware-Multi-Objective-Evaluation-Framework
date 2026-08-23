@@ -1,0 +1,32 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "PTQ_engine_runtime_and_calibration_preflight",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "PTQ_engine_version": "phase5_ptq_engine_v3_2",
+  "locked_at_utc": "2026-08-06T20:28:56.165558+00:00",
+  "configuration_count": 10,
+  "calibration_plan_count": 20,
+  "calibration_sizes": [
+    4096,
+    16384,
+    65536,
+    262144
+  ],
+  "selected_backend": "onednn",
+  "quantized_weight_dtype": "torch.qint8",
+  "PTQ_engine_source": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_ptq_engine_v3_2.py",
+  "PTQ_engine_source_sha256": "ccf19215d474accba0e4509659f7bdd3868a5ddb4a125e51c6e60527062ac428",
+  "calibration_index_npz": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\ptq\\phase5_PTQ_calibration_indices_v3_2.npz",
+  "calibration_index_npz_sha256": "4dbc4f898ed1d905a65fe541ddd3b97e168a181697e66ae97a51cbbcf11bd87b",
+  "calibration_index_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_calibration_index_summary_v3_2.csv",
+  "calibration_index_summary_csv_sha256": "509e3794c0f7a7b636f08a0d8ce255fefc412a2ecf1806401de3f961f7beea9e",
+  "validation_access_count": 0,
+  "test_access_count": 0,
+  "matrix_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_runtime_preflight_matrix_v3_2.csv",
+  "matrix_csv_sha256": "775881a2e2ad3d9ea0a8b8aadf39efb063019c84f5c77348cc486ea4005573d1",
+  "report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_runtime_preflight_v3_2.json",
+  "report_sha256": "1b6a11e3403dd5814e531d0771aed9b9aa73df10d12b145d5654d8423533f145",
+  "ready_for_PTQ_validation_sweep": true,
+  "all_checks_passed": true
+}

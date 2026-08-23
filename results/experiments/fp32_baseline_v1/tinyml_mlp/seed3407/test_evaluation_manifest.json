@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-24T11:17:58.458611+00:00",
+  "status": "completed",
+  "model_name": "tinyml_mlp",
+  "seed": 3407,
+  "protocol_sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525",
+  "checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tinyml_mlp\\seed3407\\best_checkpoint.pt",
+  "checkpoint_sha256": "b4ac7c0d2a8876e1145e398ab2c7edf547f5f777c9f557139664395469faef8e",
+  "evaluation_attempt_count": 1,
+  "test_used_for_model_selection": false,
+  "completed_at_utc": "2026-07-24T11:17:59.681999+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tinyml_mlp\\seed3407\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tinyml_mlp\\seed3407\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tinyml_mlp\\seed3407\\test_confusion_matrix.csv"
+}

@@ -1,0 +1,40 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "asset_id": "figure_02_lodo_generalization",
+  "locked_at_utc": "2026-08-07T07:34:42.354128+00:00",
+  "metadata": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\figure_02_lodo_generalization_metadata_v3_3.json",
+    "sha256": "bc3cd1361f692ada7b3ae53dc086ecac5785731f8caa623ac83e36e5b736fe75"
+  },
+  "outputs": {
+    "png": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_02_lodo_generalization_v3_3.png",
+      "sha256": "a123c0f1bdcd0d26cff9bf4b83a1bfd79a66140992b28e1d260839f50ef4ac44",
+      "size_bytes": 249705
+    },
+    "svg": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_02_lodo_generalization_v3_3.svg",
+      "sha256": "5ac5a306fbadec88b455294c6dccb4495ef7d21b253079e57d17faf3c774a657",
+      "size_bytes": 103365
+    },
+    "source_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\figure_02_lodo_generalization_source_v3_3.csv",
+      "sha256": "0c0c24d1c1503e085eae400fd351c777c55a6e69e43feeea29ce86cd86e1fa8f",
+      "size_bytes": 5890
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\figure_02_lodo_generalization_caption_v3_3.txt",
+      "sha256": "f4b1000ecfc999974b34f5e5d1829158fdc32a0be2edc8107b142da95af1d485",
+      "size_bytes": 602
+    }
+  },
+  "source_row_count": 27,
+  "device_count": 9,
+  "model_count": 3,
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

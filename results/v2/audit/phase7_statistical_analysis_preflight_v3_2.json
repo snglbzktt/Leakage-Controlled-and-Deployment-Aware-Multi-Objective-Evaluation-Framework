@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "phase": 7,
+  "artifact_name": "statistical_analysis_preflight",
+  "protocol_version": "phase7_statistical_analysis_v3_2",
+  "verified_at_utc": "2026-08-06T21:17:22.134929+00:00",
+  "entry_checks": {
+    "phase5_locked": true,
+    "phase6_locked": true,
+    "phase5_master_hash_matches": true,
+    "phase6_all_runs_hash_matches": true,
+    "phase5_row_count_110": true,
+    "phase6_row_count_110": true,
+    "phase5_final_model_not_selected": true,
+    "phase6_final_model_not_selected": true
+  },
+  "preflight_checks": {
+    "joined_row_count_110": true,
+    "joined_keys_exact": true,
+    "no_nonfinite_metric_values": true,
+    "confirmatory_metric_count_4": true,
+    "exploratory_metric_count_4": true,
+    "omnibus_plan_count_16": true,
+    "posthoc_plan_count_160": true,
+    "exact_sign_flip_assignments_32": true,
+    "exact_bootstrap_resamples_3125": true,
+    "final_model_not_selected": true
+  },
+  "joined_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_analysis_joined_matrix_v3_2.csv",
+    "size_bytes": 69695,
+    "sha256": "2fb465ad45209d5b47b54eaf00e3be4492c24f07cb3782fa80bef68d1178bc52"
+  },
+  "comparison_plan": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_comparison_plan_v3_2.csv",
+    "size_bytes": 46258,
+    "sha256": "cc57da764c3ef080b41caf7ad908fa945104160e4e2dad8ad4b8c294e297d6c1"
+  },
+  "protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase7_statistical_analysis_protocol_v3_2.json",
+    "size_bytes": 6367,
+    "sha256": "bd0bf99c7870d785d16511c41b9f1d16ddfd500d034b60a14bb098bd06ca384c"
+  },
+  "ready_for_locked_statistical_execution": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,108 @@
+{
+  "status": "completed",
+  "phase": 8,
+  "artifact_name": "multi_objective_decision_execution",
+  "protocol_version": "phase8_multi_objective_decision_v3_2",
+  "completed_at_utc": "2026-08-06T21:32:56.237176+00:00",
+  "profile_results": {
+    "strict": {
+      "eligible_candidate_count": 5,
+      "Pareto_candidate_count": 2,
+      "selection_available": true,
+      "provisional_selected_candidate_id": "tinyml_mlp::P50-FP32-FT",
+      "selected_architecture": "tinyml_mlp",
+      "selected_variant": "P50-FP32-FT"
+    },
+    "balanced": {
+      "eligible_candidate_count": 11,
+      "Pareto_candidate_count": 5,
+      "selection_available": true,
+      "provisional_selected_candidate_id": "tinyml_mlp::P50-QAT",
+      "selected_architecture": "tinyml_mlp",
+      "selected_variant": "P50-QAT"
+    },
+    "relaxed": {
+      "eligible_candidate_count": 11,
+      "Pareto_candidate_count": 5,
+      "selection_available": true,
+      "provisional_selected_candidate_id": "tinyml_mlp::P50-QAT",
+      "selected_architecture": "tinyml_mlp",
+      "selected_variant": "P50-QAT"
+    }
+  },
+  "primary_profile": "balanced",
+  "primary_provisional_selection": {
+    "candidate_id": "tinyml_mlp::P50-QAT",
+    "architecture": "tinyml_mlp",
+    "variant": "P50-QAT",
+    "representation": "static_int8",
+    "mean_test_fingerprint_macro_f1": 0.9978555453698199,
+    "mean_serialized_state_dict_bytes": 12199.0,
+    "mean_batch_1_median_ms": 0.10766,
+    "mean_batch_32_samples_per_second": 168078.67334476035,
+    "mean_macro_f1_loss_vs_B0": 0.001393040557715941,
+    "worst_seed_macro_f1_loss_vs_B0": 0.002246463325223047,
+    "fragility_triggered": false,
+    "deployment_improvement_count": 1,
+    "eligible": true,
+    "Pareto_nondominated": true
+  },
+  "sensitivity": {
+    "strict_selection": "tinyml_mlp::P50-FP32-FT",
+    "balanced_selection": "tinyml_mlp::P50-QAT",
+    "relaxed_selection": "tinyml_mlp::P50-QAT",
+    "selection_stable_across_available_profiles": false
+  },
+  "decision_policy": {
+    "weighted_score_used": false,
+    "p_value_used_as_exclusion_gate": false,
+    "model_inference_repeated": false,
+    "final_selection_requires_independent_verification": true
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "preflight_locked": true,
+    "protocol_hash_matches": true,
+    "decision_matrix_hash_matches": true,
+    "criteria_hash_matches": true,
+    "decision_group_count_22": true,
+    "decision_computation_not_previously_run": true,
+    "model_inference_not_previously_run": true,
+    "final_model_not_selected": true
+  },
+  "global_checks": {
+    "eligibility_rows_66": true,
+    "Pareto_rows_54": true,
+    "selection_trace_rows_3": true,
+    "balanced_selection_available": true,
+    "primary_selection_eligible": true,
+    "primary_selection_Pareto": true,
+    "weighted_score_not_used": true,
+    "p_value_not_used_as_gate": true,
+    "model_inference_not_repeated": true,
+    "final_selection_not_locked": true
+  },
+  "artifacts": {
+    "eligibility_results": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_eligibility_results_v3_2.csv",
+      "size_bytes": 15891,
+      "sha256": "c6ec23de0246555b9f127a6436dee22d6a4da4502de4a08bef473304a56c0a96"
+    },
+    "Pareto_results": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_pareto_results_v3_2.csv",
+      "size_bytes": 9149,
+      "sha256": "2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306"
+    },
+    "selection_trace": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_selection_trace_v3_2.csv",
+      "size_bytes": 1322,
+      "sha256": "79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55"
+    }
+  },
+  "decision_computation_performed": true,
+  "model_inference_performed": false,
+  "provisional_selection_available": true,
+  "final_model_selected": false,
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

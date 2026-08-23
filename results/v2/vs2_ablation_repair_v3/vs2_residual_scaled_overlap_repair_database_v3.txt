@@ -1,0 +1,36 @@
+========================================================================================
+VS2 RESIDUAL SCALED OVERLAP REPAIR DATABASE
+========================================================================================
+Status                            : completed
+Parent protocol version           : 2.2
+Repaired protocol version         : 2.3
+Residual collision components     : 4
+Affected fingerprint groups       : 12
+Moved fingerprint groups          : 4
+Moved raw rows                    : 4
+Planned residual overlap after fix: 0
+
+GROUPED SPLIT COUNTS (OLD -> NEW)
+train: 4,943,823 -> 4,943,823
+validation: 1,059,389 -> 1,059,389
+test: 1,059,394 -> 1,059,394
+
+VALIDATION CHECKS
+parent_v2_2_database_preserved: True
+repaired_v2_3_database_exists: True
+output_differs_from_parent_sha256: True
+quick_check_ok: True
+integrity_check_ok: True
+exactly_4_groups_updated: True
+residual_repair_table_has_12_rows: True
+parent_repair_table_preserved: True
+global_split_counts_preserved: True
+split_family_counts_preserved: True
+planned_residual_overlap_zero: True
+largest_group_remains_train: True
+
+Parent DB : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\data\splits\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v2.sqlite
+Output DB : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\data\splits\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v3.sqlite
+Report    : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\vs2_ablation_repair_v3\vs2_residual_scaled_overlap_repair_database_v3.json
+
+VS2 RESIDUAL SCALED OVERLAP REPAIR DATABASE COMPLETED

@@ -1,0 +1,114 @@
+{
+  "status": "locked_draft",
+  "phase": 13,
+  "artifact_name": "abstract_index_terms",
+  "generated_at_utc": "2026-08-07T08:32:00.431446+00:00",
+  "abstract_word_count": 227,
+  "abstract_claim_ids": [
+    "A01",
+    "A02",
+    "A03",
+    "A04"
+  ],
+  "index_terms": [
+    "Internet of Things",
+    "intrusion detection systems",
+    "TinyML",
+    "N-BaIoT",
+    "leave-one-device-out",
+    "quantization-aware training",
+    "model compression",
+    "edge AI",
+    "robustness",
+    "reproducibility"
+  ],
+  "quantitative_values": {
+    "lodo_device_count": 9,
+    "lodo_model_count": 3,
+    "lodo_scientific_run_count": 27,
+    "severe_lodo_cell_count": 0,
+    "selected_candidate_id": "tinyml_mlp::P50-QAT",
+    "selected_mean_macro_f1": 0.9978555453698199,
+    "selected_mean_state_size_kib": 11.9130859375,
+    "selected_mean_batch_1_median_ms": 0.10766,
+    "selected_mean_batch_32_samples_per_second": 168078.67334476035,
+    "omnibus_analysis_count": 16,
+    "posthoc_comparison_count": 160,
+    "nominal_omnibus_rejection_count": 16,
+    "holm_posthoc_rejection_count": 0,
+    "minimum_raw_posthoc_p": 0.0625,
+    "robustness_evaluation_count": 27,
+    "robustness_model_count": 3,
+    "robustness_condition_count": 9,
+    "severe_fragility_evaluation_count": 5,
+    "material_sensitivity_evaluation_count": 9,
+    "selected_representation": "static_int8",
+    "canonical_seed": 2026,
+    "deterministic_rebuild_exact": true
+  },
+  "evidence_sources": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\figure_02_lodo_generalization_metadata_v3_3.json",
+      "sha256": "bc3cd1361f692ada7b3ae53dc086ecac5785731f8caa623ac83e36e5b736fe75"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\figure_04_pareto_selection_metadata_v3_3.json",
+      "sha256": "65647278ea9c639f2fa38d8e5320742f3dc5d5353fea94fc286e24319d358e81"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\table_05_statistical_analysis_metadata_v3_3.json",
+      "sha256": "452e64ca6fb0bcc7b17795c5adb2d4986473c3109a3a2f2d59279c03a12a4c06"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\table_06_robustness_results_metadata_v3_3.json",
+      "sha256": "e237ca5f25169b6c17f0969657d02669ccd4a711c146393871807c6caf2a4626"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\table_07_reproducibility_release_metadata_v3_3.json",
+      "sha256": "14dee030448b30644d4e4c92afc47f0c9a7d7b14e1c16f07b0dc92469ab564a7"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase13_manuscript_claim_evidence_plan_v3_3.json",
+      "sha256": "ffc65fbf64cb25fd7b9ffb76a12bf4896a2e9225a8f90a71fbf1a34ece56276e"
+    }
+  ],
+  "entry_checks": {
+    "claim_plan_locked": true,
+    "claim_plan_ready": true,
+    "claim_plan_all_checks": true,
+    "claim_lock_hash_matches": true,
+    "structure_locked": true,
+    "structure_ready": true,
+    "phase12_deferred_optional": true
+  },
+  "claim_checks": {
+    "four_abstract_claims_found": true,
+    "all_abstract_claim_ids_exact": true
+  },
+  "evidence_checks": {
+    "selected_family_exact": true,
+    "selected_representation_exact": true,
+    "canonical_seed_2026": true,
+    "robustness_27": true,
+    "robustness_3_models": true,
+    "robustness_9_conditions": true,
+    "severe_fragility_5": true,
+    "material_sensitivity_9": true,
+    "omnibus_16": true,
+    "posthoc_160": true,
+    "nominal_rejections_16": true,
+    "holm_rejections_0": true,
+    "minimum_exact_p_00625": true,
+    "deterministic_release_exact": true,
+    "lodo_9_devices": true,
+    "lodo_3_models": true,
+    "lodo_27_runs": true,
+    "lodo_no_severe_cells": true
+  },
+  "external_literature_used": false,
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript_integration": true,
+  "all_checks_passed": true
+}

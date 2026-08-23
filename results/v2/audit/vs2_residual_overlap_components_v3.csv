@@ -1,0 +1,5 @@
+scaled_hash_forward,scaled_hash_reverse,family_label,class_name,original_group_count,raw_row_count,old_train_rows,old_validation_rows,old_test_rows,new_grouped_split_code,new_grouped_split
+2056722487165413581,5504730397978389955,0,benign,4,4,3,1,0,0,train
+3523364117743781204,-6422469987024111597,0,benign,4,4,3,0,1,0,train
+5730499262892691218,-8694618433497398637,0,benign,2,2,1,0,1,2,test
+8628560122242969651,-6039271514244150800,0,benign,2,2,1,1,0,1,validation

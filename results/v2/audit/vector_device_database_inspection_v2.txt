@@ -1,0 +1,130 @@
+==============================================================================================
+VECTOR_DEVICE DATABASE INSPECTION
+==============================================================================================
+
+SCRIPT 44 SOURCE_DATABASE CONTEXT
+00016: EXPECTED_RAW_RECORDS = 7_062_606
+00017: EXPECTED_DEVICE_COUNT = 9
+00018: 
+00019: PROJECT_ROOT = Path.cwd()
+00020: 
+00021: SOURCE_DATABASE = (
+00022:     PROJECT_ROOT
+00023:     / "data"
+00024:     / "cache"
+00025:     / "nbaiot_duplicate_audit.sqlite"
+00026: )
+00027: 
+00028: EXACT_AUDIT_SUMMARY = (
+
+00150:         family_label,
+00151:         multiclass_label,
+00152:     )
+00153: 
+00154: 
+00155: if not SOURCE_DATABASE.exists():
+00156:     print(
+00157:         "HATA: Kaynak duplicate veritabanı bulunamadı:"
+00158:     )
+00159:     print(SOURCE_DATABASE)
+00160:     sys.exit(1)
+00161: 
+00162: if not EXACT_AUDIT_SUMMARY.exists():
+
+00154: 
+00155: if not SOURCE_DATABASE.exists():
+00156:     print(
+00157:         "HATA: Kaynak duplicate veritabanı bulunamadı:"
+00158:     )
+00159:     print(SOURCE_DATABASE)
+00160:     sys.exit(1)
+00161: 
+00162: if not EXACT_AUDIT_SUMMARY.exists():
+00163:     print(
+00164:         "HATA: Kilitlenmiş exact audit özeti bulunamadı:"
+00165:     )
+00166:     print(EXACT_AUDIT_SUMMARY)
+
+00197:     sys.exit(1)
+00198: 
+00199: print("=" * 78)
+00200: print("FAZ 1C — GÖREV-DUYARLI ÇATIŞMA VE CİHAZ ÖRTÜŞME DENETİMİ")
+00201: print("=" * 78)
+00202: print(f"Kaynak DB       : {SOURCE_DATABASE}")
+00203: print(f"Exact audit     : {EXACT_AUDIT_SUMMARY}")
+00204: print(f"Beklenen grup   : {EXPECTED_SOURCE_GROUPS:,}")
+00205: print(f"Beklenen kayıt  : {EXPECTED_RAW_RECORDS:,}")
+00206: 
+00207: started_at = time.perf_counter()
+00208: 
+00209: connection = sqlite3.connect(
+
+00205: print(f"Beklenen kayıt  : {EXPECTED_RAW_RECORDS:,}")
+00206: 
+00207: started_at = time.perf_counter()
+00208: 
+00209: connection = sqlite3.connect(
+00210:     str(SOURCE_DATABASE)
+00211: )
+00212: 
+00213: connection.row_factory = sqlite3.Row
+00214: 
+00215: labels = [
+00216:     str(row[0])
+00217:     for row in connection.execute(
+
+DATABASE INVENTORY
+- data\cache\nbaiot_duplicate_audit.sqlite | size=2385010688 | open=True | vector_device=True | error=None
+- data\cache\nbaiot_float32_canonical.sqlite | size=413319168 | open=True | vector_device=False | error=None
+- data\splits\vs1_leakage_ablation_seed2026.sqlite | size=980295680 | open=True | vector_device=False | error=None
+- data\splits\vs2_float32_leakage_ablation_seed2026.sqlite | size=828080128 | open=True | vector_device=False | error=None
+- results\v2\audit\nbaiot_exact_byte_audit_v2.sqlite | size=3043741696 | open=True | vector_device=False | error=None
+
+==============================================================================================
+MATCHING DATABASE: data\cache\nbaiot_duplicate_audit.sqlite
+==============================================================================================
+vector_device rows: 6,904,827
+vector_groups rows: 2,482,676
+devices: Danmini_Doorbell | Ecobee_Thermostat | Ennio_Doorbell | Philips_B120N10_Baby_Monitor | Provision_PT_737E_Security_Camera | Provision_PT_838_Security_Camera | Samsung_SNH_1011_N_Webcam | SimpleHome_XCS7_1002_WHT_Security_Camera | SimpleHome_XCS7_1003_WHT_Security_Camera
+class labels: benign | gafgyt_combo | gafgyt_junk | gafgyt_scan | gafgyt_tcp | gafgyt_udp | mirai_ack | mirai_scan | mirai_syn | mirai_udp | mirai_udpplain
+vector_device columns: class_label | device | hash_forward | hash_reverse | occurrence_count
+
+TABLE DETAILS
+- table files | columns=file_id | relative_path | device | class_label | expected_row_count | inserted_row_count | status | error
+  indexes=[{"name": "sqlite_autoindex_files_1", "unique": true, "columns": ["relative_path"]}]
+- table fingerprints | columns=hash_forward | hash_reverse | file_id | row_number
+  indexes=[{"name": "idx_fingerprints_file", "unique": false, "columns": ["file_id"]}, {"name": "idx_fingerprints_hash", "unique": false, "columns": ["hash_forward", "hash_reverse"]}]
+- table metadata | columns=key | value
+  indexes=[{"name": "sqlite_autoindex_metadata_1", "unique": true, "columns": ["key"]}]
+- table primary_representatives | columns=hash_forward | hash_reverse | file_id | row_number
+  indexes=[{"name": "idx_primary_representatives_file_row", "unique": false, "columns": ["file_id", "row_number"]}, {"name": "idx_primary_representatives_hash", "unique": true, "columns": ["hash_forward", "hash_reverse"]}]
+- table vector_device | columns=hash_forward | hash_reverse | device | class_label | occurrence_count
+  indexes=[{"name": "idx_vector_device_device_class", "unique": false, "columns": ["device", "class_label"]}, {"name": "idx_vector_device_hash_device", "unique": false, "columns": ["hash_forward", "hash_reverse", "device"]}, {"name": "idx_vector_device_device_hash", "unique": false, "columns": ["device", "hash_forward", "hash_reverse"]}]
+- table vector_groups | columns=hash_forward | hash_reverse | occurrence_count | device_count | class_count
+  indexes=[{"name": "idx_vector_groups_device_count", "unique": false, "columns": ["device_count"]}, {"name": "idx_vector_groups_hash", "unique": true, "columns": ["hash_forward", "hash_reverse"]}]
+
+VECTOR_DEVICE SAMPLES
+{"hash_forward": "-9223360960553194052", "hash_reverse": "6892245611524328848", "device": "'Danmini_Doorbell'", "class_label": "'benign'", "occurrence_count": "1"}
+{"hash_forward": "-9223359715474160930", "hash_reverse": "-1838651595130645142", "device": "'Philips_B120N10_Baby_Monitor'", "class_label": "'benign'", "occurrence_count": "1"}
+{"hash_forward": "-9223358484631443958", "hash_reverse": "-4099455980091643526", "device": "'Provision_PT_737E_Security_Camera'", "class_label": "'mirai_scan'", "occurrence_count": "1"}
+{"hash_forward": "-9223358484631443958", "hash_reverse": "-4099455980091643526", "device": "'Provision_PT_838_Security_Camera'", "class_label": "'mirai_scan'", "occurrence_count": "1"}
+{"hash_forward": "-9223350712506697732", "hash_reverse": "2789009010743574788", "device": "'Danmini_Doorbell'", "class_label": "'gafgyt_udp'", "occurrence_count": "1"}
+{"hash_forward": "-9223350712506697732", "hash_reverse": "2789009010743574788", "device": "'Ecobee_Thermostat'", "class_label": "'gafgyt_udp'", "occurrence_count": "1"}
+{"hash_forward": "-9223350712506697732", "hash_reverse": "2789009010743574788", "device": "'Ennio_Doorbell'", "class_label": "'gafgyt_udp'", "occurrence_count": "1"}
+{"hash_forward": "-9223350712506697732", "hash_reverse": "2789009010743574788", "device": "'Philips_B120N10_Baby_Monitor'", "class_label": "'gafgyt_udp'", "occurrence_count": "1"}
+
+LIKELY SOURCE TABLES
+- files | columns=file_id | relative_path | device | class_label | expected_row_count | inserted_row_count | status | error
+  {"file_id": "1", "relative_path": "'Danmini_Doorbell/benign_traffic.csv'", "device": "'Danmini_Doorbell'", "class_label": "'benign'", "expected_row_count": "49548", "inserted_row_count": "49548", "status": "'done'", "error": "None"}
+  {"file_id": "2", "relative_path": "'Danmini_Doorbell/gafgyt_attacks/combo.csv'", "device": "'Danmini_Doorbell'", "class_label": "'gafgyt_combo'", "expected_row_count": "59718", "inserted_row_count": "59718", "status": "'done'", "error": "None"}
+  {"file_id": "3", "relative_path": "'Danmini_Doorbell/gafgyt_attacks/junk.csv'", "device": "'Danmini_Doorbell'", "class_label": "'gafgyt_junk'", "expected_row_count": "29068", "inserted_row_count": "29068", "status": "'done'", "error": "None"}
+  {"file_id": "4", "relative_path": "'Danmini_Doorbell/gafgyt_attacks/scan.csv'", "device": "'Danmini_Doorbell'", "class_label": "'gafgyt_scan'", "expected_row_count": "29849", "inserted_row_count": "29849", "status": "'done'", "error": "None"}
+  {"file_id": "5", "relative_path": "'Danmini_Doorbell/gafgyt_attacks/tcp.csv'", "device": "'Danmini_Doorbell'", "class_label": "'gafgyt_tcp'", "expected_row_count": "92141", "inserted_row_count": "92141", "status": "'done'", "error": "None"}
+
+VALIDATION CHECKS
+script44_source_database_context_found: True
+database_files_found: True
+vector_device_database_found: True
+expected_vector_device_columns: True
+nine_devices_detected: True
+vector_groups_present: True

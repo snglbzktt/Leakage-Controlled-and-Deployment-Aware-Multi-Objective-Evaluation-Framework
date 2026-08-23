@@ -1,0 +1,35 @@
+========================================================================================
+VS2 SCALED OVERLAP REPAIR DATABASE
+========================================================================================
+Status                            : completed
+Source protocol version           : 2.1
+Repaired protocol version         : 2.2
+Scaled collision components       : 371
+Affected fingerprint groups       : 1,036
+Moved fingerprint groups          : 416
+Moved raw rows                    : 416
+Planned scaled overlap after fix  : 0
+
+GROUPED SPLIT COUNTS (OLD -> NEW)
+train: 4,943,823 -> 4,943,823
+validation: 1,059,389 -> 1,059,389
+test: 1,059,394 -> 1,059,394
+
+VALIDATION CHECKS
+original_database_preserved: True
+repaired_database_exists: True
+output_differs_from_source_sha256: True
+quick_check_ok: True
+integrity_check_ok: True
+exactly_416_groups_updated: True
+repair_table_has_1036_rows: True
+global_split_counts_preserved: True
+split_family_counts_preserved: True
+planned_scaled_overlap_zero: True
+largest_group_remains_train: True
+
+Source DB : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\data\splits\vs2_float32_leakage_ablation_seed2026.sqlite
+Output DB : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\data\splits\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v2.sqlite
+Report    : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\vs2_ablation_repair\vs2_scaled_overlap_repair_database_v2.json
+
+VS2 SCALED OVERLAP REPAIR DATABASE COMPLETED

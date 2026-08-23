@@ -1,0 +1,305 @@
+{
+  "status": "locked",
+  "phase": 11,
+  "artifact_name": "input_robustness_protocol",
+  "protocol_version": "phase11_input_robustness_v3_3",
+  "locked_at_utc": "2026-08-06T23:26:06.690992+00:00",
+  "scientific_role": "post-selection robustness analysis",
+  "selection_policy": {
+    "model_selection_performed": false,
+    "checkpoint_selection_performed": false,
+    "hyperparameter_tuning_performed": false,
+    "test_used_for_selection": false,
+    "results_may_change_final_model": false,
+    "interpretation": "The locked model family and canonical checkpoint remain unchanged. Phase 11 adds robustness evidence only."
+  },
+  "evaluation_design": {
+    "model_count": 3,
+    "condition_count": 9,
+    "planned_evaluation_count": 27,
+    "canonical_seed": 2026,
+    "shared_perturbations_across_models": true,
+    "full_test_set_used": true,
+    "primary_view": "fingerprint-level",
+    "secondary_view": "raw-occurrence-weighted",
+    "perturbation_chunk_size": 8192,
+    "neural_inference_batch_size": 4096,
+    "temporary_perturbed_arrays_persisted": false
+  },
+  "models": [
+    {
+      "model_id": "tinyml_mlp_B0",
+      "model_family": "tinyml_mlp",
+      "variant": "B0",
+      "representation": "float32",
+      "seed": 2026,
+      "input_space": "canonical_float32_perturbed_then_train_only_standardized",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "6b60c988f01ec53e91ea7d9288ebd06cb4fd825ed093476150986c96d4223fa9"
+      },
+      "model_symbol": "TinyMLMLP",
+      "hidden_dimensions": [
+        64,
+        32
+      ]
+    },
+    {
+      "model_id": "tinyml_mlp_P50_QAT",
+      "model_family": "tinyml_mlp",
+      "variant": "P50-QAT",
+      "representation": "static_int8",
+      "seed": 2026,
+      "input_space": "canonical_float32_perturbed_then_train_only_standardized",
+      "checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\best_int8_checkpoint.pt",
+        "size_bytes": 14023,
+        "sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a"
+      },
+      "model_symbol": "TinyMLMLP",
+      "hidden_dimensions": [
+        32,
+        16
+      ],
+      "QAT_backend": "onednn"
+    },
+    {
+      "model_id": "hist_gradient_boosting_B0",
+      "model_family": "hist_gradient_boosting",
+      "variant": "B0",
+      "representation": "joblib_float_model",
+      "seed": 2026,
+      "input_space": "canonical_float32_perturbed_unscaled",
+      "model_artifact": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\hist_gradient_boosting_b0__seed_2026\\model.joblib",
+        "size_bytes": 367362,
+        "sha256": "7cc2cb21b639f35167a171358b61674ddb0f4d9461341a794f5058e18a952dfa"
+      },
+      "locked_parameters": {
+        "loss": "log_loss",
+        "learning_rate": 0.1,
+        "max_iter": 100,
+        "max_leaf_nodes": 31,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "l2_regularization": 0.0001,
+        "max_bins": 255,
+        "class_weight": "balanced",
+        "early_stopping": false
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "clean",
+      "condition_order": 0,
+      "family": "clean",
+      "severity": 0.0,
+      "random_seed": null,
+      "definition": "No perturbation. Canonical float32 test features are used unchanged."
+    },
+    {
+      "condition_id": "gaussian_noise_1pct",
+      "condition_order": 1,
+      "family": "gaussian_noise",
+      "severity": 0.01,
+      "random_seed": 2101,
+      "definition": "Add independent N(0,1) noise scaled by 0.01 times each train-only feature standard deviation."
+    },
+    {
+      "condition_id": "gaussian_noise_5pct",
+      "condition_order": 2,
+      "family": "gaussian_noise",
+      "severity": 0.05,
+      "random_seed": 2105,
+      "definition": "Add independent N(0,1) noise scaled by 0.05 times each train-only feature standard deviation."
+    },
+    {
+      "condition_id": "gaussian_noise_10pct",
+      "condition_order": 3,
+      "family": "gaussian_noise",
+      "severity": 0.1,
+      "random_seed": 2110,
+      "definition": "Add independent N(0,1) noise scaled by 0.10 times each train-only feature standard deviation."
+    },
+    {
+      "condition_id": "feature_mask_5pct",
+      "condition_order": 4,
+      "family": "feature_masking",
+      "severity": 0.05,
+      "random_seed": 2205,
+      "definition": "Mask each feature independently with probability 0.05 and replace masked values with the train-only feature mean."
+    },
+    {
+      "condition_id": "feature_mask_10pct",
+      "condition_order": 5,
+      "family": "feature_masking",
+      "severity": 0.1,
+      "random_seed": 2210,
+      "definition": "Mask each feature independently with probability 0.10 and replace masked values with the train-only feature mean."
+    },
+    {
+      "condition_id": "feature_mask_20pct",
+      "condition_order": 6,
+      "family": "feature_masking",
+      "severity": 0.2,
+      "random_seed": 2220,
+      "definition": "Mask each feature independently with probability 0.20 and replace masked values with the train-only feature mean."
+    },
+    {
+      "condition_id": "scale_drift_minus_10pct",
+      "condition_order": 7,
+      "family": "scale_drift",
+      "severity": -0.1,
+      "random_seed": null,
+      "definition": "Contract every feature around its train-only mean: mean + 0.90*(x-mean)."
+    },
+    {
+      "condition_id": "scale_drift_plus_10pct",
+      "condition_order": 8,
+      "family": "scale_drift",
+      "severity": 0.1,
+      "random_seed": null,
+      "definition": "Expand every feature around its train-only mean: mean + 1.10*(x-mean)."
+    }
+  ],
+  "perturbation_policy": {
+    "base_space": "canonical_float32_unscaled",
+    "train_only_reference_mean": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\scaler_mean.npy",
+      "size_bytes": 1048,
+      "sha256": "32f6c0a6b2b7913c76267bc70bb48fd3ae83d2083d3c2d83182c9b16590b1a38"
+    },
+    "train_only_reference_scale": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\scaler_scale.npy",
+      "size_bytes": 1048,
+      "sha256": "cfc15a35e5dd61943526a8a7dea63a7d7cb3fe36c3882e8b9d61654ac949b339"
+    },
+    "gaussian_noise_formula": "x_perturbed = float32(x + severity * train_scale * Z), Z~N(0,1)",
+    "feature_mask_formula": "Each cell is masked independently; masked cells are replaced by the train-only feature mean.",
+    "scale_drift_formula": "x_perturbed = float32(train_mean + factor*(x-train_mean)); factor is 0.90 or 1.10.",
+    "clipping_applied": false,
+    "nonfinite_values_allowed": false,
+    "same_random_realization_for_all_models": true,
+    "RNG": "numpy.random.Generator(PCG64)"
+  },
+  "preprocessing_policy": {
+    "HGB": "Use perturbed canonical float32 features directly without scaling.",
+    "neural_models": "After perturbation in canonical space, apply the locked train-only StandardScaler and cast to float32.",
+    "validation_data_access": false,
+    "training_data_values_access": false,
+    "train_only_mean_and_scale_metadata_used": true
+  },
+  "metrics": {
+    "fingerprint_level": [
+      "macro_f1",
+      "accuracy",
+      "class_recall",
+      "gafgyt_fnr",
+      "mirai_fnr",
+      "confusion_matrix"
+    ],
+    "raw_occurrence_weighted": [
+      "weighted_macro_f1",
+      "weighted_accuracy",
+      "weighted_class_recall",
+      "weighted_confusion_matrix"
+    ],
+    "robustness_derived": [
+      "macro_f1_drop_from_model_clean",
+      "macro_f1_retention_ratio",
+      "weighted_macro_f1_drop_from_model_clean"
+    ]
+  },
+  "fragility_rules": {
+    "severe_fragility": "macro_f1 < 0.85 OR gafgyt_fnr > 0.40 OR mirai_fnr > 0.40",
+    "material_sensitivity": "macro_f1 drop from the same model's clean condition > 0.05",
+    "rules_are_descriptive_only": true,
+    "rules_do_not_trigger_model_reselection": true
+  },
+  "source_artifacts": {
+    "cache_manifest": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\manifest.json",
+      "size_bytes": 12247,
+      "sha256": "c50fd55a14727f28759f9a96766f2dbb1d78fecd9dfb38abf340fd8b152f2bd0"
+    },
+    "preprocessing_verification": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_verification_v3_2.json",
+      "size_bytes": 5132,
+      "sha256": "30615e7b1bd63fc0240dd9807ff4323aa9eb0bb48ff3ea8bd0f0a49d85da7fac"
+    },
+    "preprocessing_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_locked_v3_2.json",
+      "size_bytes": 1422,
+      "sha256": "abc86751c43f92b9fe6e14a030dc3bc25584fe23eb34ac586684624a446b1efa"
+    },
+    "B0_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_checkpoint_registry_v3_2.csv",
+      "size_bytes": 9616,
+      "sha256": "af2f62797979caa86d02fffb6ed3ca18e038d54550d89b559161832f7ae290ef"
+    },
+    "phase9_source_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_artifact_source_registry_v3_2.csv",
+      "size_bytes": 965,
+      "sha256": "8eeefbaaa13c8bfbae85d1b49666be380b3b6e5f0e8e7a8115615f5b3067c645"
+    },
+    "phase9_final_artifact_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_deployment_artifact_locked_v3_2.json",
+      "size_bytes": 4353,
+      "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6"
+    },
+    "phase10_release_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase10_release_archive_locked_v3_3.json",
+      "size_bytes": 1728,
+      "sha256": "e7e5e3d6a44c65e96024c376daf7f81589aaea876d80775374dea5b9b8c47f3e"
+    },
+    "HGB_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_summary_v3_2.json",
+      "size_bytes": 1587,
+      "sha256": "cf1d3d3d7d543c71c06e6f170a4df62bfa3a1eae06e57db4653c78dcf77f0e21"
+    },
+    "HGB_verification": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_verification_v3_2.json",
+      "size_bytes": 11705,
+      "sha256": "80c8cc3bec0d58303e7557eb9223555ee9f9677ccfa52e0faad48ec6da7fd560"
+    },
+    "model_source": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+    },
+    "QAT_engine": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\phase5_qat_engine_v3_2.py",
+      "size_bytes": 5822,
+      "sha256": "d1e33943a31bd1b3e2ea83a64daee9a31a8b5a8616c97346c62fff3c03503273"
+    },
+    "bundled_scaler": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\train_only_standard_scaler_v3_2.npz",
+      "size_bytes": 5361,
+      "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+    },
+    "X_test": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\X_test.npy",
+      "size_bytes": 171026288,
+      "sha256": "36efbc12218b97d71585526d943057ee6857e6289fa81d6f7c3a9c6e0b10c75c"
+    },
+    "y_test": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\y_test.npy",
+      "size_bytes": 371924,
+      "sha256": "d186ab606138b8457a8459758ecb2de526867faa5381f760003742d3331157b7"
+    },
+    "raw_test_weights": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\raw_row_count_test.npy",
+      "size_bytes": 2974496,
+      "sha256": "394a809ff2770d3f8ce360bdd63ec856e54a4b95be53d666f29f77c7bdf13037"
+    }
+  },
+  "execution_performed": false,
+  "model_inference_performed": false,
+  "test_arrays_hashed_for_integrity": true,
+  "test_array_values_used_for_evaluation": false,
+  "test_labels_used_for_evaluation": false,
+  "final_model_changed": false,
+  "all_checks_passed": true
+}

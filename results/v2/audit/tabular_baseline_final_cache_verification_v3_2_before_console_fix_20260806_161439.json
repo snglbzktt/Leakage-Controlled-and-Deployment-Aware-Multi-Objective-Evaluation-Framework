@@ -1,0 +1,350 @@
+{
+  "status": "passed",
+  "generated_at_utc": "2026-08-06T13:13:32.171232+00:00",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "final_cache": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2",
+  "cache_manifest": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\manifest.json",
+  "cache_manifest_sha256": "c50fd55a14727f28759f9a96766f2dbb1d78fecd9dfb38abf340fd8b152f2bd0",
+  "final_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_iteration2_summary_v3_2.json",
+  "final_report_sha256": "f43e01cf0148c3f501ffda505a14d1b06a1d52c06417b529eea17c8f2732b01c",
+  "run_matrix": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_run_matrix_v3.csv",
+  "run_matrix_sha256": "c85e9a943f4834f4589dba43638c58da790b4080651b49f831f2b3e0cefbedef",
+  "run_count": 12,
+  "run_matrix_model_column": "model_id",
+  "candidate_model_counts": {
+    "architecture": {
+      "logistic_regression": 1,
+      "decision_tree": 5,
+      "random_forest": 5,
+      "hist_gradient_boosting": 1
+    },
+    "model_id": {
+      "logistic_regression_b0": 1,
+      "decision_tree_b0": 5,
+      "random_forest_b0": 5,
+      "hist_gradient_boosting_b0": 1
+    }
+  },
+  "model_run_counts": {
+    "logistic_regression_b0": 1,
+    "decision_tree_b0": 5,
+    "random_forest_b0": 5,
+    "hist_gradient_boosting_b0": 1
+  },
+  "run_ids_unique": true,
+  "split_inventory": {
+    "train": {
+      "fingerprint_count": 1534583,
+      "raw_row_count": 4943823,
+      "class_fingerprint_counts": [
+        359439,
+        27221,
+        1147923
+      ],
+      "class_raw_row_counts": [
+        389152,
+        1986790,
+        2567881
+      ],
+      "shape_dtype_checks": {
+        "X": true,
+        "y": true,
+        "raw_row_count": true,
+        "hash_forward": true,
+        "hash_reverse": true
+      },
+      "all_shape_dtype_checks_passed": true,
+      "all_raw_row_counts_positive": true
+    },
+    "validation": {
+      "fingerprint_count": 371797,
+      "raw_row_count": 1059390,
+      "class_fingerprint_counts": [
+        77022,
+        48793,
+        245982
+      ],
+      "class_raw_row_counts": [
+        83390,
+        425740,
+        550260
+      ],
+      "shape_dtype_checks": {
+        "X": true,
+        "y": true,
+        "raw_row_count": true,
+        "hash_forward": true,
+        "hash_reverse": true
+      },
+      "all_shape_dtype_checks_passed": true,
+      "all_raw_row_counts_positive": true
+    },
+    "test": {
+      "fingerprint_count": 371796,
+      "raw_row_count": 1059393,
+      "class_fingerprint_counts": [
+        77021,
+        48793,
+        245982
+      ],
+      "class_raw_row_counts": [
+        83390,
+        425742,
+        550261
+      ],
+      "shape_dtype_checks": {
+        "X": true,
+        "y": true,
+        "raw_row_count": true,
+        "hash_forward": true,
+        "hash_reverse": true
+      },
+      "all_shape_dtype_checks_passed": true,
+      "all_raw_row_counts_positive": true
+    }
+  },
+  "total_fingerprint_count": 2278176,
+  "total_raw_row_count": 7062606,
+  "manifest_artifact_checks": [
+    {
+      "relative_path": "hash_forward_test.npy",
+      "exists": true,
+      "expected_size_bytes": 2974496,
+      "observed_size_bytes": 2974496,
+      "size_matches": true,
+      "expected_sha256": "45ba291f386f974e25b22d3e54ffdc6d11a948d7938ae56d23c89c0329dfcd01",
+      "observed_sha256": "45ba291f386f974e25b22d3e54ffdc6d11a948d7938ae56d23c89c0329dfcd01",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "hash_forward_train.npy",
+      "exists": true,
+      "expected_size_bytes": 12276792,
+      "observed_size_bytes": 12276792,
+      "size_matches": true,
+      "expected_sha256": "a5351ecad48641048fcf18f94df3e77a3bda00b38833393a9329ef74ac0be1fa",
+      "observed_sha256": "a5351ecad48641048fcf18f94df3e77a3bda00b38833393a9329ef74ac0be1fa",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "hash_forward_validation.npy",
+      "exists": true,
+      "expected_size_bytes": 2974504,
+      "observed_size_bytes": 2974504,
+      "size_matches": true,
+      "expected_sha256": "f3f78bc788480153026d303d6184ff5e3599a3caa6fcad4a8dba5d97b9f9b535",
+      "observed_sha256": "f3f78bc788480153026d303d6184ff5e3599a3caa6fcad4a8dba5d97b9f9b535",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "hash_reverse_test.npy",
+      "exists": true,
+      "expected_size_bytes": 2974496,
+      "observed_size_bytes": 2974496,
+      "size_matches": true,
+      "expected_sha256": "d69366b6206052dbc612580aae83effa7536bee2b8c2b5bcf41fa26c8a0ec9c1",
+      "observed_sha256": "d69366b6206052dbc612580aae83effa7536bee2b8c2b5bcf41fa26c8a0ec9c1",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "hash_reverse_train.npy",
+      "exists": true,
+      "expected_size_bytes": 12276792,
+      "observed_size_bytes": 12276792,
+      "size_matches": true,
+      "expected_sha256": "349f56e9d39ab3101a1330be5115757c718280e5f7e8d48215b14ed2de70d8f6",
+      "observed_sha256": "349f56e9d39ab3101a1330be5115757c718280e5f7e8d48215b14ed2de70d8f6",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "hash_reverse_validation.npy",
+      "exists": true,
+      "expected_size_bytes": 2974504,
+      "observed_size_bytes": 2974504,
+      "size_matches": true,
+      "expected_sha256": "8bc464a9f06f71be0643e0ad60b1fec79ab0f0d1a07783723d6d070ef436dc30",
+      "observed_sha256": "8bc464a9f06f71be0643e0ad60b1fec79ab0f0d1a07783723d6d070ef436dc30",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "raw_row_count_test.npy",
+      "exists": true,
+      "expected_size_bytes": 2974496,
+      "observed_size_bytes": 2974496,
+      "size_matches": true,
+      "expected_sha256": "394a809ff2770d3f8ce360bdd63ec856e54a4b95be53d666f29f77c7bdf13037",
+      "observed_sha256": "394a809ff2770d3f8ce360bdd63ec856e54a4b95be53d666f29f77c7bdf13037",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "raw_row_count_train.npy",
+      "exists": true,
+      "expected_size_bytes": 12276792,
+      "observed_size_bytes": 12276792,
+      "size_matches": true,
+      "expected_sha256": "2924fa2ac8149d732a6ae92a66176457c922a4d94603421bf1a96d0de93abca7",
+      "observed_sha256": "2924fa2ac8149d732a6ae92a66176457c922a4d94603421bf1a96d0de93abca7",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "raw_row_count_validation.npy",
+      "exists": true,
+      "expected_size_bytes": 2974504,
+      "observed_size_bytes": 2974504,
+      "size_matches": true,
+      "expected_sha256": "ed332d5585451f96d9b5230905aefa3fb53a8c678196d6c7ad5e9b50c92db1b7",
+      "observed_sha256": "ed332d5585451f96d9b5230905aefa3fb53a8c678196d6c7ad5e9b50c92db1b7",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "scaled_model_input_overlap_audit.sqlite",
+      "exists": true,
+      "expected_size_bytes": 69980160,
+      "observed_size_bytes": 69980160,
+      "size_matches": true,
+      "expected_sha256": "db9c02577f6bec79def7de03d86b4cdefa37a8e8d2a4efc4688b284827e8eaae",
+      "observed_sha256": "db9c02577f6bec79def7de03d86b4cdefa37a8e8d2a4efc4688b284827e8eaae",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "scaler_mean.npy",
+      "exists": true,
+      "expected_size_bytes": 1048,
+      "observed_size_bytes": 1048,
+      "size_matches": true,
+      "expected_sha256": "32f6c0a6b2b7913c76267bc70bb48fd3ae83d2083d3c2d83182c9b16590b1a38",
+      "observed_sha256": "32f6c0a6b2b7913c76267bc70bb48fd3ae83d2083d3c2d83182c9b16590b1a38",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "scaler_scale.npy",
+      "exists": true,
+      "expected_size_bytes": 1048,
+      "observed_size_bytes": 1048,
+      "size_matches": true,
+      "expected_sha256": "cfc15a35e5dd61943526a8a7dea63a7d7cb3fe36c3882e8b9d61654ac949b339",
+      "observed_sha256": "cfc15a35e5dd61943526a8a7dea63a7d7cb3fe36c3882e8b9d61654ac949b339",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "unscaled_hash_overlap_audit.sqlite",
+      "exists": true,
+      "expected_size_bytes": 58576896,
+      "observed_size_bytes": 58576896,
+      "size_matches": true,
+      "expected_sha256": "237adf7ccd8cf2cdaa9dac9dcffff0d4564f54f6d73e5d9c76fb3356e00379c4",
+      "observed_sha256": "237adf7ccd8cf2cdaa9dac9dcffff0d4564f54f6d73e5d9c76fb3356e00379c4",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "X_test.npy",
+      "exists": true,
+      "expected_size_bytes": 171026288,
+      "observed_size_bytes": 171026288,
+      "size_matches": true,
+      "expected_sha256": "36efbc12218b97d71585526d943057ee6857e6289fa81d6f7c3a9c6e0b10c75c",
+      "observed_sha256": "36efbc12218b97d71585526d943057ee6857e6289fa81d6f7c3a9c6e0b10c75c",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "X_train.npy",
+      "exists": true,
+      "expected_size_bytes": 705908308,
+      "observed_size_bytes": 705908308,
+      "size_matches": true,
+      "expected_sha256": "3b55d29d91a74b17ea47aa4217bd101dbcf22322efd43660499e70a9d6afc2aa",
+      "observed_sha256": "3b55d29d91a74b17ea47aa4217bd101dbcf22322efd43660499e70a9d6afc2aa",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "X_validation.npy",
+      "exists": true,
+      "expected_size_bytes": 171026748,
+      "observed_size_bytes": 171026748,
+      "size_matches": true,
+      "expected_sha256": "9120401ec4cc957b8bff735d53999e1f45384201a471896870e26ebf5ba0f4f1",
+      "observed_sha256": "9120401ec4cc957b8bff735d53999e1f45384201a471896870e26ebf5ba0f4f1",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "y_test.npy",
+      "exists": true,
+      "expected_size_bytes": 371924,
+      "observed_size_bytes": 371924,
+      "size_matches": true,
+      "expected_sha256": "d186ab606138b8457a8459758ecb2de526867faa5381f760003742d3331157b7",
+      "observed_sha256": "d186ab606138b8457a8459758ecb2de526867faa5381f760003742d3331157b7",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "y_train.npy",
+      "exists": true,
+      "expected_size_bytes": 1534711,
+      "observed_size_bytes": 1534711,
+      "size_matches": true,
+      "expected_sha256": "05921bcb8cac84d5052ee1214e9af944235302fe008ed68ad922a0d4fa8609c2",
+      "observed_sha256": "05921bcb8cac84d5052ee1214e9af944235302fe008ed68ad922a0d4fa8609c2",
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "y_validation.npy",
+      "exists": true,
+      "expected_size_bytes": 371925,
+      "observed_size_bytes": 371925,
+      "size_matches": true,
+      "expected_sha256": "d0141bf063fd24002703122ab91a04cc6675a070381310c016a008aeb52d6204",
+      "observed_sha256": "d0141bf063fd24002703122ab91a04cc6675a070381310c016a008aeb52d6204",
+      "sha256_matches": true
+    }
+  ],
+  "legacy_cache_inventory": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+      "exists": true,
+      "size_bytes": 1174720608
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building",
+      "exists": true,
+      "size_bytes": 1233297967
+    }
+  ],
+  "final_cache_size_bytes": 1233488679,
+  "free_disk_bytes": 5190717440,
+  "free_disk_gib": 4.834232330322266,
+  "python_environment": {
+    "numpy_version": "2.4.6",
+    "sklearn_version": "1.9.0"
+  },
+  "checks": {
+    "manifest_completed": true,
+    "manifest_protocol_version_matches": true,
+    "manifest_all_checks_passed": true,
+    "manifest_repair_iterations_is_2": true,
+    "manifest_cumulative_moves_is_356": true,
+    "final_report_completed": true,
+    "final_report_all_checks_passed": true,
+    "final_report_zero_scaled_overlap": true,
+    "final_report_zero_family_conflicts": true,
+    "base_protocol_locked": true,
+    "base_protocol_version_matches": true,
+    "base_protocol_hash_matches_lock_manifest": true,
+    "addendum_locked": true,
+    "addendum_version_matches": true,
+    "addendum_hash_matches_manifest": true,
+    "total_fingerprint_count_matches": true,
+    "total_raw_row_count_matches": true,
+    "all_split_shape_dtype_checks_pass": true,
+    "all_raw_row_counts_positive": true,
+    "all_split_counts_match": true,
+    "all_manifest_artifacts_exist": true,
+    "all_manifest_artifact_sizes_match": true,
+    "all_manifest_artifact_hashes_match": true,
+    "run_matrix_count_is_12": true,
+    "run_matrix_model_counts_match": true,
+    "run_ids_unique": true,
+    "sklearn_version_is_1_9_0": true
+  },
+  "failed_checks": [],
+  "all_checks_passed": true
+}

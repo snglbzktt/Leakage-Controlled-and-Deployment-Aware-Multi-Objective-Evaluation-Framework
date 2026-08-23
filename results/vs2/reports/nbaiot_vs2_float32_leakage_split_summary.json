@@ -1,0 +1,136 @@
+{
+  "generated_at_utc": "2026-08-05T10:34:37.251950+00:00",
+  "protocol": "vs2_float32_leakage_ablation",
+  "protocol_version": "2.1",
+  "status": "split_indices_locked_before_training",
+  "seed": 2026,
+  "task": "family_3",
+  "feature_space_used_for_grouping": "115-feature float32 model input",
+  "source_row_count": 7062606,
+  "source_file_count": 89,
+  "source_files_sha256_locked": true,
+  "builder_script_sha256": "80ea24d19cb930f975b95fc166c360e5c63ec919100dae9b45f78d90862f7ca9",
+  "unique_float32_fingerprint_count": 2278176,
+  "cross_family_label_fingerprint_count": 0,
+  "maximum_allowed_ratio_error_percentage_points": {
+    "naive_row": 0.25,
+    "grouped_float32": 0.01
+  },
+  "family_stratified_allocation_audit": [
+    {
+      "family_label": 0,
+      "raw_row_count": 555932,
+      "float32_group_count": 513482,
+      "largest_group_raw_row_count": 8,
+      "target_row_counts": [
+        389152,
+        83389,
+        83391
+      ],
+      "assigned_row_counts": [
+        389152,
+        83389,
+        83391
+      ],
+      "deviation_rows": [
+        0,
+        0,
+        0
+      ],
+      "maximum_ratio_error_percentage_points": 0.0
+    },
+    {
+      "family_label": 1,
+      "raw_row_count": 2838272,
+      "float32_group_count": 124807,
+      "largest_group_raw_row_count": 965536,
+      "target_row_counts": [
+        1986790,
+        425740,
+        425742
+      ],
+      "assigned_row_counts": [
+        1986790,
+        425740,
+        425742
+      ],
+      "deviation_rows": [
+        0,
+        0,
+        0
+      ],
+      "maximum_ratio_error_percentage_points": 0.0
+    },
+    {
+      "family_label": 2,
+      "raw_row_count": 3668402,
+      "float32_group_count": 1639887,
+      "largest_group_raw_row_count": 7,
+      "target_row_counts": [
+        2567881,
+        550260,
+        550261
+      ],
+      "assigned_row_counts": [
+        2567881,
+        550260,
+        550261
+      ],
+      "deviation_rows": [
+        0,
+        0,
+        0
+      ],
+      "maximum_ratio_error_percentage_points": 0.0
+    }
+  ],
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "arms": {
+    "naive_row": {
+      "assignment_unit": "raw row",
+      "cross_split_exact_float32_overlap_allowed": true,
+      "validation_and_test_train_exposure": [
+        {
+          "split": "validation",
+          "evaluation_rows": 1058943,
+          "train_exposed_rows": 854114,
+          "train_exposed_unique_float32_fingerprints": 494828,
+          "train_exposed_row_percentage": 80.65722139907436
+        },
+        {
+          "split": "test",
+          "evaluation_rows": 1058547,
+          "train_exposed_rows": 853708,
+          "train_exposed_unique_float32_fingerprints": 494863,
+          "train_exposed_row_percentage": 80.64904061888608
+        }
+      ]
+    },
+    "grouped_float32": {
+      "assignment_unit": "paired fingerprint of float32 model-input vector",
+      "allocation_method": "family-stratified largest-first raw-row balancing",
+      "cross_split_exact_float32_overlap_allowed": false,
+      "observed_pairwise_overlap_sum": 0
+    }
+  },
+  "scientific_controls": {
+    "same_raw_row_universe": true,
+    "same_split_seed": true,
+    "same_split_ratios": true,
+    "primary_experimental_factor": "assignment unit: raw row vs float32 group",
+    "family_split_ratios_audited_with_fail_closed_tolerances": true,
+    "training_configuration_must_be_identical_between_arms": true,
+    "train_only_scaler_and_class_weight_fit_per_arm": true
+  },
+  "artifacts": {
+    "assignment_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_seed2026.sqlite",
+    "assignment_database_sha256": "b2c132d70b33cbfefcc3c058a333bad6429bfb5d742a32170cbc9b9ed61157f3",
+    "split_distribution_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\vs2\\reports\\nbaiot_vs2_float32_leakage_split_distribution.csv",
+    "overlap_by_pair_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\vs2\\reports\\nbaiot_vs2_float32_leakage_overlap_by_pair.csv",
+    "family_split_distribution_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\vs2\\reports\\nbaiot_vs2_float32_leakage_family_split_distribution.csv"
+  }
+}

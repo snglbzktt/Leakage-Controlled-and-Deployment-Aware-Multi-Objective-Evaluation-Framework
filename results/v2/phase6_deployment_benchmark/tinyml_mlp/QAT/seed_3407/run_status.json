@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "measurement_order": 97,
+  "architecture": "tinyml_mlp",
+  "variant": "QAT",
+  "seed": 3407,
+  "deployment_metrics_sha256": "55c329c11a2f08e5b1b9f4be4b31595380c73521c99a140f52dd293d822f5659",
+  "raw_latencies_sha256": "97ed44009f39110a34e0ce1dd59bea1780cdc43e4bbb51252c5f4e916daffa1f",
+  "run_manifest_sha256": "e1b08bcfe8da451b4e4fdf89a08ccfc5b4bebeb339b0befa7ee24eb7a7d23af8",
+  "validation_data_access": false,
+  "test_data_access": false,
+  "completed_at_utc": "2026-08-06T21:10:09.653257+00:00"
+}

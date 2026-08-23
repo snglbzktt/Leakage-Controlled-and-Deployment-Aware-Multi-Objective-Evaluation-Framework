@@ -1,0 +1,74 @@
+{
+  "protocol": "numeric_order_training_pilot_preflight_v2_2",
+  "status": "completed",
+  "completed_at": "2026-08-05T17:07:40.668134+00:00",
+  "project_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE",
+  "python_version": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "cpu_count": 20,
+  "torch": {
+    "available": true,
+    "version": "2.11.0+cpu",
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_device_names": [],
+    "error": null
+  },
+  "memory": {
+    "total_gb": 15.731,
+    "available_gb": 5.499,
+    "error": null
+  },
+  "free_disk_gb": 13.346,
+  "python_file_count": 58,
+  "interesting_symbol_count": 53,
+  "code_hit_count": 1508,
+  "phase_1d_training_pilot_required": true,
+  "required_artifacts": {
+    "primary_train": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_primary_seed2026\\train.parquet",
+      "exists": true,
+      "size_bytes": 675999665
+    },
+    "primary_validation": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_primary_seed2026\\validation.parquet",
+      "exists": true,
+      "size_bytes": 150032157
+    },
+    "primary_test": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_primary_seed2026\\test.parquet",
+      "exists": true,
+      "size_bytes": 150372711
+    },
+    "historical_scaler": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\preprocessing\\nbaiot_standard_scaler_seed2026.npz",
+      "exists": true,
+      "size_bytes": 6115
+    },
+    "baseline_trainer": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\training\\baseline_trainer.py",
+      "exists": true,
+      "size_bytes": 30213
+    },
+    "data_pipeline": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\data\\nbaiot_pipeline.py",
+      "exists": true,
+      "size_bytes": 24452
+    },
+    "b0_script": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\38_run_b0_matched_leakage_ablation.py",
+      "exists": true,
+      "size_bytes": 69257
+    },
+    "phase_1d_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\numeric_pipeline_order_summary_v2.json",
+      "exists": true,
+      "size_bytes": 2807
+    }
+  },
+  "all_required_artifacts_exist": true,
+  "preflight_passed": true,
+  "symbols_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\numeric_order_training_pilot_symbols_v2.csv",
+  "code_hits_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\numeric_order_training_pilot_code_hits_v2.csv",
+  "report_txt": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\numeric_order_training_pilot_preflight_v2.txt"
+}

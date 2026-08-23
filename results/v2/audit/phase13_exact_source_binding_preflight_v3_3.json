@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "phase": 13,
+  "artifact_name": "exact_source_binding_preflight",
+  "protocol_version": "phase13_exact_source_binding_v3_3",
+  "verified_at_utc": "2026-08-07T00:08:14.311004+00:00",
+  "entry_checks": {
+    "discovery_completed": true,
+    "asset_plan_locked": true,
+    "asset_plan_lock_valid": true,
+    "asset_plan_hash_matches": true,
+    "asset_binding_count_12": true
+  },
+  "preflight_checks": {
+    "entry_checks_passed": true,
+    "all_assets_bound": true,
+    "all_bindings_locked": true,
+    "all_assets_have_sources": true,
+    "lodo_uses_27_row_matrix": true,
+    "statistics_use_16_omnibus_rows": true,
+    "statistics_use_160_posthoc_rows": true,
+    "smoke_results_not_bound": true,
+    "generation_not_performed": true,
+    "model_inference_not_performed": true,
+    "test_arrays_not_accessed": true,
+    "source_files_not_mutated": true
+  },
+  "binding": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase13_exact_source_binding_v3_3.json",
+    "sha256": "e14b5496d0001298686faf8def01e69901054f271f440be0b6f919d874e2a9a6"
+  },
+  "binding_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_exact_source_binding_v3_3.csv",
+    "sha256": "b6aeb9a3ffdc26dac3a181c244338f1814c2cdcfe6f35bd42989d01af1259114"
+  },
+  "asset_count": 12,
+  "unique_source_count": 22,
+  "binding_row_count": 39,
+  "ready_for_asset_generation": true,
+  "all_checks_passed": true
+}

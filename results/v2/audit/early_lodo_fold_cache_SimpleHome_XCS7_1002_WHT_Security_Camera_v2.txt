@@ -1,0 +1,39 @@
+==================================================================================
+PHASE 2G-0 EARLY LODO FOLD CACHE
+==================================================================================
+
+Held-out device : SimpleHome_XCS7_1002_WHT_Security_Camera
+Elapsed seconds : 4.036
+
+CACHE COUNTS
+Train           : 1,145,094
+Validation      : 244,988
+Test            : 847,047
+Test occurrence : 863,056
+
+CLASS COUNTS
+train: [329622, 26883, 788589]
+validation: [70457, 5801, 168730]
+test: [42784, 291015, 513248]
+
+VALIDATION CHECKS
+write_counts_match: True
+train_shape_matches: True
+validation_shape_matches: True
+test_shape_matches: True
+all_features_finite: True
+class_counts_match: True
+stream_class_counts_match: True
+train_excludes_heldout: True
+validation_excludes_heldout: True
+test_contains_heldout: True
+train_internal_duplicates_zero: True
+train_validation_overlap_zero: True
+train_validation_test_overlap_zero: True
+test_occurrences_positive: True
+test_occurrence_total_matches: True
+scaler_feature_count_115: True
+scaler_sample_count_matches: True
+scaler_values_finite: True
+scaler_scales_positive: True
+all_cache_files_exist: True

@@ -1,0 +1,55 @@
+{
+  "generated_at_utc": "2026-08-04T09:45:42.160038+00:00",
+  "protocol": "vs1_leakage_ablation",
+  "protocol_version": "1.0",
+  "status": "split_indices_locked_before_training",
+  "seed": 2026,
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "source_row_count": 7062606,
+  "arms": {
+    "naive_row": {
+      "assignment_unit": "raw row",
+      "exact_duplicate_cross_split_overlap_allowed": true,
+      "validation_and_test_train_exposure": [
+        {
+          "split": "validation",
+          "evaluation_rows": 1058940,
+          "train_exposed_rows": 852844,
+          "train_exposed_unique_fingerprints": 643898,
+          "train_exposed_row_percentage": 80.5375186507262
+        },
+        {
+          "split": "test",
+          "evaluation_rows": 1058549,
+          "train_exposed_rows": 852441,
+          "train_exposed_unique_fingerprints": 644043,
+          "train_exposed_row_percentage": 80.5291960976771
+        }
+      ]
+    },
+    "fingerprint_grouped": {
+      "assignment_unit": "paired 64-bit feature fingerprint group",
+      "exact_duplicate_cross_split_overlap_allowed": false,
+      "observed_pairwise_overlap_sum": 0
+    }
+  },
+  "scientific_controls": {
+    "same_raw_row_universe": true,
+    "same_split_seed": true,
+    "same_split_ratios": true,
+    "training_configuration_must_be_identical_between_arms": true,
+    "scaler_and_class_weights_must_be_fitted_separately_from_each_arm_train_only": true,
+    "validation_selects_checkpoint": true,
+    "test_used_once_after_model_selection": true
+  },
+  "artifacts": {
+    "assignment_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs1_leakage_ablation_seed2026.sqlite",
+    "assignment_database_sha256": "04e7bbaa275a076a65571d9a28f04e03ccbf774785677eb2844567eab2160154",
+    "split_distribution_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\vs1\\reports\\nbaiot_vs1_leakage_split_distribution.csv",
+    "overlap_by_pair_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\vs1\\reports\\nbaiot_vs1_leakage_overlap_by_pair.csv"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "tinyml_mlp__qat__seed_3407",
+  "architecture": "tinyml_mlp",
+  "variant": "QAT",
+  "source_variant": "B0",
+  "seed": 3407,
+  "best_epoch": 7,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "QAT_checkpoint_sha256": "30d9e1bd4f7a8cb1b38b1cbae77d3621679d72f258a5770d485292dbc026b75b",
+  "INT8_checkpoint_sha256": "65dcae9f808f365483b2c3de3c0125fb38106c3de420373084638cf105b2e64a",
+  "validation_predictions_sha256": "cbfc72f8d253751dc8012f463451b3bde406e039d1953ac13a79da8abaff4b33",
+  "test_predictions_sha256": "5119731d9a3d624098d933c2eab7ba9bea56b781c3786ae4fd57f5b2d2bc418f",
+  "metrics_sha256": "23ce9077520fea234c4272b809a533a5664c1147c5adfd4de206050412eb8675",
+  "run_manifest_sha256": "73f02275022de8063d9bdf9ad4ef5bed46322a144ef3038eec08817aa25d71b8",
+  "fragility_gate_triggered": false,
+  "completed_at_utc": "2026-08-06T19:48:19.207195+00:00"
+}

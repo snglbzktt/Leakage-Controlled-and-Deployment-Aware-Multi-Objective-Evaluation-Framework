@@ -1,0 +1,1396 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "physical_pruning_source_checkpoints_independent_verification",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "verified_at_utc": "2026-08-06T18:06:46.428853+00:00",
+  "checkpoint_count": 20,
+  "architecture_count": 2,
+  "variant_count": 2,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "verification_policy": {
+    "source_checkpoint_hashes_verified": true,
+    "source_manifest_hashes_verified": true,
+    "B0_checkpoint_hashes_verified": true,
+    "physical_pruning_regenerated_from_B0": true,
+    "regenerated_state_compared_exactly": true,
+    "train_only_smoke_output_compared_exactly": true,
+    "validation_access_count": 0,
+    "test_access_count": 0
+  },
+  "verified_sources": [
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-noFT",
+      "seed": 42,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_42\\source_checkpoint.pt",
+        "size_bytes": 77699,
+        "sha256": "e24df211106f2e5302cb532bc693d64a9e7faf5e9f4818327a54961216d5af35"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_42\\source_manifest.json",
+        "size_bytes": 1952,
+        "sha256": "211231fa76da40729f4e63bc516ad6b0e0c6f077868ed9a741434b3c54f6d575"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "bfaa7bf463eb749ac96c61b2c1053ab23e9e96b7f6fbf23b35e18041a1a583f4"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 17043,
+      "compacted_linear_macs_per_sample": 16872,
+      "state_dict_sha256": "958909dac710095b5d851a6375e7985c7021230a4094a41df86023230383f62d",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-noFT",
+      "seed": 123,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_123\\source_checkpoint.pt",
+        "size_bytes": 77699,
+        "sha256": "e787eac6b14cba10b3c32f9e8fc60f47d27259c95738e9f2e9eb78c375d6fa45"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_123\\source_manifest.json",
+        "size_bytes": 1955,
+        "sha256": "6a4049b888bc73d09b96f8bf85fd1b53dd69eda556f84595aedc9e48be850678"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "846daa7d293dc3485b0343cd0f3b2f78b5e80872923162019cd3b68e21ace6de"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 17043,
+      "compacted_linear_macs_per_sample": 16872,
+      "state_dict_sha256": "442d7f81e4b1aa235e76a45d9756ef408b5df7ad861c0c27d3483962c34fae59",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-noFT",
+      "seed": 2026,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_2026\\source_checkpoint.pt",
+        "size_bytes": 77699,
+        "sha256": "2562fdb7e985f3f22e221fad4cc5c0d0111367dc28d695fe120d7bad9e4523d1"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_2026\\source_manifest.json",
+        "size_bytes": 1958,
+        "sha256": "c7e69d85b2811ce09235d9f5ce521c3cb778cd8aedade38f50f0722ef4cb317e"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "7404110900abe7bf20e384481f693da8abde7fb316436556b680f7786080da9a"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 17043,
+      "compacted_linear_macs_per_sample": 16872,
+      "state_dict_sha256": "6a566583b3bd550954a8069f352178b5557c4a88ba623cdde7b3e414622b8685",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-noFT",
+      "seed": 3407,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_3407\\source_checkpoint.pt",
+        "size_bytes": 77699,
+        "sha256": "86907e6c8c4decb66d5259e05523aa597ec33d1ee00f642e1b96c70f9ada41cb"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_3407\\source_manifest.json",
+        "size_bytes": 1958,
+        "sha256": "062326b011ba2da17e08f83707966f42201a5c69d32e8ff959387ee33915fb99"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "79ac775ce6b798be6e1ecec074d116a2c3701fb8535ec48f03eac295a9445ea7"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 17043,
+      "compacted_linear_macs_per_sample": 16872,
+      "state_dict_sha256": "fef060dea44dc9bbb1c4300964535f9b4dba7900dd966ff9b6b63a9eb6f37e52",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-noFT",
+      "seed": 8192,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_8192\\source_checkpoint.pt",
+        "size_bytes": 77699,
+        "sha256": "a2d3bb7c77327c8f77ca82df062669a9a72471dd7232502ce974aebaaaa86720"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_8192\\source_manifest.json",
+        "size_bytes": 1958,
+        "sha256": "5de5178be89f32a458cdfe07b807ed5287684b49bd6ecfcc2a843f9200ee5ee9"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "822635e009b505e48e0e03fc4944bcf087624692af90451888302a9528024fa8"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          96
+        ],
+        [
+          96,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 17043,
+      "compacted_linear_macs_per_sample": 16872,
+      "state_dict_sha256": "cea6cca8368b1b59be7c00309d15e4fd46df16cceb138702ddda3f7ecfd48466",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT",
+      "seed": 42,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_42\\source_checkpoint.pt",
+        "size_bytes": 49091,
+        "sha256": "7a5b322104a456bf22c856a9bb2772cd5104bdce30e1cb7398f937d50aa0353d"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_42\\source_manifest.json",
+        "size_bytes": 1950,
+        "sha256": "dd3da7f3bf063892bdcf09b9786c198163c8433804aff989ea22ad9112c0b234"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "bfaa7bf463eb749ac96c61b2c1053ab23e9e96b7f6fbf23b35e18041a1a583f4"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 10083,
+      "compacted_linear_macs_per_sample": 9968,
+      "state_dict_sha256": "3f528d686f0dfddd5169b2727cfdac607e8bc746f5ee42ef4dc6b74f2efb71b0",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT",
+      "seed": 123,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_123\\source_checkpoint.pt",
+        "size_bytes": 49091,
+        "sha256": "815eeff70d8c0424165b28842a3e7f638a38ccf791fbd72784518bc73fd28351"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_123\\source_manifest.json",
+        "size_bytes": 1953,
+        "sha256": "a9b07cd6cd382800b3d42dcc0368e415b0dd2a6905b119e0e615c5f0fe753029"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "846daa7d293dc3485b0343cd0f3b2f78b5e80872923162019cd3b68e21ace6de"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 10083,
+      "compacted_linear_macs_per_sample": 9968,
+      "state_dict_sha256": "2b0bf8d56f55a425181c7d7deb1bdf031454fc2c6b0ac1eb066fe8781cdcbd7d",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT",
+      "seed": 2026,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_2026\\source_checkpoint.pt",
+        "size_bytes": 49091,
+        "sha256": "8ef577919cdc8340779b0ce4e38aa6a50dbb50c382c5c25a98c50ca739dc2c00"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_2026\\source_manifest.json",
+        "size_bytes": 1956,
+        "sha256": "848cd1c5513497e3d6c108f001cc68f359fa28ed3cd0d938f0f099ff0c87dd38"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "7404110900abe7bf20e384481f693da8abde7fb316436556b680f7786080da9a"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 10083,
+      "compacted_linear_macs_per_sample": 9968,
+      "state_dict_sha256": "71130880948270d694f26d055293984f834925d36cc208e87d1b57768c565da4",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT",
+      "seed": 3407,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_3407\\source_checkpoint.pt",
+        "size_bytes": 49091,
+        "sha256": "a6d4d5ddb3b56c9721b4e93d0878b73cc8128e141b114643249e133d73d32f36"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_3407\\source_manifest.json",
+        "size_bytes": 1956,
+        "sha256": "26b63e36be5b115f5701047dcbde56ce4d42b0ddf0c02f408e90690bfac22e3b"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "79ac775ce6b798be6e1ecec074d116a2c3701fb8535ec48f03eac295a9445ea7"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 10083,
+      "compacted_linear_macs_per_sample": 9968,
+      "state_dict_sha256": "34618f8cfdb49d6d7c4c6fe534712fde89e495f052a8c79d0ae2de83a849532d",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT",
+      "seed": 8192,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_8192\\source_checkpoint.pt",
+        "size_bytes": 49091,
+        "sha256": "f393cc86ba1b5f66a67c92078fa661f4b134c834b2c2daaadbee40703dc639e2"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_8192\\source_manifest.json",
+        "size_bytes": 1956,
+        "sha256": "654fcecb39b13035b8932897afff50a3fa9daa3a51b53037aaa5726dd122eec4"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 313779,
+        "sha256": "822635e009b505e48e0e03fc4944bcf087624692af90451888302a9528024fa8"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 10083,
+      "compacted_linear_macs_per_sample": 9968,
+      "state_dict_sha256": "2b3fa14983e210149da9ee2ba23e920dee2489bdc72aefd6b3cca957538d250d",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-noFT",
+      "seed": 42,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_42\\source_checkpoint.pt",
+        "size_bytes": 34289,
+        "sha256": "cafb49c20b2ab0cd904aaab3f460f9a50b55dffd71c906fda33f4f2a77c06a70"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_42\\source_manifest.json",
+        "size_bytes": 1870,
+        "sha256": "4d2eb64d19199a484ebf582ca4600f8d4b430d6f93a217bdce18244efca93e03"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "5abfac0829d550c2e2f452f992e5cc4b53b79412f506e8ef38d2335285aefa1f"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 6819,
+      "compacted_linear_macs_per_sample": 6744,
+      "state_dict_sha256": "1160b88012d2be0c406667bc7368959d375d25f2e6b368160005f2ce5e61dac1",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-noFT",
+      "seed": 123,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_123\\source_checkpoint.pt",
+        "size_bytes": 34289,
+        "sha256": "3b927a24613c5aaae06a74bfbf8b3916b9837b1dc480d4bc611539b55482e567"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_123\\source_manifest.json",
+        "size_bytes": 1873,
+        "sha256": "91d61c79e252d9939bd212590761a390c06b420f552436323ddeee7230ed193f"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "eab045d2e16f00c850e93b72979e5e1e299c4e792944403cddd60df7c7fd371a"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 6819,
+      "compacted_linear_macs_per_sample": 6744,
+      "state_dict_sha256": "8517fb55833b2f79e3d1d012f20a96d561d92cc0b499da45c1f3cd16e5077b68",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-noFT",
+      "seed": 2026,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_2026\\source_checkpoint.pt",
+        "size_bytes": 34353,
+        "sha256": "5edae6d61c5daba921660e8ab4b03e8bf99d6fb8c87a9088e50b272ac77b270a"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_2026\\source_manifest.json",
+        "size_bytes": 1876,
+        "sha256": "1318ffe1c23b646356019e01baa37a25fcbfabed78767f101cbc224cd10556a6"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "6b60c988f01ec53e91ea7d9288ebd06cb4fd825ed093476150986c96d4223fa9"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 6819,
+      "compacted_linear_macs_per_sample": 6744,
+      "state_dict_sha256": "775ab1546d42aee80fbe2d212404a10beee0fe2fd62349a83ed547a31edc8c17",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-noFT",
+      "seed": 3407,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_3407\\source_checkpoint.pt",
+        "size_bytes": 34353,
+        "sha256": "e0f5c4a9d589951759e1daab4d97d55fc72e0c6e8aa574b73a1b988b4c68f8e9"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_3407\\source_manifest.json",
+        "size_bytes": 1876,
+        "sha256": "d642af69f81dec71a291c47dbeded54763077cd16541ede5a8e70cb03d46beff"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "d8e8c6350d2a580b0942dcdbb47f5c42850d52313f3eb8724244ca0b84ed5fb0"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 6819,
+      "compacted_linear_macs_per_sample": 6744,
+      "state_dict_sha256": "ac0f5e595271ef7654f12e583d685ca83856ec5a8e282b5033337af8f6ab9a36",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-noFT",
+      "seed": 8192,
+      "pruning_ratio": 0.25,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_8192\\source_checkpoint.pt",
+        "size_bytes": 34353,
+        "sha256": "d0506816d759ba94935bd62321f2b2f4f2b471151907155dab4c86ffec2cfcc6"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_8192\\source_manifest.json",
+        "size_bytes": 1876,
+        "sha256": "09f1021aedc303e1171a6992404d1548bfd78f5ce3ce8f353b5065214df2059e"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "cb2e01cfae3b36651853cbe4dab841cedabed53a57d25c508ef4b1e011ddb69b"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          48
+        ],
+        [
+          48,
+          24
+        ],
+        [
+          24,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 6819,
+      "compacted_linear_macs_per_sample": 6744,
+      "state_dict_sha256": "3e9402f33851d04720bcedccecbdeb5720a886d75609b77866914f369be92ba1",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT",
+      "seed": 42,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_42\\source_checkpoint.pt",
+        "size_bytes": 23921,
+        "sha256": "7ffd983fec8d9bdaa43d46bb030771c4ba1b50ad50bab6193848c0e98d638e4f"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_42\\source_manifest.json",
+        "size_bytes": 1869,
+        "sha256": "0f2876854511667804269a7b411aa2c612a4d73841b789dfe892ae93580e064c"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_42\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "5abfac0829d550c2e2f452f992e5cc4b53b79412f506e8ef38d2335285aefa1f"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 4291,
+      "compacted_linear_macs_per_sample": 4240,
+      "state_dict_sha256": "73b53c8347acb7bc0a69c5c8d6ea0be37d1ce7a6b1c49a94166291c80228b671",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT",
+      "seed": 123,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_123\\source_checkpoint.pt",
+        "size_bytes": 23921,
+        "sha256": "12bf406592c783b74d8a066ce1ec8676aacdd3a36f76b5044341b550a9de455d"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_123\\source_manifest.json",
+        "size_bytes": 1872,
+        "sha256": "0e6b5a272b6a10b911ea7446ac9aaf5320125188d7aec6827116d3d5f97281ba"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_123\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "eab045d2e16f00c850e93b72979e5e1e299c4e792944403cddd60df7c7fd371a"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 4291,
+      "compacted_linear_macs_per_sample": 4240,
+      "state_dict_sha256": "d3533b579f6a6a22cdbfe8b2d6dc01811b9d2c9fc46a5543a7744c1f635981c5",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT",
+      "seed": 2026,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_2026\\source_checkpoint.pt",
+        "size_bytes": 23921,
+        "sha256": "fa5f955c224305819349730df21763cbf67d68b8ec8b2e8fde1c172fb593a7ee"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_2026\\source_manifest.json",
+        "size_bytes": 1875,
+        "sha256": "bc7170c9c6d7c6f35b1dd84cab450eea84369f6cf652282e8e1cc45f28bcdd02"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "6b60c988f01ec53e91ea7d9288ebd06cb4fd825ed093476150986c96d4223fa9"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 4291,
+      "compacted_linear_macs_per_sample": 4240,
+      "state_dict_sha256": "535505858d2aecb5c3554da105fc110989054ac66571296a29d7674816cbdecd",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT",
+      "seed": 3407,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_3407\\source_checkpoint.pt",
+        "size_bytes": 23921,
+        "sha256": "f67ba7aefa07631971c2dd05f91d10bdca646237f43f79f362c35a1fbb70dd5c"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_3407\\source_manifest.json",
+        "size_bytes": 1875,
+        "sha256": "468e0014a65af3ec3ec7b405564e427a486082cac98b9999f009f1858bf407aa"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_3407\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "d8e8c6350d2a580b0942dcdbb47f5c42850d52313f3eb8724244ca0b84ed5fb0"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 4291,
+      "compacted_linear_macs_per_sample": 4240,
+      "state_dict_sha256": "54a8af21d238cddaf71fcb4c8b92cd2364c211a5b64ef5f294b783517d5381be",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT",
+      "seed": 8192,
+      "pruning_ratio": 0.5,
+      "source_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_8192\\source_checkpoint.pt",
+        "size_bytes": 23921,
+        "sha256": "d93a1e63059780042c6784294693c0e7a1657952b435fd4d2d78b7bf88f10def"
+      },
+      "source_manifest": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_8192\\source_manifest.json",
+        "size_bytes": 1875,
+        "sha256": "86b37ab101ce73f2c3a84cc21740f0f889d99ced0b5dd13ad588546e0e79144d"
+      },
+      "source_B0_checkpoint": {
+        "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_8192\\best_checkpoint.pt",
+        "size_bytes": 123467,
+        "sha256": "cb2e01cfae3b36651853cbe4dab841cedabed53a57d25c508ef4b1e011ddb69b"
+      },
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "compacted_parameter_count": 4291,
+      "compacted_linear_macs_per_sample": 4240,
+      "state_dict_sha256": "44b98589bd0a033841e7a7b390aed3992df69d95e5d608ada5c1afdcda970507",
+      "validation_access_count": 0,
+      "test_access_count": 0,
+      "checks": {
+        "source_checkpoint_hash_matches_registry": true,
+        "source_manifest_hash_matches_registry": true,
+        "B0_checkpoint_hash_matches_registry": true,
+        "manifest_identity_matches": true,
+        "stored_checkpoint_identity_matches": true,
+        "engine_version_matches": true,
+        "stored_metadata_matches_manifest": true,
+        "expected_widths_match": true,
+        "regenerated_metadata_matches_stored": true,
+        "regenerated_state_matches_stored_exactly": true,
+        "regenerated_state_digest_matches": true,
+        "reloaded_output_matches_regenerated": true,
+        "output_shape_matches": true,
+        "output_is_finite": true,
+        "physical_compaction_true": true,
+        "generated_directly_from_B0": true,
+        "parameter_count_reduced": true,
+        "MAC_count_reduced": true,
+        "validation_access_count_zero": true,
+        "test_access_count_zero": true
+      },
+      "all_checks_passed": true
+    }
+  ],
+  "entry_checks": {
+    "protocol_locked": true,
+    "B0_pair_locked": true,
+    "B0_registry_hash_matches": true,
+    "pruning_engine_locked": true,
+    "pruning_engine_hash_matches": true,
+    "source_generation_locked": true,
+    "source_registry_hash_matches": true,
+    "source_summary_hash_matches": true,
+    "generation_manifest_locked": true,
+    "source_summary_completed": true,
+    "B0_registry_has_ten_rows": true,
+    "source_registry_has_twenty_rows": true
+  },
+  "global_checks": {
+    "twenty_sources_verified": true,
+    "complete_architecture_variant_seed_matrix": true,
+    "all_checks_passed": true,
+    "all_state_dict_hashes_unique": true,
+    "all_validation_counts_zero": true,
+    "all_test_counts_zero": true
+  },
+  "source_artifacts": {
+    "phase5_protocol": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase5_fair_budget_compression_protocol_v3_2.json",
+      "size_bytes": 21842,
+      "sha256": "1681aaa46ce286f498367a6c8a2ccb4c711c091fbb053ec4aa48f9bd1d10ab03"
+    },
+    "B0_pair_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_locked_v3_2.json",
+      "size_bytes": 1241,
+      "sha256": "af730f4071ea0db3a4c910231d1964a70d81967838f9448a8b180455537a9a2b"
+    },
+    "B0_checkpoint_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_checkpoint_registry_v3_2.csv",
+      "size_bytes": 9616,
+      "sha256": "af2f62797979caa86d02fffb6ed3ca18e038d54550d89b559161832f7ae290ef"
+    },
+    "pruning_engine_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_engine_locked_v3_2.json",
+      "size_bytes": 1563,
+      "sha256": "79554d61db40ccd1b9478a111d6723ae5d3fc0e6f6d4a6bbd0fa98ab57882371"
+    },
+    "pruning_engine_source": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_physical_pruning_engine_v3_2.py",
+      "size_bytes": 11014,
+      "sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3"
+    },
+    "pruning_sources_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_sources_locked_v3_2.json",
+      "size_bytes": 909,
+      "sha256": "11e17e7f50233d7b188dd5e948a82e1ca0f3f0ff27a237b6741ae3cfefc656ea"
+    },
+    "pruning_sources_summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_sources_summary_v3_2.json",
+      "size_bytes": 4934,
+      "sha256": "6aaea47a122ed4faeae67033a850c3440e4ed1e336457661731daa9084a329aa"
+    },
+    "pruning_sources_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_source_checkpoint_registry_v3_2.csv",
+      "size_bytes": 20143,
+      "sha256": "8c8ee86e88eba63858ae562183716323a3a972e29948a0f8f8dc83e15436deef"
+    }
+  },
+  "ready_for_P25_noFT_and_P50_noFT_evaluation": true,
+  "all_checks_passed": true
+}

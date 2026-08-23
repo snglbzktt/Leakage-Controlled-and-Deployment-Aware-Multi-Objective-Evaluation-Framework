@@ -1,0 +1,119 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-05T23:40:06.419629+00:00",
+  "protocol": "vs2_float32_leakage_ablation",
+  "source_protocol_version": "2.1",
+  "repaired_protocol_version": "2.2",
+  "repair_role": "Versioned split-database repair before VS2 training; original database preserved.",
+  "source_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_seed2026.sqlite",
+  "source_database_sha256": "b2c132d70b33cbfefcc3c058a333bad6429bfb5d742a32170cbc9b9ed61157f3",
+  "output_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v2.sqlite",
+  "output_database_sha256": "230192fc247e4eafd352b39b711d0356966ab5ecc4ea2c194468755b6e5b41ee",
+  "output_database_bytes": 829665280,
+  "plan_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_plan_v2.csv",
+  "plan_csv_sha256": "e6f54f30aa266f7b619c5ffa794e325505a9896b721d81ea17da7af9091561dc",
+  "plan_summary": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_plan_summary_v2.json",
+  "plan_summary_sha256": "507d1994d7efad5911339dd7596e589c92a1e6e1c01fadfddefe150b0fb0331b",
+  "repair_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\84_apply_vs2_scaled_overlap_repair_v2.py",
+  "repair_script_sha256": "17f40e50ef0b537a120a2bf660e1212702d180df3c34fbb08095032346b1c3a3",
+  "repair_counts": {
+    "scaled_collision_components": 371,
+    "affected_original_fingerprint_groups": 1036,
+    "affected_raw_rows": 1036,
+    "moved_original_fingerprint_groups": 416,
+    "moved_raw_rows": 416
+  },
+  "validation": {
+    "quick_check_before": "ok",
+    "quick_check_after": "ok",
+    "integrity_check": "ok",
+    "old_grouped_split_counts": {
+      "train": 4943823,
+      "validation": 1059389,
+      "test": 1059394
+    },
+    "new_grouped_split_counts": {
+      "train": 4943823,
+      "validation": 1059389,
+      "test": 1059394
+    },
+    "old_grouped_split_family_counts": {
+      "train:benign": 389152,
+      "train:gafgyt": 1986790,
+      "train:mirai": 2567881,
+      "validation:benign": 83389,
+      "validation:gafgyt": 425740,
+      "validation:mirai": 550260,
+      "test:benign": 83391,
+      "test:gafgyt": 425742,
+      "test:mirai": 550261
+    },
+    "new_grouped_split_family_counts": {
+      "train:benign": 389152,
+      "train:gafgyt": 1986790,
+      "train:mirai": 2567881,
+      "validation:benign": 83389,
+      "validation:gafgyt": 425740,
+      "validation:mirai": 550260,
+      "test:benign": 83391,
+      "test:gafgyt": 425742,
+      "test:mirai": 550261
+    },
+    "updated_fingerprint_group_count": 416,
+    "repair_plan_table_row_count": 1036,
+    "post_repair_plan_mismatch_count": 0,
+    "planned_scaled_component_overlap_count": 0,
+    "largest_group_raw_row_count": 965536,
+    "largest_group_split": "train"
+  },
+  "source_plan_summary": {
+    "status": "completed",
+    "analysis_role": "repair_plan_only_no_input_artifact_mutation",
+    "repair_strategy": "Merge original float32 fingerprint groups that collapse to the same StandardScaler-plus-float32 model input, assign each merged component to one split, preserve affected train/validation/test raw-row totals exactly, and minimize moved raw rows.",
+    "scaled_collision_component_count": 371,
+    "affected_original_fingerprint_group_count": 1036,
+    "affected_raw_row_count": 1036,
+    "affected_class_names": [
+      "benign"
+    ],
+    "old_affected_rows_by_split": {
+      "train": 572,
+      "validation": 230,
+      "test": 234
+    },
+    "new_affected_rows_by_split": {
+      "train": 572,
+      "validation": 230,
+      "test": 234
+    },
+    "component_count_by_new_split": {
+      "train": 165,
+      "validation": 103,
+      "test": 103
+    },
+    "minimum_moved_raw_rows": 416,
+    "moved_original_fingerprint_group_count": 416,
+    "planned_cross_split_scaled_overlap_count": 0,
+    "validation_checks": {
+      "database_quick_check_ok": true,
+      "exactly_371_scaled_components": true,
+      "exactly_1036_affected_raw_rows": true,
+      "only_benign_affected": true,
+      "each_original_group_currently_in_one_split": true,
+      "affected_split_totals_preserved_exactly": true,
+      "minimum_move_objective_consistent": true,
+      "planned_zero_scaled_overlap": true
+    },
+    "source_sha256": {
+      "assignment_database": "b2c132d70b33cbfefcc3c058a333bad6429bfb5d742a32170cbc9b9ed61157f3",
+      "scaled_overlap_audit_database": "34c9324e82fd590584de7a8977969ffc9715d939689524a003d4ccb3030bf8e3",
+      "stage38_script": "5b403595b2de0c27aa00b91aed6592645b47853955425824b40911330a488fab"
+    },
+    "outputs": {
+      "repair_plan_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_plan_v2.csv",
+      "component_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_components_v2.csv",
+      "summary_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_plan_summary_v2.json",
+      "report_txt": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_plan_report_v2.txt"
+    }
+  }
+}

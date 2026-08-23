@@ -1,0 +1,9 @@
+﻿Öğe,Dosya,Makale Bölümü,Başlık Taslağı
+Tablo 1,table_1_performance_summary.csv,6. Sınıflandırma Bulguları,Model ve sıkıştırma varyantlarına göre test performansı
+Tablo 2,table_2_efficiency_summary.csv,9. Verimlilik ve Pareto,"Model boyutu, MAC, host CPU gecikmesi ve throughput"
+Tablo 3,table_3_statistical_summary.csv,7. İstatistiksel Analiz,Macro F1 için Friedman ve Kendall W sonuçları
+Tablo 4,table_4_classwise_fnr_summary.csv,8. Sınıf Bazlı Güvenlik Analizi,Sınıf bazlı yanlış negatif oranları
+Tablo 5,table_5_pareto_optimal_solutions.csv,9. Verimlilik ve Pareto,Global ve model içi Pareto-optimal çözümler
+Şekil 1,figure_1_macro_f1_vs_artifact.pdf,9. Verimlilik ve Pareto,Macro F1 ile artifact boyutu arasındaki ödünleşim
+Şekil 2,figure_2_macro_f1_vs_latency.pdf,9. Verimlilik ve Pareto,Macro F1 ile host CPU gecikmesi arasındaki ödünleşim
+Şekil 3,figure_3_macro_f1_heatmap.pdf,6. Sınıflandırma Bulguları,Model-varyant Macro F1 ısı haritası

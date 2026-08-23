@@ -1,0 +1,44 @@
+======================================================================================
+EARLY LODO DEVICE COMPLETION SUMMARY
+======================================================================================
+
+Held-out device       : Danmini_Doorbell
+Completed models      : 3/3
+Train fingerprints    : 1,039,932
+Validation fingerprints: 222,798
+Test fingerprints     : 996,539
+Test record count     : 1,018,298
+
+MODEL COMPARISON
+rank=1 | hist_gradient_boosting_b0 | Macro-F1=0.984940617 | Accuracy=0.982505451 | Gafgyt FNR=0.05734038494428438 | Mirai FNR=0.0 | seconds=41.008 | local_severe=False
+rank=2 | tinyml_mlp_b0 | Macro-F1=0.981657645 | Accuracy=0.979988741 | Gafgyt FNR=0.06543131915117549 | Mirai FNR=6.287379236313449e-05 | seconds=24.239 | local_severe=False
+rank=3 | compact_dnn_b0 | Macro-F1=0.975706276 | Accuracy=0.973972920 | Gafgyt FNR=0.08512912604754574 | Mirai FNR=5.213924244747738e-05 | seconds=49.494 | local_severe=False
+
+DEVICE STATISTICS
+Mean Macro-F1        : 0.980768179
+Median Macro-F1      : 0.981657645
+Minimum Macro-F1     : 0.975706276
+Maximum Macro-F1     : 0.984940617
+Maximum attack FNR   : 0.085129126
+Local severe cells   : 0
+
+VALIDATION CHECKS
+protocol_locked: True
+exactly_three_device_runs: True
+expected_models_registered: True
+all_runs_seed_2026: True
+three_model_results_loaded: True
+three_lock_summaries_loaded: True
+three_run_results_loaded: True
+all_locks_locked: True
+all_results_completed: True
+lock_identities_match: True
+execution_ledger_has_three_rows: True
+execution_ledger_matches: True
+cache_validated: True
+cache_manifest_nonempty: True
+all_test_counts_identical: True
+all_test_class_counts_identical: True
+all_primary_metrics_valid: True
+all_fnr_values_valid: True
+ranking_contains_three_models: True

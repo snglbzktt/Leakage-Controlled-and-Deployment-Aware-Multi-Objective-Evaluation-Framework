@@ -1,0 +1,830 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "run_id": "tinyml_mlp__p50_qat__seed_3407",
+  "architecture": "tinyml_mlp",
+  "variant": "P50-QAT",
+  "source_variant": "P50-noFT",
+  "seed": 3407,
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "QAT_engine_version": "phase5_qat_engine_v3_2",
+  "source": {
+    "source_variant": "P50-noFT",
+    "source_checkpoint_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_3407\\source_checkpoint.pt",
+    "source_checkpoint_sha256": "f67ba7aefa07631971c2dd05f91d10bdca646237f43f79f362c35a1fbb70dd5c",
+    "pruning_metadata": {
+      "engine_version": "phase5_physical_pruning_engine_v3_2",
+      "importance_criterion": "For hidden unit j: score_j = L2([incoming weight row j, bias j]) * L2(outgoing weight column j). Scores are computed independently on the original B0 checkpoint. Ranking is descending by score, with ascending original unit index as the deterministic tie-break. P25 and P50 are each generated directly from the same B0 checkpoint.",
+      "pruning_ratio": 0.5,
+      "source_checkpoint_sha256": "d8e8c6350d2a580b0942dcdbb47f5c42850d52313f3eb8724244ca0b84ed5fb0",
+      "source_linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "compacted_linear_widths": [
+        [
+          115,
+          32
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          16,
+          3
+        ]
+      ],
+      "source_parameter_count": 9603,
+      "compacted_parameter_count": 4291,
+      "source_linear_macs_per_sample": 9504,
+      "compacted_linear_macs_per_sample": 4240,
+      "hidden_unit_selections": [
+        {
+          "hidden_layer_index": 0,
+          "layer_name": "network.0",
+          "original_width": 64,
+          "retained_width": 32,
+          "selected_indices": [
+            2,
+            4,
+            5,
+            7,
+            12,
+            13,
+            15,
+            17,
+            18,
+            19,
+            21,
+            23,
+            26,
+            28,
+            29,
+            31,
+            33,
+            34,
+            37,
+            40,
+            43,
+            46,
+            50,
+            51,
+            53,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            63
+          ],
+          "ranked_indices": [
+            26,
+            4,
+            33,
+            17,
+            63,
+            55,
+            29,
+            57,
+            31,
+            28,
+            40,
+            23,
+            21,
+            18,
+            13,
+            43,
+            53,
+            12,
+            59,
+            5,
+            50,
+            15,
+            19,
+            46,
+            51,
+            7,
+            58,
+            2,
+            60,
+            34,
+            56,
+            37,
+            42,
+            16,
+            41,
+            54,
+            38,
+            47,
+            11,
+            44,
+            48,
+            20,
+            10,
+            14,
+            39,
+            62,
+            9,
+            36,
+            32,
+            0,
+            22,
+            25,
+            24,
+            8,
+            35,
+            52,
+            3,
+            1,
+            45,
+            30,
+            61,
+            27,
+            49,
+            6
+          ],
+          "selected_scores": [
+            1.4474732271824595,
+            4.060229286133843,
+            1.7501009797090914,
+            1.4603058668491251,
+            1.7728903558968097,
+            1.9794369908466332,
+            1.7058033022056618,
+            3.0199521271608356,
+            2.0042908905598287,
+            1.667659174270158,
+            2.0382824657378458,
+            2.038465418121673,
+            4.398621879493854,
+            2.1800043192869745,
+            2.6557114883385253,
+            2.2385049847304797,
+            3.4782822958780972,
+            1.404813025162568,
+            1.3853057311039862,
+            2.064979310249647,
+            1.9112034076570443,
+            1.603633651234291,
+            1.7478709478191978,
+            1.4861598404829923,
+            1.779308627551239,
+            2.963788932756603,
+            1.4009046915999301,
+            2.251677128655216,
+            1.4588418305891393,
+            1.7637819786369449,
+            1.4087956066930023,
+            3.0156227693416633
+          ]
+        },
+        {
+          "hidden_layer_index": 1,
+          "layer_name": "network.2",
+          "original_width": 32,
+          "retained_width": 16,
+          "selected_indices": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            13,
+            15,
+            16,
+            18,
+            19,
+            22,
+            23,
+            26,
+            27,
+            28,
+            31
+          ],
+          "ranked_indices": [
+            22,
+            7,
+            15,
+            16,
+            4,
+            19,
+            28,
+            31,
+            5,
+            2,
+            3,
+            26,
+            18,
+            27,
+            23,
+            13,
+            14,
+            6,
+            12,
+            24,
+            29,
+            11,
+            25,
+            20,
+            17,
+            8,
+            0,
+            21,
+            9,
+            10,
+            30,
+            1
+          ],
+          "selected_scores": [
+            0.7067482182615722,
+            0.6896595161977369,
+            0.9846943797527812,
+            0.7296933229724923,
+            1.2019889845058154,
+            0.4490597540653666,
+            1.172500297123625,
+            1.05546648923872,
+            0.6040620820385454,
+            0.8445875935876567,
+            2.0078157891646904,
+            0.5215213051214765,
+            0.6838994200757983,
+            0.5999390239487201,
+            0.838288026579928,
+            0.8283174931940465
+          ]
+        }
+      ],
+      "layer_copy_records": [
+        {
+          "layer_index": 0,
+          "layer_name": "network.0",
+          "input_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114
+          ],
+          "output_indices": [
+            2,
+            4,
+            5,
+            7,
+            12,
+            13,
+            15,
+            17,
+            18,
+            19,
+            21,
+            23,
+            26,
+            28,
+            29,
+            31,
+            33,
+            34,
+            37,
+            40,
+            43,
+            46,
+            50,
+            51,
+            53,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            63
+          ],
+          "source_shape": [
+            64,
+            115
+          ],
+          "compacted_shape": [
+            32,
+            115
+          ]
+        },
+        {
+          "layer_index": 1,
+          "layer_name": "network.2",
+          "input_indices": [
+            2,
+            4,
+            5,
+            7,
+            12,
+            13,
+            15,
+            17,
+            18,
+            19,
+            21,
+            23,
+            26,
+            28,
+            29,
+            31,
+            33,
+            34,
+            37,
+            40,
+            43,
+            46,
+            50,
+            51,
+            53,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            63
+          ],
+          "output_indices": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            13,
+            15,
+            16,
+            18,
+            19,
+            22,
+            23,
+            26,
+            27,
+            28,
+            31
+          ],
+          "source_shape": [
+            32,
+            64
+          ],
+          "compacted_shape": [
+            16,
+            32
+          ]
+        },
+        {
+          "layer_index": 2,
+          "layer_name": "network.4",
+          "input_indices": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            13,
+            15,
+            16,
+            18,
+            19,
+            22,
+            23,
+            26,
+            27,
+            28,
+            31
+          ],
+          "output_indices": [
+            0,
+            1,
+            2
+          ],
+          "source_shape": [
+            3,
+            32
+          ],
+          "compacted_shape": [
+            3,
+            16
+          ]
+        }
+      ],
+      "physical_compaction": true,
+      "mask_only_pruning": false,
+      "generated_directly_from_B0": true
+    }
+  },
+  "quantization": {
+    "method": "quantization_aware_training",
+    "backend": "onednn",
+    "target_modules": [
+      "torch.nn.Linear"
+    ],
+    "quantized_weight_dtype": "torch.qint8",
+    "training_performed": true,
+    "calibration_used": false
+  },
+  "selection": {
+    "metric": "validation_INT8_fingerprint_macro_f1",
+    "best_epoch": 7,
+    "best_validation_INT8_macro_f1": 0.9982889008156355,
+    "validation_used_for_selection": true,
+    "test_used_for_selection": false
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "batch_size": 4096,
+    "max_epochs": 8,
+    "epochs_completed": 8,
+    "learning_rate": 0.00030000000000000003,
+    "baseline_learning_rate": 0.003,
+    "learning_rate_fraction_of_B0": 0.1,
+    "weight_decay": 0.0001,
+    "early_stopping_patience": 3,
+    "early_stopping_min_delta": 0.0002,
+    "elapsed_seconds": 30.150405700085685,
+    "raw_occurrence_weight_used": false
+  },
+  "validation": {
+    "primary_fingerprint_level": {
+      "accuracy": 0.9989617990462537,
+      "macro_precision": 0.9981366217526754,
+      "macro_recall": 0.9984415647437176,
+      "balanced_accuracy": 0.9984415647437176,
+      "macro_f1": 0.9982889008156355,
+      "weighted_f1": 0.9989618286898484,
+      "mcc": 0.9979331990429837,
+      "log_loss": 0.00521353492513299,
+      "roc_auc_ovr_macro": 0.9999597758554969,
+      "confusion_matrix": [
+        [
+          77009,
+          13,
+          0
+        ],
+        [
+          98,
+          48611,
+          84
+        ],
+        [
+          27,
+          164,
+          245791
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.9983794435657427,
+          "recall": 0.9998312170548674,
+          "f1": 0.9991048029269052,
+          "support": 77022.0,
+          "false_negative_rate": 0.00016878294513256176
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.9963720587029598,
+          "recall": 0.9962699567560921,
+          "f1": 0.9963210051137004,
+          "support": 48793.0,
+          "false_negative_rate": 0.00373004324390791
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.9996583629893239,
+          "recall": 0.9992235204201934,
+          "f1": 0.999440894406301,
+          "support": 245982.0,
+          "false_negative_rate": 0.0007764795798066437
+        }
+      }
+    },
+    "secondary_raw_record_weighted": {
+      "accuracy": 0.9980196150614976,
+      "macro_precision": 0.9955760487044091,
+      "macro_recall": 0.9983749135444843,
+      "balanced_accuracy": 0.9983749135444843,
+      "macro_f1": 0.9969653607409126,
+      "weighted_f1": 0.9980208137433536,
+      "mcc": 0.9964827675437924,
+      "log_loss": 0.011780904155549516,
+      "roc_auc_ovr_macro": 0.9999450493876202,
+      "confusion_matrix": [
+        [
+          83369,
+          21,
+          0
+        ],
+        [
+          857,
+          424143,
+          740
+        ],
+        [
+          61,
+          419,
+          549780
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.9891086407156501,
+          "recall": 0.9997481712435544,
+          "f1": 0.994399947518145,
+          "support": 83390.0,
+          "false_negative_rate": 0.00025182875644558234
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.9989636890784606,
+          "recall": 0.9962488842955795,
+          "f1": 0.9976044397246693,
+          "support": 425740.0,
+          "false_negative_rate": 0.003751115704420549
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.9986558163191165,
+          "recall": 0.999127685094319,
+          "f1": 0.9988916949799234,
+          "support": 550260.0,
+          "false_negative_rate": 0.0008723149056809598
+        }
+      }
+    },
+    "elapsed_seconds": 0.46610019996296614
+  },
+  "test": {
+    "primary_fingerprint_level": {
+      "accuracy": 0.9989913823709776,
+      "macro_precision": 0.9981926255836874,
+      "macro_recall": 0.9984514627389679,
+      "balanced_accuracy": 0.9984514627389679,
+      "macro_f1": 0.998321844873542,
+      "weighted_f1": 0.998991376497962,
+      "mcc": 0.9979920306232445,
+      "log_loss": 0.005050021223723888,
+      "roc_auc_ovr_macro": 0.999961671960406,
+      "confusion_matrix": [
+        [
+          77010,
+          11,
+          0
+        ],
+        [
+          103,
+          48609,
+          81
+        ],
+        [
+          21,
+          159,
+          245802
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.9983924080172167,
+          "recall": 0.999857181807559,
+          "f1": 0.9991242580519607,
+          "support": 77021.0,
+          "false_negative_rate": 0.00014281819244099658
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.9965148937042579,
+          "recall": 0.9962289672698953,
+          "f1": 0.9963719099741729,
+          "support": 48793.0,
+          "false_negative_rate": 0.0037710327301047064
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.9996705750295872,
+          "recall": 0.9992682391394492,
+          "f1": 0.9994693665944924,
+          "support": 245982.0,
+          "false_negative_rate": 0.000731760860550823
+        }
+      }
+    },
+    "secondary_raw_record_weighted": {
+      "accuracy": 0.9980668175077615,
+      "macro_precision": 0.9955062014001178,
+      "macro_recall": 0.9984269750451976,
+      "balanced_accuracy": 0.9984269750451976,
+      "macro_f1": 0.9969556318431323,
+      "weighted_f1": 0.9980681668646162,
+      "mcc": 0.9965668256952211,
+      "log_loss": 0.011538199125019874,
+      "roc_auc_ovr_macro": 0.9999460615027794,
+      "confusion_matrix": [
+        [
+          83375,
+          15,
+          0
+        ],
+        [
+          901,
+          424153,
+          688
+        ],
+        [
+          49,
+          395,
+          549817
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.9887340646308924,
+          "recall": 0.9998201223168246,
+          "f1": 0.9942461914557433,
+          "support": 83390.0,
+          "false_negative_rate": 0.0001798776831754001
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.9990343011520081,
+          "recall": 0.9962676926401436,
+          "f1": 0.9976490788599385,
+          "support": 425742.0,
+          "false_negative_rate": 0.0037323073598564127
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.998750238417453,
+          "recall": 0.9991931101786243,
+          "f1": 0.9989716252137149,
+          "support": 550261.0,
+          "false_negative_rate": 0.000806889821375667
+        }
+      }
+    },
+    "elapsed_seconds": 0.4786920000333339
+  },
+  "model_complexity": {
+    "float_linear_widths": [
+      [
+        115,
+        32
+      ],
+      [
+        32,
+        16
+      ],
+      [
+        16,
+        3
+      ]
+    ],
+    "float_parameter_count": 4291,
+    "float_linear_macs_per_sample": 4240,
+    "float_state_bytes": 19925,
+    "INT8_state_bytes": 12199,
+    "INT8_to_float_state_size_ratio": 0.612245922208281,
+    "serialized_QAT_checkpoint_bytes": 80809,
+    "serialized_INT8_checkpoint_bytes": 14023
+  },
+  "data_access": {
+    "train_used_for_updates": true,
+    "validation_used_for_selection": true,
+    "test_used_for_selection": false,
+    "test_evaluation_count": 1,
+    "raw_occurrence_weight_used_for_fit": false
+  },
+  "test_evaluation_count": 1,
+  "fragility_gate": {
+    "macro_f1_threshold": 0.85,
+    "attack_FNR_threshold": 0.4,
+    "triggered": false,
+    "reasons": []
+  },
+  "completed_at_utc": "2026-08-06T19:45:29.015804+00:00"
+}

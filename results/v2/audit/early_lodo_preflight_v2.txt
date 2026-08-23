@@ -1,0 +1,43 @@
+==============================================================================
+PHASE 2A EARLY LODO PREFLIGHT
+==============================================================================
+
+Selected numeric pipeline : pipeline_a
+Detected device count     : 9
+Registered models         : compact_dnn, tinyml_mlp
+Baseline candidates       : HistGradientBoostingClassifier, ExtraTreesClassifier, RandomForestClassifier
+Available RAM GB          : 5.057
+Free disk GB              : 10.218
+
+DEVICES
+- Danmini_Doorbell
+- Ecobee_Thermostat
+- Ennio_Doorbell
+- Philips_B120N10_Baby_Monitor
+- Provision_PT_737E_Security_Camera
+- Provision_PT_838_Security_Camera
+- Samsung_SNH_1011_N_Webcam
+- SimpleHome_XCS7_1002_WHT_Security_Camera
+- SimpleHome_XCS7_1003_WHT_Security_Camera
+
+SQLITE CANDIDATE TABLES
+- group_exact | device= | label= | fingerprint=hash_forward | hash_reverse | canonical_bytes | sha256_digest | sha256_conflict_count
+
+PARQUET CANDIDATES
+- data\processed\nbaiot_float32_canonical_seed2026\metadata.parquet | rows=2278174 | device= | fingerprint=hash_forward | hash_reverse
+- data\processed\nbaiot_primary_seed2026\metadata.parquet | rows=2482676 | device=source_device | source_device_count | fingerprint=hash_forward | hash_reverse
+
+VALIDATION CHECKS
+phase_1e_locked: True
+pipeline_a_selected: True
+test_not_used_for_numeric_selection: True
+device_summary_not_empty: True
+device_support_not_empty: True
+exact_device_count: True
+tinyml_and_compact_registered: True
+sqlite_database_readable: True
+strong_baseline_available: True
+available_ram_at_least_3_gb: True
+free_disk_at_least_3_gb: True
+
+Preflight passed: True

@@ -1,0 +1,39 @@
+==============================================================================
+PHASE 2C EARLY LODO MEMBERSHIP INDEX
+==============================================================================
+
+Metadata groups       : 2,482,676
+Membership rows       : 6,904,827
+Raw records           : 7,062,606
+Devices               : 9
+Elapsed seconds       : 79.562
+
+FOLD FEASIBILITY
+- Danmini_Doorbell | train=1,039,932 | validation=222,798 | test=996,539 | test_families=3 | overlap=0
+- Ecobee_Thermostat | train=1,162,046 | validation=248,309 | test=823,134 | test_families=3 | overlap=0
+- Ennio_Doorbell | train=1,500,913 | validation=321,267 | test=338,599 | test_families=2 | overlap=0
+- Philips_B120N10_Baby_Monitor | train=984,133 | validation=210,978 | test=1,075,936 | test_families=3 | overlap=0
+- Provision_PT_737E_Security_Camera | train=1,172,731 | validation=250,895 | test=807,836 | test_families=3 | overlap=0
+- Provision_PT_838_Security_Camera | train=1,164,353 | validation=249,102 | test=820,042 | test_families=3 | overlap=0
+- Samsung_SNH_1011_N_Webcam | train=1,486,393 | validation=318,155 | test=359,368 | test_families=2 | overlap=0
+- SimpleHome_XCS7_1002_WHT_Security_Camera | train=1,145,094 | validation=244,988 | test=847,047 | test_families=3 | overlap=0
+- SimpleHome_XCS7_1003_WHT_Security_Camera | train=1,152,607 | validation=246,508 | test=836,326 | test_families=3 | overlap=0
+
+VALIDATION CHECKS
+metadata_row_count: True
+database_group_count: True
+database_membership_row_count: True
+returned_membership_count: True
+membership_count_from_index: True
+raw_record_count_from_index: True
+no_missing_membership_rows: True
+source_device_count_matches: True
+no_label_conflicts: True
+no_family_mismatches: True
+no_unknown_devices: True
+all_device_summary_counts_match: True
+all_device_family_counts_match: True
+all_train_classes_present: True
+all_validation_classes_present: True
+all_tests_nonempty: True
+all_fold_fingerprint_overlap_zero: True

@@ -1,0 +1,38 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "asset_id": "table_01_dataset_protocol",
+  "locked_at_utc": "2026-08-07T07:50:39.113127+00:00",
+  "metadata": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\table_01_dataset_protocol_metadata_v3_3.json",
+    "sha256": "df56161a93888f943f5cfc8a5daee0aaa9625b1e1e7aaf103c69e62a020f2bcd"
+  },
+  "outputs": {
+    "csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_01_dataset_protocol_v3_3.csv",
+      "sha256": "e6fc271d7f0da831c5a905905d1237f609e08c0a9b5d47497457aeb6b6fb0fa2",
+      "size_bytes": 1373
+    },
+    "markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_01_dataset_protocol_v3_3.md",
+      "sha256": "fe42cfe963aceb347f6a7940aa6017efb1811bae11a52b6b85c423b91d7debb5",
+      "size_bytes": 1532
+    },
+    "source_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_01_dataset_protocol_source_v3_3.json",
+      "sha256": "5a0690f7f3434ff4f01254f9eb20fd5e5bc87325ce64a01ceeb069f6423d4390",
+      "size_bytes": 3021
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\table_01_dataset_protocol_caption_v3_3.txt",
+      "sha256": "b3523de7a49add5c094f9d11909a0e23ff006836add988a7bf320329dccea7c1",
+      "size_bytes": 386
+    }
+  },
+  "row_count": 15,
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

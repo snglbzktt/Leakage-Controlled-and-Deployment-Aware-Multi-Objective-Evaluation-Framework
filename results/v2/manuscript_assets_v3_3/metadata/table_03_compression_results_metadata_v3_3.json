@@ -1,0 +1,86 @@
+{
+  "status": "generated",
+  "phase": 13,
+  "asset_id": "table_03_compression_results",
+  "generated_at_utc": "2026-08-07T07:54:23.664123+00:00",
+  "title": "Compression Results",
+  "row_count": 22,
+  "architecture_count": 2,
+  "variant_count_per_architecture": 11,
+  "seed_count": 5,
+  "fragility_group_count": 3,
+  "fragility_groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT"
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "DQ"
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT"
+    }
+  ],
+  "final_model_selected_in_phase5": false,
+  "test_used_for_selection": false,
+  "source_files": [
+    {
+      "source_id": "phase5_group_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_group_summary_v3_2.csv",
+      "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+    },
+    {
+      "source_id": "phase5_closure",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_closure_v3_2.json",
+      "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac"
+    }
+  ],
+  "outputs": {
+    "csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_03_compression_results_v3_3.csv",
+      "sha256": "74ae0fe8918f5406f321309d42404c4ec191fa44e4abe1e1e333a75a2966db18",
+      "size_bytes": 2126
+    },
+    "markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_03_compression_results_v3_3.md",
+      "sha256": "4e5821845b870b14a5307f5d3e28aee5f6a9fdb2b73f237e785199f7e9138cd4",
+      "size_bytes": 2657
+    },
+    "source_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_03_compression_results_source_v3_3.csv",
+      "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67",
+      "size_bytes": 5849
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\table_03_compression_results_caption_v3_3.txt",
+      "sha256": "1803e5d276e1f9812dd472db9c7f1952c2a28f0a54d582fe31b173f654e0e86c",
+      "size_bytes": 422
+    }
+  },
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_hash_matches": true,
+    "mapping_validated": true,
+    "mapping_hash_matches": true,
+    "table_02_locked": true,
+    "table_03_mapped": true
+  },
+  "data_checks": {
+    "source_rows_22": true,
+    "required_columns_present": true,
+    "architecture_count_2": true,
+    "eleven_groups_per_architecture": true,
+    "run_count_5_all": true,
+    "closure_run_count_110": true,
+    "closure_group_count_22": true,
+    "closure_final_model_not_selected": true,
+    "test_not_used_for_selection": true
+  },
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

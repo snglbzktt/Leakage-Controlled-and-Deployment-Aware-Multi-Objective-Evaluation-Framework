@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-25T20:43:27.480358+00:00",
+  "status": "completed",
+  "model_name": "tiny_1d_cnn",
+  "method_name": "QAT",
+  "seed": 3407,
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed3407\\converted_int8_state_dict.pt",
+  "artifact_sha256": "9f7306fef7a7fd85d81759c8c8aecac7b15f7535e53bb5418b09fe3b9001f55a",
+  "evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "completed_at_utc": "2026-07-25T20:43:34.184689+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed3407\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed3407\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\QAT\\seed3407\\test_confusion_matrix.csv"
+}

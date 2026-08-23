@@ -1,0 +1,70 @@
+{
+  "protocol_version": "numeric_order_training_smoke_v2_1",
+  "status": "completed",
+  "completed_at": "2026-08-05T17:43:07.715179+00:00",
+  "batch_size": 4096,
+  "combination_count": 4,
+  "rows": [
+    {
+      "pipeline": "pipeline_a",
+      "model": "tinyml_mlp",
+      "batch_size": 4096,
+      "initial_state_sha256": "b25310f1c146b43afa13b071a637a87258b9908e26043a7203bd84905d73d0b5",
+      "training_loss": 0.9475915431976318,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "output_shape": [
+        4096,
+        3
+      ],
+      "passed": true
+    },
+    {
+      "pipeline": "pipeline_a",
+      "model": "compact_dnn",
+      "batch_size": 4096,
+      "initial_state_sha256": "6b2a4aaf89a7ec6364885c2822637309f44313c6adeb40078165ebac7079b4f8",
+      "training_loss": 1.110026240348816,
+      "validation_accuracy": 0.00048828125,
+      "validation_macro_f1": 0.0009760858955588092,
+      "output_shape": [
+        4096,
+        3
+      ],
+      "passed": true
+    },
+    {
+      "pipeline": "pipeline_b",
+      "model": "tinyml_mlp",
+      "batch_size": 4096,
+      "initial_state_sha256": "b25310f1c146b43afa13b071a637a87258b9908e26043a7203bd84905d73d0b5",
+      "training_loss": 0.9475915431976318,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "output_shape": [
+        4096,
+        3
+      ],
+      "passed": true
+    },
+    {
+      "pipeline": "pipeline_b",
+      "model": "compact_dnn",
+      "batch_size": 4096,
+      "initial_state_sha256": "6b2a4aaf89a7ec6364885c2822637309f44313c6adeb40078165ebac7079b4f8",
+      "training_loss": 1.110026240348816,
+      "validation_accuracy": 0.00048828125,
+      "validation_macro_f1": 0.0009760858955588092,
+      "output_shape": [
+        4096,
+        3
+      ],
+      "passed": true
+    }
+  ],
+  "matched_initialization_checks": {
+    "tinyml_mlp": true,
+    "compact_dnn": true
+  },
+  "all_checks_passed": true
+}

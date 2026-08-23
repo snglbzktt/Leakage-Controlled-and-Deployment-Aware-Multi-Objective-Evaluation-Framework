@@ -1,0 +1,209 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "FP32_FT_from_locked_B0",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "completed_at_utc": "2026-08-06T18:57:53.625873+00:00",
+  "run_count": 10,
+  "architecture_count": 2,
+  "variant": "FP32-FT",
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "FP32-FT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504,
+      "mean_best_validation_macro_f1": 0.9994158699661264,
+      "mean_test_fingerprint_accuracy": 0.9996605665472463,
+      "mean_test_fingerprint_macro_f1": 0.9993869819740098,
+      "std_test_fingerprint_macro_f1": 3.4968645322849514e-05,
+      "min_test_fingerprint_macro_f1": 0.9993424665082218,
+      "max_test_fingerprint_macro_f1": 0.9994444073042175,
+      "mean_test_raw_weighted_macro_f1": 0.9983273614759355,
+      "mean_test_gafgyt_fnr": 0.0018732195191933476,
+      "mean_test_mirai_fnr": 0.00010569879096844481,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "best_validation_macro_f1": {
+          "mean": 0.9994158699661264,
+          "std_population": 4.566691240885682e-05,
+          "minimum": 0.9993294193240182,
+          "maximum": 0.999465152958317
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.9996605665472463,
+          "std_population": 1.8194423313113223e-05,
+          "minimum": 0.9996395873005627,
+          "maximum": 0.9996933802407773
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9993869819740098,
+          "std_population": 3.4968645322849514e-05,
+          "minimum": 0.9993424665082218,
+          "maximum": 0.9994444073042175
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9983273614759355,
+          "std_population": 7.173190351485109e-05,
+          "minimum": 0.9982257858732687,
+          "maximum": 0.998436817821267
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0018732195191933476,
+          "std_population": 0.00010735802966578157,
+          "minimum": 0.0017420531633636216,
+          "maximum": 0.002049474309839483
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00010569879096844481,
+          "std_population": 2.0407835366819944e-05,
+          "minimum": 9.350277662589779e-05,
+          "maximum": 0.0001463521721101202
+        },
+        "training_elapsed_seconds": {
+          "mean": 13.088191859982908,
+          "std_population": 0.3855752201617662,
+          "minimum": 12.73657229996752,
+          "maximum": 13.80777960002888
+        }
+      }
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "FP32-FT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 25283,
+      "linear_macs_per_sample": 25056,
+      "mean_best_validation_macro_f1": 0.9993255584670487,
+      "mean_test_fingerprint_accuracy": 0.9995911736543697,
+      "mean_test_fingerprint_macro_f1": 0.999259629566686,
+      "std_test_fingerprint_macro_f1": 9.891450273405765e-05,
+      "min_test_fingerprint_macro_f1": 0.9991407487326659,
+      "max_test_fingerprint_macro_f1": 0.9993736887110457,
+      "mean_test_raw_weighted_macro_f1": 0.9980194688122846,
+      "mean_test_gafgyt_fnr": 0.0021683438198102146,
+      "mean_test_mirai_fnr": 0.00013984763112750986,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "best_validation_macro_f1": {
+          "mean": 0.9993255584670487,
+          "std_population": 9.504447953019906e-05,
+          "minimum": 0.9992175580348248,
+          "maximum": 0.9994721781534025
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.9995911736543697,
+          "std_population": 5.559182210786602e-05,
+          "minimum": 0.9995212428320908,
+          "maximum": 0.9996503458886056
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.999259629566686,
+          "std_population": 9.891450273405765e-05,
+          "minimum": 0.9991407487326659,
+          "maximum": 0.9993736887110457
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9980194688122846,
+          "std_population": 0.00016047073044462838,
+          "minimum": 0.9978100064501629,
+          "maximum": 0.998289451354056
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0021683438198102146,
+          "std_population": 0.00012923069104528958,
+          "minimum": 0.0019470005943476032,
+          "maximum": 0.002315905970118659
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00013984763112750986,
+          "std_population": 5.832591469117808e-05,
+          "minimum": 8.130676228346179e-05,
+          "maximum": 0.00022765893439358198
+        },
+        "training_elapsed_seconds": {
+          "mean": 25.00406679997686,
+          "std_population": 0.5371177235469031,
+          "minimum": 24.031944899936207,
+          "maximum": 25.584193699993193
+        }
+      }
+    }
+  ],
+  "training_policy": {
+    "source": "matching locked B0 checkpoint",
+    "optimizer": "AdamW",
+    "batch_size": 4096,
+    "max_epochs": 8,
+    "early_stopping_patience": 3,
+    "early_stopping_min_delta": 0.0002,
+    "learning_rates": {
+      "tinyml_mlp": 0.00030000000000000003,
+      "compact_dnn": 0.0001
+    },
+    "learning_rate_fraction_of_B0": 0.1,
+    "weight_decay": 0.0001,
+    "validation_used_for_selection": true,
+    "test_used_for_selection": false,
+    "raw_occurrence_weight_used_for_fit": false
+  },
+  "test_policy": {
+    "test_evaluation_count_per_run": 1,
+    "test_inference_total": 10,
+    "test_used_for_selection": false
+  },
+  "fragility_triggered_in_any_run": false,
+  "entry_checks": {
+    "protocol_locked": true,
+    "B0_pair_locked": true,
+    "B0_registry_hash_matches": true,
+    "pruning_FP32_FT_locked": true,
+    "preprocessing_locked": true,
+    "matrix_has_ten_FP32_FT_rows": true,
+    "B0_registry_has_ten_rows": true,
+    "matrix_budget_matches": true,
+    "legacy_checkpoint_reuse_disabled": true
+  },
+  "shape_checks": {
+    "train_shape_matches": true,
+    "validation_shape_matches": true,
+    "test_shape_matches": true,
+    "raw_totals_match": true
+  },
+  "aggregate_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_all_runs_v3_2.csv",
+    "size_bytes": 6956,
+    "sha256": "690938d3f19e0c8e3e55c5845960f0a3ac327cf539f8cc9815098725fa9b582e"
+  },
+  "group_summary_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_group_summary_v3_2.csv",
+    "size_bytes": 890,
+    "sha256": "bb0337ae60ce2bfae51bbb7d30d6c6286febe7090333845e263568d3cddcd1ea"
+  },
+  "ready_for_independent_verification": true,
+  "all_integrity_checks_passed": true
+}

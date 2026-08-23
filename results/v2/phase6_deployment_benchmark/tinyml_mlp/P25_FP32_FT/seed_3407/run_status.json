@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "measurement_order": 99,
+  "architecture": "tinyml_mlp",
+  "variant": "P25-FP32-FT",
+  "seed": 3407,
+  "deployment_metrics_sha256": "3e06ca2f3c05c509e604e09ff6b9e7040a4b44dabb10bc021de75b92b81c7434",
+  "raw_latencies_sha256": "1acecff79cb58d840eb47d09cbcdffc51da63716849ac7940f44f73c40f3b982",
+  "run_manifest_sha256": "3540994101c2298f889a2f6f81198f643b8d390ae0b1c24ffe9e190a966c6feb",
+  "validation_data_access": false,
+  "test_data_access": false,
+  "completed_at_utc": "2026-08-06T21:10:15.122954+00:00"
+}

@@ -1,0 +1,121 @@
+{
+  "status": "completed",
+  "purpose": "reviewer_driven_hgb_seed_stability_addendum",
+  "interpretation": "Post-hoc robustness extension only. Hyperparameters, data splits, input space, and test metric definitions are unchanged. No seed is selected by performance; all five predefined seeds are reported.",
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "run_count": 5,
+  "sklearn_version": "1.9.0",
+  "parameters": {
+    "loss": "log_loss",
+    "learning_rate": 0.1,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "max_depth": null,
+    "min_samples_leaf": 20,
+    "l2_regularization": 0.0001,
+    "max_bins": 255,
+    "class_weight": "balanced",
+    "early_stopping": false
+  },
+  "metrics": {
+    "test_fingerprint_macro_f1": {
+      "mean": 0.9997402292648647,
+      "std_population": 5.546660741115948e-06,
+      "std_sample": 6.201355232632312e-06,
+      "min": 0.9997310014293768,
+      "max": 0.9997477466447534
+    },
+    "test_fingerprint_accuracy": {
+      "mean": 0.9998725107316915,
+      "std_population": 2.7429125184792634e-06,
+      "std_sample": 3.0666694238273906e-06,
+      "min": 0.9998682072964744,
+      "max": 0.9998762762375066
+    },
+    "test_occurrence_weighted_macro_f1": {
+      "mean": 0.9990438115100005,
+      "std_population": 2.0890669810931422e-05,
+      "std_sample": 2.3356478896372673e-05,
+      "min": 0.9990064883885288,
+      "max": 0.999070779637384
+    },
+    "test_gafgyt_fnr": {
+      "mean": 0.0009509560797655636,
+      "std_population": 2.0900618996960656e-05,
+      "std_sample": 2.336760242451375e-05,
+      "min": 0.0009222634394278062,
+      "max": 0.0009837476687230007
+    },
+    "test_mirai_fnr": {
+      "mean": 0.0,
+      "std_population": 0.0,
+      "std_sample": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 42,
+      "fingerprint_macro_f1": 0.9997421649483278,
+      "fingerprint_accuracy": 0.9998735865904959,
+      "occurrence_weighted_macro_f1": 0.9990493473678762,
+      "gafgyt_fnr": 0.0009427581825262044,
+      "mirai_fnr": 0.0,
+      "fit_seconds": 65.77088780002668,
+      "n_iter": 100
+    },
+    {
+      "seed": 123,
+      "fingerprint_macro_f1": 0.9997421649483278,
+      "fingerprint_accuracy": 0.9998735865904959,
+      "occurrence_weighted_macro_f1": 0.9990493473678762,
+      "gafgyt_fnr": 0.0009427581825262044,
+      "mirai_fnr": 0.0,
+      "fit_seconds": 55.67780920001678,
+      "n_iter": 100
+    },
+    {
+      "seed": 2026,
+      "fingerprint_macro_f1": 0.9997380683535377,
+      "fingerprint_accuracy": 0.9998708969434852,
+      "occurrence_weighted_macro_f1": 0.9990430947883375,
+      "gafgyt_fnr": 0.0009632529256246025,
+      "mirai_fnr": 0.0,
+      "fit_seconds": 54.72901949996594,
+      "n_iter": 100
+    },
+    {
+      "seed": 3407,
+      "fingerprint_macro_f1": 0.9997310014293768,
+      "fingerprint_accuracy": 0.9998682072964744,
+      "occurrence_weighted_macro_f1": 0.9990064883885288,
+      "gafgyt_fnr": 0.0009837476687230007,
+      "mirai_fnr": 0.0,
+      "fit_seconds": 52.755860800039954,
+      "n_iter": 100
+    },
+    {
+      "seed": 8192,
+      "fingerprint_macro_f1": 0.9997477466447534,
+      "fingerprint_accuracy": 0.9998762762375066,
+      "occurrence_weighted_macro_f1": 0.999070779637384,
+      "gafgyt_fnr": 0.0009222634394278062,
+      "mirai_fnr": 0.0,
+      "fit_seconds": 54.61186619999353,
+      "n_iter": 100
+    }
+  ],
+  "seed2026_crosscheck": {
+    "paper_value": 0.9997380683535377,
+    "new_value": 0.9997380683535377,
+    "abs_difference": 0.0,
+    "matches_within_1e_10": true
+  }
+}

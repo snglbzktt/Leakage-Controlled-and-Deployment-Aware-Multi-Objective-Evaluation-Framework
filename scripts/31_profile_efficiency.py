@@ -1,0 +1,2208 @@
+"""
+N-BaIoT family_3 model verimliliği ve CPU çıkarım profillemesi.
+
+Ana deney matrisi:
+- Modeller: tinyml_mlp, compact_dnn, tiny_1d_cnn
+- Seedler: 42, 123, 2026, 3407, 8192
+- Ana varyantlar:
+  B0, P25, P50, P75, DQ, PTQ, QAT,
+  P25-QAT, P50-QAT, P75-QAT
+- Toplam ana profil: 3 x 5 x 10 = 150
+
+Yardımcı çalışma:
+- B0-ORT, DQ ve PTQ için runtime-eşleşmiş FP32 ONNX referansıdır.
+- 3 x 5 = 15 yardımcı profil oluşturulur.
+
+Raporlanan kaynak metrikleri:
+- Fiziksel parametre sayısı
+- Ağırlık katmanı MAC sayısı
+- Yerel deployment artifact boyutu
+- Kaynak artifact boyutu
+- Tek örnek gecikmesi: ortalama, medyan, p95, p99
+- Toplu çıkarım throughput değeri
+- Yaklaşık süreç RSS bellek değerleri
+
+Bilimsel sınırlar:
+- Profil girdileri deterministik sentetik float32 girdilerdir.
+- Train, validation ve test splitleri profilleme için kullanılmaz.
+- Tek CPU thread kullanımı varsayılan protokoldür.
+- Ölçümler yalnızca çalıştırılan ana bilgisayarı ve runtime'ı temsil eder.
+- Bunlar gerçek MCU gecikmesi veya enerji ölçümü değildir.
+- ONNX Runtime ve PyTorch sonuçları runtime bilgisiyle birlikte raporlanır.
+"""
+
+from __future__ import annotations
+
+import argparse
+import gc
+import hashlib
+import importlib.util
+import io
+import json
+import math
+import os
+import platform
+import statistics
+import sys
+import threading
+import time
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Callable
+
+import numpy as np
+import pandas as pd
+import torch
+from scipy.stats import t as student_t
+from torch import nn
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+
+from src.compression.structured_pruning import (  # noqa: E402
+    physically_prune_model,
+    recreate_compact_model,
+)
+from src.models.nbaiot_models import create_model  # noqa: E402
+
+
+# ==========================================================
+# DYNAMICALLY LOAD VALIDATED STAGE HELPERS
+# ==========================================================
+
+QBASE_FILE = PROJECT_ROOT / "scripts" / "29b_run_quantization_experiments.py"
+PQA_FILE = PROJECT_ROOT / "scripts" / "30_run_pruning_qat_experiments.py"
+
+
+def load_script_module(module_name: str, script_file: Path) -> Any:
+    """Sayısal adla başlayan proje betiğini modül olarak yükler."""
+
+    if not script_file.exists():
+        raise FileNotFoundError(
+            f"Gerekli yardımcı betik bulunamadı: {script_file}"
+        )
+
+    module_spec = importlib.util.spec_from_file_location(
+        module_name,
+        script_file,
+    )
+
+    if module_spec is None or module_spec.loader is None:
+        raise ImportError(
+            f"Yardımcı modül yüklenemedi: {script_file}"
+        )
+
+    module = importlib.util.module_from_spec(module_spec)
+    module_spec.loader.exec_module(module)
+    return module
+
+
+qbase = load_script_module(
+    "nbaiot_stage29b_helpers",
+    QBASE_FILE,
+)
+
+pqat = load_script_module(
+    "nbaiot_stage30_helpers",
+    PQA_FILE,
+)
+
+
+# ==========================================================
+# CONSTANTS
+# ==========================================================
+
+MODEL_NAMES = (
+    "tinyml_mlp",
+    "compact_dnn",
+    "tiny_1d_cnn",
+)
+
+SEEDS = (
+    42,
+    123,
+    2026,
+    3407,
+    8192,
+)
+
+PRIMARY_VARIANTS = (
+    "B0",
+    "P25",
+    "P50",
+    "P75",
+    "DQ",
+    "PTQ",
+    "QAT",
+    "P25-QAT",
+    "P50-QAT",
+    "P75-QAT",
+)
+
+AUXILIARY_VARIANTS = (
+    "B0-ORT",
+)
+
+ALL_VARIANTS = (
+    *PRIMARY_VARIANTS,
+    *AUXILIARY_VARIANTS,
+)
+
+PRUNING_RATIOS = {
+    "P25": 0.25,
+    "P50": 0.50,
+    "P75": 0.75,
+}
+
+DEFAULT_FP32_EXPERIMENT_DIRECTORY = (
+    PROJECT_ROOT
+    / "results"
+    / "experiments"
+    / "fp32_baseline_v1"
+)
+
+DEFAULT_PRUNING_EXPERIMENT_DIRECTORY = (
+    PROJECT_ROOT
+    / "results"
+    / "experiments"
+    / "structured_pruning_v1"
+)
+
+DEFAULT_QUANTIZATION_EXPERIMENT_DIRECTORY = (
+    PROJECT_ROOT
+    / "results"
+    / "experiments"
+    / "quantization_v1"
+)
+
+DEFAULT_PRUNING_QAT_EXPERIMENT_DIRECTORY = (
+    PROJECT_ROOT
+    / "results"
+    / "experiments"
+    / "pruning_qat_v1"
+)
+
+DEFAULT_PROFILE_EXPERIMENT_DIRECTORY = (
+    PROJECT_ROOT
+    / "results"
+    / "experiments"
+    / "efficiency_profile_v1"
+)
+
+DEFAULT_REPORT_DIRECTORY = (
+    PROJECT_ROOT
+    / "results"
+    / "reports"
+)
+
+DEFAULT_PROTOCOL_FILE = (
+    PROJECT_ROOT
+    / "configs"
+    / "protocols"
+    / "nbaiot_family3_efficiency_profile_protocol_v1.json"
+)
+
+DEFAULT_FP32_RUN_FILE = (
+    PROJECT_ROOT
+    / "results"
+    / "reports"
+    / "nbaiot_family3_fp32_baseline_runs.csv"
+)
+
+DEFAULT_PRUNING_RUN_FILE = (
+    PROJECT_ROOT
+    / "results"
+    / "reports"
+    / "nbaiot_family3_structured_pruning_runs.csv"
+)
+
+DEFAULT_QUANTIZATION_RUN_FILE = (
+    PROJECT_ROOT
+    / "results"
+    / "reports"
+    / "nbaiot_family3_quantization_runs.csv"
+)
+
+DEFAULT_PRUNING_QAT_RUN_FILE = (
+    PROJECT_ROOT
+    / "results"
+    / "reports"
+    / "nbaiot_family3_pruning_qat_runs.csv"
+)
+
+PROFILE_NUMERIC_METRICS = (
+    "deployment_artifact_size_bytes",
+    "source_artifact_size_bytes",
+    "parameter_count",
+    "weight_layer_macs",
+    "latency_mean_ms",
+    "latency_median_ms",
+    "latency_p95_ms",
+    "latency_p99_ms",
+    "latency_minimum_ms",
+    "latency_standard_deviation_ms",
+    "throughput_batch_mean_ms",
+    "throughput_samples_per_second",
+    "rss_before_load_bytes",
+    "rss_after_load_bytes",
+    "rss_after_warmup_bytes",
+    "rss_peak_timed_bytes",
+    "model_load_rss_delta_bytes",
+    "peak_rss_delta_vs_before_load_bytes",
+)
+
+
+# ==========================================================
+# DATA CLASSES
+# ==========================================================
+
+@dataclass
+class LoadedRunner:
+    """Yüklenmiş runtime modeli ve çıkarım fonksiyonu."""
+
+    runtime_name: str
+    runtime_version: str
+    source_artifact_file: Path
+    deployment_artifact_size_bytes: int
+    parameter_count: int
+    weight_layer_macs: int
+    predict: Callable[[np.ndarray], np.ndarray]
+    cleanup: Callable[[], None]
+    metadata: dict[str, Any]
+
+
+# ==========================================================
+# ARGUMENTS
+# ==========================================================
+
+def parse_arguments() -> argparse.Namespace:
+    """Komut satırı parametrelerini oluşturur."""
+
+    parser = argparse.ArgumentParser(
+        description=(
+            "N-BaIoT family_3 için 150 ana ve 15 yardımcı CPU "
+            "verimlilik profili üretir."
+        )
+    )
+
+    parser.add_argument(
+        "--fp32-experiment-directory",
+        type=Path,
+        default=DEFAULT_FP32_EXPERIMENT_DIRECTORY,
+    )
+    parser.add_argument(
+        "--pruning-experiment-directory",
+        type=Path,
+        default=DEFAULT_PRUNING_EXPERIMENT_DIRECTORY,
+    )
+    parser.add_argument(
+        "--quantization-experiment-directory",
+        type=Path,
+        default=DEFAULT_QUANTIZATION_EXPERIMENT_DIRECTORY,
+    )
+    parser.add_argument(
+        "--pruning-qat-experiment-directory",
+        type=Path,
+        default=DEFAULT_PRUNING_QAT_EXPERIMENT_DIRECTORY,
+    )
+    parser.add_argument(
+        "--profile-experiment-directory",
+        type=Path,
+        default=DEFAULT_PROFILE_EXPERIMENT_DIRECTORY,
+    )
+    parser.add_argument(
+        "--report-directory",
+        type=Path,
+        default=DEFAULT_REPORT_DIRECTORY,
+    )
+    parser.add_argument(
+        "--protocol-file",
+        type=Path,
+        default=DEFAULT_PROTOCOL_FILE,
+    )
+    parser.add_argument(
+        "--fp32-run-file",
+        type=Path,
+        default=DEFAULT_FP32_RUN_FILE,
+    )
+    parser.add_argument(
+        "--pruning-run-file",
+        type=Path,
+        default=DEFAULT_PRUNING_RUN_FILE,
+    )
+    parser.add_argument(
+        "--quantization-run-file",
+        type=Path,
+        default=DEFAULT_QUANTIZATION_RUN_FILE,
+    )
+    parser.add_argument(
+        "--pruning-qat-run-file",
+        type=Path,
+        default=DEFAULT_PRUNING_QAT_RUN_FILE,
+    )
+    parser.add_argument(
+        "--threads",
+        type=int,
+        default=1,
+    )
+    parser.add_argument(
+        "--latency-batch-size",
+        type=int,
+        default=1,
+    )
+    parser.add_argument(
+        "--throughput-batch-size",
+        type=int,
+        default=512,
+    )
+    parser.add_argument(
+        "--latency-warmup",
+        type=int,
+        default=30,
+    )
+    parser.add_argument(
+        "--latency-repetitions",
+        type=int,
+        default=300,
+    )
+    parser.add_argument(
+        "--throughput-warmup",
+        type=int,
+        default=10,
+    )
+    parser.add_argument(
+        "--throughput-repetitions",
+        type=int,
+        default=50,
+    )
+    parser.add_argument(
+        "--synthetic-input-seed",
+        type=int,
+        default=2026,
+    )
+    parser.add_argument(
+        "--memory-sampling-interval-ms",
+        type=float,
+        default=1.0,
+    )
+    parser.add_argument(
+        "--skip-auxiliary-ort-baseline",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+    )
+
+    return parser.parse_args()
+
+
+# ==========================================================
+# GENERIC HELPERS
+# ==========================================================
+
+def validate_arguments(args: argparse.Namespace) -> None:
+    """Profil parametrelerini doğrular."""
+
+    positive_integer_fields = (
+        "threads",
+        "latency_batch_size",
+        "throughput_batch_size",
+        "latency_warmup",
+        "latency_repetitions",
+        "throughput_warmup",
+        "throughput_repetitions",
+    )
+
+    for field_name in positive_integer_fields:
+        if int(getattr(args, field_name)) <= 0:
+            raise ValueError(
+                f"{field_name} pozitif olmalıdır."
+            )
+
+    if float(args.memory_sampling_interval_ms) <= 0:
+        raise ValueError(
+            "memory-sampling-interval-ms pozitif olmalıdır."
+        )
+
+
+def json_default(value: object) -> object:
+    """NumPy ve Path nesnelerini JSON uyumlu hâle getirir."""
+
+    if isinstance(value, np.bool_):
+        return bool(value)
+    if isinstance(value, np.integer):
+        return int(value)
+    if isinstance(value, np.floating):
+        numeric_value = float(value)
+        if not np.isfinite(numeric_value):
+            return None
+        return numeric_value
+    if isinstance(value, np.ndarray):
+        return value.tolist()
+    if isinstance(value, Path):
+        return str(value)
+    raise TypeError(
+        f"{type(value).__name__} JSON ile uyumlu değil."
+    )
+
+
+def read_json(input_file: Path) -> dict[str, Any]:
+    """JSON dosyasını yükler."""
+
+    if not input_file.exists():
+        raise FileNotFoundError(
+            f"JSON dosyası bulunamadı: {input_file}"
+        )
+
+    with input_file.open("r", encoding="utf-8") as file_handle:
+        document = json.load(file_handle)
+
+    if not isinstance(document, dict):
+        raise TypeError(
+            f"JSON kökü sözlük değil: {input_file}"
+        )
+
+    return document
+
+
+def write_json_atomic(
+    document: dict[str, Any],
+    output_file: Path,
+) -> None:
+    """JSON dosyasını atomik biçimde yazar."""
+
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    temporary_file = output_file.with_suffix(
+        output_file.suffix + ".tmp"
+    )
+
+    with temporary_file.open("w", encoding="utf-8") as file_handle:
+        json.dump(
+            document,
+            file_handle,
+            indent=2,
+            ensure_ascii=False,
+            allow_nan=False,
+            default=json_default,
+        )
+
+    temporary_file.replace(output_file)
+
+
+def write_csv_atomic(
+    frame: pd.DataFrame,
+    output_file: Path,
+) -> None:
+    """CSV dosyasını atomik biçimde yazar."""
+
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    temporary_file = output_file.with_suffix(
+        output_file.suffix + ".tmp"
+    )
+    frame.to_csv(
+        temporary_file,
+        index=False,
+        encoding="utf-8",
+    )
+    temporary_file.replace(output_file)
+
+
+def calculate_sha256(
+    file_path: Path,
+    block_size: int = 1024 * 1024,
+) -> str:
+    """Dosyanın SHA-256 özetini hesaplar."""
+
+    if not file_path.exists():
+        raise FileNotFoundError(
+            f"SHA-256 girdisi bulunamadı: {file_path}"
+        )
+
+    digest = hashlib.sha256()
+    with file_path.open("rb") as file_handle:
+        while True:
+            block = file_handle.read(block_size)
+            if not block:
+                break
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def load_torch_checkpoint(checkpoint_file: Path) -> dict[str, Any]:
+    """PyTorch checkpointini CPU üzerinde yükler."""
+
+    return qbase.load_torch_checkpoint(checkpoint_file)
+
+
+def serialize_state_dict_size_bytes(model: nn.Module) -> int:
+    """Model state_dict nesnesinin seri hâle getirilmiş boyutunu ölçer."""
+
+    memory_buffer = io.BytesIO()
+    torch.save(model.state_dict(), memory_buffer)
+    return int(memory_buffer.tell())
+
+
+def count_parameters(model: nn.Module) -> int:
+    """FP32 model parametre sayısını hesaplar."""
+
+    return int(
+        sum(
+            parameter.numel()
+            for parameter in model.parameters()
+        )
+    )
+
+
+def count_weight_layer_macs(
+    model: nn.Module,
+    input_features: int = 115,
+) -> int:
+    """Linear ve Conv1d ağırlık katmanlarının örnek başına MAC sayısını ölçer."""
+
+    mac_total = 0
+    handles: list[Any] = []
+
+    def linear_hook(
+        module: nn.Linear,
+        _inputs: tuple[torch.Tensor, ...],
+        output: torch.Tensor,
+    ) -> None:
+        nonlocal mac_total
+        batch_size = int(output.shape[0])
+        output_elements_per_sample = int(
+            output.numel() // batch_size
+        )
+        mac_total += int(
+            output_elements_per_sample
+            * module.in_features
+        )
+
+    def conv_hook(
+        module: nn.Conv1d,
+        _inputs: tuple[torch.Tensor, ...],
+        output: torch.Tensor,
+    ) -> None:
+        nonlocal mac_total
+        batch_size = int(output.shape[0])
+        output_elements_per_sample = int(
+            output.numel() // batch_size
+        )
+        kernel_operations = int(
+            module.kernel_size[0]
+            * module.in_channels
+            / module.groups
+        )
+        mac_total += int(
+            output_elements_per_sample
+            * kernel_operations
+        )
+
+    for module in model.modules():
+        if isinstance(module, nn.Linear):
+            handles.append(
+                module.register_forward_hook(linear_hook)
+            )
+        elif isinstance(module, nn.Conv1d):
+            handles.append(
+                module.register_forward_hook(conv_hook)
+            )
+
+    model = model.cpu().eval()
+    sample = torch.zeros(
+        (1, input_features),
+        dtype=torch.float32,
+    )
+
+    try:
+        with torch.inference_mode():
+            output = model(sample)
+        if tuple(output.shape) != (1, 3):
+            raise RuntimeError(
+                "MAC sayımında model çıktı boyutu (1, 3) değil."
+            )
+    finally:
+        for handle in handles:
+            handle.remove()
+
+    if mac_total <= 0:
+        raise RuntimeError(
+            "Ağırlık katmanı MAC sayısı hesaplanamadı."
+        )
+
+    return int(mac_total)
+
+
+def get_process_rss_bytes() -> int | None:
+    """Süreç RSS belleğini psutil varsa döndürür."""
+
+    try:
+        import psutil
+
+        process = psutil.Process(os.getpid())
+        return int(process.memory_info().rss)
+    except (ImportError, OSError, AttributeError):
+        return None
+
+
+class PeakRssSampler:
+    """Zamanlanmış bölüm boyunca yaklaşık tepe RSS değerini örnekler."""
+
+    def __init__(self, interval_seconds: float) -> None:
+        self.interval_seconds = float(interval_seconds)
+        self._stop_event = threading.Event()
+        self._thread: threading.Thread | None = None
+        self.peak_rss_bytes: int | None = None
+
+    def _sample_loop(self) -> None:
+        while not self._stop_event.is_set():
+            current_rss = get_process_rss_bytes()
+            if current_rss is not None:
+                if self.peak_rss_bytes is None:
+                    self.peak_rss_bytes = current_rss
+                else:
+                    self.peak_rss_bytes = max(
+                        self.peak_rss_bytes,
+                        current_rss,
+                    )
+            self._stop_event.wait(self.interval_seconds)
+
+    def __enter__(self) -> "PeakRssSampler":
+        self._thread = threading.Thread(
+            target=self._sample_loop,
+            daemon=True,
+        )
+        self._thread.start()
+        return self
+
+    def __exit__(
+        self,
+        exc_type: Any,
+        exc_value: Any,
+        traceback_object: Any,
+    ) -> None:
+        self._stop_event.set()
+        if self._thread is not None:
+            self._thread.join(timeout=2.0)
+        final_rss = get_process_rss_bytes()
+        if final_rss is not None:
+            if self.peak_rss_bytes is None:
+                self.peak_rss_bytes = final_rss
+            else:
+                self.peak_rss_bytes = max(
+                    self.peak_rss_bytes,
+                    final_rss,
+                )
+
+
+def create_synthetic_input(
+    *,
+    batch_size: int,
+    feature_count: int,
+    seed: int,
+) -> np.ndarray:
+    """Deterministik, yazılabilir ve C-contiguous sentetik girdi üretir."""
+
+    generator = np.random.default_rng(seed)
+    values = generator.standard_normal(
+        size=(batch_size, feature_count),
+    )
+    return np.array(
+        values,
+        dtype=np.float32,
+        copy=True,
+        order="C",
+    )
+
+
+def percentile(values: list[float], q: float) -> float:
+    """Gecikme yüzdelik değerini hesaplar."""
+
+    return float(
+        np.percentile(
+            np.asarray(values, dtype=np.float64),
+            q,
+            method="linear",
+        )
+    )
+
+
+def calculate_summary_statistics(
+    values: np.ndarray,
+) -> dict[str, float | int]:
+    """Beş seed için özet ve %95 Student-t güven aralığı hesaplar."""
+
+    values = np.asarray(values, dtype=np.float64)
+
+    if values.ndim != 1 or len(values) == 0:
+        raise ValueError(
+            "İstatistik dizisi tek boyutlu ve boş olmayan olmalıdır."
+        )
+
+    if not np.isfinite(values).all():
+        raise ValueError(
+            "İstatistik dizisinde sonlu olmayan değer var."
+        )
+
+    sample_count = int(len(values))
+    mean_value = float(values.mean())
+    standard_deviation = float(
+        values.std(ddof=1)
+        if sample_count > 1
+        else 0.0
+    )
+    standard_error = float(
+        standard_deviation / math.sqrt(sample_count)
+        if sample_count > 1
+        else 0.0
+    )
+    critical_value = float(
+        student_t.ppf(0.975, df=sample_count - 1)
+        if sample_count > 1
+        else 0.0
+    )
+    margin = float(critical_value * standard_error)
+
+    return {
+        "sample_count": sample_count,
+        "mean": mean_value,
+        "standard_deviation": standard_deviation,
+        "standard_error": standard_error,
+        "median": float(np.median(values)),
+        "minimum": float(values.min()),
+        "maximum": float(values.max()),
+        "ci95_lower": float(mean_value - margin),
+        "ci95_upper": float(mean_value + margin),
+    }
+
+
+# ==========================================================
+# EXISTING RESULT LOOKUPS
+# ==========================================================
+
+def load_result_frames(args: argparse.Namespace) -> dict[str, pd.DataFrame]:
+    """Önceki aşamaların performans raporlarını yükler."""
+
+    file_map = {
+        "fp32": args.fp32_run_file.resolve(),
+        "pruning": args.pruning_run_file.resolve(),
+        "quantization": args.quantization_run_file.resolve(),
+        "pruning_qat": args.pruning_qat_run_file.resolve(),
+    }
+
+    frames: dict[str, pd.DataFrame] = {}
+
+    for frame_name, input_file in file_map.items():
+        if not input_file.exists():
+            raise FileNotFoundError(
+                f"Gerekli sonuç raporu bulunamadı: {input_file}"
+            )
+        frames[frame_name] = pd.read_csv(input_file)
+
+    return frames
+
+
+def lookup_test_macro_f1(
+    *,
+    frames: dict[str, pd.DataFrame],
+    model_name: str,
+    variant_name: str,
+    seed: int,
+) -> float | None:
+    """Varyantın daha önce ölçülen test Macro F1 değerini döndürür."""
+
+    if variant_name == "B0":
+        frame = frames["fp32"]
+        subset = frame[
+            (frame["model_name"].astype(str) == model_name)
+            & (pd.to_numeric(frame["seed"]) == seed)
+        ]
+    elif variant_name in PRUNING_RATIOS:
+        frame = frames["pruning"]
+        subset = frame[
+            (frame["model_name"].astype(str) == model_name)
+            & (frame["pruning_name"].astype(str) == variant_name)
+            & (pd.to_numeric(frame["seed"]) == seed)
+        ]
+    elif variant_name in {"DQ", "PTQ", "QAT"}:
+        frame = frames["quantization"]
+        subset = frame[
+            (frame["model_name"].astype(str) == model_name)
+            & (frame["method_name"].astype(str) == variant_name)
+            & (pd.to_numeric(frame["seed"]) == seed)
+        ]
+    elif variant_name.endswith("-QAT"):
+        frame = frames["pruning_qat"]
+        subset = frame[
+            (frame["model_name"].astype(str) == model_name)
+            & (frame["variant_name"].astype(str) == variant_name)
+            & (pd.to_numeric(frame["seed"]) == seed)
+        ]
+    elif variant_name == "B0-ORT":
+        return None
+    else:
+        raise KeyError(
+            f"Bilinmeyen varyant: {variant_name}"
+        )
+
+    if len(subset) != 1:
+        raise RuntimeError(
+            f"{model_name}/{variant_name}/seed{seed} için "
+            f"tek performans kaydı bulunamadı: {len(subset)}"
+        )
+
+    return float(subset.iloc[0]["test_macro_f1"])
+
+
+# ==========================================================
+# RUNNER BUILDERS
+# ==========================================================
+
+def create_torch_runner(
+    *,
+    model: nn.Module,
+    source_artifact_file: Path,
+    parameter_count: int,
+    weight_layer_macs: int,
+    runtime_variant: str,
+    metadata: dict[str, Any],
+) -> LoadedRunner:
+    """PyTorch modeli için ortak runner oluşturur."""
+
+    model = model.cpu().eval()
+    deployment_size = serialize_state_dict_size_bytes(model)
+
+    def predict(input_array: np.ndarray) -> np.ndarray:
+        input_tensor = torch.from_numpy(
+            np.array(
+                input_array,
+                dtype=np.float32,
+                copy=True,
+                order="C",
+            )
+        )
+        with torch.inference_mode():
+            output = model(input_tensor)
+        output_array = np.asarray(
+            output.detach().cpu().float().numpy(),
+            dtype=np.float32,
+        )
+        return output_array
+
+    def cleanup() -> None:
+        nonlocal model
+        del model
+
+    return LoadedRunner(
+        runtime_name=runtime_variant,
+        runtime_version=str(torch.__version__),
+        source_artifact_file=source_artifact_file,
+        deployment_artifact_size_bytes=deployment_size,
+        parameter_count=int(parameter_count),
+        weight_layer_macs=int(weight_layer_macs),
+        predict=predict,
+        cleanup=cleanup,
+        metadata=metadata,
+    )
+
+
+def create_ort_runner(
+    *,
+    model_file: Path,
+    parameter_count: int,
+    weight_layer_macs: int,
+    threads: int,
+    metadata: dict[str, Any],
+) -> LoadedRunner:
+    """ONNX Runtime CPU modeli için runner oluşturur."""
+
+    if not model_file.exists():
+        raise FileNotFoundError(
+            f"ONNX artifact bulunamadı: {model_file}"
+        )
+
+    session = qbase.create_ort_session(
+        model_file=model_file,
+        torch_threads=threads,
+    )
+    input_name = session.get_inputs()[0].name
+    output_count = len(session.get_outputs())
+
+    if output_count != 1:
+        raise RuntimeError(
+            f"ONNX modelinin çıktı sayısı 1 değil: {output_count}"
+        )
+
+    def predict(input_array: np.ndarray) -> np.ndarray:
+        output_values = session.run(
+            None,
+            {
+                input_name: np.array(
+                    input_array,
+                    dtype=np.float32,
+                    copy=True,
+                    order="C",
+                )
+            },
+        )
+        output_array = np.asarray(
+            output_values[0],
+            dtype=np.float32,
+        )
+        return output_array
+
+    def cleanup() -> None:
+        nonlocal session
+        del session
+
+    try:
+        import onnxruntime as ort
+
+        runtime_version = str(ort.__version__)
+    except (ImportError, AttributeError):
+        runtime_version = "unknown"
+
+    return LoadedRunner(
+        runtime_name="onnxruntime_cpu",
+        runtime_version=runtime_version,
+        source_artifact_file=model_file,
+        deployment_artifact_size_bytes=int(model_file.stat().st_size),
+        parameter_count=int(parameter_count),
+        weight_layer_macs=int(weight_layer_macs),
+        predict=predict,
+        cleanup=cleanup,
+        metadata=metadata,
+    )
+
+
+def load_fp32_model(
+    *,
+    model_name: str,
+    seed: int,
+    fp32_directory: Path,
+) -> tuple[nn.Module, Path]:
+    """FP32 baseline modelini yükler."""
+
+    checkpoint_file = (
+        fp32_directory
+        / model_name
+        / f"seed{seed}"
+        / "best_checkpoint.pt"
+    )
+    checkpoint = load_torch_checkpoint(checkpoint_file)
+
+    model = create_model(
+        model_name=model_name,
+        input_features=115,
+        num_classes=3,
+    )
+    model.load_state_dict(
+        checkpoint["model_state_dict"],
+        strict=True,
+    )
+    return model.cpu().eval(), checkpoint_file
+
+
+def create_baseline_resource_counts(
+    model_name: str,
+) -> tuple[int, int]:
+    """Baseline mimarinin parametre ve MAC sayısını oluşturur."""
+
+    model = create_model(
+        model_name=model_name,
+        input_features=115,
+        num_classes=3,
+    )
+    return (
+        count_parameters(model),
+        count_weight_layer_macs(model),
+    )
+
+
+def build_runner(
+    *,
+    model_name: str,
+    variant_name: str,
+    seed: int,
+    args: argparse.Namespace,
+    baseline_counts: dict[str, tuple[int, int]],
+) -> LoadedRunner:
+    """İstenen model-varyant-seed için çalıştırılabilir profil nesnesi kurar."""
+
+    baseline_parameter_count, baseline_macs = baseline_counts[model_name]
+
+    fp32_directory = args.fp32_experiment_directory.resolve()
+    pruning_directory = args.pruning_experiment_directory.resolve()
+    quantization_directory = args.quantization_experiment_directory.resolve()
+    pruning_qat_directory = args.pruning_qat_experiment_directory.resolve()
+
+    if variant_name == "B0":
+        model, checkpoint_file = load_fp32_model(
+            model_name=model_name,
+            seed=seed,
+            fp32_directory=fp32_directory,
+        )
+        return create_torch_runner(
+            model=model,
+            source_artifact_file=checkpoint_file,
+            parameter_count=baseline_parameter_count,
+            weight_layer_macs=baseline_macs,
+            runtime_variant="pytorch_fp32_cpu",
+            metadata={
+                "precision": "FP32",
+                "physical_compaction": False,
+                "quantized": False,
+            },
+        )
+
+    if variant_name == "B0-ORT":
+        model_file = (
+            quantization_directory
+            / model_name
+            / "shared"
+            / f"seed{seed}"
+            / "model_fp32.onnx"
+        )
+        return create_ort_runner(
+            model_file=model_file,
+            parameter_count=baseline_parameter_count,
+            weight_layer_macs=baseline_macs,
+            threads=args.threads,
+            metadata={
+                "precision": "FP32",
+                "physical_compaction": False,
+                "quantized": False,
+                "analysis_role": "auxiliary_runtime_matched_baseline",
+            },
+        )
+
+    if variant_name in PRUNING_RATIOS:
+        checkpoint_file = (
+            pruning_directory
+            / model_name
+            / variant_name
+            / f"seed{seed}"
+            / "best_checkpoint.pt"
+        )
+        checkpoint = load_torch_checkpoint(checkpoint_file)
+        pruning_metadata = checkpoint["pruning_metadata"]
+        model = recreate_compact_model(pruning_metadata)
+        model.load_state_dict(
+            checkpoint["model_state_dict"],
+            strict=True,
+        )
+        return create_torch_runner(
+            model=model,
+            source_artifact_file=checkpoint_file,
+            parameter_count=int(
+                pruning_metadata["compact_parameter_count"]
+            ),
+            weight_layer_macs=int(
+                pruning_metadata["compact_weight_layer_macs"]
+            ),
+            runtime_variant="pytorch_fp32_cpu",
+            metadata={
+                "precision": "FP32",
+                "physical_compaction": True,
+                "quantized": False,
+                "pruning_metadata": pruning_metadata,
+            },
+        )
+
+    if variant_name in {"DQ", "PTQ"}:
+        artifact_name = (
+            "model_dynamic_int8.onnx"
+            if variant_name == "DQ"
+            else "model_static_ptq_int8.onnx"
+        )
+        model_file = (
+            quantization_directory
+            / model_name
+            / variant_name
+            / f"seed{seed}"
+            / artifact_name
+        )
+        return create_ort_runner(
+            model_file=model_file,
+            parameter_count=baseline_parameter_count,
+            weight_layer_macs=baseline_macs,
+            threads=args.threads,
+            metadata={
+                "precision": "INT8",
+                "physical_compaction": False,
+                "quantized": True,
+                "quantization_method": variant_name,
+            },
+        )
+
+    if variant_name == "QAT":
+        run_directory = (
+            quantization_directory
+            / model_name
+            / "QAT"
+            / f"seed{seed}"
+        )
+        training_summary = read_json(
+            run_directory / "training_summary.json"
+        )
+        source_checkpoint_file = (
+            fp32_directory
+            / model_name
+            / f"seed{seed}"
+            / "best_checkpoint.pt"
+        )
+        source_checkpoint = load_torch_checkpoint(
+            source_checkpoint_file
+        )
+        prepared_state = load_torch_checkpoint(
+            Path(training_summary["best_prepared_state_file"])
+        )
+        example_inputs = (
+            torch.zeros((8, 115), dtype=torch.float32),
+        )
+        backend_name = str(training_summary["backend"])
+        backend_config, backend_config_source = qbase.resolve_backend_config(
+            backend_name
+        )
+        prepared_model = qbase.create_prepared_snapshot(
+            model_name=model_name,
+            source_model_state_dict=source_checkpoint["model_state_dict"],
+            prepared_state_dict=prepared_state,
+            input_features=115,
+            num_classes=3,
+            example_inputs=example_inputs,
+            backend_name=backend_name,
+            backend_config=backend_config,
+        )
+        converted_model = qbase.convert_qat_model(
+            prepared_model=prepared_model,
+            backend_config=backend_config,
+        )
+        artifact_file = run_directory / "converted_int8_state_dict.pt"
+        return create_torch_runner(
+            model=converted_model,
+            source_artifact_file=artifact_file,
+            parameter_count=baseline_parameter_count,
+            weight_layer_macs=baseline_macs,
+            runtime_variant="pytorch_fx_quantized_onednn_cpu",
+            metadata={
+                "precision": "INT8",
+                "physical_compaction": False,
+                "quantized": True,
+                "quantization_method": "QAT",
+                "backend": backend_name,
+                "backend_config_source": backend_config_source,
+            },
+        )
+
+    if variant_name.endswith("-QAT"):
+        pruning_name = variant_name.removesuffix("-QAT")
+        pruning_ratio = PRUNING_RATIOS[pruning_name]
+        run_directory = (
+            pruning_qat_directory
+            / model_name
+            / variant_name
+            / f"seed{seed}"
+        )
+        training_summary = read_json(
+            run_directory / "training_summary.json"
+        )
+        pruning_metadata = training_summary["pruning_metadata"]
+
+        source_model, source_checkpoint_file = load_fp32_model(
+            model_name=model_name,
+            seed=seed,
+            fp32_directory=fp32_directory,
+        )
+        compact_source_model, recomputed_metadata = physically_prune_model(
+            model_name=model_name,
+            original_model=source_model,
+            pruning_ratio=pruning_ratio,
+        )
+        recomputed_metadata_dict = recomputed_metadata.to_dict()
+
+        if (
+            recomputed_metadata_dict["selected_indices"]
+            != pruning_metadata["selected_indices"]
+        ):
+            raise RuntimeError(
+                f"{model_name}/{variant_name}/seed{seed}: "
+                "yeniden hesaplanan budama indisleri eğitim metadata kaydıyla uyuşmuyor."
+            )
+
+        prepared_state = load_torch_checkpoint(
+            Path(training_summary["best_prepared_state_file"])
+        )
+        example_inputs = (
+            torch.zeros((8, 115), dtype=torch.float32),
+        )
+        backend_name = str(training_summary["backend"])
+        backend_config, backend_config_source = qbase.resolve_backend_config(
+            backend_name
+        )
+        prepared_model = pqat.create_compact_prepared_snapshot(
+            pruning_metadata=pruning_metadata,
+            compact_source_state_dict=compact_source_model.state_dict(),
+            prepared_state_dict=prepared_state,
+            example_inputs=example_inputs,
+            backend_name=backend_name,
+            backend_config=backend_config,
+        )
+        converted_model = qbase.convert_qat_model(
+            prepared_model=prepared_model,
+            backend_config=backend_config,
+        )
+        artifact_file = run_directory / "converted_int8_state_dict.pt"
+        return create_torch_runner(
+            model=converted_model,
+            source_artifact_file=artifact_file,
+            parameter_count=int(
+                pruning_metadata["compact_parameter_count"]
+            ),
+            weight_layer_macs=int(
+                pruning_metadata["compact_weight_layer_macs"]
+            ),
+            runtime_variant="pytorch_fx_quantized_onednn_cpu",
+            metadata={
+                "precision": "INT8",
+                "physical_compaction": True,
+                "quantized": True,
+                "quantization_method": "QAT",
+                "pruning_name": pruning_name,
+                "backend": backend_name,
+                "backend_config_source": backend_config_source,
+                "pruning_metadata": pruning_metadata,
+            },
+        )
+
+    raise KeyError(
+        f"Desteklenmeyen varyant: {variant_name}"
+    )
+
+
+# ==========================================================
+# BENCHMARKING
+# ==========================================================
+
+def validate_output(
+    output: np.ndarray,
+    expected_batch_size: int,
+) -> None:
+    """Profil çıktısının boyutunu ve sonluluğunu doğrular."""
+
+    output = np.asarray(output)
+    if tuple(output.shape) != (expected_batch_size, 3):
+        raise RuntimeError(
+            "Profil model çıktısı beklenen boyutta değil: "
+            f"beklenen={(expected_batch_size, 3)}, bulunan={output.shape}"
+        )
+    if not np.isfinite(output).all():
+        raise RuntimeError(
+            "Profil model çıktısında NaN veya Inf bulundu."
+        )
+
+
+def benchmark_runner(
+    *,
+    runner: LoadedRunner,
+    latency_input: np.ndarray,
+    throughput_input: np.ndarray,
+    args: argparse.Namespace,
+    rss_before_load: int | None,
+    rss_after_load: int | None,
+) -> dict[str, Any]:
+    """Runner için gecikme, throughput ve yaklaşık bellek profilini ölçer."""
+
+    for _ in range(args.latency_warmup):
+        output = runner.predict(latency_input)
+    validate_output(output, args.latency_batch_size)
+
+    for _ in range(args.throughput_warmup):
+        throughput_output = runner.predict(throughput_input)
+    validate_output(
+        throughput_output,
+        args.throughput_batch_size,
+    )
+
+    rss_after_warmup = get_process_rss_bytes()
+    sampling_interval_seconds = float(
+        args.memory_sampling_interval_ms / 1000.0
+    )
+
+    latency_values_ms: list[float] = []
+    throughput_batch_values_ms: list[float] = []
+
+    with PeakRssSampler(sampling_interval_seconds) as rss_sampler:
+        for _ in range(args.latency_repetitions):
+            start_ns = time.perf_counter_ns()
+            output = runner.predict(latency_input)
+            end_ns = time.perf_counter_ns()
+            latency_values_ms.append(
+                float((end_ns - start_ns) / 1_000_000.0)
+            )
+
+        validate_output(output, args.latency_batch_size)
+
+        for _ in range(args.throughput_repetitions):
+            start_ns = time.perf_counter_ns()
+            throughput_output = runner.predict(throughput_input)
+            end_ns = time.perf_counter_ns()
+            throughput_batch_values_ms.append(
+                float((end_ns - start_ns) / 1_000_000.0)
+            )
+
+        validate_output(
+            throughput_output,
+            args.throughput_batch_size,
+        )
+
+    rss_peak_timed = rss_sampler.peak_rss_bytes
+
+    latency_array = np.asarray(
+        latency_values_ms,
+        dtype=np.float64,
+    )
+    throughput_array = np.asarray(
+        throughput_batch_values_ms,
+        dtype=np.float64,
+    )
+
+    throughput_mean_ms = float(throughput_array.mean())
+    throughput_samples_per_second = float(
+        args.throughput_batch_size
+        / (throughput_mean_ms / 1000.0)
+    )
+
+    def safe_delta(
+        later_value: int | None,
+        earlier_value: int | None,
+    ) -> int | None:
+        if later_value is None or earlier_value is None:
+            return None
+        return int(max(0, later_value - earlier_value))
+
+    return {
+        "latency_warmup_count": int(args.latency_warmup),
+        "latency_repetition_count": int(args.latency_repetitions),
+        "latency_batch_size": int(args.latency_batch_size),
+        "latency_mean_ms": float(latency_array.mean()),
+        "latency_median_ms": float(np.median(latency_array)),
+        "latency_p95_ms": percentile(latency_values_ms, 95.0),
+        "latency_p99_ms": percentile(latency_values_ms, 99.0),
+        "latency_minimum_ms": float(latency_array.min()),
+        "latency_standard_deviation_ms": float(
+            latency_array.std(ddof=1)
+            if len(latency_array) > 1
+            else 0.0
+        ),
+        "throughput_warmup_count": int(args.throughput_warmup),
+        "throughput_repetition_count": int(
+            args.throughput_repetitions
+        ),
+        "throughput_batch_size": int(args.throughput_batch_size),
+        "throughput_batch_mean_ms": throughput_mean_ms,
+        "throughput_samples_per_second": throughput_samples_per_second,
+        "rss_before_load_bytes": rss_before_load,
+        "rss_after_load_bytes": rss_after_load,
+        "rss_after_warmup_bytes": rss_after_warmup,
+        "rss_peak_timed_bytes": rss_peak_timed,
+        "model_load_rss_delta_bytes": safe_delta(
+            rss_after_load,
+            rss_before_load,
+        ),
+        "peak_rss_delta_vs_before_load_bytes": safe_delta(
+            rss_peak_timed,
+            rss_before_load,
+        ),
+    }
+
+
+# ==========================================================
+# PROTOCOL AND AGGREGATION
+# ==========================================================
+
+def build_environment_document(args: argparse.Namespace) -> dict[str, Any]:
+    """Profil ortamını raporlar."""
+
+    try:
+        import onnxruntime as ort
+
+        onnxruntime_version = str(ort.__version__)
+    except (ImportError, AttributeError):
+        onnxruntime_version = None
+
+    try:
+        import psutil
+
+        psutil_version = str(psutil.__version__)
+        process_memory_supported = True
+    except (ImportError, AttributeError):
+        psutil_version = None
+        process_memory_supported = False
+
+    return {
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "python_version": sys.version,
+        "python_executable": sys.executable,
+        "operating_system": platform.platform(),
+        "system": platform.system(),
+        "machine": platform.machine(),
+        "processor": platform.processor(),
+        "torch_version": str(torch.__version__),
+        "onnxruntime_version": onnxruntime_version,
+        "psutil_version": psutil_version,
+        "process_memory_supported": process_memory_supported,
+        "torch_threads": int(args.threads),
+        "torch_interop_threads": 1,
+        "quantized_engine": str(torch.backends.quantized.engine),
+        "supported_quantized_engines": list(
+            torch.backends.quantized.supported_engines
+        ),
+        "cpu_count_logical": os.cpu_count(),
+    }
+
+
+def create_or_validate_protocol(
+    *,
+    args: argparse.Namespace,
+    environment: dict[str, Any],
+) -> tuple[dict[str, Any], str]:
+    """Profil protokolünü oluşturur veya mevcut protokolü doğrular."""
+
+    protocol_file = args.protocol_file.resolve()
+    included_auxiliary = not args.skip_auxiliary_ort_baseline
+
+    expected = {
+        "protocol_name": (
+            "N-BaIoT family_3 host CPU efficiency profile"
+        ),
+        "protocol_version": "1.0",
+        "status": "locked_before_efficiency_profiling",
+        "task": "family_3",
+        "models": list(MODEL_NAMES),
+        "seeds": list(SEEDS),
+        "primary_variants": list(PRIMARY_VARIANTS),
+        "auxiliary_variants": (
+            list(AUXILIARY_VARIANTS)
+            if included_auxiliary
+            else []
+        ),
+        "planned_primary_profile_count": 150,
+        "planned_auxiliary_profile_count": (
+            15 if included_auxiliary else 0
+        ),
+        "input_policy": {
+            "source": "deterministic_synthetic_standard_normal",
+            "feature_count": 115,
+            "dtype": "float32",
+            "seed": int(args.synthetic_input_seed),
+            "train_split_used": False,
+            "validation_split_used": False,
+            "test_split_used": False,
+        },
+        "runtime_policy": {
+            "cpu_only": True,
+            "threads": int(args.threads),
+            "torch_interop_threads": 1,
+            "latency_batch_size": int(args.latency_batch_size),
+            "throughput_batch_size": int(args.throughput_batch_size),
+            "latency_warmup": int(args.latency_warmup),
+            "latency_repetitions": int(args.latency_repetitions),
+            "throughput_warmup": int(args.throughput_warmup),
+            "throughput_repetitions": int(
+                args.throughput_repetitions
+            ),
+            "memory_sampling_interval_ms": float(
+                args.memory_sampling_interval_ms
+            ),
+        },
+        "interpretation_limits": {
+            "host_specific": True,
+            "mcu_latency_claim_allowed": False,
+            "energy_claim_allowed": False,
+            "cross_runtime_results_require_runtime_column": True,
+            "rss_memory_is_process_level_approximation": True,
+        },
+        "environment": environment,
+    }
+
+    if protocol_file.exists():
+        existing = read_json(protocol_file)
+        comparison_keys = tuple(expected.keys())
+        for key in comparison_keys:
+            existing_value = existing.get(key)
+            expected_value = expected.get(key)
+
+            if key == "environment":
+                existing_value = dict(
+                    existing_value or {}
+                )
+
+                expected_value = dict(
+                    expected_value or {}
+                )
+
+                # Rapor oluşturma zamanı her çalıştırmada değişir.
+                # Bu alan donanım/yazılım ortamının kimliği değildir.
+                existing_value.pop(
+                    "generated_at_utc",
+                    None,
+                )
+
+                expected_value.pop(
+                    "generated_at_utc",
+                    None,
+                )
+
+            if existing_value != expected_value:
+                raise RuntimeError(
+                    "Mevcut verimlilik protokolü yeni ayarlarla "
+                    f"uyuşmuyor: {key}"
+                )
+        protocol = existing
+    else:
+        protocol = {
+            "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+            **expected,
+        }
+        write_json_atomic(protocol, protocol_file)
+
+    return protocol, calculate_sha256(protocol_file)
+
+
+def aggregate_profile_results(
+    run_frame: pd.DataFrame,
+) -> pd.DataFrame:
+    """Model-varyant bazında beş seed profillerini özetler."""
+
+    records: list[dict[str, Any]] = []
+
+    for model_name in MODEL_NAMES:
+        variants = tuple(
+            run_frame[
+                run_frame["model_name"] == model_name
+            ]["variant_name"].unique().tolist()
+        )
+
+        for variant_name in variants:
+            subset = run_frame[
+                (run_frame["model_name"] == model_name)
+                & (run_frame["variant_name"] == variant_name)
+            ]
+
+            for metric_name in PROFILE_NUMERIC_METRICS:
+                values = pd.to_numeric(
+                    subset[metric_name],
+                    errors="coerce",
+                ).dropna().to_numpy(dtype=np.float64)
+
+                if len(values) == 0:
+                    continue
+
+                statistics = calculate_summary_statistics(values)
+                records.append(
+                    {
+                        "model_name": model_name,
+                        "variant_name": variant_name,
+                        "analysis_role": str(
+                            subset.iloc[0]["analysis_role"]
+                        ),
+                        "runtime_name": str(
+                            subset.iloc[0]["runtime_name"]
+                        ),
+                        "metric": metric_name,
+                        **statistics,
+                    }
+                )
+
+    return pd.DataFrame(records)
+
+
+def build_tradeoff_table(
+    run_frame: pd.DataFrame,
+) -> pd.DataFrame:
+    """Ana varyantlar için Macro F1-kaynak ödünleşim özetini oluşturur."""
+
+    records: list[dict[str, Any]] = []
+
+    primary_frame = run_frame[
+        run_frame["analysis_role"] == "primary"
+    ]
+
+    for model_name in MODEL_NAMES:
+        for variant_name in PRIMARY_VARIANTS:
+            subset = primary_frame[
+                (primary_frame["model_name"] == model_name)
+                & (primary_frame["variant_name"] == variant_name)
+            ]
+
+            if len(subset) != len(SEEDS):
+                raise RuntimeError(
+                    f"{model_name}/{variant_name} için beş profil yok."
+                )
+
+            f1_values = pd.to_numeric(
+                subset["test_macro_f1"],
+                errors="raise",
+            ).to_numpy(dtype=np.float64)
+            artifact_values = pd.to_numeric(
+                subset["deployment_artifact_size_bytes"],
+                errors="raise",
+            ).to_numpy(dtype=np.float64)
+            latency_values = pd.to_numeric(
+                subset["latency_median_ms"],
+                errors="raise",
+            ).to_numpy(dtype=np.float64)
+            throughput_values = pd.to_numeric(
+                subset["throughput_samples_per_second"],
+                errors="raise",
+            ).to_numpy(dtype=np.float64)
+
+            f1_stats = calculate_summary_statistics(f1_values)
+            artifact_stats = calculate_summary_statistics(
+                artifact_values
+            )
+            latency_stats = calculate_summary_statistics(latency_values)
+            throughput_stats = calculate_summary_statistics(
+                throughput_values
+            )
+
+            records.append(
+                {
+                    "model_name": model_name,
+                    "variant_name": variant_name,
+                    "runtime_name": str(
+                        subset.iloc[0]["runtime_name"]
+                    ),
+                    "precision": str(subset.iloc[0]["precision"]),
+                    "parameter_count": int(
+                        subset.iloc[0]["parameter_count"]
+                    ),
+                    "weight_layer_macs": int(
+                        subset.iloc[0]["weight_layer_macs"]
+                    ),
+                    "mean_test_macro_f1": f1_stats["mean"],
+                    "test_macro_f1_standard_deviation": f1_stats[
+                        "standard_deviation"
+                    ],
+                    "mean_deployment_artifact_size_bytes": artifact_stats[
+                        "mean"
+                    ],
+                    "mean_latency_median_ms": latency_stats["mean"],
+                    "latency_median_ms_standard_deviation": latency_stats[
+                        "standard_deviation"
+                    ],
+                    "mean_throughput_samples_per_second": throughput_stats[
+                        "mean"
+                    ],
+                    "throughput_standard_deviation": throughput_stats[
+                        "standard_deviation"
+                    ],
+                }
+            )
+
+    return pd.DataFrame(records)
+
+
+def identify_pareto_front(tradeoff_frame: pd.DataFrame) -> pd.DataFrame:
+    """Her modelde Macro F1 maksimize, boyut ve gecikme minimize Pareto önünü belirler."""
+
+    frame = tradeoff_frame.copy()
+    frame["pareto_efficient"] = False
+
+    for model_name in MODEL_NAMES:
+        model_indices = frame.index[
+            frame["model_name"] == model_name
+        ].tolist()
+
+        for candidate_index in model_indices:
+            candidate = frame.loc[candidate_index]
+            dominated = False
+
+            for competitor_index in model_indices:
+                if competitor_index == candidate_index:
+                    continue
+
+                competitor = frame.loc[competitor_index]
+
+                no_worse = (
+                    competitor["mean_test_macro_f1"]
+                    >= candidate["mean_test_macro_f1"]
+                    and competitor[
+                        "mean_deployment_artifact_size_bytes"
+                    ]
+                    <= candidate[
+                        "mean_deployment_artifact_size_bytes"
+                    ]
+                    and competitor["mean_latency_median_ms"]
+                    <= candidate["mean_latency_median_ms"]
+                )
+
+                strictly_better = (
+                    competitor["mean_test_macro_f1"]
+                    > candidate["mean_test_macro_f1"]
+                    or competitor[
+                        "mean_deployment_artifact_size_bytes"
+                    ]
+                    < candidate[
+                        "mean_deployment_artifact_size_bytes"
+                    ]
+                    or competitor["mean_latency_median_ms"]
+                    < candidate["mean_latency_median_ms"]
+                )
+
+                if no_worse and strictly_better:
+                    dominated = True
+                    break
+
+            frame.loc[candidate_index, "pareto_efficient"] = not dominated
+
+    return frame
+
+
+# ==========================================================
+# MAIN
+# ==========================================================
+
+def main() -> None:
+    """Bütün verimlilik profillerini çalıştırır."""
+
+    args = parse_arguments()
+    validate_arguments(args)
+
+    torch.set_num_threads(int(args.threads))
+    try:
+        torch.set_num_interop_threads(1)
+    except RuntimeError:
+        pass
+
+    if "onednn" in torch.backends.quantized.supported_engines:
+        torch.backends.quantized.engine = "onednn"
+
+    environment = build_environment_document(args)
+    protocol, protocol_sha256 = create_or_validate_protocol(
+        args=args,
+        environment=environment,
+    )
+
+    result_frames = load_result_frames(args)
+
+    profile_directory = args.profile_experiment_directory.resolve()
+    report_directory = args.report_directory.resolve()
+    profile_directory.mkdir(parents=True, exist_ok=True)
+    report_directory.mkdir(parents=True, exist_ok=True)
+
+    run_report_file = (
+        report_directory
+        / "nbaiot_family3_efficiency_profile_runs.csv"
+    )
+    aggregate_report_file = (
+        report_directory
+        / "nbaiot_family3_efficiency_profile_aggregate.csv"
+    )
+    tradeoff_report_file = (
+        report_directory
+        / "nbaiot_family3_efficiency_tradeoff_summary.csv"
+    )
+    pareto_report_file = (
+        report_directory
+        / "nbaiot_family3_efficiency_pareto_front.csv"
+    )
+    summary_file = (
+        report_directory
+        / "nbaiot_family3_efficiency_profile_summary.json"
+    )
+    environment_file = (
+        report_directory
+        / "nbaiot_family3_efficiency_environment.json"
+    )
+
+    write_json_atomic(environment, environment_file)
+
+    variants_to_profile = list(PRIMARY_VARIANTS)
+    if not args.skip_auxiliary_ort_baseline:
+        variants_to_profile.extend(AUXILIARY_VARIANTS)
+
+    total_profile_count = (
+        len(MODEL_NAMES)
+        * len(SEEDS)
+        * len(variants_to_profile)
+    )
+
+    baseline_counts = {
+        model_name: create_baseline_resource_counts(model_name)
+        for model_name in MODEL_NAMES
+    }
+
+    latency_input = create_synthetic_input(
+        batch_size=args.latency_batch_size,
+        feature_count=115,
+        seed=args.synthetic_input_seed,
+    )
+    throughput_input = create_synthetic_input(
+        batch_size=args.throughput_batch_size,
+        feature_count=115,
+        seed=args.synthetic_input_seed + 1,
+    )
+
+    print("=" * 78)
+    print("N-BaIoT Family-3 CPU Verimlilik Profillemesi")
+    print("=" * 78)
+    print("Modeller          : " + ", ".join(MODEL_NAMES))
+    print("Ana varyantlar    : " + ", ".join(PRIMARY_VARIANTS))
+    print(
+        "Yardımcı varyant : "
+        + (
+            "B0-ORT"
+            if not args.skip_auxiliary_ort_baseline
+            else "Kullanılmayacak"
+        )
+    )
+    print(f"Toplam profil     : {total_profile_count}")
+    print(f"CPU thread        : {args.threads}")
+    print(
+        f"Gecikme protokolü: batch={args.latency_batch_size}, "
+        f"warmup={args.latency_warmup}, "
+        f"tekrar={args.latency_repetitions}"
+    )
+    print(
+        f"Throughput        : batch={args.throughput_batch_size}, "
+        f"warmup={args.throughput_warmup}, "
+        f"tekrar={args.throughput_repetitions}"
+    )
+    print("Veri splitleri    : Kullanılmayacak")
+    print(f"Protokol SHA-256  : {protocol_sha256}")
+    print("=" * 78)
+
+    run_records: list[dict[str, Any]] = []
+    profile_index = 0
+
+    for model_name in MODEL_NAMES:
+        for variant_name in variants_to_profile:
+            for seed in SEEDS:
+                profile_index += 1
+                analysis_role = (
+                    "auxiliary"
+                    if variant_name in AUXILIARY_VARIANTS
+                    else "primary"
+                )
+
+                output_directory = (
+                    profile_directory
+                    / model_name
+                    / variant_name
+                    / f"seed{seed}"
+                )
+                output_directory.mkdir(parents=True, exist_ok=True)
+                profile_file = output_directory / "profile.json"
+
+                print()
+                print("-" * 78)
+                print(f"Profil {profile_index}/{total_profile_count}")
+                print(f"Model   : {model_name}")
+                print(f"Varyant : {variant_name}")
+                print(f"Seed    : {seed}")
+                print("-" * 78)
+
+                if profile_file.exists() and not args.overwrite:
+                    profile_document = read_json(profile_file)
+                    if (
+                        profile_document["protocol_sha256"]
+                        != protocol_sha256
+                    ):
+                        raise RuntimeError(
+                            "Mevcut profil farklı protokole ait: "
+                            f"{profile_file}"
+                        )
+                    print("Profil mevcut; yeniden kullanılıyor.")
+                    run_records.append(profile_document["record"])
+                    continue
+
+                gc.collect()
+                rss_before_load = get_process_rss_bytes()
+
+                runner = build_runner(
+                    model_name=model_name,
+                    variant_name=variant_name,
+                    seed=seed,
+                    args=args,
+                    baseline_counts=baseline_counts,
+                )
+
+                rss_after_load = get_process_rss_bytes()
+
+                try:
+                    benchmark = benchmark_runner(
+                        runner=runner,
+                        latency_input=latency_input,
+                        throughput_input=throughput_input,
+                        args=args,
+                        rss_before_load=rss_before_load,
+                        rss_after_load=rss_after_load,
+                    )
+
+                    source_artifact_file = (
+                        runner.source_artifact_file.resolve()
+                    )
+                    source_artifact_size = int(
+                        source_artifact_file.stat().st_size
+                    )
+
+                    test_macro_f1 = lookup_test_macro_f1(
+                        frames=result_frames,
+                        model_name=model_name,
+                        variant_name=variant_name,
+                        seed=seed,
+                    )
+
+                    record = {
+                        "model_name": model_name,
+                        "variant_name": variant_name,
+                        "seed": int(seed),
+                        "analysis_role": analysis_role,
+                        "runtime_name": runner.runtime_name,
+                        "runtime_version": runner.runtime_version,
+                        "precision": str(
+                            runner.metadata.get("precision")
+                        ),
+                        "quantized": bool(
+                            runner.metadata.get("quantized", False)
+                        ),
+                        "physical_compaction": bool(
+                            runner.metadata.get(
+                                "physical_compaction",
+                                False,
+                            )
+                        ),
+                        "parameter_count": int(
+                            runner.parameter_count
+                        ),
+                        "weight_layer_macs": int(
+                            runner.weight_layer_macs
+                        ),
+                        "deployment_artifact_size_bytes": int(
+                            runner.deployment_artifact_size_bytes
+                        ),
+                        "source_artifact_size_bytes": source_artifact_size,
+                        "source_artifact_file": str(
+                            source_artifact_file
+                        ),
+                        "source_artifact_sha256": calculate_sha256(
+                            source_artifact_file
+                        ),
+                        "test_macro_f1": test_macro_f1,
+                        "input_source": (
+                            "deterministic_synthetic_standard_normal"
+                        ),
+                        "train_split_used": False,
+                        "validation_split_used": False,
+                        "test_split_used_for_profiling": False,
+                        "host_cpu_profile_only": True,
+                        "mcu_measurement": False,
+                        **benchmark,
+                    }
+
+                    profile_document = {
+                        "generated_at_utc": datetime.now(
+                            timezone.utc
+                        ).isoformat(),
+                        "protocol_file": str(
+                            args.protocol_file.resolve()
+                        ),
+                        "protocol_sha256": protocol_sha256,
+                        "record": record,
+                        "runner_metadata": runner.metadata,
+                        "validation_passed": True,
+                    }
+
+                    write_json_atomic(
+                        profile_document,
+                        profile_file,
+                    )
+                    run_records.append(record)
+
+                    print(
+                        "Artifact         : "
+                        f"{runner.deployment_artifact_size_bytes:,} byte"
+                    )
+                    print(
+                        "Parametre / MAC  : "
+                        f"{runner.parameter_count:,} / "
+                        f"{runner.weight_layer_macs:,}"
+                    )
+                    print(
+                        "Gecikme medyan   : "
+                        f"{benchmark['latency_median_ms']:.6f} ms"
+                    )
+                    print(
+                        "Gecikme p95      : "
+                        f"{benchmark['latency_p95_ms']:.6f} ms"
+                    )
+                    print(
+                        "Throughput       : "
+                        f"{benchmark['throughput_samples_per_second']:,.2f} örnek/s"
+                    )
+
+                finally:
+                    runner.cleanup()
+                    del runner
+                    gc.collect()
+
+    run_frame = pd.DataFrame(run_records)
+
+    expected_primary_count = (
+        len(MODEL_NAMES)
+        * len(SEEDS)
+        * len(PRIMARY_VARIANTS)
+    )
+    actual_primary_count = int(
+        (run_frame["analysis_role"] == "primary").sum()
+    )
+
+    if actual_primary_count != expected_primary_count:
+        raise RuntimeError(
+            "Ana profil sayısı 150 değil: "
+            f"{actual_primary_count}"
+        )
+
+    expected_total_count = total_profile_count
+    if len(run_frame) != expected_total_count:
+        raise RuntimeError(
+            "Toplam profil sayısı beklenen değerde değil: "
+            f"beklenen={expected_total_count}, bulunan={len(run_frame)}"
+        )
+
+    if run_frame.duplicated(
+        subset=[
+            "model_name",
+            "variant_name",
+            "seed",
+        ]
+    ).any():
+        raise RuntimeError(
+            "Tekrarlanan model-varyant-seed profil kaydı var."
+        )
+
+    finite_required_columns = (
+        "deployment_artifact_size_bytes",
+        "parameter_count",
+        "weight_layer_macs",
+        "latency_mean_ms",
+        "latency_median_ms",
+        "latency_p95_ms",
+        "latency_p99_ms",
+        "throughput_samples_per_second",
+    )
+
+    for column_name in finite_required_columns:
+        values = pd.to_numeric(
+            run_frame[column_name],
+            errors="raise",
+        ).to_numpy(dtype=np.float64)
+        if not np.isfinite(values).all():
+            raise RuntimeError(
+                f"{column_name} içinde sonlu olmayan değer var."
+            )
+        if np.any(values <= 0):
+            raise RuntimeError(
+                f"{column_name} içinde pozitif olmayan değer var."
+            )
+
+    aggregate_frame = aggregate_profile_results(run_frame)
+    tradeoff_frame = build_tradeoff_table(run_frame)
+    pareto_frame = identify_pareto_front(tradeoff_frame)
+
+    write_csv_atomic(run_frame, run_report_file)
+    write_csv_atomic(aggregate_frame, aggregate_report_file)
+    write_csv_atomic(tradeoff_frame, tradeoff_report_file)
+    write_csv_atomic(pareto_frame, pareto_report_file)
+
+    pareto_summary: dict[str, list[str]] = {}
+    for model_name in MODEL_NAMES:
+        pareto_summary[model_name] = (
+            pareto_frame[
+                (pareto_frame["model_name"] == model_name)
+                & (pareto_frame["pareto_efficient"])
+            ]["variant_name"].astype(str).tolist()
+        )
+
+    summary_document = {
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "analysis_name": (
+            "N-BaIoT family_3 CPU efficiency and inference profile"
+        ),
+        "analysis_version": "1.0",
+        "protocol_file": str(args.protocol_file.resolve()),
+        "protocol_sha256": protocol_sha256,
+        "models": list(MODEL_NAMES),
+        "seeds": list(SEEDS),
+        "primary_variants": list(PRIMARY_VARIANTS),
+        "auxiliary_variants": (
+            list(AUXILIARY_VARIANTS)
+            if not args.skip_auxiliary_ort_baseline
+            else []
+        ),
+        "primary_profile_count": actual_primary_count,
+        "auxiliary_profile_count": int(
+            (run_frame["analysis_role"] == "auxiliary").sum()
+        ),
+        "total_profile_count": int(len(run_frame)),
+        "pareto_efficient_variants": pareto_summary,
+        "measurement_scope": {
+            "host_cpu_only": True,
+            "mcu_measurement": False,
+            "energy_measurement": False,
+            "data_splits_used_for_profiling": False,
+            "runtime_specific": True,
+        },
+        "interpretation_note": (
+            "DQ/PTQ use ONNX Runtime while FP32, pruning-only, QAT and "
+            "pruning-QAT use PyTorch runtimes. B0-ORT is supplied as an "
+            "auxiliary runtime-matched reference for DQ/PTQ. Cross-runtime "
+            "latency differences must not be attributed solely to precision."
+        ),
+        "output_artifacts": {
+            "run_report": str(run_report_file),
+            "aggregate_report": str(aggregate_report_file),
+            "tradeoff_report": str(tradeoff_report_file),
+            "pareto_report": str(pareto_report_file),
+            "environment_report": str(environment_file),
+            "profile_directory": str(profile_directory),
+        },
+        "validation_passed": True,
+    }
+
+    write_json_atomic(summary_document, summary_file)
+
+    print()
+    print("=" * 78)
+    print("CPU Verimlilik Profillemesi Tamamlandı")
+    print("=" * 78)
+    print(f"Ana profil             : {actual_primary_count}")
+    print(
+        "Yardımcı profil       : "
+        f"{summary_document['auxiliary_profile_count']}"
+    )
+    print(f"Toplam profil          : {len(run_frame)}")
+    print("Sentetik girdi         : True")
+    print("Veri splitleri         : Kullanılmadı")
+    print("Tek CPU thread         : " + str(args.threads == 1))
+    print("MCU ölçümü             : False")
+    print("Doğrulama geçti        : True")
+    print()
+    print(f"Seed profilleri        : {run_report_file}")
+    print(f"Toplu istatistikler    : {aggregate_report_file}")
+    print(f"Ödünleşim tablosu      : {tradeoff_report_file}")
+    print(f"Pareto önü             : {pareto_report_file}")
+    print(f"Ortam raporu           : {environment_file}")
+    print(f"JSON özet              : {summary_file}")
+    print("=" * 78)
+
+
+if __name__ == "__main__":
+    main()

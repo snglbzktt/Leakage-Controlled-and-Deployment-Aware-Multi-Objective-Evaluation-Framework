@@ -1,0 +1,1479 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "artifact_name": "manuscript_asset_plan",
+  "protocol_version": "phase13_manuscript_asset_plan_v3_3",
+  "locked_at_utc": "2026-08-06T23:47:10.900097+00:00",
+  "phase12_external_dataset": "deferred_optional",
+  "scope": {
+    "figure_count": 5,
+    "table_count": 7,
+    "total_asset_count": 12,
+    "primary_manuscript_target": "IEEE Access-style article",
+    "assets_based_only_on_locked_evidence": true
+  },
+  "scientific_rules": {
+    "no_new_model_selection": true,
+    "no_checkpoint_reselection": true,
+    "no_hyperparameter_tuning": true,
+    "no_test_array_access": true,
+    "no_model_inference": true,
+    "no_source_result_mutation": true,
+    "report_descriptive_robustness": true,
+    "do_not_claim_cross_dataset_generalization": true,
+    "state_external_dataset_as_future_or_optional": true
+  },
+  "format_rules": {
+    "figure_vector_master_preferred": true,
+    "figure_raster_resolution_dpi": 600,
+    "figure_font_embedding_required": true,
+    "figure_color_blind_readability_required": true,
+    "figure_grayscale_readability_required": true,
+    "table_machine_readable_csv_required": true,
+    "table_docx_ready_required": true,
+    "table_latex_ready_required": true,
+    "decimal_precision_policy": "preserve locked values in source tables; round only presentation copies"
+  },
+  "assets": [
+    {
+      "asset_id": "figure_01_methodology_overview",
+      "asset_type": "figure",
+      "title": "Leakage-Controlled TinyML IDS Experimental Pipeline",
+      "source_sections": [
+        "phase3_lodo",
+        "phase5_compression",
+        "phase6_deployment_benchmarks",
+        "phase8_selection",
+        "phase9_deployment_artifact",
+        "phase10_release",
+        "phase11_robustness"
+      ],
+      "visual_form": "vector workflow diagram",
+      "scientific_purpose": "Summarize data controls, model training, compression, deployment benchmarking, selection, packaging, and robustness.",
+      "primary_message": "The study is an end-to-end, leakage-aware and deployment-oriented TinyML IDS workflow.",
+      "planned_outputs": [
+        "SVG",
+        "PDF",
+        "PNG"
+      ],
+      "data_access": "protocol and lock metadata only",
+      "asset_order": 1,
+      "evidence_file_count": 51,
+      "evidence_files": [
+        {
+          "section": "phase10_release",
+          "relative_path": "results/v2/audit/phase10_release_archive_locked_v3_3.json",
+          "sha256": "e7e5e3d6a44c65e96024c376daf7f81589aaea876d80775374dea5b9b8c47f3e"
+        },
+        {
+          "section": "phase10_release",
+          "relative_path": "results/v2/audit/phase10_release_archive_verification_v3_3.json",
+          "sha256": "c30e308f8950bf56e9756d8c17e4c9a881f0bac1fea9ca501c70b53c7cfccb8d"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_completed_v3_3.json",
+          "sha256": "d0f1d9c5c5d800544b359d6f5469ea3f2ae742cabbbbe270fb081538dbdd7d3a"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_execution_v3_3.json",
+          "sha256": "1fae6a5e4c1a224b00e8eee5e6ec35733ee3bc8ea834a75ea23f56fd3f8c2eec"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_locked_v3_3.json",
+          "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_verification_v3_3.json",
+          "sha256": "14cb477291bada09b4a02760381c9d29264e42251a47d575bb711d61196ee058"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv",
+          "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_detailed_results_v3_3.json",
+          "sha256": "0d4c143cd36cc71a85599e9bceee0c3406087ae08c1fe9d99272ba79338e0b76"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json",
+          "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4"
+        },
+        {
+          "section": "phase3_lodo",
+          "relative_path": "results/v2/audit/early_lodo_feature_alignment_summary_v2.json",
+          "sha256": "4a035a499161a2c8110ad26a29df0af5830479c96a42f61f1f240eb3f160777c"
+        },
+        {
+          "section": "phase3_lodo",
+          "relative_path": "results/v2/audit/early_lodo_membership_index_summary_v2.json",
+          "sha256": "8b0a3313a4701a7447da74c10a5b46730797592db3c98eb01fb7549f2b7ec49f"
+        },
+        {
+          "section": "phase3_lodo",
+          "relative_path": "results/v2/audit/early_lodo_smoke_test_locked_summary_v2.json",
+          "sha256": "856f51ad956258283c4ac802b6ef26e033fac6e31f046d6853d2796c70a1eb62"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_closure_v3_2.json",
+          "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_group_summary_v3_2.csv",
+          "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_locked_v3_2.json",
+          "sha256": "a067b62e475c1648729819d994fdc59d4050d49dc5d7596b1953f60dc7d7fc7c"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_master_run_matrix_v3_2.csv",
+          "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_paired_delta_vs_B0_v3_2.csv",
+          "sha256": "22a5b964c60f767333eebdceac9784a11b13864ea29d53889092964bf9367fdb"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_all_runs_v3_2.csv",
+          "sha256": "a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_completed_v3_2.json",
+          "sha256": "d4fd0513da9dab4e78a562d37f61b8a7a5e17a66c81ff4681c0b3c0e58400366"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv",
+          "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_lock_manifest_v3_2.json",
+          "sha256": "4dd4bc4483dd3528b51a3d6e18cf2079f89bafd6dae9430c008b13b0c165eeb7"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+          "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_locked_v3_2.json",
+          "sha256": "41ecd92802dffe1b38cf0749b22683c47f0401d92d4d809bf2f63f92b51abbce"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_lock_manifest_v3_2.json",
+          "sha256": "ea6c7ab040da5dd68de9ae447e73ca6b74b3e9c61efe82adb5edb6a872fd966f"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_locked_v3_2.json",
+          "sha256": "e6ace2c5198a9b4d26ca45a9e56b9cd63cb264451800535ac8060e9d1ce2e748"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_v3_2.json",
+          "sha256": "f047a6f8b222ccb9291c53127b891fd63f7152eb1a4c81c88a84b2035dccea20"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json",
+          "sha256": "da9a34e01207cfb98d1edb4064e0a0a0b0f3fe3adfcb199f4a73d5bb663b6016"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_verification_v3_2.json",
+          "sha256": "b356a3b9bb7a947e019c99ba15517a7473e8f0b76114a109b950fcb8140f4726"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_verified_runs_v3_2.csv",
+          "sha256": "f69a170dcb1ff5336abcea2fba284df7e3f78fd682950e152b34ef26bb8f4df3"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_matrix_v3_2.csv",
+          "sha256": "859608fcc4c59aaa558457ee081c586fb86bfb22d15b154bc81d5537519a7305"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_lock_manifest_v3_2.json",
+          "sha256": "6d145e9f69faf00f791042598209305c73b2d1c62e5452dfa58706a541475dd8"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_locked_v3_2.json",
+          "sha256": "a2fa8f4b5cfc0c173665ccbfbfd23a3756f9a9f795c91b4f9032811a3721b372"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_v3_2.json",
+          "sha256": "94108f5a737bf103bfe7f65d2ab2e34ab83fbeca95ee37f9a045a41e42f04954"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_final_model_family_lock_manifest_v3_2.json",
+          "sha256": "9ebf0ff29d9ba329ef54fd8a469428b66abf175a0df53de7933667a082dbc7ac"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_final_model_family_locked_v3_2.json",
+          "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_completed_v3_2.json",
+          "sha256": "29629d6a43f3e6fc1f47dc8bca3c1525a548948218607b1799a38c9b0447c11c"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_criteria_v3_2.csv",
+          "sha256": "bb9ab9fce3bc94f07af7be920380aaeb6f1b7a5fb2e63a49fe26164f3900ff98"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_input_matrix_v3_2.csv",
+          "sha256": "aa3213d72488093da08f6e4f5536c51e15d883d8e22b0fde697bb243b3f2d96f"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_preflight_lock_manifest_v3_2.json",
+          "sha256": "ca4383d60422be2c3de2712319a971be890e3b228c4e27c3987d666da1db8c60"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_preflight_locked_v3_2.json",
+          "sha256": "f0d4d0a057aebb99612ffe8af7c86a29ed4c527eed8f8043cb1a30e16156844d"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_preflight_v3_2.json",
+          "sha256": "a96d559921fb91d9697192c89999d457f99ba99ce4bd39cdd99dadd3c4b0f1f4"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_summary_v3_2.json",
+          "sha256": "82046fdf6171d39fa6927ee6121a389038a8eb56da51d8d3789a79106ba5fb77"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_verification_v3_2.json",
+          "sha256": "1ab1cc62c6099eb9522de66f762dba43558935c2c78dad90f52bc6645dca6670"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_eligibility_results_v3_2.csv",
+          "sha256": "c6ec23de0246555b9f127a6436dee22d6a4da4502de4a08bef473304a56c0a96"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_eligibility_verified_v3_2.csv",
+          "sha256": "fd58b29c21f626e47a4e45cf5fab9e68d871997bcde69845db316a06a967812e"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_pareto_results_v3_2.csv",
+          "sha256": "2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_pareto_verified_v3_2.csv",
+          "sha256": "b8629c9c9c535556c2e5b5bbeeb2b688990d19bc68ac5ffe8cb060cdad79069e"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_selection_trace_v3_2.csv",
+          "sha256": "79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55"
+        },
+        {
+          "section": "phase9_deployment_artifact",
+          "relative_path": "results/v2/audit/phase9_final_artifact_source_registry_v3_2.csv",
+          "sha256": "8eeefbaaa13c8bfbae85d1b49666be380b3b6e5f0e8e7a8115615f5b3067c645"
+        },
+        {
+          "section": "phase9_deployment_artifact",
+          "relative_path": "results/v2/audit/phase9_final_artifact_verification_v3_2.json",
+          "sha256": "f805fc77c0377ccf8372dc67bc50fb852c4b6a40077bd3857a390831ab4cee86"
+        },
+        {
+          "section": "phase9_deployment_artifact",
+          "relative_path": "results/v2/audit/phase9_final_deployment_artifact_locked_v3_2.json",
+          "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "figure_02_lodo_generalization",
+      "asset_type": "figure",
+      "title": "Leave-One-Device-Out Generalization",
+      "source_sections": [
+        "phase3_lodo"
+      ],
+      "visual_form": "device-level grouped point or bar chart",
+      "scientific_purpose": "Show unseen-device generalization across TinyML-MLP, Compact-DNN, and HGB.",
+      "primary_message": "Neural TinyML models retain strong performance under strict device holdout.",
+      "planned_outputs": [
+        "PDF",
+        "PNG",
+        "CSV"
+      ],
+      "data_access": "locked Phase 3 summaries only",
+      "asset_order": 2,
+      "evidence_file_count": 3,
+      "evidence_files": [
+        {
+          "section": "phase3_lodo",
+          "relative_path": "results/v2/audit/early_lodo_feature_alignment_summary_v2.json",
+          "sha256": "4a035a499161a2c8110ad26a29df0af5830479c96a42f61f1f240eb3f160777c"
+        },
+        {
+          "section": "phase3_lodo",
+          "relative_path": "results/v2/audit/early_lodo_membership_index_summary_v2.json",
+          "sha256": "8b0a3313a4701a7447da74c10a5b46730797592db3c98eb01fb7549f2b7ec49f"
+        },
+        {
+          "section": "phase3_lodo",
+          "relative_path": "results/v2/audit/early_lodo_smoke_test_locked_summary_v2.json",
+          "sha256": "856f51ad956258283c4ac802b6ef26e033fac6e31f046d6853d2796c70a1eb62"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "figure_03_compression_tradeoff",
+      "asset_type": "figure",
+      "title": "Compression Accuracy and Resource Trade-off",
+      "source_sections": [
+        "phase5_compression",
+        "phase6_deployment_benchmarks"
+      ],
+      "visual_form": "Pareto scatter with model size or latency against Macro-F1",
+      "scientific_purpose": "Compare B0, pruning, DQ, PTQ, QAT, P25-QAT, and P50-QAT.",
+      "primary_message": "P50-QAT provides a favorable TinyML deployment trade-off.",
+      "planned_outputs": [
+        "PDF",
+        "PNG",
+        "CSV"
+      ],
+      "data_access": "locked aggregate result files only",
+      "asset_order": 3,
+      "evidence_file_count": 21,
+      "evidence_files": [
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_closure_v3_2.json",
+          "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_group_summary_v3_2.csv",
+          "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_locked_v3_2.json",
+          "sha256": "a067b62e475c1648729819d994fdc59d4050d49dc5d7596b1953f60dc7d7fc7c"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_master_run_matrix_v3_2.csv",
+          "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_paired_delta_vs_B0_v3_2.csv",
+          "sha256": "22a5b964c60f767333eebdceac9784a11b13864ea29d53889092964bf9367fdb"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_all_runs_v3_2.csv",
+          "sha256": "a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_completed_v3_2.json",
+          "sha256": "d4fd0513da9dab4e78a562d37f61b8a7a5e17a66c81ff4681c0b3c0e58400366"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv",
+          "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_lock_manifest_v3_2.json",
+          "sha256": "4dd4bc4483dd3528b51a3d6e18cf2079f89bafd6dae9430c008b13b0c165eeb7"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+          "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_locked_v3_2.json",
+          "sha256": "41ecd92802dffe1b38cf0749b22683c47f0401d92d4d809bf2f63f92b51abbce"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_lock_manifest_v3_2.json",
+          "sha256": "ea6c7ab040da5dd68de9ae447e73ca6b74b3e9c61efe82adb5edb6a872fd966f"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_locked_v3_2.json",
+          "sha256": "e6ace2c5198a9b4d26ca45a9e56b9cd63cb264451800535ac8060e9d1ce2e748"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_v3_2.json",
+          "sha256": "f047a6f8b222ccb9291c53127b891fd63f7152eb1a4c81c88a84b2035dccea20"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json",
+          "sha256": "da9a34e01207cfb98d1edb4064e0a0a0b0f3fe3adfcb199f4a73d5bb663b6016"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_verification_v3_2.json",
+          "sha256": "b356a3b9bb7a947e019c99ba15517a7473e8f0b76114a109b950fcb8140f4726"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_verified_runs_v3_2.csv",
+          "sha256": "f69a170dcb1ff5336abcea2fba284df7e3f78fd682950e152b34ef26bb8f4df3"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_matrix_v3_2.csv",
+          "sha256": "859608fcc4c59aaa558457ee081c586fb86bfb22d15b154bc81d5537519a7305"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_lock_manifest_v3_2.json",
+          "sha256": "6d145e9f69faf00f791042598209305c73b2d1c62e5452dfa58706a541475dd8"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_locked_v3_2.json",
+          "sha256": "a2fa8f4b5cfc0c173665ccbfbfd23a3756f9a9f795c91b4f9032811a3721b372"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_v3_2.json",
+          "sha256": "94108f5a737bf103bfe7f65d2ab2e34ab83fbeca95ee37f9a045a41e42f04954"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "figure_04_pareto_selection",
+      "asset_type": "figure",
+      "title": "Final Model-Family Pareto Selection",
+      "source_sections": [
+        "phase6_deployment_benchmarks",
+        "phase7_statistics",
+        "phase8_selection"
+      ],
+      "visual_form": "annotated Pareto frontier",
+      "scientific_purpose": "Explain why TinyML-MLP P50-QAT was selected under the balanced policy.",
+      "primary_message": "The final family was chosen from multi-objective deployment evidence, not test-metric ranking of checkpoints.",
+      "planned_outputs": [
+        "PDF",
+        "PNG",
+        "CSV"
+      ],
+      "data_access": "locked Phase 6-8 summaries only",
+      "asset_order": 4,
+      "evidence_file_count": 46,
+      "evidence_files": [
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_all_runs_v3_2.csv",
+          "sha256": "a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_completed_v3_2.json",
+          "sha256": "d4fd0513da9dab4e78a562d37f61b8a7a5e17a66c81ff4681c0b3c0e58400366"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv",
+          "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_lock_manifest_v3_2.json",
+          "sha256": "4dd4bc4483dd3528b51a3d6e18cf2079f89bafd6dae9430c008b13b0c165eeb7"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+          "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_locked_v3_2.json",
+          "sha256": "41ecd92802dffe1b38cf0749b22683c47f0401d92d4d809bf2f63f92b51abbce"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_lock_manifest_v3_2.json",
+          "sha256": "ea6c7ab040da5dd68de9ae447e73ca6b74b3e9c61efe82adb5edb6a872fd966f"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_locked_v3_2.json",
+          "sha256": "e6ace2c5198a9b4d26ca45a9e56b9cd63cb264451800535ac8060e9d1ce2e748"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_v3_2.json",
+          "sha256": "f047a6f8b222ccb9291c53127b891fd63f7152eb1a4c81c88a84b2035dccea20"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json",
+          "sha256": "da9a34e01207cfb98d1edb4064e0a0a0b0f3fe3adfcb199f4a73d5bb663b6016"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_verification_v3_2.json",
+          "sha256": "b356a3b9bb7a947e019c99ba15517a7473e8f0b76114a109b950fcb8140f4726"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_verified_runs_v3_2.csv",
+          "sha256": "f69a170dcb1ff5336abcea2fba284df7e3f78fd682950e152b34ef26bb8f4df3"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_matrix_v3_2.csv",
+          "sha256": "859608fcc4c59aaa558457ee081c586fb86bfb22d15b154bc81d5537519a7305"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_lock_manifest_v3_2.json",
+          "sha256": "6d145e9f69faf00f791042598209305c73b2d1c62e5452dfa58706a541475dd8"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_locked_v3_2.json",
+          "sha256": "a2fa8f4b5cfc0c173665ccbfbfd23a3756f9a9f795c91b4f9032811a3721b372"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_v3_2.json",
+          "sha256": "94108f5a737bf103bfe7f65d2ab2e34ab83fbeca95ee37f9a045a41e42f04954"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_completed_v3_2.json",
+          "sha256": "eb9026bca8d7497d2f8f025cbdf5bd174354b84ece388ae23f7c729ae4c7a8c5"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_joined_matrix_v3_2.csv",
+          "sha256": "2fb465ad45209d5b47b54eaf00e3be4492c24f07cb3782fa80bef68d1178bc52"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_lock_manifest_v3_2.json",
+          "sha256": "543a93fb279b38d949fa6be035574ce4ef453da059107da6e14a8f34909efe5c"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_locked_v3_2.json",
+          "sha256": "2f182f7ef7d2885acc82c88252c4310e49ce8801045cf44f4dc8aef6cf036e48"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_preflight_lock_manifest_v3_2.json",
+          "sha256": "6fca5cfeee58099ef1f185ac22be8315557d3931b110d1a4c82e239c19dee035"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_preflight_locked_v3_2.json",
+          "sha256": "e86dff2e18d96e38e96e5c5d86ae9897d07a5ba371206573cdeba0078c556619"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_preflight_v3_2.json",
+          "sha256": "542ab965dbe11b4649f27fbbe49533d02868082c388cb1d62c0d66bc039561df"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_summary_v3_2.json",
+          "sha256": "0c3343af85283b4edf977e306dd8fc31356d860a231659c6b48cbb6ad289231d"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_verification_v3_2.json",
+          "sha256": "538ad1da336ed198924e45dc5834c94b98d0b4e5902cf2d1105cbe916f0c9eab"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_comparison_plan_v3_2.csv",
+          "sha256": "cc57da764c3ef080b41caf7ad908fa945104160e4e2dad8ad4b8c294e297d6c1"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_descriptive_summary_v3_2.csv",
+          "sha256": "49c8c6a37a265d346b1766972ae6c1d0fbb18a6a682ed4bdbdc7a4b06eda68e2"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_omnibus_results_v3_2.csv",
+          "sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_omnibus_verified_v3_2.csv",
+          "sha256": "cd0845bc8ea754f328f293f335ce9ed55ad84bfe1f4bee0aa638c42258c1c070"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_posthoc_verified_v3_2.csv",
+          "sha256": "e654b3e8ded77dfab834754331cf5c9601e312bf4616b83c6f327730e68626bd"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_posthoc_vs_B0_results_v3_2.csv",
+          "sha256": "9fff5dbbc1e455ef1c29c54d8e3762f1b01e6abfbe6027dd0c6c7a4118d19e47"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_final_model_family_lock_manifest_v3_2.json",
+          "sha256": "9ebf0ff29d9ba329ef54fd8a469428b66abf175a0df53de7933667a082dbc7ac"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_final_model_family_locked_v3_2.json",
+          "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_completed_v3_2.json",
+          "sha256": "29629d6a43f3e6fc1f47dc8bca3c1525a548948218607b1799a38c9b0447c11c"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_criteria_v3_2.csv",
+          "sha256": "bb9ab9fce3bc94f07af7be920380aaeb6f1b7a5fb2e63a49fe26164f3900ff98"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_input_matrix_v3_2.csv",
+          "sha256": "aa3213d72488093da08f6e4f5536c51e15d883d8e22b0fde697bb243b3f2d96f"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_preflight_lock_manifest_v3_2.json",
+          "sha256": "ca4383d60422be2c3de2712319a971be890e3b228c4e27c3987d666da1db8c60"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_preflight_locked_v3_2.json",
+          "sha256": "f0d4d0a057aebb99612ffe8af7c86a29ed4c527eed8f8043cb1a30e16156844d"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_preflight_v3_2.json",
+          "sha256": "a96d559921fb91d9697192c89999d457f99ba99ce4bd39cdd99dadd3c4b0f1f4"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_summary_v3_2.json",
+          "sha256": "82046fdf6171d39fa6927ee6121a389038a8eb56da51d8d3789a79106ba5fb77"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_verification_v3_2.json",
+          "sha256": "1ab1cc62c6099eb9522de66f762dba43558935c2c78dad90f52bc6645dca6670"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_eligibility_results_v3_2.csv",
+          "sha256": "c6ec23de0246555b9f127a6436dee22d6a4da4502de4a08bef473304a56c0a96"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_eligibility_verified_v3_2.csv",
+          "sha256": "fd58b29c21f626e47a4e45cf5fab9e68d871997bcde69845db316a06a967812e"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_pareto_results_v3_2.csv",
+          "sha256": "2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_pareto_verified_v3_2.csv",
+          "sha256": "b8629c9c9c535556c2e5b5bbeeb2b688990d19bc68ac5ffe8cb060cdad79069e"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_selection_trace_v3_2.csv",
+          "sha256": "79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "figure_05_input_robustness",
+      "asset_type": "figure",
+      "title": "Input Perturbation Robustness",
+      "source_sections": [
+        "phase11_robustness"
+      ],
+      "visual_form": "condition-wise Macro-F1 line chart",
+      "scientific_purpose": "Compare TinyML B0, P50-QAT, and HGB under noise, masking, and scale drift.",
+      "primary_message": "TinyML models are substantially more stable than HGB under noise and scale drift.",
+      "planned_outputs": [
+        "PDF",
+        "PNG",
+        "CSV"
+      ],
+      "data_access": "locked Phase 11 aggregate metrics only",
+      "asset_order": 5,
+      "evidence_file_count": 7,
+      "evidence_files": [
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_completed_v3_3.json",
+          "sha256": "d0f1d9c5c5d800544b359d6f5469ea3f2ae742cabbbbe270fb081538dbdd7d3a"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_execution_v3_3.json",
+          "sha256": "1fae6a5e4c1a224b00e8eee5e6ec35733ee3bc8ea834a75ea23f56fd3f8c2eec"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_locked_v3_3.json",
+          "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_verification_v3_3.json",
+          "sha256": "14cb477291bada09b4a02760381c9d29264e42251a47d575bb711d61196ee058"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv",
+          "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_detailed_results_v3_3.json",
+          "sha256": "0d4c143cd36cc71a85599e9bceee0c3406087ae08c1fe9d99272ba79338e0b76"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json",
+          "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "table_01_dataset_protocol",
+      "asset_type": "table",
+      "title": "Dataset, Split, Leakage-Control, and Evaluation Protocol",
+      "source_sections": [
+        "phase3_lodo",
+        "phase4_classical_baselines",
+        "phase5_compression"
+      ],
+      "visual_form": "manuscript summary table",
+      "scientific_purpose": "Document sample counts, feature count, class order, split controls, and test-once policy.",
+      "primary_message": "Evaluation follows locked, leakage-aware and test-isolated protocols.",
+      "planned_outputs": [
+        "CSV",
+        "DOCX-ready",
+        "LaTeX-ready"
+      ],
+      "data_access": "locked manifests and summaries only",
+      "asset_order": 6,
+      "evidence_file_count": 16,
+      "evidence_files": [
+        {
+          "section": "phase3_lodo",
+          "relative_path": "results/v2/audit/early_lodo_feature_alignment_summary_v2.json",
+          "sha256": "4a035a499161a2c8110ad26a29df0af5830479c96a42f61f1f240eb3f160777c"
+        },
+        {
+          "section": "phase3_lodo",
+          "relative_path": "results/v2/audit/early_lodo_membership_index_summary_v2.json",
+          "sha256": "8b0a3313a4701a7447da74c10a5b46730797592db3c98eb01fb7549f2b7ec49f"
+        },
+        {
+          "section": "phase3_lodo",
+          "relative_path": "results/v2/audit/early_lodo_smoke_test_locked_summary_v2.json",
+          "sha256": "856f51ad956258283c4ac802b6ef26e033fac6e31f046d6853d2796c70a1eb62"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/hist_gradient_boosting_b0_summary_v3_2.json",
+          "sha256": "cf1d3d3d7d543c71c06e6f170a4df62bfa3a1eae06e57db4653c78dcf77f0e21"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_all_runs_v3_2.csv",
+          "sha256": "601f55b571ce5a59f09bff65c60ca1a0da4d9dd1f43c7fa34d1815909f2a0009"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_completed_v3_2.json",
+          "sha256": "21845a70b6bdf481c6d75d27dc1a44872f7f0092b3af0f100d5079da8e83788d"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_lock_manifest_v3_2.json",
+          "sha256": "f9a2ceb84b6839ccc8e16c973c7fa67ff360a23bd1800ea3a3599da596f17cb1"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_model_summary_v3_2.csv",
+          "sha256": "51bd0a583fb50b8974bae822640ca8f4892beedc73edd587b651ef213b39f8cd"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_summary_v3_2.json",
+          "sha256": "a64ead61fa0f4d56c586ed3cdf6922c212dd25423bbf7fc3b59343d2a800de98"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/tabular_baseline_scaled_repair_iteration1_summary_v3_2.json",
+          "sha256": "512258d49b1e3683119bddc086efb035064301ccb11d5f368ec30fd8be8e9acb"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/tabular_baseline_scaled_repair_iteration2_summary_v3_2.json",
+          "sha256": "f43e01cf0148c3f501ffda505a14d1b06a1d52c06417b529eea17c8f2732b01c"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_closure_v3_2.json",
+          "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_group_summary_v3_2.csv",
+          "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_locked_v3_2.json",
+          "sha256": "a067b62e475c1648729819d994fdc59d4050d49dc5d7596b1953f60dc7d7fc7c"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_master_run_matrix_v3_2.csv",
+          "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_paired_delta_vs_B0_v3_2.csv",
+          "sha256": "22a5b964c60f767333eebdceac9784a11b13864ea29d53889092964bf9367fdb"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "table_02_classical_baselines",
+      "asset_type": "table",
+      "title": "Classical Baseline Performance",
+      "source_sections": [
+        "phase4_classical_baselines"
+      ],
+      "visual_form": "performance comparison table",
+      "scientific_purpose": "Report LR, DT, RF, and HGB results.",
+      "primary_message": "HGB is the strongest clean-data classical baseline but is not the most robust.",
+      "planned_outputs": [
+        "CSV",
+        "DOCX-ready",
+        "LaTeX-ready"
+      ],
+      "data_access": "locked Phase 4 summaries only",
+      "asset_order": 7,
+      "evidence_file_count": 8,
+      "evidence_files": [
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/hist_gradient_boosting_b0_summary_v3_2.json",
+          "sha256": "cf1d3d3d7d543c71c06e6f170a4df62bfa3a1eae06e57db4653c78dcf77f0e21"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_all_runs_v3_2.csv",
+          "sha256": "601f55b571ce5a59f09bff65c60ca1a0da4d9dd1f43c7fa34d1815909f2a0009"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_completed_v3_2.json",
+          "sha256": "21845a70b6bdf481c6d75d27dc1a44872f7f0092b3af0f100d5079da8e83788d"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_lock_manifest_v3_2.json",
+          "sha256": "f9a2ceb84b6839ccc8e16c973c7fa67ff360a23bd1800ea3a3599da596f17cb1"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_model_summary_v3_2.csv",
+          "sha256": "51bd0a583fb50b8974bae822640ca8f4892beedc73edd587b651ef213b39f8cd"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/phase4_classical_baselines_summary_v3_2.json",
+          "sha256": "a64ead61fa0f4d56c586ed3cdf6922c212dd25423bbf7fc3b59343d2a800de98"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/tabular_baseline_scaled_repair_iteration1_summary_v3_2.json",
+          "sha256": "512258d49b1e3683119bddc086efb035064301ccb11d5f368ec30fd8be8e9acb"
+        },
+        {
+          "section": "phase4_classical_baselines",
+          "relative_path": "results/v2/audit/tabular_baseline_scaled_repair_iteration2_summary_v3_2.json",
+          "sha256": "f43e01cf0148c3f501ffda505a14d1b06a1d52c06417b529eea17c8f2732b01c"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "table_03_compression_results",
+      "asset_type": "table",
+      "title": "Five-Seed Compression Results",
+      "source_sections": [
+        "phase5_compression"
+      ],
+      "visual_form": "mean, standard deviation, weighted Macro-F1, size, and fragility table",
+      "scientific_purpose": "Summarize all 22 architecture-variant groups.",
+      "primary_message": "QAT preserves accuracy better than post-training dynamic quantization.",
+      "planned_outputs": [
+        "CSV",
+        "DOCX-ready",
+        "LaTeX-ready"
+      ],
+      "data_access": "locked Phase 5 aggregate files only",
+      "asset_order": 8,
+      "evidence_file_count": 5,
+      "evidence_files": [
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_closure_v3_2.json",
+          "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_group_summary_v3_2.csv",
+          "sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_locked_v3_2.json",
+          "sha256": "a067b62e475c1648729819d994fdc59d4050d49dc5d7596b1953f60dc7d7fc7c"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_master_run_matrix_v3_2.csv",
+          "sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a"
+        },
+        {
+          "section": "phase5_compression",
+          "relative_path": "results/v2/audit/phase5_compression_paired_delta_vs_B0_v3_2.csv",
+          "sha256": "22a5b964c60f767333eebdceac9784a11b13864ea29d53889092964bf9367fdb"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "table_04_deployment_benchmarks",
+      "asset_type": "table",
+      "title": "CPU Deployment Benchmark Results",
+      "source_sections": [
+        "phase6_deployment_benchmarks"
+      ],
+      "visual_form": "latency, throughput, size, parameter, and MAC comparison table",
+      "scientific_purpose": "Present deployment-oriented efficiency.",
+      "primary_message": "The selected static-INT8 family reduces resource demand while retaining accuracy.",
+      "planned_outputs": [
+        "CSV",
+        "DOCX-ready",
+        "LaTeX-ready"
+      ],
+      "data_access": "locked Phase 6 benchmark summaries only",
+      "asset_order": 9,
+      "evidence_file_count": 16,
+      "evidence_files": [
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_all_runs_v3_2.csv",
+          "sha256": "a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_completed_v3_2.json",
+          "sha256": "d4fd0513da9dab4e78a562d37f61b8a7a5e17a66c81ff4681c0b3c0e58400366"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv",
+          "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_lock_manifest_v3_2.json",
+          "sha256": "4dd4bc4483dd3528b51a3d6e18cf2079f89bafd6dae9430c008b13b0c165eeb7"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+          "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_locked_v3_2.json",
+          "sha256": "41ecd92802dffe1b38cf0749b22683c47f0401d92d4d809bf2f63f92b51abbce"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_lock_manifest_v3_2.json",
+          "sha256": "ea6c7ab040da5dd68de9ae447e73ca6b74b3e9c61efe82adb5edb6a872fd966f"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_locked_v3_2.json",
+          "sha256": "e6ace2c5198a9b4d26ca45a9e56b9cd63cb264451800535ac8060e9d1ce2e748"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_preflight_v3_2.json",
+          "sha256": "f047a6f8b222ccb9291c53127b891fd63f7152eb1a4c81c88a84b2035dccea20"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json",
+          "sha256": "da9a34e01207cfb98d1edb4064e0a0a0b0f3fe3adfcb199f4a73d5bb663b6016"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_verification_v3_2.json",
+          "sha256": "b356a3b9bb7a947e019c99ba15517a7473e8f0b76114a109b950fcb8140f4726"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_benchmark_verified_runs_v3_2.csv",
+          "sha256": "f69a170dcb1ff5336abcea2fba284df7e3f78fd682950e152b34ef26bb8f4df3"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_matrix_v3_2.csv",
+          "sha256": "859608fcc4c59aaa558457ee081c586fb86bfb22d15b154bc81d5537519a7305"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_lock_manifest_v3_2.json",
+          "sha256": "6d145e9f69faf00f791042598209305c73b2d1c62e5452dfa58706a541475dd8"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_locked_v3_2.json",
+          "sha256": "a2fa8f4b5cfc0c173665ccbfbfd23a3756f9a9f795c91b4f9032811a3721b372"
+        },
+        {
+          "section": "phase6_deployment_benchmarks",
+          "relative_path": "results/v2/audit/phase6_deployment_loader_smoke_test_v3_2.json",
+          "sha256": "94108f5a737bf103bfe7f65d2ab2e34ab83fbeca95ee37f9a045a41e42f04954"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "table_05_statistical_analysis",
+      "asset_type": "table",
+      "title": "Omnibus and Post-hoc Statistical Results",
+      "source_sections": [
+        "phase7_statistics"
+      ],
+      "visual_form": "confirmatory and exploratory test table",
+      "scientific_purpose": "Report permutation omnibus results and Holm-adjusted pairwise findings.",
+      "primary_message": "Global differences are detectable, while five-seed pairwise resolution remains limited.",
+      "planned_outputs": [
+        "CSV",
+        "DOCX-ready",
+        "LaTeX-ready"
+      ],
+      "data_access": "locked Phase 7 statistical outputs only",
+      "asset_order": 10,
+      "evidence_file_count": 15,
+      "evidence_files": [
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_completed_v3_2.json",
+          "sha256": "eb9026bca8d7497d2f8f025cbdf5bd174354b84ece388ae23f7c729ae4c7a8c5"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_joined_matrix_v3_2.csv",
+          "sha256": "2fb465ad45209d5b47b54eaf00e3be4492c24f07cb3782fa80bef68d1178bc52"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_lock_manifest_v3_2.json",
+          "sha256": "543a93fb279b38d949fa6be035574ce4ef453da059107da6e14a8f34909efe5c"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_locked_v3_2.json",
+          "sha256": "2f182f7ef7d2885acc82c88252c4310e49ce8801045cf44f4dc8aef6cf036e48"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_preflight_lock_manifest_v3_2.json",
+          "sha256": "6fca5cfeee58099ef1f185ac22be8315557d3931b110d1a4c82e239c19dee035"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_preflight_locked_v3_2.json",
+          "sha256": "e86dff2e18d96e38e96e5c5d86ae9897d07a5ba371206573cdeba0078c556619"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_preflight_v3_2.json",
+          "sha256": "542ab965dbe11b4649f27fbbe49533d02868082c388cb1d62c0d66bc039561df"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_summary_v3_2.json",
+          "sha256": "0c3343af85283b4edf977e306dd8fc31356d860a231659c6b48cbb6ad289231d"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_analysis_verification_v3_2.json",
+          "sha256": "538ad1da336ed198924e45dc5834c94b98d0b4e5902cf2d1105cbe916f0c9eab"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_comparison_plan_v3_2.csv",
+          "sha256": "cc57da764c3ef080b41caf7ad908fa945104160e4e2dad8ad4b8c294e297d6c1"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_descriptive_summary_v3_2.csv",
+          "sha256": "49c8c6a37a265d346b1766972ae6c1d0fbb18a6a682ed4bdbdc7a4b06eda68e2"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_omnibus_results_v3_2.csv",
+          "sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_omnibus_verified_v3_2.csv",
+          "sha256": "cd0845bc8ea754f328f293f335ce9ed55ad84bfe1f4bee0aa638c42258c1c070"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_posthoc_verified_v3_2.csv",
+          "sha256": "e654b3e8ded77dfab834754331cf5c9601e312bf4616b83c6f327730e68626bd"
+        },
+        {
+          "section": "phase7_statistics",
+          "relative_path": "results/v2/audit/phase7_statistical_posthoc_vs_B0_results_v3_2.csv",
+          "sha256": "9fff5dbbc1e455ef1c29c54d8e3762f1b01e6abfbe6027dd0c6c7a4118d19e47"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "table_06_robustness_results",
+      "asset_type": "table",
+      "title": "Input Robustness Results",
+      "source_sections": [
+        "phase11_robustness"
+      ],
+      "visual_form": "27-run robustness result table",
+      "scientific_purpose": "Report clean and perturbed performance, FNR, degradation, and fragility.",
+      "primary_message": "HGB has five severe fragility cases; TinyML models have none.",
+      "planned_outputs": [
+        "CSV",
+        "DOCX-ready",
+        "LaTeX-ready"
+      ],
+      "data_access": "locked Phase 11 result files only",
+      "asset_order": 11,
+      "evidence_file_count": 7,
+      "evidence_files": [
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_completed_v3_3.json",
+          "sha256": "d0f1d9c5c5d800544b359d6f5469ea3f2ae742cabbbbe270fb081538dbdd7d3a"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_execution_v3_3.json",
+          "sha256": "1fae6a5e4c1a224b00e8eee5e6ec35733ee3bc8ea834a75ea23f56fd3f8c2eec"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_locked_v3_3.json",
+          "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_verification_v3_3.json",
+          "sha256": "14cb477291bada09b4a02760381c9d29264e42251a47d575bb711d61196ee058"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv",
+          "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_detailed_results_v3_3.json",
+          "sha256": "0d4c143cd36cc71a85599e9bceee0c3406087ae08c1fe9d99272ba79338e0b76"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json",
+          "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    },
+    {
+      "asset_id": "table_07_reproducibility_release",
+      "asset_type": "table",
+      "title": "Reproducibility and Release Artifacts",
+      "source_sections": [
+        "phase8_selection",
+        "phase9_deployment_artifact",
+        "phase10_release",
+        "phase11_robustness"
+      ],
+      "visual_form": "artifact and integrity table",
+      "scientific_purpose": "Document selected family, canonical checkpoint, artifact representation, release hashes, and lock status.",
+      "primary_message": "The selected deployment package is independently verified and reproducibly locked.",
+      "planned_outputs": [
+        "CSV",
+        "DOCX-ready",
+        "LaTeX-ready"
+      ],
+      "data_access": "external lock and verification files only",
+      "asset_order": 12,
+      "evidence_file_count": 27,
+      "evidence_files": [
+        {
+          "section": "phase10_release",
+          "relative_path": "results/v2/audit/phase10_release_archive_locked_v3_3.json",
+          "sha256": "e7e5e3d6a44c65e96024c376daf7f81589aaea876d80775374dea5b9b8c47f3e"
+        },
+        {
+          "section": "phase10_release",
+          "relative_path": "results/v2/audit/phase10_release_archive_verification_v3_3.json",
+          "sha256": "c30e308f8950bf56e9756d8c17e4c9a881f0bac1fea9ca501c70b53c7cfccb8d"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_completed_v3_3.json",
+          "sha256": "d0f1d9c5c5d800544b359d6f5469ea3f2ae742cabbbbe270fb081538dbdd7d3a"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_execution_v3_3.json",
+          "sha256": "1fae6a5e4c1a224b00e8eee5e6ec35733ee3bc8ea834a75ea23f56fd3f8c2eec"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_locked_v3_3.json",
+          "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/audit/phase11_input_robustness_verification_v3_3.json",
+          "sha256": "14cb477291bada09b4a02760381c9d29264e42251a47d575bb711d61196ee058"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv",
+          "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_detailed_results_v3_3.json",
+          "sha256": "0d4c143cd36cc71a85599e9bceee0c3406087ae08c1fe9d99272ba79338e0b76"
+        },
+        {
+          "section": "phase11_robustness",
+          "relative_path": "results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json",
+          "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_final_model_family_lock_manifest_v3_2.json",
+          "sha256": "9ebf0ff29d9ba329ef54fd8a469428b66abf175a0df53de7933667a082dbc7ac"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_final_model_family_locked_v3_2.json",
+          "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_completed_v3_2.json",
+          "sha256": "29629d6a43f3e6fc1f47dc8bca3c1525a548948218607b1799a38c9b0447c11c"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_criteria_v3_2.csv",
+          "sha256": "bb9ab9fce3bc94f07af7be920380aaeb6f1b7a5fb2e63a49fe26164f3900ff98"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_input_matrix_v3_2.csv",
+          "sha256": "aa3213d72488093da08f6e4f5536c51e15d883d8e22b0fde697bb243b3f2d96f"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_preflight_lock_manifest_v3_2.json",
+          "sha256": "ca4383d60422be2c3de2712319a971be890e3b228c4e27c3987d666da1db8c60"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_preflight_locked_v3_2.json",
+          "sha256": "f0d4d0a057aebb99612ffe8af7c86a29ed4c527eed8f8043cb1a30e16156844d"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_preflight_v3_2.json",
+          "sha256": "a96d559921fb91d9697192c89999d457f99ba99ce4bd39cdd99dadd3c4b0f1f4"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_summary_v3_2.json",
+          "sha256": "82046fdf6171d39fa6927ee6121a389038a8eb56da51d8d3789a79106ba5fb77"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_decision_verification_v3_2.json",
+          "sha256": "1ab1cc62c6099eb9522de66f762dba43558935c2c78dad90f52bc6645dca6670"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_eligibility_results_v3_2.csv",
+          "sha256": "c6ec23de0246555b9f127a6436dee22d6a4da4502de4a08bef473304a56c0a96"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_eligibility_verified_v3_2.csv",
+          "sha256": "fd58b29c21f626e47a4e45cf5fab9e68d871997bcde69845db316a06a967812e"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_pareto_results_v3_2.csv",
+          "sha256": "2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_pareto_verified_v3_2.csv",
+          "sha256": "b8629c9c9c535556c2e5b5bbeeb2b688990d19bc68ac5ffe8cb060cdad79069e"
+        },
+        {
+          "section": "phase8_selection",
+          "relative_path": "results/v2/audit/phase8_multi_objective_selection_trace_v3_2.csv",
+          "sha256": "79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55"
+        },
+        {
+          "section": "phase9_deployment_artifact",
+          "relative_path": "results/v2/audit/phase9_final_artifact_source_registry_v3_2.csv",
+          "sha256": "8eeefbaaa13c8bfbae85d1b49666be380b3b6e5f0e8e7a8115615f5b3067c645"
+        },
+        {
+          "section": "phase9_deployment_artifact",
+          "relative_path": "results/v2/audit/phase9_final_artifact_verification_v3_2.json",
+          "sha256": "f805fc77c0377ccf8372dc67bc50fb852c4b6a40077bd3857a390831ab4cee86"
+        },
+        {
+          "section": "phase9_deployment_artifact",
+          "relative_path": "results/v2/audit/phase9_final_deployment_artifact_locked_v3_2.json",
+          "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6"
+        }
+      ],
+      "generation_status": "planned",
+      "model_inference_required": false,
+      "test_array_access_required": false,
+      "source_mutation_allowed": false
+    }
+  ],
+  "source_inventory": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_evidence_inventory_v3_3.json",
+    "size_bytes": 171909,
+    "sha256": "d1207ad1a76404cb272c0fb066ce435725019a4522cb634d29ce628ac2bf27ca"
+  },
+  "phase11_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_locked_v3_3.json",
+    "size_bytes": 4179,
+    "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+  },
+  "generation_performed": false,
+  "model_inference_performed": false,
+  "test_array_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_asset_generation": true,
+  "all_checks_passed": true
+}

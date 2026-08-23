@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "phase": 11,
+  "artifact_name": "input_robustness_analysis",
+  "protocol_version": "phase11_input_robustness_v3_3",
+  "completed_at_utc": "2026-08-06T23:36:24.047394+00:00",
+  "execution_report": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_execution_v3_3.json",
+    "size_bytes": 2910,
+    "sha256": "1fae6a5e4c1a224b00e8eee5e6ec35733ee3bc8ea834a75ea23f56fd3f8c2eec"
+  },
+  "results_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3",
+  "aggregate_csv_sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090",
+  "summary_sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4",
+  "detailed_results_sha256": "0d4c143cd36cc71a85599e9bceee0c3406087ae08c1fe9d99272ba79338e0b76",
+  "completed_evaluation_count": 27,
+  "model_retraining_performed": false,
+  "test_used_for_model_selection": false,
+  "final_model_changed": false,
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

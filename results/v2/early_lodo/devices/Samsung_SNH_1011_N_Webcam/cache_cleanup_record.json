@@ -1,0 +1,103 @@
+{
+  "protocol_version": "early_lodo_cache_cleanup_v2_1",
+  "status": "completed",
+  "verified_at": "2026-08-05T22:23:06.150842+00:00",
+  "held_out_device": "Samsung_SNH_1011_N_Webcam",
+  "cache_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam",
+  "retained_files": [
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\cache_summary.json",
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\scaler.npz"
+  ],
+  "removed_files": [
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\test_global_indices.npy",
+      "size_bytes": 2875072,
+      "sha256": "4b8cc45471eb9ac5e37f50e7f5705c76ec5de99da3faa4ce43b3fa7ab3de823d"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\test_occurrence_count.npy",
+      "size_bytes": 1437600,
+      "sha256": "3fc836aa7a71f96de067206439a32b0fa4a791279fa7970fdacc8b30687c8f50"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\test_source_split.npy",
+      "size_bytes": 359496,
+      "sha256": "285c19eb1a1b206d2d7473181d510ef9d02ac2bfa5c5942efa5834868658c584"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\train_global_indices.npy",
+      "size_bytes": 11891272,
+      "sha256": "3af65a8c8eb862f98cf50eaae9d47263822f333cf3e4612e51ef449e9fa11ed3"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\validation_global_indices.npy",
+      "size_bytes": 2545368,
+      "sha256": "0b9840836ffc53bed092bb5e7d4eb09b7b1e7d11d07718f0cc9c1e78b72c666b"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\x_test.npy",
+      "size_bytes": 165309408,
+      "sha256": "1a98e0efa8b6f2490ae7021671a9800ba9a300a9e44f0a17787d1d04c77010d4"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\x_train.npy",
+      "size_bytes": 683740908,
+      "sha256": "68a9e5ad88bf341815ce97cc903571fcc535f5e9ef5dbbb262020c44ec6ca3ed"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\x_validation.npy",
+      "size_bytes": 146351428,
+      "sha256": "43738e4523476c2fb83e718631b83d1b06c96fb4e198282935fe5b28dc64d8c8"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\y_test.npy",
+      "size_bytes": 359496,
+      "sha256": "8ced5944db7eff304da297f29bf2dc13e47ed49266fe253486ee0718bee9258b"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\y_train.npy",
+      "size_bytes": 1486521,
+      "sha256": "d5b3a8984014b5123c73a4a8a0111eb59f5bda33c9644a2b599273f51484cce6"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Samsung_SNH_1011_N_Webcam\\y_validation.npy",
+      "size_bytes": 318283,
+      "sha256": "0721dc454c146b8bb7cf42a9f2d74add45611d60ea195164f64d16913d80b8d6"
+    }
+  ],
+  "expected_reclaimed_bytes": 1016674852,
+  "device_summary_sha256": "7478e1daba945c401a34348bca1b4a3fce0c97ec8f883ae61008785edb31f32c",
+  "cache_manifest_sha256": "527cf92a11c926197cf9de6db1cd975066af86b5592d48fa6dbd8bd0ca9d31a8",
+  "device_release_manifest_sha256": "61517d1597486577834a1373e429de263fe9eec5b962d24a638f07af304564e9",
+  "pre_cleanup_validation_checks": {
+    "device_summary_complete": true,
+    "device_summary_checks_passed": true,
+    "three_models_completed": true,
+    "cache_cleanup_eligible": true,
+    "one_device_ledger_row": true,
+    "device_ledger_complete": true,
+    "device_ledger_cleanup_eligible": true,
+    "cache_directory_exists": true,
+    "cache_manifest_nonempty": true,
+    "manifest_paths_inside_cache": true,
+    "manifest_matches_cache_directory": true,
+    "manifest_sizes_match": true,
+    "manifest_hashes_match": true,
+    "removable_files_found": true,
+    "retained_files_present": true
+  },
+  "all_pre_cleanup_checks_passed": true,
+  "completed_at": "2026-08-05T22:23:06.259339+00:00",
+  "removed_file_count": 11,
+  "reclaimed_bytes": 1016674852,
+  "reclaimed_gb": 0.9468522407114506,
+  "post_cleanup_validation_checks": {
+    "all_removable_files_removed": true,
+    "retained_files_still_present": true,
+    "cache_directory_retained": true,
+    "device_summary_unchanged": true,
+    "cache_manifest_unchanged": true,
+    "device_release_manifest_unchanged": true
+  },
+  "all_post_cleanup_checks_passed": true
+}

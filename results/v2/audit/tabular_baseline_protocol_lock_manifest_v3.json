@@ -1,0 +1,13 @@
+{
+  "protocol_version": "tabular_baseline_protocol_v3_1",
+  "status": "locked",
+  "locked_at": "2026-08-06T11:48:03.753947+00:00",
+  "protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_locked_v3.json",
+  "protocol_file_sha256": "d345b22bdf2e88201a057fae2e5c2e532af53e3fcbf539664637a22e26ddcb03",
+  "run_matrix_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_run_matrix_v3.csv",
+  "run_matrix_file_sha256": "c85e9a943f4834f4589dba43638c58da790b4080651b49f831f2b3e0cefbedef",
+  "split_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\splits\\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v3.sqlite",
+  "split_database_sha256": "b0ca085042243eb01b7b9080fd33aab11024c1b7f7138c7e49458e13ad550ad7",
+  "expected_run_count": 12,
+  "all_checks_passed": true
+}

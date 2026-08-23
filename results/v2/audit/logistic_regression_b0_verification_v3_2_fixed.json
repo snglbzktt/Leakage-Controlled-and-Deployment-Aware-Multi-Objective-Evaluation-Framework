@@ -1,0 +1,473 @@
+{
+  "status": "passed",
+  "generated_at_utc": "2026-08-06T13:31:01.547173+00:00",
+  "run_id": "logistic_regression_b0__seed_2026",
+  "model_id": "logistic_regression_b0",
+  "seed": 2026,
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "scientific_status": "completed_with_convergence_warning",
+  "interpretation": "The locked max_iter=200 run reached the iteration limit and is retained exactly as pre-specified. Metrics and artifacts are valid, but coefficient convergence was not established.",
+  "verification_precision_policy": "Recompute probability-based metrics from the saved float32 probability artifacts without casting them to float64, matching the locked runner metric path exactly.",
+  "run_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\logistic_regression_b0__seed_2026",
+  "run_directory_size_bytes": 6599518,
+  "free_disk_gib": 6.883918762207031,
+  "stored_metrics": {
+    "test_fingerprint_macro_f1": 0.9969917304947536,
+    "test_fingerprint_accuracy": 0.9981306953275452,
+    "test_raw_weighted_macro_f1": 0.9965715089779147,
+    "test_gafgyt_fnr": 0.0032791588957432616,
+    "test_mirai_fnr": 0.0019472969566879383
+  },
+  "recomputed_metrics": {
+    "validation_primary": {
+      "accuracy": 0.9981172521564187,
+      "macro_precision": 0.9959811271077075,
+      "macro_recall": 0.9979794597782453,
+      "balanced_accuracy": 0.9979794597782453,
+      "macro_f1": 0.9969758208342863,
+      "weighted_f1": 0.99811994883611,
+      "log_loss": 0.01028295885771513,
+      "roc_auc_ovr_macro": 0.9997134801613488,
+      "confusion_matrix": [
+        [
+          76958,
+          51,
+          13
+        ],
+        [
+          84,
+          48632,
+          77
+        ],
+        [
+          14,
+          461,
+          245507
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.9987281976744186,
+          "recall": 0.999169068577809,
+          "f1": 0.9989485844831838,
+          "support": 77022.0,
+          "false_negative_rate": 0.0008309314221910391
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.989581637636334,
+          "recall": 0.9967003463611583,
+          "f1": 0.9931282354983305,
+          "support": 48793.0,
+          "false_negative_rate": 0.0032996536388416597
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.9996335460123699,
+          "recall": 0.9980689643957688,
+          "f1": 0.9988506425213445,
+          "support": 245982.0,
+          "false_negative_rate": 0.001931035604231246
+        }
+      }
+    },
+    "validation_raw_weighted": {
+      "accuracy": 0.9974570271571376,
+      "macro_precision": 0.9956073685076605,
+      "macro_recall": 0.9977098273894494,
+      "balanced_accuracy": 0.9977098273894494,
+      "macro_f1": 0.9966537267362637,
+      "weighted_f1": 0.9974579567666122,
+      "log_loss": 0.015357918205034904,
+      "roc_auc_ovr_macro": 0.9996168088172953,
+      "confusion_matrix": [
+        [
+          83270,
+          88,
+          32
+        ],
+        [
+          729,
+          424322,
+          689
+        ],
+        [
+          28,
+          1128,
+          549104
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.990990990990991,
+          "recall": 0.9985609785345965,
+          "f1": 0.9947615833517505,
+          "support": 83390.0,
+          "false_negative_rate": 0.0014390214654035338
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.9971424408630957,
+          "recall": 0.9966693286982665,
+          "f1": 0.9969058286482206,
+          "support": 425740.0,
+          "false_negative_rate": 0.003330671301733479
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.9986886736688947,
+          "recall": 0.9978991749354851,
+          "f1": 0.9982937682088202,
+          "support": 550260.0,
+          "false_negative_rate": 0.002100825064514922
+        }
+      }
+    },
+    "test_primary": {
+      "accuracy": 0.9981306953275452,
+      "macro_precision": 0.9959768535316346,
+      "macro_recall": 0.9980154899044411,
+      "balanced_accuracy": 0.9980154899044411,
+      "macro_f1": 0.9969917304947536,
+      "weighted_f1": 0.9981333527656437,
+      "log_loss": 0.010606661438941956,
+      "roc_auc_ovr_macro": 0.9996768041487547,
+      "confusion_matrix": [
+        [
+          76965,
+          48,
+          8
+        ],
+        [
+          90,
+          48633,
+          70
+        ],
+        [
+          19,
+          460,
+          245503
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.998585774710019,
+          "recall": 0.9992729255657548,
+          "f1": 0.9989292319672929,
+          "support": 77021.0,
+          "false_negative_rate": 0.0007270744342452451
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.9896624000325593,
+          "recall": 0.9967208411042567,
+          "f1": 0.9931790797884289,
+          "support": 48793.0,
+          "false_negative_rate": 0.0032791588957432616
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.9996823858523257,
+          "recall": 0.9980527030433121,
+          "f1": 0.9988668797285394,
+          "support": 245982.0,
+          "false_negative_rate": 0.0019472969566879383
+        }
+      }
+    },
+    "test_raw_weighted": {
+      "accuracy": 0.9974730812833387,
+      "macro_precision": 0.9953927491370801,
+      "macro_recall": 0.9977626018619589,
+      "balanced_accuracy": 0.9977626018619589,
+      "macro_f1": 0.9965715089779147,
+      "weighted_f1": 0.9974742797568742,
+      "log_loss": 0.01623877651944936,
+      "roc_auc_ovr_macro": 0.9995651022511857,
+      "confusion_matrix": [
+        [
+          83282,
+          89,
+          19
+        ],
+        [
+          788,
+          424334,
+          620
+        ],
+        [
+          37,
+          1124,
+          549100
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "label": 0,
+          "precision": 0.9901910661419382,
+          "recall": 0.9987048806811368,
+          "f1": 0.9944297509806146,
+          "support": 83390.0,
+          "false_negative_rate": 0.0012951193188631693
+        },
+        "gafgyt": {
+          "label": 1,
+          "precision": 0.9971495510484153,
+          "recall": 0.9966928327484721,
+          "f1": 0.9969211395894931,
+          "support": 425742.0,
+          "false_negative_rate": 0.0033071672515279094
+        },
+        "mirai": {
+          "label": 2,
+          "precision": 0.9988376302208867,
+          "recall": 0.9978900921562677,
+          "f1": 0.9983636363636363,
+          "support": 550261.0,
+          "false_negative_rate": 0.002109907843732328
+        }
+      }
+    }
+  },
+  "recomputed_fragility_gate": {
+    "macro_f1_below_0_85": false,
+    "gafgyt_fnr_above_0_40": false,
+    "mirai_fnr_above_0_40": false,
+    "triggered": false
+  },
+  "prediction_checks": {
+    "validation_y_true_shape": true,
+    "validation_y_pred_shape": true,
+    "validation_probabilities_shape": true,
+    "validation_raw_count_shape": true,
+    "test_y_true_shape": true,
+    "test_y_pred_shape": true,
+    "test_probabilities_shape": true,
+    "test_raw_count_shape": true,
+    "validation_raw_rows_match": true,
+    "test_raw_rows_match": true,
+    "all_validation_probabilities_finite": true,
+    "all_test_probabilities_finite": true,
+    "validation_probability_rows_sum_to_one": true,
+    "test_probability_rows_sum_to_one": true
+  },
+  "metric_checks": {
+    "validation_primary_accuracy_matches": true,
+    "validation_primary_macro_precision_matches": true,
+    "validation_primary_macro_recall_matches": true,
+    "validation_primary_balanced_accuracy_matches": true,
+    "validation_primary_macro_f1_matches": true,
+    "validation_primary_weighted_f1_matches": true,
+    "validation_primary_log_loss_matches": true,
+    "validation_primary_roc_auc_ovr_macro_matches": true,
+    "validation_primary_confusion_matrix_matches": true,
+    "validation_primary_benign_precision_matches": true,
+    "validation_primary_benign_recall_matches": true,
+    "validation_primary_benign_f1_matches": true,
+    "validation_primary_benign_support_matches": true,
+    "validation_primary_benign_false_negative_rate_matches": true,
+    "validation_primary_gafgyt_precision_matches": true,
+    "validation_primary_gafgyt_recall_matches": true,
+    "validation_primary_gafgyt_f1_matches": true,
+    "validation_primary_gafgyt_support_matches": true,
+    "validation_primary_gafgyt_false_negative_rate_matches": true,
+    "validation_primary_mirai_precision_matches": true,
+    "validation_primary_mirai_recall_matches": true,
+    "validation_primary_mirai_f1_matches": true,
+    "validation_primary_mirai_support_matches": true,
+    "validation_primary_mirai_false_negative_rate_matches": true,
+    "validation_weighted_accuracy_matches": true,
+    "validation_weighted_macro_precision_matches": true,
+    "validation_weighted_macro_recall_matches": true,
+    "validation_weighted_balanced_accuracy_matches": true,
+    "validation_weighted_macro_f1_matches": true,
+    "validation_weighted_weighted_f1_matches": true,
+    "validation_weighted_log_loss_matches": true,
+    "validation_weighted_roc_auc_ovr_macro_matches": true,
+    "validation_weighted_confusion_matrix_matches": true,
+    "validation_weighted_benign_precision_matches": true,
+    "validation_weighted_benign_recall_matches": true,
+    "validation_weighted_benign_f1_matches": true,
+    "validation_weighted_benign_support_matches": true,
+    "validation_weighted_benign_false_negative_rate_matches": true,
+    "validation_weighted_gafgyt_precision_matches": true,
+    "validation_weighted_gafgyt_recall_matches": true,
+    "validation_weighted_gafgyt_f1_matches": true,
+    "validation_weighted_gafgyt_support_matches": true,
+    "validation_weighted_gafgyt_false_negative_rate_matches": true,
+    "validation_weighted_mirai_precision_matches": true,
+    "validation_weighted_mirai_recall_matches": true,
+    "validation_weighted_mirai_f1_matches": true,
+    "validation_weighted_mirai_support_matches": true,
+    "validation_weighted_mirai_false_negative_rate_matches": true,
+    "test_primary_accuracy_matches": true,
+    "test_primary_macro_precision_matches": true,
+    "test_primary_macro_recall_matches": true,
+    "test_primary_balanced_accuracy_matches": true,
+    "test_primary_macro_f1_matches": true,
+    "test_primary_weighted_f1_matches": true,
+    "test_primary_log_loss_matches": true,
+    "test_primary_roc_auc_ovr_macro_matches": true,
+    "test_primary_confusion_matrix_matches": true,
+    "test_primary_benign_precision_matches": true,
+    "test_primary_benign_recall_matches": true,
+    "test_primary_benign_f1_matches": true,
+    "test_primary_benign_support_matches": true,
+    "test_primary_benign_false_negative_rate_matches": true,
+    "test_primary_gafgyt_precision_matches": true,
+    "test_primary_gafgyt_recall_matches": true,
+    "test_primary_gafgyt_f1_matches": true,
+    "test_primary_gafgyt_support_matches": true,
+    "test_primary_gafgyt_false_negative_rate_matches": true,
+    "test_primary_mirai_precision_matches": true,
+    "test_primary_mirai_recall_matches": true,
+    "test_primary_mirai_f1_matches": true,
+    "test_primary_mirai_support_matches": true,
+    "test_primary_mirai_false_negative_rate_matches": true,
+    "test_weighted_accuracy_matches": true,
+    "test_weighted_macro_precision_matches": true,
+    "test_weighted_macro_recall_matches": true,
+    "test_weighted_balanced_accuracy_matches": true,
+    "test_weighted_macro_f1_matches": true,
+    "test_weighted_weighted_f1_matches": true,
+    "test_weighted_log_loss_matches": true,
+    "test_weighted_roc_auc_ovr_macro_matches": true,
+    "test_weighted_confusion_matrix_matches": true,
+    "test_weighted_benign_precision_matches": true,
+    "test_weighted_benign_recall_matches": true,
+    "test_weighted_benign_f1_matches": true,
+    "test_weighted_benign_support_matches": true,
+    "test_weighted_benign_false_negative_rate_matches": true,
+    "test_weighted_gafgyt_precision_matches": true,
+    "test_weighted_gafgyt_recall_matches": true,
+    "test_weighted_gafgyt_f1_matches": true,
+    "test_weighted_gafgyt_support_matches": true,
+    "test_weighted_gafgyt_false_negative_rate_matches": true,
+    "test_weighted_mirai_precision_matches": true,
+    "test_weighted_mirai_recall_matches": true,
+    "test_weighted_mirai_f1_matches": true,
+    "test_weighted_mirai_support_matches": true,
+    "test_weighted_mirai_false_negative_rate_matches": true
+  },
+  "parameter_checks": {
+    "model_classes_match": true,
+    "model_coefficient_shape_matches": true,
+    "model_intercept_shape_matches": true,
+    "model_n_iter_is_200": true,
+    "saved_coefficients_match_model": true,
+    "saved_intercept_matches_model": true,
+    "model_penalty_matches": true,
+    "model_C_matches": true,
+    "model_solver_matches": true,
+    "model_max_iter_matches": true,
+    "model_tol_matches": true,
+    "model_fit_intercept_matches": true,
+    "model_class_weight_matches": true,
+    "model_random_state_matches": true
+  },
+  "artifact_checks": [
+    {
+      "relative_path": "metrics.json",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "model.joblib",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "model_parameters.npz",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "test_confusion_fingerprint.csv",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "test_confusion_raw_weighted.csv",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "test_per_class_metrics.csv",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "test_predictions.npz",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "validation_confusion_fingerprint.csv",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "validation_confusion_raw_weighted.csv",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "validation_per_class_metrics.csv",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "validation_predictions.npz",
+      "exists": true,
+      "size_matches": true,
+      "sha256_matches": true
+    }
+  ],
+  "checks": {
+    "run_manifest_status_matches_warning": true,
+    "run_status_matches_warning": true,
+    "run_status_stage_completed": true,
+    "run_id_matches": true,
+    "model_id_matches": true,
+    "seed_matches": true,
+    "protocol_version_matches": true,
+    "final_cache_verification_passed": true,
+    "cache_manifest_completed": true,
+    "base_protocol_locked": true,
+    "base_protocol_hash_matches": true,
+    "addendum_locked": true,
+    "addendum_hash_matches": true,
+    "training_fingerprint_count_matches": true,
+    "training_sample_weight_is_none": true,
+    "training_converged_false": true,
+    "convergence_warning_present": true,
+    "test_evaluation_count_is_one": true,
+    "temporary_scaled_train_removed": true,
+    "fragility_gate_not_triggered": true,
+    "stored_gafgyt_fnr_matches_recomputed": true,
+    "stored_mirai_fnr_matches_recomputed": true,
+    "all_prediction_checks_pass": true,
+    "all_metric_recomputations_match": true,
+    "all_parameter_checks_pass": true,
+    "all_manifest_artifacts_exist": true,
+    "all_manifest_artifact_sizes_match": true,
+    "all_manifest_artifact_hashes_match": true,
+    "run_manifest_integrity_passed": true,
+    "sklearn_version_is_1_9_0": true
+  },
+  "failed_checks": [],
+  "all_checks_passed": true
+}

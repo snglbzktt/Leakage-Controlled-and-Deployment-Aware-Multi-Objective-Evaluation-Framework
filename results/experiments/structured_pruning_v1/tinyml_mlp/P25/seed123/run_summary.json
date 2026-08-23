@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-07-24T13:57:14.612073+00:00",
+  "model_name": "tinyml_mlp",
+  "seed": 123,
+  "pruning_name": "P25",
+  "pruning_ratio": 0.25,
+  "pruning_protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_structured_pruning_protocol_v1.json",
+  "pruning_protocol_sha256": "f2bec24161421c6665c91aaf821c75f7f43485b7b32f49e68b64425f8a3f499b",
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tinyml_mlp\\seed123\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "6dead8bb60cea17870f9d35d340e4b1d0bdff08194d06df0d5b12398b67784e4",
+  "training_summary_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tinyml_mlp\\P25\\seed123\\training_summary.json",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tinyml_mlp\\P25\\seed123\\test_metrics.json",
+  "test_evaluation_attempt_count": 1,
+  "test_used_for_model_selection": false,
+  "scientific_result_status": "main_structured_pruning_result",
+  "validation_passed": true
+}

@@ -1,0 +1,77 @@
+{
+  "status": "completed",
+  "protocol_version": "hgb_p50_fair_decision_benchmark_v3_6_r2",
+  "scientific_role": "post-selection operation-matched CPU comparison",
+  "comparison_definition": {
+    "same_model_seed": 2026,
+    "same_repeat_unit": "five isolated process repeats per locked model",
+    "same_output_semantics": "predicted class labels",
+    "preprocessing_inside_timed_region": false,
+    "model_loading_inside_timed_region": false,
+    "runtime_control_context_inside_timed_call": false,
+    "native_storage_format_neutral": false
+  },
+  "models": {
+    "tinyml_mlp_P50_QAT": {
+      "repeat_count": 5,
+      "batch_1_median_ms": {
+        "mean": 0.22338,
+        "std_population": 0.06578623412234506,
+        "minimum": 0.1899,
+        "maximum": 0.35495
+      },
+      "batch_1_p95_ms": {
+        "mean": 0.45983799999999986,
+        "std_population": 0.12158183222011418,
+        "minimum": 0.3468899999999998,
+        "maximum": 0.6749399999999998
+      },
+      "batch_32_samples_per_second": {
+        "mean": 74618.78754916675,
+        "std_population": 21862.08500342102,
+        "minimum": 30927.27210345559,
+        "maximum": 86702.18746909541
+      },
+      "native_artifact_bytes": 12199,
+      "native_artifact_kind": "PyTorch serialized state_dict"
+    },
+    "hist_gradient_boosting_B0": {
+      "repeat_count": 5,
+      "batch_1_median_ms": {
+        "mean": 2.20927,
+        "std_population": 0.023259785037699786,
+        "minimum": 2.17805,
+        "maximum": 2.2406
+      },
+      "batch_1_p95_ms": {
+        "mean": 3.4392729999999987,
+        "std_population": 0.3979401619163367,
+        "minimum": 3.086379999999996,
+        "maximum": 3.982515
+      },
+      "batch_32_samples_per_second": {
+        "mean": 10209.183992858269,
+        "std_population": 274.0342092073126,
+        "minimum": 9685.826593738446,
+        "maximum": 10496.776341578223
+      },
+      "native_artifact_bytes": 367362,
+      "native_artifact_kind": "compressed joblib file"
+    }
+  },
+  "descriptive_ratios": {
+    "hgb_over_p50_batch1_latency": 9.890187125078342,
+    "p50_over_hgb_batch32_throughput": 7.30898645781735
+  },
+  "data_access": {
+    "validation_data_access": false,
+    "test_data_access": false
+  },
+  "tinyml_model_family_reselected": false,
+  "all_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hgb_p50_fair_decision_benchmark_all_runs_v3_6_r2.csv",
+    "sha256": "7720ee0a42a31f767b2a6d37fedb6e8b6a7430f3af93cf28cad3caeeb8b6e38d"
+  },
+  "completed_at_utc": "2026-08-13T10:54:03.483708+00:00",
+  "all_checks_passed": true
+}

@@ -1,0 +1,47 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "asset_id": "table_05_statistical_analysis",
+  "locked_at_utc": "2026-08-07T07:59:00.148690+00:00",
+  "metadata": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\metadata\\table_05_statistical_analysis_metadata_v3_3.json",
+    "sha256": "452e64ca6fb0bcc7b17795c5adb2d4986473c3109a3a2f2d59279c03a12a4c06"
+  },
+  "outputs": {
+    "csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_05_statistical_analysis_v3_3.csv",
+      "sha256": "5448dd8cc9f0685cdb175c79b34120bba633a24300022b20bd536f43dac4a4fe",
+      "size_bytes": 1872
+    },
+    "markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_05_statistical_analysis_v3_3.md",
+      "sha256": "6833952512e0266dfdf480a52bd56be8c756272daf30d0cf34f6fb81000e0e1e",
+      "size_bytes": 2394
+    },
+    "source_omnibus_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_05_statistical_omnibus_source_v3_3.csv",
+      "sha256": "848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2",
+      "size_bytes": 4639
+    },
+    "source_posthoc_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_05_statistical_posthoc_source_v3_3.csv",
+      "sha256": "e654b3e8ded77dfab834754331cf5c9601e312bf4616b83c6f327730e68626bd",
+      "size_bytes": 20131
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\table_05_statistical_analysis_caption_v3_3.txt",
+      "sha256": "fb05c53cc047e6ee6bbe1284c4b287f8ff37de510ed24d9621e70a08563f58b5",
+      "size_bytes": 638
+    }
+  },
+  "table_row_count": 16,
+  "omnibus_analysis_count": 16,
+  "posthoc_comparison_count": 160,
+  "nominal_omnibus_rejection_count": 16,
+  "holm_posthoc_rejection_count": 0,
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

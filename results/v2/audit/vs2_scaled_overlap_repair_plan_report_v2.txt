@@ -1,0 +1,29 @@
+========================================================================================
+VS2 SCALED OVERLAP REPAIR PLAN
+========================================================================================
+Scaled collision components          : 371
+Affected original fingerprint groups : 1,036
+Affected raw rows                    : 1,036
+Minimum moved raw rows               : 416
+Moved original fingerprint groups    : 416
+
+AFFECTED SPLIT TOTALS (OLD -> PLANNED)
+train: 572 -> 572
+validation: 230 -> 230
+test: 234 -> 234
+
+VALIDATION CHECKS
+database_quick_check_ok: True
+exactly_371_scaled_components: True
+exactly_1036_affected_raw_rows: True
+only_benign_affected: True
+each_original_group_currently_in_one_split: True
+affected_split_totals_preserved_exactly: True
+minimum_move_objective_consistent: True
+planned_zero_scaled_overlap: True
+
+Plan       : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\vs2_scaled_overlap_repair_plan_v2.csv
+Components : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\vs2_scaled_overlap_repair_components_v2.csv
+Summary    : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\vs2_scaled_overlap_repair_plan_summary_v2.json
+
+VS2 SCALED OVERLAP REPAIR PLAN COMPLETED

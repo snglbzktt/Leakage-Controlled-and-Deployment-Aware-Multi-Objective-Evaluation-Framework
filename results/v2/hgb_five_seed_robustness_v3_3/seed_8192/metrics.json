@@ -1,0 +1,113 @@
+{
+  "status": "completed",
+  "purpose": "reviewer_driven_hgb_seed_stability_addendum",
+  "seed": 8192,
+  "sklearn_version": "1.9.0",
+  "input_space": "canonical_float32_unscaled",
+  "test_evaluation_count": 1,
+  "parameters": {
+    "loss": "log_loss",
+    "learning_rate": 0.1,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "max_depth": null,
+    "min_samples_leaf": 20,
+    "l2_regularization": 0.0001,
+    "max_bins": 255,
+    "class_weight": "balanced",
+    "early_stopping": false,
+    "random_state": 8192
+  },
+  "fit_seconds": 54.61186619999353,
+  "test_seconds": 3.9408444999717176,
+  "n_iter": 100,
+  "do_early_stopping": false,
+  "test_fingerprint": {
+    "accuracy": 0.9998762762375066,
+    "macro_f1": 0.9997477466447534,
+    "per_class": {
+      "benign": {
+        "precision": 0.9994549842983572,
+        "recall": 0.99998701652796,
+        "f1": 0.9997209296288364,
+        "support": 77021.0,
+        "fnr": 1.2983472040040134e-05
+      },
+      "gafgyt": {
+        "precision": 0.9999794867587027,
+        "recall": 0.9990777365605722,
+        "f1": 0.9995284082754096,
+        "support": 48793.0,
+        "fnr": 0.0009222634394278062
+      },
+      "mirai": {
+        "precision": 0.9999878041343985,
+        "recall": 1.0,
+        "f1": 0.9999939020300143,
+        "support": 245982.0,
+        "fnr": 0.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        77020,
+        1,
+        0
+      ],
+      [
+        42,
+        48748,
+        3
+      ],
+      [
+        0,
+        0,
+        245982
+      ]
+    ]
+  },
+  "test_occurrence_weighted": {
+    "accuracy": 0.9996082662430279,
+    "macro_f1": 0.999070779637384,
+    "per_class": {
+      "benign": {
+        "precision": 0.9954874831377512,
+        "recall": 0.999988008154455,
+        "f1": 0.9977326704834377,
+        "support": 83390.0,
+        "fnr": 1.199184554501187e-05
+      },
+      "gafgyt": {
+        "precision": 0.9999976488788679,
+        "recall": 0.9990275800837126,
+        "f1": 0.999512379108206,
+        "support": 425742.0,
+        "fnr": 0.0009724199162873814
+      },
+      "mirai": {
+        "precision": 0.9999345807809238,
+        "recall": 1.0,
+        "f1": 0.9999672893205084,
+        "support": 550261.0,
+        "fnr": 0.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        83389,
+        1,
+        0
+      ],
+      [
+        378,
+        425328,
+        36
+      ],
+      [
+        0,
+        0,
+        550261
+      ]
+    ]
+  }
+}

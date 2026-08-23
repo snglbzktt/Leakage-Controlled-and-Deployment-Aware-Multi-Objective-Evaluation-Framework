@@ -1,0 +1,114 @@
+{
+  "generated_at_utc": "2026-07-27T18:45:17.672773+00:00",
+  "stage": 34,
+  "target_venue": "IEEE Access",
+  "language": "Turkish",
+  "input_artifacts": {
+    "summary": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_family3_overall_statistical_summary.json",
+      "sha256": "4ce22202bea8e9e2495fca33e87959e833dbe9feff558cbe9656a6f48a9aff1d"
+    },
+    "performance": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_1_performance_summary.csv",
+      "sha256": "674a38cb1183fdb59f58193b6f46da8b60d1cec7b44efeacb91c411668e810c3"
+    },
+    "efficiency": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_2_efficiency_summary.csv",
+      "sha256": "7caab9ec3dd16d90a927648054dc576af452f7ee85cc642c13a34edbf2b77f29"
+    },
+    "statistics": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_3_statistical_summary.csv",
+      "sha256": "576a5d388a566feaee379f51af360b8a8cd896a076fc1695bf96afd1442cf135"
+    },
+    "fnr": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_4_classwise_fnr_summary.csv",
+      "sha256": "531bba0b11441b0aec0ea2a5ad1b71fce608a7fedd5d510c236252508b283b82"
+    },
+    "pareto": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\table_5_pareto_optimal_solutions.csv",
+      "sha256": "27187c63486f6728912fe46205a698b4a112b68264f10e4dc294337dcc30b525"
+    },
+    "manifest33": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage33\\stage33_manifest.json",
+      "sha256": "2138b1b779cb0d49ec6a7f8164dcbfd171536162920cdbae015ff08573ccbe51"
+    }
+  },
+  "generated_artifacts": {
+    "outline": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage34\\manuscript_outline_tr.md",
+      "sha256": "5016bf133d21269e8bc7d082d41b8ea4fddaa0f10134e2e5cde97290b0905434"
+    },
+    "section_map": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage34\\section_evidence_map.csv",
+      "sha256": "516d02e6adb99048237f5648b7396f983bcb29eda695e33f0641c09ca798f435"
+    },
+    "placement": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage34\\table_figure_placement_plan.csv",
+      "sha256": "3b7188b69e80bf725c49cb6e4ac3ac3851604db4175bb88f9d9b37843ddb384c"
+    },
+    "claims": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\publication\\stage34\\manuscript_claims_checklist.csv",
+      "sha256": "dfa356258192a0446092fadd49eb425f747a48097e0a706a7224cf348829266c"
+    }
+  },
+  "headline_results": {
+    "best_accuracy": {
+      "model": "Compact-DNN",
+      "variant": "QAT",
+      "value": 0.9918457718924985
+    },
+    "smallest_artifact": {
+      "model": "Tiny-1D-CNN",
+      "variant": "P75",
+      "value": 4.2001953125
+    },
+    "lowest_latency": {
+      "model": "TinyML-MLP",
+      "variant": "PTQ",
+      "value": 0.01875
+    },
+    "highest_throughput": {
+      "model": "TinyML-MLP",
+      "variant": "P75",
+      "value": 4276226.410756801
+    },
+    "friedman": {
+      "TinyML-MLP": {
+        "chi_square": 41.55272727272728,
+        "df": 9,
+        "p": 3.9666116561458745e-06,
+        "w": 0.9233939393939395,
+        "magnitude": "large",
+        "holm_significant": 0
+      },
+      "Compact-DNN": {
+        "chi_square": 37.53818181818184,
+        "df": 9,
+        "p": 2.1090222866104724e-05,
+        "w": 0.8341818181818187,
+        "magnitude": "large",
+        "holm_significant": 0
+      },
+      "Tiny-1D-CNN": {
+        "chi_square": 40.06310679611652,
+        "df": 9,
+        "p": 7.401066568964622e-06,
+        "w": 0.8902912621359227,
+        "magnitude": "large",
+        "holm_significant": 0
+      }
+    },
+    "global_pareto_count": 18
+  },
+  "row_counts": {
+    "section_evidence_map": 13,
+    "table_figure_placement_plan": 8,
+    "manuscript_claims_checklist": 10
+  },
+  "new_training_performed": false,
+  "test_re_evaluated": false,
+  "new_statistical_test_performed": false,
+  "literature_citations_generated": false,
+  "mcu_measurement_claimed": false,
+  "validation_passed": true
+}

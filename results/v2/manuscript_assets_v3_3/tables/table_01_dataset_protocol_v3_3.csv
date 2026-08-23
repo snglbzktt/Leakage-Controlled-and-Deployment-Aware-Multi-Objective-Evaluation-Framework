@@ -1,0 +1,16 @@
+Section,Protocol item,Locked value,Interpretation / note
+Strict LODO,Held-out devices,9,Nine device-level hold-outs were completed.
+Strict LODO,Model families per device,3,Each held-out device was evaluated with three model families.
+Strict LODO,Scientific LODO runs,27,Complete 9 × 3 device–model matrix.
+Strict LODO,Two-class held-out test devices,2,"Ennio_Doorbell, Samsung_SNH_1011_N_Webcam"
+Strict LODO,Severe Macro-F1 threshold,< 0.85,Triggers the locked severe-fragility rule.
+Strict LODO,Severe attack FNR threshold,> 0.40,Applied to eligible attack classes.
+Strict LODO,Meaningful validation–test Macro-F1 drop,≥ 0.10,Locked reporting threshold.
+Classical baselines,Baseline models,4,Classical tabular baseline comparison.
+Classical baselines,Baseline runs,12,Descriptive comparison only; not final model selection.
+Compression study,Architectures,2,TinyML-MLP and Compact-DNN experiment families.
+Compression study,Variants per architecture,11,Eleven locked compression/quantization variants.
+Compression study,Locked seeds,5,"Seeds: 42, 123, 2026, 3407, 8192."
+Compression study,Final run count,110,2 architectures × 11 variants × 5 seeds.
+Compression study,Grouped configurations,22,Twenty-two architecture–variant groups.
+Compression study,Test used for selection,No,Locked closure confirms test results were not used for selection.

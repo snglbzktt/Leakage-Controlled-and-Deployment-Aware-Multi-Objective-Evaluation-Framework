@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "PTQ_validation_calibration_sweep",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "PTQ_engine_version": "phase5_ptq_engine_v3_2",
+  "completed_at_utc": "2026-08-06T20:35:51.877637+00:00",
+  "candidate_count": 40,
+  "group_count": 8,
+  "selected_calibration_sizes": {
+    "tinyml_mlp": 4096,
+    "compact_dnn": 16384
+  },
+  "validation_access_count_per_candidate": 1,
+  "test_access_count": 0,
+  "candidate_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_validation_sweep_all_candidates_v3_2.csv",
+  "candidate_csv_sha256": "d6abe9c0ea5cdc7066035a3c11d70a1a8c7199b357330a0b2bdbdbf1b9e18397",
+  "group_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_validation_sweep_group_summary_v3_2.csv",
+  "group_summary_csv_sha256": "df7658f08292969a03745be7fb565488a5f1e7f5c42ca3a27186646da44fee0b",
+  "selection_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_validation_selection_v3_2.csv",
+  "selection_csv_sha256": "6cdd92daa7e9c7286a6ad49b863e0856357ff5c57000db912b415f5b350ebcf1",
+  "aggregate_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_validation_sweep_summary_v3_2.json",
+  "aggregate_json_sha256": "827d6a921c4eb23571ce47f81e6b674be5bbb1459d7ed17d897ee4cfde94e118",
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

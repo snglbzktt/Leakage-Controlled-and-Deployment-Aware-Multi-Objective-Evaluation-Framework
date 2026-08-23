@@ -1,0 +1,268 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "P25_and_P50_FP32_fine_tuning_independent_verification",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "verified_at_utc": "2026-08-06T18:49:44.102117+00:00",
+  "run_count": 20,
+  "group_count": 4,
+  "verification_policy": {
+    "checkpoint_loading_performed": true,
+    "optimizer_state_loading_performed": true,
+    "validation_model_inference_repeated": true,
+    "test_model_inference_repeated": false,
+    "saved_test_metrics_recomputed": true,
+    "test_evaluation_count_verified_per_run": 1
+  },
+  "verified_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_verified_runs_v3_2.csv",
+    "size_bytes": 10327,
+    "sha256": "52b6c94d0c513e9f233c892ab9045cb5822f3a88b12a15448ba1919a9f3b0113"
+  },
+  "verified_groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25",
+      "canonical_report_name": "P25-FP32-FT",
+      "run_count": 5,
+      "aggregate_metrics": {
+        "test_fingerprint_accuracy": {
+          "mean": 0.9995944012307826,
+          "std_population": 5.05596408245951e-05,
+          "minimum": 0.9995131738910585,
+          "maximum": 0.9996584148296378
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9992690763931465,
+          "std_population": 9.594321658620924e-05,
+          "minimum": 0.999124216570524,
+          "maximum": 0.9993905048097456
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9981093262902749,
+          "std_population": 0.00022056392397657424,
+          "minimum": 0.9977703447942186,
+          "maximum": 0.9984093567626777
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.002049474309839527,
+          "std_population": 0.0002260004304238676,
+          "minimum": 0.0017420531633636216,
+          "maximum": 0.00241837968561065
+        },
+        "test_mirai_fnr": {
+          "mean": 0.0001463521721101646,
+          "std_population": 5.5859580090656054e-05,
+          "minimum": 0.00010569879096844481,
+          "maximum": 0.00025611630119282136
+        }
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50",
+      "canonical_report_name": "P50-FP32-FT",
+      "run_count": 5,
+      "aggregate_metrics": {
+        "test_fingerprint_accuracy": {
+          "mean": 0.999414732810466,
+          "std_population": 9.123574457043836e-05,
+          "minimum": 0.9993006917772111,
+          "maximum": 0.9995642771842623
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9989536146407785,
+          "std_population": 0.00016067119478705008,
+          "minimum": 0.9987456314068774,
+          "maximum": 0.9992350655004856
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.997539435245098,
+          "std_population": 0.000269901002352615,
+          "minimum": 0.9971767423811029,
+          "maximum": 0.9978486437247982
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.002598733424876509,
+          "std_population": 0.00021666346051936155,
+          "minimum": 0.0022544217408234646,
+          "maximum": 0.0028487692906769
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00026668618028959925,
+          "std_population": 9.136072974830369e-05,
+          "minimum": 0.0001463521721101202,
+          "maximum": 0.00038214178273210386
+        }
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25",
+      "canonical_report_name": "P25-FP32-FT",
+      "run_count": 5,
+      "aggregate_metrics": {
+        "test_fingerprint_accuracy": {
+          "mean": 0.9995368427847529,
+          "std_population": 3.843090533410449e-05,
+          "minimum": 0.9994782084799191,
+          "maximum": 0.9995831047133374
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9991604849327598,
+          "std_population": 6.135600013398436e-05,
+          "minimum": 0.9990766218611046,
+          "maximum": 0.9992321141463473
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9978222894789802,
+          "std_population": 0.0001303527169706128,
+          "minimum": 0.9976646354391953,
+          "maximum": 0.9980294782944562
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0023568954563154554,
+          "std_population": 8.886308851139248e-05,
+          "minimum": 0.0022339269977250664,
+          "maximum": 0.0025003586580042425
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00018131407989203653,
+          "std_population": 6.087699603165748e-05,
+          "minimum": 9.756811474015414e-05,
+          "maximum": 0.0002723776536494027
+        }
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50",
+      "canonical_report_name": "P50-FP32-FT",
+      "run_count": 5,
+      "aggregate_metrics": {
+        "test_fingerprint_accuracy": {
+          "mean": 0.9993066090006348,
+          "std_population": 6.743240620915316e-05,
+          "minimum": 0.999263036719061,
+          "maximum": 0.999440553421769
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.998786993887449,
+          "std_population": 0.00012379076056917145,
+          "minimum": 0.9986883276417272,
+          "maximum": 0.9990314273041191
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9974174604577698,
+          "std_population": 0.00018271167378814844,
+          "minimum": 0.9970923165458777,
+          "maximum": 0.9976290739750319
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0028938577254933985,
+          "std_population": 8.733742853547179e-05,
+          "minimum": 0.0027462955751850204,
+          "maximum": 0.0029922324923656873
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00038620712084622697,
+          "std_population": 9.705861718591613e-05,
+          "minimum": 0.00021546292005103496,
+          "maximum": 0.000516297940499677
+        }
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    }
+  ],
+  "entry_checks": {
+    "protocol_locked": true,
+    "noFT_locked": true,
+    "sources_locked": true,
+    "source_registry_hash_matches": true,
+    "engine_locked": true,
+    "engine_hash_matches": true,
+    "preprocessing_locked": true,
+    "aggregate_completed": true,
+    "completion_completed": true,
+    "aggregate_hash_matches_completion": true,
+    "aggregate_runs_hash_matches_completion": true,
+    "group_summary_hash_matches_completion": true,
+    "twenty_aggregate_rows": true,
+    "four_group_rows": true,
+    "aggregate_matrix_matches": true,
+    "source_matrix_matches": true,
+    "locked_matrix_matches": true
+  },
+  "cache_checks": {
+    "validation_shapes_match": true,
+    "test_shapes_match": true,
+    "raw_totals_match": true,
+    "preprocessing_shapes_match": true
+  },
+  "global_checks": {
+    "twenty_runs_verified": true,
+    "all_run_checks_passed": true,
+    "four_groups_verified": true,
+    "all_group_checks_passed": true,
+    "test_count_one_all_runs": true,
+    "test_inference_not_repeated": true,
+    "no_fragility_after_fine_tuning": true
+  },
+  "source_artifacts": {
+    "aggregate_runs_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_all_runs_v3_2.csv",
+      "size_bytes": 14113,
+      "sha256": "f5d8dbc330505cdabfd9bad627b20df1c7ef43f3d262d29c1ac1110460e0095b"
+    },
+    "group_summary_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_group_summary_v3_2.csv",
+      "size_bytes": 1486,
+      "sha256": "bbe19c36ab8623cfbe5f3d8a27e2a8addc08726beb15cd15ad17c503ea04ae8f"
+    },
+    "aggregate_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_summary_v3_2.json",
+      "size_bytes": 12935,
+      "sha256": "b3b59427ec3a6325955828c87ccbd1d866b5546d94265e005746486c13c6a56d"
+    },
+    "completion_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_completed_v3_2.json",
+      "size_bytes": 1115,
+      "sha256": "6ad3dd4df755d56402eb5779ed422f27c6e9e722a56eb60c032e703753800ca0"
+    },
+    "noFT_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_locked_v3_2.json",
+      "size_bytes": 1495,
+      "sha256": "83af36bb484ed2acc0bbdf709d8d517c9bb653365abd5871c293a561c17aef1c"
+    },
+    "verified_sources_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_sources_verified_locked_v3_2.json",
+      "size_bytes": 968,
+      "sha256": "f51da00617882c021417c4f41a0eca92aaa0bcae8db18bb7f279b786fc5215a2"
+    },
+    "source_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_source_checkpoint_registry_v3_2.csv",
+      "size_bytes": 20143,
+      "sha256": "8c8ee86e88eba63858ae562183716323a3a972e29948a0f8f8dc83e15436deef"
+    },
+    "pruning_engine_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_engine_locked_v3_2.json",
+      "size_bytes": 1563,
+      "sha256": "79554d61db40ccd1b9478a111d6723ae5d3fc0e6f6d4a6bbd0fa98ab57882371"
+    },
+    "pruning_engine_source": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\phase5_physical_pruning_engine_v3_2.py",
+      "size_bytes": 11014,
+      "sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3"
+    }
+  },
+  "ready_for_remaining_phase5_compression_variants": true,
+  "all_checks_passed": true
+}

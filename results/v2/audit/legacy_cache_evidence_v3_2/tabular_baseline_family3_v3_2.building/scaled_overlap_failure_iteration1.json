@@ -1,0 +1,25 @@
+{
+  "iteration": 1,
+  "feature_space": "repaired train-only StandardScaler float64 parameters then final float32 input",
+  "processed_fingerprint_rows": 2278176,
+  "unique_scaled_fingerprints_by_split": {
+    "train": 1533499,
+    "validation": 371597,
+    "test": 371597
+  },
+  "collapsed_within_split_rows": 1483,
+  "cross_split_model_input_fingerprint_count": 3,
+  "within_split_family_conflict_count": 0,
+  "global_family_conflict_count": 0,
+  "database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2.building\\scaled_model_input_overlap_audit.sqlite",
+  "database_quick_check": "ok",
+  "elapsed_seconds": 23.521797899971716,
+  "checks": {
+    "processed_rows_match": true,
+    "cross_split_overlap_zero": false,
+    "within_split_family_conflicts_zero": true,
+    "global_family_conflicts_zero": true,
+    "quick_check_ok": true
+  },
+  "passed": false
+}

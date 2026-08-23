@@ -1,0 +1,63 @@
+{
+  "phase8_final_model_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_final_model_family_locked_v3_2.json",
+    "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9",
+    "primary_profile": "balanced",
+    "selected_model_family": {
+      "candidate_id": "tinyml_mlp::P50-QAT",
+      "architecture": "tinyml_mlp",
+      "variant": "P50-QAT",
+      "representation": "static_int8"
+    },
+    "sensitivity_profile_selections": {
+      "strict": "tinyml_mlp::P50-FP32-FT",
+      "balanced": "tinyml_mlp::P50-QAT",
+      "relaxed": "tinyml_mlp::P50-QAT"
+    },
+    "selection_stable_across_profiles": false,
+    "weighted_score_used": false,
+    "pairwise_p_value_used_as_gate": false,
+    "single_seed_checkpoint_selected": false
+  },
+  "phase9_artifact_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_deployment_artifact_locked_v3_2.json",
+    "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6",
+    "model_family": "tinyml_mlp::P50-QAT",
+    "representation": "static_int8",
+    "canonical_seed": 2026,
+    "class_labels_in_output_index_order": [
+      "benign",
+      "gafgyt",
+      "mirai"
+    ],
+    "source_checkpoint_sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+    "bundled_checkpoint_sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+    "source_bundle_checkpoint_exact": true,
+    "source_bundle_outputs_exact": true,
+    "serialization_roundtrip_exact": true,
+    "validation_data_access": false,
+    "test_data_access": false
+  },
+  "phase10_release_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase10_release_archive_locked_v3_3.json",
+    "sha256": "e7e5e3d6a44c65e96024c376daf7f81589aaea876d80775374dea5b9b8c47f3e",
+    "release_name": "TinyML_IDS_IEEE_release_v3_3",
+    "payload_file_count": 15,
+    "archive_file_count": 16,
+    "release_directory_tree_sha256": "6348e0329c6f926863fadf5ce6be2d8a7f27cad927b0dfe8165811e538faa255",
+    "zip_archive_sha256": "b3decdf91a16b0716aa04dce8f406edd0f7fad117216d7822e00f554a02950b5",
+    "zip_archive_size_bytes": 33787,
+    "deterministic_rebuild_exact": true,
+    "raw_dataset_included": false,
+    "processed_dataset_included": false,
+    "nonselected_checkpoints_included": false
+  },
+  "phase11_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_locked_v3_3.json",
+    "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a",
+    "model_retraining_performed": false,
+    "test_used_for_model_selection": false,
+    "final_model_changed": false,
+    "phase11_locked": true
+  }
+}

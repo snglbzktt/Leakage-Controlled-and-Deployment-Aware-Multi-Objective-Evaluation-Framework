@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-24T14:05:04.725641+00:00",
+  "status": "completed",
+  "model_name": "tinyml_mlp",
+  "seed": 123,
+  "pruning_name": "P75",
+  "checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tinyml_mlp\\P75\\seed123\\best_checkpoint.pt",
+  "checkpoint_sha256": "760758acfa61d0748e5c5974b5389ebe9c2d1633b7ca575aeb039243098d0381",
+  "evaluation_attempt_count": 1,
+  "test_used_for_model_selection": false,
+  "completed_at_utc": "2026-07-24T14:05:05.803608+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tinyml_mlp\\P75\\seed123\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tinyml_mlp\\P75\\seed123\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tinyml_mlp\\P75\\seed123\\test_confusion_matrix.csv"
+}

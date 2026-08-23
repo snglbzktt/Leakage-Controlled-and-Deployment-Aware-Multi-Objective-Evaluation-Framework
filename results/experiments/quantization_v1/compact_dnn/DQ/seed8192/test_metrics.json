@@ -1,0 +1,63 @@
+{
+  "generated_at_utc": "2026-07-25T08:07:14.707243+00:00",
+  "model_name": "compact_dnn",
+  "method_name": "DQ",
+  "seed": 8192,
+  "task_name": "family_3",
+  "test_evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "loss": 0.06585629851056149,
+  "accuracy": 0.9922982881501526,
+  "balanced_accuracy": 0.9560219856626836,
+  "macro_precision": 0.993576699638376,
+  "macro_recall": 0.9560219856626836,
+  "macro_f1": 0.9733090396409197,
+  "weighted_f1": 0.992063501902535,
+  "matthews_correlation_coefficient": 0.9819840053106815,
+  "sample_count": 341093,
+  "elapsed_seconds": 1.0678396000002977,
+  "throughput_samples_per_second": 319423.44149805355,
+  "confusion_matrix": [
+    [
+      77072,
+      2,
+      1
+    ],
+    [
+      572,
+      16129,
+      1862
+    ],
+    [
+      153,
+      37,
+      245265
+    ]
+  ],
+  "per_class": {
+    "benign": {
+      "support": 77075,
+      "predicted_count": 77797,
+      "precision": 0.9906808745838529,
+      "recall": 0.9999610768731755,
+      "f1": 0.9952993439743788,
+      "false_negative_rate": 3.892312682451937e-05
+    },
+    "gafgyt": {
+      "support": 18563,
+      "predicted_count": 16168,
+      "precision": 0.9975878278080158,
+      "recall": 0.8688789527554813,
+      "f1": 0.9287956004722007,
+      "false_negative_rate": 0.13112104724451867
+    },
+    "mirai": {
+      "support": 245455,
+      "predicted_count": 247128,
+      "precision": 0.9924613965232592,
+      "recall": 0.9992259273593938,
+      "f1": 0.9958321744761797,
+      "false_negative_rate": 0.0007740726406062493
+    }
+  }
+}

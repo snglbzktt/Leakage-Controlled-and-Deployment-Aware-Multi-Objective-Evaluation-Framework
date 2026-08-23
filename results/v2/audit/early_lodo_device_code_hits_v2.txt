@@ -1,0 +1,253 @@
+00001: ﻿from __future__ import annotations
+00003: import csv
+00005: import sqlite3
+00008: from datetime import datetime, timezone
+00009: from pathlib import Path
+00010: from typing import Any
+00013: PROTOCOL_VERSION = "task_aware_device_overlap_v2_1"
+00017: EXPECTED_DEVICE_COUNT = 9
+00025:     / "nbaiot_duplicate_audit.sqlite"
+00048: TASK_SUMMARY_CSV = (
+00050:     / "task_aware_conflict_summary_v2.csv"
+00053: TASK_DETAILS_CSV = (
+00055:     / "task_aware_conflict_details_v2.csv"
+00058: DEVICE_SUMMARY_CSV = (
+00060:     / "device_fingerprint_lodo_feasibility_v2.csv"
+00063: DEVICE_CLASS_CSV = (
+00065:     / "device_class_support_v2.csv"
+00068: DEVICE_PAIR_CSV = (
+00070:     / "device_pair_fingerprint_overlap_v2.csv"
+00073: DEVICE_COUNT_DISTRIBUTION_CSV = (
+00075:     / "device_count_distribution_v2.csv"
+00080:     / "task_aware_device_audit_summary_v2.json"
+00100: def write_csv(
+00110:         writer = csv.DictWriter(
+00182:     exact_summary.get("exact_group_count")
+00209: connection = sqlite3.connect(
+00213: connection.row_factory = sqlite3.Row
+00219:         SELECT DISTINCT class_label
+00220:         FROM vector_device
+00270:     SELECT
+00276:         MAX(device_count) AS maximum_device_count,
+00278:     FROM vector_groups
+00290: maximum_device_count = int(
+00291:     source_group_summary["maximum_device_count"]
+00310:     "family_3": "family3_label",
+00324:         SELECT
+00357:         FROM (
+00358:             SELECT
+00370:             FROM vector_device AS vd
+00372:             INNER JOIN label_map AS lm
+00435:         SELECT
+00444:                 DISTINCT vd.device
+00445:             ) AS device_count,
+00463:         FROM vector_device AS vd
+00465:         INNER JOIN label_map AS lm
+00499:                 "device_count":
+00500:                     int(detail["device_count"]),
+00524: write_csv(
+00525:     TASK_SUMMARY_CSV,
+00539: write_csv(
+00540:     TASK_DETAILS_CSV,
+00547:         "device_count",
+00556: print("Cihaz bazlı LODO uygunluğu hesaplanıyor...")
+00558: device_query = """
+00559:     WITH per_device_group AS (
+00560:         SELECT
+00563:             device,
+00567:         FROM vector_device
+00571:             device
+00574:     SELECT
+00575:         pdg.device,
+00577:         COUNT(*) AS fingerprint_count,
+00585:                 WHEN vg.device_count = 1
+00589:         ) AS novel_fingerprint_count,
+00593:                 WHEN vg.device_count = 1
+00601:                 WHEN vg.device_count > 1
+00605:         ) AS train_exposed_fingerprint_count,
+00609:                 WHEN vg.device_count > 1
+00616:             vg.device_count
+00617:         ) AS maximum_group_device_count
+00619:     FROM per_device_group AS pdg
+00621:     INNER JOIN vector_groups AS vg
+00630:         pdg.device
+00633:         pdg.device
+00636: device_rows_raw = connection.execute(
+00637:     device_query
+00640: device_summary_rows: list[
+00644: for row in device_rows_raw:
+00645:     fingerprint_count = int(
+00646:         row["fingerprint_count"]
+00653:     novel_fingerprint_count = int(
+00654:         row["novel_fingerprint_count"]
+00661:     train_exposed_fingerprint_count = int(
+00663:             "train_exposed_fingerprint_count"
+00673:     device_summary_rows.append(
+00675:             "device": str(row["device"]),
+00676:             "fingerprint_count":
+00677:                 fingerprint_count,
+00680:             "novel_fingerprint_count":
+00681:                 novel_fingerprint_count,
+00682:             "novel_fingerprint_rate":
+00684:                     novel_fingerprint_count,
+00685:                     fingerprint_count,
+00694:             "train_exposed_fingerprint_count":
+00695:                 train_exposed_fingerprint_count,
+00696:             "train_exposed_fingerprint_rate":
+00698:                     train_exposed_fingerprint_count,
+00699:                     fingerprint_count,
+00708:             "maximum_group_device_count":
+00711:                         "maximum_group_device_count"
+00717: write_csv(
+00718:     DEVICE_SUMMARY_CSV,
+00719:     device_summary_rows,
+00721:         "device",
+00722:         "fingerprint_count",
+00724:         "novel_fingerprint_count",
+00725:         "novel_fingerprint_rate",
+00728:         "train_exposed_fingerprint_count",
+00729:         "train_exposed_fingerprint_rate",
+00732:         "maximum_group_device_count",
+00738: device_class_query = """
+00739:     WITH device_class_group AS (
+00740:         SELECT
+00741:             device,
+00748:         FROM vector_device
+00750:             device,
+00756:     SELECT
+00757:         device,
+00759:         COUNT(*) AS fingerprint_count,
+00764:     FROM device_class_group
+00767:         device,
+00771:         device,
+00775: device_class_rows = [
+00777:         "device": str(row["device"]),
+00780:         "fingerprint_count":
+00781:             int(row["fingerprint_count"]),
+00786:         device_class_query
+00790: write_csv(
+00791:     DEVICE_CLASS_CSV,
+00792:     device_class_rows,
+00794:         "device",
+00796:         "fingerprint_count",
+00803: device_count_distribution_rows = [
+00805:         "device_count":
+00806:             int(row["device_count"]),
+00807:         "fingerprint_count":
+00808:             int(row["fingerprint_count"]),
+00814:         SELECT
+00815:             device_count,
+00816:             COUNT(*) AS fingerprint_count,
+00820:         FROM vector_groups
+00821:         GROUP BY device_count
+00822:         ORDER BY device_count
+00827: write_csv(
+00828:     DEVICE_COUNT_DISTRIBUTION_CSV,
+00829:     device_count_distribution_rows,
+00831:         "device_count",
+00832:         "fingerprint_count",
+00837: print("Cihaz çiftleri arasındaki fingerprint örtüşmesi hesaplanıyor...")
+00839: device_pair_query = """
+00840:     WITH per_device_group AS (
+00841:         SELECT
+00844:             device,
+00848:         FROM vector_device
+00852:             device
+00855:     SELECT
+00856:         left_side.device AS device_a,
+00857:         right_side.device AS device_b,
+00859:         COUNT(*) AS shared_fingerprint_count,
+00863:         ) AS device_a_occurrences_on_shared,
+00867:         ) AS device_b_occurrences_on_shared
+00869:     FROM per_device_group AS left_side
+00871:     INNER JOIN per_device_group AS right_side
+00879:             left_side.device
+00880:                 < right_side.device
+00883:         left_side.device,
+00884:         right_side.device
+00887:         left_side.device,
+00888:         right_side.device
+00891: device_pair_rows = [
+00893:         "device_a": str(
+00894:             row["device_a"]
+00896:         "device_b": str(
+00897:             row["device_b"]
+00899:         "shared_fingerprint_count":
+00902:                     "shared_fingerprint_count"
+00905:         "device_a_occurrences_on_shared":
+00908:                     "device_a_occurrences_on_shared"
+00911:         "device_b_occurrences_on_shared":
+00914:                     "device_b_occurrences_on_shared"
+00919:         device_pair_query
+00923: write_csv(
+00924:     DEVICE_PAIR_CSV,
+00925:     device_pair_rows,
+00927:         "device_a",
+00928:         "device_b",
+00929:         "shared_fingerprint_count",
+00930:         "device_a_occurrences_on_shared",
+00931:         "device_b_occurrences_on_shared",
+00935: distinct_device_count = int(
+00938:         SELECT COUNT(
+00939:             DISTINCT device
+00941:         FROM vector_device
+00946: multi_device_summary = connection.execute(
+00948:     SELECT
+00949:         COUNT(*) AS multi_device_group_count,
+00954:         ) AS multi_device_occurrence_count
+00956:     FROM vector_groups
+00958:     WHERE device_count > 1
+00962: single_device_summary = connection.execute(
+00964:     SELECT
+00965:         COUNT(*) AS single_device_group_count,
+00970:         ) AS single_device_occurrence_count
+00972:     FROM vector_groups
+00974:     WHERE device_count = 1
+00978: device_raw_total = sum(
+00980:     for row in device_summary_rows
+00992:     if row["task"] == "family_3"
+01033:     "distinct_device_count":
+01034:         distinct_device_count,
+01036:     "maximum_device_count_per_group":
+01037:         maximum_device_count,
+01042:     "single_device_group_count":
+01044:             single_device_summary[
+01045:                 "single_device_group_count"
+01049:     "single_device_occurrence_count":
+01051:             single_device_summary[
+01052:                 "single_device_occurrence_count"
+01056:     "multi_device_group_count":
+01058:             multi_device_summary[
+01059:                 "multi_device_group_count"
+01063:     "multi_device_occurrence_count":
+01065:             multi_device_summary[
+01066:                 "multi_device_occurrence_count"
+01091:     "device_summary_raw_occurrence_total":
+01092:         device_raw_total,
+01094:     "task_summary_csv":
+01095:         str(TASK_SUMMARY_CSV),
+01097:     "task_details_csv":
+01098:         str(TASK_DETAILS_CSV),
+01100:     "device_summary_csv":
+01101:         str(DEVICE_SUMMARY_CSV),
+01103:     "device_class_csv":
+01104:         str(DEVICE_CLASS_CSV),
+01106:     "device_pair_csv":
+01107:         str(DEVICE_PAIR_CSV),
+01109:     "device_count_distribution_csv":
+01111:             DEVICE_COUNT_DISTRIBUTION_CSV
+01124:     "distinct_device_count":
+01125:         distinct_device_count
+01126:         == EXPECTED_DEVICE_COUNT,
+01128:     "device_raw_occurrence_total":
+01129:         device_raw_total
+01199:     f"Single-device groups       : "
+01200:     f"{summary['single_device_group_count']:,}"
+01203:     f"Multi-device groups        : "
+01204:     f"{summary['multi_device_group_count']:,}"
+01207:     f"Distinct devices           : "
+01208:     f"{summary['distinct_device_count']}"
+01221: print(f"Task summary : {TASK_SUMMARY_CSV}")
+01222: print(f"Task details : {TASK_DETAILS_CSV}")
+01223: print(f"Device LODO  : {DEVICE_SUMMARY_CSV}")
+01224: print(f"Device pairs : {DEVICE_PAIR_CSV}")

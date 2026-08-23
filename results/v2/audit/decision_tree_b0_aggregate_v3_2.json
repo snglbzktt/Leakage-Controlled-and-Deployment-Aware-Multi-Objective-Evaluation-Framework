@@ -1,0 +1,175 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T13:52:41.251941+00:00",
+  "model_id": "decision_tree_b0",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "run_count": 5,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "input_space": "canonical_float32_unscaled",
+  "parameters": {
+    "criterion": "gini",
+    "splitter": "best",
+    "max_depth": 20,
+    "min_samples_split": 40,
+    "min_samples_leaf": 20,
+    "max_features": null,
+    "class_weight": "balanced",
+    "ccp_alpha": 0.0
+  },
+  "test_evaluation_count_per_run": 1,
+  "test_used_for_selection": false,
+  "input_space_parser_policy": "exact locked-token equality; no substring matching",
+  "prior_invalid_run_archive": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\invalid_runs\\decision_tree_b0_input_space_parser_bug_v3_2",
+  "prior_invalidation_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\decision_tree_b0_invalidation_v3_2.json",
+  "prior_invalidation_report_sha256": "0f82910e56a46a11d75e29f5c61749a8046a5292b6de09d37ce17ad9f545e095",
+  "runs": [
+    {
+      "run_id": "decision_tree_b0__seed_42",
+      "seed": 42,
+      "training_elapsed_seconds": 74.43883349990938,
+      "tree_node_count": 123,
+      "tree_max_depth": 11,
+      "n_leaves": 62,
+      "test_fingerprint_macro_f1": 0.9995400059321019,
+      "test_fingerprint_accuracy": 0.9997525524750132,
+      "test_raw_weighted_macro_f1": 0.9989179460461551,
+      "test_gafgyt_fnr": 0.001024737154919797,
+      "test_mirai_fnr": 9.350277662589779e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_42"
+    },
+    {
+      "run_id": "decision_tree_b0__seed_123",
+      "seed": 123,
+      "training_elapsed_seconds": 75.8015511999838,
+      "tree_node_count": 123,
+      "tree_max_depth": 10,
+      "n_leaves": 62,
+      "test_fingerprint_macro_f1": 0.999575709390553,
+      "test_fingerprint_accuracy": 0.9997740696510989,
+      "test_raw_weighted_macro_f1": 0.9989310594631675,
+      "test_gafgyt_fnr": 0.001024737154919797,
+      "test_mirai_fnr": 6.911074794091476e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_123"
+    },
+    {
+      "run_id": "decision_tree_b0__seed_2026",
+      "seed": 2026,
+      "training_elapsed_seconds": 76.23617020004895,
+      "tree_node_count": 125,
+      "tree_max_depth": 10,
+      "n_leaves": 63,
+      "test_fingerprint_macro_f1": 0.9995757129018376,
+      "test_fingerprint_accuracy": 0.9997740696510989,
+      "test_raw_weighted_macro_f1": 0.9989494033957653,
+      "test_gafgyt_fnr": 0.0010042424118213988,
+      "test_mirai_fnr": 6.911074794091476e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_2026"
+    },
+    {
+      "run_id": "decision_tree_b0__seed_3407",
+      "seed": 3407,
+      "training_elapsed_seconds": 73.6301214999985,
+      "tree_node_count": 117,
+      "tree_max_depth": 10,
+      "n_leaves": 59,
+      "test_fingerprint_macro_f1": 0.9996013960814641,
+      "test_fingerprint_accuracy": 0.9997821385921312,
+      "test_raw_weighted_macro_f1": 0.9991156551077348,
+      "test_gafgyt_fnr": 0.0008402844670342136,
+      "test_mirai_fnr": 9.350277662589779e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_3407"
+    },
+    {
+      "run_id": "decision_tree_b0__seed_8192",
+      "seed": 8192,
+      "training_elapsed_seconds": 76.60987289994955,
+      "tree_node_count": 119,
+      "tree_max_depth": 10,
+      "n_leaves": 60,
+      "test_fingerprint_macro_f1": 0.9996203656208831,
+      "test_fingerprint_accuracy": 0.9997955868271848,
+      "test_raw_weighted_macro_f1": 0.9991209020265209,
+      "test_gafgyt_fnr": 0.0008402844670342136,
+      "test_mirai_fnr": 6.911074794091476e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_8192"
+    }
+  ],
+  "aggregate_metrics": {
+    "test_fingerprint_macro_f1": {
+      "mean": 0.9995826379853678,
+      "std_population": 2.716135057175398e-05,
+      "minimum": 0.9995400059321019,
+      "maximum": 0.9996203656208831
+    },
+    "test_fingerprint_accuracy": {
+      "mean": 0.9997756834393055,
+      "std_population": 1.3986164455796008e-05,
+      "minimum": 0.9997525524750132,
+      "maximum": 0.9997955868271848
+    },
+    "test_raw_weighted_macro_f1": {
+      "mean": 0.9990069932078688,
+      "std_population": 9.142706874984917e-05,
+      "minimum": 0.9989179460461551,
+      "maximum": 0.9991209020265209
+    },
+    "test_gafgyt_fnr": {
+      "mean": 0.000946857131145884,
+      "std_population": 8.733742853550932e-05,
+      "minimum": 0.0008402844670342136,
+      "maximum": 0.001024737154919797
+    },
+    "test_mirai_fnr": {
+      "mean": 7.886755941490797e-05,
+      "std_population": 1.1949604813907793e-05,
+      "minimum": 6.911074794091476e-05,
+      "maximum": 9.350277662589779e-05
+    },
+    "training_elapsed_seconds": {
+      "mean": 75.34330985997804,
+      "std_population": 1.1282250209489368,
+      "minimum": 73.6301214999985,
+      "maximum": 76.60987289994955
+    }
+  },
+  "fragility_gate_triggered_in_any_run": false,
+  "run_matrix": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_run_matrix_v3.csv",
+  "run_matrix_sha256": "c85e9a943f4834f4589dba43638c58da790b4080651b49f831f2b3e0cefbedef",
+  "runner_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\106_run_decision_tree_b0_five_seeds_v3_2_fixed.py",
+  "runner_script_sha256": "1c8518f54ac0d5f976262a9f0f12e6b30c44cfde1f85f50aa3e0f3905a8f5fca",
+  "aggregate_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\decision_tree_b0_runs_v3_2.csv",
+  "aggregate_csv_sha256": "8a8f83f1a4405bde9716a6f808b62d952df5ba1d8628e755646b68f827eccbc7",
+  "preflight_checks": {
+    "final_cache_verification_passed": true,
+    "logistic_verification_passed": true,
+    "cache_manifest_completed": true,
+    "cache_protocol_version_matches": true,
+    "base_protocol_locked": true,
+    "base_protocol_hash_matches": true,
+    "run_matrix_hash_matches": true,
+    "addendum_locked": true,
+    "addendum_hash_matches": true,
+    "run_count_is_five": true,
+    "seed_set_matches": true,
+    "single_input_space": true,
+    "locked_input_space_is_exact_unscaled": true,
+    "invalidation_report_completed": true,
+    "invalid_runs_quarantined": true,
+    "all_fit_sample_weights_none": true,
+    "all_test_evaluation_counts_one": true,
+    "sklearn_version_is_1_9_0": true
+  },
+  "all_integrity_checks_passed": true,
+  "total_elapsed_seconds": 382.96573669998907
+}

@@ -1,0 +1,58 @@
+{
+  "status": "completed",
+  "phase": 6,
+  "artifact_name": "isolated_deployment_benchmark",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "completed_at_utc": "2026-08-06T21:10:46.100955+00:00",
+  "run_count": 110,
+  "group_count": 22,
+  "architecture_count": 2,
+  "variant_count": 11,
+  "seed_count": 5,
+  "runtime_policy": {
+    "process_isolation_per_run": true,
+    "cpu_threads": 1,
+    "interop_threads": 1,
+    "batch_1_warmup_iterations": 50,
+    "batch_1_measured_iterations": 500,
+    "batch_32_warmup_iterations": 30,
+    "batch_32_measured_iterations": 200
+  },
+  "data_access": {
+    "train_data_access": true,
+    "validation_data_access": false,
+    "test_data_access": false
+  },
+  "selection_policy": {
+    "final_model_selected": false
+  },
+  "entry_checks": {
+    "protocol_locked": true,
+    "preflight_locked": true,
+    "loader_smoke_locked": true,
+    "matrix_hash_matches": true,
+    "loader_matrix_hash_matches": true,
+    "matrix_run_count_110": true
+  },
+  "global_checks": {
+    "run_count_110": true,
+    "group_count_22": true,
+    "configuration_matrix_exact": true,
+    "process_isolation_per_run": true,
+    "validation_access_zero": true,
+    "test_access_zero": true,
+    "final_model_not_selected": true
+  },
+  "all_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_all_runs_v3_2.csv",
+    "size_bytes": 67445,
+    "sha256": "a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250"
+  },
+  "group_summary_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_group_summary_v3_2.csv",
+    "size_bytes": 7065,
+    "sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf"
+  },
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

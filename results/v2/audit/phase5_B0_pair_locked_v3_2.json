@@ -1,0 +1,27 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "B0_architecture_pair",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T17:31:50.675657+00:00",
+  "architecture_count": 2,
+  "run_count": 10,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "checkpoint_count": 10,
+  "checkpoint_registry": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_checkpoint_registry_v3_2.csv",
+  "checkpoint_registry_sha256": "af2f62797979caa86d02fffb6ed3ca18e038d54550d89b559161832f7ae290ef",
+  "paired_comparison": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_paired_seed_comparison_v3_2.csv",
+  "paired_comparison_sha256": "d7a26c9100846dcb4417f2425a13446ee3489d3711897a824a2da663019c604f",
+  "summary": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_summary_v3_2.json",
+  "summary_sha256": "4a5975994812ec7bda705d772bda571590c2b5981da52b0d6c5f627f2deeaa4b",
+  "final_model_selected": false,
+  "ready_for_branch_source_generation": true,
+  "next_action": "Build and verify branch-source artifacts for FP32-FT, P25-noFT, P50-noFT, DQ, PTQ, and QAT.",
+  "all_checks_passed": true
+}

@@ -1,0 +1,27 @@
+========================================================================================
+VS2 RESIDUAL SCALED OVERLAP REPAIR PLAN
+========================================================================================
+Residual scaled collision components : 4
+Affected original fingerprint groups : 12
+Affected raw rows                    : 12
+Label-conflict components            : 0
+Minimum moved raw rows               : 4
+Moved original fingerprint groups    : 4
+
+AFFECTED ROWS BY FAMILY AND SPLIT
+benign: train=8, validation=2, test=2
+
+VALIDATION CHECKS
+audit_database_quick_check_ok: True
+all_residual_components_mapped: True
+no_cross_family_label_conflicts: True
+each_original_group_currently_in_one_split: True
+per_family_affected_split_totals_preserved_exactly: True
+minimum_move_objective_consistent: True
+planned_zero_scaled_overlap_for_current_components: True
+
+Plan       : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\vs2_residual_overlap_repair_plan_v3.csv
+Components : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\vs2_residual_overlap_components_v3.csv
+Summary    : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\vs2_residual_overlap_repair_plan_summary_v3.json
+
+VS2 RESIDUAL SCALED OVERLAP REPAIR PLAN COMPLETED

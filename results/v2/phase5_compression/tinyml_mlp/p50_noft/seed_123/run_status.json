@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "tinyml_mlp__p50_noft__seed_123",
+  "architecture": "tinyml_mlp",
+  "variant": "P50-noFT",
+  "seed": 123,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "validation_predictions_sha256": "5a3b88d188317b2de7bb4a124855e101b1b78181974599c309e4370364155cd3",
+  "test_predictions_sha256": "bea18cd382b44aff8715b89c508d3bb7e50cfe638d878bd19de02115659a5b9a",
+  "metrics_sha256": "1028bb688afffdcf548f2f48d681c1af4e4bc1ef8dabdca72fddb426337ec925",
+  "run_manifest_sha256": "1cda70fd96098637a2e05be0c661c12b59b12ca68d867c36fe55f51dfba3f088",
+  "test_fingerprint_macro_f1": 0.6578981771664802,
+  "test_raw_weighted_macro_f1": 0.7626120142341057,
+  "fragility_gate_triggered": true,
+  "completed_at_utc": "2026-08-06T18:13:24.327294+00:00"
+}

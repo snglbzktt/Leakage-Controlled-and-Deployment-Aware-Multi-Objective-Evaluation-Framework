@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "tinyml_mlp__dq__seed_3407",
+  "architecture": "tinyml_mlp",
+  "variant": "DQ",
+  "seed": 3407,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "DQ_checkpoint_sha256": "2967dc75adfab5f8240e09c31825e7f9efca8e5688128d061cbebf366d163670",
+  "validation_predictions_sha256": "bee1d28600002bc102783c5279cc89376eb349841dda2a0631039868c5ab0fda",
+  "test_predictions_sha256": "e278e1a8a776f25c17e6b9727c13f6c92614e0baced777aa7c59cabf8265f902",
+  "metrics_sha256": "be7ea69ef4704cbd1605c2a0efdb322f63a7f08562141257b3700a66ed667ef5",
+  "run_manifest_sha256": "8018dd752daf50ebedfed32a73a295982d92c417b7daa6911073899e0c50d57d",
+  "fragility_gate_triggered": true,
+  "completed_at_utc": "2026-08-06T19:11:47.589638+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "locked",
+  "phase": 4,
+  "phase_name": "classical_tabular_baselines",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "completed_at_utc": "2026-08-06T14:32:47.402533+00:00",
+  "model_count": 4,
+  "total_run_count": 12,
+  "all_model_verifications_passed": true,
+  "all_test_evaluation_counts_equal_one": true,
+  "fragility_triggered_in_any_run": false,
+  "final_model_selection_performed": false,
+  "next_phase_ready": true,
+  "next_phase": 5,
+  "summary_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_summary_v3_2.json",
+  "summary_json_sha256": "a64ead61fa0f4d56c586ed3cdf6922c212dd25423bbf7fc3b59343d2a800de98",
+  "model_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_model_summary_v3_2.csv",
+  "model_summary_csv_sha256": "51bd0a583fb50b8974bae822640ca8f4892beedc73edd587b651ef213b39f8cd",
+  "all_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_all_runs_v3_2.csv",
+  "all_runs_csv_sha256": "601f55b571ce5a59f09bff65c60ca1a0da4d9dd1f43c7fa34d1815909f2a0009",
+  "all_checks_passed": true
+}

@@ -1,0 +1,21 @@
+{
+  "status": "locked",
+  "phase": 9,
+  "artifact_name": "final_deployment_artifact_protocol_preflight",
+  "protocol_version": "phase9_final_artifact_v3_2",
+  "locked_at_utc": "2026-08-06T22:00:54.388120+00:00",
+  "selected_model_family": "tinyml_mlp::P50-QAT",
+  "canonical_artifact_seed": 2026,
+  "protocol": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase9_final_artifact_protocol_v3_2.json",
+  "protocol_sha256": "890886970d392608805ccd51bcfc3cf6d75721529b717572f5bad02b9057c678",
+  "source_registry": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_artifact_source_registry_v3_2.csv",
+  "source_registry_sha256": "8eeefbaaa13c8bfbae85d1b49666be380b3b6e5f0e8e7a8115615f5b3067c645",
+  "preflight_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_artifact_protocol_preflight_v3_2.json",
+  "preflight_report_sha256": "dd498553c4484ff73117208c64f74f19ae2641b60a91e17b76a372c558cac5a8",
+  "planned_artifact_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2",
+  "artifact_construction_performed": false,
+  "model_inference_performed": false,
+  "single_checkpoint_locked": false,
+  "ready_for_artifact_construction": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,21 @@
+experiment:
+  name: pilot_family3_compact_dnn_seed42
+  mode: pilot
+  task: family_3
+  model: compact_dnn
+  seed: 42
+data:
+  batch_size: 4096
+  num_workers: 0
+training:
+  max_epochs: 4
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  gradient_clip_norm: 1.0
+  patience: 2
+  min_delta: 0.0002
+  torch_threads: 4
+  weight_scheme: inverse_square_root_frequency_mean1
+output:
+  directory: results/experiments/pilot_family3_compact_dnn_seed42
+  overwrite: true

@@ -1,0 +1,363 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "P25_and_P50_FP32_fine_tuning",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "completed_at_utc": "2026-08-06T18:44:08.445352+00:00",
+  "run_count": 20,
+  "architecture_count": 2,
+  "variant_count": 2,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25",
+      "canonical_report_name": "P25-FP32-FT",
+      "source_variant": "P25-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 6819,
+      "linear_macs_per_sample": 6744,
+      "mean_best_validation_macro_f1": 0.9993023391771777,
+      "mean_test_fingerprint_accuracy": 0.9995944012307826,
+      "mean_test_fingerprint_macro_f1": 0.9992690763931465,
+      "std_test_fingerprint_macro_f1": 9.594321658620924e-05,
+      "min_test_fingerprint_macro_f1": 0.999124216570524,
+      "max_test_fingerprint_macro_f1": 0.9993905048097456,
+      "mean_test_raw_weighted_macro_f1": 0.9981093262902749,
+      "mean_test_gafgyt_fnr": 0.002049474309839527,
+      "mean_test_mirai_fnr": 0.0001463521721101646,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "best_validation_macro_f1": {
+          "mean": 0.9993023391771777,
+          "std_population": 8.95036268968474e-05,
+          "minimum": 0.9991642367957926,
+          "maximum": 0.9994152455042337
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.9995944012307826,
+          "std_population": 5.05596408245951e-05,
+          "minimum": 0.9995131738910585,
+          "maximum": 0.9996584148296378
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9992690763931465,
+          "std_population": 9.594321658620924e-05,
+          "minimum": 0.999124216570524,
+          "maximum": 0.9993905048097456
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9981093262902749,
+          "std_population": 0.00022056392397657424,
+          "minimum": 0.9977703447942186,
+          "maximum": 0.9984093567626777
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.002049474309839527,
+          "std_population": 0.0002260004304238676,
+          "minimum": 0.0017420531633636216,
+          "maximum": 0.00241837968561065
+        },
+        "test_mirai_fnr": {
+          "mean": 0.0001463521721101646,
+          "std_population": 5.5859580090656054e-05,
+          "minimum": 0.00010569879096844481,
+          "maximum": 0.00025611630119282136
+        },
+        "training_elapsed_seconds": {
+          "mean": 28.149092820007354,
+          "std_population": 7.195023902082407,
+          "minimum": 14.536142700002529,
+          "maximum": 33.890372700057924
+        }
+      }
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50",
+      "canonical_report_name": "P50-FP32-FT",
+      "source_variant": "P50-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 4291,
+      "linear_macs_per_sample": 4240,
+      "mean_best_validation_macro_f1": 0.9990273121895452,
+      "mean_test_fingerprint_accuracy": 0.999414732810466,
+      "mean_test_fingerprint_macro_f1": 0.9989536146407785,
+      "std_test_fingerprint_macro_f1": 0.00016067119478705008,
+      "min_test_fingerprint_macro_f1": 0.9987456314068774,
+      "max_test_fingerprint_macro_f1": 0.9992350655004856,
+      "mean_test_raw_weighted_macro_f1": 0.997539435245098,
+      "mean_test_gafgyt_fnr": 0.002598733424876509,
+      "mean_test_mirai_fnr": 0.00026668618028959925,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "best_validation_macro_f1": {
+          "mean": 0.9990273121895452,
+          "std_population": 0.00017836394504156916,
+          "minimum": 0.998767254370867,
+          "maximum": 0.9993211415145726
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.999414732810466,
+          "std_population": 9.123574457043836e-05,
+          "minimum": 0.9993006917772111,
+          "maximum": 0.9995642771842623
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9989536146407785,
+          "std_population": 0.00016067119478705008,
+          "minimum": 0.9987456314068774,
+          "maximum": 0.9992350655004856
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.997539435245098,
+          "std_population": 0.000269901002352615,
+          "minimum": 0.9971767423811029,
+          "maximum": 0.9978486437247982
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.002598733424876509,
+          "std_population": 0.00021666346051936155,
+          "minimum": 0.0022544217408234646,
+          "maximum": 0.0028487692906769
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00026668618028959925,
+          "std_population": 9.136072974830369e-05,
+          "minimum": 0.0001463521721101202,
+          "maximum": 0.00038214178273210386
+        },
+        "training_elapsed_seconds": {
+          "mean": 39.7876772200223,
+          "std_population": 9.722818070145273,
+          "minimum": 28.680186700075865,
+          "maximum": 57.58677389996592
+        }
+      }
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25",
+      "canonical_report_name": "P25-FP32-FT",
+      "source_variant": "P25-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 17043,
+      "linear_macs_per_sample": 16872,
+      "mean_best_validation_macro_f1": 0.9992147881581372,
+      "mean_test_fingerprint_accuracy": 0.9995368427847529,
+      "mean_test_fingerprint_macro_f1": 0.9991604849327598,
+      "std_test_fingerprint_macro_f1": 6.135600013398436e-05,
+      "min_test_fingerprint_macro_f1": 0.9990766218611046,
+      "max_test_fingerprint_macro_f1": 0.9992321141463473,
+      "mean_test_raw_weighted_macro_f1": 0.9978222894789802,
+      "mean_test_gafgyt_fnr": 0.0023568954563154554,
+      "mean_test_mirai_fnr": 0.00018131407989203653,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "best_validation_macro_f1": {
+          "mean": 0.9992147881581372,
+          "std_population": 7.325851604047842e-05,
+          "minimum": 0.9990984990547892,
+          "maximum": 0.9993248369854514
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.9995368427847529,
+          "std_population": 3.843090533410449e-05,
+          "minimum": 0.9994782084799191,
+          "maximum": 0.9995831047133374
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9991604849327598,
+          "std_population": 6.135600013398436e-05,
+          "minimum": 0.9990766218611046,
+          "maximum": 0.9992321141463473
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9978222894789802,
+          "std_population": 0.0001303527169706128,
+          "minimum": 0.9976646354391953,
+          "maximum": 0.9980294782944562
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0023568954563154554,
+          "std_population": 8.886308851139248e-05,
+          "minimum": 0.0022339269977250664,
+          "maximum": 0.0025003586580042425
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00018131407989203653,
+          "std_population": 6.087699603165748e-05,
+          "minimum": 9.756811474015414e-05,
+          "maximum": 0.0002723776536494027
+        },
+        "training_elapsed_seconds": {
+          "mean": 61.485670199990274,
+          "std_population": 23.58570415252388,
+          "minimum": 30.290073800017126,
+          "maximum": 102.39525019994471
+        }
+      }
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50",
+      "canonical_report_name": "P50-FP32-FT",
+      "source_variant": "P50-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 10083,
+      "linear_macs_per_sample": 9968,
+      "mean_best_validation_macro_f1": 0.9988365153793373,
+      "mean_test_fingerprint_accuracy": 0.9993066090006348,
+      "mean_test_fingerprint_macro_f1": 0.998786993887449,
+      "std_test_fingerprint_macro_f1": 0.00012379076056917145,
+      "min_test_fingerprint_macro_f1": 0.9986883276417272,
+      "max_test_fingerprint_macro_f1": 0.9990314273041191,
+      "mean_test_raw_weighted_macro_f1": 0.9974174604577698,
+      "mean_test_gafgyt_fnr": 0.0028938577254933985,
+      "mean_test_mirai_fnr": 0.00038620712084622697,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "best_validation_macro_f1": {
+          "mean": 0.9988365153793373,
+          "std_population": 0.0001384233603308845,
+          "minimum": 0.9987363712130657,
+          "maximum": 0.9991096763502432
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.9993066090006348,
+          "std_population": 6.743240620915316e-05,
+          "minimum": 0.999263036719061,
+          "maximum": 0.999440553421769
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.998786993887449,
+          "std_population": 0.00012379076056917145,
+          "minimum": 0.9986883276417272,
+          "maximum": 0.9990314273041191
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9974174604577698,
+          "std_population": 0.00018271167378814844,
+          "minimum": 0.9970923165458777,
+          "maximum": 0.9976290739750319
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0028938577254933985,
+          "std_population": 8.733742853547179e-05,
+          "minimum": 0.0027462955751850204,
+          "maximum": 0.0029922324923656873
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00038620712084622697,
+          "std_population": 9.705861718591613e-05,
+          "minimum": 0.00021546292005103496,
+          "maximum": 0.000516297940499677
+        },
+        "training_elapsed_seconds": {
+          "mean": 79.2510095000267,
+          "std_population": 22.286612099335496,
+          "minimum": 35.30067490006331,
+          "maximum": 95.89247129997239
+        }
+      }
+    }
+  ],
+  "training_policy": {
+    "optimizer": "AdamW",
+    "batch_size": 4096,
+    "max_epochs": 8,
+    "early_stopping_patience": 3,
+    "early_stopping_min_delta": 0.0002,
+    "learning_rates": {
+      "tinyml_mlp": 0.00030000000000000003,
+      "compact_dnn": 0.0001
+    },
+    "learning_rate_fraction_of_B0": 0.1,
+    "weight_decay": 0.0001,
+    "validation_used_for_selection": true,
+    "test_used_for_selection": false,
+    "raw_occurrence_weight_used_for_fit": false
+  },
+  "test_policy": {
+    "test_evaluation_count_per_run": 1,
+    "test_inference_total": 20,
+    "test_used_for_selection": false
+  },
+  "source_policy": {
+    "P25_uses_locked_P25_noFT_source": true,
+    "P50_uses_locked_P50_noFT_source": true,
+    "sources_generated_directly_from_matching_B0": true
+  },
+  "fragility_triggered_in_any_run": false,
+  "entry_checks": {
+    "protocol_locked": true,
+    "noFT_evaluation_locked": true,
+    "sources_independently_verified": true,
+    "source_registry_hash_matches": true,
+    "pruning_engine_locked": true,
+    "pruning_engine_hash_matches": true,
+    "preprocessing_locked": true,
+    "matrix_has_twenty_FT_rows": true,
+    "source_registry_has_twenty_rows": true,
+    "matrix_budget_matches": true,
+    "legacy_checkpoint_reuse_disabled": true
+  },
+  "shape_checks": {
+    "train_shape_matches": true,
+    "validation_shape_matches": true,
+    "test_shape_matches": true,
+    "validation_raw_total_matches": true,
+    "test_raw_total_matches": true
+  },
+  "aggregate_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_all_runs_v3_2.csv",
+    "size_bytes": 14113,
+    "sha256": "f5d8dbc330505cdabfd9bad627b20df1c7ef43f3d262d29c1ac1110460e0095b"
+  },
+  "group_summary_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_group_summary_v3_2.csv",
+    "size_bytes": 1486,
+    "sha256": "bbe19c36ab8623cfbe5f3d8a27e2a8addc08726beb15cd15ad17c503ea04ae8f"
+  },
+  "ready_for_independent_verification": true,
+  "all_integrity_checks_passed": true
+}

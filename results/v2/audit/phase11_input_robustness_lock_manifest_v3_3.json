@@ -1,0 +1,115 @@
+{
+  "status": "locked",
+  "phase": 11,
+  "artifact_name": "input_robustness_analysis",
+  "protocol_version": "phase11_input_robustness_v3_3",
+  "locked_at_utc": "2026-08-06T23:41:58.761209+00:00",
+  "source_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase11_input_robustness_protocol_v3_3.json",
+      "size_bytes": 12501,
+      "sha256": "77c8cca9dad7d0cacad4e1e7ed8668d835e360deb5ecec56f7b24e6e05d8c082"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_protocol_locked_v3_3.json",
+      "size_bytes": 1114,
+      "sha256": "ca64b4a01173bf8e9d1671f5dab394de5a59c14f9d6fb686755d855087ca87f2"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_run_matrix_v3_3.csv",
+      "size_bytes": 5957,
+      "sha256": "febe7298d59c43649037be7eea3e2a8bf1e4cb7e49b6ad86bc7be0bef9e71dcd"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_execution_v3_3.json",
+      "size_bytes": 2910,
+      "sha256": "1fae6a5e4c1a224b00e8eee5e6ec35733ee3bc8ea834a75ea23f56fd3f8c2eec"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_completed_v3_3.json",
+      "size_bytes": 1073,
+      "sha256": "d0f1d9c5c5d800544b359d6f5469ea3f2ae742cabbbbe270fb081538dbdd7d3a"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\X_test.npy",
+      "size_bytes": 171026288,
+      "sha256": "36efbc12218b97d71585526d943057ee6857e6289fa81d6f7c3a9c6e0b10c75c"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\y_test.npy",
+      "size_bytes": 371924,
+      "sha256": "d186ab606138b8457a8459758ecb2de526867faa5381f760003742d3331157b7"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\raw_row_count_test.npy",
+      "size_bytes": 2974496,
+      "sha256": "394a809ff2770d3f8ce360bdd63ec856e54a4b95be53d666f29f77c7bdf13037"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+      "size_bytes": 123467,
+      "sha256": "6b60c988f01ec53e91ea7d9288ebd06cb4fd825ed093476150986c96d4223fa9"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\best_int8_checkpoint.pt",
+      "size_bytes": 14023,
+      "sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\hist_gradient_boosting_b0__seed_2026\\model.joblib",
+      "size_bytes": 367362,
+      "sha256": "7cc2cb21b639f35167a171358b61674ddb0f4d9461341a794f5058e18a952dfa"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\phase5_qat_engine_v3_2.py",
+      "size_bytes": 5822,
+      "sha256": "d1e33943a31bd1b3e2ea83a64daee9a31a8b5a8616c97346c62fff3c03503273"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\train_only_standard_scaler_v3_2.npz",
+      "size_bytes": 5361,
+      "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+    }
+  ],
+  "result_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_all_runs_v3_3.csv",
+      "size_bytes": 10746,
+      "sha256": "85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_summary_v3_3.json",
+      "size_bytes": 2756,
+      "sha256": "5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_detailed_results_v3_3.json",
+      "size_bytes": 57636,
+      "sha256": "0d4c143cd36cc71a85599e9bceee0c3406087ae08c1fe9d99272ba79338e0b76"
+    }
+  ],
+  "generated_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_verification_v3_3.json",
+      "size_bytes": 3939,
+      "sha256": "14cb477291bada09b4a02760381c9d29264e42251a47d575bb711d61196ee058"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_locked_v3_3.json",
+      "size_bytes": 4179,
+      "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+    }
+  ],
+  "locked_evaluation_count": 27,
+  "model_retraining_performed": false,
+  "test_used_for_model_selection": false,
+  "final_model_changed": false,
+  "phase11_locked": true,
+  "ready_for_figures_and_reporting": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-07-24T11:01:05.117816+00:00",
+  "experiment_name": "tuning_family3_tiny_1d_cnn_lr3em03_seed42",
+  "run_mode": "tuning",
+  "scientific_result_status": "hyperparameter_tuning_not_final_result",
+  "test_split_evaluated": false,
+  "model_selection_split": "validation",
+  "model_selection_metric": "macro_f1",
+  "model_name": "tiny_1d_cnn",
+  "task_name": "family_3",
+  "seed": 42,
+  "parameter_count": 1699,
+  "feature_count": 115,
+  "class_count": 3,
+  "class_names": [
+    "benign",
+    "gafgyt",
+    "mirai"
+  ],
+  "class_weight_scheme": "inverse_square_root_frequency_mean1",
+  "best_epoch": 9,
+  "best_validation_macro_f1": 0.8598032581497831,
+  "epochs_completed": 10,
+  "total_training_seconds": 259.0203849999816,
+  "config_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\experiments\\learning_rate_sweep\\family3_tiny_1d_cnn_lr3em03_seed42.yaml",
+  "config_sha256": "8c162720e42534271c227f77d99509b29181fe27d459843d66608e94097f6025",
+  "history_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\tuning_family3_tiny_1d_cnn_lr3em03_seed42\\training_history.csv",
+  "best_validation_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\tuning_family3_tiny_1d_cnn_lr3em03_seed42\\best_validation_metrics.json",
+  "checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\tuning_family3_tiny_1d_cnn_lr3em03_seed42\\best_checkpoint.pt",
+  "checkpoint_size_bytes": 31333,
+  "validation_passed": true
+}

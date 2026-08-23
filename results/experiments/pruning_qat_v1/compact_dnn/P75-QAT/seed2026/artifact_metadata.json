@@ -1,0 +1,124 @@
+{
+  "generated_at_utc": "2026-07-26T20:04:08.930332+00:00",
+  "method_name": "P75-QAT",
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\compact_dnn\\P75-QAT\\seed2026\\converted_int8_state_dict.pt",
+  "artifact_sha256": "5520fb203d430e53cff1d54e5c581cd73beb28d6b2ed54f197b8d5584fd0d054",
+  "artifact_size_bytes": 14837,
+  "prepared_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\compact_dnn\\P75-QAT\\seed2026\\best_prepared_qat_state_dict.pt",
+  "prepared_state_sha256": "6e303f3f61e6efa1de593d8066fe5c481031ca211d6c3178bc130642f6c4aa38",
+  "quantized_module_count": 10,
+  "quantized_module_types": [
+    "torch.ao.nn.intrinsic.quantized.modules.linear_relu.LinearReLU",
+    "torch.ao.nn.quantized.modules.dropout.Dropout",
+    "torch.ao.nn.quantized.modules.linear.Linear",
+    "torch.ao.nn.quantized.modules.linear.LinearPackedParams"
+  ],
+  "quantized_graph_node_count": 2,
+  "quantized_graph_targets": [
+    "<built-in method quantize_per_tensor of type object at 0x00007FFD1323D2D0>",
+    "dequantize"
+  ],
+  "graph_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\compact_dnn\\P75-QAT\\seed2026\\converted_fx_graph.txt",
+  "pruning_metadata": {
+    "model_name": "compact_dnn",
+    "requested_pruning_ratio": 0.75,
+    "pruning_name": "P75",
+    "input_features": 115,
+    "num_classes": 3,
+    "original_architecture": {
+      "hidden_units": [
+        128,
+        64,
+        32
+      ],
+      "dropout_probability": 0.1
+    },
+    "compact_architecture": {
+      "hidden_units": [
+        32,
+        16,
+        8
+      ],
+      "dropout_probability": 0.1
+    },
+    "selected_indices": {
+      "hidden_1": [
+        1,
+        5,
+        7,
+        10,
+        12,
+        14,
+        24,
+        26,
+        28,
+        35,
+        36,
+        44,
+        49,
+        52,
+        54,
+        56,
+        57,
+        61,
+        69,
+        75,
+        80,
+        81,
+        87,
+        91,
+        94,
+        99,
+        103,
+        105,
+        109,
+        113,
+        123,
+        124
+      ],
+      "hidden_2": [
+        4,
+        10,
+        11,
+        17,
+        27,
+        31,
+        32,
+        35,
+        37,
+        41,
+        42,
+        46,
+        56,
+        57,
+        60,
+        63
+      ],
+      "hidden_3": [
+        2,
+        5,
+        11,
+        15,
+        17,
+        19,
+        25,
+        29
+      ]
+    },
+    "original_parameter_count": 25283,
+    "compact_parameter_count": 4403,
+    "removed_parameter_count": 20880,
+    "parameter_reduction_ratio": 0.8258513625756437,
+    "original_weight_layer_macs": 25056,
+    "compact_weight_layer_macs": 4344,
+    "removed_weight_layer_macs": 20712,
+    "mac_reduction_ratio": 0.8266283524904214,
+    "importance_method": "Normalized incoming plus outgoing L1 magnitude",
+    "physical_compaction": true,
+    "mask_based_pruning": false,
+    "output_class_units_pruned": false
+  },
+  "physical_compaction": true,
+  "mask_based_pruning": false,
+  "native_artifact_note": "PyTorch quantized state_dict size is runtime-specific."
+}

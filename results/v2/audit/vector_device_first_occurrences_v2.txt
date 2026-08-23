@@ -1,0 +1,485 @@
+================================================================================================
+ALL VECTOR_DEVICE OCCURRENCES
+================================================================================================
+00220:         FROM vector_device
+00370:             FROM vector_device AS vd
+00463:         FROM vector_device AS vd
+00567:         FROM vector_device
+00748:         FROM vector_device
+00848:         FROM vector_device
+00941:         FROM vector_device
+
+================================================================================================
+FIRST VECTOR_DEVICE CONTEXT BLOCKS
+================================================================================================
+
+--- BLOCK 1 | LINES 195-285 ---
+00195:         "HATA: Exact kayıt sayısı beklenen değerle uyuşmuyor."
+00196:     )
+00197:     sys.exit(1)
+00198: 
+00199: print("=" * 78)
+00200: print("FAZ 1C — GÖREV-DUYARLI ÇATIŞMA VE CİHAZ ÖRTÜŞME DENETİMİ")
+00201: print("=" * 78)
+00202: print(f"Kaynak DB       : {SOURCE_DATABASE}")
+00203: print(f"Exact audit     : {EXACT_AUDIT_SUMMARY}")
+00204: print(f"Beklenen grup   : {EXPECTED_SOURCE_GROUPS:,}")
+00205: print(f"Beklenen kayıt  : {EXPECTED_RAW_RECORDS:,}")
+00206: 
+00207: started_at = time.perf_counter()
+00208: 
+00209: connection = sqlite3.connect(
+00210:     str(SOURCE_DATABASE)
+00211: )
+00212: 
+00213: connection.row_factory = sqlite3.Row
+00214: 
+00215: labels = [
+00216:     str(row[0])
+00217:     for row in connection.execute(
+00218:         """
+00219:         SELECT DISTINCT class_label
+00220:         FROM vector_device
+00221:         ORDER BY class_label
+00222:         """
+00223:     ).fetchall()
+00224: ]
+00225: 
+00226: print()
+00227: print("Kaynak sınıf etiketleri:")
+00228: 
+00229: for label in labels:
+00230:     print(f"- {label}")
+00231: 
+00232: connection.execute(
+00233:     """
+00234:     CREATE TEMP TABLE label_map (
+00235:         original_label TEXT PRIMARY KEY,
+00236:         binary_label TEXT NOT NULL,
+00237:         family3_label TEXT NOT NULL,
+00238:         multiclass11_label TEXT NOT NULL
+00239:     )
+00240:     """
+00241: )
+00242: 
+00243: for label in labels:
+00244:     binary_label, family_label, multiclass_label = (
+00245:         map_family(label)
+00246:     )
+00247: 
+00248:     connection.execute(
+00249:         """
+00250:         INSERT INTO label_map (
+00251:             original_label,
+00252:             binary_label,
+00253:             family3_label,
+00254:             multiclass11_label
+00255:         )
+00256:         VALUES (?, ?, ?, ?)
+00257:         """,
+00258:         (
+00259:             label,
+00260:             binary_label,
+00261:             family_label,
+00262:             multiclass_label,
+00263:         ),
+00264:     )
+00265: 
+00266: connection.commit()
+00267: 
+00268: source_group_summary = connection.execute(
+00269:     """
+00270:     SELECT
+00271:         COUNT(*) AS group_count,
+00272:         COALESCE(
+00273:             SUM(occurrence_count),
+00274:             0
+00275:         ) AS occurrence_count,
+00276:         MAX(device_count) AS maximum_device_count,
+00277:         MAX(class_count) AS maximum_class_count
+00278:     FROM vector_groups
+00279:     """
+00280: ).fetchone()
+00281: 
+00282: source_group_count = int(
+00283:     source_group_summary["group_count"]
+00284: )
+00285: 
+
+--- BLOCK 2 | LINES 345-405 ---
+00345:                     CASE
+00346:                         WHEN target_label_count > 1
+00347:                         THEN occurrence_count
+00348:                         ELSE 0
+00349:                     END
+00350:                 ),
+00351:                 0
+00352:             ) AS conflict_occurrence_count,
+00353: 
+00354:             MAX(target_label_count)
+00355:                 AS maximum_target_labels_per_group
+00356: 
+00357:         FROM (
+00358:             SELECT
+00359:                 vd.hash_forward,
+00360:                 vd.hash_reverse,
+00361: 
+00362:                 COUNT(
+00363:                     DISTINCT lm.{mapped_column}
+00364:                 ) AS target_label_count,
+00365: 
+00366:                 SUM(
+00367:                     vd.occurrence_count
+00368:                 ) AS occurrence_count
+00369: 
+00370:             FROM vector_device AS vd
+00371: 
+00372:             INNER JOIN label_map AS lm
+00373:                 ON
+00374:                     vd.class_label
+00375:                     = lm.original_label
+00376: 
+00377:             GROUP BY
+00378:                 vd.hash_forward,
+00379:                 vd.hash_reverse
+00380:         )
+00381:     """
+00382: 
+00383:     task_row = connection.execute(
+00384:         summary_query
+00385:     ).fetchone()
+00386: 
+00387:     group_count = int(
+00388:         task_row["group_count"]
+00389:     )
+00390: 
+00391:     conflict_group_count = int(
+00392:         task_row["conflict_group_count"]
+00393:     )
+00394: 
+00395:     occurrence_count = int(
+00396:         task_row["occurrence_count"]
+00397:     )
+00398: 
+00399:     conflict_occurrence_count = int(
+00400:         task_row["conflict_occurrence_count"]
+00401:     )
+00402: 
+00403:     maximum_target_labels = int(
+00404:         task_row[
+00405:             "maximum_target_labels_per_group"
+
+--- BLOCK 3 | LINES 438-498 ---
+00438: 
+00439:             SUM(
+00440:                 vd.occurrence_count
+00441:             ) AS occurrence_count,
+00442: 
+00443:             COUNT(
+00444:                 DISTINCT vd.device
+00445:             ) AS device_count,
+00446: 
+00447:             COUNT(
+00448:                 DISTINCT vd.class_label
+00449:             ) AS original_label_count,
+00450: 
+00451:             COUNT(
+00452:                 DISTINCT lm.{mapped_column}
+00453:             ) AS target_label_count,
+00454: 
+00455:             GROUP_CONCAT(
+00456:                 DISTINCT vd.class_label
+00457:             ) AS original_labels,
+00458: 
+00459:             GROUP_CONCAT(
+00460:                 DISTINCT lm.{mapped_column}
+00461:             ) AS target_labels
+00462: 
+00463:         FROM vector_device AS vd
+00464: 
+00465:         INNER JOIN label_map AS lm
+00466:             ON
+00467:                 vd.class_label
+00468:                 = lm.original_label
+00469: 
+00470:         GROUP BY
+00471:             vd.hash_forward,
+00472:             vd.hash_reverse
+00473: 
+00474:         HAVING
+00475:             COUNT(
+00476:                 DISTINCT lm.{mapped_column}
+00477:             ) > 1
+00478: 
+00479:         ORDER BY
+00480:             occurrence_count DESC,
+00481:             vd.hash_forward,
+00482:             vd.hash_reverse
+00483:     """
+00484: 
+00485:     detail_results = connection.execute(
+00486:         detail_query
+00487:     ).fetchall()
+00488: 
+00489:     for detail in detail_results:
+00490:         task_detail_rows.append(
+00491:             {
+00492:                 "task": task_name,
+00493:                 "hash_forward":
+00494:                     int(detail["hash_forward"]),
+00495:                 "hash_reverse":
+00496:                     int(detail["hash_reverse"]),
+00497:                 "occurrence_count":
+00498:                     int(detail["occurrence_count"]),
+
+--- BLOCK 4 | LINES 542-602 ---
+00542:     [
+00543:         "task",
+00544:         "hash_forward",
+00545:         "hash_reverse",
+00546:         "occurrence_count",
+00547:         "device_count",
+00548:         "original_label_count",
+00549:         "target_label_count",
+00550:         "original_labels",
+00551:         "target_labels",
+00552:     ],
+00553: )
+00554: 
+00555: print()
+00556: print("Cihaz bazlı LODO uygunluğu hesaplanıyor...")
+00557: 
+00558: device_query = """
+00559:     WITH per_device_group AS (
+00560:         SELECT
+00561:             hash_forward,
+00562:             hash_reverse,
+00563:             device,
+00564:             SUM(
+00565:                 occurrence_count
+00566:             ) AS occurrence_count
+00567:         FROM vector_device
+00568:         GROUP BY
+00569:             hash_forward,
+00570:             hash_reverse,
+00571:             device
+00572:     )
+00573: 
+00574:     SELECT
+00575:         pdg.device,
+00576: 
+00577:         COUNT(*) AS fingerprint_count,
+00578: 
+00579:         SUM(
+00580:             pdg.occurrence_count
+00581:         ) AS raw_occurrence_count,
+00582: 
+00583:         SUM(
+00584:             CASE
+00585:                 WHEN vg.device_count = 1
+00586:                 THEN 1
+00587:                 ELSE 0
+00588:             END
+00589:         ) AS novel_fingerprint_count,
+00590: 
+00591:         SUM(
+00592:             CASE
+00593:                 WHEN vg.device_count = 1
+00594:                 THEN pdg.occurrence_count
+00595:                 ELSE 0
+00596:             END
+00597:         ) AS novel_occurrence_count,
+00598: 
+00599:         SUM(
+00600:             CASE
+00601:                 WHEN vg.device_count > 1
+00602:                 THEN 1
+
+--- BLOCK 5 | LINES 723-783 ---
+00723:         "raw_occurrence_count",
+00724:         "novel_fingerprint_count",
+00725:         "novel_fingerprint_rate",
+00726:         "novel_occurrence_count",
+00727:         "novel_occurrence_rate",
+00728:         "train_exposed_fingerprint_count",
+00729:         "train_exposed_fingerprint_rate",
+00730:         "train_exposed_occurrence_count",
+00731:         "train_exposed_occurrence_rate",
+00732:         "maximum_group_device_count",
+00733:     ],
+00734: )
+00735: 
+00736: print("Cihaz ve sınıf destekleri hesaplanıyor...")
+00737: 
+00738: device_class_query = """
+00739:     WITH device_class_group AS (
+00740:         SELECT
+00741:             device,
+00742:             class_label,
+00743:             hash_forward,
+00744:             hash_reverse,
+00745:             SUM(
+00746:                 occurrence_count
+00747:             ) AS occurrence_count
+00748:         FROM vector_device
+00749:         GROUP BY
+00750:             device,
+00751:             class_label,
+00752:             hash_forward,
+00753:             hash_reverse
+00754:     )
+00755: 
+00756:     SELECT
+00757:         device,
+00758:         class_label,
+00759:         COUNT(*) AS fingerprint_count,
+00760:         SUM(
+00761:             occurrence_count
+00762:         ) AS raw_occurrence_count
+00763: 
+00764:     FROM device_class_group
+00765: 
+00766:     GROUP BY
+00767:         device,
+00768:         class_label
+00769: 
+00770:     ORDER BY
+00771:         device,
+00772:         class_label
+00773: """
+00774: 
+00775: device_class_rows = [
+00776:     {
+00777:         "device": str(row["device"]),
+00778:         "class_label":
+00779:             str(row["class_label"]),
+00780:         "fingerprint_count":
+00781:             int(row["fingerprint_count"]),
+00782:         "raw_occurrence_count":
+00783:             int(row["raw_occurrence_count"]),
+
+--- BLOCK 6 | LINES 823-883 ---
+00823:         """
+00824:     ).fetchall()
+00825: ]
+00826: 
+00827: write_csv(
+00828:     DEVICE_COUNT_DISTRIBUTION_CSV,
+00829:     device_count_distribution_rows,
+00830:     [
+00831:         "device_count",
+00832:         "fingerprint_count",
+00833:         "raw_occurrence_count",
+00834:     ],
+00835: )
+00836: 
+00837: print("Cihaz çiftleri arasındaki fingerprint örtüşmesi hesaplanıyor...")
+00838: 
+00839: device_pair_query = """
+00840:     WITH per_device_group AS (
+00841:         SELECT
+00842:             hash_forward,
+00843:             hash_reverse,
+00844:             device,
+00845:             SUM(
+00846:                 occurrence_count
+00847:             ) AS occurrence_count
+00848:         FROM vector_device
+00849:         GROUP BY
+00850:             hash_forward,
+00851:             hash_reverse,
+00852:             device
+00853:     )
+00854: 
+00855:     SELECT
+00856:         left_side.device AS device_a,
+00857:         right_side.device AS device_b,
+00858: 
+00859:         COUNT(*) AS shared_fingerprint_count,
+00860: 
+00861:         SUM(
+00862:             left_side.occurrence_count
+00863:         ) AS device_a_occurrences_on_shared,
+00864: 
+00865:         SUM(
+00866:             right_side.occurrence_count
+00867:         ) AS device_b_occurrences_on_shared
+00868: 
+00869:     FROM per_device_group AS left_side
+00870: 
+00871:     INNER JOIN per_device_group AS right_side
+00872:         ON
+00873:             left_side.hash_forward
+00874:                 = right_side.hash_forward
+00875:             AND
+00876:             left_side.hash_reverse
+00877:                 = right_side.hash_reverse
+00878:             AND
+00879:             left_side.device
+00880:                 < right_side.device
+00881: 
+00882:     GROUP BY
+00883:         left_side.device,
+
+--- BLOCK 7 | LINES 916-976 ---
+00916:             ),
+00917:     }
+00918:     for row in connection.execute(
+00919:         device_pair_query
+00920:     ).fetchall()
+00921: ]
+00922: 
+00923: write_csv(
+00924:     DEVICE_PAIR_CSV,
+00925:     device_pair_rows,
+00926:     [
+00927:         "device_a",
+00928:         "device_b",
+00929:         "shared_fingerprint_count",
+00930:         "device_a_occurrences_on_shared",
+00931:         "device_b_occurrences_on_shared",
+00932:     ],
+00933: )
+00934: 
+00935: distinct_device_count = int(
+00936:     connection.execute(
+00937:         """
+00938:         SELECT COUNT(
+00939:             DISTINCT device
+00940:         )
+00941:         FROM vector_device
+00942:         """
+00943:     ).fetchone()[0]
+00944: )
+00945: 
+00946: multi_device_summary = connection.execute(
+00947:     """
+00948:     SELECT
+00949:         COUNT(*) AS multi_device_group_count,
+00950: 
+00951:         COALESCE(
+00952:             SUM(occurrence_count),
+00953:             0
+00954:         ) AS multi_device_occurrence_count
+00955: 
+00956:     FROM vector_groups
+00957: 
+00958:     WHERE device_count > 1
+00959:     """
+00960: ).fetchone()
+00961: 
+00962: single_device_summary = connection.execute(
+00963:     """
+00964:     SELECT
+00965:         COUNT(*) AS single_device_group_count,
+00966: 
+00967:         COALESCE(
+00968:             SUM(occurrence_count),
+00969:             0
+00970:         ) AS single_device_occurrence_count
+00971: 
+00972:     FROM vector_groups
+00973: 
+00974:     WHERE device_count = 1
+00975:     """
+00976: ).fetchone()

@@ -1,0 +1,1509 @@
+﻿relative_path,line_number,keywords,code
+src\compression\__init__.py,1,TinyML,"""""""TinyML model sıkıştırma bileşenleri."""""""
+src\compression\__init__.py,11,compact,"recreate_compact_model,"
+src\compression\__init__.py,22,compact,"""recreate_compact_model"","
+src\compression\structured_pruning.py,2,TinyML,TinyML IDS için fiziksel yapılandırılmış budama motoru.
+src\compression\structured_pruning.py,5,tinyml,- tinyml_mlp
+src\compression\structured_pruning.py,6,compact,- compact_dnn
+src\compression\structured_pruning.py,32,tinyml,"""tinyml_mlp"","
+src\compression\structured_pruning.py,33,compact,"""compact_dnn"","
+src\compression\structured_pruning.py,56,compact,"compact_architecture: dict[str, Any]"
+src\compression\structured_pruning.py,60,compact,compact_parameter_count: int
+src\compression\structured_pruning.py,65,compact,compact_weight_layer_macs: int
+src\compression\structured_pruning.py,70,compact,physical_compaction: bool
+src\compression\structured_pruning.py,683,compact,"compact_architecture: dict[str, Any],"
+src\compression\structured_pruning.py,686,compact,"compact_model: nn.Module,"
+src\compression\structured_pruning.py,688,compact,"compact_macs: int,"
+src\compression\structured_pruning.py,698,compact,compact_parameter_count = (
+src\compression\structured_pruning.py,700,compact,compact_model
+src\compression\structured_pruning.py,706,compact,- compact_parameter_count
+src\compression\structured_pruning.py,711,compact,- compact_macs
+src\compression\structured_pruning.py,741,compact,compact_architecture=(
+src\compression\structured_pruning.py,742,compact,compact_architecture
+src\compression\structured_pruning.py,750,compact,compact_parameter_count=int(
+src\compression\structured_pruning.py,751,compact,compact_parameter_count
+src\compression\structured_pruning.py,763,compact,compact_weight_layer_macs=int(
+src\compression\structured_pruning.py,764,compact,compact_macs
+src\compression\structured_pruning.py,776,compact,"physical_compaction=True,"
+src\compression\structured_pruning.py,782,tinyml,def _prune_tinyml_mlp(
+src\compression\structured_pruning.py,789,TinyML,"""""""TinyML-MLP gizli nöronlarını budar."""""""
+src\compression\structured_pruning.py,807,TinyML,"""TinyML-MLP katman yapısı beklenen biçimde değil."""
+src\compression\structured_pruning.py,845,compact,compact_hidden_units = (
+src\compression\structured_pruning.py,850,compact,compact_model = create_model(
+src\compression\structured_pruning.py,851,tinyml,"model_name=""tinyml_mlp"","
+src\compression\structured_pruning.py,854,compact,"hidden_units=compact_hidden_units,"
+src\compression\structured_pruning.py,859,compact,"destination=compact_model.network[0],"
+src\compression\structured_pruning.py,866,compact,"destination=compact_model.network[2],"
+src\compression\structured_pruning.py,873,compact,"destination=compact_model.network[4],"
+src\compression\structured_pruning.py,879,tinyml,"model_name=""tinyml_mlp"","
+src\compression\structured_pruning.py,888,compact,compact_architecture={
+src\compression\structured_pruning.py,890,compact,compact_hidden_units
+src\compression\structured_pruning.py,898,compact,"compact_model=compact_model,"
+src\compression\structured_pruning.py,904,compact,compact_macs=_calculate_mlp_macs(
+src\compression\structured_pruning.py,906,compact,"hidden_units=compact_hidden_units,"
+src\compression\structured_pruning.py,911,compact,"return compact_model, metadata"
+src\compression\structured_pruning.py,914,compact,def _prune_compact_dnn(
+src\compression\structured_pruning.py,921,Compact,"""""""Compact-DNN gizli nöronlarını budar."""""""
+src\compression\structured_pruning.py,941,Compact,"""Compact-DNN katman yapısı beklenen biçimde değil."""
+src\compression\structured_pruning.py,991,compact,compact_hidden_units = (
+src\compression\structured_pruning.py,997,compact,compact_model = create_model(
+src\compression\structured_pruning.py,998,compact,"model_name=""compact_dnn"","
+src\compression\structured_pruning.py,1001,compact,"hidden_units=compact_hidden_units,"
+src\compression\structured_pruning.py,1009,compact,"destination=compact_model.network[0],"
+src\compression\structured_pruning.py,1016,compact,"destination=compact_model.network[3],"
+src\compression\structured_pruning.py,1023,compact,"destination=compact_model.network[6],"
+src\compression\structured_pruning.py,1030,compact,"destination=compact_model.network[8],"
+src\compression\structured_pruning.py,1036,compact,"model_name=""compact_dnn"","
+src\compression\structured_pruning.py,1048,compact,compact_architecture={
+src\compression\structured_pruning.py,1050,compact,compact_hidden_units
+src\compression\structured_pruning.py,1062,compact,"compact_model=compact_model,"
+src\compression\structured_pruning.py,1068,compact,compact_macs=_calculate_mlp_macs(
+src\compression\structured_pruning.py,1070,compact,"hidden_units=compact_hidden_units,"
+src\compression\structured_pruning.py,1075,compact,"return compact_model, metadata"
+src\compression\structured_pruning.py,1149,compact,compact_channels = (
+src\compression\structured_pruning.py,1155,compact,compact_model = create_model(
+src\compression\structured_pruning.py,1159,compact,"channels=compact_channels,"
+src\compression\structured_pruning.py,1164,compact,"destination=compact_model.feature_extractor[0],"
+src\compression\structured_pruning.py,1171,compact,"destination=compact_model.feature_extractor[3],"
+src\compression\structured_pruning.py,1178,compact,"destination=compact_model.feature_extractor[6],"
+src\compression\structured_pruning.py,1185,compact,"destination=compact_model.classifier,"
+src\compression\structured_pruning.py,1200,compact,compact_architecture={
+src\compression\structured_pruning.py,1202,compact,compact_channels
+src\compression\structured_pruning.py,1211,compact,"compact_model=compact_model,"
+src\compression\structured_pruning.py,1217,compact,compact_macs=_calculate_cnn_macs(
+src\compression\structured_pruning.py,1219,compact,"channels=compact_channels,"
+src\compression\structured_pruning.py,1224,compact,"return compact_model, metadata"
+src\compression\structured_pruning.py,1251,tinyml,"if model_name == ""tinyml_mlp"":"
+src\compression\structured_pruning.py,1252,tinyml,return _prune_tinyml_mlp(
+src\compression\structured_pruning.py,1257,compact,"if model_name == ""compact_dnn"":"
+src\compression\structured_pruning.py,1258,compact,return _prune_compact_dnn(
+src\compression\structured_pruning.py,1274,compact,def recreate_compact_model(
+src\compression\structured_pruning.py,1297,compact,compact_architecture = (
+src\compression\structured_pruning.py,1299,compact,"""compact_architecture"""
+src\compression\structured_pruning.py,1303,tinyml,"if model_name == ""tinyml_mlp"":"
+src\compression\structured_pruning.py,1310,compact,for value in compact_architecture[
+src\compression\structured_pruning.py,1316,compact,"if model_name == ""compact_dnn"":"
+src\compression\structured_pruning.py,1323,compact,for value in compact_architecture[
+src\compression\structured_pruning.py,1328,compact,compact_architecture[
+src\compression\structured_pruning.py,1341,compact,for value in compact_architecture[
+src\data\__init__.py,6,dataloader,"create_nbaiot_dataloader,"
+src\data\__init__.py,13,dataloader,"""create_nbaiot_dataloader"","
+src\data\nbaiot_pipeline.py,10,DataLoader,- Windows ve PyTorch DataLoader ile uyumludur.
+src\data\nbaiot_pipeline.py,28,DataLoader,"DataLoader,"
+src\data\nbaiot_pipeline.py,61,class_weight,"/ ""nbaiot_task_class_weights_seed2026.npz"""
+src\data\nbaiot_pipeline.py,98,class_weight,class_weight_scheme: str
+src\data\nbaiot_pipeline.py,99,class_weight,class_weights: np.ndarray
+src\data\nbaiot_pipeline.py,378,class_weight,class_weight_key = (
+src\data\nbaiot_pipeline.py,392,class_weight,if class_weight_key not in weight_data:
+src\data\nbaiot_pipeline.py,395,class_weight,"f""{class_weight_key}"""
+src\data\nbaiot_pipeline.py,406,class_weight,class_weights = np.asarray(
+src\data\nbaiot_pipeline.py,408,class_weight,class_weight_key
+src\data\nbaiot_pipeline.py,430,class_weight,if class_weights.shape != (
+src\data\nbaiot_pipeline.py,439,class_weight,class_weights
+src\data\nbaiot_pipeline.py,446,class_weight,class_weights <= 0
+src\data\nbaiot_pipeline.py,454,class_weight,class_weights.mean()
+src\data\nbaiot_pipeline.py,482,class_weight,"class_weight_scheme=weight_scheme,"
+src\data\nbaiot_pipeline.py,483,class_weight,"class_weights=class_weights,"
+src\data\nbaiot_pipeline.py,496,batch_size|DataLoader,DataLoader tarafında batch_size=None kullanılmalıdır.
+src\data\nbaiot_pipeline.py,503,batch_size,"batch_size: int = 4096,"
+src\data\nbaiot_pipeline.py,514,batch_size,if batch_size <= 0:
+src\data\nbaiot_pipeline.py,521,batch_size,self.batch_size = int(
+src\data\nbaiot_pipeline.py,522,batch_size,batch_size
+src\data\nbaiot_pipeline.py,807,batch_size,"batch_size=self.batch_size,"
+src\data\nbaiot_pipeline.py,912,dataloader,def create_nbaiot_dataloader(
+src\data\nbaiot_pipeline.py,915,batch_size,"batch_size: int = 4096,"
+src\data\nbaiot_pipeline.py,924,DataLoader,DataLoader[
+src\data\nbaiot_pipeline.py,928,DataLoader,"""""""N-BaIoT IterableDataset ve DataLoader nesnelerini oluşturur."""""""
+src\data\nbaiot_pipeline.py,943,batch_size,"batch_size=batch_size,"
+src\data\nbaiot_pipeline.py,957,batch_size,"""batch_size"": None,"
+src\data\nbaiot_pipeline.py,974,DataLoader,data_loader = DataLoader(
+src\models\__init__.py,1,TinyML,"""""""TinyML model mimarileri ve model kayıt sistemi."""""""
+src\models\__init__.py,4,Compact,"CompactDNN,"
+src\models\__init__.py,7,TinyML,"TinyMLMLP,"
+src\models\__init__.py,15,Compact,"""CompactDNN"","
+src\models\__init__.py,18,TinyML,"""TinyMLMLP"","
+src\models\nbaiot_models.py,2,TinyML,N-BaIoT TinyML model mimarileri ve model kayıt sistemi.
+src\models\nbaiot_models.py,5,tinyml,- tinyml_mlp
+src\models\nbaiot_models.py,6,compact,- compact_dnn
+src\models\nbaiot_models.py,10,batch_size,"- [batch_size, input_features] biçiminde float32 girdi kabul eder."
+src\models\nbaiot_models.py,12,CrossEntropyLoss,- CrossEntropyLoss ile doğrudan kullanılabilir.
+src\models\nbaiot_models.py,83,TINYML,# TINYML MLP
+src\models\nbaiot_models.py,86,TinyML,class TinyMLMLP(nn.Module):
+src\models\nbaiot_models.py,88,TinyML,Küçük tam bağlantılı TinyML sınıflandırıcısı.
+src\models\nbaiot_models.py,99,tinyml,"registry_name = ""tinyml_mlp"""
+src\models\nbaiot_models.py,116,TinyML,"""TinyMLMLP için iki gizli katman boyutu gerekir."""
+src\models\nbaiot_models.py,181,COMPACT,# COMPACT DNN
+src\models\nbaiot_models.py,184,Compact,class CompactDNN(nn.Module):
+src\models\nbaiot_models.py,204,compact,"registry_name = ""compact_dnn"""
+src\models\nbaiot_models.py,226,Compact,"""CompactDNN için üç gizli katman boyutu gerekir."""
+src\models\nbaiot_models.py,480,tinyml,"""tinyml_mlp"": ModelSpec("
+src\models\nbaiot_models.py,481,tinyml,"registry_name=""tinyml_mlp"","
+src\models\nbaiot_models.py,482,TinyML,"display_name=""TinyML-MLP"","
+src\models\nbaiot_models.py,497,compact,"""compact_dnn"": ModelSpec("
+src\models\nbaiot_models.py,498,compact,"registry_name=""compact_dnn"","
+src\models\nbaiot_models.py,499,Compact,"display_name=""Compact-DNN"","
+src\models\nbaiot_models.py,502,compact,"""Higher-capacity three-hidden-layer compact DNN."""
+src\models\nbaiot_models.py,520,compact,"""Order-sensitive compact 1D convolutional classifier."""
+src\models\nbaiot_models.py,549,tinyml|TinyML,"""tinyml_mlp"": TinyMLMLP,"
+src\models\nbaiot_models.py,550,Compact|compact,"""compact_dnn"": CompactDNN,"
+src\training\baseline_trainer.py,32,AdamW,from torch.optim import AdamW
+src\training\baseline_trainer.py,35,dataloader,"create_nbaiot_dataloader,"
+src\training\baseline_trainer.py,309,macro_f1,macro_f1 = float(
+src\training\baseline_trainer.py,406,macro_f1,"""macro_f1"": macro_f1,"
+src\training\baseline_trainer.py,421,AdamW,"optimizer: AdamW | None,"
+src\training\baseline_trainer.py,522,batch_size,batch_size = int(
+src\training\baseline_trainer.py,528,batch_size,) * batch_size
+src\training\baseline_trainer.py,530,batch_size,total_samples += batch_size
+src\training\baseline_trainer.py,659,batch_size,batch_size = int(
+src\training\baseline_trainer.py,660,batch_size,"data_config[""batch_size""]"
+src\training\baseline_trainer.py,670,epochs,maximum_epochs = int(
+src\training\baseline_trainer.py,671,epochs,"training_config[""max_epochs""]"
+src\training\baseline_trainer.py,674,learning_rate,learning_rate = float(
+src\training\baseline_trainer.py,675,learning_rate,"training_config[""learning_rate""]"
+src\training\baseline_trainer.py,678,weight_decay,weight_decay = float(
+src\training\baseline_trainer.py,679,weight_decay,"training_config[""weight_decay""]"
+src\training\baseline_trainer.py,689,patience,patience = int(
+src\training\baseline_trainer.py,691,patience,"""patience"","
+src\training\baseline_trainer.py,692,epochs,"maximum_epochs,"
+src\training\baseline_trainer.py,764,epochs,if maximum_epochs <= 0:
+src\training\baseline_trainer.py,766,epochs,"""max_epochs sıfırdan büyük olmalıdır."""
+src\training\baseline_trainer.py,769,learning_rate,if learning_rate <= 0:
+src\training\baseline_trainer.py,771,learning_rate,"""learning_rate sıfırdan büyük olmalıdır."""
+src\training\baseline_trainer.py,774,weight_decay,if weight_decay < 0:
+src\training\baseline_trainer.py,776,weight_decay,"""weight_decay negatif olamaz."""
+src\training\baseline_trainer.py,779,patience,if patience <= 0:
+src\training\baseline_trainer.py,781,patience,"""patience sıfırdan büyük olmalıdır."""
+src\training\baseline_trainer.py,801,dataloader,create_nbaiot_dataloader(
+src\training\baseline_trainer.py,804,batch_size,"batch_size=batch_size,"
+src\training\baseline_trainer.py,814,dataloader,create_nbaiot_dataloader(
+src\training\baseline_trainer.py,817,batch_size,"batch_size=batch_size,"
+src\training\baseline_trainer.py,832,class_weight,class_weights = torch.as_tensor(
+src\training\baseline_trainer.py,833,class_weight,"assets.class_weights,"
+src\training\baseline_trainer.py,837,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+src\training\baseline_trainer.py,838,class_weight,weight=class_weights
+src\training\baseline_trainer.py,841,AdamW,optimizer = AdamW(
+src\training\baseline_trainer.py,843,learning_rate,"lr=learning_rate,"
+src\training\baseline_trainer.py,844,weight_decay,"weight_decay=weight_decay,"
+src\training\baseline_trainer.py,865,batch_size,"print(f""Batch boyutu    : {batch_size:,}"")"
+src\training\baseline_trainer.py,866,epochs,"print(f""Epoch           : {maximum_epochs}"")"
+src\training\baseline_trainer.py,867,learning_rate,"print(f""Öğrenme oranı   : {learning_rate}"")"
+src\training\baseline_trainer.py,868,weight_decay,"print(f""Weight decay    : {weight_decay}"")"
+src\training\baseline_trainer.py,878,macro_f1,best_validation_macro_f1 = (
+src\training\baseline_trainer.py,898,epochs,epochs_without_improvement = 0
+src\training\baseline_trainer.py,906,epochs,"maximum_epochs + 1,"
+src\training\baseline_trainer.py,934,macro_f1,current_validation_macro_f1 = float(
+src\training\baseline_trainer.py,936,macro_f1,"""macro_f1"""
+src\training\baseline_trainer.py,941,macro_f1,current_validation_macro_f1
+src\training\baseline_trainer.py,943,macro_f1,best_validation_macro_f1
+src\training\baseline_trainer.py,949,macro_f1,best_validation_macro_f1 = (
+src\training\baseline_trainer.py,950,macro_f1,current_validation_macro_f1
+src\training\baseline_trainer.py,975,epochs,epochs_without_improvement = 0
+src\training\baseline_trainer.py,978,epochs,epochs_without_improvement += 1
+src\training\baseline_trainer.py,983,learning_rate,"""learning_rate"": float("
+src\training\baseline_trainer.py,994,macro_f1,"""train_macro_f1"": float("
+src\training\baseline_trainer.py,995,macro_f1,"train_metrics[""macro_f1""]"
+src\training\baseline_trainer.py,1010,macro_f1,"""validation_macro_f1"": float("
+src\training\baseline_trainer.py,1012,macro_f1,"""macro_f1"""
+src\training\baseline_trainer.py,1052,epochs,"f""Epoch {epoch:02d}/{maximum_epochs:02d} | """
+src\training\baseline_trainer.py,1054,macro_f1,"f""train_macro_f1={train_metrics['macro_f1']:.6f} | """
+src\training\baseline_trainer.py,1056,macro_f1,"f""val_macro_f1={validation_metrics['macro_f1']:.6f} | """
+src\training\baseline_trainer.py,1057,macro_f1,"f""best={best_validation_macro_f1:.6f}"""
+src\training\baseline_trainer.py,1061,epochs,epochs_without_improvement
+src\training\baseline_trainer.py,1062,patience,>= patience
+src\training\baseline_trainer.py,1139,class_weight,"""class_weight_scheme"": ("
+src\training\baseline_trainer.py,1142,class_weight,"""class_weights"": ("
+src\training\baseline_trainer.py,1143,class_weight,assets.class_weights.tolist()
+src\training\baseline_trainer.py,1148,macro_f1,"""best_validation_macro_f1"": float("
+src\training\baseline_trainer.py,1149,macro_f1,best_validation_macro_f1
+src\training\baseline_trainer.py,1202,macro_f1,"""macro_f1"""
+src\training\baseline_trainer.py,1219,class_weight,"""class_weight_scheme"": ("
+src\training\baseline_trainer.py,1225,macro_f1,"""best_validation_macro_f1"": float("
+src\training\baseline_trainer.py,1226,macro_f1,best_validation_macro_f1
+src\training\baseline_trainer.py,1228,epochs,"""epochs_completed"": int("
+src\training\baseline_trainer.py,1269,macro_f1,"f""{best_validation_macro_f1:.6f}"""
+scripts\07_build_primary_split_index.py,533,batch_size,if args.batch_size <= 0:
+scripts\07_build_primary_split_index.py,616,batch_size,"print(f""Batch boyutu        : {args.batch_size:,}"")"
+scripts\07_build_primary_split_index.py,692,batch_size,args.batch_size
+scripts\09_validate_primary_dataset.py,488,batch_size,"batch_size: int,"
+scripts\09_validate_primary_dataset.py,569,batch_size,"batch_size=batch_size,"
+scripts\09_validate_primary_dataset.py,857,batch_size,"batch_size: int,"
+scripts\09_validate_primary_dataset.py,931,batch_size,"batch_size=batch_size,"
+scripts\09_validate_primary_dataset.py,1175,batch_size,if args.batch_size <= 0:
+scripts\09_validate_primary_dataset.py,1215,batch_size,"print(f""Batch boyutu   : {args.batch_size:,}"")"
+scripts\09_validate_primary_dataset.py,1233,batch_size,"batch_size=args.batch_size,"
+scripts\09_validate_primary_dataset.py,1273,batch_size,"batch_size=args.batch_size,"
+scripts\10_audit_float32_conversion.py,406,batch_size,if args.batch_size <= 0:
+scripts\10_audit_float32_conversion.py,464,batch_size,"print(f""Batch boyutu   : {args.batch_size:,}"")"
+scripts\10_audit_float32_conversion.py,533,batch_size,"batch_size=args.batch_size,"
+scripts\11_build_float32_canonical_index.py,389,batch_size,"batch_size: int,"
+scripts\11_build_float32_canonical_index.py,445,batch_size,"batch_size=batch_size,"
+scripts\11_build_float32_canonical_index.py,857,batch_size,if args.batch_size <= 0:
+scripts\11_build_float32_canonical_index.py,920,batch_size,"batch_size=args.batch_size,"
+scripts\11_build_float32_canonical_index.py,975,batch_size,"print(f""Batch boyutu        : {args.batch_size:,}"")"
+scripts\11_build_float32_canonical_index.py,1092,batch_size,"batch_size=args.batch_size,"
+scripts\12_materialize_float32_canonical_dataset.py,667,batch_size,"batch_size: int,"
+scripts\12_materialize_float32_canonical_dataset.py,777,batch_size,batch_size
+scripts\12_materialize_float32_canonical_dataset.py,1100,batch_size,if args.batch_size <= 0:
+scripts\12_materialize_float32_canonical_dataset.py,1182,batch_size,"print(f""Parça boyutu     : {args.batch_size:,}"")"
+scripts\12_materialize_float32_canonical_dataset.py,1238,batch_size,"batch_size=args.batch_size,"
+scripts\12_materialize_float32_canonical_dataset.py,1401,batch_size,"batch_size=args.batch_size,"
+scripts\13_validate_float32_canonical_dataset.py,704,batch_size,"batch_size: int,"
+scripts\13_validate_float32_canonical_dataset.py,810,batch_size,"batch_size=batch_size,"
+scripts\13_validate_float32_canonical_dataset.py,1204,batch_size,batch_size
+scripts\13_validate_float32_canonical_dataset.py,1460,batch_size,"batch_size: int,"
+scripts\13_validate_float32_canonical_dataset.py,1535,batch_size,"batch_size=batch_size,"
+scripts\13_validate_float32_canonical_dataset.py,1802,batch_size,if args.batch_size <= 0:
+scripts\13_validate_float32_canonical_dataset.py,1833,batch_size,"print(f""Batch boyutu      : {args.batch_size:,}"")"
+scripts\13_validate_float32_canonical_dataset.py,1871,batch_size,"batch_size=args.batch_size,"
+scripts\13_validate_float32_canonical_dataset.py,1907,batch_size,"batch_size=args.batch_size,"
+scripts\14_fit_training_standardizer.py,348,batch_size,"batch_size: int,"
+scripts\14_fit_training_standardizer.py,398,batch_size,"batch_size=batch_size,"
+scripts\14_fit_training_standardizer.py,520,batch_size,"batch_size: int,"
+scripts\14_fit_training_standardizer.py,596,batch_size,"batch_size=batch_size,"
+scripts\14_fit_training_standardizer.py,855,batch_size,if args.batch_size <= 0:
+scripts\14_fit_training_standardizer.py,938,batch_size,"print(f""Batch boyutu     : {args.batch_size:,}"")"
+scripts\14_fit_training_standardizer.py,950,batch_size,"batch_size=args.batch_size,"
+scripts\14_fit_training_standardizer.py,992,batch_size,"batch_size=args.batch_size,"
+scripts\14_fit_training_standardizer.py,1224,TinyML,"""in simulated TinyML resource reporting."""
+scripts\15_build_label_mapping_and_class_weights.py,14,class_weight,models/preprocessing/nbaiot_class_weights_seed2026.npz
+scripts\15_build_label_mapping_and_class_weights.py,16,class_weight,results/reports/nbaiot_label_and_class_weight_summary.json
+scripts\15_build_label_mapping_and_class_weights.py,401,batch_size,"batch_size: int,"
+scripts\15_build_label_mapping_and_class_weights.py,453,batch_size,"batch_size=batch_size,"
+scripts\15_build_label_mapping_and_class_weights.py,689,batch_size,if args.batch_size <= 0:
+scripts\15_build_label_mapping_and_class_weights.py,716,class_weight,"/ f""nbaiot_class_weights_seed{args.seed}.npz"""
+scripts\15_build_label_mapping_and_class_weights.py,726,class_weight,"/ ""nbaiot_label_and_class_weight_summary.json"""
+scripts\15_build_label_mapping_and_class_weights.py,778,batch_size,"print(f""Batch boyutu       : {args.batch_size:,}"")"
+scripts\15_build_label_mapping_and_class_weights.py,802,batch_size,"batch_size=args.batch_size,"
+scripts\15_build_label_mapping_and_class_weights.py,1067,class_weight,"""class_weight_file"": str("
+scripts\15_build_label_mapping_and_class_weights.py,1078,class_weight,"""class_weight_sha256"": ("
+scripts\16_build_task_definitions.py,10,TinyML,"Ana TinyML mimari, pruning ve quantization karşılaştırma görevi."
+scripts\16_build_task_definitions.py,911,class_weight,"/ f""nbaiot_task_class_weights_seed{args.seed}.npz"""
+scripts\16_build_task_definitions.py,1078,CrossEntropyLoss,"""CrossEntropyLoss using train-only """
+scripts\17_validate_pytorch_data_pipeline.py,14,CrossEntropyLoss,- Ağırlıklı CrossEntropyLoss sonlu loss ve gradient üretiyor mu?
+scripts\17_validate_pytorch_data_pipeline.py,51,dataloader,"create_nbaiot_dataloader,"
+scripts\17_validate_pytorch_data_pipeline.py,319,batch_size,"batch_size: int,"
+scripts\17_validate_pytorch_data_pipeline.py,331,dataloader,create_nbaiot_dataloader(
+scripts\17_validate_pytorch_data_pipeline.py,334,batch_size,"batch_size=batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,389,batch_size,"* batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,548,batch_size,"""batch_size"": int("
+scripts\17_validate_pytorch_data_pipeline.py,549,batch_size,batch_size
+scripts\17_validate_pytorch_data_pipeline.py,596,batch_size,"batch_size: int,"
+scripts\17_validate_pytorch_data_pipeline.py,603,dataloader,"_, data_loader = create_nbaiot_dataloader("
+scripts\17_validate_pytorch_data_pipeline.py,606,batch_size,"batch_size=batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,638,batch_size,"batch_size: int,"
+scripts\17_validate_pytorch_data_pipeline.py,647,batch_size,"batch_size=batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,658,batch_size,"batch_size=batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,685,batch_size,"batch_size=batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,696,batch_size,"batch_size=batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,723,batch_size,"batch_size=batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,765,CrossEntropyLoss,"""""""Ağırlıklı CrossEntropyLoss için ileri ve geri geçiş testi yapar."""""""
+scripts\17_validate_pytorch_data_pipeline.py,767,class_weight,class_weights = torch.as_tensor(
+scripts\17_validate_pytorch_data_pipeline.py,768,class_weight,"assets.class_weights,"
+scripts\17_validate_pytorch_data_pipeline.py,772,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+scripts\17_validate_pytorch_data_pipeline.py,773,class_weight,weight=class_weights
+scripts\17_validate_pytorch_data_pipeline.py,794,CrossEntropyLoss,"""Ağırlıklı CrossEntropyLoss sonlu değil."""
+scripts\17_validate_pytorch_data_pipeline.py,813,CrossEntropyLoss,"""CrossEntropyLoss"""
+scripts\17_validate_pytorch_data_pipeline.py,816,class_weight,assets.class_weight_scheme
+scripts\17_validate_pytorch_data_pipeline.py,818,class_weight,"""class_weights"": {"
+scripts\17_validate_pytorch_data_pipeline.py,820,class_weight,assets.class_weights[
+scripts\17_validate_pytorch_data_pipeline.py,829,class_weight,"""class_weight_mean"": float("
+scripts\17_validate_pytorch_data_pipeline.py,830,class_weight,assets.class_weights.mean()
+scripts\17_validate_pytorch_data_pipeline.py,846,batch_size,if args.batch_size <= 0:
+scripts\17_validate_pytorch_data_pipeline.py,896,batch_size,"print(f""Batch boyutu      : {args.batch_size:,}"")"
+scripts\17_validate_pytorch_data_pipeline.py,901,class_weight,"f""{assets.class_weight_scheme}"""
+scripts\17_validate_pytorch_data_pipeline.py,922,batch_size,"batch_size=args.batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,946,batch_size,batch_size=min(
+scripts\17_validate_pytorch_data_pipeline.py,947,batch_size,"args.batch_size,"
+scripts\17_validate_pytorch_data_pipeline.py,1067,class_weight,"""class_weight_scheme"": ("
+scripts\17_validate_pytorch_data_pipeline.py,1068,class_weight,assets.class_weight_scheme
+scripts\17_validate_pytorch_data_pipeline.py,1070,batch_size,"""batch_size"": int("
+scripts\17_validate_pytorch_data_pipeline.py,1071,batch_size,args.batch_size
+scripts\18_validate_model_registry.py,2,TinyML,N-BaIoT TinyML model kayıt sistemini doğrular.
+scripts\18_validate_model_registry.py,47,dataloader,"create_nbaiot_dataloader,"
+scripts\18_validate_model_registry.py,84,TinyML,"""TinyML model kayıt sistemini gerçek N-BaIoT """
+scripts\18_validate_model_registry.py,464,class_weight,"class_weights: np.ndarray,"
+scripts\18_validate_model_registry.py,600,class_weight,"class_weights,"
+scripts\18_validate_model_registry.py,604,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+scripts\18_validate_model_registry.py,806,batch_size,if args.batch_size <= 0:
+scripts\18_validate_model_registry.py,878,dataloader,create_nbaiot_dataloader(
+scripts\18_validate_model_registry.py,881,batch_size,"batch_size=args.batch_size,"
+scripts\18_validate_model_registry.py,919,tinyml,"""tinyml_mlp"","
+scripts\18_validate_model_registry.py,920,compact,"""compact_dnn"","
+scripts\18_validate_model_registry.py,928,TinyML,"print(""N-BaIoT TinyML Model Kayıt Sistemi Doğrulaması"")"
+scripts\18_validate_model_registry.py,970,class_weight,class_weights=(
+scripts\18_validate_model_registry.py,971,class_weight,assets.class_weights
+scripts\18_validate_model_registry.py,1190,TinyML,"print(""TinyML model kayıt sistemi doğrulandı"")"
+scripts\19_train_baseline.py,26,tinyml,"/ ""family3_tinyml_mlp_smoke.yaml"""
+scripts\20_run_architecture_pilots.py,5,tinyml,- tinyml_mlp
+scripts\20_run_architecture_pilots.py,6,compact,- compact_dnn
+scripts\20_run_architecture_pilots.py,61,tinyml,"""tinyml_mlp"","
+scripts\20_run_architecture_pilots.py,62,compact,"""compact_dnn"","
+scripts\20_run_architecture_pilots.py,72,TinyML,"""Üç TinyML mimarisinin tam veri pilot """
+scripts\20_run_architecture_pilots.py,85,epochs,"""--max-epochs"","
+scripts\20_run_architecture_pilots.py,110,patience,"""--patience"","
+scripts\20_run_architecture_pilots.py,220,batch_size,"batch_size: int,"
+scripts\20_run_architecture_pilots.py,221,epochs,"maximum_epochs: int,"
+scripts\20_run_architecture_pilots.py,222,learning_rate,"learning_rate: float,"
+scripts\20_run_architecture_pilots.py,223,weight_decay,"weight_decay: float,"
+scripts\20_run_architecture_pilots.py,224,patience,"patience: int,"
+scripts\20_run_architecture_pilots.py,243,batch_size,"""batch_size"": int(batch_size),"
+scripts\20_run_architecture_pilots.py,247,epochs,"""max_epochs"": int(maximum_epochs),"
+scripts\20_run_architecture_pilots.py,248,learning_rate,"""learning_rate"": float("
+scripts\20_run_architecture_pilots.py,249,learning_rate,learning_rate
+scripts\20_run_architecture_pilots.py,251,weight_decay,"""weight_decay"": float("
+scripts\20_run_architecture_pilots.py,252,weight_decay,weight_decay
+scripts\20_run_architecture_pilots.py,255,patience,"""patience"": int(patience),"
+scripts\20_run_architecture_pilots.py,285,epochs,if args.max_epochs <= 0:
+scripts\20_run_architecture_pilots.py,287,epochs,"""max-epochs sıfırdan büyük olmalıdır."""
+scripts\20_run_architecture_pilots.py,290,batch_size,if args.batch_size <= 0:
+scripts\20_run_architecture_pilots.py,295,learning_rate,if args.learning_rate <= 0:
+scripts\20_run_architecture_pilots.py,300,weight_decay,if args.weight_decay < 0:
+scripts\20_run_architecture_pilots.py,305,patience,if args.patience <= 0:
+scripts\20_run_architecture_pilots.py,307,patience,"""patience sıfırdan büyük olmalıdır."""
+scripts\20_run_architecture_pilots.py,344,batch_size,"print(f""Batch boyutu      : {args.batch_size:,}"")"
+scripts\20_run_architecture_pilots.py,345,epochs,"print(f""En fazla epoch    : {args.max_epochs}"")"
+scripts\20_run_architecture_pilots.py,348,learning_rate,"f""{args.learning_rate}"""
+scripts\20_run_architecture_pilots.py,352,weight_decay,"f""{args.weight_decay}"""
+scripts\20_run_architecture_pilots.py,354,patience|Patience,"print(f""Patience          : {args.patience}"")"
+scripts\20_run_architecture_pilots.py,369,batch_size,"batch_size=args.batch_size,"
+scripts\20_run_architecture_pilots.py,370,epochs,"maximum_epochs=args.max_epochs,"
+scripts\20_run_architecture_pilots.py,371,learning_rate,"learning_rate=args.learning_rate,"
+scripts\20_run_architecture_pilots.py,372,weight_decay,"weight_decay=args.weight_decay,"
+scripts\20_run_architecture_pilots.py,373,patience,"patience=args.patience,"
+scripts\20_run_architecture_pilots.py,434,epochs,"""epochs_completed"": int("
+scripts\20_run_architecture_pilots.py,436,epochs,"""epochs_completed"""
+scripts\20_run_architecture_pilots.py,439,macro_f1,"""best_validation_macro_f1"": float("
+scripts\20_run_architecture_pilots.py,441,macro_f1,"""best_validation_macro_f1"""
+scripts\20_run_architecture_pilots.py,496,macro_f1,"""best_validation_macro_f1"","
+scripts\20_run_architecture_pilots.py,550,macro_f1,"""macro_f1"""
+scripts\20_run_architecture_pilots.py,554,batch_size,"""batch_size"": int("
+scripts\20_run_architecture_pilots.py,555,batch_size,args.batch_size
+scripts\20_run_architecture_pilots.py,557,epochs,"""max_epochs"": int("
+scripts\20_run_architecture_pilots.py,558,epochs,args.max_epochs
+scripts\20_run_architecture_pilots.py,560,learning_rate,"""learning_rate"": float("
+scripts\20_run_architecture_pilots.py,561,learning_rate,args.learning_rate
+scripts\20_run_architecture_pilots.py,563,weight_decay,"""weight_decay"": float("
+scripts\20_run_architecture_pilots.py,564,weight_decay,args.weight_decay
+scripts\20_run_architecture_pilots.py,566,patience,"""patience"": int("
+scripts\20_run_architecture_pilots.py,567,patience,args.patience
+scripts\20_run_architecture_pilots.py,581,macro_f1,"""highest_validation_macro_f1_model"": str("
+scripts\20_run_architecture_pilots.py,586,macro_f1,"""highest_validation_macro_f1"": float("
+scripts\20_run_architecture_pilots.py,590,macro_f1,"""best_validation_macro_f1"""
+scripts\20_run_architecture_pilots.py,620,macro_f1,"f""val_macro_f1="""
+scripts\20_run_architecture_pilots.py,621,macro_f1,"f""{row.best_validation_macro_f1:.6f} | """
+scripts\21_run_learning_rate_sweep.py,6,tinyml,tinyml_mlp
+scripts\21_run_learning_rate_sweep.py,7,compact,compact_dnn
+scripts\21_run_learning_rate_sweep.py,17,patience,- Early stopping patience:
+scripts\21_run_learning_rate_sweep.py,59,learning_rate,"/ ""learning_rate_sweep"""
+scripts\21_run_learning_rate_sweep.py,70,tinyml,"""tinyml_mlp"","
+scripts\21_run_learning_rate_sweep.py,71,compact,"""compact_dnn"","
+scripts\21_run_learning_rate_sweep.py,75,LEARNING_RATE,DEFAULT_LEARNING_RATES = (
+scripts\21_run_learning_rate_sweep.py,87,TinyML,"""Üç TinyML mimarisi için eşit bütçeli """
+scripts\21_run_learning_rate_sweep.py,104,LEARNING_RATE,DEFAULT_LEARNING_RATES
+scripts\21_run_learning_rate_sweep.py,110,epochs,"""--max-epochs"","
+scripts\21_run_learning_rate_sweep.py,128,patience,"""--patience"","
+scripts\21_run_learning_rate_sweep.py,266,learning_rate,def format_learning_rate(
+scripts\21_run_learning_rate_sweep.py,267,learning_rate,"learning_rate: float,"
+scripts\21_run_learning_rate_sweep.py,272,learning_rate,"f""{learning_rate:.0e}"""
+scripts\21_run_learning_rate_sweep.py,286,learning_rate,"learning_rate: float,"
+scripts\21_run_learning_rate_sweep.py,288,batch_size,"batch_size: int,"
+scripts\21_run_learning_rate_sweep.py,289,epochs,"maximum_epochs: int,"
+scripts\21_run_learning_rate_sweep.py,290,weight_decay,"weight_decay: float,"
+scripts\21_run_learning_rate_sweep.py,291,patience,"patience: int,"
+scripts\21_run_learning_rate_sweep.py,297,learning_rate,learning_rate_tag = (
+scripts\21_run_learning_rate_sweep.py,298,learning_rate,format_learning_rate(
+scripts\21_run_learning_rate_sweep.py,299,learning_rate,learning_rate
+scripts\21_run_learning_rate_sweep.py,305,learning_rate,"f""lr{learning_rate_tag}_seed{seed}"""
+scripts\21_run_learning_rate_sweep.py,319,batch_size,"""batch_size"": int("
+scripts\21_run_learning_rate_sweep.py,320,batch_size,batch_size
+scripts\21_run_learning_rate_sweep.py,325,epochs,"""max_epochs"": int("
+scripts\21_run_learning_rate_sweep.py,326,epochs,maximum_epochs
+scripts\21_run_learning_rate_sweep.py,328,learning_rate,"""learning_rate"": float("
+scripts\21_run_learning_rate_sweep.py,329,learning_rate,learning_rate
+scripts\21_run_learning_rate_sweep.py,331,weight_decay,"""weight_decay"": float("
+scripts\21_run_learning_rate_sweep.py,332,weight_decay,weight_decay
+scripts\21_run_learning_rate_sweep.py,335,patience,"""patience"": int("
+scripts\21_run_learning_rate_sweep.py,336,patience,patience
+scripts\21_run_learning_rate_sweep.py,366,epochs,if args.max_epochs <= 0:
+scripts\21_run_learning_rate_sweep.py,368,epochs,"""max-epochs sıfırdan büyük olmalıdır."""
+scripts\21_run_learning_rate_sweep.py,371,batch_size,if args.batch_size <= 0:
+scripts\21_run_learning_rate_sweep.py,376,weight_decay,if args.weight_decay < 0:
+scripts\21_run_learning_rate_sweep.py,381,patience,if args.patience <= 0:
+scripts\21_run_learning_rate_sweep.py,383,patience,"""patience sıfırdan büyük olmalıdır."""
+scripts\21_run_learning_rate_sweep.py,396,learning_rate,learning_rates = tuple(
+scripts\21_run_learning_rate_sweep.py,397,learning_rate,float(learning_rate)
+scripts\21_run_learning_rate_sweep.py,398,learning_rate,for learning_rate
+scripts\21_run_learning_rate_sweep.py,399,learning_rate,in args.learning_rates
+scripts\21_run_learning_rate_sweep.py,402,learning_rate,if not learning_rates:
+scripts\21_run_learning_rate_sweep.py,408,learning_rate,learning_rate <= 0
+scripts\21_run_learning_rate_sweep.py,409,learning_rate,for learning_rate
+scripts\21_run_learning_rate_sweep.py,410,learning_rate,in learning_rates
+scripts\21_run_learning_rate_sweep.py,417,learning_rate,learning_rates
+scripts\21_run_learning_rate_sweep.py,420,learning_rate,learning_rates
+scripts\21_run_learning_rate_sweep.py,427,learning_rate,return learning_rates
+scripts\21_run_learning_rate_sweep.py,435,learning_rate,learning_rates = (
+scripts\21_run_learning_rate_sweep.py,461,learning_rate,* len(learning_rates)
+scripts\21_run_learning_rate_sweep.py,476,learning_rate,"f""{learning_rate:g}"""
+scripts\21_run_learning_rate_sweep.py,477,learning_rate,for learning_rate
+scripts\21_run_learning_rate_sweep.py,478,learning_rate,in learning_rates
+scripts\21_run_learning_rate_sweep.py,486,epochs,"f""En fazla epoch    : {args.max_epochs}"""
+scripts\21_run_learning_rate_sweep.py,488,patience|Patience,"print(f""Patience          : {args.patience}"")"
+scripts\21_run_learning_rate_sweep.py,490,batch_size,"f""Batch boyutu      : {args.batch_size:,}"""
+scripts\21_run_learning_rate_sweep.py,504,learning_rate,for learning_rate in learning_rates:
+scripts\21_run_learning_rate_sweep.py,510,learning_rate,learning_rate=(
+scripts\21_run_learning_rate_sweep.py,511,learning_rate,learning_rate
+scripts\21_run_learning_rate_sweep.py,514,batch_size,batch_size=(
+scripts\21_run_learning_rate_sweep.py,515,batch_size,args.batch_size
+scripts\21_run_learning_rate_sweep.py,517,epochs,maximum_epochs=(
+scripts\21_run_learning_rate_sweep.py,518,epochs,args.max_epochs
+scripts\21_run_learning_rate_sweep.py,520,weight_decay,weight_decay=(
+scripts\21_run_learning_rate_sweep.py,521,weight_decay,args.weight_decay
+scripts\21_run_learning_rate_sweep.py,523,patience,patience=(
+scripts\21_run_learning_rate_sweep.py,524,patience,args.patience
+scripts\21_run_learning_rate_sweep.py,535,learning_rate,learning_rate_tag = (
+scripts\21_run_learning_rate_sweep.py,536,learning_rate,format_learning_rate(
+scripts\21_run_learning_rate_sweep.py,537,learning_rate,learning_rate
+scripts\21_run_learning_rate_sweep.py,545,learning_rate,"f""lr{learning_rate_tag}_"""
+scripts\21_run_learning_rate_sweep.py,564,learning_rate,"f""Öğrenme oranı   : {learning_rate:g}"""
+scripts\21_run_learning_rate_sweep.py,594,macro_f1,validation_macro_f1 = float(
+scripts\21_run_learning_rate_sweep.py,596,macro_f1,"""macro_f1"""
+scripts\21_run_learning_rate_sweep.py,619,macro_f1,validation_macro_f1
+scripts\21_run_learning_rate_sweep.py,622,macro_f1,"""best_validation_macro_f1"""
+scripts\21_run_learning_rate_sweep.py,636,learning_rate,"""learning_rate"": float("
+scripts\21_run_learning_rate_sweep.py,637,learning_rate,learning_rate
+scripts\21_run_learning_rate_sweep.py,647,epochs,"""epochs_completed"": int("
+scripts\21_run_learning_rate_sweep.py,649,epochs,"""epochs_completed"""
+scripts\21_run_learning_rate_sweep.py,652,macro_f1,"""best_validation_macro_f1"": ("
+scripts\21_run_learning_rate_sweep.py,653,macro_f1,validation_macro_f1
+scripts\21_run_learning_rate_sweep.py,733,macro_f1,"""best_validation_macro_f1"","
+scripts\21_run_learning_rate_sweep.py,736,learning_rate,"""learning_rate"","
+scripts\21_run_learning_rate_sweep.py,752,learning_rate,"""learning_rate_rank"","
+scripts\21_run_learning_rate_sweep.py,788,macro_f1,"""best_validation_macro_f1"","
+scripts\21_run_learning_rate_sweep.py,815,learning_rate,"/ ""nbaiot_family3_learning_rate_sweep_all.csv"""
+scripts\21_run_learning_rate_sweep.py,820,learning_rate,"/ ""nbaiot_family3_learning_rate_sweep_selected.csv"""
+scripts\21_run_learning_rate_sweep.py,825,learning_rate,"/ ""nbaiot_family3_learning_rate_sweep_summary.json"""
+scripts\21_run_learning_rate_sweep.py,849,learning_rate,"""equal_budget_learning_rate_sweep"""
+scripts\21_run_learning_rate_sweep.py,860,learning_rate,"""learning_rates"": list("
+scripts\21_run_learning_rate_sweep.py,861,learning_rate,learning_rates
+scripts\21_run_learning_rate_sweep.py,866,epochs,"""maximum_epochs"": int("
+scripts\21_run_learning_rate_sweep.py,867,epochs,args.max_epochs
+scripts\21_run_learning_rate_sweep.py,869,patience,"""patience"": int("
+scripts\21_run_learning_rate_sweep.py,870,patience,args.patience
+scripts\21_run_learning_rate_sweep.py,875,batch_size,"""batch_size"": int("
+scripts\21_run_learning_rate_sweep.py,876,batch_size,args.batch_size
+scripts\21_run_learning_rate_sweep.py,878,weight_decay,"""weight_decay"": float("
+scripts\21_run_learning_rate_sweep.py,879,weight_decay,args.weight_decay
+scripts\21_run_learning_rate_sweep.py,888,macro_f1,"""macro_f1"""
+scripts\21_run_learning_rate_sweep.py,902,learning_rate,"""learning_rate"": float("
+scripts\21_run_learning_rate_sweep.py,904,learning_rate,"""learning_rate"""
+scripts\21_run_learning_rate_sweep.py,912,epochs,"""epochs_completed"": int("
+scripts\21_run_learning_rate_sweep.py,914,epochs,"""epochs_completed"""
+scripts\21_run_learning_rate_sweep.py,917,macro_f1,"""best_validation_macro_f1"": float("
+scripts\21_run_learning_rate_sweep.py,919,macro_f1,"""best_validation_macro_f1"""
+scripts\21_run_learning_rate_sweep.py,970,learning_rate,"f""LR={row.learning_rate:g} | """
+scripts\21_run_learning_rate_sweep.py,972,macro_f1,"f""val_macro_f1="""
+scripts\21_run_learning_rate_sweep.py,973,macro_f1,"f""{row.best_validation_macro_f1:.6f} | """
+scripts\22_lock_fp32_baseline_protocol.py,37,learning_rate,"/ ""nbaiot_family3_learning_rate_sweep_selected.csv"""
+scripts\22_lock_fp32_baseline_protocol.py,65,class_weight,"/ ""nbaiot_task_class_weights_seed2026.npz"""
+scripts\22_lock_fp32_baseline_protocol.py,81,tinyml,"""tinyml_mlp"","
+scripts\22_lock_fp32_baseline_protocol.py,82,compact,"""compact_dnn"","
+scripts\22_lock_fp32_baseline_protocol.py,148,epochs,"""--max-epochs"","
+scripts\22_lock_fp32_baseline_protocol.py,154,patience,"""--patience"","
+scripts\22_lock_fp32_baseline_protocol.py,305,epochs,if args.max_epochs <= 0:
+scripts\22_lock_fp32_baseline_protocol.py,307,epochs,"""max-epochs sıfırdan büyük olmalıdır."""
+scripts\22_lock_fp32_baseline_protocol.py,310,patience,if args.patience <= 0:
+scripts\22_lock_fp32_baseline_protocol.py,312,patience,"""patience sıfırdan büyük olmalıdır."""
+scripts\22_lock_fp32_baseline_protocol.py,315,epochs|patience,if args.patience > args.max_epochs:
+scripts\22_lock_fp32_baseline_protocol.py,317,epochs|patience,"""patience, max-epochs değerinden büyük olamaz."""
+scripts\22_lock_fp32_baseline_protocol.py,325,batch_size,if args.batch_size <= 0:
+scripts\22_lock_fp32_baseline_protocol.py,330,weight_decay,if args.weight_decay < 0:
+scripts\22_lock_fp32_baseline_protocol.py,346,learning_rate,def load_selected_learning_rates(
+scripts\22_lock_fp32_baseline_protocol.py,360,learning_rate,"""learning_rate"","
+scripts\22_lock_fp32_baseline_protocol.py,362,epochs,"""epochs_completed"","
+scripts\22_lock_fp32_baseline_protocol.py,363,macro_f1,"""best_validation_macro_f1"","
+scripts\22_lock_fp32_baseline_protocol.py,386,learning_rate,"frame[""learning_rate""] = pd.to_numeric("
+scripts\22_lock_fp32_baseline_protocol.py,387,learning_rate,"frame[""learning_rate""],"
+scripts\22_lock_fp32_baseline_protocol.py,396,epochs,"frame[""epochs_completed""] = pd.to_numeric("
+scripts\22_lock_fp32_baseline_protocol.py,397,epochs,"frame[""epochs_completed""],"
+scripts\22_lock_fp32_baseline_protocol.py,401,macro_f1,"frame[""best_validation_macro_f1""] = pd.to_numeric("
+scripts\22_lock_fp32_baseline_protocol.py,402,macro_f1,"frame[""best_validation_macro_f1""],"
+scripts\22_lock_fp32_baseline_protocol.py,433,learning_rate,"frame[""learning_rate""]"
+scripts\22_lock_fp32_baseline_protocol.py,450,epochs,"> frame[""epochs_completed""]"
+scripts\22_lock_fp32_baseline_protocol.py,457,macro_f1,"frame[""best_validation_macro_f1""]"
+scripts\22_lock_fp32_baseline_protocol.py,460,macro_f1,"frame[""best_validation_macro_f1""]"
+scripts\22_lock_fp32_baseline_protocol.py,493,learning_rate,selected_learning_rates = {
+scripts\22_lock_fp32_baseline_protocol.py,495,learning_rate,row.learning_rate
+scripts\22_lock_fp32_baseline_protocol.py,504,learning_rate,"selected_learning_rates,"
+scripts\22_lock_fp32_baseline_protocol.py,670,learning_rate,"selected_learning_rates,"
+scripts\22_lock_fp32_baseline_protocol.py,671,learning_rate,) = load_selected_learning_rates(
+scripts\22_lock_fp32_baseline_protocol.py,684,learning_rate,"""learning_rate_selection"": sweep_file,"
+scripts\22_lock_fp32_baseline_protocol.py,731,learning_rate,"""learning_rate"": float("
+scripts\22_lock_fp32_baseline_protocol.py,732,learning_rate,selected_learning_rates[
+scripts\22_lock_fp32_baseline_protocol.py,736,learning_rate,"""learning_rate_source"": ("
+scripts\22_lock_fp32_baseline_protocol.py,751,epochs,"""tuning_epochs_completed"": int("
+scripts\22_lock_fp32_baseline_protocol.py,753,epochs,"""epochs_completed"""
+scripts\22_lock_fp32_baseline_protocol.py,756,macro_f1,"""tuning_validation_macro_f1"": float("
+scripts\22_lock_fp32_baseline_protocol.py,758,macro_f1,"""best_validation_macro_f1"""
+scripts\22_lock_fp32_baseline_protocol.py,781,learning_rate,"""learning_rate"": float("
+scripts\22_lock_fp32_baseline_protocol.py,782,learning_rate,selected_learning_rates[
+scripts\22_lock_fp32_baseline_protocol.py,786,epochs,"""max_epochs"": int("
+scripts\22_lock_fp32_baseline_protocol.py,787,epochs,args.max_epochs
+scripts\22_lock_fp32_baseline_protocol.py,789,patience,"""patience"": int("
+scripts\22_lock_fp32_baseline_protocol.py,790,patience,args.patience
+scripts\22_lock_fp32_baseline_protocol.py,795,batch_size,"""batch_size"": int("
+scripts\22_lock_fp32_baseline_protocol.py,796,batch_size,args.batch_size
+scripts\22_lock_fp32_baseline_protocol.py,798,weight_decay,"""weight_decay"": float("
+scripts\22_lock_fp32_baseline_protocol.py,799,weight_decay,args.weight_decay
+scripts\22_lock_fp32_baseline_protocol.py,818,macro_f1,"""macro_f1"""
+scripts\22_lock_fp32_baseline_protocol.py,863,AdamW,"""optimizer"": ""AdamW"","
+scripts\22_lock_fp32_baseline_protocol.py,864,batch_size,"""batch_size"": int("
+scripts\22_lock_fp32_baseline_protocol.py,865,batch_size,args.batch_size
+scripts\22_lock_fp32_baseline_protocol.py,867,epochs,"""max_epochs"": int("
+scripts\22_lock_fp32_baseline_protocol.py,868,epochs,args.max_epochs
+scripts\22_lock_fp32_baseline_protocol.py,870,patience,"""early_stopping_patience"": int("
+scripts\22_lock_fp32_baseline_protocol.py,871,patience,args.patience
+scripts\22_lock_fp32_baseline_protocol.py,876,weight_decay,"""weight_decay"": float("
+scripts\22_lock_fp32_baseline_protocol.py,877,weight_decay,args.weight_decay
+scripts\22_lock_fp32_baseline_protocol.py,887,CrossEntropyLoss,"""CrossEntropyLoss"""
+scripts\22_lock_fp32_baseline_protocol.py,889,class_weight,"""class_weight_scheme"": ("
+scripts\22_lock_fp32_baseline_protocol.py,892,class_weight,"""class_weights_fitted_from"": ("
+scripts\22_lock_fp32_baseline_protocol.py,904,macro_f1,"""primary_metric"": ""macro_f1"","
+scripts\22_lock_fp32_baseline_protocol.py,925,macro_f1,"""macro_f1"","
+scripts\22_lock_fp32_baseline_protocol.py,1015,learning_rate,"""model_specific_learning_rates"": ("
+scripts\22_lock_fp32_baseline_protocol.py,1016,learning_rate,selected_learning_rates
+scripts\22_lock_fp32_baseline_protocol.py,1018,epochs,"""max_epochs"": int("
+scripts\22_lock_fp32_baseline_protocol.py,1019,epochs,args.max_epochs
+scripts\22_lock_fp32_baseline_protocol.py,1021,patience,"""patience"": int("
+scripts\22_lock_fp32_baseline_protocol.py,1022,patience,args.patience
+scripts\22_lock_fp32_baseline_protocol.py,1054,learning_rate,"f""LR={model_data['learning_rate']:g} | """
+scripts\22_lock_fp32_baseline_protocol.py,1057,macro_f1,"f""tuning_val_macro_f1="""
+scripts\22_lock_fp32_baseline_protocol.py,1058,macro_f1,"f""{model_data['tuning_validation_macro_f1']:.6f}"""
+scripts\22_lock_fp32_baseline_protocol.py,1075,epochs,"f""{args.max_epochs}"""
+scripts\22_lock_fp32_baseline_protocol.py,1079,patience,"f""patience={args.patience}, """
+scripts\23_run_fp32_baseline_experiments.py,6,tinyml,tinyml_mlp
+scripts\23_run_fp32_baseline_experiments.py,7,compact,compact_dnn
+scripts\23_run_fp32_baseline_experiments.py,62,dataloader,"create_nbaiot_dataloader,"
+scripts\23_run_fp32_baseline_experiments.py,101,tinyml,"""tinyml_mlp"","
+scripts\23_run_fp32_baseline_experiments.py,102,compact,"""compact_dnn"","
+scripts\23_run_fp32_baseline_experiments.py,120,macro_f1,"""test_macro_f1"","
+scripts\23_run_fp32_baseline_experiments.py,456,batch_size,"""batch_size"","
+scripts\23_run_fp32_baseline_experiments.py,457,epochs,"""max_epochs"","
+scripts\23_run_fp32_baseline_experiments.py,458,patience,"""early_stopping_patience"","
+scripts\23_run_fp32_baseline_experiments.py,460,weight_decay,"""weight_decay"","
+scripts\23_run_fp32_baseline_experiments.py,464,class_weight,"""class_weight_scheme"","
+scripts\23_run_fp32_baseline_experiments.py,492,learning_rate,learning_rate = float(
+scripts\23_run_fp32_baseline_experiments.py,496,learning_rate,"""learning_rate"""
+scripts\23_run_fp32_baseline_experiments.py,500,learning_rate,if learning_rate <= 0:
+scripts\23_run_fp32_baseline_experiments.py,548,batch_size,"""batch_size"": int("
+scripts\23_run_fp32_baseline_experiments.py,549,batch_size,"common[""batch_size""]"
+scripts\23_run_fp32_baseline_experiments.py,556,epochs,"""max_epochs"": int("
+scripts\23_run_fp32_baseline_experiments.py,557,epochs,"common[""max_epochs""]"
+scripts\23_run_fp32_baseline_experiments.py,559,learning_rate,"""learning_rate"": float("
+scripts\23_run_fp32_baseline_experiments.py,561,learning_rate,"""learning_rate"""
+scripts\23_run_fp32_baseline_experiments.py,564,weight_decay,"""weight_decay"": float("
+scripts\23_run_fp32_baseline_experiments.py,565,weight_decay,"common[""weight_decay""]"
+scripts\23_run_fp32_baseline_experiments.py,572,patience,"""patience"": int("
+scripts\23_run_fp32_baseline_experiments.py,574,patience,"""early_stopping_patience"""
+scripts\23_run_fp32_baseline_experiments.py,587,class_weight,"""class_weight_scheme"""
+scripts\23_run_fp32_baseline_experiments.py,759,class_weight,"""class_weight_scheme"""
+scripts\23_run_fp32_baseline_experiments.py,763,batch_size,batch_size = int(
+scripts\23_run_fp32_baseline_experiments.py,765,batch_size,"""batch_size"""
+scripts\23_run_fp32_baseline_experiments.py,786,dataloader,"_, test_loader = create_nbaiot_dataloader("
+scripts\23_run_fp32_baseline_experiments.py,789,batch_size,"batch_size=batch_size,"
+scripts\23_run_fp32_baseline_experiments.py,848,class_weight,class_weights = torch.as_tensor(
+scripts\23_run_fp32_baseline_experiments.py,849,class_weight,"assets.class_weights,"
+scripts\23_run_fp32_baseline_experiments.py,853,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+scripts\23_run_fp32_baseline_experiments.py,854,class_weight,weight=class_weights
+scripts\23_run_fp32_baseline_experiments.py,895,macro_f1,"""macro_f1"""
+scripts\23_run_fp32_baseline_experiments.py,900,macro_f1,"""best_validation_macro_f1"": float("
+scripts\23_run_fp32_baseline_experiments.py,902,macro_f1,"""best_validation_macro_f1"""
+scripts\23_run_fp32_baseline_experiments.py,1469,learning_rate,"""learning_rate"": float("
+scripts\23_run_fp32_baseline_experiments.py,1473,learning_rate,"""learning_rate"""
+scripts\23_run_fp32_baseline_experiments.py,1481,epochs,"""epochs_completed"": int("
+scripts\23_run_fp32_baseline_experiments.py,1483,epochs,"""epochs_completed"""
+scripts\23_run_fp32_baseline_experiments.py,1486,macro_f1,"""best_validation_macro_f1"": float("
+scripts\23_run_fp32_baseline_experiments.py,1488,macro_f1,"""best_validation_macro_f1"""
+scripts\23_run_fp32_baseline_experiments.py,1529,macro_f1,"""test_macro_f1"": float("
+scripts\23_run_fp32_baseline_experiments.py,1531,macro_f1,"""macro_f1"""
+scripts\23_run_fp32_baseline_experiments.py,1677,macro_f1,"f""{test_metrics['macro_f1']:.6f}"""
+scripts\23_run_fp32_baseline_experiments.py,1798,macro_f1,macro_f1_aggregate = (
+scripts\23_run_fp32_baseline_experiments.py,1803,macro_f1,"== ""test_macro_f1"""
+scripts\23_run_fp32_baseline_experiments.py,1821,macro_f1,macro_f1_aggregate.insert(
+scripts\23_run_fp32_baseline_experiments.py,1827,macro_f1,macro_f1_aggregate
+scripts\23_run_fp32_baseline_experiments.py,1900,macro_f1,"""mean_test_macro_f1"": float("
+scripts\23_run_fp32_baseline_experiments.py,1922,macro_f1,for row in macro_f1_aggregate.itertuples(
+scripts\23_run_fp32_baseline_experiments.py,1960,macro_f1,"""macro_f1"""
+scripts\23_run_fp32_baseline_experiments.py,1972,macro_f1,"""macro_f1_ranking"": ("
+scripts\23_run_fp32_baseline_experiments.py,1975,macro_f1,"""best_mean_test_macro_f1_model"": ("
+scripts\23_run_fp32_baseline_experiments.py,2019,macro_f1,"f""{record['mean_test_macro_f1']:.6f} """
+scripts\24_analyze_fp32_statistics.py,18,macro_f1,- test_macro_f1 ana doğrulayıcı metriktir.
+scripts\24_analyze_fp32_statistics.py,77,tinyml,"""tinyml_mlp"","
+scripts\24_analyze_fp32_statistics.py,78,compact,"""compact_dnn"","
+scripts\24_analyze_fp32_statistics.py,97,macro_f1,"""test_macro_f1"": {"
+scripts\24_analyze_fp32_statistics.py,1460,macro_f1,"""Ana metrik     : test_macro_f1"""
+scripts\24_analyze_fp32_statistics.py,1637,macro_f1,"== ""test_macro_f1"""
+scripts\24_analyze_fp32_statistics.py,1644,macro_f1,"== ""test_macro_f1"""
+scripts\24_analyze_fp32_statistics.py,1652,macro_f1,"== ""test_macro_f1"""
+scripts\24_analyze_fp32_statistics.py,1676,macro_f1,"""mean_test_macro_f1"": float("
+scripts\24_analyze_fp32_statistics.py,1763,macro_f1,"""test_macro_f1"""
+scripts\24_analyze_fp32_statistics.py,1930,macro_f1,"f""{ranking_record['mean_test_macro_f1']:.6f} | """
+scripts\25_validate_structured_pruning.py,49,compact,"recreate_compact_model,"
+scripts\25_validate_structured_pruning.py,52,dataloader,"create_nbaiot_dataloader,"
+scripts\25_validate_structured_pruning.py,78,tinyml,"""tinyml_mlp"","
+scripts\25_validate_structured_pruning.py,79,compact,"""compact_dnn"","
+scripts\25_validate_structured_pruning.py,372,compact,"compact_model: nn.Module,"
+scripts\25_validate_structured_pruning.py,381,compact,compact_model.eval()
+scripts\25_validate_structured_pruning.py,385,compact,compact_model(
+scripts\25_validate_structured_pruning.py,393,compact,"compact_model.state_dict(),"
+scripts\25_validate_structured_pruning.py,424,compact,recreate_compact_model(
+scripts\25_validate_structured_pruning.py,524,batch_size,if args.batch_size <= 0:
+scripts\25_validate_structured_pruning.py,631,dataloader,create_nbaiot_dataloader(
+scripts\25_validate_structured_pruning.py,634,batch_size,"batch_size=args.batch_size,"
+scripts\25_validate_structured_pruning.py,676,class_weight,class_weights = torch.as_tensor(
+scripts\25_validate_structured_pruning.py,677,class_weight,"assets.class_weights,"
+scripts\25_validate_structured_pruning.py,681,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+scripts\25_validate_structured_pruning.py,682,class_weight,weight=class_weights
+scripts\25_validate_structured_pruning.py,807,compact,"compact_model,"
+scripts\25_validate_structured_pruning.py,823,compact,compact_parameter_count = (
+scripts\25_validate_structured_pruning.py,825,compact,compact_model
+scripts\25_validate_structured_pruning.py,829,compact,compact_mac_count = int(
+scripts\25_validate_structured_pruning.py,830,compact,metadata_object.compact_weight_layer_macs
+scripts\25_validate_structured_pruning.py,844,compact,compact_parameter_count
+scripts\25_validate_structured_pruning.py,845,compact,!= metadata_object.compact_parameter_count
+scripts\25_validate_structured_pruning.py,854,compact,compact_parameter_count
+scripts\25_validate_structured_pruning.py,866,compact,and compact_mac_count
+scripts\25_validate_structured_pruning.py,876,compact,compact_model
+scripts\25_validate_structured_pruning.py,884,compact,compact_model.train()
+scripts\25_validate_structured_pruning.py,886,compact,compact_model.zero_grad(
+scripts\25_validate_structured_pruning.py,890,compact,logits = compact_model(
+scripts\25_validate_structured_pruning.py,935,compact,compact_model
+scripts\25_validate_structured_pruning.py,943,compact,"compact_model=compact_model,"
+scripts\25_validate_structured_pruning.py,950,compact,compact_model
+scripts\25_validate_structured_pruning.py,955,compact,compact_parameter_count
+scripts\25_validate_structured_pruning.py,981,compact,"""compact_parameter_count"": int("
+scripts\25_validate_structured_pruning.py,982,compact,compact_parameter_count
+scripts\25_validate_structured_pruning.py,993,compact,"""compact_weight_layer_macs"": int("
+scripts\25_validate_structured_pruning.py,994,compact,compact_mac_count
+scripts\25_validate_structured_pruning.py,1021,compact,"""physical_compaction"": True,"
+scripts\25_validate_structured_pruning.py,1036,compact,compact_parameter_count
+scripts\25_validate_structured_pruning.py,1040,compact,compact_mac_count
+scripts\25_validate_structured_pruning.py,1046,compact,"f""{compact_parameter_count:,} | """
+scripts\25_validate_structured_pruning.py,1050,compact,"f""{compact_mac_count:,} | """
+scripts\25_validate_structured_pruning.py,1119,compact,"""physical_compaction"": True,"
+scripts\25_validate_structured_pruning.py,1147,compact,"""compact_parameter_count"""
+scripts\25_validate_structured_pruning.py,1158,compact,"""compact_weight_layer_macs"""
+scripts\25_validate_structured_pruning.py,1217,compact,"""physical_compaction"": True,"
+scripts\26_run_pruning_experiments.py,5,compact|tinyml,"- Modeller: tinyml_mlp, compact_dnn, tiny_1d_cnn"
+scripts\26_run_pruning_experiments.py,59,compact,"recreate_compact_model,"
+scripts\26_run_pruning_experiments.py,62,dataloader,"create_nbaiot_dataloader,"
+scripts\26_run_pruning_experiments.py,128,tinyml,"""tinyml_mlp"","
+scripts\26_run_pruning_experiments.py,129,compact,"""compact_dnn"","
+scripts\26_run_pruning_experiments.py,163,macro_f1,"""test_macro_f1"","
+scripts\26_run_pruning_experiments.py,166,macro_f1,"""macro_f1_delta_vs_fp32"","
+scripts\26_run_pruning_experiments.py,251,epochs,"""--max-epochs"","
+scripts\26_run_pruning_experiments.py,257,patience,"""--patience"","
+scripts\26_run_pruning_experiments.py,534,epochs,if args.max_epochs <= 0:
+scripts\26_run_pruning_experiments.py,536,epochs,"""max-epochs pozitif olmalıdır."""
+scripts\26_run_pruning_experiments.py,539,patience,if args.patience <= 0:
+scripts\26_run_pruning_experiments.py,541,patience,"""patience pozitif olmalıdır."""
+scripts\26_run_pruning_experiments.py,544,epochs|patience,if args.patience > args.max_epochs:
+scripts\26_run_pruning_experiments.py,546,epochs|patience,"""patience, max-epochs değerinden büyük olamaz."""
+scripts\26_run_pruning_experiments.py,625,compact,"""physical_compaction"""
+scripts\26_run_pruning_experiments.py,674,epochs,"max_epochs: int,"
+scripts\26_run_pruning_experiments.py,675,patience,"patience: int,"
+scripts\26_run_pruning_experiments.py,719,compact,"""physical_compaction"": True,"
+scripts\26_run_pruning_experiments.py,722,AdamW,"""optimizer"": ""AdamW"","
+scripts\26_run_pruning_experiments.py,723,learning_rate,"""learning_rate_rule"": ("
+scripts\26_run_pruning_experiments.py,724,learning_rate,"""fp32_learning_rate_times_factor"""
+scripts\26_run_pruning_experiments.py,726,learning_rate,"""learning_rate_factor"": float("
+scripts\26_run_pruning_experiments.py,729,epochs,"""max_epochs"": int("
+scripts\26_run_pruning_experiments.py,730,epochs,max_epochs
+scripts\26_run_pruning_experiments.py,732,patience,"""early_stopping_patience"": int("
+scripts\26_run_pruning_experiments.py,733,patience,patience
+scripts\26_run_pruning_experiments.py,738,batch_size,"""batch_size"": int("
+scripts\26_run_pruning_experiments.py,740,batch_size,"""batch_size"""
+scripts\26_run_pruning_experiments.py,743,weight_decay,"""weight_decay"": float("
+scripts\26_run_pruning_experiments.py,745,weight_decay,"""weight_decay"""
+scripts\26_run_pruning_experiments.py,764,CrossEntropyLoss,"""CrossEntropyLoss"""
+scripts\26_run_pruning_experiments.py,766,class_weight,"""class_weight_scheme"": str("
+scripts\26_run_pruning_experiments.py,768,class_weight,"""class_weight_scheme"""
+scripts\26_run_pruning_experiments.py,774,class_weight,"""class_weights_fitted_from"": ("
+scripts\26_run_pruning_experiments.py,780,macro_f1,"""metric"": ""macro_f1"","
+scripts\26_run_pruning_experiments.py,830,compact,"""physical_compaction"","
+scripts\26_run_pruning_experiments.py,896,macro_f1,"""test_macro_f1"","
+scripts\26_run_pruning_experiments.py,940,macro_f1,"""test_macro_f1"""
+scripts\26_run_pruning_experiments.py,943,macro_f1,"""test_macro_f1"""
+scripts\26_run_pruning_experiments.py,1089,learning_rate,"fp32_learning_rate: float,"
+scripts\26_run_pruning_experiments.py,1099,learning_rate,fine_tune_learning_rate = (
+scripts\26_run_pruning_experiments.py,1101,learning_rate,fp32_learning_rate
+scripts\26_run_pruning_experiments.py,1105,learning_rate,"""learning_rate_factor"""
+scripts\26_run_pruning_experiments.py,1131,learning_rate,"""fp32_learning_rate"": float("
+scripts\26_run_pruning_experiments.py,1132,learning_rate,fp32_learning_rate
+scripts\26_run_pruning_experiments.py,1134,learning_rate,"""fine_tune_learning_rate"": float("
+scripts\26_run_pruning_experiments.py,1135,learning_rate,fine_tune_learning_rate
+scripts\26_run_pruning_experiments.py,1137,epochs,"""max_epochs"": int("
+scripts\26_run_pruning_experiments.py,1139,epochs,"""max_epochs"""
+scripts\26_run_pruning_experiments.py,1142,patience,"""patience"": int("
+scripts\26_run_pruning_experiments.py,1144,patience,"""early_stopping_patience"""
+scripts\26_run_pruning_experiments.py,1152,batch_size,"""batch_size"": int("
+scripts\26_run_pruning_experiments.py,1154,batch_size,"""batch_size"""
+scripts\26_run_pruning_experiments.py,1157,weight_decay,"""weight_decay"": float("
+scripts\26_run_pruning_experiments.py,1159,weight_decay,"""weight_decay"""
+scripts\26_run_pruning_experiments.py,1179,class_weight,"""class_weight_scheme"""
+scripts\26_run_pruning_experiments.py,1183,macro_f1,"""selection_metric"": ""macro_f1"","
+scripts\26_run_pruning_experiments.py,1256,compact,"compact_model: nn.Module,"
+scripts\26_run_pruning_experiments.py,1279,class_weight,class_weights = torch.as_tensor(
+scripts\26_run_pruning_experiments.py,1280,class_weight,"assets.class_weights,"
+scripts\26_run_pruning_experiments.py,1284,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+scripts\26_run_pruning_experiments.py,1285,class_weight,weight=class_weights
+scripts\26_run_pruning_experiments.py,1288,AdamW,optimizer = torch.optim.AdamW(
+scripts\26_run_pruning_experiments.py,1289,compact,"compact_model.parameters(),"
+scripts\26_run_pruning_experiments.py,1292,learning_rate,"""fine_tune_learning_rate"""
+scripts\26_run_pruning_experiments.py,1295,weight_decay,weight_decay=float(
+scripts\26_run_pruning_experiments.py,1297,weight_decay,"""weight_decay"""
+scripts\26_run_pruning_experiments.py,1321,macro_f1,best_validation_macro_f1 = (
+scripts\26_run_pruning_experiments.py,1326,epochs,epochs_without_improvement = 0
+scripts\26_run_pruning_experiments.py,1336,epochs,"""max_epochs"""
+scripts\26_run_pruning_experiments.py,1342,dataloader,create_nbaiot_dataloader(
+scripts\26_run_pruning_experiments.py,1345,batch_size,batch_size=int(
+scripts\26_run_pruning_experiments.py,1347,batch_size,"""batch_size"""
+scripts\26_run_pruning_experiments.py,1363,dataloader,create_nbaiot_dataloader(
+scripts\26_run_pruning_experiments.py,1366,batch_size,batch_size=int(
+scripts\26_run_pruning_experiments.py,1368,batch_size,"""batch_size"""
+scripts\26_run_pruning_experiments.py,1384,compact,"model=compact_model,"
+scripts\26_run_pruning_experiments.py,1401,compact,"model=compact_model,"
+scripts\26_run_pruning_experiments.py,1415,macro_f1,validation_macro_f1 = float(
+scripts\26_run_pruning_experiments.py,1417,macro_f1,"""macro_f1"""
+scripts\26_run_pruning_experiments.py,1422,macro_f1,validation_macro_f1
+scripts\26_run_pruning_experiments.py,1423,macro_f1,> best_validation_macro_f1
+scripts\26_run_pruning_experiments.py,1432,macro_f1,best_validation_macro_f1 = (
+scripts\26_run_pruning_experiments.py,1433,macro_f1,validation_macro_f1
+scripts\26_run_pruning_experiments.py,1437,epochs,epochs_without_improvement = 0
+scripts\26_run_pruning_experiments.py,1460,macro_f1,"""best_validation_macro_f1"": float("
+scripts\26_run_pruning_experiments.py,1461,macro_f1,best_validation_macro_f1
+scripts\26_run_pruning_experiments.py,1464,compact,compact_model.state_dict()
+scripts\26_run_pruning_experiments.py,1484,epochs,epochs_without_improvement += 1
+scripts\26_run_pruning_experiments.py,1501,macro_f1,"""train_macro_f1"": float("
+scripts\26_run_pruning_experiments.py,1503,macro_f1,"""macro_f1"""
+scripts\26_run_pruning_experiments.py,1521,macro_f1,"""validation_macro_f1"": float("
+scripts\26_run_pruning_experiments.py,1523,macro_f1,"""macro_f1"""
+scripts\26_run_pruning_experiments.py,1534,epochs,"""epochs_without_improvement"": int("
+scripts\26_run_pruning_experiments.py,1535,epochs,epochs_without_improvement
+scripts\26_run_pruning_experiments.py,1542,macro_f1,"f""train_macro_f1="""
+scripts\26_run_pruning_experiments.py,1543,macro_f1,"f""{train_metrics['macro_f1']:.6f} | """
+scripts\26_run_pruning_experiments.py,1544,macro_f1,"f""val_macro_f1="""
+scripts\26_run_pruning_experiments.py,1545,macro_f1,"f""{validation_macro_f1:.6f} | """
+scripts\26_run_pruning_experiments.py,1547,macro_f1,"f""{best_validation_macro_f1:.6f} | """
+scripts\26_run_pruning_experiments.py,1552,epochs,epochs_without_improvement
+scripts\26_run_pruning_experiments.py,1555,patience,"""patience"""
+scripts\26_run_pruning_experiments.py,1606,epochs,"""epochs_completed"": int("
+scripts\26_run_pruning_experiments.py,1611,macro_f1,"""best_validation_macro_f1"": float("
+scripts\26_run_pruning_experiments.py,1612,macro_f1,best_validation_macro_f1
+scripts\26_run_pruning_experiments.py,1776,compact,model = recreate_compact_model(
+scripts\26_run_pruning_experiments.py,1787,class_weight,class_weights = torch.as_tensor(
+scripts\26_run_pruning_experiments.py,1788,class_weight,"assets.class_weights,"
+scripts\26_run_pruning_experiments.py,1792,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+scripts\26_run_pruning_experiments.py,1793,class_weight,weight=class_weights
+scripts\26_run_pruning_experiments.py,1803,dataloader,create_nbaiot_dataloader(
+scripts\26_run_pruning_experiments.py,1806,batch_size,batch_size=int(
+scripts\26_run_pruning_experiments.py,1808,batch_size,"""batch_size"""
+scripts\26_run_pruning_experiments.py,1886,macro_f1,"""best_validation_macro_f1"": float("
+scripts\26_run_pruning_experiments.py,1888,macro_f1,"""best_validation_macro_f1"""
+scripts\26_run_pruning_experiments.py,1895,macro_f1,"""macro_f1"""
+scripts\26_run_pruning_experiments.py,2363,epochs,max_epochs=(
+scripts\26_run_pruning_experiments.py,2364,epochs,args.max_epochs
+scripts\26_run_pruning_experiments.py,2366,patience,patience=(
+scripts\26_run_pruning_experiments.py,2367,patience,args.patience
+scripts\26_run_pruning_experiments.py,2392,class_weight,"""class_weight_scheme"""
+scripts\26_run_pruning_experiments.py,2463,epochs,"f""Maksimum epoch  : {args.max_epochs}"""
+scripts\26_run_pruning_experiments.py,2466,patience|Patience,"f""Patience        : {args.patience}"""
+scripts\26_run_pruning_experiments.py,2490,learning_rate,fp32_learning_rate = float(
+scripts\26_run_pruning_experiments.py,2492,learning_rate,"""learning_rate"""
+scripts\26_run_pruning_experiments.py,2560,learning_rate,fp32_learning_rate=(
+scripts\26_run_pruning_experiments.py,2561,learning_rate,fp32_learning_rate
+scripts\26_run_pruning_experiments.py,2588,learning_rate,"f""{run_configuration['fine_tune_learning_rate']:g}"""
+scripts\26_run_pruning_experiments.py,2736,compact,"compact_model,"
+scripts\26_run_pruning_experiments.py,2778,compact,compact_model=(
+scripts\26_run_pruning_experiments.py,2779,compact,compact_model
+scripts\26_run_pruning_experiments.py,2875,macro_f1,fp32_test_macro_f1 = float(
+scripts\26_run_pruning_experiments.py,2877,macro_f1,"""test_macro_f1"""
+scripts\26_run_pruning_experiments.py,2901,learning_rate,"""fp32_learning_rate"": float("
+scripts\26_run_pruning_experiments.py,2903,learning_rate,"""fp32_learning_rate"""
+scripts\26_run_pruning_experiments.py,2906,learning_rate,"""fine_tune_learning_rate"": float("
+scripts\26_run_pruning_experiments.py,2908,learning_rate,"""fine_tune_learning_rate"""
+scripts\26_run_pruning_experiments.py,2916,epochs,"""epochs_completed"": int("
+scripts\26_run_pruning_experiments.py,2918,epochs,"""epochs_completed"""
+scripts\26_run_pruning_experiments.py,2921,macro_f1,"""best_validation_macro_f1"": float("
+scripts\26_run_pruning_experiments.py,2923,macro_f1,"""best_validation_macro_f1"""
+scripts\26_run_pruning_experiments.py,2936,compact,"""compact_parameter_count"": int("
+scripts\26_run_pruning_experiments.py,2938,compact,"""compact_parameter_count"""
+scripts\26_run_pruning_experiments.py,2951,compact,"""compact_weight_layer_macs"": int("
+scripts\26_run_pruning_experiments.py,2953,compact,"""compact_weight_layer_macs"""
+scripts\26_run_pruning_experiments.py,2961,macro_f1,"""fp32_test_macro_f1"": ("
+scripts\26_run_pruning_experiments.py,2962,macro_f1,fp32_test_macro_f1
+scripts\26_run_pruning_experiments.py,2989,macro_f1,"""test_macro_f1"": float("
+scripts\26_run_pruning_experiments.py,2991,macro_f1,"""macro_f1"""
+scripts\26_run_pruning_experiments.py,3007,macro_f1,"""macro_f1_delta_vs_fp32"": float("
+scripts\26_run_pruning_experiments.py,3009,macro_f1,"""macro_f1"""
+scripts\26_run_pruning_experiments.py,3011,macro_f1,- fp32_test_macro_f1
+scripts\26_run_pruning_experiments.py,3217,macro_f1,"f""{test_metrics['macro_f1']:.6f}"""
+scripts\26_run_pruning_experiments.py,3221,macro_f1,"f""{test_metrics['macro_f1'] - fp32_test_macro_f1:+.6f}"""
+scripts\26_run_pruning_experiments.py,3350,macro_f1,"== ""test_macro_f1"""
+scripts\26_run_pruning_experiments.py,3381,macro_f1,"""mean_test_macro_f1"": float("
+scripts\26_run_pruning_experiments.py,3436,compact,"""physical_compaction"": True,"
+scripts\26_run_pruning_experiments.py,3441,macro_f1,"""test_macro_f1"""
+scripts\26_run_pruning_experiments.py,3450,macro_f1,"""macro_f1_ranking"": ("
+scripts\26_run_pruning_experiments.py,3494,macro_f1,"f""{record['mean_test_macro_f1']:.6f} """
+scripts\27_analyze_pruning_statistics.py,12,tinyml,- tinyml_mlp
+scripts\27_analyze_pruning_statistics.py,13,compact,- compact_dnn
+scripts\27_analyze_pruning_statistics.py,26,macro_f1,- test_macro_f1 birincil sonuç değişkenidir.
+scripts\27_analyze_pruning_statistics.py,98,tinyml,"""tinyml_mlp"","
+scripts\27_analyze_pruning_statistics.py,99,compact,"""compact_dnn"","
+scripts\27_analyze_pruning_statistics.py,131,macro_f1,"""test_macro_f1"": {"
+scripts\27_analyze_pruning_statistics.py,150,compact,"""compact_parameter_count"","
+scripts\27_analyze_pruning_statistics.py,153,compact,"""compact_weight_layer_macs"","
+scripts\27_analyze_pruning_statistics.py,1835,macro_f1,"== ""test_macro_f1"""
+scripts\27_analyze_pruning_statistics.py,1859,macro_f1,"""test_macro_f1"""
+scripts\27_analyze_pruning_statistics.py,1893,compact,compact_parameters = int(
+scripts\27_analyze_pruning_statistics.py,1896,compact,"""compact_parameter_count"","
+scripts\27_analyze_pruning_statistics.py,1918,compact,compact_macs = int(
+scripts\27_analyze_pruning_statistics.py,1921,compact,"""compact_weight_layer_macs"","
+scripts\27_analyze_pruning_statistics.py,1940,compact,"""compact_parameter_count"": compact_parameters,"
+scripts\27_analyze_pruning_statistics.py,1946,compact,"""compact_weight_layer_macs"": compact_macs,"
+scripts\27_analyze_pruning_statistics.py,1951,macro_f1,"""mean_test_macro_f1"": macro_statistics["
+scripts\27_analyze_pruning_statistics.py,1954,macro_f1,"""test_macro_f1_standard_deviation"": macro_statistics["
+scripts\27_analyze_pruning_statistics.py,1957,macro_f1,"""test_macro_f1_ci95_lower"": macro_statistics["
+scripts\27_analyze_pruning_statistics.py,1960,macro_f1,"""test_macro_f1_ci95_upper"": macro_statistics["
+scripts\27_analyze_pruning_statistics.py,1963,macro_f1,"""mean_macro_f1_delta_vs_fp32"": float("
+scripts\27_analyze_pruning_statistics.py,1968,macro_f1,"""macro_f1_delta_ci95_lower"": float("
+scripts\27_analyze_pruning_statistics.py,1973,macro_f1,"""macro_f1_delta_ci95_upper"": float("
+scripts\27_analyze_pruning_statistics.py,2157,macro_f1,"""Ana metrik : test_macro_f1"""
+scripts\27_analyze_pruning_statistics.py,2386,macro_f1,"== ""test_macro_f1"""
+scripts\27_analyze_pruning_statistics.py,2398,macro_f1,"== ""test_macro_f1"""
+scripts\27_analyze_pruning_statistics.py,2422,macro_f1,"== ""test_macro_f1"""
+scripts\27_analyze_pruning_statistics.py,2470,macro_f1,"""mean_test_macro_f1"": float("
+scripts\27_analyze_pruning_statistics.py,2536,macro_f1,"""primary_endpoint"": ""test_macro_f1"","
+scripts\27_analyze_pruning_statistics.py,2674,macro_f1,"f""{ranking['mean_test_macro_f1']:.6f} | """
+scripts\28_audit_quantization_capabilities.py,2,TinyML,N-BaIoT TinyML IDS quantization uyumluluk ve dönüşüm denetimi.
+scripts\28_audit_quantization_capabilities.py,60,dataloader,"create_nbaiot_dataloader,"
+scripts\28_audit_quantization_capabilities.py,87,tinyml,"""tinyml_mlp"","
+scripts\28_audit_quantization_capabilities.py,88,compact,"""compact_dnn"","
+scripts\28_audit_quantization_capabilities.py,556,batch_size,"batch_size: int,"
+scripts\28_audit_quantization_capabilities.py,562,dataloader,"_, train_loader = create_nbaiot_dataloader("
+scripts\28_audit_quantization_capabilities.py,565,batch_size,"batch_size=batch_size,"
+scripts\28_audit_quantization_capabilities.py,645,batch_size,"0: ""batch_size"","
+scripts\28_audit_quantization_capabilities.py,648,batch_size,"0: ""batch_size"","
+scripts\28_audit_quantization_capabilities.py,1449,batch_size,if args.comparison_batch_size <= 0:
+scripts\28_audit_quantization_capabilities.py,1454,batch_size,if args.calibration_batch_size <= 0:
+scripts\28_audit_quantization_capabilities.py,1599,batch_size,"batch_size=args.comparison_batch_size,"
+scripts\28_audit_quantization_capabilities.py,1617,batch_size,batch_size=(
+scripts\28_audit_quantization_capabilities.py,1618,batch_size,args.calibration_batch_size
+scripts\28_audit_quantization_capabilities.py,2316,batch_size,"""calibration_batch_size"": int("
+scripts\28_audit_quantization_capabilities.py,2317,batch_size,args.calibration_batch_size
+scripts\29_validate_fx_qat_pipeline.py,61,dataloader,"create_nbaiot_dataloader,"
+scripts\29_validate_fx_qat_pipeline.py,90,tinyml,"""tinyml_mlp"","
+scripts\29_validate_fx_qat_pipeline.py,91,compact,"""compact_dnn"","
+scripts\29_validate_fx_qat_pipeline.py,489,batch_size,"batch_size: int,"
+scripts\29_validate_fx_qat_pipeline.py,497,dataloader,"_, train_loader = create_nbaiot_dataloader("
+scripts\29_validate_fx_qat_pipeline.py,500,batch_size,"batch_size=batch_size,"
+scripts\29_validate_fx_qat_pipeline.py,892,batch_size,if args.batch_size <= 0:
+scripts\29_validate_fx_qat_pipeline.py,902,learning_rate,if args.learning_rate <= 0:
+scripts\29_validate_fx_qat_pipeline.py,1004,batch_size,"batch_size=args.batch_size,"
+scripts\29_validate_fx_qat_pipeline.py,1017,class_weight,class_weights = torch.as_tensor(
+scripts\29_validate_fx_qat_pipeline.py,1018,class_weight,"assets.class_weights,"
+scripts\29_validate_fx_qat_pipeline.py,1022,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+scripts\29_validate_fx_qat_pipeline.py,1023,class_weight,weight=class_weights
+scripts\29_validate_fx_qat_pipeline.py,1142,AdamW,optimizer = torch.optim.AdamW(
+scripts\29_validate_fx_qat_pipeline.py,1144,learning_rate,"lr=args.learning_rate,"
+scripts\29_validate_fx_qat_pipeline.py,1145,weight_decay,"weight_decay=args.weight_decay,"
+scripts\29_validate_fx_qat_pipeline.py,1338,learning_rate,"""learning_rate"": float("
+scripts\29_validate_fx_qat_pipeline.py,1339,learning_rate,args.learning_rate
+scripts\29b_run_quantization_experiments.py,61,dataloader,"create_nbaiot_dataloader,"
+scripts\29b_run_quantization_experiments.py,121,tinyml,"""tinyml_mlp"","
+scripts\29b_run_quantization_experiments.py,122,compact,"""compact_dnn"","
+scripts\29b_run_quantization_experiments.py,163,macro_f1,"""test_macro_f1"","
+scripts\29b_run_quantization_experiments.py,166,macro_f1,"""macro_f1_delta_vs_fp32"","
+scripts\29b_run_quantization_experiments.py,228,epochs,"""--qat-max-epochs"","
+scripts\29b_run_quantization_experiments.py,233,patience,"""--qat-patience"","
+scripts\29b_run_quantization_experiments.py,382,learning_rate,if args.qat_learning_rate_factor <= 0:
+scripts\29b_run_quantization_experiments.py,384,epochs,if args.qat_max_epochs <= 0:
+scripts\29b_run_quantization_experiments.py,385,epochs,"raise ValueError(""qat-max-epochs pozitif olmalıdır."")"
+scripts\29b_run_quantization_experiments.py,386,patience,if args.qat_patience <= 0:
+scripts\29b_run_quantization_experiments.py,387,patience,"raise ValueError(""qat-patience pozitif olmalıdır."")"
+scripts\29b_run_quantization_experiments.py,388,epochs|patience,if args.qat_patience > args.qat_max_epochs:
+scripts\29b_run_quantization_experiments.py,389,epochs|patience,"raise ValueError(""qat-patience, qat-max-epochs değerinden büyük olamaz."")"
+scripts\29b_run_quantization_experiments.py,392,batch_size,if args.calibration_batch_size <= 0:
+scripts\29b_run_quantization_experiments.py,467,batch_size,"""calibration_batch_size"": int(args.calibration_batch_size),"
+scripts\29b_run_quantization_experiments.py,470,batch_size,args.calibration_batch_size * args.calibration_batches
+scripts\29b_run_quantization_experiments.py,476,AdamW,"""optimizer"": ""AdamW"","
+scripts\29b_run_quantization_experiments.py,477,learning_rate,"""learning_rate_rule"": ""fp32_learning_rate_times_factor"","
+scripts\29b_run_quantization_experiments.py,478,learning_rate,"""learning_rate_factor"": float(args.qat_learning_rate_factor),"
+scripts\29b_run_quantization_experiments.py,479,epochs,"""max_epochs"": int(args.qat_max_epochs),"
+scripts\29b_run_quantization_experiments.py,480,patience,"""early_stopping_patience"": int(args.qat_patience),"
+scripts\29b_run_quantization_experiments.py,482,batch_size,"""batch_size"": int(common[""batch_size""]),"
+scripts\29b_run_quantization_experiments.py,483,weight_decay,"""weight_decay"": float(common[""weight_decay""]),"
+scripts\29b_run_quantization_experiments.py,489,macro_f1,"""selection_metric"": ""converted_int8_macro_f1"","
+scripts\29b_run_quantization_experiments.py,562,macro_f1,"""test_macro_f1"","
+scripts\29b_run_quantization_experiments.py,575,macro_f1,"frame[""test_macro_f1""] = pd.to_numeric("
+scripts\29b_run_quantization_experiments.py,576,macro_f1,"frame[""test_macro_f1""], errors=""raise"""
+scripts\29b_run_quantization_experiments.py,793,batch_size,"""features"": {0: ""batch_size""},"
+scripts\29b_run_quantization_experiments.py,794,batch_size,"""logits"": {0: ""batch_size""},"
+scripts\29b_run_quantization_experiments.py,1052,batch_size,"batch_size: int,"
+scripts\29b_run_quantization_experiments.py,1056,dataloader,"_, train_loader = create_nbaiot_dataloader("
+scripts\29b_run_quantization_experiments.py,1059,batch_size,"batch_size=batch_size,"
+scripts\29b_run_quantization_experiments.py,1117,macro_f1,"macro_precision, macro_recall, macro_f1, _ = ("
+scripts\29b_run_quantization_experiments.py,1159,macro_f1,"""macro_f1"": float(macro_f1),"
+scripts\29b_run_quantization_experiments.py,1179,batch_size,"batch_size: int,"
+scripts\29b_run_quantization_experiments.py,1183,class_weight,"class_weights: torch.Tensor,"
+scripts\29b_run_quantization_experiments.py,1191,dataloader,"_, data_loader = create_nbaiot_dataloader("
+scripts\29b_run_quantization_experiments.py,1194,batch_size,"batch_size=batch_size,"
+scripts\29b_run_quantization_experiments.py,1229,class_weight,"weight=class_weights,"
+scripts\29b_run_quantization_experiments.py,1235,class_weight,class_weights[target_cpu].double().sum().item()
+scripts\29b_run_quantization_experiments.py,1425,learning_rate,"fp32_learning_rate: float,"
+scripts\29b_run_quantization_experiments.py,1448,dataloader,"_, example_loader = create_nbaiot_dataloader("
+scripts\29b_run_quantization_experiments.py,1451,batch_size,"batch_size=8,"
+scripts\29b_run_quantization_experiments.py,1479,class_weight,"class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)"
+scripts\29b_run_quantization_experiments.py,1480,class_weight|CrossEntropyLoss,criterion = nn.CrossEntropyLoss(weight=class_weights)
+scripts\29b_run_quantization_experiments.py,1481,learning_rate,qat_learning_rate = float(
+scripts\29b_run_quantization_experiments.py,1482,learning_rate,"fp32_learning_rate * float(qat_config[""learning_rate_factor""])"
+scripts\29b_run_quantization_experiments.py,1484,AdamW,optimizer = torch.optim.AdamW(
+scripts\29b_run_quantization_experiments.py,1486,learning_rate,"lr=qat_learning_rate,"
+scripts\29b_run_quantization_experiments.py,1487,weight_decay,"weight_decay=float(qat_config[""weight_decay""]),"
+scripts\29b_run_quantization_experiments.py,1490,macro_f1,best_validation_macro_f1 = -np.inf
+scripts\29b_run_quantization_experiments.py,1492,epochs,epochs_without_improvement = 0
+scripts\29b_run_quantization_experiments.py,1496,epochs,"for epoch in range(1, int(qat_config[""max_epochs""]) + 1):"
+scripts\29b_run_quantization_experiments.py,1497,dataloader,"_, train_loader = create_nbaiot_dataloader("
+scripts\29b_run_quantization_experiments.py,1500,batch_size,"batch_size=int(qat_config[""batch_size""]),"
+scripts\29b_run_quantization_experiments.py,1542,dataloader,"_, validation_loader = create_nbaiot_dataloader("
+scripts\29b_run_quantization_experiments.py,1545,batch_size,"batch_size=int(qat_config[""batch_size""]),"
+scripts\29b_run_quantization_experiments.py,1563,macro_f1,"validation_macro_f1 = float(validation_metrics[""macro_f1""])"
+scripts\29b_run_quantization_experiments.py,1565,macro_f1,validation_macro_f1
+scripts\29b_run_quantization_experiments.py,1566,macro_f1,"> best_validation_macro_f1 + float(qat_config[""early_stopping_min_delta""])"
+scripts\29b_run_quantization_experiments.py,1570,macro_f1,best_validation_macro_f1 = validation_macro_f1
+scripts\29b_run_quantization_experiments.py,1572,epochs,epochs_without_improvement = 0
+scripts\29b_run_quantization_experiments.py,1575,epochs,epochs_without_improvement += 1
+scripts\29b_run_quantization_experiments.py,1582,macro_f1,"""train_macro_f1"": float(train_metrics[""macro_f1""]),"
+scripts\29b_run_quantization_experiments.py,1592,macro_f1,"""validation_macro_f1_converted_int8"": validation_macro_f1,"
+scripts\29b_run_quantization_experiments.py,1597,epochs,"""epochs_without_improvement"": int(epochs_without_improvement),"
+scripts\29b_run_quantization_experiments.py,1603,macro_f1,"f""train_macro_f1={train_metrics['macro_f1']:.6f} | """
+scripts\29b_run_quantization_experiments.py,1604,macro_f1,"f""val_int8_macro_f1={validation_macro_f1:.6f} | """
+scripts\29b_run_quantization_experiments.py,1605,macro_f1,"f""best={best_validation_macro_f1:.6f} | """
+scripts\29b_run_quantization_experiments.py,1609,epochs,if epochs_without_improvement >= int(
+scripts\29b_run_quantization_experiments.py,1610,patience,"qat_config[""early_stopping_patience""]"
+scripts\29b_run_quantization_experiments.py,1631,learning_rate,"""fp32_learning_rate"": float(fp32_learning_rate),"
+scripts\29b_run_quantization_experiments.py,1632,learning_rate,"""qat_learning_rate"": qat_learning_rate,"
+scripts\29b_run_quantization_experiments.py,1634,epochs,"""epochs_completed"": int(len(history_records)),"
+scripts\29b_run_quantization_experiments.py,1635,macro_f1,"""best_validation_macro_f1_converted_int8"": float("
+scripts\29b_run_quantization_experiments.py,1636,macro_f1,best_validation_macro_f1
+scripts\29b_run_quantization_experiments.py,1645,macro_f1,"""selection_metric"": ""converted_int8_macro_f1"","
+scripts\29b_run_quantization_experiments.py,1689,dataloader,"_, example_loader = create_nbaiot_dataloader("
+scripts\29b_run_quantization_experiments.py,1692,batch_size,"batch_size=8,"
+scripts\29b_run_quantization_experiments.py,1744,class_weight,"class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)"
+scripts\29b_run_quantization_experiments.py,1745,class_weight|CrossEntropyLoss,criterion = nn.CrossEntropyLoss(weight=class_weights)
+scripts\29b_run_quantization_experiments.py,1747,dataloader,"_, test_loader = create_nbaiot_dataloader("
+scripts\29b_run_quantization_experiments.py,1750,batch_size,"batch_size=int(qat_config[""batch_size""]),"
+scripts\29b_run_quantization_experiments.py,1889,class_weight,"class_weights = torch.as_tensor(assets.class_weights, dtype=torch.float32)"
+scripts\29b_run_quantization_experiments.py,1894,batch_size,"batch_size=int(qat_config[""batch_size""]),"
+scripts\29b_run_quantization_experiments.py,1898,class_weight,"class_weights=class_weights,"
+scripts\29b_run_quantization_experiments.py,2058,batch_size,"batch_size=int(args.calibration_batch_size),"
+scripts\29b_run_quantization_experiments.py,2086,batch_size,"f""{args.calibration_batches} x {args.calibration_batch_size} """
+scripts\29b_run_quantization_experiments.py,2095,learning_rate,fp32_learning_rate = float(
+scripts\29b_run_quantization_experiments.py,2097,learning_rate,"""learning_rate"""
+scripts\29b_run_quantization_experiments.py,2123,dataloader,"_, example_loader = create_nbaiot_dataloader("
+scripts\29b_run_quantization_experiments.py,2126,batch_size,"batch_size=64,"
+scripts\29b_run_quantization_experiments.py,2252,learning_rate,"fp32_learning_rate=fp32_learning_rate,"
+scripts\29b_run_quantization_experiments.py,2297,macro_f1,"test_macro_f1 = float(metrics[""macro_f1""])"
+scripts\29b_run_quantization_experiments.py,2298,macro_f1,"fp32_macro_f1 = float(fp32_reference[""test_macro_f1""])"
+scripts\29b_run_quantization_experiments.py,2305,macro_f1,"""fp32_test_macro_f1"": fp32_macro_f1,"
+scripts\29b_run_quantization_experiments.py,2315,macro_f1,"""test_macro_f1"": test_macro_f1,"
+scripts\29b_run_quantization_experiments.py,2321,macro_f1,"""macro_f1_delta_vs_fp32"": float("
+scripts\29b_run_quantization_experiments.py,2322,macro_f1,test_macro_f1 - fp32_macro_f1
+scripts\29b_run_quantization_experiments.py,2350,macro_f1,"""qat_best_validation_macro_f1_converted_int8"": ("
+scripts\29b_run_quantization_experiments.py,2353,macro_f1,"""best_validation_macro_f1_converted_int8"""
+scripts\29b_run_quantization_experiments.py,2408,macro_f1,"print(f""Test Macro F1       : {test_macro_f1:.6f}"")"
+scripts\29b_run_quantization_experiments.py,2411,macro_f1,"f""{test_macro_f1 - fp32_macro_f1:+.6f}"""
+scripts\29b_run_quantization_experiments.py,2461,macro_f1,"aggregate_frame[""metric""] == ""test_macro_f1"""
+scripts\29b_run_quantization_experiments.py,2473,macro_f1,"""mean_test_macro_f1"": float(row.mean),"
+scripts\29b_run_quantization_experiments.py,2491,macro_f1,"""primary_metric"": ""test_macro_f1"","
+scripts\29b_run_quantization_experiments.py,2495,macro_f1,"""macro_f1_ranking"": ranking_records,"
+scripts\29b_run_quantization_experiments.py,2524,macro_f1,"f""Macro F1={record['mean_test_macro_f1']:.6f} """
+scripts\30_run_pruning_qat_experiments.py,5,compact|tinyml,"- Modeller: tinyml_mlp, compact_dnn, tiny_1d_cnn"
+scripts\30_run_pruning_qat_experiments.py,56,compact,"recreate_compact_model,"
+scripts\30_run_pruning_qat_experiments.py,59,dataloader,"create_nbaiot_dataloader,"
+scripts\30_run_pruning_qat_experiments.py,163,tinyml,"""tinyml_mlp"","
+scripts\30_run_pruning_qat_experiments.py,164,compact,"""compact_dnn"","
+scripts\30_run_pruning_qat_experiments.py,203,macro_f1,"""test_macro_f1"","
+scripts\30_run_pruning_qat_experiments.py,206,macro_f1,"""macro_f1_delta_vs_fp32"","
+scripts\30_run_pruning_qat_experiments.py,207,macro_f1,"""macro_f1_delta_vs_pruning_only"","
+scripts\30_run_pruning_qat_experiments.py,282,epochs,"""--qat-max-epochs"","
+scripts\30_run_pruning_qat_experiments.py,287,patience,"""--qat-patience"","
+scripts\30_run_pruning_qat_experiments.py,312,learning_rate,if args.qat_learning_rate_factor <= 0:
+scripts\30_run_pruning_qat_experiments.py,317,epochs,if args.qat_max_epochs <= 0:
+scripts\30_run_pruning_qat_experiments.py,319,epochs,"""qat-max-epochs pozitif olmalıdır."""
+scripts\30_run_pruning_qat_experiments.py,322,patience,if args.qat_patience <= 0:
+scripts\30_run_pruning_qat_experiments.py,324,patience,"""qat-patience pozitif olmalıdır."""
+scripts\30_run_pruning_qat_experiments.py,327,epochs|patience,if args.qat_patience > args.qat_max_epochs:
+scripts\30_run_pruning_qat_experiments.py,329,epochs|patience,"""qat-patience, qat-max-epochs değerinden büyük olamaz."""
+scripts\30_run_pruning_qat_experiments.py,348,compact,"if not bool(engine.get(""physical_compaction"")):"
+scripts\30_run_pruning_qat_experiments.py,417,compact,"""physical_compaction"": True,"
+scripts\30_run_pruning_qat_experiments.py,424,AdamW,"""optimizer"": ""AdamW"","
+scripts\30_run_pruning_qat_experiments.py,425,learning_rate,"""learning_rate_rule"": ("
+scripts\30_run_pruning_qat_experiments.py,426,learning_rate,"""fp32_learning_rate_times_factor"""
+scripts\30_run_pruning_qat_experiments.py,428,learning_rate,"""learning_rate_factor"": float("
+scripts\30_run_pruning_qat_experiments.py,429,learning_rate,args.qat_learning_rate_factor
+scripts\30_run_pruning_qat_experiments.py,431,epochs,"""max_epochs"": int(args.qat_max_epochs),"
+scripts\30_run_pruning_qat_experiments.py,432,patience,"""early_stopping_patience"": int("
+scripts\30_run_pruning_qat_experiments.py,433,patience,args.qat_patience
+scripts\30_run_pruning_qat_experiments.py,438,batch_size,"""batch_size"": int(common[""batch_size""]),"
+scripts\30_run_pruning_qat_experiments.py,439,weight_decay,"""weight_decay"": float(common[""weight_decay""]),"
+scripts\30_run_pruning_qat_experiments.py,447,macro_f1,"""selection_metric"": ""converted_int8_macro_f1"","
+scripts\30_run_pruning_qat_experiments.py,547,macro_f1,"""test_macro_f1"","
+scripts\30_run_pruning_qat_experiments.py,573,macro_f1,"pruning_frame[""test_macro_f1""] = pd.to_numeric("
+scripts\30_run_pruning_qat_experiments.py,574,macro_f1,"pruning_frame[""test_macro_f1""],"
+scripts\30_run_pruning_qat_experiments.py,602,COMPACT,# COMPACT QAT HELPERS
+scripts\30_run_pruning_qat_experiments.py,606,compact,def create_compact_model_from_state(
+scripts\30_run_pruning_qat_experiments.py,609,compact,"compact_state_dict: dict[str, Any],"
+scripts\30_run_pruning_qat_experiments.py,613,compact,model = recreate_compact_model(
+scripts\30_run_pruning_qat_experiments.py,618,compact,"compact_state_dict,"
+scripts\30_run_pruning_qat_experiments.py,626,compact,def create_compact_prepared_snapshot(
+scripts\30_run_pruning_qat_experiments.py,629,compact,"compact_source_state_dict: dict[str, Any],"
+scripts\30_run_pruning_qat_experiments.py,637,compact,source_model = create_compact_model_from_state(
+scripts\30_run_pruning_qat_experiments.py,639,compact,"compact_state_dict=compact_source_state_dict,"
+scripts\30_run_pruning_qat_experiments.py,665,dataloader,"_, loader = create_nbaiot_dataloader("
+scripts\30_run_pruning_qat_experiments.py,668,batch_size,"batch_size=8,"
+scripts\30_run_pruning_qat_experiments.py,695,compact,"compact_source_state_dict: dict[str, Any],"
+scripts\30_run_pruning_qat_experiments.py,698,learning_rate,"fp32_learning_rate: float,"
+scripts\30_run_pruning_qat_experiments.py,750,compact,compact_source_model = (
+scripts\30_run_pruning_qat_experiments.py,751,compact,create_compact_model_from_state(
+scripts\30_run_pruning_qat_experiments.py,753,compact,compact_state_dict=(
+scripts\30_run_pruning_qat_experiments.py,754,compact,compact_source_state_dict
+scripts\30_run_pruning_qat_experiments.py,760,compact,"model=compact_source_model,"
+scripts\30_run_pruning_qat_experiments.py,780,class_weight,class_weights = torch.as_tensor(
+scripts\30_run_pruning_qat_experiments.py,781,class_weight,"assets.class_weights,"
+scripts\30_run_pruning_qat_experiments.py,785,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+scripts\30_run_pruning_qat_experiments.py,786,class_weight,weight=class_weights
+scripts\30_run_pruning_qat_experiments.py,789,learning_rate,qat_learning_rate = float(
+scripts\30_run_pruning_qat_experiments.py,790,learning_rate,fp32_learning_rate
+scripts\30_run_pruning_qat_experiments.py,792,learning_rate,"qat_config[""learning_rate_factor""]"
+scripts\30_run_pruning_qat_experiments.py,796,AdamW,optimizer = torch.optim.AdamW(
+scripts\30_run_pruning_qat_experiments.py,798,learning_rate,"lr=qat_learning_rate,"
+scripts\30_run_pruning_qat_experiments.py,799,weight_decay,weight_decay=float(
+scripts\30_run_pruning_qat_experiments.py,800,weight_decay,"qat_config[""weight_decay""]"
+scripts\30_run_pruning_qat_experiments.py,804,macro_f1,best_validation_macro_f1 = -np.inf
+scripts\30_run_pruning_qat_experiments.py,806,epochs,epochs_without_improvement = 0
+scripts\30_run_pruning_qat_experiments.py,813,epochs,"int(qat_config[""max_epochs""]) + 1,"
+scripts\30_run_pruning_qat_experiments.py,815,dataloader,"_, train_loader = create_nbaiot_dataloader("
+scripts\30_run_pruning_qat_experiments.py,818,batch_size,batch_size=int(
+scripts\30_run_pruning_qat_experiments.py,819,batch_size,"qat_config[""batch_size""]"
+scripts\30_run_pruning_qat_experiments.py,845,compact,create_compact_prepared_snapshot(
+scripts\30_run_pruning_qat_experiments.py,847,compact,compact_source_state_dict=(
+scripts\30_run_pruning_qat_experiments.py,848,compact,compact_source_state_dict
+scripts\30_run_pruning_qat_experiments.py,893,dataloader,create_nbaiot_dataloader(
+scripts\30_run_pruning_qat_experiments.py,896,batch_size,batch_size=int(
+scripts\30_run_pruning_qat_experiments.py,897,batch_size,"qat_config[""batch_size""]"
+scripts\30_run_pruning_qat_experiments.py,919,macro_f1,validation_macro_f1 = float(
+scripts\30_run_pruning_qat_experiments.py,920,macro_f1,"validation_metrics[""macro_f1""]"
+scripts\30_run_pruning_qat_experiments.py,924,macro_f1,validation_macro_f1
+scripts\30_run_pruning_qat_experiments.py,925,macro_f1,> best_validation_macro_f1
+scripts\30_run_pruning_qat_experiments.py,934,macro_f1,best_validation_macro_f1 = (
+scripts\30_run_pruning_qat_experiments.py,935,macro_f1,validation_macro_f1
+scripts\30_run_pruning_qat_experiments.py,938,epochs,epochs_without_improvement = 0
+scripts\30_run_pruning_qat_experiments.py,946,epochs,epochs_without_improvement += 1
+scripts\30_run_pruning_qat_experiments.py,957,macro_f1,"""train_macro_f1"": float("
+scripts\30_run_pruning_qat_experiments.py,958,macro_f1,"train_metrics[""macro_f1""]"
+scripts\30_run_pruning_qat_experiments.py,971,macro_f1,"""validation_macro_f1_converted_int8"": ("
+scripts\30_run_pruning_qat_experiments.py,972,macro_f1,validation_macro_f1
+scripts\30_run_pruning_qat_experiments.py,980,epochs,"""epochs_without_improvement"": int("
+scripts\30_run_pruning_qat_experiments.py,981,epochs,epochs_without_improvement
+scripts\30_run_pruning_qat_experiments.py,988,macro_f1,"f""train_macro_f1="""
+scripts\30_run_pruning_qat_experiments.py,989,macro_f1,"f""{train_metrics['macro_f1']:.6f} | """
+scripts\30_run_pruning_qat_experiments.py,990,macro_f1,"f""val_int8_macro_f1="""
+scripts\30_run_pruning_qat_experiments.py,991,macro_f1,"f""{validation_macro_f1:.6f} | """
+scripts\30_run_pruning_qat_experiments.py,993,macro_f1,"f""{best_validation_macro_f1:.6f} | """
+scripts\30_run_pruning_qat_experiments.py,998,epochs,epochs_without_improvement
+scripts\30_run_pruning_qat_experiments.py,1001,patience,"""early_stopping_patience"""
+scripts\30_run_pruning_qat_experiments.py,1056,learning_rate,"""fp32_learning_rate"": float("
+scripts\30_run_pruning_qat_experiments.py,1057,learning_rate,fp32_learning_rate
+scripts\30_run_pruning_qat_experiments.py,1059,learning_rate,"""qat_learning_rate"": float("
+scripts\30_run_pruning_qat_experiments.py,1060,learning_rate,qat_learning_rate
+scripts\30_run_pruning_qat_experiments.py,1063,epochs,"""epochs_completed"": int("
+scripts\30_run_pruning_qat_experiments.py,1066,macro_f1,"""best_validation_macro_f1_converted_int8"": float("
+scripts\30_run_pruning_qat_experiments.py,1067,macro_f1,best_validation_macro_f1
+scripts\30_run_pruning_qat_experiments.py,1085,compact,"""physical_compaction"": True,"
+scripts\30_run_pruning_qat_experiments.py,1090,macro_f1,"""converted_int8_macro_f1"""
+scripts\30_run_pruning_qat_experiments.py,1115,compact,"compact_source_state_dict: dict[str, Any],"
+scripts\30_run_pruning_qat_experiments.py,1123,compact,"""""""Seçilmiş compact INT8 modeli testte yalnızca bir kez değerlendirir."""""""
+scripts\30_run_pruning_qat_experiments.py,1186,compact,create_compact_prepared_snapshot(
+scripts\30_run_pruning_qat_experiments.py,1188,compact,compact_source_state_dict=(
+scripts\30_run_pruning_qat_experiments.py,1189,compact,compact_source_state_dict
+scripts\30_run_pruning_qat_experiments.py,1253,class_weight,class_weights = torch.as_tensor(
+scripts\30_run_pruning_qat_experiments.py,1254,class_weight,"assets.class_weights,"
+scripts\30_run_pruning_qat_experiments.py,1258,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(
+scripts\30_run_pruning_qat_experiments.py,1259,class_weight,weight=class_weights
+scripts\30_run_pruning_qat_experiments.py,1262,dataloader,"_, test_loader = create_nbaiot_dataloader("
+scripts\30_run_pruning_qat_experiments.py,1265,batch_size,batch_size=int(
+scripts\30_run_pruning_qat_experiments.py,1266,batch_size,"qat_config[""batch_size""]"
+scripts\30_run_pruning_qat_experiments.py,1350,compact,"""physical_compaction"": True,"
+scripts\30_run_pruning_qat_experiments.py,1638,learning_rate,"f""{args.qat_learning_rate_factor:g} katı"""
+scripts\30_run_pruning_qat_experiments.py,1641,epochs,"f""Maksimum epoch  : {args.qat_max_epochs}"""
+scripts\30_run_pruning_qat_experiments.py,1644,patience|Patience,"f""Patience        : {args.qat_patience}"""
+scripts\30_run_pruning_qat_experiments.py,1666,learning_rate,fp32_learning_rate = float(
+scripts\30_run_pruning_qat_experiments.py,1668,learning_rate,"""learning_rate"""
+scripts\30_run_pruning_qat_experiments.py,1857,compact,"compact_model,"
+scripts\30_run_pruning_qat_experiments.py,1869,compact,compact_source_state_dict = {
+scripts\30_run_pruning_qat_experiments.py,1872,compact,in compact_model.state_dict().items()
+scripts\30_run_pruning_qat_experiments.py,1917,compact,compact_source_state_dict=(
+scripts\30_run_pruning_qat_experiments.py,1918,compact,compact_source_state_dict
+scripts\30_run_pruning_qat_experiments.py,1924,learning_rate,fp32_learning_rate=(
+scripts\30_run_pruning_qat_experiments.py,1925,learning_rate,fp32_learning_rate
+scripts\30_run_pruning_qat_experiments.py,1947,compact,compact_source_state_dict=(
+scripts\30_run_pruning_qat_experiments.py,1948,compact,compact_source_state_dict
+scripts\30_run_pruning_qat_experiments.py,1996,compact,"""physical_compaction"": True,"
+scripts\30_run_pruning_qat_experiments.py,2032,macro_f1,fp32_macro_f1 = float(
+scripts\30_run_pruning_qat_experiments.py,2033,macro_f1,"fp32_row[""test_macro_f1""]"
+scripts\30_run_pruning_qat_experiments.py,2035,macro_f1,pruning_macro_f1 = float(
+scripts\30_run_pruning_qat_experiments.py,2036,macro_f1,"pruning_row[""test_macro_f1""]"
+scripts\30_run_pruning_qat_experiments.py,2048,learning_rate,"""fp32_learning_rate"": float("
+scripts\30_run_pruning_qat_experiments.py,2049,learning_rate,fp32_learning_rate
+scripts\30_run_pruning_qat_experiments.py,2051,learning_rate,"""qat_learning_rate"": float("
+scripts\30_run_pruning_qat_experiments.py,2053,learning_rate,"""qat_learning_rate"""
+scripts\30_run_pruning_qat_experiments.py,2061,epochs,"""epochs_completed"": int("
+scripts\30_run_pruning_qat_experiments.py,2063,epochs,"""epochs_completed"""
+scripts\30_run_pruning_qat_experiments.py,2066,macro_f1,"""best_validation_macro_f1_converted_int8"": float("
+scripts\30_run_pruning_qat_experiments.py,2068,macro_f1,"""best_validation_macro_f1_converted_int8"""
+scripts\30_run_pruning_qat_experiments.py,2081,compact,"""compact_parameter_count"": int("
+scripts\30_run_pruning_qat_experiments.py,2083,compact,"""compact_parameter_count"""
+scripts\30_run_pruning_qat_experiments.py,2096,compact,"""compact_weight_layer_macs"": int("
+scripts\30_run_pruning_qat_experiments.py,2098,compact,"""compact_weight_layer_macs"""
+scripts\30_run_pruning_qat_experiments.py,2126,macro_f1,"""fp32_test_macro_f1"": ("
+scripts\30_run_pruning_qat_experiments.py,2127,macro_f1,fp32_macro_f1
+scripts\30_run_pruning_qat_experiments.py,2129,macro_f1,"""pruning_only_test_macro_f1"": ("
+scripts\30_run_pruning_qat_experiments.py,2130,macro_f1,pruning_macro_f1
+scripts\30_run_pruning_qat_experiments.py,2153,macro_f1,"""test_macro_f1"": float("
+scripts\30_run_pruning_qat_experiments.py,2154,macro_f1,"test_metrics[""macro_f1""]"
+scripts\30_run_pruning_qat_experiments.py,2166,macro_f1,"""macro_f1_delta_vs_fp32"": float("
+scripts\30_run_pruning_qat_experiments.py,2167,macro_f1,"test_metrics[""macro_f1""]"
+scripts\30_run_pruning_qat_experiments.py,2168,macro_f1,- fp32_macro_f1
+scripts\30_run_pruning_qat_experiments.py,2170,macro_f1,"""macro_f1_delta_vs_pruning_only"": float("
+scripts\30_run_pruning_qat_experiments.py,2171,macro_f1,"test_metrics[""macro_f1""]"
+scripts\30_run_pruning_qat_experiments.py,2172,macro_f1,- pruning_macro_f1
+scripts\30_run_pruning_qat_experiments.py,2189,compact,"""physical_compaction"": True,"
+scripts\30_run_pruning_qat_experiments.py,2289,macro_f1,"f""{test_metrics['macro_f1']:.6f}"""
+scripts\30_run_pruning_qat_experiments.py,2293,macro_f1,"f""{test_metrics['macro_f1'] - fp32_macro_f1:+.6f}"""
+scripts\30_run_pruning_qat_experiments.py,2297,macro_f1,"f""{test_metrics['macro_f1'] - pruning_macro_f1:+.6f}"""
+scripts\30_run_pruning_qat_experiments.py,2349,compact,"""physical_compaction"""
+scripts\30_run_pruning_qat_experiments.py,2435,macro_f1,"== ""test_macro_f1"""
+scripts\30_run_pruning_qat_experiments.py,2461,macro_f1,"""mean_test_macro_f1"": float("
+scripts\30_run_pruning_qat_experiments.py,2501,compact,"""physical_compaction"": True,"
+scripts\30_run_pruning_qat_experiments.py,2505,macro_f1,"""primary_metric"": ""test_macro_f1"","
+scripts\30_run_pruning_qat_experiments.py,2509,macro_f1,"""macro_f1_ranking"": ranking_records,"
+scripts\30_run_pruning_qat_experiments.py,2548,macro_f1,"f""{record['mean_test_macro_f1']:.6f} """
+scripts\31_profile_efficiency.py,5,compact|tinyml,"- Modeller: tinyml_mlp, compact_dnn, tiny_1d_cnn"
+scripts\31_profile_efficiency.py,8,B0,"B0, P25, P50, P75, DQ, PTQ, QAT,"
+scripts\31_profile_efficiency.py,13,B0,"- B0-ORT, DQ ve PTQ için runtime-eşleşmiş FP32 ONNX referansıdır."
+scripts\31_profile_efficiency.py,69,compact,"recreate_compact_model,"
+scripts\31_profile_efficiency.py,121,tinyml,"""tinyml_mlp"","
+scripts\31_profile_efficiency.py,122,compact,"""compact_dnn"","
+scripts\31_profile_efficiency.py,135,B0,"""B0"","
+scripts\31_profile_efficiency.py,148,B0,"""B0-ORT"","
+scripts\31_profile_efficiency.py,414,batch_size,"""latency_batch_size"","
+scripts\31_profile_efficiency.py,415,batch_size,"""throughput_batch_size"","
+scripts\31_profile_efficiency.py,577,batch_size,batch_size = int(output.shape[0])
+scripts\31_profile_efficiency.py,579,batch_size,output.numel() // batch_size
+scripts\31_profile_efficiency.py,592,batch_size,batch_size = int(output.shape[0])
+scripts\31_profile_efficiency.py,594,batch_size,output.numel() // batch_size
+scripts\31_profile_efficiency.py,705,batch_size,"batch_size: int,"
+scripts\31_profile_efficiency.py,713,batch_size,"size=(batch_size, feature_count),"
+scripts\31_profile_efficiency.py,810,macro_f1,def lookup_test_macro_f1(
+scripts\31_profile_efficiency.py,819,B0,"if variant_name == ""B0"":"
+scripts\31_profile_efficiency.py,846,B0,"elif variant_name == ""B0-ORT"":"
+scripts\31_profile_efficiency.py,859,macro_f1,"return float(subset.iloc[0][""test_macro_f1""])"
+scripts\31_profile_efficiency.py,1044,B0,"if variant_name == ""B0"":"
+scripts\31_profile_efficiency.py,1058,compact,"""physical_compaction"": False,"
+scripts\31_profile_efficiency.py,1063,B0,"if variant_name == ""B0-ORT"":"
+scripts\31_profile_efficiency.py,1078,compact,"""physical_compaction"": False,"
+scripts\31_profile_efficiency.py,1094,compact,model = recreate_compact_model(pruning_metadata)
+scripts\31_profile_efficiency.py,1103,compact,"pruning_metadata[""compact_parameter_count""]"
+scripts\31_profile_efficiency.py,1106,compact,"pruning_metadata[""compact_weight_layer_macs""]"
+scripts\31_profile_efficiency.py,1111,compact,"""physical_compaction"": True,"
+scripts\31_profile_efficiency.py,1137,compact,"""physical_compaction"": False,"
+scripts\31_profile_efficiency.py,1195,compact,"""physical_compaction"": False,"
+scripts\31_profile_efficiency.py,1222,compact,"compact_source_model, recomputed_metadata = physically_prune_model("
+scripts\31_profile_efficiency.py,1248,compact,prepared_model = pqat.create_compact_prepared_snapshot(
+scripts\31_profile_efficiency.py,1250,compact,"compact_source_state_dict=compact_source_model.state_dict(),"
+scripts\31_profile_efficiency.py,1265,compact,"pruning_metadata[""compact_parameter_count""]"
+scripts\31_profile_efficiency.py,1268,compact,"pruning_metadata[""compact_weight_layer_macs""]"
+scripts\31_profile_efficiency.py,1273,compact,"""physical_compaction"": True,"
+scripts\31_profile_efficiency.py,1294,batch_size,"expected_batch_size: int,"
+scripts\31_profile_efficiency.py,1299,batch_size,"if tuple(output.shape) != (expected_batch_size, 3):"
+scripts\31_profile_efficiency.py,1302,batch_size,"f""beklenen={(expected_batch_size, 3)}, bulunan={output.shape}"""
+scripts\31_profile_efficiency.py,1323,batch_size,"validate_output(output, args.latency_batch_size)"
+scripts\31_profile_efficiency.py,1329,batch_size,"args.throughput_batch_size,"
+scripts\31_profile_efficiency.py,1349,batch_size,"validate_output(output, args.latency_batch_size)"
+scripts\31_profile_efficiency.py,1361,batch_size,"args.throughput_batch_size,"
+scripts\31_profile_efficiency.py,1377,batch_size,args.throughput_batch_size
+scripts\31_profile_efficiency.py,1392,batch_size,"""latency_batch_size"": int(args.latency_batch_size),"
+scripts\31_profile_efficiency.py,1407,batch_size,"""throughput_batch_size"": int(args.throughput_batch_size),"
+scripts\31_profile_efficiency.py,1512,batch_size,"""latency_batch_size"": int(args.latency_batch_size),"
+scripts\31_profile_efficiency.py,1513,batch_size,"""throughput_batch_size"": int(args.throughput_batch_size),"
+scripts\31_profile_efficiency.py,1650,macro_f1,"subset[""test_macro_f1""],"
+scripts\31_profile_efficiency.py,1689,macro_f1,"""mean_test_macro_f1"": f1_stats[""mean""],"
+scripts\31_profile_efficiency.py,1690,macro_f1,"""test_macro_f1_standard_deviation"": f1_stats["
+scripts\31_profile_efficiency.py,1734,macro_f1,"competitor[""mean_test_macro_f1""]"
+scripts\31_profile_efficiency.py,1735,macro_f1,">= candidate[""mean_test_macro_f1""]"
+scripts\31_profile_efficiency.py,1747,macro_f1,"competitor[""mean_test_macro_f1""]"
+scripts\31_profile_efficiency.py,1748,macro_f1,"> candidate[""mean_test_macro_f1""]"
+scripts\31_profile_efficiency.py,1843,batch_size,"batch_size=args.latency_batch_size,"
+scripts\31_profile_efficiency.py,1848,batch_size,"batch_size=args.throughput_batch_size,"
+scripts\31_profile_efficiency.py,1861,B0,"""B0-ORT"""
+scripts\31_profile_efficiency.py,1869,batch_size,"f""Gecikme protokolü: batch={args.latency_batch_size}, """
+scripts\31_profile_efficiency.py,1874,batch_size,"f""Throughput        : batch={args.throughput_batch_size}, """
+scripts\31_profile_efficiency.py,1956,macro_f1,test_macro_f1 = lookup_test_macro_f1(
+scripts\31_profile_efficiency.py,1976,compact,"""physical_compaction"": bool("
+scripts\31_profile_efficiency.py,1978,compact,"""physical_compaction"","
+scripts\31_profile_efficiency.py,1998,macro_f1,"""test_macro_f1"": test_macro_f1,"
+scripts\31_profile_efficiency.py,2165,B0,"""pruning-QAT use PyTorch runtimes. B0-ORT is supplied as an """
+scripts\32_analyze_overall_results.py,5,B0,- B0
+scripts\32_analyze_overall_results.py,24,B0,7. B0'a göre eşleştirilmiş performans farkları
+scripts\32_analyze_overall_results.py,110,tinyml,"""tinyml_mlp"","
+scripts\32_analyze_overall_results.py,111,compact,"""compact_dnn"","
+scripts\32_analyze_overall_results.py,116,B0,"""B0"","
+scripts\32_analyze_overall_results.py,143,macro_f1,"""test_macro_f1"": {"
+scripts\32_analyze_overall_results.py,166,macro_f1,"""test_macro_f1"","
+scripts\32_analyze_overall_results.py,179,B0,"""B0, budama, quantization ve budama+QAT """
+scripts\32_analyze_overall_results.py,603,B0,"fixed_variant=""B0"","
+scripts\32_analyze_overall_results.py,804,B0,"fixed_variant=""B0"","
+scripts\32_analyze_overall_results.py,914,macro_f1,"""test_macro_f1"","
+scripts\32_analyze_overall_results.py,962,macro_f1,"""test_macro_f1"","
+scripts\32_analyze_overall_results.py,1033,macro_f1,"""test_macro_f1"","
+scripts\32_analyze_overall_results.py,1037,macro_f1,"""test_macro_f1"": ""reference_test_macro_f1"","
+scripts\32_analyze_overall_results.py,1053,macro_f1,"merged[""test_macro_f1""].to_numpy("
+scripts\32_analyze_overall_results.py,1057,macro_f1,"""reference_test_macro_f1"""
+scripts\32_analyze_overall_results.py,1763,b0,def build_b0_delta_records(
+scripts\32_analyze_overall_results.py,1772,B0,"""""""Her sıkıştırılmış varyantın B0'a göre farkını hesaplar."""""""
+scripts\32_analyze_overall_results.py,1775,B0,"""B0"""
+scripts\32_analyze_overall_results.py,1785,B0,"if variant_name == ""B0"":"
+scripts\32_analyze_overall_results.py,1838,B0,"""baseline_variant"": ""B0"","
+scripts\32_analyze_overall_results.py,1843,b0,"""mean_raw_delta_variant_minus_b0"": raw_statistics["
+scripts\32_analyze_overall_results.py,1954,b0,build_b0_delta_records(
+scripts\32_analyze_overall_results.py,2023,b0,build_b0_delta_records(
+scripts\32_analyze_overall_results.py,2093,B0,"""B0 fark kaydı sayısı beklenen değerde değil."""
+scripts\32_analyze_overall_results.py,2162,macro_f1,"""test_macro_f1"": ""test_macro_f1"","
+scripts\32_analyze_overall_results.py,2219,macro_f1,"""mean_test_macro_f1"": statistics["
+scripts\32_analyze_overall_results.py,2220,macro_f1,"""test_macro_f1"""
+scripts\32_analyze_overall_results.py,2224,macro_f1,"""test_macro_f1_standard_deviation"": statistics["
+scripts\32_analyze_overall_results.py,2225,macro_f1,"""test_macro_f1"""
+scripts\32_analyze_overall_results.py,2229,macro_f1,"""test_macro_f1_ci95_lower"": statistics["
+scripts\32_analyze_overall_results.py,2230,macro_f1,"""test_macro_f1"""
+scripts\32_analyze_overall_results.py,2234,macro_f1,"""test_macro_f1_ci95_upper"": statistics["
+scripts\32_analyze_overall_results.py,2235,macro_f1,"""test_macro_f1"""
+scripts\32_analyze_overall_results.py,2299,macro_f1,"""mean_test_macro_f1"""
+scripts\32_analyze_overall_results.py,2325,macro_f1,"""mean_test_macro_f1"""
+scripts\32_analyze_overall_results.py,2443,macro_f1,"""mean_test_macro_f1"": float("
+scripts\32_analyze_overall_results.py,2445,macro_f1,"""mean_test_macro_f1"""
+scripts\32_analyze_overall_results.py,2552,macro_f1,"""mean_test_macro_f1"""
+scripts\32_analyze_overall_results.py,2628,macro_f1,"""mean_test_macro_f1"""
+scripts\32_analyze_overall_results.py,2690,macro_f1,"== ""test_macro_f1"""
+scripts\32_analyze_overall_results.py,2705,macro_f1,"== ""test_macro_f1"""
+scripts\32_analyze_overall_results.py,2718,b0,b0_comparisons = pairwise_frame[
+scripts\32_analyze_overall_results.py,2729,macro_f1,"== ""test_macro_f1"""
+scripts\32_analyze_overall_results.py,2735,B0,"== ""B0"""
+scripts\32_analyze_overall_results.py,2778,macro_f1,"""mean_test_macro_f1"": float("
+scripts\32_analyze_overall_results.py,2794,b0,"""b0_pairwise_comparisons"": ["
+scripts\32_analyze_overall_results.py,2811,b0,"""b0_seed_wins"": int("
+scripts\32_analyze_overall_results.py,2817,b0,"""b0_seed_losses"": int("
+scripts\32_analyze_overall_results.py,2824,b0,for row in b0_comparisons.itertuples(
+scripts\32_analyze_overall_results.py,2877,b0,"""b0_deltas"": ("
+scripts\32_analyze_overall_results.py,2879,b0,"/ ""nbaiot_family3_overall_paired_deltas_vs_b0.csv"""
+scripts\32_analyze_overall_results.py,3029,b0,"""b0_deltas"""
+scripts\32_analyze_overall_results.py,3106,macro_f1,"""test_macro_f1"""
+scripts\32_analyze_overall_results.py,3147,macro_f1,"""mean_test_macro_f1"","
+scripts\32_analyze_overall_results.py,3249,macro_f1,"f""{ranking['mean_test_macro_f1']:.6f} | """
+scripts\32_analyze_overall_results.py,3319,b0|B0,"f""B0 farkları       : {output_files['b0_deltas']}"""
+scripts\33_generate_publication_outputs.py,84,tinyml,"""tinyml_mlp"","
+scripts\33_generate_publication_outputs.py,85,compact,"""compact_dnn"","
+scripts\33_generate_publication_outputs.py,90,tinyml|TinyML,"""tinyml_mlp"": ""TinyML-MLP"","
+scripts\33_generate_publication_outputs.py,91,Compact|compact,"""compact_dnn"": ""Compact-DNN"","
+scripts\33_generate_publication_outputs.py,96,B0,"""B0"","
+scripts\33_generate_publication_outputs.py,121,tinyml,"""tinyml_mlp"": ""o"","
+scripts\33_generate_publication_outputs.py,122,compact,"""compact_dnn"": ""s"","
+scripts\33_generate_publication_outputs.py,482,macro_f1,"== ""test_macro_f1"""
+scripts\33_generate_publication_outputs.py,486,macro_f1,"""descriptives/test_macro_f1"","
+scripts\33_generate_publication_outputs.py,498,macro_f1,"""mean_test_macro_f1"","
+scripts\33_generate_publication_outputs.py,499,macro_f1,"""test_macro_f1_standard_deviation"","
+scripts\33_generate_publication_outputs.py,525,macro_f1,"""mean_test_macro_f1"","
+scripts\33_generate_publication_outputs.py,526,macro_f1,"""test_macro_f1_standard_deviation"","
+scripts\33_generate_publication_outputs.py,696,macro_f1,"""mean_test_macro_f1"","
+scripts\33_generate_publication_outputs.py,773,macro_f1,"""test_macro_f1"","
+scripts\33_generate_publication_outputs.py,818,macro_f1,"macro = endpoint_rows[""test_macro_f1""]"
+scripts\33_generate_publication_outputs.py,914,macro_f1,"""mean_test_macro_f1"""
+scripts\33_generate_publication_outputs.py,917,macro_f1,"""test_macro_f1_standard_deviation"""
+scripts\33_generate_publication_outputs.py,949,macro_f1,"== ""test_macro_f1"""
+scripts\33_generate_publication_outputs.py,979,macro_f1,"== ""test_macro_f1"""
+scripts\33_generate_publication_outputs.py,998,b0,b0_comparisons = model_pairwise[
+scripts\33_generate_publication_outputs.py,1001,B0,"== ""B0"""
+scripts\33_generate_publication_outputs.py,1005,B0,"== ""B0"""
+scripts\33_generate_publication_outputs.py,1009,b0,b0_significant = normalize_boolean_series(
+scripts\33_generate_publication_outputs.py,1010,b0,b0_comparisons[
+scripts\33_generate_publication_outputs.py,1015,b0,"""b0_gatekept_significant"""
+scripts\33_generate_publication_outputs.py,1067,B0,"""B0 ile Anlamlı Karşılaştırma"": int("
+scripts\33_generate_publication_outputs.py,1068,b0,b0_significant.sum()
+scripts\33_generate_publication_outputs.py,1070,B0,"""B0 Karşılaştırma Sayısı"": int("
+scripts\33_generate_publication_outputs.py,1071,b0,len(b0_comparisons)
+scripts\33_generate_publication_outputs.py,1214,macro_f1,"""mean_test_macro_f1"","
+scripts\33_generate_publication_outputs.py,1222,macro_f1,"""mean_test_macro_f1"": ("
+scripts\33_generate_publication_outputs.py,1292,macro_f1,def plot_macro_f1_vs_artifact(
+scripts\33_generate_publication_outputs.py,1334,macro_f1,"""mean_test_macro_f1"""
+scripts\33_generate_publication_outputs.py,1362,macro_f1,row.mean_test_macro_f1
+scripts\33_generate_publication_outputs.py,1393,macro_f1,"/ ""figure_1_macro_f1_vs_artifact.png"""
+scripts\33_generate_publication_outputs.py,1398,macro_f1,"/ ""figure_1_macro_f1_vs_artifact.pdf"""
+scripts\33_generate_publication_outputs.py,1411,macro_f1,def plot_macro_f1_vs_latency(
+scripts\33_generate_publication_outputs.py,1452,macro_f1,"""mean_test_macro_f1"""
+scripts\33_generate_publication_outputs.py,1479,macro_f1,row.mean_test_macro_f1
+scripts\33_generate_publication_outputs.py,1510,macro_f1,"/ ""figure_2_macro_f1_vs_latency.png"""
+scripts\33_generate_publication_outputs.py,1515,macro_f1,"/ ""figure_2_macro_f1_vs_latency.pdf"""
+scripts\33_generate_publication_outputs.py,1528,macro_f1,def plot_macro_f1_heatmap(
+scripts\33_generate_publication_outputs.py,1537,macro_f1,"== ""test_macro_f1"""
+scripts\33_generate_publication_outputs.py,1626,macro_f1,"/ ""figure_3_macro_f1_heatmap.png"""
+scripts\33_generate_publication_outputs.py,1631,macro_f1,"/ ""figure_3_macro_f1_heatmap.pdf"""
+scripts\33_generate_publication_outputs.py,1679,macro_f1,"== ""test_macro_f1"""
+scripts\33_generate_publication_outputs.py,1684,macro_f1,"""mean_test_macro_f1"","
+scripts\33_generate_publication_outputs.py,1764,macro_f1,"== ""test_macro_f1"""
+scripts\33_generate_publication_outputs.py,1814,macro_f1,"== ""test_macro_f1"""
+scripts\33_generate_publication_outputs.py,1848,macro_f1,"f""{float(best_accuracy['mean_test_macro_f1']):.6f} """
+scripts\33_generate_publication_outputs.py,1909,macro_f1,"f""Macro F1={float(row.mean_test_macro_f1):.6f}, """
+scripts\33_generate_publication_outputs.py,1970,macro_f1,"""figure_1_macro_f1_vs_artifact.png"","
+scripts\33_generate_publication_outputs.py,1971,macro_f1,"""figure_1_macro_f1_vs_artifact.pdf"","
+scripts\33_generate_publication_outputs.py,1972,macro_f1,"""figure_2_macro_f1_vs_latency.png"","
+scripts\33_generate_publication_outputs.py,1973,macro_f1,"""figure_2_macro_f1_vs_latency.pdf"","
+scripts\33_generate_publication_outputs.py,1974,macro_f1,"""figure_3_macro_f1_heatmap.png"","
+scripts\33_generate_publication_outputs.py,1975,macro_f1,"""figure_3_macro_f1_heatmap.pdf"","
+scripts\33_generate_publication_outputs.py,2153,macro_f1,plot_macro_f1_vs_artifact(
+scripts\33_generate_publication_outputs.py,2162,macro_f1,plot_macro_f1_vs_latency(
+scripts\33_generate_publication_outputs.py,2171,macro_f1,plot_macro_f1_heatmap(
+scripts\34_generate_manuscript_skeleton.py,200,TinyML,"[""2"", ""İlgili Çalışmalar"", ""IoT IDS, TinyML, budama ve kuantizasyon literatürü"","
+scripts\34_generate_manuscript_skeleton.py,254,macro_f1,"[""Şekil 1"", ""figure_1_macro_f1_vs_artifact.pdf"","
+scripts\34_generate_manuscript_skeleton.py,257,macro_f1,"[""Şekil 2"", ""figure_2_macro_f1_vs_latency.pdf"","
+scripts\34_generate_manuscript_skeleton.py,260,macro_f1,"[""Şekil 3"", ""figure_3_macro_f1_heatmap.pdf"","
+scripts\34_generate_manuscript_skeleton.py,380,TinyML,"return f""""""# TinyML-Based Intrusion Detection for Constrained IoT Devices:"
+scripts\34_generate_manuscript_skeleton.py,385,TinyML,Kısıtlı IoT Cihazları İçin TinyML Tabanlı Saldırı Tespit Sistemi:
+scripts\34_generate_manuscript_skeleton.py,415,TinyML,TinyML; intrusion detection system; IoT security; neural network
+scripts\34_generate_manuscript_skeleton.py,426,TinyML,- TinyML tabanlı yerel saldırı tespitinin önemini açıklayın.
+scripts\34_generate_manuscript_skeleton.py,438,Compact|TinyML,"1. TinyML-MLP, Compact-DNN ve Tiny-1D-CNN'nin beş eşleştirilmiş seed ile"
+scripts\34_generate_manuscript_skeleton.py,459,TinyML,## B. TinyML ve Edge Güvenliği
+scripts\34_generate_manuscript_skeleton.py,461,TinyML,- Kısıtlı cihazlarda TinyML
+scripts\34_generate_manuscript_skeleton.py,511,TinyML,## A. TinyML-MLP
+scripts\34_generate_manuscript_skeleton.py,517,Compact,## B. Compact-DNN
+scripts\34_generate_manuscript_skeleton.py,532,B0,- B0
+scripts\34_generate_manuscript_skeleton.py,585,TinyML,"- TinyML-MLP: QAT, P25-QAT ve P25 üst sıralardadır."
+scripts\34_generate_manuscript_skeleton.py,586,Compact,- Compact-DNN: QAT doğruluk lideridir; P25-QAT yakın alternatiftir.
+scripts\35_build_leakage_ablation_splits.py,438,class_weight,"""scaler_and_class_weights_must_be_fitted_separately_from_each_arm_train_only"": True,"
+scripts\36_run_leakage_ablation.py,2,B0,"""""""Run the N-BaIoT duplicate-leakage ablation with the locked B0 model."
+scripts\36_run_leakage_ablation.py,6,B0|tinyml,and class weights.  The B0 ``tinyml_mlp`` is then trained with the five locked
+scripts\36_run_leakage_ablation.py,33,DataLoader,"from torch.utils.data import DataLoader, Dataset"
+scripts\36_run_leakage_ablation.py,235,class_weight,"np.save(arm_dir / ""class_weights.npy"", weights.astype(np.float32))"
+scripts\36_run_leakage_ablation.py,240,class_weight,"""scaler_fit_split"": ""train"", ""class_weights_fit_split"": ""train"","
+scripts\36_run_leakage_ablation.py,273,macro_f1,"""macro_f1"": float(f1.mean()), ""confusion_matrix"": cm.tolist(),"
+scripts\36_run_leakage_ablation.py,281,DataLoader,"def evaluate(model: nn.Module, loader: DataLoader, criterion: nn.Module) -> dict[str, Any]:"
+scripts\36_run_leakage_ablation.py,294,tinyml,"model = p[""model_specific_configuration""][""tinyml_mlp""]"
+scripts\36_run_leakage_ablation.py,296,batch_size,"""batch_size"": int(common[""batch_size""]), ""num_workers"": int(common[""num_workers""]),"
+scripts\36_run_leakage_ablation.py,297,epochs|learning_rate,"""max_epochs"": int(common[""max_epochs""]), ""learning_rate"": float(model[""learning_rate""]),"
+scripts\36_run_leakage_ablation.py,298,weight_decay,"""weight_decay"": float(common[""weight_decay""]),"
+scripts\36_run_leakage_ablation.py,300,patience,"""patience"": int(common[""early_stopping_patience""]),"
+scripts\36_run_leakage_ablation.py,310,batch_size|DataLoader,"train_loader = DataLoader(MemmapDataset(arm_dir, ""train""), batch_size=cfg[""batch_size""],"
+scripts\36_run_leakage_ablation.py,312,batch_size|DataLoader,"val_loader = DataLoader(MemmapDataset(arm_dir, ""validation""), batch_size=cfg[""batch_size""],"
+scripts\36_run_leakage_ablation.py,314,batch_size|DataLoader,"test_loader = DataLoader(MemmapDataset(arm_dir, ""test""), batch_size=cfg[""batch_size""],"
+scripts\36_run_leakage_ablation.py,316,tinyml,"model = create_model(""tinyml_mlp"", input_features=115, num_classes=3)"
+scripts\36_run_leakage_ablation.py,317,class_weight,"weights = torch.from_numpy(np.load(arm_dir / ""class_weights.npy""))"
+scripts\36_run_leakage_ablation.py,318,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(weight=weights)
+scripts\36_run_leakage_ablation.py,319,Adam|learning_rate|weight_decay,"optimizer = torch.optim.Adam(model.parameters(), lr=cfg[""learning_rate""], weight_decay=cfg[""weight_decay""])"
+scripts\36_run_leakage_ablation.py,322,epochs,"for epoch in range(1, cfg[""max_epochs""]+1):"
+scripts\36_run_leakage_ablation.py,330,macro_f1,"print(f""  seed={seed} epoch={epoch}: val_macro_f1={val['macro_f1']:.6f}"", flush=True)"
+scripts\36_run_leakage_ablation.py,331,macro_f1,"if val[""macro_f1""] > best + cfg[""min_delta""]:"
+scripts\36_run_leakage_ablation.py,332,macro_f1,"best = val[""macro_f1""]; best_epoch = epoch; stale = 0"
+scripts\36_run_leakage_ablation.py,336,patience,"if stale >= cfg[""patience""]: break"
+scripts\36_run_leakage_ablation.py,341,macro_f1,"""best_validation_macro_f1"": best, ""test"": test, ""history"": history,"
+scripts\36_run_leakage_ablation.py,375,macro_f1,"metrics = [""test_accuracy"", ""test_balanced_accuracy"", ""test_macro_precision"", ""test_macro_recall"", ""test_macro_f1""]"
+scripts\36_run_leakage_ablation.py,380,tinyml,"""model"": ""tinyml_mlp"", ""training_seeds"": args.seeds, ""arms"": args.arms,"
+scripts\37_build_float32_leakage_ablation_splits.py,15,TinyML,are never modified.  Put this file in ``scripts/`` inside TinyML_IDS_IEEE.
+scripts\37_build_float32_leakage_ablation_splits.py,817,class_weight,"""train_only_scaler_and_class_weight_fit_per_arm"": True,"
+scripts\38_run_b0_matched_leakage_ablation.py,1,B0,"""""""Run the corrected leakage ablation with the locked B0 training protocol."
+scripts\38_run_b0_matched_leakage_ablation.py,4,B0|tinyml,"only in the split assignment unit.  Both arms use the B0 ``tinyml_mlp`` model,"
+scripts\38_run_b0_matched_leakage_ablation.py,5,AdamW,"AdamW, inverse-square-root class weights, train-only standardization, identical"
+scripts\38_run_b0_matched_leakage_ablation.py,10,TinyML,Put this file in ``scripts/`` inside TinyML_IDS_IEEE.
+scripts\38_run_b0_matched_leakage_ablation.py,37,DataLoader,"from torch.utils.data import DataLoader, Dataset"
+scripts\38_run_b0_matched_leakage_ablation.py,51,b0,"DEFAULT_OUTPUT = PROJECT_ROOT / ""results"" / ""vs2"" / ""leakage_ablation_b0_matched"""
+scripts\38_run_b0_matched_leakage_ablation.py,73,B0,"parser = argparse.ArgumentParser(description=""Stage 38: B0-matched leakage ablation"")"
+scripts\38_run_b0_matched_leakage_ablation.py,680,class_weight,"weights = np.load(arm_directory / ""class_weights.npy"")"
+scripts\38_run_b0_matched_leakage_ablation.py,830,class_weight,class_weights = inverse_sqrt_mean1(class_counts)
+scripts\38_run_b0_matched_leakage_ablation.py,833,class_weight,"np.save(arm_directory / ""class_weights.npy"", class_weights)"
+scripts\38_run_b0_matched_leakage_ablation.py,920,class_weight,"""class_weights_fit_split"": ""train_only"","
+scripts\38_run_b0_matched_leakage_ablation.py,921,class_weight,"""class_weight_scheme"": ""inverse_square_root_frequency_mean1"","
+scripts\38_run_b0_matched_leakage_ablation.py,922,class_weight,"""class_weights"": class_weights.tolist(),"
+scripts\38_run_b0_matched_leakage_ablation.py,992,macro_f1,"""macro_f1"": float(f1.mean()),"
+scripts\38_run_b0_matched_leakage_ablation.py,1011,DataLoader,"def evaluate(model: nn.Module, loader: DataLoader, criterion: nn.Module) -> dict[str, Any]:"
+scripts\38_run_b0_matched_leakage_ablation.py,1034,B0,"raise RuntimeError(f""B0 protokol seed kümesi uyuşmuyor: {protocol.get('seeds')!r}"")"
+scripts\38_run_b0_matched_leakage_ablation.py,1036,B0,"raise RuntimeError(f""B0 görev adı uyuşmuyor: {protocol.get('task')!r}"")"
+scripts\38_run_b0_matched_leakage_ablation.py,1038,tinyml,"model = protocol[""model_specific_configuration""][""tinyml_mlp""]"
+scripts\38_run_b0_matched_leakage_ablation.py,1040,AdamW,"""optimizer"": ""AdamW"","
+scripts\38_run_b0_matched_leakage_ablation.py,1041,class_weight,"""class_weight_scheme"": ""inverse_square_root_frequency_mean1"","
+scripts\38_run_b0_matched_leakage_ablation.py,1045,B0,"raise RuntimeError(f""B0 protokolü uyuşmuyor: {key}={common.get(key)!r}"")"
+scripts\38_run_b0_matched_leakage_ablation.py,1047,AdamW,"""optimizer"": ""AdamW"","
+scripts\38_run_b0_matched_leakage_ablation.py,1048,tinyml,"""model_name"": ""tinyml_mlp"","
+scripts\38_run_b0_matched_leakage_ablation.py,1049,batch_size,"""batch_size"": int(common[""batch_size""]),"
+scripts\38_run_b0_matched_leakage_ablation.py,1051,epochs,"""max_epochs"": int(common[""max_epochs""]),"
+scripts\38_run_b0_matched_leakage_ablation.py,1052,learning_rate,"""learning_rate"": float(model[""learning_rate""]),"
+scripts\38_run_b0_matched_leakage_ablation.py,1053,weight_decay,"""weight_decay"": float(common[""weight_decay""]),"
+scripts\38_run_b0_matched_leakage_ablation.py,1055,patience,"""patience"": int(common[""early_stopping_patience""]),"
+scripts\38_run_b0_matched_leakage_ablation.py,1058,class_weight,"""class_weight_scheme"": str(common[""class_weight_scheme""]),"
+scripts\38_run_b0_matched_leakage_ablation.py,1061,batch_size,"""batch_size"": 4096,"
+scripts\38_run_b0_matched_leakage_ablation.py,1063,epochs,"""max_epochs"": 15,"
+scripts\38_run_b0_matched_leakage_ablation.py,1064,learning_rate,"""learning_rate"": 0.003,"
+scripts\38_run_b0_matched_leakage_ablation.py,1065,weight_decay,"""weight_decay"": 0.0001,"
+scripts\38_run_b0_matched_leakage_ablation.py,1067,patience,"""patience"": 4,"
+scripts\38_run_b0_matched_leakage_ablation.py,1074,B0,"f""Kilitli B0 ayarı değişmiş: {key}={settings[key]!r}, beklenen={expected_value!r}"""
+scripts\38_run_b0_matched_leakage_ablation.py,1099,tinyml,"""model_name"": ""tinyml_mlp"","
+scripts\38_run_b0_matched_leakage_ablation.py,1127,DataLoader,train_loader = DataLoader(
+scripts\38_run_b0_matched_leakage_ablation.py,1129,batch_size,"batch_size=cfg[""batch_size""],"
+scripts\38_run_b0_matched_leakage_ablation.py,1134,DataLoader,validation_loader = DataLoader(
+scripts\38_run_b0_matched_leakage_ablation.py,1136,batch_size,"batch_size=cfg[""batch_size""],"
+scripts\38_run_b0_matched_leakage_ablation.py,1140,DataLoader,test_loader = DataLoader(
+scripts\38_run_b0_matched_leakage_ablation.py,1142,batch_size,"batch_size=cfg[""batch_size""],"
+scripts\38_run_b0_matched_leakage_ablation.py,1147,tinyml,"model_name=""tinyml_mlp"","
+scripts\38_run_b0_matched_leakage_ablation.py,1154,B0|tinyml,"f""B0 tinyml_mlp parametre sayısı değişmiş: {parameter_count:,} != {EXPECTED_PARAMETER_COUNT:,}"""
+scripts\38_run_b0_matched_leakage_ablation.py,1156,class_weight,"weights = torch.from_numpy(np.load(arm_directory / ""class_weights.npy""))"
+scripts\38_run_b0_matched_leakage_ablation.py,1157,CrossEntropyLoss,criterion = nn.CrossEntropyLoss(weight=weights)
+scripts\38_run_b0_matched_leakage_ablation.py,1158,AdamW,optimizer = torch.optim.AdamW(
+scripts\38_run_b0_matched_leakage_ablation.py,1160,learning_rate,"lr=cfg[""learning_rate""],"
+scripts\38_run_b0_matched_leakage_ablation.py,1161,weight_decay,"weight_decay=cfg[""weight_decay""],"
+scripts\38_run_b0_matched_leakage_ablation.py,1168,tinyml,"""model_name"": ""tinyml_mlp"","
+scripts\38_run_b0_matched_leakage_ablation.py,1180,macro_f1,best_macro_f1 = -math.inf
+scripts\38_run_b0_matched_leakage_ablation.py,1182,epochs,stale_epochs = 0
+scripts\38_run_b0_matched_leakage_ablation.py,1186,epochs,"for epoch in range(1, cfg[""max_epochs""] + 1):"
+scripts\38_run_b0_matched_leakage_ablation.py,1206,macro_f1,"""validation_macro_f1"": validation[""macro_f1""],"
+scripts\38_run_b0_matched_leakage_ablation.py,1212,macro_f1,"f""val_macro_f1={validation['macro_f1']:.6f}"","
+scripts\38_run_b0_matched_leakage_ablation.py,1215,macro_f1,"if validation[""macro_f1""] > best_macro_f1 + cfg[""min_delta""]:"
+scripts\38_run_b0_matched_leakage_ablation.py,1216,macro_f1,"best_macro_f1 = float(validation[""macro_f1""])"
+scripts\38_run_b0_matched_leakage_ablation.py,1218,epochs,stale_epochs = 0
+scripts\38_run_b0_matched_leakage_ablation.py,1222,tinyml,"""model_name"": ""tinyml_mlp"","
+scripts\38_run_b0_matched_leakage_ablation.py,1228,macro_f1,"""best_validation_macro_f1"": best_macro_f1,"
+scripts\38_run_b0_matched_leakage_ablation.py,1237,epochs,stale_epochs += 1
+scripts\38_run_b0_matched_leakage_ablation.py,1238,epochs|patience,"if stale_epochs >= cfg[""patience""]:"
+scripts\38_run_b0_matched_leakage_ablation.py,1248,macro_f1,"""best_validation_macro_f1"": best_macro_f1,"
+scripts\38_run_b0_matched_leakage_ablation.py,1263,tinyml,"""model_name"": ""tinyml_mlp"","
+scripts\38_run_b0_matched_leakage_ablation.py,1270,epochs,"""epochs_completed"": len(history),"
+scripts\38_run_b0_matched_leakage_ablation.py,1271,macro_f1,"""best_validation_macro_f1"": best_macro_f1,"
+scripts\38_run_b0_matched_leakage_ablation.py,1350,b0,"run_file = output_directory / ""leakage_ablation_b0_matched_runs.csv"""
+scripts\38_run_b0_matched_leakage_ablation.py,1357,macro_f1,"""test_macro_f1"","
+scripts\38_run_b0_matched_leakage_ablation.py,1373,b0,"aggregate_file = output_directory / ""leakage_ablation_b0_matched_aggregate.csv"""
+scripts\38_run_b0_matched_leakage_ablation.py,1406,b0,"paired_file = output_directory / ""leakage_ablation_b0_matched_paired_deltas.csv"""
+scripts\38_run_b0_matched_leakage_ablation.py,1408,b0,"exact_file = output_directory / ""leakage_ablation_b0_matched_exact_inference.json"""
+scripts\38_run_b0_matched_leakage_ablation.py,1426,b0,"summary_file = output_directory / ""leakage_ablation_b0_matched_summary.json"""
+scripts\38_run_b0_matched_leakage_ablation.py,1432,b0,"""protocol"": ""vs2_float32_leakage_ablation_b0_matched"","
+scripts\38_run_b0_matched_leakage_ablation.py,1436,tinyml,"""model"": ""tinyml_mlp"","
+scripts\38_run_b0_matched_leakage_ablation.py,1454,b0,"""locked_b0_protocol_sha256"": protocol_sha256,"
+scripts\38_run_b0_matched_leakage_ablation.py,1518,B0,"print(f""[{arm}/seed{seed}] B0-eşlenmiş eğitim başlıyor..."", flush=True)"
+scripts\38_run_b0_matched_leakage_ablation.py,1536,epochs,"""epochs_completed"": result[""epochs_completed""],"
+scripts\38_run_b0_matched_leakage_ablation.py,1537,macro_f1,"""best_validation_macro_f1"": result[""best_validation_macro_f1""],"
+scripts\38_run_b0_matched_leakage_ablation.py,1565,macro_f1,"macro = frame.pivot(index=""seed"", columns=""arm"", values=""test_macro_f1"").loc[list(SEEDS)]"
+scripts\38_run_b0_matched_leakage_ablation.py,1568,B0,"print(""38. aşama tamamlandı: B0-eşlenmiş float32 sızıntı ablasyonu"")"

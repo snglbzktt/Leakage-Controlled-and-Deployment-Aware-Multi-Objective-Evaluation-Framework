@@ -1,0 +1,57 @@
+{
+  "sample_count": 341417,
+  "accuracy": 0.9806365822440007,
+  "balanced_accuracy": 0.9055017543373697,
+  "macro_precision": 0.984815031483171,
+  "macro_recall": 0.9055017543373697,
+  "macro_f1": 0.9381058089527664,
+  "weighted_f1": 0.9795252551810693,
+  "matthews_correlation_coefficient": 0.9544018642847546,
+  "per_class": {
+    "benign": {
+      "support": 76695,
+      "predicted_count": 77913,
+      "precision": 0.9815178468291555,
+      "recall": 0.9971054175630745,
+      "f1": 0.9892502328469418,
+      "false_negative_rate": 0.00289458243692553
+    },
+    "gafgyt": {
+      "support": 18699,
+      "predicted_count": 13638,
+      "precision": 0.993254142836193,
+      "recall": 0.7244237659767903,
+      "f1": 0.8378018987537497,
+      "false_negative_rate": 0.27557623402320974
+    },
+    "mirai": {
+      "support": 246023,
+      "predicted_count": 249866,
+      "precision": 0.9796731047841644,
+      "recall": 0.9949760794722444,
+      "f1": 0.9872652952576081,
+      "false_negative_rate": 0.0050239205277555765
+    }
+  },
+  "confusion_matrix": [
+    [
+      76473,
+      20,
+      202
+    ],
+    [
+      276,
+      13546,
+      4877
+    ],
+    [
+      1164,
+      72,
+      244787
+    ]
+  ],
+  "loss": 0.11447443775445709,
+  "processed_batches": 95,
+  "elapsed_seconds": 1.0291688999859616,
+  "throughput_samples_per_second": 331740.49468911963
+}

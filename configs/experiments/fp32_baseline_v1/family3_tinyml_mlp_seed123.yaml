@@ -1,0 +1,21 @@
+experiment:
+  name: fp32_family3_tinyml_mlp_seed123
+  mode: main
+  task: family_3
+  model: tinyml_mlp
+  seed: 123
+data:
+  batch_size: 4096
+  num_workers: 0
+training:
+  max_epochs: 15
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  gradient_clip_norm: 1.0
+  patience: 4
+  min_delta: 0.0002
+  torch_threads: 4
+  weight_scheme: inverse_square_root_frequency_mean1
+output:
+  directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tinyml_mlp\seed123
+  overwrite: false

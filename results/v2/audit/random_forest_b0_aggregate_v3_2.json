@@ -1,0 +1,179 @@
+{
+  "status": "completed",
+  "generated_at_utc": "2026-08-06T14:11:22.109239+00:00",
+  "model_id": "random_forest_b0",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "run_count": 5,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "input_space": "canonical_float32_unscaled",
+  "input_space_parser_policy": "exact locked-token equality; no substring matching",
+  "parameters": {
+    "n_estimators": 100,
+    "criterion": "gini",
+    "max_depth": 20,
+    "min_samples_split": 40,
+    "min_samples_leaf": 20,
+    "max_features": "sqrt",
+    "bootstrap": true,
+    "max_samples": 0.5,
+    "class_weight": "balanced_subsample",
+    "n_jobs": 2,
+    "oob_score": false
+  },
+  "test_evaluation_count_per_run": 1,
+  "test_used_for_selection": false,
+  "runs": [
+    {
+      "run_id": "random_forest_b0__seed_42",
+      "seed": 42,
+      "training_elapsed_seconds": 119.58338139997795,
+      "tree_count": 100,
+      "mean_tree_node_count": 106.74,
+      "mean_tree_depth": 10.35,
+      "mean_tree_leaf_count": 53.87,
+      "test_fingerprint_macro_f1": 0.9994646755660824,
+      "test_fingerprint_accuracy": 0.9997229663578951,
+      "test_raw_weighted_macro_f1": 0.9981593029758127,
+      "test_gafgyt_fnr": 0.0017215584202652234,
+      "test_mirai_fnr": 7.724142416920543e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_42"
+    },
+    {
+      "run_id": "random_forest_b0__seed_123",
+      "seed": 123,
+      "training_elapsed_seconds": 122.2103885000106,
+      "tree_count": 100,
+      "mean_tree_node_count": 106.28,
+      "mean_tree_depth": 10.16,
+      "mean_tree_leaf_count": 53.64,
+      "test_fingerprint_macro_f1": 0.9994398808394046,
+      "test_fingerprint_accuracy": 0.9997068284758308,
+      "test_raw_weighted_macro_f1": 0.9981197368858087,
+      "test_gafgyt_fnr": 0.0017420531633636216,
+      "test_mirai_fnr": 9.350277662589779e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_123"
+    },
+    {
+      "run_id": "random_forest_b0__seed_2026",
+      "seed": 2026,
+      "training_elapsed_seconds": 117.77075430005789,
+      "tree_count": 100,
+      "mean_tree_node_count": 104.34,
+      "mean_tree_depth": 10.4,
+      "mean_tree_leaf_count": 52.67,
+      "test_fingerprint_macro_f1": 0.9994767615918181,
+      "test_fingerprint_accuracy": 0.9997256560049059,
+      "test_raw_weighted_macro_f1": 0.9981839828677348,
+      "test_gafgyt_fnr": 0.0016805689340684271,
+      "test_mirai_fnr": 7.724142416920543e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_2026"
+    },
+    {
+      "run_id": "random_forest_b0__seed_3407",
+      "seed": 3407,
+      "training_elapsed_seconds": 126.95176029996946,
+      "tree_count": 100,
+      "mean_tree_node_count": 105.8,
+      "mean_tree_depth": 10.38,
+      "mean_tree_leaf_count": 53.4,
+      "test_fingerprint_macro_f1": 0.9994704886322893,
+      "test_fingerprint_accuracy": 0.9997256560049059,
+      "test_raw_weighted_macro_f1": 0.998218703772364,
+      "test_gafgyt_fnr": 0.0017010636771668253,
+      "test_mirai_fnr": 7.724142416920543e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_3407"
+    },
+    {
+      "run_id": "random_forest_b0__seed_8192",
+      "seed": 8192,
+      "training_elapsed_seconds": 121.3665755999973,
+      "tree_count": 100,
+      "mean_tree_node_count": 107.5,
+      "mean_tree_depth": 10.27,
+      "mean_tree_leaf_count": 54.25,
+      "test_fingerprint_macro_f1": 0.9994472892653242,
+      "test_fingerprint_accuracy": 0.9997122077698523,
+      "test_raw_weighted_macro_f1": 0.9981736200672421,
+      "test_gafgyt_fnr": 0.0017010636771668253,
+      "test_mirai_fnr": 9.756811474015414e-05,
+      "fragility_gate_triggered": false,
+      "output_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_8192"
+    }
+  ],
+  "aggregate_metrics": {
+    "test_fingerprint_macro_f1": {
+      "mean": 0.9994598191789837,
+      "std_population": 1.3992878214494676e-05,
+      "minimum": 0.9994398808394046,
+      "maximum": 0.9994767615918181
+    },
+    "test_fingerprint_accuracy": {
+      "mean": 0.9997186629226782,
+      "std_population": 7.720739380965215e-06,
+      "minimum": 0.9997068284758308,
+      "maximum": 0.9997256560049059
+    },
+    "test_raw_weighted_macro_f1": {
+      "mean": 0.9981710693137925,
+      "std_population": 3.229790313363815e-05,
+      "minimum": 0.9981197368858087,
+      "maximum": 0.998218703772364
+    },
+    "test_gafgyt_fnr": {
+      "mean": 0.0017092615744061846,
+      "std_population": 2.0900618996960656e-05,
+      "minimum": 0.0016805689340684271,
+      "maximum": 0.0017420531633636216
+    },
+    "test_mirai_fnr": {
+      "mean": 8.455903277473364e-05,
+      "std_population": 9.053937870002942e-06,
+      "minimum": 7.724142416920543e-05,
+      "maximum": 9.756811474015414e-05
+    },
+    "training_elapsed_seconds": {
+      "mean": 121.57657202000264,
+      "std_population": 3.091780336215279,
+      "minimum": 117.77075430005789,
+      "maximum": 126.95176029996946
+    }
+  },
+  "fragility_gate_triggered_in_any_run": false,
+  "run_matrix": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_run_matrix_v3.csv",
+  "run_matrix_sha256": "c85e9a943f4834f4589dba43638c58da790b4080651b49f831f2b3e0cefbedef",
+  "runner_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\108_run_random_forest_b0_five_seeds_v3_2.py",
+  "runner_script_sha256": "17a38a99fc80a9750cd0d8cea9bc0d1ce203b2bd137a9869ee4a56c7aca4ed34",
+  "aggregate_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\random_forest_b0_runs_v3_2.csv",
+  "aggregate_csv_sha256": "5871077a2aab1b9bf825294402615f6d0c7467784b3f110d524a36995e0004cf",
+  "preflight_checks": {
+    "final_cache_verification_passed": true,
+    "logistic_verification_passed": true,
+    "decision_tree_verification_passed": true,
+    "cache_manifest_completed": true,
+    "cache_protocol_version_matches": true,
+    "base_protocol_locked": true,
+    "base_protocol_hash_matches": true,
+    "run_matrix_hash_matches": true,
+    "addendum_locked": true,
+    "addendum_hash_matches": true,
+    "run_count_is_five": true,
+    "seed_set_matches": true,
+    "single_input_space": true,
+    "locked_input_space_is_exact_unscaled": true,
+    "all_fit_sample_weights_none": true,
+    "all_test_evaluation_counts_one": true,
+    "sklearn_version_is_1_9_0": true
+  },
+  "all_integrity_checks_passed": true,
+  "total_elapsed_seconds": 633.2685606000014
+}

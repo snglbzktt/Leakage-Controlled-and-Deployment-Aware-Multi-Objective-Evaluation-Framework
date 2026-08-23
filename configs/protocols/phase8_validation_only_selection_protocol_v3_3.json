@@ -1,0 +1,106 @@
+{
+  "status": "corrective_reanalysis_protocol",
+  "phase": 8,
+  "protocol_version": "phase8_validation_only_selection_v3_3",
+  "supersedes_for_model_family_selection": "phase8_multi_objective_decision_v3_2",
+  "created_at_utc": "2026-08-12T15:47:31.495632+00:00",
+  "scientific_role": "post-hoc corrective reanalysis after identifying that the original Phase 8 family-level decision consumed test-derived predictive summaries",
+  "primary_profile": "balanced",
+  "predictive_selection_source": "Phase-5 validation metrics only",
+  "deployment_source": "Phase-6 locked benchmark; validation_data_access=False and test_data_access=False required",
+  "eligibility_profiles": {
+    "strict": {
+      "maximum_mean_validation_macro_f1_loss": 0.001,
+      "maximum_worst_seed_validation_macro_f1_loss": 0.0025
+    },
+    "balanced": {
+      "maximum_mean_validation_macro_f1_loss": 0.002,
+      "maximum_worst_seed_validation_macro_f1_loss": 0.005
+    },
+    "relaxed": {
+      "maximum_mean_validation_macro_f1_loss": 0.005,
+      "maximum_worst_seed_validation_macro_f1_loss": 0.01
+    }
+  },
+  "eligibility_policy": {
+    "required_candidate_role": "compressed_candidate",
+    "minimum_deployment_improvement_count": 1,
+    "deployment_improvements": [
+      "smaller serialized state than architecture B0",
+      "lower batch-1 median latency than architecture B0",
+      "higher batch-32 throughput than architecture B0"
+    ],
+    "raw_weighted_gate_removed": true,
+    "reason_raw_weighted_gate_removed": "A uniform validation raw-weighted metric is not available for every compression variant.",
+    "test_fragility_gate_removed": true,
+    "reason_test_fragility_gate_removed": "The historical fragility flag is derived from test performance and therefore cannot be part of a validation-only selection gate."
+  },
+  "Pareto_analysis": {
+    "objectives": [
+      {
+        "metric": "mean_validation_fingerprint_macro_f1",
+        "direction": "maximize",
+        "role": "predictive_quality"
+      },
+      {
+        "metric": "mean_serialized_state_dict_bytes",
+        "direction": "minimize",
+        "role": "storage"
+      },
+      {
+        "metric": "mean_batch_1_median_ms",
+        "direction": "minimize",
+        "role": "single_sample_latency"
+      },
+      {
+        "metric": "mean_batch_32_samples_per_second",
+        "direction": "maximize",
+        "role": "throughput"
+      }
+    ],
+    "weighted_score_used": false
+  },
+  "primary_selection_rule": {
+    "order": [
+      {
+        "criterion": "eligible_under_balanced_profile",
+        "direction": "required_true"
+      },
+      {
+        "criterion": "Pareto_nondominated",
+        "direction": "required_true"
+      },
+      {
+        "criterion": "mean_serialized_state_dict_bytes",
+        "direction": "ascending"
+      },
+      {
+        "criterion": "mean_batch_1_median_ms",
+        "direction": "ascending"
+      },
+      {
+        "criterion": "mean_batch_32_samples_per_second",
+        "direction": "descending"
+      },
+      {
+        "criterion": "mean_validation_fingerprint_macro_f1",
+        "direction": "descending"
+      },
+      {
+        "criterion": "architecture",
+        "direction": "lexicographic_ascending"
+      },
+      {
+        "criterion": "variant",
+        "direction": "lexicographic_ascending"
+      }
+    ],
+    "p_values_used_as_exclusion_gate": false,
+    "robustness_results_used_for_selection": false,
+    "test_metrics_used_for_selection": false
+  },
+  "reporting_policy": {
+    "final test metrics": "report only after model-family selection; not an input to this corrected decision",
+    "original Phase 8 artifacts": "retained unchanged for audit/provenance"
+  }
+}

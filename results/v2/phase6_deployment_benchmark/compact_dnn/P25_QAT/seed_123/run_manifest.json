@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "phase": 6,
+  "artifact_name": "isolated_deployment_benchmark_run",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "measurement_order": 1,
+  "architecture": "compact_dnn",
+  "variant": "P25-QAT",
+  "seed": 123,
+  "source_checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_123\\best_int8_checkpoint.pt",
+    "size_bytes": 30997,
+    "sha256": "ede547a384ebcce20caf2f6f0d9aaccd16e3380d068fd7e8957d53e3198b4802"
+  },
+  "source_metrics": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_123\\metrics.json",
+    "size_bytes": 32340,
+    "sha256": "c59f33f004d5b8edf4b23d6424e3269a4cfb53f35b0258d44ca5d142e5af88e7"
+  },
+  "phase6_protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase6_deployment_benchmark_protocol_v3_2.json",
+    "size_bytes": 3406,
+    "sha256": "5cd3ef9080f15824ce5b6afe4705cc65d812f2bfa65ddb6d531669363b5a6f31"
+  },
+  "phase6_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_locked_matrix_v3_2.csv",
+    "size_bytes": 42063,
+    "sha256": "47af30b78cf53db8039ccd920fa2d1fd583f4f1eabc75407cae023ef7caddcbd"
+  },
+  "artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase6_deployment_benchmark\\compact_dnn\\P25_QAT\\seed_123\\deployment_metrics.json",
+      "size_bytes": 2290,
+      "sha256": "0ea678e4c0293c8cbf038bffe8937b51f20658f5f60f3dc1a01c2bbf72dfdd4a",
+      "relative_path": "deployment_metrics.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase6_deployment_benchmark\\compact_dnn\\P25_QAT\\seed_123\\raw_latencies_ns.npz",
+      "size_bytes": 2310,
+      "sha256": "cfd34de719904a62cda391372680c7c1b635877157fb9363c566f6e1dd5c087c",
+      "relative_path": "raw_latencies_ns.npz"
+    }
+  ],
+  "validation_data_access": false,
+  "test_data_access": false,
+  "all_integrity_checks_passed": true,
+  "completed_at_utc": "2026-08-06T21:05:39.591935+00:00"
+}

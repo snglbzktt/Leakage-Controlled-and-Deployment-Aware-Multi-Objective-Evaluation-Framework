@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "compact_dnn__p25__seed_2026",
+  "architecture": "compact_dnn",
+  "variant": "P25",
+  "canonical_report_name": "P25-FP32-FT",
+  "source_variant": "P25-noFT",
+  "seed": 2026,
+  "best_epoch": 1,
+  "test_evaluation_count": 1,
+  "test_inference_started": true,
+  "test_predictions_sha256": "e59955224df82de1daba5d5f1460e2dd26a70bbd174372d01b768e6cf7698e3e",
+  "metrics_sha256": "8963585150d57db033a4cca63429e7565926de5378e6632a25f5adac6f13f214",
+  "run_manifest_sha256": "5c2927f45de811a54dfba571de0009bde031afeba6513da0178030cc3c95cd3d",
+  "fragility_gate_triggered": false,
+  "completed_at_utc": "2026-08-06T18:28:26.402625+00:00"
+}

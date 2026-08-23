@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "selected_PTQ_test_evaluation",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "PTQ_engine_version": "phase5_ptq_engine_v3_2",
+  "completed_at_utc": "2026-08-06T20:45:48.605534+00:00",
+  "run_count": 10,
+  "group_count": 2,
+  "selected_calibration_sizes": {
+    "tinyml_mlp": 4096,
+    "compact_dnn": 16384
+  },
+  "test_evaluation_count_per_run": 1,
+  "test_inference_total": 10,
+  "test_used_for_selection": false,
+  "aggregate_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_all_runs_v3_2.csv",
+  "aggregate_runs_csv_sha256": "b44b0691c6e8b51e575c5a5150cf212cfd106e706716db3994470727c2193d50",
+  "group_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_group_summary_v3_2.csv",
+  "group_summary_csv_sha256": "c16f58e433cb12d63355d148c4c2b3aa4cc315edf7b0e31e4847b486409cdb09",
+  "aggregate_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_summary_v3_2.json",
+  "aggregate_json_sha256": "118c8f0f1e5f80ec403ebab950bc8c3281eec377f5b1fba411e89b32fd6b5d60",
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

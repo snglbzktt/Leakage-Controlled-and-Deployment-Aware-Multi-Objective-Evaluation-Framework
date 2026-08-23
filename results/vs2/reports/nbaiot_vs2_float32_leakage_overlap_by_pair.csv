@@ -1,0 +1,7 @@
+arm,split_left,split_right,overlapping_float32_fingerprint_count
+naive_row,train,validation,494828
+naive_row,train,test,494863
+naive_row,validation,test,170514
+grouped_float32,train,validation,0
+grouped_float32,train,test,0
+grouped_float32,validation,test,0

@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "phase": 13,
+  "artifact_name": "manuscript_column_mapping_preflight",
+  "protocol_version": "phase13_manuscript_column_mapping_v3_3",
+  "verified_at_utc": "2026-08-07T00:14:03.541556+00:00",
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_lock_valid": true,
+    "binding_hash_matches": true,
+    "field_inspection_completed": true,
+    "mapping_asset_count_12": true
+  },
+  "preflight_checks": {
+    "all_12_assets_mapped": true,
+    "all_assets_have_sources": true,
+    "all_assets_have_fields": true,
+    "all_mapping_entries_validated": true,
+    "smoke_test_sources_absent": true,
+    "model_inference_not_performed": true,
+    "test_arrays_not_accessed": true,
+    "source_files_not_mutated": true,
+    "asset_generation_not_performed": true
+  },
+  "mapping": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase13_manuscript_column_mapping_v3_3.json",
+    "sha256": "0478330d53f6789a61d832fee74461cbea741f8492c9f759ca9bf936c676ff5d"
+  },
+  "mapping_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_column_mapping_v3_3.csv",
+    "sha256": "d82777ec273a612f7e0383e8e638f02faf70240bd799ec4619c46cfef677912f"
+  },
+  "asset_count": 12,
+  "mapping_row_count": 221,
+  "ready_for_asset_generation": true,
+  "all_checks_passed": true
+}

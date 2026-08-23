@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-07-24T14:53:56.448580+00:00",
+  "model_name": "tiny_1d_cnn",
+  "seed": 42,
+  "pruning_name": "P75",
+  "pruning_ratio": 0.75,
+  "pruning_protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_structured_pruning_protocol_v1.json",
+  "pruning_protocol_sha256": "f2bec24161421c6665c91aaf821c75f7f43485b7b32f49e68b64425f8a3f499b",
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed42\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "4e8882b2af0fed7816a5d99c0f2296b6e903ddaa41c1c0cb738cf4411b14c255",
+  "training_summary_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tiny_1d_cnn\\P75\\seed42\\training_summary.json",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\structured_pruning_v1\\tiny_1d_cnn\\P75\\seed42\\test_metrics.json",
+  "test_evaluation_attempt_count": 1,
+  "test_used_for_model_selection": false,
+  "scientific_result_status": "main_structured_pruning_result",
+  "validation_passed": true
+}

@@ -1,0 +1,2459 @@
+{
+  "status": "completed",
+  "phase": 11,
+  "artifact_name": "robustness_source_inventory",
+  "cache_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2",
+  "cache_npy_files": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\hash_forward_test.npy",
+      "name": "hash_forward_test.npy",
+      "shape": [
+        371796
+      ],
+      "dtype": "int64",
+      "size_bytes": 2974496
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\hash_forward_train.npy",
+      "name": "hash_forward_train.npy",
+      "shape": [
+        1534583
+      ],
+      "dtype": "int64",
+      "size_bytes": 12276792
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\hash_forward_validation.npy",
+      "name": "hash_forward_validation.npy",
+      "shape": [
+        371797
+      ],
+      "dtype": "int64",
+      "size_bytes": 2974504
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\hash_reverse_test.npy",
+      "name": "hash_reverse_test.npy",
+      "shape": [
+        371796
+      ],
+      "dtype": "int64",
+      "size_bytes": 2974496
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\hash_reverse_train.npy",
+      "name": "hash_reverse_train.npy",
+      "shape": [
+        1534583
+      ],
+      "dtype": "int64",
+      "size_bytes": 12276792
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\hash_reverse_validation.npy",
+      "name": "hash_reverse_validation.npy",
+      "shape": [
+        371797
+      ],
+      "dtype": "int64",
+      "size_bytes": 2974504
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\raw_row_count_test.npy",
+      "name": "raw_row_count_test.npy",
+      "shape": [
+        371796
+      ],
+      "dtype": "int64",
+      "size_bytes": 2974496
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\raw_row_count_train.npy",
+      "name": "raw_row_count_train.npy",
+      "shape": [
+        1534583
+      ],
+      "dtype": "int64",
+      "size_bytes": 12276792
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\raw_row_count_validation.npy",
+      "name": "raw_row_count_validation.npy",
+      "shape": [
+        371797
+      ],
+      "dtype": "int64",
+      "size_bytes": 2974504
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\scaler_mean.npy",
+      "name": "scaler_mean.npy",
+      "shape": [
+        115
+      ],
+      "dtype": "float64",
+      "size_bytes": 1048
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\scaler_scale.npy",
+      "name": "scaler_scale.npy",
+      "shape": [
+        115
+      ],
+      "dtype": "float64",
+      "size_bytes": 1048
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\X_test.npy",
+      "name": "X_test.npy",
+      "shape": [
+        371796,
+        115
+      ],
+      "dtype": "float32",
+      "size_bytes": 171026288
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\X_train.npy",
+      "name": "X_train.npy",
+      "shape": [
+        1534583,
+        115
+      ],
+      "dtype": "float32",
+      "size_bytes": 705908308
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\X_validation.npy",
+      "name": "X_validation.npy",
+      "shape": [
+        371797,
+        115
+      ],
+      "dtype": "float32",
+      "size_bytes": 171026748
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\y_test.npy",
+      "name": "y_test.npy",
+      "shape": [
+        371796
+      ],
+      "dtype": "int8",
+      "size_bytes": 371924
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\y_train.npy",
+      "name": "y_train.npy",
+      "shape": [
+        1534583
+      ],
+      "dtype": "int8",
+      "size_bytes": 1534711
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\y_validation.npy",
+      "name": "y_validation.npy",
+      "shape": [
+        371797
+      ],
+      "dtype": "int8",
+      "size_bytes": 371925
+    }
+  ],
+  "cache_npz_files": [],
+  "cache_json_files": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\manifest.json",
+      "top_level_keys": [
+        "all_checks_passed",
+        "artifacts",
+        "assignment_unit",
+        "cache_directory",
+        "cache_role",
+        "classes",
+        "created_at_utc",
+        "cumulative_move_count",
+        "cumulative_moved_raw_row_count",
+        "elapsed_seconds",
+        "feature_count",
+        "feature_dtype",
+        "free_disk_before_build_gib",
+        "hash_dtype",
+        "input_validation",
+        "iteration1_move_count",
+        "iteration2_move_count",
+        "label_dtype",
+        "locked_split_database_mutated",
+        "materialization",
+        "original_hash_audit",
+        "primary_evaluation_view",
+        "protocol_version",
+        "provenance",
+        "raw_row_count_dtype",
+        "repair_iterations_completed",
+        "scaled_overlap_audit",
+        "scaler_audit",
+        "secondary_evaluation_view",
+        "source_iteration1_cache",
+        "source_iteration1_cache_mutated",
+        "split_counts",
+        "status",
+        "training_sample_weight",
+        "unscaled_validation"
+      ]
+    }
+  ],
+  "phase5_B0_registry": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_checkpoint_registry_v3_2.csv",
+    "header": [
+      "architecture",
+      "variant",
+      "seed",
+      "run_id",
+      "model_symbol",
+      "best_epoch",
+      "epochs_completed",
+      "checkpoint_path",
+      "checkpoint_size_bytes",
+      "checkpoint_sha256",
+      "run_manifest_path",
+      "run_manifest_sha256",
+      "metrics_path",
+      "metrics_sha256",
+      "test_fingerprint_macro_f1",
+      "test_fingerprint_accuracy",
+      "test_raw_weighted_macro_f1",
+      "test_gafgyt_fnr",
+      "test_mirai_fnr",
+      "parameter_count",
+      "linear_macs_per_sample",
+      "raw_tensor_bytes",
+      "serialized_checkpoint_bytes",
+      "test_evaluation_count",
+      "fragility_gate_triggered",
+      "source_lock_path",
+      "source_lock_sha256",
+      "status"
+    ],
+    "seed_2026_rows": [
+      {
+        "architecture": "compact_dnn",
+        "variant": "B0",
+        "seed": "2026",
+        "run_id": "compact_dnn__b0__seed_2026",
+        "model_symbol": "CompactDNN",
+        "best_epoch": "10",
+        "epochs_completed": "14",
+        "checkpoint_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_2026\\best_checkpoint.pt",
+        "checkpoint_size_bytes": "313779",
+        "checkpoint_sha256": "7404110900abe7bf20e384481f693da8abde7fb316436556b680f7786080da9a",
+        "run_manifest_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_2026\\run_manifest.json",
+        "run_manifest_sha256": "8aed32e4de9cb8ead08db49e01cc1253fcf355112b1f46b15ec50ab57d337014",
+        "metrics_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_2026\\metrics.json",
+        "metrics_sha256": "1c5a19e21489523d4e8e20bd16772e6da8e2ce6c8ca4ce83dc91608220e5ea84",
+        "test_fingerprint_macro_f1": "0.9993279232350282",
+        "test_fingerprint_accuracy": "0.999626139065509",
+        "test_raw_weighted_macro_f1": "0.9981271812773147",
+        "test_gafgyt_fnr": "0.0020904637960362793",
+        "test_mirai_fnr": "0.00013009081965342784",
+        "parameter_count": "25283",
+        "linear_macs_per_sample": "25056",
+        "raw_tensor_bytes": "101132",
+        "serialized_checkpoint_bytes": "313779",
+        "test_evaluation_count": "1",
+        "fragility_gate_triggered": "False",
+        "source_lock_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compact_dnn_b0_locked_v3_2.json",
+        "source_lock_sha256": "59ab4d0dd6d64ef99eab5d64488922d36d14326eddd1175051d2ef8a549c45d8",
+        "status": "locked_B0_source_checkpoint"
+      },
+      {
+        "architecture": "tinyml_mlp",
+        "variant": "B0",
+        "seed": "2026",
+        "run_id": "tinyml_mlp__b0__seed_2026",
+        "model_symbol": "TinyMLMLP",
+        "best_epoch": "8",
+        "epochs_completed": "12",
+        "checkpoint_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+        "checkpoint_size_bytes": "123467",
+        "checkpoint_sha256": "6b60c988f01ec53e91ea7d9288ebd06cb4fd825ed093476150986c96d4223fa9",
+        "run_manifest_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\run_manifest.json",
+        "run_manifest_sha256": "15064a8888fc84642e12607cf47d1550992df4eda7d27f8186e3cd86fdbc4cab",
+        "metrics_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\metrics.json",
+        "metrics_sha256": "5862981cf45eea35fc2f727441d84751626b387796a144c63ec345ae78685b1b",
+        "test_fingerprint_macro_f1": "0.9992545342200568",
+        "test_fingerprint_accuracy": "0.9995696564782838",
+        "test_raw_weighted_macro_f1": "0.9980267703090027",
+        "test_gafgyt_fnr": "0.0022749164839218627",
+        "test_mirai_fnr": "0.00016261352456681255",
+        "parameter_count": "9603",
+        "linear_macs_per_sample": "9504",
+        "raw_tensor_bytes": "38412",
+        "serialized_checkpoint_bytes": "123467",
+        "test_evaluation_count": "1",
+        "fragility_gate_triggered": "False",
+        "source_lock_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_tinyml_mlp_b0_locked_v3_2.json",
+        "source_lock_sha256": "2809f62be96d21ba8ac393c5fc44d86d5d0db5013bad425f80a51772cd534599",
+        "status": "locked_B0_source_checkpoint"
+      }
+    ]
+  },
+  "phase5_master_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv",
+    "header": [
+      "architecture",
+      "variant",
+      "seed",
+      "representation",
+      "test_fingerprint_macro_f1",
+      "test_fingerprint_accuracy",
+      "test_raw_weighted_macro_f1",
+      "test_gafgyt_fnr",
+      "test_mirai_fnr",
+      "float_parameter_count",
+      "float_linear_macs_per_sample",
+      "state_size_ratio_vs_float",
+      "test_evaluation_count",
+      "test_used_for_selection",
+      "fragility_gate_triggered",
+      "metrics_path",
+      "metrics_sha256",
+      "run_directory"
+    ]
+  },
+  "phase9_source_registry": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_artifact_source_registry_v3_2.csv",
+    "header": [
+      "artifact_role",
+      "selection_method",
+      "architecture",
+      "variant",
+      "representation",
+      "seed",
+      "run_directory",
+      "metrics_path",
+      "metrics_sha256",
+      "checkpoint_path",
+      "checkpoint_sha256",
+      "checkpoint_size_bytes",
+      "QAT_backend",
+      "test_evaluation_count",
+      "test_used_for_seed_selection",
+      "validation_used_for_seed_selection",
+      "deployment_metric_used_for_seed_selection",
+      "single_checkpoint_selected_during_preflight"
+    ],
+    "rows": [
+      {
+        "artifact_role": "canonical_final_deployment_source",
+        "selection_method": "fixed_canonical_seed_no_metric_ranking",
+        "architecture": "tinyml_mlp",
+        "variant": "P50-QAT",
+        "representation": "static_int8",
+        "seed": "2026",
+        "run_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026",
+        "metrics_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\metrics.json",
+        "metrics_sha256": "cfa1b73e475fe1e18d25ece9f1c1a898bde2e7eb88d8da0b4baf2004c56dc311",
+        "checkpoint_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\best_int8_checkpoint.pt",
+        "checkpoint_sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+        "checkpoint_size_bytes": "14023",
+        "QAT_backend": "onednn",
+        "test_evaluation_count": "1",
+        "test_used_for_seed_selection": "False",
+        "validation_used_for_seed_selection": "False",
+        "deployment_metric_used_for_seed_selection": "False",
+        "single_checkpoint_selected_during_preflight": "False"
+      }
+    ]
+  },
+  "phase4_root_exists": false,
+  "phase4_files": [],
+  "model_candidates": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_danmini_hgb_lock_run_v2.log",
+      "name": "early_lodo_danmini_hgb_lock_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4650,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_danmini_hgb_scientific_run_v2.log",
+      "name": "early_lodo_danmini_hgb_scientific_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 7614,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_danmini_hgb_smoke_run_v2.log",
+      "name": "early_lodo_danmini_hgb_smoke_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4030,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_ecobee_hgb_lock_run_v2.log",
+      "name": "early_lodo_ecobee_hgb_lock_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4690,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_ecobee_hgb_scientific_run_v2.log",
+      "name": "early_lodo_ecobee_hgb_scientific_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 7686,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_ennio_hgb_lock_run_v2.log",
+      "name": "early_lodo_ennio_hgb_lock_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4646,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_ennio_hgb_scientific_run_v2.log",
+      "name": "early_lodo_ennio_hgb_scientific_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 7586,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_philips_hgb_lock_run_v2.log",
+      "name": "early_lodo_philips_hgb_lock_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4674,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_philips_hgb_scientific_run_v2.log",
+      "name": "early_lodo_philips_hgb_scientific_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 7704,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_provision_737e_hgb_lock_run_v2.log",
+      "name": "early_lodo_provision_737e_hgb_lock_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4716,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_provision_737e_hgb_scientific_run_v2.log",
+      "name": "early_lodo_provision_737e_hgb_scientific_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 7708,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_provision_838_hgb_lock_run_v2.log",
+      "name": "early_lodo_provision_838_hgb_lock_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4682,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_provision_838_hgb_scientific_run_v2.log",
+      "name": "early_lodo_provision_838_hgb_scientific_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 7648,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_samsung_hgb_lock_run_v2.log",
+      "name": "early_lodo_samsung_hgb_lock_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4670,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_samsung_hgb_scientific_run_v2.log",
+      "name": "early_lodo_samsung_hgb_scientific_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 7608,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_simplehome_1002_hgb_lock_run_v2.log",
+      "name": "early_lodo_simplehome_1002_hgb_lock_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4738,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_simplehome_1002_hgb_scientific_run_v2.log",
+      "name": "early_lodo_simplehome_1002_hgb_scientific_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 7796,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_simplehome_1003_hgb_lock_run_v2.log",
+      "name": "early_lodo_simplehome_1003_hgb_lock_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 4734,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_simplehome_1003_hgb_scientific_run_v2.log",
+      "name": "early_lodo_simplehome_1003_hgb_scientific_run_v2.log",
+      "suffix": ".log",
+      "size_bytes": 7728,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_run_v3_2.log",
+      "name": "hist_gradient_boosting_b0_run_v3_2.log",
+      "suffix": ".log",
+      "size_bytes": 4142,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_summary_v3_2.json",
+      "name": "hist_gradient_boosting_b0_summary_v3_2.json",
+      "suffix": ".json",
+      "size_bytes": 1587,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_verification_run_v3_2.log",
+      "name": "hist_gradient_boosting_b0_verification_run_v3_2.log",
+      "suffix": ".log",
+      "size_bytes": 2712,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_verification_v3_2.json",
+      "name": "hist_gradient_boosting_b0_verification_v3_2.json",
+      "suffix": ".json",
+      "size_bytes": 11705,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\smoke\\early_lodo_hgb\\danmini_hgb_smoke_v2.joblib",
+      "name": "danmini_hgb_smoke_v2.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 165984,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\smoke\\early_lodo_hgb\\danmini_hgb_smoke_v2.json",
+      "name": "danmini_hgb_smoke_v2.json",
+      "suffix": ".json",
+      "size_bytes": 4095,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\smoke\\early_lodo_hgb\\danmini_hgb_smoke_v2.txt",
+      "name": "danmini_hgb_smoke_v2.txt",
+      "suffix": ".txt",
+      "size_bytes": 977,
+      "hgb_name_match": true
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\audit_v1\\compact_dnn\\seed42\\model_dynamic_int8.onnx",
+      "name": "model_dynamic_int8.onnx",
+      "suffix": ".onnx",
+      "size_bytes": 33259,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\audit_v1\\compact_dnn\\seed42\\model_fp32.onnx",
+      "name": "model_fp32.onnx",
+      "suffix": ".onnx",
+      "size_bytes": 102463,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\audit_v1\\compact_dnn\\seed42\\model_static_ptq_int8.onnx",
+      "name": "model_static_ptq_int8.onnx",
+      "suffix": ".onnx",
+      "size_bytes": 35238,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\audit_v1\\tiny_1d_cnn\\seed42\\model_dynamic_int8.onnx",
+      "name": "model_dynamic_int8.onnx",
+      "suffix": ".onnx",
+      "size_bytes": 12042,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\audit_v1\\tiny_1d_cnn\\seed42\\model_fp32.onnx",
+      "name": "model_fp32.onnx",
+      "suffix": ".onnx",
+      "size_bytes": 9676,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\audit_v1\\tiny_1d_cnn\\seed42\\model_static_ptq_int8.onnx",
+      "name": "model_static_ptq_int8.onnx",
+      "suffix": ".onnx",
+      "size_bytes": 15034,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\audit_v1\\tinyml_mlp\\seed42\\model_dynamic_int8.onnx",
+      "name": "model_dynamic_int8.onnx",
+      "suffix": ".onnx",
+      "size_bytes": 14880,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\audit_v1\\tinyml_mlp\\seed42\\model_fp32.onnx",
+      "name": "model_fp32.onnx",
+      "suffix": ".onnx",
+      "size_bytes": 39397,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\audit_v1\\tinyml_mlp\\seed42\\model_static_ptq_int8.onnx",
+      "name": "model_static_ptq_int8.onnx",
+      "suffix": ".onnx",
+      "size_bytes": 15921,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\compact_dnn\\seed42\\converted_int8_state_dict.pt",
+      "name": "converted_int8_state_dict.pt",
+      "suffix": ".pt",
+      "size_bytes": 38965,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\compact_dnn\\seed42\\prepared_qat_state_dict.pt",
+      "name": "prepared_qat_state_dict.pt",
+      "suffix": ".pt",
+      "size_bytes": 135269,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\converted_int8_state_dict.pt",
+      "name": "converted_int8_state_dict.pt",
+      "suffix": ".pt",
+      "size_bytes": 12505,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\prepared_qat_state_dict.pt",
+      "name": "prepared_qat_state_dict.pt",
+      "suffix": ".pt",
+      "size_bytes": 38965,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tinyml_mlp\\seed42\\converted_int8_state_dict.pt",
+      "name": "converted_int8_state_dict.pt",
+      "suffix": ".pt",
+      "size_bytes": 19081,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tinyml_mlp\\seed42\\prepared_qat_state_dict.pt",
+      "name": "prepared_qat_state_dict.pt",
+      "suffix": ".pt",
+      "size_bytes": 59973,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\invalid_runs\\decision_tree_b0_input_space_parser_bug_v3_2\\runs\\decision_tree_b0__seed_123\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 5338,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\invalid_runs\\decision_tree_b0_input_space_parser_bug_v3_2\\runs\\decision_tree_b0__seed_2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 5216,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\invalid_runs\\decision_tree_b0_input_space_parser_bug_v3_2\\runs\\decision_tree_b0__seed_3407\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 5321,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\invalid_runs\\decision_tree_b0_input_space_parser_bug_v3_2\\runs\\decision_tree_b0__seed_42\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 5255,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\invalid_runs\\decision_tree_b0_input_space_parser_bug_v3_2\\runs\\decision_tree_b0__seed_8192\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 5252,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_00_compact_dnn_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 108449,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_00_compact_dnn_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 419711,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_00_hist_gradient_boosting_b0_seed2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 945584,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_00_tinyml_mlp_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 45213,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_00_tinyml_mlp_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 165921,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_01_compact_dnn_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 108513,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_01_compact_dnn_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 419967,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_01_hist_gradient_boosting_b0_seed2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 970880,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_01_tinyml_mlp_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 45213,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_01_tinyml_mlp_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 166497,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_02_compact_dnn_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 108513,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_02_compact_dnn_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 420287,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_02_hist_gradient_boosting_b0_seed2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 968208,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_02_tinyml_mlp_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 45213,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_02_tinyml_mlp_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 166497,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_03_compact_dnn_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 108513,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_03_compact_dnn_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 420287,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_03_hist_gradient_boosting_b0_seed2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 961840,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_03_tinyml_mlp_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 45213,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_03_tinyml_mlp_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 166497,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_04_compact_dnn_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 108449,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_04_compact_dnn_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 420287,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_04_hist_gradient_boosting_b0_seed2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 868048,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_04_tinyml_mlp_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 45149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_04_tinyml_mlp_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 166177,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_05_compact_dnn_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 108449,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_05_compact_dnn_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 420287,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_05_hist_gradient_boosting_b0_seed2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 978736,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_05_tinyml_mlp_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 45149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_05_tinyml_mlp_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 166497,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_06_compact_dnn_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 108449,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_06_compact_dnn_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 420287,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_06_hist_gradient_boosting_b0_seed2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 970624,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_06_tinyml_mlp_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 45149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_06_tinyml_mlp_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 166497,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_07_compact_dnn_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 108449,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_07_compact_dnn_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 419839,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_07_hist_gradient_boosting_b0_seed2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 925008,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_07_tinyml_mlp_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 45213,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_07_tinyml_mlp_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 165793,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_08_compact_dnn_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 108449,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_08_compact_dnn_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 419839,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_08_hist_gradient_boosting_b0_seed2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 939792,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_08_tinyml_mlp_b0_seed2026\\best_model.pt",
+      "name": "best_model.pt",
+      "suffix": ".pt",
+      "size_bytes": 45149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\runs\\early_lodo_08_tinyml_mlp_b0_seed2026\\checkpoint.pt",
+      "name": "checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 166497,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\model_int8_checkpoint.pt",
+      "name": "model_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 14023,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_a\\compact_dnn\\seed123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 314149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_a\\compact_dnn\\seed42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 314149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_a\\tinyml_mlp\\seed123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123685,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_a\\tinyml_mlp\\seed42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123685,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_b\\compact_dnn\\seed123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 314149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_b\\compact_dnn\\seed42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 314149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_b\\tinyml_mlp\\seed123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123685,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_b\\tinyml_mlp\\seed42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123685,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 313779,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 313779,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 313779,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 313779,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\b0\\seed_8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 313779,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\dq\\seed_123\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 33593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\dq\\seed_2026\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 33593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\dq\\seed_3407\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 33593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\dq\\seed_42\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 33593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\dq\\seed_8192\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 33593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\fp32_ft\\seed_123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 314149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\fp32_ft\\seed_2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 314149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\fp32_ft\\seed_3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 314149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\fp32_ft\\seed_42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 314149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\fp32_ft\\seed_8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 314149,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25\\seed_123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 215781,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25\\seed_2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 215781,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25\\seed_3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 215781,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25\\seed_42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 215781,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25\\seed_8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 215781,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_123\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 30997,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_123\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 244785,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_2026\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 30997,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_2026\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 244785,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_3407\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 30997,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_3407\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 244785,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_42\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 30997,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_42\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 244785,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_8192\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 30997,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p25_qat\\seed_8192\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 244785,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50\\seed_123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 132453,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50\\seed_2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 132453,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50\\seed_3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 132453,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50\\seed_42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 132453,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50\\seed_8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 132453,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_123\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23061,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_123\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 159793,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_2026\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23061,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_2026\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 159857,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_3407\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23061,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_3407\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 159857,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_42\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23061,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_42\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 159793,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_8192\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23061,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\p50_qat\\seed_8192\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 159857,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_123\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 77699,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_2026\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 77699,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_3407\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 77699,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_42\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 77699,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p25_noft\\seed_8192\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 77699,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_123\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 49091,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_2026\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 49091,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_3407\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 49091,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_42\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 49091,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\pruning_sources\\p50_noft\\seed_8192\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 49091,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_16384\\seed_123\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_16384\\seed_2026\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_16384\\seed_3407\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_16384\\seed_42\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_16384\\seed_8192\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_262144\\seed_123\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_262144\\seed_2026\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_262144\\seed_3407\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_262144\\seed_42\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_262144\\seed_8192\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_4096\\seed_123\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_4096\\seed_2026\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_4096\\seed_3407\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_4096\\seed_42\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40245,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_4096\\seed_8192\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_65536\\seed_123\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_65536\\seed_2026\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_65536\\seed_3407\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_65536\\seed_42\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\ptq_validation_sweep\\calibration_65536\\seed_8192\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40309,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_123\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40277,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_123\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 339697,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_2026\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40277,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_2026\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 339697,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_3407\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40277,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_3407\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 339697,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_42\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40277,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_42\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 339697,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_8192\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 40277,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\compact_dnn\\qat\\seed_8192\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 339697,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123467,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123467,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123467,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123467,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\b0\\seed_8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123467,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\dq\\seed_123\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16225,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\dq\\seed_2026\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16225,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\dq\\seed_3407\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16225,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\dq\\seed_42\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16225,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\dq\\seed_8192\\dq_checkpoint.pt",
+      "name": "dq_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16225,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123877,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123877,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123877,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123877,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\fp32_ft\\seed_8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 123877,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25\\seed_123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 90853,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25\\seed_2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 90917,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25\\seed_3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 90917,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25\\seed_42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 90853,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25\\seed_8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 90917,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_123\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16967,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_123\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 111593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_2026\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16967,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_2026\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 111593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_3407\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16967,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_3407\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 111593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_42\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16967,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_42\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 111593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_8192\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 16967,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p25_qat\\seed_8192\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 111593,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50\\seed_123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 60709,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50\\seed_2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 60773,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50\\seed_3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 60773,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50\\seed_42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 60709,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50\\seed_8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 60773,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_123\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 14023,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_123\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 80809,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 14023,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_2026\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 80809,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_3407\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 14023,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_3407\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 80809,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_42\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 14023,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_42\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 80809,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_8192\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 14023,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50_qat\\seed_8192\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 80809,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_123\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 34289,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_2026\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 34353,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_3407\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 34353,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_42\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 34289,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p25_noft\\seed_8192\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 34353,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_123\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23921,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_2026\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23921,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_3407\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23921,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_42\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23921,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\pruning_sources\\p50_noft\\seed_8192\\source_checkpoint.pt",
+      "name": "source_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 23921,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_16384\\seed_123\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_16384\\seed_2026\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_16384\\seed_3407\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_16384\\seed_42\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20141,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_16384\\seed_8192\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_262144\\seed_123\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_262144\\seed_2026\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_262144\\seed_3407\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_262144\\seed_42\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_262144\\seed_8192\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_4096\\seed_123\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20141,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_4096\\seed_2026\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_4096\\seed_3407\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_4096\\seed_42\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20141,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_4096\\seed_8192\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_65536\\seed_123\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_65536\\seed_2026\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_65536\\seed_3407\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_65536\\seed_42\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\ptq_validation_sweep\\calibration_65536\\seed_8192\\ptq_int8_checkpoint.pt",
+      "name": "ptq_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20205,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_123\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20167,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_123\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 142441,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_2026\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20167,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_2026\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 142441,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_3407\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20167,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_3407\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 142441,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_42\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20167,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_42\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 142441,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_8192\\best_int8_checkpoint.pt",
+      "name": "best_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 20167,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\qat\\seed_8192\\best_qat_checkpoint.pt",
+      "name": "best_qat_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 142441,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\deployment_artifact\\model_int8_checkpoint.pt",
+      "name": "model_int8_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 14023,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_123\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 4992,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 5005,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_3407\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 4871,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_42\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 4977,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\decision_tree_b0__seed_8192\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 4914,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\hist_gradient_boosting_b0__seed_2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 367362,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\logistic_regression_b0__seed_2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 1897,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_123\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 399074,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_2026\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 392816,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_3407\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 392988,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_42\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 399454,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\random_forest_b0__seed_8192\\model.joblib",
+      "name": "model.joblib",
+      "suffix": ".joblib",
+      "size_bytes": 402513,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\grouped_float32\\seed123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\grouped_float32\\seed2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\grouped_float32\\seed3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\grouped_float32\\seed42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\grouped_float32\\seed8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\naive_row\\seed123\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\naive_row\\seed2026\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\naive_row\\seed3407\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\naive_row\\seed42\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\vs2_ablation\\naive_row\\seed8192\\best_checkpoint.pt",
+      "name": "best_checkpoint.pt",
+      "suffix": ".pt",
+      "size_bytes": 42293,
+      "hgb_name_match": false
+    }
+  ],
+  "release_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase10_release_archive_locked_v3_3.json",
+    "top_level_keys": [
+      "all_checks_passed",
+      "archive_file_count",
+      "artifact_name",
+      "canonical_seed",
+      "class_labels_in_output_index_order",
+      "deterministic_rebuild_exact",
+      "independent_verification_report",
+      "independent_verification_report_sha256",
+      "locked_at_utc",
+      "model_family",
+      "nonselected_checkpoints_included",
+      "payload_file_count",
+      "phase",
+      "processed_dataset_included",
+      "protocol_version",
+      "raw_dataset_included",
+      "ready_for_distribution",
+      "release_directory",
+      "release_directory_tree_hash_algorithm",
+      "release_directory_tree_sha256",
+      "release_locked",
+      "release_manifest_sha256",
+      "release_name",
+      "representation",
+      "status",
+      "zip_archive",
+      "zip_archive_sha256",
+      "zip_archive_size_bytes"
+    ]
+  },
+  "all_checks_passed": true
+}

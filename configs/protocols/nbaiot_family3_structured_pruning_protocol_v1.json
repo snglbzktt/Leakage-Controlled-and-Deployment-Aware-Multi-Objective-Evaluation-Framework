@@ -1,0 +1,72 @@
+{
+  "generated_at_utc": "2026-07-24T13:55:36.257915+00:00",
+  "protocol_name": "N-BaIoT family_3 physical structured pruning multi-seed",
+  "protocol_version": "1.0",
+  "status": "locked_before_pruning_main_experiments",
+  "task": "family_3",
+  "models": [
+    "tinyml_mlp",
+    "compact_dnn",
+    "tiny_1d_cnn"
+  ],
+  "training_seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "pruning_ratios": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "pruning_names": [
+    "P25",
+    "P50",
+    "P75"
+  ],
+  "planned_run_count": 45,
+  "source_policy": "Each pruning level is produced independently from the matching FP32 model-seed checkpoint.",
+  "importance_method": "Normalized incoming plus outgoing L1 magnitude",
+  "physical_compaction": true,
+  "mask_based_pruning": false,
+  "fine_tuning": {
+    "optimizer": "AdamW",
+    "learning_rate_rule": "fp32_learning_rate_times_factor",
+    "learning_rate_factor": 0.1,
+    "max_epochs": 8,
+    "early_stopping_patience": 3,
+    "early_stopping_min_delta": 0.0002,
+    "batch_size": 4096,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "torch_threads": 4,
+    "num_workers": 0,
+    "loss": "CrossEntropyLoss",
+    "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    "feature_scaler_fitted_from": "train_only",
+    "class_weights_fitted_from": "train_only"
+  },
+  "model_selection": {
+    "split": "validation",
+    "metric": "macro_f1",
+    "direction": "maximize",
+    "test_used_for_selection": false
+  },
+  "test_evaluation": {
+    "evaluations_per_model_ratio_seed": 1,
+    "timing": "after_best_validation_checkpoint_selection",
+    "hyperparameter_changes_after_test": "forbidden"
+  },
+  "source_artifacts": {
+    "fp32_protocol": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json",
+      "sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525"
+    },
+    "pruning_engine": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\pruning\\nbaiot_structured_pruning_engine_v1.json",
+      "sha256": "736046b7fa546fcab1b8a526e5d42c01027ed2d3dde35173c5e67b6e00424321"
+    }
+  }
+}

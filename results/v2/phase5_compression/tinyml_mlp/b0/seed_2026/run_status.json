@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "tinyml_mlp__b0__seed_2026",
+  "architecture": "tinyml_mlp",
+  "variant": "B0",
+  "seed": 2026,
+  "best_epoch": 8,
+  "completed_at_utc": "2026-08-06T16:16:25.114453+00:00",
+  "test_evaluation_count": 1,
+  "fragility_gate_triggered": false
+}

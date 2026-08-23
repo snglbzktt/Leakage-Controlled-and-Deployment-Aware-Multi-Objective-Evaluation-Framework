@@ -1,0 +1,372 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "neural_architecture_one_batch_smoke_test",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "data_protocol_version": "tabular_baseline_protocol_v3_2",
+  "generated_at_utc": "2026-08-06T14:59:19.901090+00:00",
+  "device": "cpu",
+  "cpu_thread_count": 4,
+  "torch_version": "2.11.0+cpu",
+  "smoke_seed": 2026,
+  "smoke_batch_size": 256,
+  "fit_scope": {
+    "train_rows_accessed": 256,
+    "validation_access_count": 0,
+    "test_access_count": 0
+  },
+  "model_source": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+    "size_bytes": 15283,
+    "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+  },
+  "model_registry": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\architecture\\nbaiot_model_registry_v1.json",
+    "size_bytes": 3420,
+    "sha256": "fa7b482eb024725be113142576fffc0c5f347b7e07596fb04604200405300ac2"
+  },
+  "scaler": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_standard_scaler_v3_2.npz",
+    "size_bytes": 5361,
+    "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6"
+  },
+  "class_weights": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\shared\\preprocessing\\phase5_train_only_class_weights_v3_2.npz",
+    "size_bytes": 1117,
+    "sha256": "81c0f102124d2839f4adaab844ef28e57a5778f0930910bb2fa89630a18cb313"
+  },
+  "architectures": [
+    {
+      "architecture": "tinyml_mlp",
+      "selected_symbol": "TinyMLMLP",
+      "linear_widths": [
+        [
+          115,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 9603,
+      "trainable_parameter_count": 9603,
+      "linear_macs_per_sample": 9504,
+      "smoke_batch_size": 256,
+      "initial_loss": 1.314132809638977,
+      "changed_parameter_tensor_count": 6,
+      "gradient_report": {
+        "gradient_tensor_count": 6,
+        "nonzero_gradient_tensor_count": 6,
+        "global_gradient_norm": 1.8634586455974005,
+        "all_gradients_finite": true
+      },
+      "resolution": {
+        "selected_symbol": "TinyMLMLP",
+        "selected_score": 100,
+        "selection_policy": "unique highest architecture-name score; lower-ranked equivalent factories are aliases",
+        "valid_symbols": [
+          "TinyMLMLP",
+          "create_model"
+        ],
+        "linear_widths": [
+          [
+            115,
+            64
+          ],
+          [
+            64,
+            32
+          ],
+          [
+            32,
+            3
+          ]
+        ],
+        "candidate_attempts": [
+          {
+            "name": "TinyMLMLP",
+            "score": 100,
+            "status": "valid",
+            "linear_widths": [
+              [
+                115,
+                64
+              ],
+              [
+                64,
+                32
+              ],
+              [
+                32,
+                3
+              ]
+            ],
+            "logit_shape": [
+              8,
+              3
+            ]
+          },
+          {
+            "name": "create_model",
+            "score": 5,
+            "status": "valid",
+            "linear_widths": [
+              [
+                115,
+                64
+              ],
+              [
+                64,
+                32
+              ],
+              [
+                32,
+                3
+              ]
+            ],
+            "logit_shape": [
+              8,
+              3
+            ]
+          },
+          {
+            "name": "get_model_spec",
+            "score": 5,
+            "status": "failed",
+            "error": "RuntimeError: Candidate did not return torch.nn.Module."
+          },
+          {
+            "name": "list_registered_models",
+            "score": 5,
+            "status": "failed",
+            "error": "RuntimeError: Candidate did not return torch.nn.Module."
+          },
+          {
+            "name": "validate_model_dimensions",
+            "score": 5,
+            "status": "failed",
+            "error": "RuntimeError: Candidate did not return torch.nn.Module."
+          }
+        ],
+        "valid_candidate_count": 2
+      },
+      "checks": {
+        "linear_topology_matches": true,
+        "deterministic_initialization": true,
+        "parameter_count_positive": true,
+        "all_parameters_trainable": true,
+        "training_logit_shape_matches": true,
+        "evaluation_logit_shape_matches": true,
+        "training_logits_finite": true,
+        "evaluation_logits_finite": true,
+        "loss_finite": true,
+        "gradient_tensors_present": true,
+        "nonzero_gradients_present": true,
+        "gradients_finite": true,
+        "optimizer_changed_parameters": true,
+        "probability_shape_matches": true,
+        "probabilities_finite": true,
+        "probabilities_sum_to_one": true
+      },
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "selected_symbol": "CompactDNN",
+      "linear_widths": [
+        [
+          115,
+          128
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          64,
+          32
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "parameter_count": 25283,
+      "trainable_parameter_count": 25283,
+      "linear_macs_per_sample": 25056,
+      "smoke_batch_size": 256,
+      "initial_loss": 0.9881521463394165,
+      "changed_parameter_tensor_count": 8,
+      "gradient_report": {
+        "gradient_tensor_count": 8,
+        "nonzero_gradient_tensor_count": 8,
+        "global_gradient_norm": 1.2667798614431052,
+        "all_gradients_finite": true
+      },
+      "resolution": {
+        "selected_symbol": "CompactDNN",
+        "selected_score": 100,
+        "selection_policy": "unique highest architecture-name score; lower-ranked equivalent factories are aliases",
+        "valid_symbols": [
+          "CompactDNN",
+          "create_model"
+        ],
+        "linear_widths": [
+          [
+            115,
+            128
+          ],
+          [
+            128,
+            64
+          ],
+          [
+            64,
+            32
+          ],
+          [
+            32,
+            3
+          ]
+        ],
+        "candidate_attempts": [
+          {
+            "name": "CompactDNN",
+            "score": 100,
+            "status": "valid",
+            "linear_widths": [
+              [
+                115,
+                128
+              ],
+              [
+                128,
+                64
+              ],
+              [
+                64,
+                32
+              ],
+              [
+                32,
+                3
+              ]
+            ],
+            "logit_shape": [
+              8,
+              3
+            ]
+          },
+          {
+            "name": "create_model",
+            "score": 5,
+            "status": "valid",
+            "linear_widths": [
+              [
+                115,
+                128
+              ],
+              [
+                128,
+                64
+              ],
+              [
+                64,
+                32
+              ],
+              [
+                32,
+                3
+              ]
+            ],
+            "logit_shape": [
+              8,
+              3
+            ]
+          },
+          {
+            "name": "get_model_spec",
+            "score": 5,
+            "status": "failed",
+            "error": "RuntimeError: Candidate did not return torch.nn.Module."
+          },
+          {
+            "name": "list_registered_models",
+            "score": 5,
+            "status": "failed",
+            "error": "RuntimeError: Candidate did not return torch.nn.Module."
+          },
+          {
+            "name": "validate_model_dimensions",
+            "score": 5,
+            "status": "failed",
+            "error": "RuntimeError: Candidate did not return torch.nn.Module."
+          }
+        ],
+        "valid_candidate_count": 2
+      },
+      "checks": {
+        "linear_topology_matches": true,
+        "deterministic_initialization": true,
+        "parameter_count_positive": true,
+        "all_parameters_trainable": true,
+        "training_logit_shape_matches": true,
+        "evaluation_logit_shape_matches": true,
+        "training_logits_finite": true,
+        "evaluation_logits_finite": true,
+        "loss_finite": true,
+        "gradient_tensors_present": true,
+        "nonzero_gradients_present": true,
+        "gradients_finite": true,
+        "optimizer_changed_parameters": true,
+        "probability_shape_matches": true,
+        "probabilities_finite": true,
+        "probabilities_sum_to_one": true
+      },
+      "all_checks_passed": true
+    }
+  ],
+  "checks": {
+    "phase5_protocol_locked": true,
+    "phase5_protocol_version_matches": true,
+    "phase5_data_protocol_matches": true,
+    "protocol_completion_locked": true,
+    "protocol_hash_matches": true,
+    "protocol_lock_manifest_locked": true,
+    "preprocessing_locked": true,
+    "preprocessing_ready_for_B0": true,
+    "preprocessing_verification_passed": true,
+    "preprocessing_verification_hash_matches": true,
+    "preprocessing_lock_manifest_locked": true,
+    "model_source_hash_matches_protocol": true,
+    "model_registry_hash_matches_protocol": true,
+    "legacy_checkpoint_reuse_disabled": true,
+    "test_not_used_for_selection": true,
+    "x_train_shape_matches": true,
+    "x_train_dtype_float32": true,
+    "y_train_shape_matches": true,
+    "scaler_mean_shape_matches": true,
+    "scaler_scale_shape_matches": true,
+    "scaler_values_finite": true,
+    "scaler_scale_positive": true,
+    "class_labels_match": true,
+    "class_weights_shape_matches": true,
+    "class_weights_finite_positive": true,
+    "scaled_batch_shape_matches": true,
+    "scaled_batch_dtype_float32": true,
+    "scaled_batch_finite": true,
+    "label_batch_shape_matches": true,
+    "label_batch_in_range": true,
+    "two_architectures_verified": true,
+    "architecture_names_match": true,
+    "all_architecture_checks_passed": true,
+    "compact_has_more_parameters_than_tinyml": true,
+    "compact_has_more_linear_macs_than_tinyml": true
+  },
+  "all_checks_passed": true
+}

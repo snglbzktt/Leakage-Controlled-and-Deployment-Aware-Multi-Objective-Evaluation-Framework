@@ -1,0 +1,1056 @@
+====================================================================================================
+PHASE 13 BOUND-SOURCE FIELD INSPECTION
+====================================================================================================
+Primary CSV sources inspected   : 12
+Primary JSON sources inspected  : 10
+Model inference performed       : False
+Test arrays accessed             : False
+Source files mutated             : False
+Asset generation performed       : False
+
+PRIMARY CSV SCHEMAS
+----------------------------------------------------------------------------------------------------
+LODO_DEVICE_MODEL_MATRIX
+Path    : results/v2/early_lodo/global/early_lodo_device_model_matrix_v2.csv
+Rows    : 27
+Columns : 25
+Headers :
+  - held_out_device
+  - model_id
+  - run_id
+  - seed
+  - test_present_class_count
+  - test_class_counts
+  - validation_macro_f1
+  - test_fingerprint_macro_f1
+  - test_fingerprint_accuracy
+  - test_record_weighted_macro_f1
+  - validation_test_macro_f1_drop
+  - benign_fnr
+  - gafgyt_fnr
+  - mirai_fnr
+  - maximum_eligible_attack_fnr
+  - local_severe_signal
+  - meaningful_validation_test_drop
+  - parameter_count
+  - completed_epoch
+  - best_epoch
+  - stopped_early
+  - completed_iterations
+  - total_seconds
+  - lock_summary_file
+  - run_result_file
+
+PHASE4_MODEL_SUMMARY
+Path    : results/v2/audit/phase4_classical_baselines_model_summary_v3_2.csv
+Rows    : 4
+Columns : 18
+Headers :
+  - descriptive_macro_f1_rank
+  - model_id
+  - display_name
+  - run_count
+  - seed_policy
+  - input_space
+  - mean_test_fingerprint_macro_f1
+  - std_test_fingerprint_macro_f1
+  - min_test_fingerprint_macro_f1
+  - max_test_fingerprint_macro_f1
+  - mean_test_fingerprint_accuracy
+  - mean_test_raw_weighted_macro_f1
+  - mean_test_gafgyt_fnr
+  - mean_test_mirai_fnr
+  - fragility_triggered_in_any_run
+  - scientific_status
+  - important_caveat
+  - ranking_is_not_model_selection
+
+PHASE5_GROUP_SUMMARY
+Path    : results/v2/audit/phase5_compression_group_summary_v3_2.csv
+Rows    : 22
+Columns : 18
+Headers :
+  - architecture
+  - variant
+  - representation
+  - run_count
+  - seeds
+  - mean_test_fingerprint_macro_f1
+  - std_test_fingerprint_macro_f1
+  - min_test_fingerprint_macro_f1
+  - max_test_fingerprint_macro_f1
+  - mean_test_fingerprint_accuracy
+  - mean_test_raw_weighted_macro_f1
+  - mean_test_gafgyt_fnr
+  - mean_test_mirai_fnr
+  - float_parameter_count
+  - float_linear_macs_per_sample
+  - mean_state_size_ratio_vs_float
+  - test_evaluation_count_per_run
+  - fragility_triggered_in_any_run
+
+PHASE5_MASTER_MATRIX
+Path    : results/v2/audit/phase5_compression_master_run_matrix_v3_2.csv
+Rows    : 110
+Columns : 18
+Headers :
+  - architecture
+  - variant
+  - seed
+  - representation
+  - test_fingerprint_macro_f1
+  - test_fingerprint_accuracy
+  - test_raw_weighted_macro_f1
+  - test_gafgyt_fnr
+  - test_mirai_fnr
+  - float_parameter_count
+  - float_linear_macs_per_sample
+  - state_size_ratio_vs_float
+  - test_evaluation_count
+  - test_used_for_selection
+  - fragility_gate_triggered
+  - metrics_path
+  - metrics_sha256
+  - run_directory
+
+PHASE6_GROUP_SUMMARY
+Path    : results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv
+Rows    : 22
+Columns : 22
+Headers :
+  - architecture
+  - variant
+  - representation
+  - run_count
+  - seeds
+  - mean_checkpoint_file_bytes
+  - mean_serialized_state_dict_bytes
+  - mean_model_load_elapsed_ms
+  - mean_model_load_RSS_delta_bytes
+  - mean_peak_inference_RSS_delta_bytes
+  - mean_batch_1_median_ms
+  - std_batch_1_median_ms
+  - mean_batch_1_p95_ms
+  - mean_batch_1_p99_ms
+  - mean_batch_1_samples_per_second
+  - mean_batch_32_median_ms
+  - std_batch_32_median_ms
+  - mean_batch_32_p95_ms
+  - mean_batch_32_p99_ms
+  - mean_batch_32_samples_per_second
+  - validation_data_access
+  - test_data_access
+
+PHASE6_LOCKED_MATRIX
+Path    : results/v2/audit/phase6_deployment_benchmark_locked_matrix_v3_2.csv
+Rows    : 110
+Columns : 20
+Headers :
+  - measurement_order
+  - run_id
+  - architecture
+  - variant
+  - seed
+  - representation
+  - metrics_path
+  - metrics_sha256
+  - run_directory
+  - primary_batch_size
+  - secondary_batch_size
+  - batch_1_warmup_iterations
+  - batch_1_measured_iterations
+  - batch_32_warmup_iterations
+  - batch_32_measured_iterations
+  - cpu_threads
+  - interop_threads
+  - process_isolation
+  - test_data_access
+  - validation_data_access
+
+PHASE7_OMNIBUS
+Path    : results/v2/audit/phase7_statistical_omnibus_results_v3_2.csv
+Rows    : 16
+Columns : 20
+Headers :
+  - endpoint_class
+  - family_id
+  - architecture
+  - metric
+  - metric_domain
+  - direction
+  - unit
+  - block_count
+  - variant_count
+  - friedman_statistic
+  - kendalls_W
+  - monte_carlo_permutations
+  - monte_carlo_random_seed
+  - monte_carlo_exceedances
+  - monte_carlo_p_plus_one
+  - scipy_asymptotic_statistic
+  - scipy_asymptotic_p
+  - nominal_alpha
+  - monte_carlo_reject_nominal
+  - sensitivity_only_scipy
+
+PHASE7_POSTHOC_VERIFIED
+Path    : results/v2/audit/phase7_statistical_posthoc_verified_v3_2.csv
+Rows    : 160
+Columns : 12
+Headers :
+  - endpoint_class
+  - architecture
+  - metric
+  - reference_variant
+  - candidate_variant
+  - mean_raw_delta_candidate_minus_B0
+  - mean_improvement_delta
+  - paired_rank_biserial_improvement
+  - exact_two_sided_p_raw
+  - Holm_adjusted_p
+  - Holm_reject_alpha_0_05
+  - all_checks_passed
+
+PHASE8_INPUT_MATRIX
+Path    : results/v2/audit/phase8_multi_objective_decision_input_matrix_v3_2.csv
+Rows    : 22
+Columns : 26
+Headers :
+  - architecture
+  - variant
+  - candidate_role
+  - representation
+  - mean_test_fingerprint_macro_f1
+  - std_test_fingerprint_macro_f1
+  - mean_test_raw_weighted_macro_f1
+  - mean_macro_f1_loss_vs_architecture_B0
+  - worst_seed_macro_f1_loss_vs_architecture_B0
+  - mean_raw_weighted_macro_f1_loss_vs_architecture_B0
+  - fragility_triggered_in_any_run
+  - mean_serialized_state_dict_bytes
+  - state_size_ratio_vs_architecture_B0
+  - state_size_reduction_fraction_vs_architecture_B0
+  - mean_batch_1_median_ms
+  - batch_1_latency_ratio_vs_architecture_B0
+  - batch_1_latency_reduction_fraction_vs_architecture_B0
+  - mean_batch_32_samples_per_second
+  - batch_32_throughput_ratio_vs_architecture_B0
+  - batch_32_throughput_gain_fraction_vs_architecture_B0
+  - mean_peak_inference_RSS_delta_bytes
+  - macro_f1_mean_improvement_effect_vs_B0
+  - macro_f1_exact_two_sided_p_raw
+  - macro_f1_Holm_adjusted_p
+  - macro_f1_rank_biserial_improvement
+  - decision_computation_performed
+
+PHASE8_PARETO_RESULTS
+Path    : results/v2/audit/phase8_multi_objective_pareto_results_v3_2.csv
+Rows    : 54
+Columns : 15
+Headers :
+  - profile
+  - primary_profile
+  - architecture
+  - variant
+  - representation
+  - eligible
+  - Pareto_nondominated
+  - dominated_by_count
+  - dominated_by
+  - mean_test_fingerprint_macro_f1
+  - mean_serialized_state_dict_bytes
+  - mean_batch_1_median_ms
+  - mean_batch_32_samples_per_second
+  - deployment_improvement_count
+  - failed_gates
+
+PHASE8_SELECTION_TRACE
+Path    : results/v2/audit/phase8_multi_objective_selection_trace_v3_2.csv
+Rows    : 3
+Columns : 21
+Headers :
+  - profile
+  - primary_profile
+  - compressed_candidate_count
+  - eligible_candidate_count
+  - Pareto_candidate_count
+  - selection_available
+  - selected_architecture
+  - selected_variant
+  - selected_representation
+  - selected_candidate_id
+  - selected_mean_macro_f1
+  - selected_mean_state_bytes
+  - selected_mean_batch_1_median_ms
+  - selected_mean_batch_32_samples_per_second
+  - selected_mean_macro_f1_loss_vs_B0
+  - selected_worst_seed_macro_f1_loss_vs_B0
+  - selected_fragility_triggered
+  - selected_deployment_improvement_count
+  - selection_rule
+  - model_inference_repeated
+  - final_selection_locked
+
+PHASE11_ALL_RUNS
+Path    : results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv
+Rows    : 27
+Columns : 23
+Headers :
+  - run_id
+  - model_id
+  - condition_id
+  - condition_family
+  - severity
+  - perturbation_seed
+  - perturbed_feature_array_sha256
+  - test_rows
+  - represented_raw_rows
+  - fingerprint_macro_f1
+  - fingerprint_accuracy
+  - gafgyt_fnr
+  - mirai_fnr
+  - raw_weighted_macro_f1
+  - raw_weighted_accuracy
+  - macro_f1_drop_from_model_clean
+  - macro_f1_retention_ratio
+  - weighted_macro_f1_drop_from_model_clean
+  - severe_fragility
+  - material_sensitivity
+  - model_retraining
+  - test_used_for_model_selection
+  - final_model_changed
+
+PRIMARY JSON SCALAR FIELDS
+----------------------------------------------------------------------------------------------------
+LODO_GLOBAL_SUMMARY
+Path            : results/v2/early_lodo/global/early_lodo_global_summary_v2.json
+Top-level keys  : 14
+Scalar leaf paths:
+  - $.protocol_version = 'early_lodo_global_gate_v2_1'
+  - $.status = 'complete'
+  - $.generated_at = '2026-08-05T22:50:58.840382+00:00'
+  - $.seed = 2026
+  - $.scope.device_count = 9
+  - $.scope.model_count = 3
+  - $.scope.scientific_run_count = 27
+  - $.scope.expected_devices[0] = 'Danmini_Doorbell'
+  - $.scope.expected_devices[1] = 'Ecobee_Thermostat'
+  - $.scope.expected_devices[2] = 'Ennio_Doorbell'
+  - $.scope.expected_devices[3] = 'Philips_B120N10_Baby_Monitor'
+  - $.scope.expected_devices[4] = 'Provision_PT_737E_Security_Camera'
+  - $.scope.expected_devices[5] = 'Provision_PT_838_Security_Camera'
+  - $.scope.expected_devices[6] = 'Samsung_SNH_1011_N_Webcam'
+  - $.scope.expected_devices[7] = 'SimpleHome_XCS7_1002_WHT_Security_Camera'
+  - $.scope.expected_models[0] = 'tinyml_mlp_b0'
+  - $.scope.expected_models[1] = 'compact_dnn_b0'
+  - $.scope.expected_models[2] = 'hist_gradient_boosting_b0'
+  - $.scope.two_class_test_devices[0] = 'Ennio_Doorbell'
+  - $.scope.two_class_test_devices[1] = 'Samsung_SNH_1011_N_Webcam'
+  - $.locked_thresholds.severe_macro_f1_below = 0.85
+  - $.locked_thresholds.severe_attack_fnr_above = 0.4
+  - $.locked_thresholds.meaningful_validation_test_macro_f1_drop_at_least = 0.1
+  - $.global_statistics.mean_cell_test_macro_f1 = 0.9802065424253953
+  - $.global_statistics.median_cell_test_macro_f1 = 0.990265033171612
+  - $.global_statistics.minimum_cell_test_macro_f1 = 0.9033496516659376
+  - $.global_statistics.maximum_cell_test_macro_f1 = 0.9958891575760941
+  - $.global_statistics.maximum_eligible_attack_fnr = 0.3198137135582096
+  - $.global_statistics.local_severe_cell_count = 0
+  - $.global_statistics.meaningful_validation_test_drop_cell_count = 0
+  - $.model_ranking_basis = 'Unweighted mean of per-device test fingerprint Macro-F1 across all nine held-out devices.'
+  - $.model_ranking[0].model_id = 'compact_dnn_b0'
+  - $.model_ranking[0].device_count = 9
+  - $.model_ranking[0].mean_test_macro_f1 = 0.9869322360394737
+  - $.model_ranking[0].median_test_macro_f1 = 0.9924872991345705
+  - $.model_ranking[0].sample_std_test_macro_f1 = 0.010678321914349342
+  - $.model_ranking[0].minimum_test_macro_f1 = 0.9629626797663531
+  - $.model_ranking[0].maximum_test_macro_f1 = 0.9939969510495716
+  - $.model_ranking[0].mean_test_accuracy = 0.9855665155576045
+  - $.model_ranking[0].mean_record_weighted_macro_f1 = 0.9869954133089441
+  - $.model_ranking[0].mean_validation_test_macro_f1_drop = 0.010400338869089495
+  - $.model_ranking[0].maximum_validation_test_macro_f1_drop = 0.03227586724031528
+  - $.model_ranking[0].maximum_eligible_attack_fnr = 0.09554186390952987
+  - $.model_ranking[0].mean_total_seconds = 75.03436777774348
+  - $.model_ranking[0].median_total_seconds = 74.44730800006073
+  - $.model_ranking[0].device_macro_f1_win_count = 5
+  - $.model_ranking[0].device_fastest_count = 0
+  - $.model_ranking[0].local_severe_cell_count = 0
+  - $.model_ranking[0].meaningful_validation_test_drop_count = 0
+  - $.model_ranking[0].global_macro_f1_rank = 1
+  - $.model_ranking[1].model_id = 'tinyml_mlp_b0'
+  - $.model_ranking[1].device_count = 9
+  - $.model_ranking[1].mean_test_macro_f1 = 0.986283143363278
+  - $.model_ranking[1].median_test_macro_f1 = 0.9905334472979256
+  - $.model_ranking[1].sample_std_test_macro_f1 = 0.009602807152275138
+  - $.model_ranking[1].minimum_test_macro_f1 = 0.9629826302186023
+  - $.model_ranking[1].maximum_test_macro_f1 = 0.9934942493254222
+  - $.model_ranking[1].mean_test_accuracy = 0.9861063748756015
+  - $.model_ranking[1].mean_record_weighted_macro_f1 = 0.9863498541090097
+  - $.model_ranking[1].mean_validation_test_macro_f1_drop = 0.011150132714553514
+  - $.model_ranking[1].maximum_validation_test_macro_f1_drop = 0.03192685077851776
+  - $.model_ranking[1].maximum_eligible_attack_fnr = 0.06543131915117549
+  - $.model_ranking[1].mean_total_seconds = 34.797377733319685
+  - $.model_ranking[1].median_total_seconds = 34.59764059993904
+  - $.model_ranking[1].device_macro_f1_win_count = 1
+  - $.model_ranking[1].device_fastest_count = 5
+  - $.model_ranking[1].local_severe_cell_count = 0
+  - $.model_ranking[1].meaningful_validation_test_drop_count = 0
+  - $.model_ranking[1].global_macro_f1_rank = 2
+  - $.model_ranking[2].model_id = 'hist_gradient_boosting_b0'
+  - $.model_ranking[2].device_count = 9
+  - $.model_ranking[2].mean_test_macro_f1 = 0.9674042478734339
+  - $.model_ranking[2].median_test_macro_f1 = 0.9759641808326674
+  - $.model_ranking[2].sample_std_test_macro_f1 = 0.03245437118669287
+  - $.model_ranking[2].minimum_test_macro_f1 = 0.9033496516659376
+  - $.model_ranking[2].maximum_test_macro_f1 = 0.9958891575760941
+  - $.model_ranking[2].mean_test_accuracy = 0.9435911144336164
+  - $.model_ranking[2].mean_record_weighted_macro_f1 = 0.9678829406730031
+  - $.model_ranking[2].mean_validation_test_macro_f1_drop = 0.032586911400447525
+  - $.model_ranking[2].maximum_validation_test_macro_f1_drop = 0.09660707195036411
+  - $.model_ranking[2].maximum_eligible_attack_fnr = 0.3198137135582096
+  - $.model_ranking[2].mean_total_seconds = 37.928522577767986
+  - $.model_ranking[2].median_total_seconds = 38.21104669990018
+  - $.model_ranking[2].device_macro_f1_win_count = 3
+  - $.model_ranking[2].device_fastest_count = 4
+  - $.model_ranking[2].local_severe_cell_count = 0
+  - $.model_ranking[2].meaningful_validation_test_drop_count = 0
+  - $.model_ranking[2].global_macro_f1_rank = 3
+  - $.gate.status = 'PASS_NO_SEVERE_FRAGILITY'
+  - $.gate.passed = True
+  - $.gate.rule = 'A cell is severe when test Macro-F1 is below 0.85 or any eligible attack FNR is above 0.40.'
+  - $.interpretation.general_model_ranking = 'permitted_after_9_of_9_devices_complete'
+  - $.interpretation.test_selection_use = 'prohibited'
+  - $.interpretation.class_coverage_note = 'Ennio and Samsung have no Mirai samples in held-out test; their test Macro-F1 is computed over the classes present.'
+  - $.interpretation.ranking_caution = 'The ranking is an unweighted device-level summary and must be interpreted with the two-class test coverage note.'
+  - $.validation_checks.exactly_nine_device_summaries = True
+  - $.validation_checks.expected_devices_present = True
+  - $.validation_checks.all_summaries_complete = True
+  - $.validation_checks.all_summary_checks_passed = True
+  - $.validation_checks.all_seed_2026 = True
+  - $.validation_checks.all_three_models = True
+  - $.validation_checks.expected_model_set_per_device = True
+  - $.validation_checks.exactly_27_model_rows = True
+  - $.validation_checks.unique_27_run_ids = True
+  - $.validation_checks.unique_device_model_cells = True
+  - $.validation_checks.all_primary_metrics_finite = True
+  - $.validation_checks.all_runtime_positive = True
+  - $.validation_checks.all_test_counts_positive = True
+  - $.validation_checks.class_coverage_matches_protocol = True
+  - $.validation_checks.all_local_severe_flags_match = True
+  - $.validation_checks.all_device_rankings_valid = True
+  - $.validation_checks.all_lock_files_exist = True
+  - $.validation_checks.all_run_result_files_exist = True
+  - $.validation_checks.device_ledger_exists = True
+  - $.validation_checks.device_ledger_has_nine_rows = True
+  - $.validation_checks.device_ledger_expected_devices = True
+  - $.validation_checks.device_ledger_rows_complete = True
+  - $.all_checks_passed = True
+  - $.outputs.global_summary = 'results\\v2\\early_lodo\\global\\early_lodo_global_summary_v2.json'
+  - $.outputs.model_summary_csv = 'results\\v2\\early_lodo\\global\\early_lodo_model_summary_v2.csv'
+
+PHASE4_SUMMARY
+Path            : results/v2/audit/phase4_classical_baselines_summary_v3_2.json
+Top-level keys  : 18
+Scalar leaf paths:
+  - $.status = 'completed'
+  - $.phase = 4
+  - $.phase_name = 'classical_tabular_baselines'
+  - $.protocol_version = 'tabular_baseline_protocol_v3_2'
+  - $.generated_at_utc = '2026-08-06T14:32:47.402533+00:00'
+  - $.model_count = 4
+  - $.total_run_count = 12
+  - $.models[0].model_id = 'hist_gradient_boosting_b0'
+  - $.models[0].display_name = 'HistGradientBoosting'
+  - $.models[0].run_count = 1
+  - $.models[0].seed_policy = 'single_seed_2026'
+  - $.models[0].input_space = 'canonical_float32_unscaled'
+  - $.models[0].mean_test_fingerprint_macro_f1 = 0.9997380683535377
+  - $.models[0].std_test_fingerprint_macro_f1 = 0.0
+  - $.models[0].min_test_fingerprint_macro_f1 = 0.9997380683535377
+  - $.models[0].max_test_fingerprint_macro_f1 = 0.9997380683535377
+  - $.models[0].mean_test_fingerprint_accuracy = 0.9998708969434852
+  - $.models[0].mean_test_raw_weighted_macro_f1 = 0.9990430947883375
+  - $.models[0].mean_test_gafgyt_fnr = 0.0009632529256246025
+  - $.models[0].mean_test_mirai_fnr = 0.0
+  - $.models[0].fragility_triggered_in_any_run = False
+  - $.models[0].scientific_status = 'completed'
+  - $.models[0].important_caveat = 'Single locked seed; descriptive comparison only.'
+  - $.models[0].descriptive_macro_f1_rank = 1
+  - $.models[0].ranking_is_not_model_selection = True
+  - $.models[1].model_id = 'decision_tree_b0'
+  - $.models[1].display_name = 'Decision Tree'
+  - $.models[1].run_count = 5
+  - $.models[1].seed_policy = 'five_locked_seeds'
+  - $.models[1].input_space = 'canonical_float32_unscaled'
+  - $.models[1].mean_test_fingerprint_macro_f1 = 0.9995826379853678
+  - $.models[1].std_test_fingerprint_macro_f1 = 2.716135057175398e-05
+  - $.models[1].min_test_fingerprint_macro_f1 = 0.9995400059321019
+  - $.models[1].max_test_fingerprint_macro_f1 = 0.9996203656208831
+  - $.models[1].mean_test_fingerprint_accuracy = 0.9997756834393055
+  - $.models[1].mean_test_raw_weighted_macro_f1 = 0.9990069932078688
+  - $.models[1].mean_test_gafgyt_fnr = 0.000946857131145884
+  - $.models[1].mean_test_mirai_fnr = 7.886755941490797e-05
+  - $.models[1].fragility_triggered_in_any_run = False
+  - $.models[1].scientific_status = 'completed'
+  - $.models[1].important_caveat = ''
+  - $.models[1].descriptive_macro_f1_rank = 2
+  - $.models[1].ranking_is_not_model_selection = True
+  - $.models[2].model_id = 'random_forest_b0'
+  - $.models[2].display_name = 'Random Forest'
+  - $.models[2].run_count = 5
+  - $.models[2].seed_policy = 'five_locked_seeds'
+  - $.models[2].input_space = 'canonical_float32_unscaled'
+  - $.models[2].mean_test_fingerprint_macro_f1 = 0.9994598191789837
+  - $.models[2].std_test_fingerprint_macro_f1 = 1.3992878214494676e-05
+  - $.models[2].min_test_fingerprint_macro_f1 = 0.9994398808394046
+  - $.models[2].max_test_fingerprint_macro_f1 = 0.9994767615918181
+  - $.models[2].mean_test_fingerprint_accuracy = 0.9997186629226782
+  - $.models[2].mean_test_raw_weighted_macro_f1 = 0.9981710693137925
+  - $.models[2].mean_test_gafgyt_fnr = 0.0017092615744061846
+  - $.models[2].mean_test_mirai_fnr = 8.455903277473364e-05
+  - $.models[2].fragility_triggered_in_any_run = False
+  - $.models[2].scientific_status = 'completed'
+  - $.models[2].important_caveat = ''
+  - $.models[2].descriptive_macro_f1_rank = 3
+  - $.models[2].ranking_is_not_model_selection = True
+  - $.models[3].model_id = 'logistic_regression_b0'
+  - $.models[3].display_name = 'Logistic Regression'
+  - $.models[3].run_count = 1
+  - $.models[3].seed_policy = 'single_seed_2026'
+  - $.models[3].input_space = 'train_only_standardized_float32'
+  - $.models[3].mean_test_fingerprint_macro_f1 = 0.9969917304947536
+  - $.models[3].std_test_fingerprint_macro_f1 = 0.0
+  - $.models[3].min_test_fingerprint_macro_f1 = 0.9969917304947536
+  - $.models[3].max_test_fingerprint_macro_f1 = 0.9969917304947536
+  - $.models[3].mean_test_fingerprint_accuracy = 0.9981306953275452
+  - $.models[3].mean_test_raw_weighted_macro_f1 = 0.9965715089779147
+  - $.models[3].mean_test_gafgyt_fnr = 0.0032791588957432616
+  - $.models[3].mean_test_mirai_fnr = 0.0019472969566879383
+  - $.models[3].fragility_triggered_in_any_run = False
+  - $.models[3].scientific_status = 'completed_with_convergence_warning'
+  - $.models[3].important_caveat = 'Locked max_iter=200 was reached; results retained without protocol modification.'
+  - $.models[3].descriptive_macro_f1_rank = 4
+  - $.models[3].ranking_is_not_model_selection = True
+  - $.descriptive_highest_mean_macro_f1.model_id = 'hist_gradient_boosting_b0'
+  - $.descriptive_highest_mean_macro_f1.display_name = 'HistGradientBoosting'
+  - $.descriptive_highest_mean_macro_f1.mean_test_fingerprint_macro_f1 = 0.9997380683535377
+  - $.interpretation_policy.ranking_is_descriptive_only = True
+  - $.interpretation_policy.no_final_model_selection = True
+  - $.interpretation_policy.single_seed_and_five_seed_results_are_not_claimed_as_equivalent_uncertainty_estimates = True
+  - $.interpretation_policy.tinyml_selection_requires_accuracy_size_latency_memory_and_device_generalization_evidence = True
+  - $.scientific_caveats[0] = 'Logistic Regression reached the locked max_iter=200 limit; the completed result is retained with a convergence warni...
+  - $.scientific_caveats[1] = 'HGB and Logistic Regression use one locked seed, while Decision Tree and Random Forest use five locked seeds.'
+  - $.scientific_caveats[2] = 'The descriptive ranking does not constitute final TinyML model selection.'
+  - $.preflight_checks.protocol_locked = True
+  - $.preflight_checks.protocol_hash_matches = True
+  - $.preflight_checks.run_matrix_hash_matches = True
+  - $.preflight_checks.cache_verification_passed = True
+  - $.preflight_checks.logistic_verification_passed = True
+  - $.preflight_checks.decision_tree_verification_passed = True
+  - $.preflight_checks.random_forest_verification_passed = True
+  - $.preflight_checks.hgb_verification_passed = True
+  - $.preflight_checks.run_matrix_has_12_rows = True
+  - $.preflight_checks.run_matrix_model_set_matches = True
+  - $.preflight_checks.decision_tree_aggregate_completed = True
+  - $.preflight_checks.random_forest_aggregate_completed = True
+  - $.preflight_checks.hgb_summary_completed = True
+  - $.metric_sanity_checks.logistic_regression_b0_run_count_matches = True
+  - $.metric_sanity_checks.logistic_regression_b0_macro_f1_matches_expected = True
+  - $.metric_sanity_checks.logistic_regression_b0_fragility_false = True
+  - $.metric_sanity_checks.decision_tree_b0_run_count_matches = True
+  - $.metric_sanity_checks.decision_tree_b0_macro_f1_matches_expected = True
+  - $.metric_sanity_checks.decision_tree_b0_fragility_false = True
+  - $.metric_sanity_checks.random_forest_b0_run_count_matches = True
+  - $.metric_sanity_checks.random_forest_b0_macro_f1_matches_expected = True
+  - $.metric_sanity_checks.random_forest_b0_fragility_false = True
+  - $.metric_sanity_checks.hist_gradient_boosting_b0_run_count_matches = True
+  - $.metric_sanity_checks.hist_gradient_boosting_b0_macro_f1_matches_expected = True
+  - $.metric_sanity_checks.hist_gradient_boosting_b0_fragility_false = True
+  - $.run_level_checks.total_run_count_is_12 = True
+  - $.run_level_checks.all_test_counts_are_one = True
+  - $.run_level_checks.no_fragility_triggered = True
+  - $.run_level_checks.run_ids_are_unique = True
+  - $.source_inventory[0].path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_locked_v3.json'
+  - $.source_inventory[0].size_bytes = 10202
+
+PHASE5_CLOSURE
+Path            : results/v2/audit/phase5_compression_closure_v3_2.json
+Top-level keys  : 29
+Scalar leaf paths:
+  - $.status = 'passed'
+  - $.phase = 5
+  - $.artifact_name = 'fair_budget_compression_matrix_closure'
+  - $.protocol_version = 'phase5_fair_budget_compression_v3_2'
+  - $.closed_at_utc = '2026-08-06T20:55:09.552037+00:00'
+  - $.architecture_count = 2
+  - $.variant_count = 11
+  - $.seed_count = 5
+  - $.final_run_count = 110
+  - $.group_count = 22
+  - $.test_evaluation_count_total = 110
+  - $.variants[0] = 'B0'
+  - $.variants[1] = 'FP32-FT'
+  - $.variants[2] = 'P25-noFT'
+  - $.variants[3] = 'P25-FP32-FT'
+  - $.variants[4] = 'P50-noFT'
+  - $.variants[5] = 'P50-FP32-FT'
+  - $.variants[6] = 'DQ'
+  - $.variants[7] = 'QAT'
+  - $.architectures[0] = 'tinyml_mlp'
+  - $.architectures[1] = 'compact_dnn'
+  - $.seeds[0] = 42
+  - $.seeds[1] = 123
+  - $.seeds[2] = 2026
+  - $.seeds[3] = 3407
+  - $.seeds[4] = 8192
+  - $.final_model_selected = False
+  - $.selection_deferred_until = 'deployment_measurements_and_predeclared_statistical_comparisons'
+  - $.fragility_groups[0].architecture = 'tinyml_mlp'
+  - $.fragility_groups[0].variant = 'P50-noFT'
+  - $.fragility_groups[1].architecture = 'tinyml_mlp'
+  - $.fragility_groups[1].variant = 'DQ'
+  - $.fragility_groups[2].architecture = 'compact_dnn'
+  - $.fragility_groups[2].variant = 'P50-noFT'
+  - $.metrics_files_discovered = 150
+  - $.nonfinal_validation_only_metrics_skipped = 40
+  - $.protocol_checks.status_locked = True
+  - $.protocol_checks.protocol_version_matches = True
+  - $.source_lock_checks.preprocessing_status_locked = True
+  - $.source_lock_checks.preprocessing_checks_passed = True
+  - $.source_lock_checks.B0_pair_status_locked = True
+  - $.source_lock_checks.B0_pair_checks_passed = True
+  - $.source_lock_checks.pruning_engine_status_locked = True
+  - $.source_lock_checks.pruning_engine_checks_passed = True
+  - $.source_lock_checks.pruning_sources_status_locked = True
+  - $.source_lock_checks.pruning_sources_checks_passed = True
+  - $.source_lock_checks.pruning_noFT_status_locked = True
+  - $.source_lock_checks.pruning_noFT_checks_passed = True
+  - $.source_lock_checks.pruning_FP32_FT_status_locked = True
+  - $.source_lock_checks.pruning_FP32_FT_checks_passed = True
+  - $.source_lock_checks.FP32_FT_status_locked = True
+  - $.source_lock_checks.FP32_FT_checks_passed = True
+  - $.source_lock_checks.DQ_status_locked = True
+  - $.source_lock_checks.DQ_checks_passed = True
+  - $.source_lock_checks.QAT_status_locked = True
+  - $.source_lock_checks.QAT_checks_passed = True
+  - $.source_lock_checks.PTQ_selection_status_locked = True
+  - $.source_lock_checks.PTQ_selection_checks_passed = True
+  - $.source_lock_checks.PTQ_test_status_locked = True
+  - $.source_lock_checks.PTQ_test_checks_passed = True
+  - $.final_checks.final_run_count_110 = True
+  - $.final_checks.group_count_22 = True
+  - $.final_checks.configuration_matrix_exact = True
+  - $.final_checks.test_evaluation_count_one_all_runs = True
+  - $.final_checks.test_evaluation_total_110 = True
+  - $.final_checks.test_not_used_for_selection = True
+  - $.final_checks.paired_delta_rows_100 = True
+  - $.final_checks.final_model_not_selected = True
+  - $.master_run_matrix.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv'
+  - $.master_run_matrix.size_bytes = 48909
+  - $.master_run_matrix.sha256 = '3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a'
+  - $.group_summary.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_group_summary_v3_2.csv'
+  - $.group_summary.size_bytes = 5849
+  - $.group_summary.sha256 = '37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67'
+  - $.paired_deltas_vs_B0.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_paired_delta_vs_B0_v3_2.csv'
+  - $.paired_deltas_vs_B0.size_bytes = 19205
+  - $.paired_deltas_vs_B0.sha256 = '22a5b964c60f767333eebdceac9784a11b13864ea29d53889092964bf9367fdb'
+  - $.source_locks.preprocessing.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_locked_v3_2.json'
+  - $.source_locks.preprocessing.size_bytes = 1422
+  - $.source_locks.preprocessing.sha256 = 'abc86751c43f92b9fe6e14a030dc3bc25584fe23eb34ac586684624a446b1efa'
+  - $.source_locks.B0_pair.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_locked_v3_2.json'
+  - $.source_locks.B0_pair.size_bytes = 1241
+  - $.source_locks.B0_pair.sha256 = 'af730f4071ea0db3a4c910231d1964a70d81967838f9448a8b180455537a9a2b'
+  - $.source_locks.pruning_engine.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_engine_locked_v3_2.json'
+  - $.source_locks.pruning_engine.size_bytes = 1563
+  - $.source_locks.pruning_engine.sha256 = '79554d61db40ccd1b9478a111d6723ae5d3fc0e6f6d4a6bbd0fa98ab57882371'
+  - $.source_locks.pruning_sources.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_physical_pruning_sources_verified_locked_v3_2...
+  - $.source_locks.pruning_sources.size_bytes = 968
+  - $.source_locks.pruning_sources.sha256 = 'f51da00617882c021417c4f41a0eca92aaa0bcae8db18bb7f279b786fc5215a2'
+  - $.source_locks.pruning_noFT.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_locked_v3_2.json'
+  - $.source_locks.pruning_noFT.size_bytes = 1495
+  - $.source_locks.pruning_noFT.sha256 = '83af36bb484ed2acc0bbdf709d8d517c9bb653365abd5871c293a561c17aef1c'
+  - $.source_locks.pruning_FP32_FT.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_locked_v3_2.json'
+  - $.source_locks.pruning_FP32_FT.size_bytes = 1710
+  - $.source_locks.pruning_FP32_FT.sha256 = 'bee8e0c7ea9e06f539e772b52907b187f80e471f257755c01cba738b65abd1b7'
+  - $.source_locks.FP32_FT.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_locked_v3_2.json'
+  - $.source_locks.FP32_FT.size_bytes = 1590
+  - $.source_locks.FP32_FT.sha256 = '25ade6e7c594f707babd6cbc0869b70e71d78831f77f7e8d3328ab0134964608'
+  - $.source_locks.DQ.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_DQ_locked_v3_2.json'
+  - $.source_locks.DQ.size_bytes = 1606
+  - $.source_locks.DQ.sha256 = '9a887ea8327f4109d09a89f3e649160a4607dc4cc3e7c7726dded3b23b49fb6a'
+  - $.source_locks.QAT.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_QAT_locked_v3_2.json'
+  - $.source_locks.QAT.size_bytes = 1644
+  - $.source_locks.QAT.sha256 = 'f416df1460c738453294cb25b7a5ad79e146091b876b2ba1a4cac4d8a9ff9ee6'
+  - $.source_locks.PTQ_selection.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_validation_selection_locked_v3_2.json'
+  - $.source_locks.PTQ_selection.size_bytes = 1955
+  - $.source_locks.PTQ_selection.sha256 = 'c8c7193cac4fbfe1802dc1b29b3741e579cee2dc91e1e7a58dd5c564db88b4c2'
+  - $.source_locks.PTQ_test.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_PTQ_selected_test_locked_v3_2.json'
+  - $.source_locks.PTQ_test.size_bytes = 1799
+  - $.source_locks.PTQ_test.sha256 = '7909178bd48a1ce8ea1a8e3aee76faa5167ee26233b363b8dc0dc2cde245e62e'
+  - $.ready_for_deployment_measurements = True
+  - $.ready_for_predeclared_statistics = True
+  - $.all_checks_passed = True
+
+PHASE6_SUMMARY
+Path            : results/v2/audit/phase6_deployment_benchmark_summary_v3_2.json
+Top-level keys  : 19
+Scalar leaf paths:
+  - $.status = 'completed'
+  - $.phase = 6
+  - $.artifact_name = 'isolated_deployment_benchmark'
+  - $.protocol_version = 'phase6_deployment_benchmark_v3_2'
+  - $.completed_at_utc = '2026-08-06T21:10:46.100955+00:00'
+  - $.run_count = 110
+  - $.group_count = 22
+  - $.architecture_count = 2
+  - $.variant_count = 11
+  - $.seed_count = 5
+  - $.runtime_policy.process_isolation_per_run = True
+  - $.runtime_policy.cpu_threads = 1
+  - $.runtime_policy.interop_threads = 1
+  - $.runtime_policy.batch_1_warmup_iterations = 50
+  - $.runtime_policy.batch_1_measured_iterations = 500
+  - $.runtime_policy.batch_32_warmup_iterations = 30
+  - $.runtime_policy.batch_32_measured_iterations = 200
+  - $.data_access.train_data_access = True
+  - $.data_access.validation_data_access = False
+  - $.data_access.test_data_access = False
+  - $.selection_policy.final_model_selected = False
+  - $.entry_checks.protocol_locked = True
+  - $.entry_checks.preflight_locked = True
+  - $.entry_checks.loader_smoke_locked = True
+  - $.entry_checks.matrix_hash_matches = True
+  - $.entry_checks.loader_matrix_hash_matches = True
+  - $.entry_checks.matrix_run_count_110 = True
+  - $.global_checks.run_count_110 = True
+  - $.global_checks.group_count_22 = True
+  - $.global_checks.configuration_matrix_exact = True
+  - $.global_checks.process_isolation_per_run = True
+  - $.global_checks.validation_access_zero = True
+  - $.global_checks.test_access_zero = True
+  - $.global_checks.final_model_not_selected = True
+  - $.all_runs_csv.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_all_runs_v3_2.csv'
+  - $.all_runs_csv.size_bytes = 67445
+  - $.all_runs_csv.sha256 = 'a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250'
+  - $.group_summary_csv.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_group_summary_v3_2.csv'
+  - $.group_summary_csv.size_bytes = 7065
+  - $.group_summary_csv.sha256 = '0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf'
+  - $.ready_for_independent_verification = True
+  - $.all_checks_passed = True
+
+PHASE7_SUMMARY
+Path            : results/v2/audit/phase7_statistical_analysis_summary_v3_2.json
+Top-level keys  : 22
+Scalar leaf paths:
+  - $.status = 'completed'
+  - $.phase = 7
+  - $.artifact_name = 'locked_statistical_analysis'
+  - $.protocol_version = 'phase7_statistical_analysis_v3_2'
+  - $.completed_at_utc = '2026-08-06T21:20:32.301637+00:00'
+  - $.descriptive_row_count = 176
+  - $.omnibus_analysis_count = 16
+  - $.posthoc_comparison_count = 160
+  - $.confirmatory_omnibus_rejections_nominal = 8
+  - $.exploratory_omnibus_rejections_nominal = 8
+  - $.confirmatory_posthoc_Holm_rejections = 0
+  - $.exploratory_posthoc_Holm_rejections = 0
+  - $.minimum_raw_posthoc_p = 0.0625
+  - $.minimum_Holm_adjusted_p = 0.625
+  - $.small_sample_interpretation.paired_seed_count = 5
+  - $.small_sample_interpretation.minimum_possible_two_sided_exact_p = 0.0625
+  - $.small_sample_interpretation.absence_of_p_below_0_05_is_not_equivalence = True
+  - $.small_sample_interpretation.effect_sizes_and_consistency_required = True
+  - $.entry_checks.protocol_locked = True
+  - $.entry_checks.preflight_locked = True
+  - $.entry_checks.protocol_hash_matches = True
+  - $.entry_checks.joined_matrix_hash_matches = True
+  - $.entry_checks.comparison_plan_hash_matches = True
+  - $.entry_checks.joined_row_count_110 = True
+  - $.entry_checks.comparison_plan_row_count_176 = True
+  - $.entry_checks.inferential_computation_was_not_previously_run = True
+  - $.entry_checks.final_model_not_selected = True
+  - $.global_checks.descriptive_rows_176 = True
+  - $.global_checks.omnibus_rows_16 = True
+  - $.global_checks.posthoc_rows_160 = True
+  - $.global_checks.all_omnibus_values_finite = True
+  - $.global_checks.all_posthoc_values_finite = True
+  - $.global_checks.all_exact_p_values_at_least_0_0625 = True
+  - $.global_checks.Holm_p_not_below_raw_p = True
+  - $.global_checks.wins_ties_losses_sum_to_5 = True
+  - $.global_checks.final_model_not_selected = True
+  - $.artifacts.descriptive_summary.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_descriptive_summary_v3_2.csv'
+  - $.artifacts.descriptive_summary.size_bytes = 30751
+  - $.artifacts.descriptive_summary.sha256 = '49c8c6a37a265d346b1766972ae6c1d0fbb18a6a682ed4bdbdc7a4b06eda68e2'
+  - $.artifacts.omnibus_results.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_omnibus_results_v3_2.csv'
+  - $.artifacts.omnibus_results.size_bytes = 4639
+  - $.artifacts.omnibus_results.sha256 = '848ccc5ed4f2049022fa2634371700da35efd20ef467632775af6b567d0a8ca2'
+  - $.artifacts.posthoc_results.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase7_statistical_posthoc_vs_B0_results_v3_2.csv'
+  - $.artifacts.posthoc_results.size_bytes = 56307
+  - $.artifacts.posthoc_results.sha256 = '9fff5dbbc1e455ef1c29c54d8e3762f1b01e6abfbe6027dd0c6c7a4118d19e47'
+  - $.final_model_selected = False
+  - $.ready_for_independent_verification = True
+  - $.ready_for_multi_objective_decision_preflight = False
+  - $.all_checks_passed = True
+
+PHASE8_FINAL_MODEL_LOCK
+Path            : results/v2/audit/phase8_final_model_family_locked_v3_2.json
+Top-level keys  : 22
+Scalar leaf paths:
+  - $.status = 'locked'
+  - $.phase = 8
+  - $.artifact_name = 'final_model_family_selection'
+  - $.protocol_version = 'phase8_multi_objective_decision_v3_2'
+  - $.locked_at_utc = '2026-08-06T21:39:52.654574+00:00'
+  - $.primary_profile = 'balanced'
+  - $.selected_model_family.candidate_id = 'tinyml_mlp::P50-QAT'
+  - $.selected_model_family.architecture = 'tinyml_mlp'
+  - $.selected_model_family.variant = 'P50-QAT'
+  - $.selected_model_family.representation = 'static_int8'
+  - $.sensitivity_profile_selections.strict = 'tinyml_mlp::P50-FP32-FT'
+  - $.sensitivity_profile_selections.balanced = 'tinyml_mlp::P50-QAT'
+  - $.sensitivity_profile_selections.relaxed = 'tinyml_mlp::P50-QAT'
+  - $.selection_stable_across_profiles = False
+  - $.weighted_score_used = False
+  - $.pairwise_p_value_used_as_gate = False
+  - $.model_inference_repeated_by_verifier = False
+  - $.final_model_family_selected = True
+  - $.single_seed_checkpoint_selected = False
+  - $.single_seed_checkpoint_selection_note = 'The architecture-variant family is locked. A concrete deployment checkpoint must be chosen under a separate test-ind...
+  - $.verification_report = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_decision_verification_v3_2.json'
+  - $.verification_report_sha256 = '1ab1cc62c6099eb9522de66f762dba43558935c2c78dad90f52bc6645dca6670'
+  - $.eligibility_results_sha256 = 'c6ec23de0246555b9f127a6436dee22d6a4da4502de4a08bef473304a56c0a96'
+  - $.Pareto_results_sha256 = '2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306'
+  - $.selection_trace_sha256 = '79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55'
+  - $.ready_for_final_artifact_protocol = True
+  - $.all_checks_passed = True
+
+PHASE9_ARTIFACT_LOCK
+Path            : results/v2/audit/phase9_final_deployment_artifact_locked_v3_2.json
+Top-level keys  : 26
+Scalar leaf paths:
+  - $.status = 'locked'
+  - $.phase = 9
+  - $.artifact_name = 'final_deployment_artifact'
+  - $.protocol_version = 'phase9_final_artifact_v3_2'
+  - $.locked_at_utc = '2026-08-06T22:58:09.036261+00:00'
+  - $.artifact_root = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2'
+  - $.model_family = 'tinyml_mlp::P50-QAT'
+  - $.architecture = 'tinyml_mlp'
+  - $.variant = 'P50-QAT'
+  - $.representation = 'static_int8'
+  - $.canonical_seed = 2026
+  - $.class_labels_in_output_index_order[0] = 'benign'
+  - $.class_labels_in_output_index_order[1] = 'gafgyt'
+  - $.class_labels_in_output_index_order[2] = 'mirai'
+  - $.artifact_lock.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\artifact_...
+  - $.artifact_lock.size_bytes = 3717
+  - $.artifact_lock.sha256 = '78f27e1a167d63fd0d603f757b4beec396a99d5813ba5638040a74b64611a837'
+  - $.independent_verification.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_artifact_verification_v3_2.json'
+  - $.independent_verification.size_bytes = 4164
+  - $.independent_verification.sha256 = 'f805fc77c0377ccf8372dc67bc50fb852c4b6a40077bd3857a390831ab4cee86'
+  - $.locked_bundle_inventory[0].path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\artifact_...
+  - $.locked_bundle_inventory[0].size_bytes = 3717
+  - $.locked_bundle_inventory[0].sha256 = '78f27e1a167d63fd0d603f757b4beec396a99d5813ba5638040a74b64611a837'
+  - $.locked_bundle_inventory[0].relative_path = 'artifact_lock.json'
+  - $.locked_bundle_inventory[1].path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\artifact_...
+  - $.locked_bundle_inventory[1].size_bytes = 5990
+  - $.locked_bundle_inventory[1].sha256 = '30e45287f9b23eed0d8939921a33f776d95c8f5fffe006d90556d5e478f86e31'
+  - $.locked_bundle_inventory[1].relative_path = 'artifact_manifest.json'
+  - $.locked_bundle_inventory[2].path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\inference...
+  - $.locked_bundle_inventory[2].size_bytes = 1541
+  - $.locked_bundle_inventory[2].sha256 = '37865f4c8eb9ce1d7a2393638e33f9eaaa3eb6af6489f9aa7f4f88037fa05cec'
+  - $.locked_bundle_inventory[2].relative_path = 'inference_contract.json'
+  - $.locked_bundle_inventory[3].path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\model_int...
+  - $.locked_bundle_inventory[3].size_bytes = 14023
+  - $.locked_bundle_inventory[3].sha256 = '9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a'
+  - $.locked_bundle_inventory[3].relative_path = 'model_int8_checkpoint.pt'
+  - $.locked_bundle_inventory[4].path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\nbaiot_mo...
+  - $.locked_bundle_inventory[4].size_bytes = 15283
+  - $.locked_bundle_inventory[4].sha256 = '1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd'
+  - $.locked_bundle_inventory[4].relative_path = 'nbaiot_models.py'
+  - $.locked_bundle_inventory[5].path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\phase5_ph...
+  - $.locked_bundle_inventory[5].size_bytes = 11014
+  - $.locked_bundle_inventory[5].sha256 = 'f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3'
+  - $.locked_bundle_inventory[5].relative_path = 'phase5_physical_pruning_engine_v3_2.py'
+  - $.locked_bundle_inventory[6].path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\phase5_qa...
+  - $.locked_bundle_inventory[6].size_bytes = 5822
+  - $.locked_bundle_inventory[6].sha256 = 'd1e33943a31bd1b3e2ea83a64daee9a31a8b5a8616c97346c62fff3c03503273'
+  - $.locked_bundle_inventory[6].relative_path = 'phase5_qat_engine_v3_2.py'
+  - $.locked_bundle_inventory[7].path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\train_onl...
+  - $.locked_bundle_inventory[7].size_bytes = 5361
+  - $.locked_bundle_inventory[7].sha256 = '3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6'
+  - $.locked_bundle_inventory[7].relative_path = 'train_only_standard_scaler_v3_2.npz'
+  - $.source_checkpoint_sha256 = '9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a'
+  - $.bundled_checkpoint_sha256 = '9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a'
+  - $.source_bundle_checkpoint_exact = True
+  - $.source_bundle_outputs_exact = True
+  - $.serialization_roundtrip_exact = True
+  - $.validation_data_access = False
+  - $.test_data_access = False
+  - $.single_checkpoint_locked = True
+  - $.final_deployment_artifact_locked = True
+  - $.ready_for_release_archive = True
+  - $.all_checks_passed = True
+
+PHASE10_RELEASE_LOCK
+Path            : results/v2/audit/phase10_release_archive_locked_v3_3.json
+Top-level keys  : 28
+Scalar leaf paths:
+  - $.status = 'locked'
+  - $.phase = 10
+  - $.artifact_name = 'deterministic_release_archive'
+  - $.protocol_version = 'phase10_release_archive_v3_3'
+  - $.locked_at_utc = '2026-08-06T23:11:19.177973+00:00'
+  - $.release_name = 'TinyML_IDS_IEEE_release_v3_3'
+  - $.release_directory = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3'
+  - $.zip_archive = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3.zip'
+  - $.model_family = 'tinyml_mlp::P50-QAT'
+  - $.representation = 'static_int8'
+  - $.canonical_seed = 2026
+  - $.class_labels_in_output_index_order[0] = 'benign'
+  - $.class_labels_in_output_index_order[1] = 'gafgyt'
+  - $.class_labels_in_output_index_order[2] = 'mirai'
+  - $.payload_file_count = 15
+  - $.archive_file_count = 16
+  - $.release_directory_tree_hash_algorithm = 'sha256 over sorted records: relative_path NUL size NUL file_sha256 LF, prefixed by phase10_release_tree_v1 NUL'
+  - $.release_directory_tree_sha256 = '6348e0329c6f926863fadf5ce6be2d8a7f27cad927b0dfe8165811e538faa255'
+  - $.release_manifest_sha256 = '52be5fd33842ffd2b90e96219ed0dbab873788ebc43e9c74bfd9c8b9e5826bf5'
+  - $.zip_archive_sha256 = 'b3decdf91a16b0716aa04dce8f406edd0f7fad117216d7822e00f554a02950b5'
+  - $.zip_archive_size_bytes = 33787
+  - $.independent_verification_report = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase10_release_archive_verification_v3_3.json'
+  - $.independent_verification_report_sha256 = 'c30e308f8950bf56e9756d8c17e4c9a881f0bac1fea9ca501c70b53c7cfccb8d'
+  - $.deterministic_rebuild_exact = True
+  - $.raw_dataset_included = False
+  - $.processed_dataset_included = False
+  - $.nonselected_checkpoints_included = False
+  - $.release_locked = True
+  - $.ready_for_distribution = True
+  - $.all_checks_passed = True
+
+PHASE11_SUMMARY
+Path            : results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_summary_v3_3.json
+Top-level keys  : 20
+Scalar leaf paths:
+  - $.status = 'completed'
+  - $.phase = 11
+  - $.artifact_name = 'input_robustness_analysis'
+  - $.protocol_version = 'phase11_input_robustness_v3_3'
+  - $.completed_at_utc = '2026-08-06T23:36:23.967109+00:00'
+  - $.model_count = 3
+  - $.condition_count = 9
+  - $.evaluation_count = 27
+  - $.test_rows = 371796
+  - $.represented_raw_rows = 1059393
+  - $.condition_perturbation_sha256.clean = 'e6af62f3991d057d7515c76230719474f79ec7a6ff7cc2de2c11b2c4a635de47'
+  - $.condition_perturbation_sha256.gaussian_noise_1pct = 'c4dc4d07de7966d966bbf89df7578feebda031d1e562fbb2121121be746a3ea6'
+  - $.condition_perturbation_sha256.gaussian_noise_5pct = '8d75426f97563f2b3deed810bdd215121b177e4ba1a703a9131baf8c2250269f'
+  - $.condition_perturbation_sha256.gaussian_noise_10pct = 'c243d9e5abfb6105ff8a29d70e083ff2b79592b0e303d95ebd979f70c77be799'
+  - $.condition_perturbation_sha256.feature_mask_5pct = 'f8695da929f130c82407212ee75aa2afb2a9fb8ec89c368281b924f869bf3e73'
+  - $.condition_perturbation_sha256.feature_mask_10pct = 'd03975452217b835a4e29748530ddd74830732a22493f8652b84f2e0de1dbed2'
+  - $.condition_perturbation_sha256.feature_mask_20pct = '3e1a7a6925c739aba785e26e443a075cf9edcf3b1fa3aee0b1d674efd1c0571b'
+  - $.condition_perturbation_sha256.scale_drift_minus_10pct = '520997dcebacf4efc2c9f547d8f1c7dcb9cd33276274de0b8d6b8bd0f26ff4dd'
+  - $.condition_perturbation_sha256.scale_drift_plus_10pct = '426fb694a445a6ccd3f0203a4e13c0848935f3590bd274af242b56a18d07cc77'
+  - $.clean_reproduction_gate_passed = True
+  - $.model_summaries.tinyml_mlp_B0.clean_fingerprint_macro_f1 = 0.9992545342200568
+  - $.model_summaries.tinyml_mlp_B0.clean_raw_weighted_macro_f1 = 0.9980267703090027
+  - $.model_summaries.tinyml_mlp_B0.worst_condition = 'feature_mask_20pct'
+  - $.model_summaries.tinyml_mlp_B0.worst_fingerprint_macro_f1 = 0.8874710311511499
+  - $.model_summaries.tinyml_mlp_B0.maximum_macro_f1_drop = 0.11178350306890694
+  - $.model_summaries.tinyml_mlp_B0.severe_fragility_condition_count = 0
+  - $.model_summaries.tinyml_mlp_B0.material_sensitivity_condition_count = 2
+  - $.model_summaries.tinyml_mlp_P50_QAT.clean_fingerprint_macro_f1 = 0.9970080708948338
+  - $.model_summaries.tinyml_mlp_P50_QAT.clean_raw_weighted_macro_f1 = 0.9959473619503365
+  - $.model_summaries.tinyml_mlp_P50_QAT.worst_condition = 'feature_mask_20pct'
+  - $.model_summaries.tinyml_mlp_P50_QAT.worst_fingerprint_macro_f1 = 0.8788134810282804
+  - $.model_summaries.tinyml_mlp_P50_QAT.maximum_macro_f1_drop = 0.1181945898665534
+  - $.model_summaries.tinyml_mlp_P50_QAT.severe_fragility_condition_count = 0
+  - $.model_summaries.tinyml_mlp_P50_QAT.material_sensitivity_condition_count = 2
+  - $.model_summaries.hist_gradient_boosting_B0.clean_fingerprint_macro_f1 = 0.9997380683535377
+  - $.model_summaries.hist_gradient_boosting_B0.clean_raw_weighted_macro_f1 = 0.9990430947883375
+  - $.model_summaries.hist_gradient_boosting_B0.worst_condition = 'scale_drift_plus_10pct'
+  - $.model_summaries.hist_gradient_boosting_B0.worst_fingerprint_macro_f1 = 0.45432326660478023
+  - $.model_summaries.hist_gradient_boosting_B0.maximum_macro_f1_drop = 0.5454148017487574
+  - $.model_summaries.hist_gradient_boosting_B0.severe_fragility_condition_count = 5
+  - $.model_summaries.hist_gradient_boosting_B0.material_sensitivity_condition_count = 5
+  - $.severe_fragility_evaluation_count = 5
+  - $.material_sensitivity_evaluation_count = 9
+  - $.model_retraining_performed = False
+  - $.test_used_for_model_selection = False
+  - $.final_model_changed = False
+  - $.ready_for_independent_verification = True
+  - $.all_checks_passed = True
+
+PHASE11_LOCK
+Path            : results/v2/audit/phase11_input_robustness_locked_v3_3.json
+Top-level keys  : 26
+Scalar leaf paths:
+  - $.status = 'locked'
+  - $.phase = 11
+  - $.artifact_name = 'input_robustness_analysis'
+  - $.protocol_version = 'phase11_input_robustness_v3_3'
+  - $.locked_at_utc = '2026-08-06T23:41:58.721121+00:00'
+  - $.protocol.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase11_input_robustness_protocol_v3_3.json'
+  - $.protocol.size_bytes = 12501
+  - $.protocol.sha256 = '77c8cca9dad7d0cacad4e1e7ed8668d835e360deb5ecec56f7b24e6e05d8c082'
+  - $.protocol_lock.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_protocol_locked_v3_3.json'
+  - $.protocol_lock.size_bytes = 1114
+  - $.protocol_lock.sha256 = 'ca64b4a01173bf8e9d1671f5dab394de5a59c14f9d6fb686755d855087ca87f2'
+  - $.run_matrix.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_run_matrix_v3_3.csv'
+  - $.run_matrix.size_bytes = 5957
+  - $.run_matrix.sha256 = 'febe7298d59c43649037be7eea3e2a8bf1e4cb7e49b6ad86bc7be0bef9e71dcd'
+  - $.execution_report.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_execution_v3_3.json'
+  - $.execution_report.size_bytes = 2910
+  - $.execution_report.sha256 = '1fae6a5e4c1a224b00e8eee5e6ec35733ee3bc8ea834a75ea23f56fd3f8c2eec'
+  - $.completion.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_completed_v3_3.json'
+  - $.completion.size_bytes = 1073
+  - $.completion.sha256 = 'd0f1d9c5c5d800544b359d6f5469ea3f2ae742cabbbbe270fb081538dbdd7d3a'
+  - $.aggregate_results.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_all...
+  - $.aggregate_results.size_bytes = 10746
+  - $.aggregate_results.sha256 = '85e8f3108d27a6db95057be664f6c177ea2162f673865a8588eb55b5dd4b4090'
+  - $.summary.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_sum...
+  - $.summary.size_bytes = 2756
+  - $.summary.sha256 = '5125ca979659894c5896994e28ba85de3e0f4a80756e619ec3de4a5e0c210dc4'
+  - $.detailed_results.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase11_input_robustness_v3_3\\phase11_input_robustness_det...
+  - $.detailed_results.size_bytes = 57636
+  - $.detailed_results.sha256 = '0d4c143cd36cc71a85599e9bceee0c3406087ae08c1fe9d99272ba79338e0b76'
+  - $.independent_verification.path = 'C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_verification_v3_3.json'
+  - $.independent_verification.size_bytes = 3939
+  - $.independent_verification.sha256 = '14cb477291bada09b4a02760381c9d29264e42251a47d575bb711d61196ee058'
+  - $.model_count = 3
+  - $.condition_count = 9
+  - $.locked_evaluation_count = 27
+  - $.severe_fragility_evaluation_count = 5
+  - $.material_sensitivity_evaluation_count = 9
+  - $.model_summaries.tinyml_mlp_B0.clean_fingerprint_macro_f1 = 0.9992545342200568
+  - $.model_summaries.tinyml_mlp_B0.clean_raw_weighted_macro_f1 = 0.9980267703090027
+  - $.model_summaries.tinyml_mlp_B0.worst_condition = 'feature_mask_20pct'
+  - $.model_summaries.tinyml_mlp_B0.worst_fingerprint_macro_f1 = 0.8874710311511499
+  - $.model_summaries.tinyml_mlp_B0.maximum_macro_f1_drop = 0.11178350306890694
+  - $.model_summaries.tinyml_mlp_B0.severe_fragility_condition_count = 0
+  - $.model_summaries.tinyml_mlp_B0.material_sensitivity_condition_count = 2
+  - $.model_summaries.tinyml_mlp_P50_QAT.clean_fingerprint_macro_f1 = 0.9970080708948338
+  - $.model_summaries.tinyml_mlp_P50_QAT.clean_raw_weighted_macro_f1 = 0.9959473619503365
+  - $.model_summaries.tinyml_mlp_P50_QAT.worst_condition = 'feature_mask_20pct'
+  - $.model_summaries.tinyml_mlp_P50_QAT.worst_fingerprint_macro_f1 = 0.8788134810282804
+  - $.model_summaries.tinyml_mlp_P50_QAT.maximum_macro_f1_drop = 0.1181945898665534
+  - $.model_summaries.tinyml_mlp_P50_QAT.severe_fragility_condition_count = 0
+  - $.model_summaries.tinyml_mlp_P50_QAT.material_sensitivity_condition_count = 2
+  - $.model_summaries.hist_gradient_boosting_B0.clean_fingerprint_macro_f1 = 0.9997380683535377
+  - $.model_summaries.hist_gradient_boosting_B0.clean_raw_weighted_macro_f1 = 0.9990430947883375
+  - $.model_summaries.hist_gradient_boosting_B0.worst_condition = 'scale_drift_plus_10pct'
+  - $.model_summaries.hist_gradient_boosting_B0.worst_fingerprint_macro_f1 = 0.45432326660478023
+  - $.model_summaries.hist_gradient_boosting_B0.maximum_macro_f1_drop = 0.5454148017487574
+  - $.model_summaries.hist_gradient_boosting_B0.severe_fragility_condition_count = 5
+  - $.model_summaries.hist_gradient_boosting_B0.material_sensitivity_condition_count = 5
+  - $.model_retraining_performed = False
+  - $.test_used_for_model_selection = False
+  - $.final_model_changed = False
+  - $.phase11_locked = True
+  - $.ready_for_figures_and_reporting = True
+  - $.all_checks_passed = True
+
+====================================================================================================
+FIELD INSPECTION COMPLETE
+====================================================================================================
+JSON output                     : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\phase13_bound_source_field_inspection_v3_3.json
+Ready for column mapping        : True
+All checks passed               : True

@@ -1,0 +1,102 @@
+{
+  "status": "generated",
+  "phase": 13,
+  "asset_id": "figure_04_pareto_selection",
+  "generated_at_utc": "2026-08-07T07:43:19.565599+00:00",
+  "title": "Balanced-Profile Pareto Selection",
+  "source_files": [
+    {
+      "source_id": "phase8_input_matrix",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_decision_input_matrix_v3_2.csv",
+      "sha256": "aa3213d72488093da08f6e4f5536c51e15d883d8e22b0fde697bb243b3f2d96f"
+    },
+    {
+      "source_id": "phase8_pareto_results",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_pareto_results_v3_2.csv",
+      "sha256": "2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306"
+    },
+    {
+      "source_id": "phase8_selection_trace",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_selection_trace_v3_2.csv",
+      "sha256": "79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55"
+    },
+    {
+      "source_id": "phase8_final_model_lock",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_final_model_family_locked_v3_2.json",
+      "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9"
+    }
+  ],
+  "balanced_profile": {
+    "compressed_candidate_count": 18,
+    "eligible_candidate_count": 11,
+    "pareto_candidate_count": 5,
+    "selected_candidate_id": "tinyml_mlp::P50-QAT",
+    "selected_representation": "static_int8",
+    "selected_mean_macro_f1": 0.9978555453698199,
+    "selected_mean_state_size_kib": 11.9130859375,
+    "selected_mean_batch_1_median_ms": 0.10766,
+    "selected_mean_batch_32_samples_per_second": 168078.67334476035
+  },
+  "sensitivity_profile_selections": {
+    "strict": "tinyml_mlp::P50-FP32-FT",
+    "balanced": "tinyml_mlp::P50-QAT",
+    "relaxed": "tinyml_mlp::P50-QAT"
+  },
+  "outputs": {
+    "png": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_04_pareto_selection_v3_3.png",
+      "sha256": "12fb63e4e674c72d84228cce7f1f9552aff82a7952055b80983ae5749b7d95af",
+      "size_bytes": 157924
+    },
+    "svg": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\figures\\figure_04_pareto_selection_v3_3.svg",
+      "sha256": "67b5eceb0627f9779d3ba84675f2767ab95e90651c4b8e39caed81e6a6b20238",
+      "size_bytes": 69076
+    },
+    "source_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\figure_04_pareto_selection_source_v3_3.csv",
+      "sha256": "584901a85b75072d2d04f179167baaa8c05a2b82677f7d905699fbf0ecb79c42",
+      "size_bytes": 3588
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\figure_04_pareto_selection_caption_v3_3.txt",
+      "sha256": "cc2e7c032a8f037c333e36544192345145c08f9aab4b1ac05a96be021c672973",
+      "size_bytes": 544
+    }
+  },
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_lock_hash_matches": true,
+    "mapping_validated": true,
+    "mapping_lock_hash_matches": true,
+    "figure_02_locked": true,
+    "figure_03_locked": true,
+    "figure_04_mapped": true
+  },
+  "data_checks": {
+    "input_rows_22": true,
+    "pareto_rows_54": true,
+    "trace_rows_3": true,
+    "profiles_exact": true,
+    "primary_profile_balanced": true,
+    "final_family_selected": true,
+    "selected_family_p50_qat": true,
+    "weighted_score_not_used": true,
+    "pairwise_p_not_gate": true
+  },
+  "selection_checks": {
+    "balanced_candidate_count_18": true,
+    "balanced_eligible_count_11": true,
+    "balanced_pareto_count_5": true,
+    "balanced_selected_p50_qat": true,
+    "strict_selected_p50_fp32_ft": true,
+    "relaxed_selected_p50_qat": true,
+    "final_lock_matches_balanced": true
+  },
+  "weighted_score_used": false,
+  "pairwise_p_value_used_as_gate": false,
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "all_checks_passed": true
+}

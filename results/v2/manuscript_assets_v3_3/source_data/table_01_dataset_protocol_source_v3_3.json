@@ -1,0 +1,76 @@
+{
+  "lodo_global_summary": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\global\\early_lodo_global_summary_v2.json",
+    "sha256": "1edbff5dd484f4bcd8b4d651b33795b21748debaa3e9f643b720b6970bea4b77",
+    "scope": {
+      "device_count": 9,
+      "model_count": 3,
+      "scientific_run_count": 27,
+      "expected_devices": [
+        "Danmini_Doorbell",
+        "Ecobee_Thermostat",
+        "Ennio_Doorbell",
+        "Philips_B120N10_Baby_Monitor",
+        "Provision_PT_737E_Security_Camera",
+        "Provision_PT_838_Security_Camera",
+        "Samsung_SNH_1011_N_Webcam",
+        "SimpleHome_XCS7_1002_WHT_Security_Camera",
+        "SimpleHome_XCS7_1003_WHT_Security_Camera"
+      ],
+      "expected_models": [
+        "tinyml_mlp_b0",
+        "compact_dnn_b0",
+        "hist_gradient_boosting_b0"
+      ],
+      "two_class_test_devices": [
+        "Ennio_Doorbell",
+        "Samsung_SNH_1011_N_Webcam"
+      ]
+    },
+    "locked_thresholds": {
+      "severe_macro_f1_below": 0.85,
+      "severe_attack_fnr_above": 0.4,
+      "meaningful_validation_test_macro_f1_drop_at_least": 0.1
+    },
+    "interpretation": {
+      "class_coverage_note": "Ennio and Samsung have no Mirai samples in held-out test; their test Macro-F1 is computed over the classes present."
+    }
+  },
+  "phase4_summary": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_summary_v3_2.json",
+    "sha256": "a64ead61fa0f4d56c586ed3cdf6922c212dd25423bbf7fc3b59343d2a800de98",
+    "model_count": 4,
+    "total_run_count": 12,
+    "interpretation_policy": {
+      "ranking_is_descriptive_only": true,
+      "no_final_model_selection": true,
+      "single_seed_and_five_seed_results_are_not_claimed_as_equivalent_uncertainty_estimates": true,
+      "tinyml_selection_requires_accuracy_size_latency_memory_and_device_generalization_evidence": true
+    },
+    "scientific_caveats": [
+      "Logistic Regression reached the locked max_iter=200 limit; the completed result is retained with a convergence warning.",
+      "HGB and Logistic Regression use one locked seed, while Decision Tree and Random Forest use five locked seeds.",
+      "The descriptive ranking does not constitute final TinyML model selection."
+    ]
+  },
+  "phase5_closure": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_closure_v3_2.json",
+    "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac",
+    "architecture_count": 2,
+    "variant_count": 11,
+    "seed_count": 5,
+    "final_run_count": 110,
+    "group_count": 22,
+    "test_evaluation_count_total": 110,
+    "final_checks": {
+      "final_run_count_110": true,
+      "group_count_22": true,
+      "configuration_matrix_exact": true,
+      "test_evaluation_count_one_all_runs": true,
+      "test_evaluation_total_110": true,
+      "test_not_used_for_selection": true,
+      "paired_delta_rows_100": true,
+      "final_model_not_selected": true
+    }
+  }
+}

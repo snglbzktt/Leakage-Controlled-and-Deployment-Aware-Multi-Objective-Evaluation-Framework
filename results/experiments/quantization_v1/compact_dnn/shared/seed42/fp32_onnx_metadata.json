@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-07-25T07:55:21.709515+00:00",
+  "model_name": "compact_dnn",
+  "seed": 42,
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\compact_dnn\\seed42\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "a56295944cd527a7b0d1c5aa8a6cb6d3093acc9074c55888b23d9d220abea67b",
+  "fp32_onnx_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\compact_dnn\\shared\\seed42\\model_fp32.onnx",
+  "fp32_onnx_sha256": "7035826d9a9aaaba370850c7a68c33a4c5f9ce2d7ea318b90029738c9fa84495",
+  "fp32_onnx_size_bytes": 102463,
+  "pytorch_onnx_parity": {
+    "allclose": true,
+    "maximum_absolute_difference": 1.9073486328125e-06,
+    "mean_absolute_difference": 2.5134067982435226e-07,
+    "argmax_prediction_agreement": 1.0
+  }
+}

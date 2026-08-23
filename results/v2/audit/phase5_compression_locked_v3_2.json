@@ -1,0 +1,22 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "fair_budget_compression_matrix",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T20:55:09.615860+00:00",
+  "final_run_count": 110,
+  "group_count": 22,
+  "test_evaluation_count_total": 110,
+  "final_model_selected": false,
+  "master_run_matrix": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_master_run_matrix_v3_2.csv",
+  "master_run_matrix_sha256": "3e1236b19f29144f805a8bbf799bdd167649e284db797dc464e78e24ec5efb3a",
+  "group_summary": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_group_summary_v3_2.csv",
+  "group_summary_sha256": "37111a47d3e09c50356c335643a60576ddf6c7e64d5794215cafea9fd928eb67",
+  "paired_deltas_vs_B0": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_paired_delta_vs_B0_v3_2.csv",
+  "paired_deltas_vs_B0_sha256": "22a5b964c60f767333eebdceac9784a11b13864ea29d53889092964bf9367fdb",
+  "closure_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_closure_v3_2.json",
+  "closure_report_sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac",
+  "ready_for_deployment_measurements": true,
+  "ready_for_predeclared_statistics": true,
+  "all_checks_passed": true
+}

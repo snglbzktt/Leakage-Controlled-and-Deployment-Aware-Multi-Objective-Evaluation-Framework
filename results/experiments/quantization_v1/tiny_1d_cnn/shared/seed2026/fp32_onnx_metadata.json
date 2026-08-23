@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-07-25T08:23:03.682972+00:00",
+  "model_name": "tiny_1d_cnn",
+  "seed": 2026,
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed2026\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "176b05021581a8622d947a75ac8d6f5580a1efe0d6a9b44e597508d70c51d7db",
+  "fp32_onnx_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tiny_1d_cnn\\shared\\seed2026\\model_fp32.onnx",
+  "fp32_onnx_sha256": "103fb66c0d13b721570560f3eecd668f15ffa41026855620a36dd6a80fdfa275",
+  "fp32_onnx_size_bytes": 9676,
+  "pytorch_onnx_parity": {
+    "allclose": true,
+    "maximum_absolute_difference": 3.5762786865234375e-06,
+    "mean_absolute_difference": 3.004485336077778e-07,
+    "argmax_prediction_agreement": 1.0
+  }
+}

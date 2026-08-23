@@ -1,0 +1,100 @@
+{
+  "generated_at_utc": "2026-07-24T10:21:28.156554+00:00",
+  "registry_version": "1.0",
+  "registry_status": "locked_before_training",
+  "model_source_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+  "model_source_sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd",
+  "dataset": "nbaiot_float32_canonical_seed2026",
+  "primary_task": "family_3",
+  "input_feature_count": 115,
+  "primary_output_class_count": 3,
+  "registered_model_order": [
+    "tinyml_mlp",
+    "compact_dnn",
+    "tiny_1d_cnn"
+  ],
+  "models": {
+    "tinyml_mlp": {
+      "registry_name": "tinyml_mlp",
+      "display_name": "TinyML-MLP",
+      "architecture_family": "multilayer_perceptron",
+      "description": "Two-hidden-layer low-parameter MLP baseline.",
+      "order_sensitive": false,
+      "architecture": {
+        "hidden_units": [
+          64,
+          32
+        ],
+        "activation": "ReLU",
+        "dropout_probability": 0.0
+      }
+    },
+    "compact_dnn": {
+      "registry_name": "compact_dnn",
+      "display_name": "Compact-DNN",
+      "architecture_family": "multilayer_perceptron",
+      "description": "Higher-capacity three-hidden-layer compact DNN.",
+      "order_sensitive": false,
+      "architecture": {
+        "hidden_units": [
+          128,
+          64,
+          32
+        ],
+        "activation": "ReLU",
+        "dropout_probability": 0.1
+      }
+    },
+    "tiny_1d_cnn": {
+      "registry_name": "tiny_1d_cnn",
+      "display_name": "Tiny-1D-CNN",
+      "architecture_family": "one_dimensional_convolution",
+      "description": "Order-sensitive compact 1D convolutional classifier.",
+      "order_sensitive": true,
+      "architecture": {
+        "channels": [
+          8,
+          16,
+          24
+        ],
+        "kernel_sizes": [
+          5,
+          3,
+          3
+        ],
+        "pooling": [
+          "MaxPool1d(2)",
+          "MaxPool1d(2)",
+          "AdaptiveAvgPool1d(1)"
+        ],
+        "activation": "ReLU"
+      }
+    }
+  },
+  "primary_task_resource_statistics": {
+    "tinyml_mlp": {
+      "total_parameter_count": 9603,
+      "trainable_parameter_count": 9603,
+      "weight_layer_macs_per_sample": 9504,
+      "theoretical_fp32_parameter_bytes": 38412,
+      "theoretical_int8_parameter_bytes": 9603
+    },
+    "compact_dnn": {
+      "total_parameter_count": 25283,
+      "trainable_parameter_count": 25283,
+      "weight_layer_macs_per_sample": 25056,
+      "theoretical_fp32_parameter_bytes": 101132,
+      "theoretical_int8_parameter_bytes": 25283
+    },
+    "tiny_1d_cnn": {
+      "total_parameter_count": 1699,
+      "trainable_parameter_count": 1699,
+      "weight_layer_macs_per_sample": 58816,
+      "theoretical_fp32_parameter_bytes": 6796,
+      "theoretical_int8_parameter_bytes": 1699
+    }
+  },
+  "mac_definition": "Multiply-accumulate operations from Linear and Conv1d weight layers only, per individual input sample. Activations, pooling, comparisons and memory movement are excluded.",
+  "parameter_memory_note": "Theoretical parameter byte counts do not equal final serialized model size. Quantized bias, metadata and runtime overhead must be measured separately.",
+  "cnn_feature_order_note": "Tiny-1D-CNN is order-sensitive. The scaler artifact feature order is frozen for all experiments."
+}

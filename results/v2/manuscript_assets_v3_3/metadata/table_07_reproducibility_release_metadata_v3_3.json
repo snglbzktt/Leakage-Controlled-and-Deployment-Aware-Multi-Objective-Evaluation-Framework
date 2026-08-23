@@ -1,0 +1,103 @@
+{
+  "status": "generated",
+  "phase": 13,
+  "asset_id": "table_07_reproducibility_release",
+  "generated_at_utc": "2026-08-07T08:04:16.436029+00:00",
+  "title": "Reproducibility and Release Integrity",
+  "row_count": 19,
+  "selected_model_family": "tinyml_mlp::P50-QAT",
+  "selected_representation": "static_int8",
+  "canonical_seed": 2026,
+  "checkpoint_sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+  "release_tree_sha256": "6348e0329c6f926863fadf5ce6be2d8a7f27cad927b0dfe8165811e538faa255",
+  "zip_archive_sha256": "b3decdf91a16b0716aa04dce8f406edd0f7fad117216d7822e00f554a02950b5",
+  "deterministic_rebuild_exact": true,
+  "model_retraining_performed": false,
+  "test_used_for_model_selection": false,
+  "final_model_changed": false,
+  "source_files": [
+    {
+      "source_id": "phase8_final_model_lock",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_final_model_family_locked_v3_2.json",
+      "sha256": "7051d6631aacdce1a1716cbd9c251b723b2d4704f150f4eaeaa4cea91ff65bf9"
+    },
+    {
+      "source_id": "phase9_artifact_lock",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_deployment_artifact_locked_v3_2.json",
+      "sha256": "ba956edcba8be6e61bbb098966c9b292d07d3891a7286c4a265620fa2c7b5bd6"
+    },
+    {
+      "source_id": "phase10_release_lock",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase10_release_archive_locked_v3_3.json",
+      "sha256": "e7e5e3d6a44c65e96024c376daf7f81589aaea876d80775374dea5b9b8c47f3e"
+    },
+    {
+      "source_id": "phase11_lock",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_locked_v3_3.json",
+      "sha256": "d1bf86d0cb90a50535d1b4a6470c03122eb9158d362c4f476b530305605bcc5a"
+    }
+  ],
+  "outputs": {
+    "csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_07_reproducibility_release_v3_3.csv",
+      "sha256": "615a4b348db880d9b541ceabd9542616af3ecbf0224fd878d5cf56317e7bb173",
+      "size_bytes": 2259
+    },
+    "markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_07_reproducibility_release_v3_3.md",
+      "sha256": "202ffd431de4f0fb348bde08b82beef2ebb0d540368ccb8179dbeec8aa69ca0b",
+      "size_bytes": 2453
+    },
+    "source_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_07_reproducibility_release_source_v3_3.json",
+      "sha256": "214cb9276306674deecafa58eca0562dc254c404b3db5597903546a4b2736aaa",
+      "size_bytes": 2768
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\table_07_reproducibility_release_caption_v3_3.txt",
+      "sha256": "910f642ca03c53715a1ae3fe23cac48f6758a2c8aee9bb78449c5a02905b9255",
+      "size_bytes": 459
+    }
+  },
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_hash_matches": true,
+    "mapping_validated": true,
+    "mapping_hash_matches": true,
+    "table_06_locked": true,
+    "table_07_mapped": true
+  },
+  "data_checks": {
+    "phase8_locked": true,
+    "phase8_primary_balanced": true,
+    "phase8_selected_p50_qat": true,
+    "phase8_weighted_score_false": true,
+    "phase8_pairwise_p_gate_false": true,
+    "phase8_checkpoint_not_selected": true,
+    "phase9_locked": true,
+    "phase9_seed_2026": true,
+    "phase9_static_int8": true,
+    "phase9_class_order_exact": true,
+    "phase9_checkpoint_hash_exact": true,
+    "phase9_source_bundle_outputs_exact": true,
+    "phase9_roundtrip_exact": true,
+    "phase9_no_val_access": true,
+    "phase9_no_test_access": true,
+    "phase10_locked": true,
+    "phase10_payload_15": true,
+    "phase10_archive_16": true,
+    "phase10_deterministic_exact": true,
+    "phase10_raw_absent": true,
+    "phase10_processed_absent": true,
+    "phase10_nonselected_absent": true,
+    "phase11_locked": true,
+    "phase11_no_retraining": true,
+    "phase11_test_not_selection": true,
+    "phase11_final_model_unchanged": true
+  },
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

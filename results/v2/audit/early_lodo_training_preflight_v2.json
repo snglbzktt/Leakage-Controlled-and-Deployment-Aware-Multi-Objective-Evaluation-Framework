@@ -1,0 +1,4313 @@
+{
+  "protocol_version": "early_lodo_training_preflight_v2_1",
+  "status": "failed",
+  "completed_at": "2026-08-05T18:54:14.985054+00:00",
+  "project_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE",
+  "software": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pyarrow": null,
+    "torch": "2.11.0+cpu",
+    "scikit_learn": "1.9.0",
+    "cuda_available": false
+  },
+  "resources": {
+    "total_ram_gb": 15.730705261230469,
+    "available_ram_gb": 4.719917297363281,
+    "total_disk_gb": 199.99999618530273,
+    "free_disk_gb": 10.123359680175781,
+    "estimated_float32_feature_matrix_gb": 1.0635992139577866
+  },
+  "run_matrix": {
+    "row_count": 27,
+    "model_counts": {
+      "tinyml_mlp_b0": 9,
+      "compact_dnn_b0": 9,
+      "hist_gradient_boosting_b0": 9
+    },
+    "device_counts": {
+      "Danmini_Doorbell": 3,
+      "Ecobee_Thermostat": 3,
+      "Ennio_Doorbell": 3,
+      "Philips_B120N10_Baby_Monitor": 3,
+      "Provision_PT_737E_Security_Camera": 3,
+      "Provision_PT_838_Security_Camera": 3,
+      "Samsung_SNH_1011_N_Webcam": 3,
+      "SimpleHome_XCS7_1002_WHT_Security_Camera": 3,
+      "SimpleHome_XCS7_1003_WHT_Security_Camera": 3
+    },
+    "seeds": [
+      2026
+    ],
+    "status_counts": {
+      "pending": 27
+    }
+  },
+  "membership_inventory": [
+    {
+      "filename": "device_mask.npy",
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\device_mask.npy",
+      "exists": true,
+      "expected_shape": [
+        2482676
+      ],
+      "expected_dtype": "uint16",
+      "shape": [
+        2482676
+      ],
+      "dtype": "uint16",
+      "size_bytes": 4965480,
+      "valid": true,
+      "error": null
+    },
+    {
+      "filename": "device_occurrence_counts.npy",
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\device_occurrence_counts.npy",
+      "exists": true,
+      "expected_shape": [
+        2482676,
+        9
+      ],
+      "expected_dtype": "uint32",
+      "shape": [
+        2482676,
+        9
+      ],
+      "dtype": "uint32",
+      "size_bytes": 89376464,
+      "valid": true,
+      "error": null
+    },
+    {
+      "filename": "family3.npy",
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\family3.npy",
+      "exists": true,
+      "expected_shape": [
+        2482676
+      ],
+      "expected_dtype": "int8",
+      "shape": [
+        2482676
+      ],
+      "dtype": "int8",
+      "size_bytes": 2482804,
+      "valid": true,
+      "error": null
+    },
+    {
+      "filename": "split_code.npy",
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\split_code.npy",
+      "exists": true,
+      "expected_shape": [
+        2482676
+      ],
+      "expected_dtype": "uint8",
+      "shape": [
+        2482676
+      ],
+      "dtype": "uint8",
+      "size_bytes": 2482804,
+      "valid": true,
+      "error": null
+    },
+    {
+      "filename": "source_device_count.npy",
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\source_device_count.npy",
+      "exists": true,
+      "expected_shape": [
+        2482676
+      ],
+      "expected_dtype": "uint8",
+      "shape": [
+        2482676
+      ],
+      "dtype": "uint8",
+      "size_bytes": 2482804,
+      "valid": true,
+      "error": null
+    }
+  ],
+  "primary_metadata": {
+    "relative_path": "data\\processed\\nbaiot_primary_seed2026\\metadata.parquet",
+    "row_count": 2482676,
+    "column_count": 9,
+    "columns": [
+      "hash_forward",
+      "hash_reverse",
+      "split",
+      "class_label",
+      "source_device",
+      "source_relative_path",
+      "source_row_number",
+      "original_occurrence_count",
+      "source_device_count"
+    ]
+  },
+  "npy_inventory": [
+    {
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\device_mask.npy",
+      "size_bytes": 4965480,
+      "shape": [
+        2482676
+      ],
+      "dtype": "uint16",
+      "row_count_match": true,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\device_occurrence_counts.npy",
+      "size_bytes": 89376464,
+      "shape": [
+        2482676,
+        9
+      ],
+      "dtype": "uint32",
+      "row_count_match": true,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\family3.npy",
+      "size_bytes": 2482804,
+      "shape": [
+        2482676
+      ],
+      "dtype": "int8",
+      "row_count_match": true,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\source_device_count.npy",
+      "size_bytes": 2482804,
+      "shape": [
+        2482676
+      ],
+      "dtype": "uint8",
+      "row_count_match": true,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_early_lodo_membership_v2\\split_code.npy",
+      "size_bytes": 2482804,
+      "shape": [
+        2482676
+      ],
+      "dtype": "uint8",
+      "row_count_match": true,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_a\\x_test.npy",
+      "size_bytes": 171423268,
+      "shape": [
+        372659,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_a\\x_train.npy",
+      "size_bytes": 799541308,
+      "shape": [
+        1738133,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_a\\x_validation.npy",
+      "size_bytes": 171066768,
+      "shape": [
+        371884,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_b\\x_test.npy",
+      "size_bytes": 171423268,
+      "shape": [
+        372659,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_b\\x_train.npy",
+      "size_bytes": 799541308,
+      "shape": [
+        1738133,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\pipeline_b\\x_validation.npy",
+      "size_bytes": 171066768,
+      "shape": [
+        371884,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\shared\\class_weights.npy",
+      "size_bytes": 140,
+      "shape": [
+        3
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\shared\\y_test.npy",
+      "size_bytes": 372787,
+      "shape": [
+        372659
+      ],
+      "dtype": "int8",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\shared\\y_train.npy",
+      "size_bytes": 1738261,
+      "shape": [
+        1738133
+      ],
+      "dtype": "int8",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\numeric_order_pilot_v2\\shared\\y_validation.npy",
+      "size_bytes": 372012,
+      "shape": [
+        371884
+      ],
+      "dtype": "int8",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\grouped\\X_test.npy",
+      "size_bytes": 487237648,
+      "shape": [
+        1059212,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\grouped\\X_train.npy",
+      "size_bytes": 2274895628,
+      "shape": [
+        4945425,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\grouped\\X_validation.npy",
+      "size_bytes": 486665868,
+      "shape": [
+        1057969,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\grouped\\class_weights.npy",
+      "size_bytes": 140,
+      "shape": [
+        3
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\grouped\\mean.npy",
+      "size_bytes": 588,
+      "shape": [
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\grouped\\std.npy",
+      "size_bytes": 588,
+      "shape": [
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\grouped\\y_test.npy",
+      "size_bytes": 8473824,
+      "shape": [
+        1059212
+      ],
+      "dtype": "int64",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\grouped\\y_train.npy",
+      "size_bytes": 39563528,
+      "shape": [
+        4945425
+      ],
+      "dtype": "int64",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\grouped\\y_validation.npy",
+      "size_bytes": 8463880,
+      "shape": [
+        1057969
+      ],
+      "dtype": "int64",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\naive_row\\X_test.npy",
+      "size_bytes": 486932668,
+      "shape": [
+        1058549,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\naive_row\\X_train.npy",
+      "size_bytes": 2274753948,
+      "shape": [
+        4945117,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\naive_row\\X_validation.npy",
+      "size_bytes": 487112528,
+      "shape": [
+        1058940,
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\naive_row\\class_weights.npy",
+      "size_bytes": 140,
+      "shape": [
+        3
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\naive_row\\mean.npy",
+      "size_bytes": 588,
+      "shape": [
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\naive_row\\std.npy",
+      "size_bytes": 588,
+      "shape": [
+        115
+      ],
+      "dtype": "float32",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\naive_row\\y_test.npy",
+      "size_bytes": 8468520,
+      "shape": [
+        1058549
+      ],
+      "dtype": "int64",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\naive_row\\y_train.npy",
+      "size_bytes": 39561064,
+      "shape": [
+        4945117
+      ],
+      "dtype": "int64",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\vs1_leakage_ablation\\naive_row\\y_validation.npy",
+      "size_bytes": 8471648,
+      "shape": [
+        1058940
+      ],
+      "dtype": "int64",
+      "row_count_match": false,
+      "exact_feature_matrix_candidate": false,
+      "error": null
+    }
+  ],
+  "feature_matrix_candidates": [],
+  "parquet_inventory": [
+    {
+      "relative_path": "data\\processed\\nbaiot_primary_seed2026\\metadata.parquet",
+      "size_bytes": 44852590,
+      "row_count": 2482676,
+      "column_count": 9,
+      "columns": [
+        "hash_forward",
+        "hash_reverse",
+        "split",
+        "class_label",
+        "source_device",
+        "source_relative_path",
+        "source_row_number",
+        "original_occurrence_count",
+        "source_device_count"
+      ],
+      "row_count_match": true,
+      "possible_feature_table": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_float32_canonical_seed2026\\metadata.parquet",
+      "size_bytes": 41013113,
+      "row_count": 2278174,
+      "column_count": 10,
+      "columns": [
+        "hash_forward",
+        "hash_reverse",
+        "split",
+        "class_label",
+        "representative_source_split",
+        "representative_source_row_number",
+        "float64_unique_occurrence_count",
+        "raw_occurrence_count",
+        "old_split_mask",
+        "old_split_count"
+      ],
+      "row_count_match": false,
+      "possible_feature_table": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_float32_canonical_seed2026\\test.parquet",
+      "size_bytes": 71047436,
+      "row_count": 341093,
+      "column_count": 116,
+      "columns": [
+        "MI_dir_L5_weight",
+        "MI_dir_L5_mean",
+        "MI_dir_L5_variance",
+        "MI_dir_L3_weight",
+        "MI_dir_L3_mean",
+        "MI_dir_L3_variance",
+        "MI_dir_L1_weight",
+        "MI_dir_L1_mean",
+        "MI_dir_L1_variance",
+        "MI_dir_L0.1_weight",
+        "MI_dir_L0.1_mean",
+        "MI_dir_L0.1_variance",
+        "MI_dir_L0.01_weight",
+        "MI_dir_L0.01_mean",
+        "MI_dir_L0.01_variance",
+        "H_L5_weight",
+        "H_L5_mean",
+        "H_L5_variance",
+        "H_L3_weight",
+        "H_L3_mean",
+        "H_L3_variance",
+        "H_L1_weight",
+        "H_L1_mean",
+        "H_L1_variance",
+        "H_L0.1_weight",
+        "H_L0.1_mean",
+        "H_L0.1_variance",
+        "H_L0.01_weight",
+        "H_L0.01_mean",
+        "H_L0.01_variance",
+        "HH_L5_weight",
+        "HH_L5_mean",
+        "HH_L5_std",
+        "HH_L5_magnitude",
+        "HH_L5_radius",
+        "HH_L5_covariance",
+        "HH_L5_pcc",
+        "HH_L3_weight",
+        "HH_L3_mean",
+        "HH_L3_std",
+        "HH_L3_magnitude",
+        "HH_L3_radius",
+        "HH_L3_covariance",
+        "HH_L3_pcc",
+        "HH_L1_weight",
+        "HH_L1_mean",
+        "HH_L1_std",
+        "HH_L1_magnitude",
+        "HH_L1_radius",
+        "HH_L1_covariance",
+        "HH_L1_pcc",
+        "HH_L0.1_weight",
+        "HH_L0.1_mean",
+        "HH_L0.1_std",
+        "HH_L0.1_magnitude",
+        "HH_L0.1_radius",
+        "HH_L0.1_covariance",
+        "HH_L0.1_pcc",
+        "HH_L0.01_weight",
+        "HH_L0.01_mean",
+        "HH_L0.01_std",
+        "HH_L0.01_magnitude",
+        "HH_L0.01_radius",
+        "HH_L0.01_covariance",
+        "HH_L0.01_pcc",
+        "HH_jit_L5_weight",
+        "HH_jit_L5_mean",
+        "HH_jit_L5_variance",
+        "HH_jit_L3_weight",
+        "HH_jit_L3_mean",
+        "HH_jit_L3_variance",
+        "HH_jit_L1_weight",
+        "HH_jit_L1_mean",
+        "HH_jit_L1_variance",
+        "HH_jit_L0.1_weight",
+        "HH_jit_L0.1_mean",
+        "HH_jit_L0.1_variance",
+        "HH_jit_L0.01_weight",
+        "HH_jit_L0.01_mean",
+        "HH_jit_L0.01_variance",
+        "HpHp_L5_weight",
+        "HpHp_L5_mean",
+        "HpHp_L5_std",
+        "HpHp_L5_magnitude",
+        "HpHp_L5_radius",
+        "HpHp_L5_covariance",
+        "HpHp_L5_pcc",
+        "HpHp_L3_weight",
+        "HpHp_L3_mean",
+        "HpHp_L3_std",
+        "HpHp_L3_magnitude",
+        "HpHp_L3_radius",
+        "HpHp_L3_covariance",
+        "HpHp_L3_pcc",
+        "HpHp_L1_weight",
+        "HpHp_L1_mean",
+        "HpHp_L1_std",
+        "HpHp_L1_magnitude",
+        "HpHp_L1_radius",
+        "HpHp_L1_covariance",
+        "HpHp_L1_pcc",
+        "HpHp_L0.1_weight",
+        "HpHp_L0.1_mean",
+        "HpHp_L0.1_std",
+        "HpHp_L0.1_magnitude",
+        "HpHp_L0.1_radius",
+        "HpHp_L0.1_covariance",
+        "HpHp_L0.1_pcc",
+        "HpHp_L0.01_weight",
+        "HpHp_L0.01_mean",
+        "HpHp_L0.01_std",
+        "HpHp_L0.01_magnitude",
+        "HpHp_L0.01_radius",
+        "HpHp_L0.01_covariance",
+        "HpHp_L0.01_pcc",
+        "class_label"
+      ],
+      "row_count_match": false,
+      "possible_feature_table": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_float32_canonical_seed2026\\train.parquet",
+      "size_bytes": 315051975,
+      "row_count": 1595664,
+      "column_count": 116,
+      "columns": [
+        "MI_dir_L5_weight",
+        "MI_dir_L5_mean",
+        "MI_dir_L5_variance",
+        "MI_dir_L3_weight",
+        "MI_dir_L3_mean",
+        "MI_dir_L3_variance",
+        "MI_dir_L1_weight",
+        "MI_dir_L1_mean",
+        "MI_dir_L1_variance",
+        "MI_dir_L0.1_weight",
+        "MI_dir_L0.1_mean",
+        "MI_dir_L0.1_variance",
+        "MI_dir_L0.01_weight",
+        "MI_dir_L0.01_mean",
+        "MI_dir_L0.01_variance",
+        "H_L5_weight",
+        "H_L5_mean",
+        "H_L5_variance",
+        "H_L3_weight",
+        "H_L3_mean",
+        "H_L3_variance",
+        "H_L1_weight",
+        "H_L1_mean",
+        "H_L1_variance",
+        "H_L0.1_weight",
+        "H_L0.1_mean",
+        "H_L0.1_variance",
+        "H_L0.01_weight",
+        "H_L0.01_mean",
+        "H_L0.01_variance",
+        "HH_L5_weight",
+        "HH_L5_mean",
+        "HH_L5_std",
+        "HH_L5_magnitude",
+        "HH_L5_radius",
+        "HH_L5_covariance",
+        "HH_L5_pcc",
+        "HH_L3_weight",
+        "HH_L3_mean",
+        "HH_L3_std",
+        "HH_L3_magnitude",
+        "HH_L3_radius",
+        "HH_L3_covariance",
+        "HH_L3_pcc",
+        "HH_L1_weight",
+        "HH_L1_mean",
+        "HH_L1_std",
+        "HH_L1_magnitude",
+        "HH_L1_radius",
+        "HH_L1_covariance",
+        "HH_L1_pcc",
+        "HH_L0.1_weight",
+        "HH_L0.1_mean",
+        "HH_L0.1_std",
+        "HH_L0.1_magnitude",
+        "HH_L0.1_radius",
+        "HH_L0.1_covariance",
+        "HH_L0.1_pcc",
+        "HH_L0.01_weight",
+        "HH_L0.01_mean",
+        "HH_L0.01_std",
+        "HH_L0.01_magnitude",
+        "HH_L0.01_radius",
+        "HH_L0.01_covariance",
+        "HH_L0.01_pcc",
+        "HH_jit_L5_weight",
+        "HH_jit_L5_mean",
+        "HH_jit_L5_variance",
+        "HH_jit_L3_weight",
+        "HH_jit_L3_mean",
+        "HH_jit_L3_variance",
+        "HH_jit_L1_weight",
+        "HH_jit_L1_mean",
+        "HH_jit_L1_variance",
+        "HH_jit_L0.1_weight",
+        "HH_jit_L0.1_mean",
+        "HH_jit_L0.1_variance",
+        "HH_jit_L0.01_weight",
+        "HH_jit_L0.01_mean",
+        "HH_jit_L0.01_variance",
+        "HpHp_L5_weight",
+        "HpHp_L5_mean",
+        "HpHp_L5_std",
+        "HpHp_L5_magnitude",
+        "HpHp_L5_radius",
+        "HpHp_L5_covariance",
+        "HpHp_L5_pcc",
+        "HpHp_L3_weight",
+        "HpHp_L3_mean",
+        "HpHp_L3_std",
+        "HpHp_L3_magnitude",
+        "HpHp_L3_radius",
+        "HpHp_L3_covariance",
+        "HpHp_L3_pcc",
+        "HpHp_L1_weight",
+        "HpHp_L1_mean",
+        "HpHp_L1_std",
+        "HpHp_L1_magnitude",
+        "HpHp_L1_radius",
+        "HpHp_L1_covariance",
+        "HpHp_L1_pcc",
+        "HpHp_L0.1_weight",
+        "HpHp_L0.1_mean",
+        "HpHp_L0.1_std",
+        "HpHp_L0.1_magnitude",
+        "HpHp_L0.1_radius",
+        "HpHp_L0.1_covariance",
+        "HpHp_L0.1_pcc",
+        "HpHp_L0.01_weight",
+        "HpHp_L0.01_mean",
+        "HpHp_L0.01_std",
+        "HpHp_L0.01_magnitude",
+        "HpHp_L0.01_radius",
+        "HpHp_L0.01_covariance",
+        "HpHp_L0.01_pcc",
+        "class_label"
+      ],
+      "row_count_match": false,
+      "possible_feature_table": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_float32_canonical_seed2026\\validation.parquet",
+      "size_bytes": 71024128,
+      "row_count": 341417,
+      "column_count": 116,
+      "columns": [
+        "MI_dir_L5_weight",
+        "MI_dir_L5_mean",
+        "MI_dir_L5_variance",
+        "MI_dir_L3_weight",
+        "MI_dir_L3_mean",
+        "MI_dir_L3_variance",
+        "MI_dir_L1_weight",
+        "MI_dir_L1_mean",
+        "MI_dir_L1_variance",
+        "MI_dir_L0.1_weight",
+        "MI_dir_L0.1_mean",
+        "MI_dir_L0.1_variance",
+        "MI_dir_L0.01_weight",
+        "MI_dir_L0.01_mean",
+        "MI_dir_L0.01_variance",
+        "H_L5_weight",
+        "H_L5_mean",
+        "H_L5_variance",
+        "H_L3_weight",
+        "H_L3_mean",
+        "H_L3_variance",
+        "H_L1_weight",
+        "H_L1_mean",
+        "H_L1_variance",
+        "H_L0.1_weight",
+        "H_L0.1_mean",
+        "H_L0.1_variance",
+        "H_L0.01_weight",
+        "H_L0.01_mean",
+        "H_L0.01_variance",
+        "HH_L5_weight",
+        "HH_L5_mean",
+        "HH_L5_std",
+        "HH_L5_magnitude",
+        "HH_L5_radius",
+        "HH_L5_covariance",
+        "HH_L5_pcc",
+        "HH_L3_weight",
+        "HH_L3_mean",
+        "HH_L3_std",
+        "HH_L3_magnitude",
+        "HH_L3_radius",
+        "HH_L3_covariance",
+        "HH_L3_pcc",
+        "HH_L1_weight",
+        "HH_L1_mean",
+        "HH_L1_std",
+        "HH_L1_magnitude",
+        "HH_L1_radius",
+        "HH_L1_covariance",
+        "HH_L1_pcc",
+        "HH_L0.1_weight",
+        "HH_L0.1_mean",
+        "HH_L0.1_std",
+        "HH_L0.1_magnitude",
+        "HH_L0.1_radius",
+        "HH_L0.1_covariance",
+        "HH_L0.1_pcc",
+        "HH_L0.01_weight",
+        "HH_L0.01_mean",
+        "HH_L0.01_std",
+        "HH_L0.01_magnitude",
+        "HH_L0.01_radius",
+        "HH_L0.01_covariance",
+        "HH_L0.01_pcc",
+        "HH_jit_L5_weight",
+        "HH_jit_L5_mean",
+        "HH_jit_L5_variance",
+        "HH_jit_L3_weight",
+        "HH_jit_L3_mean",
+        "HH_jit_L3_variance",
+        "HH_jit_L1_weight",
+        "HH_jit_L1_mean",
+        "HH_jit_L1_variance",
+        "HH_jit_L0.1_weight",
+        "HH_jit_L0.1_mean",
+        "HH_jit_L0.1_variance",
+        "HH_jit_L0.01_weight",
+        "HH_jit_L0.01_mean",
+        "HH_jit_L0.01_variance",
+        "HpHp_L5_weight",
+        "HpHp_L5_mean",
+        "HpHp_L5_std",
+        "HpHp_L5_magnitude",
+        "HpHp_L5_radius",
+        "HpHp_L5_covariance",
+        "HpHp_L5_pcc",
+        "HpHp_L3_weight",
+        "HpHp_L3_mean",
+        "HpHp_L3_std",
+        "HpHp_L3_magnitude",
+        "HpHp_L3_radius",
+        "HpHp_L3_covariance",
+        "HpHp_L3_pcc",
+        "HpHp_L1_weight",
+        "HpHp_L1_mean",
+        "HpHp_L1_std",
+        "HpHp_L1_magnitude",
+        "HpHp_L1_radius",
+        "HpHp_L1_covariance",
+        "HpHp_L1_pcc",
+        "HpHp_L0.1_weight",
+        "HpHp_L0.1_mean",
+        "HpHp_L0.1_std",
+        "HpHp_L0.1_magnitude",
+        "HpHp_L0.1_radius",
+        "HpHp_L0.1_covariance",
+        "HpHp_L0.1_pcc",
+        "HpHp_L0.01_weight",
+        "HpHp_L0.01_mean",
+        "HpHp_L0.01_std",
+        "HpHp_L0.01_magnitude",
+        "HpHp_L0.01_radius",
+        "HpHp_L0.01_covariance",
+        "HpHp_L0.01_pcc",
+        "class_label"
+      ],
+      "row_count_match": false,
+      "possible_feature_table": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_primary_seed2026\\test.parquet",
+      "size_bytes": 150372711,
+      "row_count": 372659,
+      "column_count": 116,
+      "columns": [
+        "MI_dir_L5_weight",
+        "MI_dir_L5_mean",
+        "MI_dir_L5_variance",
+        "MI_dir_L3_weight",
+        "MI_dir_L3_mean",
+        "MI_dir_L3_variance",
+        "MI_dir_L1_weight",
+        "MI_dir_L1_mean",
+        "MI_dir_L1_variance",
+        "MI_dir_L0.1_weight",
+        "MI_dir_L0.1_mean",
+        "MI_dir_L0.1_variance",
+        "MI_dir_L0.01_weight",
+        "MI_dir_L0.01_mean",
+        "MI_dir_L0.01_variance",
+        "H_L5_weight",
+        "H_L5_mean",
+        "H_L5_variance",
+        "H_L3_weight",
+        "H_L3_mean",
+        "H_L3_variance",
+        "H_L1_weight",
+        "H_L1_mean",
+        "H_L1_variance",
+        "H_L0.1_weight",
+        "H_L0.1_mean",
+        "H_L0.1_variance",
+        "H_L0.01_weight",
+        "H_L0.01_mean",
+        "H_L0.01_variance",
+        "HH_L5_weight",
+        "HH_L5_mean",
+        "HH_L5_std",
+        "HH_L5_magnitude",
+        "HH_L5_radius",
+        "HH_L5_covariance",
+        "HH_L5_pcc",
+        "HH_L3_weight",
+        "HH_L3_mean",
+        "HH_L3_std",
+        "HH_L3_magnitude",
+        "HH_L3_radius",
+        "HH_L3_covariance",
+        "HH_L3_pcc",
+        "HH_L1_weight",
+        "HH_L1_mean",
+        "HH_L1_std",
+        "HH_L1_magnitude",
+        "HH_L1_radius",
+        "HH_L1_covariance",
+        "HH_L1_pcc",
+        "HH_L0.1_weight",
+        "HH_L0.1_mean",
+        "HH_L0.1_std",
+        "HH_L0.1_magnitude",
+        "HH_L0.1_radius",
+        "HH_L0.1_covariance",
+        "HH_L0.1_pcc",
+        "HH_L0.01_weight",
+        "HH_L0.01_mean",
+        "HH_L0.01_std",
+        "HH_L0.01_magnitude",
+        "HH_L0.01_radius",
+        "HH_L0.01_covariance",
+        "HH_L0.01_pcc",
+        "HH_jit_L5_weight",
+        "HH_jit_L5_mean",
+        "HH_jit_L5_variance",
+        "HH_jit_L3_weight",
+        "HH_jit_L3_mean",
+        "HH_jit_L3_variance",
+        "HH_jit_L1_weight",
+        "HH_jit_L1_mean",
+        "HH_jit_L1_variance",
+        "HH_jit_L0.1_weight",
+        "HH_jit_L0.1_mean",
+        "HH_jit_L0.1_variance",
+        "HH_jit_L0.01_weight",
+        "HH_jit_L0.01_mean",
+        "HH_jit_L0.01_variance",
+        "HpHp_L5_weight",
+        "HpHp_L5_mean",
+        "HpHp_L5_std",
+        "HpHp_L5_magnitude",
+        "HpHp_L5_radius",
+        "HpHp_L5_covariance",
+        "HpHp_L5_pcc",
+        "HpHp_L3_weight",
+        "HpHp_L3_mean",
+        "HpHp_L3_std",
+        "HpHp_L3_magnitude",
+        "HpHp_L3_radius",
+        "HpHp_L3_covariance",
+        "HpHp_L3_pcc",
+        "HpHp_L1_weight",
+        "HpHp_L1_mean",
+        "HpHp_L1_std",
+        "HpHp_L1_magnitude",
+        "HpHp_L1_radius",
+        "HpHp_L1_covariance",
+        "HpHp_L1_pcc",
+        "HpHp_L0.1_weight",
+        "HpHp_L0.1_mean",
+        "HpHp_L0.1_std",
+        "HpHp_L0.1_magnitude",
+        "HpHp_L0.1_radius",
+        "HpHp_L0.1_covariance",
+        "HpHp_L0.1_pcc",
+        "HpHp_L0.01_weight",
+        "HpHp_L0.01_mean",
+        "HpHp_L0.01_std",
+        "HpHp_L0.01_magnitude",
+        "HpHp_L0.01_radius",
+        "HpHp_L0.01_covariance",
+        "HpHp_L0.01_pcc",
+        "class_label"
+      ],
+      "row_count_match": false,
+      "possible_feature_table": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_primary_seed2026\\train.parquet",
+      "size_bytes": 675999665,
+      "row_count": 1738133,
+      "column_count": 116,
+      "columns": [
+        "MI_dir_L5_weight",
+        "MI_dir_L5_mean",
+        "MI_dir_L5_variance",
+        "MI_dir_L3_weight",
+        "MI_dir_L3_mean",
+        "MI_dir_L3_variance",
+        "MI_dir_L1_weight",
+        "MI_dir_L1_mean",
+        "MI_dir_L1_variance",
+        "MI_dir_L0.1_weight",
+        "MI_dir_L0.1_mean",
+        "MI_dir_L0.1_variance",
+        "MI_dir_L0.01_weight",
+        "MI_dir_L0.01_mean",
+        "MI_dir_L0.01_variance",
+        "H_L5_weight",
+        "H_L5_mean",
+        "H_L5_variance",
+        "H_L3_weight",
+        "H_L3_mean",
+        "H_L3_variance",
+        "H_L1_weight",
+        "H_L1_mean",
+        "H_L1_variance",
+        "H_L0.1_weight",
+        "H_L0.1_mean",
+        "H_L0.1_variance",
+        "H_L0.01_weight",
+        "H_L0.01_mean",
+        "H_L0.01_variance",
+        "HH_L5_weight",
+        "HH_L5_mean",
+        "HH_L5_std",
+        "HH_L5_magnitude",
+        "HH_L5_radius",
+        "HH_L5_covariance",
+        "HH_L5_pcc",
+        "HH_L3_weight",
+        "HH_L3_mean",
+        "HH_L3_std",
+        "HH_L3_magnitude",
+        "HH_L3_radius",
+        "HH_L3_covariance",
+        "HH_L3_pcc",
+        "HH_L1_weight",
+        "HH_L1_mean",
+        "HH_L1_std",
+        "HH_L1_magnitude",
+        "HH_L1_radius",
+        "HH_L1_covariance",
+        "HH_L1_pcc",
+        "HH_L0.1_weight",
+        "HH_L0.1_mean",
+        "HH_L0.1_std",
+        "HH_L0.1_magnitude",
+        "HH_L0.1_radius",
+        "HH_L0.1_covariance",
+        "HH_L0.1_pcc",
+        "HH_L0.01_weight",
+        "HH_L0.01_mean",
+        "HH_L0.01_std",
+        "HH_L0.01_magnitude",
+        "HH_L0.01_radius",
+        "HH_L0.01_covariance",
+        "HH_L0.01_pcc",
+        "HH_jit_L5_weight",
+        "HH_jit_L5_mean",
+        "HH_jit_L5_variance",
+        "HH_jit_L3_weight",
+        "HH_jit_L3_mean",
+        "HH_jit_L3_variance",
+        "HH_jit_L1_weight",
+        "HH_jit_L1_mean",
+        "HH_jit_L1_variance",
+        "HH_jit_L0.1_weight",
+        "HH_jit_L0.1_mean",
+        "HH_jit_L0.1_variance",
+        "HH_jit_L0.01_weight",
+        "HH_jit_L0.01_mean",
+        "HH_jit_L0.01_variance",
+        "HpHp_L5_weight",
+        "HpHp_L5_mean",
+        "HpHp_L5_std",
+        "HpHp_L5_magnitude",
+        "HpHp_L5_radius",
+        "HpHp_L5_covariance",
+        "HpHp_L5_pcc",
+        "HpHp_L3_weight",
+        "HpHp_L3_mean",
+        "HpHp_L3_std",
+        "HpHp_L3_magnitude",
+        "HpHp_L3_radius",
+        "HpHp_L3_covariance",
+        "HpHp_L3_pcc",
+        "HpHp_L1_weight",
+        "HpHp_L1_mean",
+        "HpHp_L1_std",
+        "HpHp_L1_magnitude",
+        "HpHp_L1_radius",
+        "HpHp_L1_covariance",
+        "HpHp_L1_pcc",
+        "HpHp_L0.1_weight",
+        "HpHp_L0.1_mean",
+        "HpHp_L0.1_std",
+        "HpHp_L0.1_magnitude",
+        "HpHp_L0.1_radius",
+        "HpHp_L0.1_covariance",
+        "HpHp_L0.1_pcc",
+        "HpHp_L0.01_weight",
+        "HpHp_L0.01_mean",
+        "HpHp_L0.01_std",
+        "HpHp_L0.01_magnitude",
+        "HpHp_L0.01_radius",
+        "HpHp_L0.01_covariance",
+        "HpHp_L0.01_pcc",
+        "class_label"
+      ],
+      "row_count_match": false,
+      "possible_feature_table": false,
+      "error": null
+    },
+    {
+      "relative_path": "data\\processed\\nbaiot_primary_seed2026\\validation.parquet",
+      "size_bytes": 150032157,
+      "row_count": 371884,
+      "column_count": 116,
+      "columns": [
+        "MI_dir_L5_weight",
+        "MI_dir_L5_mean",
+        "MI_dir_L5_variance",
+        "MI_dir_L3_weight",
+        "MI_dir_L3_mean",
+        "MI_dir_L3_variance",
+        "MI_dir_L1_weight",
+        "MI_dir_L1_mean",
+        "MI_dir_L1_variance",
+        "MI_dir_L0.1_weight",
+        "MI_dir_L0.1_mean",
+        "MI_dir_L0.1_variance",
+        "MI_dir_L0.01_weight",
+        "MI_dir_L0.01_mean",
+        "MI_dir_L0.01_variance",
+        "H_L5_weight",
+        "H_L5_mean",
+        "H_L5_variance",
+        "H_L3_weight",
+        "H_L3_mean",
+        "H_L3_variance",
+        "H_L1_weight",
+        "H_L1_mean",
+        "H_L1_variance",
+        "H_L0.1_weight",
+        "H_L0.1_mean",
+        "H_L0.1_variance",
+        "H_L0.01_weight",
+        "H_L0.01_mean",
+        "H_L0.01_variance",
+        "HH_L5_weight",
+        "HH_L5_mean",
+        "HH_L5_std",
+        "HH_L5_magnitude",
+        "HH_L5_radius",
+        "HH_L5_covariance",
+        "HH_L5_pcc",
+        "HH_L3_weight",
+        "HH_L3_mean",
+        "HH_L3_std",
+        "HH_L3_magnitude",
+        "HH_L3_radius",
+        "HH_L3_covariance",
+        "HH_L3_pcc",
+        "HH_L1_weight",
+        "HH_L1_mean",
+        "HH_L1_std",
+        "HH_L1_magnitude",
+        "HH_L1_radius",
+        "HH_L1_covariance",
+        "HH_L1_pcc",
+        "HH_L0.1_weight",
+        "HH_L0.1_mean",
+        "HH_L0.1_std",
+        "HH_L0.1_magnitude",
+        "HH_L0.1_radius",
+        "HH_L0.1_covariance",
+        "HH_L0.1_pcc",
+        "HH_L0.01_weight",
+        "HH_L0.01_mean",
+        "HH_L0.01_std",
+        "HH_L0.01_magnitude",
+        "HH_L0.01_radius",
+        "HH_L0.01_covariance",
+        "HH_L0.01_pcc",
+        "HH_jit_L5_weight",
+        "HH_jit_L5_mean",
+        "HH_jit_L5_variance",
+        "HH_jit_L3_weight",
+        "HH_jit_L3_mean",
+        "HH_jit_L3_variance",
+        "HH_jit_L1_weight",
+        "HH_jit_L1_mean",
+        "HH_jit_L1_variance",
+        "HH_jit_L0.1_weight",
+        "HH_jit_L0.1_mean",
+        "HH_jit_L0.1_variance",
+        "HH_jit_L0.01_weight",
+        "HH_jit_L0.01_mean",
+        "HH_jit_L0.01_variance",
+        "HpHp_L5_weight",
+        "HpHp_L5_mean",
+        "HpHp_L5_std",
+        "HpHp_L5_magnitude",
+        "HpHp_L5_radius",
+        "HpHp_L5_covariance",
+        "HpHp_L5_pcc",
+        "HpHp_L3_weight",
+        "HpHp_L3_mean",
+        "HpHp_L3_std",
+        "HpHp_L3_magnitude",
+        "HpHp_L3_radius",
+        "HpHp_L3_covariance",
+        "HpHp_L3_pcc",
+        "HpHp_L1_weight",
+        "HpHp_L1_mean",
+        "HpHp_L1_std",
+        "HpHp_L1_magnitude",
+        "HpHp_L1_radius",
+        "HpHp_L1_covariance",
+        "HpHp_L1_pcc",
+        "HpHp_L0.1_weight",
+        "HpHp_L0.1_mean",
+        "HpHp_L0.1_std",
+        "HpHp_L0.1_magnitude",
+        "HpHp_L0.1_radius",
+        "HpHp_L0.1_covariance",
+        "HpHp_L0.1_pcc",
+        "HpHp_L0.01_weight",
+        "HpHp_L0.01_mean",
+        "HpHp_L0.01_std",
+        "HpHp_L0.01_magnitude",
+        "HpHp_L0.01_radius",
+        "HpHp_L0.01_covariance",
+        "HpHp_L0.01_pcc",
+        "class_label"
+      ],
+      "row_count_match": false,
+      "possible_feature_table": false,
+      "error": null
+    }
+  ],
+  "parquet_feature_candidates": [],
+  "code_matches": [
+    {
+      "relative_path": "scripts\\38_run_b0_matched_leakage_ablation.py",
+      "match_count": 46,
+      "matches": [
+        {
+          "line_number": 4,
+          "text": "only in the split assignment unit.  Both arms use the B0 ``tinyml_mlp`` model,",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 35,
+          "text": "from sklearn.preprocessing import StandardScaler",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 514,
+          "text": "\"\"\"Prove zero overlap after StandardScaler and final float32 conversion.\"\"\"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 523,
+          "text": "mean = np.load(arm_directory / \"mean.npy\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 524,
+          "text": "scale = np.load(arm_directory / \"std.npy\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 543,
+          "text": "x = np.load(arm_directory / f\"X_{split}.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 594,
+          "text": "\"Grouped kolda StandardScaler ve float32 dönüşümü sonrasında splitler arası \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 598,
+          "text": "\"feature_space\": \"StandardScaler(float64 parameters) then float32 model input\",",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 666,
+          "text": "x = np.load(arm_directory / f\"X_{split}.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 667,
+          "text": "y = np.load(arm_directory / f\"y_{split}.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 678,
+          "text": "mean = np.load(arm_directory / \"mean.npy\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 679,
+          "text": "scale = np.load(arm_directory / \"std.npy\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 680,
+          "text": "weights = np.load(arm_directory / \"class_weights.npy\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 752,
+          "text": "x_array = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 758,
+          "text": "y_array = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 814,
+          "text": "x_train = np.load(arm_directory / \"X_train.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load",
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 815,
+          "text": "y_train = np.load(arm_directory / \"y_train.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 816,
+          "text": "scaler = StandardScaler(with_mean=True, with_std=True)",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 817,
+          "text": "for start in range(0, len(x_train), chunk_size):",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 818,
+          "text": "scaler.partial_fit(np.asarray(x_train[start : start + chunk_size], dtype=np.float32))",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 824,
+          "text": "raise RuntimeError(f\"{arm}: StandardScaler parametre boyutu geçersiz.\")",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 826,
+          "text": "raise RuntimeError(f\"{arm}: StandardScaler sonlu olmayan parametre üretti.\")",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 828,
+          "text": "raise RuntimeError(f\"{arm}: StandardScaler pozitif olmayan ölçek üretti.\")",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 838,
+          "text": "for start in range(0, len(x_train), chunk_size):",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 839,
+          "text": "raw = np.asarray(x_train[start : start + chunk_size], dtype=np.float64)",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 844,
+          "text": "scaled_mean = scaled_sum / len(x_train)",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 846,
+          "text": "scaled_square / len(x_train) - np.square(scaled_mean), 0.0",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 858,
+          "text": "f\"{arm}: StandardScaler tam tarama denetimi başarısız; \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 863,
+          "text": "x_split = np.load(arm_directory / f\"X_{split}.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 888,
+          "text": "\"[grouped_float32] StandardScaler sonrası gerçek float32 model-girdisi \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 895,
+          "text": "\"feature_space\": \"StandardScaler(float64 parameters) then float32 model input\",",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 911,
+          "text": "\"scaler_method\": \"sklearn.preprocessing.StandardScaler.partial_fit\",",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 939,
+          "text": "self.x = np.load(directory / f\"X_{split}.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 940,
+          "text": "self.y = np.load(directory / f\"y_{split}.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 941,
+          "text": "self.mean = np.load(directory / \"mean.npy\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 942,
+          "text": "self.std = np.load(directory / \"std.npy\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 1038,
+          "text": "model = protocol[\"model_specific_configuration\"][\"tinyml_mlp\"]",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 1048,
+          "text": "\"model_name\": \"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 1099,
+          "text": "\"model_name\": \"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 1147,
+          "text": "model_name=\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\53_run_numeric_order_training_pilot_v2.py",
+      "match_count": 35,
+      "matches": [
+        {
+          "line_number": 120,
+          "text": "\"pipeline_a\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 125,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 126,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 270,
+          "text": "def open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 280,
+          "text": "array = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 330,
+          "text": "] = open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 342,
+          "text": "] = open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 353,
+          "text": "] = open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 654,
+          "text": "def build_model_and_optimizer(",
+          "terms": [
+            "build_model"
+          ]
+        },
+        {
+          "line_number": 717,
+          "text": "\"pipeline_a\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 749,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 750,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 767,
+          "text": "build_model_and_optimizer(",
+          "terms": [
+            "build_model"
+          ]
+        },
+        {
+          "line_number": 780,
+          "text": "\"x_train\"",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 914,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 915,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 1167,
+          "text": "build_model_and_optimizer(",
+          "terms": [
+            "build_model"
+          ]
+        },
+        {
+          "line_number": 1267,
+          "text": "\"x_train\"",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 1836,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 1837,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 1845,
+          "text": "\"pipeline_a\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1913,
+          "text": "\"pipeline_a_validation_macro_f1\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1926,
+          "text": "\"pipeline_a_test_macro_f1\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1947,
+          "text": "\"pipeline_a\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1961,
+          "text": "\"pipeline_a_validation_macro_f1\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1964,
+          "text": "\"pipeline_a_test_macro_f1\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1983,
+          "text": "pipeline_a_wins = sum(",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 2012,
+          "text": "and pipeline_a_wins >= 3",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 2015,
+          "text": "\"select_pipeline_a\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 2019,
+          "text": "\"pipeline_a\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 2025,
+          "text": "\"retain_pipeline_a\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 2029,
+          "text": "\"pipeline_a\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 2109,
+          "text": "\"pipeline_a_win_count\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 2110,
+          "text": "pipeline_a_wins,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 2161,
+          "text": "f\"{pipeline_a_wins}/4\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\51_lock_numeric_order_training_pilot_protocol_v2.py",
+      "match_count": 27,
+      "matches": [
+        {
+          "line_number": 21,
+          "text": "MODEL_REGISTRY = (",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 25,
+          "text": "/ \"nbaiot_model_registry_v1.json\"",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 66,
+          "text": "\"tinyml_mlp\": {",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 71,
+          "text": "\"compact_dnn\": {",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 205,
+          "text": "MODEL_REGISTRY,",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 231,
+          "text": "model_registry = json.loads(",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 232,
+          "text": "MODEL_REGISTRY.read_text(",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 297,
+          "text": "model_registry,",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 366,
+          "text": "\"tinyml_mlp_registered\":",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 367,
+          "text": "\"tinyml_mlp\"",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 370,
+          "text": "\"compact_dnn_registered\":",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 371,
+          "text": "\"compact_dnn\"",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 378,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 387,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 414,
+          "text": "\"pipeline_a\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 418,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 419,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 528,
+          "text": "\"pipeline_a\": {",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 532,
+          "text": "\"float64 for train-only StandardScaler -> \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 549,
+          "text": "\"source float64 -> train-only StandardScaler \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 667,
+          "text": "\"pipeline_b_minus_pipeline_a\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 679,
+          "text": "\"pipeline_a_selection_rule\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 738,
+          "text": "\"model_registry\":",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 740,
+          "text": "MODEL_REGISTRY.relative_to(",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 842,
+          "text": "MODEL_REGISTRY,",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 897,
+          "text": "print(\"Modeller       : tinyml_mlp, compact_dnn\")",
+          "terms": [
+            "tinyml_mlp",
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 899,
+          "text": "print(\"Sayısal hatlar : pipeline_a, pipeline_b\")",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\47_audit_numeric_pipeline_order_v2.py",
+      "match_count": 25,
+      "matches": [
+        {
+          "line_number": 15,
+          "text": "from sklearn.preprocessing import StandardScaler",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 194,
+          "text": "def transform_pipeline_a(",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 205,
+          "text": "→ StandardScaler",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 232,
+          "text": "→ StandardScaler",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 339,
+          "text": "scaler_a = StandardScaler(",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 344,
+          "text": "scaler_b = StandardScaler(",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 359,
+          "text": "pipeline_a_input = values.astype(",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 366,
+          "text": "pipeline_a_input",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 455,
+          "text": "\"pipeline_a_mean\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 469,
+          "text": "\"pipeline_a_scale\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 492,
+          "text": "\"pipeline_a_mean\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 495,
+          "text": "\"pipeline_a_scale\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 564,
+          "text": "transform_pipeline_a(",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 755,
+          "text": "\"pipeline_a_unique_input_count\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 784,
+          "text": "\"pipeline_a_duplicate_row_count\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 835,
+          "text": "\"pipeline_a_unique_input_count\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 840,
+          "text": "\"pipeline_a_duplicate_row_count\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 878,
+          "text": "\"pipeline_a_overlap_count\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 896,
+          "text": "\"pipeline_a_overlap_count\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 941,
+          "text": "\"pipeline_a_overlap_count\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1050,
+          "text": "\"pipeline_a\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1053,
+          "text": "\"train-only StandardScaler with \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 1060,
+          "text": "\"StandardScaler in float64 -> \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 1242,
+          "text": "f\"{row['pipeline_a_unique_input_count']:,} | \"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1258,
+          "text": "f\"A={row['pipeline_a_overlap_count']:,} | \"",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\52_build_numeric_order_pilot_cache_v2.py",
+      "match_count": 19,
+      "matches": [
+        {
+          "line_number": 17,
+          "text": "from sklearn.preprocessing import StandardScaler",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 59,
+          "text": "PIPELINE_A_DIRECTORY = (",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 61,
+          "text": "/ \"pipeline_a\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 405,
+          "text": "scaler_a = StandardScaler(",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 410,
+          "text": "scaler_b = StandardScaler(",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 435,
+          "text": "pipeline_a_source = (",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 445,
+          "text": "pipeline_a_source",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 580,
+          "text": "array = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 615,
+          "text": "PIPELINE_A_DIRECTORY",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 716,
+          "text": "memmap_a = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 726,
+          "text": "memmap_b = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 736,
+          "text": "memmap_y = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 978,
+          "text": "\"pipeline_a\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1065,
+          "text": "PIPELINE_A_DIRECTORY,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1144,
+          "text": "PIPELINE_A_DIRECTORY",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1446,
+          "text": "f\"{split_name}_pipeline_a\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1448,
+          "text": "PIPELINE_A_DIRECTORY",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1617,
+          "text": "PIPELINE_A_DIRECTORY",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 1635,
+          "text": "PIPELINE_A_DIRECTORY",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\54_lock_numeric_order_training_pilot_v2.py",
+      "match_count": 18,
+      "matches": [
+        {
+          "line_number": 96,
+          "text": "\"practically_equivalent_retain_pipeline_a\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 98,
+          "text": "EXPECTED_SELECTED_PIPELINE = \"pipeline_a\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 264,
+          "text": "computed_pipeline_a_wins = sum(",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 374,
+          "text": "\"pipeline_a_wins_match\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 375,
+          "text": "computed_pipeline_a_wins",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 378,
+          "text": "\"pipeline_a_win_count\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 414,
+          "text": "\"selected_pipeline_a\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 456,
+          "text": "\"pipeline_a_validation_macro_f1\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 459,
+          "text": "\"pipeline_a_validation_macro_f1\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 477,
+          "text": "\"pipeline_a_test_macro_f1\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 480,
+          "text": "\"pipeline_a_test_macro_f1\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 531,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 532,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 546,
+          "text": "\"pipeline_a_win_count\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 547,
+          "text": "computed_pipeline_a_wins,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 616,
+          "text": "f\"A={pair['pipeline_a_validation_macro_f1']:.12f}, \"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 627,
+          "text": "- Pipeline A wins: `{computed_pipeline_a_wins}/4`",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 727,
+          "text": "f\"{computed_pipeline_a_wins}/4\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\36_run_leakage_ablation.py",
+      "match_count": 17,
+      "matches": [
+        {
+          "line_number": 6,
+          "text": "and class weights.  The B0 ``tinyml_mlp`` is then trained with the five locked",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 181,
+          "text": "x = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 185,
+          "text": "y = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 221,
+          "text": "x_train = np.load(arm_dir / \"X_train.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load",
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 222,
+          "text": "y_train = np.load(arm_dir / \"y_train.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 225,
+          "text": "for start in range(0, len(x_train), chunk_size):",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 226,
+          "text": "part = np.asarray(x_train[start:start+chunk_size], dtype=np.float64)",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 228,
+          "text": "mean = total / len(x_train)",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 229,
+          "text": "var = np.maximum(square / len(x_train) - np.square(mean), 0.0)",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 248,
+          "text": "self.x = np.load(directory / f\"X_{split}.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 249,
+          "text": "self.y = np.load(directory / f\"y_{split}.npy\", mmap_mode=\"r\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 250,
+          "text": "self.mean = np.load(directory / \"mean.npy\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 251,
+          "text": "self.std = np.load(directory / \"std.npy\")",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 294,
+          "text": "model = p[\"model_specific_configuration\"][\"tinyml_mlp\"]",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 316,
+          "text": "model = create_model(\"tinyml_mlp\", input_features=115, num_classes=3)",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 317,
+          "text": "weights = torch.from_numpy(np.load(arm_dir / \"class_weights.npy\"))",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 380,
+          "text": "\"model\": \"tinyml_mlp\", \"training_seeds\": args.seeds, \"arms\": args.arms,",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\65_preflight_early_lodo_training_v2.py",
+      "match_count": 17,
+      "matches": [
+        {
+          "line_number": 69,
+          "text": "/ \"metadata.parquet\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        },
+        {
+          "line_number": 144,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 145,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 146,
+          "text": "\"build_model\",",
+          "terms": [
+            "build_model"
+          ]
+        },
+        {
+          "line_number": 147,
+          "text": "\"model_registry\",",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 148,
+          "text": "\"StandardScaler\",",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 149,
+          "text": "\"np.load\",",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 150,
+          "text": "\"open_memmap\",",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 151,
+          "text": "\"features.npy\",",
+          "terms": [
+            "features.npy"
+          ]
+        },
+        {
+          "line_number": 152,
+          "text": "\"X_train\",",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 153,
+          "text": "\"metadata.parquet\",",
+          "terms": [
+            "metadata.parquet"
+          ]
+        },
+        {
+          "line_number": 154,
+          "text": "\"pipeline_a\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 294,
+          "text": "array = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 410,
+          "text": "array = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 696,
+          "text": "\"tinyml_mlp\"",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 701,
+          "text": "\"compact_dnn\"",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 706,
+          "text": "\"standardscaler\"",
+          "terms": [
+            "StandardScaler"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "src\\compression\\structured_pruning.py",
+      "match_count": 16,
+      "matches": [
+        {
+          "line_number": 5,
+          "text": "- tinyml_mlp",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 6,
+          "text": "- compact_dnn",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 32,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 33,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 782,
+          "text": "def _prune_tinyml_mlp(",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 851,
+          "text": "model_name=\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 879,
+          "text": "model_name=\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 914,
+          "text": "def _prune_compact_dnn(",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 998,
+          "text": "model_name=\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 1036,
+          "text": "model_name=\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 1251,
+          "text": "if model_name == \"tinyml_mlp\":",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 1252,
+          "text": "return _prune_tinyml_mlp(",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 1257,
+          "text": "if model_name == \"compact_dnn\":",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 1258,
+          "text": "return _prune_compact_dnn(",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 1303,
+          "text": "if model_name == \"tinyml_mlp\":",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 1316,
+          "text": "if model_name == \"compact_dnn\":",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\63_build_early_lodo_membership_index_v2.py",
+      "match_count": 13,
+      "matches": [
+        {
+          "line_number": 24,
+          "text": "/ \"metadata.parquet\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        },
+        {
+          "line_number": 246,
+          "text": "array = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 554,
+          "text": "device_mask = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 566,
+          "text": "np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 579,
+          "text": "family3 = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 590,
+          "text": "split_code = np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 602,
+          "text": "np.lib.format.open_memmap(",
+          "terms": [
+            "open_memmap"
+          ]
+        },
+        {
+          "line_number": 883,
+          "text": "device_mask = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 889,
+          "text": "device_occurrence = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 895,
+          "text": "family3 = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 901,
+          "text": "split_code = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 907,
+          "text": "source_device_count = np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 1522,
+          "text": "\"metadata.parquet.\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\14_fit_training_standardizer.py",
+      "match_count": 11,
+      "matches": [
+        {
+          "line_number": 2,
+          "text": "N-BaIoT eğitim verisinden StandardScaler parametrelerini üretir.",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 30,
+          "text": "from sklearn.preprocessing import StandardScaler",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 82,
+          "text": "\"N-BaIoT train splitinden StandardScaler \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 350,
+          "text": "StandardScaler,",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 355,
+          "text": "\"\"\"StandardScaler parametrelerini yalnızca train verisinden öğrenir.\"\"\"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 383,
+          "text": "scaler = StandardScaler(",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 393,
+          "text": "desc=\"StandardScaler train verisine fit ediliyor\",",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 461,
+          "text": "\"StandardScaler örnek sayısı uyuşmuyor: \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 472,
+          "text": "\"StandardScaler parametreleri oluşturulamadı.\"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 831,
+          "text": "[\"StandardScaler population variance ddof=0\"],",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 1153,
+          "text": "\"method\": \"StandardScaler\",",
+          "terms": [
+            "StandardScaler"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\18_validate_model_registry.py",
+      "match_count": 10,
+      "matches": [
+        {
+          "line_number": 15,
+          "text": "models/architecture/nbaiot_model_registry_v1.json",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 16,
+          "text": "results/reports/nbaiot_model_registry_validation.csv",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 17,
+          "text": "results/reports/nbaiot_model_registry_validation_summary.json",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 48,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 840,
+          "text": "/ \"nbaiot_model_registry_v1.json\"",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 845,
+          "text": "/ \"nbaiot_model_registry_validation.csv\"",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 850,
+          "text": "/ \"nbaiot_model_registry_validation_summary.json\"",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 871,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 919,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 920,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\55_preflight_early_lodo_v2.py",
+      "match_count": 10,
+      "matches": [
+        {
+          "line_number": 56,
+          "text": "MODEL_REGISTRY = (",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 60,
+          "text": "/ \"nbaiot_model_registry_v1.json\"",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 92,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 93,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 366,
+          "text": "MODEL_REGISTRY,",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 388,
+          "text": "model_registry = load_json(",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 389,
+          "text": "MODEL_REGISTRY",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 430,
+          "text": "model_registry,",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 921,
+          "text": "\"pipeline_a_selected\":",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 925,
+          "text": "== \"pipeline_a\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "src\\models\\nbaiot_models.py",
+      "match_count": 10,
+      "matches": [
+        {
+          "line_number": 5,
+          "text": "- tinyml_mlp",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 6,
+          "text": "- compact_dnn",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 99,
+          "text": "registry_name = \"tinyml_mlp\"",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 204,
+          "text": "registry_name = \"compact_dnn\"",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 480,
+          "text": "\"tinyml_mlp\": ModelSpec(",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 481,
+          "text": "registry_name=\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 497,
+          "text": "\"compact_dnn\": ModelSpec(",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 498,
+          "text": "registry_name=\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 549,
+          "text": "\"tinyml_mlp\": TinyMLMLP,",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 550,
+          "text": "\"compact_dnn\": CompactDNN,",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\22_lock_fp32_baseline_protocol.py",
+      "match_count": 9,
+      "matches": [
+        {
+          "line_number": 47,
+          "text": "DEFAULT_MODEL_REGISTRY_FILE = (",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 51,
+          "text": "/ \"nbaiot_model_registry_v1.json\"",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 81,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 82,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 120,
+          "text": "default=DEFAULT_MODEL_REGISTRY_FILE,",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 563,
+          "text": "def validate_model_registry(",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 613,
+          "text": "registry_file = args.model_registry_file.resolve()",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 679,
+          "text": "registry_document = validate_model_registry(",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 686,
+          "text": "\"model_registry\": registry_file,",
+          "terms": [
+            "model_registry"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\50_inspect_training_pilot_protocol_v2.py",
+      "match_count": 9,
+      "matches": [
+        {
+          "line_number": 491,
+          "text": "model_registry: dict[str, Any] = {",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 513,
+          "text": "model_registry[",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 565,
+          "text": "model_registry[",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 589,
+          "text": "model_registry[",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 594,
+          "text": "model_registry[",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 615,
+          "text": "\"model_registry\":",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 616,
+          "text": "model_registry,",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 655,
+          "text": "for name in model_registry[",
+          "terms": [
+            "model_registry"
+          ]
+        },
+        {
+          "line_number": 664,
+          "text": "for item in model_registry[",
+          "terms": [
+            "model_registry"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\64_lock_early_lodo_protocol_v2.py",
+      "match_count": 9,
+      "matches": [
+        {
+          "line_number": 99,
+          "text": "\"tinyml_mlp_b0\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 105,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 142,
+          "text": "\"compact_dnn_b0\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 148,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 622,
+          "text": "\"pipeline_a\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 846,
+          "text": "\"pipeline_a\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 857,
+          "text": "\"Fit a new StandardScaler using \"",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 1103,
+          "text": "1. `tinyml_mlp_b0`",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 1104,
+          "text": "2. `compact_dnn_b0`",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\23_run_fp32_baseline_experiments.py",
+      "match_count": 6,
+      "matches": [
+        {
+          "line_number": 6,
+          "text": "tinyml_mlp",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 7,
+          "text": "compact_dnn",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 63,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 101,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 102,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 780,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\33_generate_publication_outputs.py",
+      "match_count": 6,
+      "matches": [
+        {
+          "line_number": 84,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 85,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 90,
+          "text": "\"tinyml_mlp\": \"TinyML-MLP\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 91,
+          "text": "\"compact_dnn\": \"Compact-DNN\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 121,
+          "text": "\"tinyml_mlp\": \"o\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 122,
+          "text": "\"compact_dnn\": \"s\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\20_run_architecture_pilots.py",
+      "match_count": 5,
+      "matches": [
+        {
+          "line_number": 5,
+          "text": "- tinyml_mlp",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 6,
+          "text": "- compact_dnn",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 61,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 62,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 267,
+          "text": "# max_train_batches ve max_validation_batches",
+          "terms": [
+            "X_train"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\26_run_pruning_experiments.py",
+      "match_count": 5,
+      "matches": [
+        {
+          "line_number": 5,
+          "text": "- Modeller: tinyml_mlp, compact_dnn, tiny_1d_cnn",
+          "terms": [
+            "tinyml_mlp",
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 63,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 128,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 129,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 2386,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\30_run_pruning_qat_experiments.py",
+      "match_count": 5,
+      "matches": [
+        {
+          "line_number": 5,
+          "text": "- Modeller: tinyml_mlp, compact_dnn, tiny_1d_cnn",
+          "terms": [
+            "tinyml_mlp",
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 60,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 163,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 164,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 1574,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\48_lock_numeric_pipeline_order_v2.py",
+      "match_count": 5,
+      "matches": [
+        {
+          "line_number": 212,
+          "text": "\"pipeline_a_overlap_count\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 283,
+          "text": "f\"| {int(row['pipeline_a_unique_input_count']):,} \"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 297,
+          "text": "f\"| {int(row['pipeline_a_overlap_count']):,} \"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 330,
+          "text": "Source float64 → float32 → train-only StandardScaler with",
+          "terms": [
+            "StandardScaler"
+          ]
+        },
+        {
+          "line_number": 335,
+          "text": "Source float64 → train-only StandardScaler in float64 →",
+          "terms": [
+            "StandardScaler"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\21_run_learning_rate_sweep.py",
+      "match_count": 4,
+      "matches": [
+        {
+          "line_number": 6,
+          "text": "tinyml_mlp",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 7,
+          "text": "compact_dnn",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 70,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 71,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\25_validate_structured_pruning.py",
+      "match_count": 4,
+      "matches": [
+        {
+          "line_number": 53,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 78,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 79,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 601,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\27_analyze_pruning_statistics.py",
+      "match_count": 4,
+      "matches": [
+        {
+          "line_number": 12,
+          "text": "- tinyml_mlp",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 13,
+          "text": "- compact_dnn",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 98,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 99,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\28_audit_quantization_capabilities.py",
+      "match_count": 4,
+      "matches": [
+        {
+          "line_number": 61,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 87,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 88,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 1577,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\29_validate_fx_qat_pipeline.py",
+      "match_count": 4,
+      "matches": [
+        {
+          "line_number": 62,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 90,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 91,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 982,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\29b_run_quantization_experiments.py",
+      "match_count": 4,
+      "matches": [
+        {
+          "line_number": 62,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 121,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 122,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 2045,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\08_materialize_primary_dataset.py",
+      "match_count": 3,
+      "matches": [
+        {
+          "line_number": 20,
+          "text": "metadata.parquet",
+          "terms": [
+            "metadata.parquet"
+          ]
+        },
+        {
+          "line_number": 862,
+          "text": "/ \"metadata.parquet\",",
+          "terms": [
+            "metadata.parquet"
+          ]
+        },
+        {
+          "line_number": 1559,
+          "text": "/ \"metadata.parquet\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\31_profile_efficiency.py",
+      "match_count": 3,
+      "matches": [
+        {
+          "line_number": 5,
+          "text": "- Modeller: tinyml_mlp, compact_dnn, tiny_1d_cnn",
+          "terms": [
+            "tinyml_mlp",
+            "compact_dnn"
+          ]
+        },
+        {
+          "line_number": 121,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 122,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "src\\data\\nbaiot_pipeline.py",
+      "match_count": 3,
+      "matches": [
+        {
+          "line_number": 134,
+          "text": "def load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 276,
+          "text": "with np.load(",
+          "terms": [
+            "np.load"
+          ]
+        },
+        {
+          "line_number": 382,
+          "text": "with np.load(",
+          "terms": [
+            "np.load"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "src\\training\\baseline_trainer.py",
+      "match_count": 3,
+      "matches": [
+        {
+          "line_number": 36,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 718,
+          "text": "\"max_train_batches\"",
+          "terms": [
+            "X_train"
+          ]
+        },
+        {
+          "line_number": 794,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\12_materialize_float32_canonical_dataset.py",
+      "match_count": 2,
+      "matches": [
+        {
+          "line_number": 1041,
+          "text": "/ \"metadata.parquet\",",
+          "terms": [
+            "metadata.parquet"
+          ]
+        },
+        {
+          "line_number": 2011,
+          "text": "/ \"metadata.parquet\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\17_validate_pytorch_data_pipeline.py",
+      "match_count": 2,
+      "matches": [
+        {
+          "line_number": 52,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 879,
+          "text": "assets = load_pipeline_assets(",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\24_analyze_fp32_statistics.py",
+      "match_count": 2,
+      "matches": [
+        {
+          "line_number": 77,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 78,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\32_analyze_overall_results.py",
+      "match_count": 2,
+      "matches": [
+        {
+          "line_number": 110,
+          "text": "\"tinyml_mlp\",",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        },
+        {
+          "line_number": 111,
+          "text": "\"compact_dnn\",",
+          "terms": [
+            "compact_dnn"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\46_inspect_numeric_pipeline_v2.py",
+      "match_count": 2,
+      "matches": [
+        {
+          "line_number": 37,
+          "text": "/ \"numeric_pipeline_artifacts_v2.csv\"",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 49,
+          "text": "\"StandardScaler\",",
+          "terms": [
+            "StandardScaler"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "src\\data\\__init__.py",
+      "match_count": 2,
+      "matches": [
+        {
+          "line_number": 7,
+          "text": "load_pipeline_assets,",
+          "terms": [
+            "pipeline_a"
+          ]
+        },
+        {
+          "line_number": 14,
+          "text": "\"load_pipeline_assets\",",
+          "terms": [
+            "pipeline_a"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\09_validate_primary_dataset.py",
+      "match_count": 1,
+      "matches": [
+        {
+          "line_number": 1204,
+          "text": "/ \"metadata.parquet\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\11_build_float32_canonical_index.py",
+      "match_count": 1,
+      "matches": [
+        {
+          "line_number": 908,
+          "text": "/ \"metadata.parquet\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\13_validate_float32_canonical_dataset.py",
+      "match_count": 1,
+      "matches": [
+        {
+          "line_number": 1856,
+          "text": "/ \"metadata.parquet\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\19_train_baseline.py",
+      "match_count": 1,
+      "matches": [
+        {
+          "line_number": 26,
+          "text": "/ \"family3_tinyml_mlp_smoke.yaml\"",
+          "terms": [
+            "tinyml_mlp"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\34_generate_manuscript_skeleton.py",
+      "match_count": 1,
+      "matches": [
+        {
+          "line_number": 503,
+          "text": "- Train verisinden öğrenilen StandardScaler",
+          "terms": [
+            "StandardScaler"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\56_inspect_lodo_membership_v2.py",
+      "match_count": 1,
+      "matches": [
+        {
+          "line_number": 22,
+          "text": "/ \"metadata.parquet\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "scripts\\57_trace_lodo_membership_source_v2.py",
+      "match_count": 1,
+      "matches": [
+        {
+          "line_number": 21,
+          "text": "/ \"metadata.parquet\"",
+          "terms": [
+            "metadata.parquet"
+          ]
+        }
+      ]
+    }
+  ],
+  "validation_checks": {
+    "protocol_status_locked": true,
+    "protocol_all_checks_passed": true,
+    "protocol_internal_checks_true": true,
+    "run_matrix_has_27_rows": true,
+    "run_ids_are_unique": true,
+    "three_models_in_run_matrix": true,
+    "nine_devices_in_run_matrix": true,
+    "single_seed_2026": true,
+    "all_runs_pending": true,
+    "membership_arrays_valid": true,
+    "alignment_row_count_matches": true,
+    "primary_metadata_row_count": true,
+    "family_column_available": true,
+    "split_column_available": true,
+    "tinyml_model_code_found": true,
+    "compact_model_code_found": true,
+    "standard_scaler_code_found": true,
+    "feature_matrix_candidate_found": false,
+    "minimum_free_disk_8gb": true,
+    "minimum_available_ram_4gb": true
+  },
+  "all_checks_passed": false
+}

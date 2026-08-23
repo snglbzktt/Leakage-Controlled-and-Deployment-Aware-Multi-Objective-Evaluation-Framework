@@ -1,0 +1,31 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "compact_dnn_B0_five_seed_runs",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T17:23:18.920590+00:00",
+  "architecture": "compact_dnn",
+  "variant": "B0",
+  "run_count": 5,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "mean_test_fingerprint_macro_f1": 0.9992438134447982,
+  "std_test_fingerprint_macro_f1": 8.376242610717102e-05,
+  "mean_test_raw_weighted_macro_f1": 0.9979943971621758,
+  "test_evaluation_count_per_run": 1,
+  "test_model_inference_repeated_by_verifier": false,
+  "fragility_triggered_in_any_run": false,
+  "verification_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compact_dnn_b0_verification_v3_2.json",
+  "verification_sha256": "a1678d693ba1615d8d549a7c85dd9c66520fd3ccdc463d19db69b4c79098aedc",
+  "aggregate_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compact_dnn_b0_aggregate_v3_2.json",
+  "aggregate_json_sha256": "582c5bd52abc0ee1469e4a5aa05dd32e9a6f2fbee3811b84e2343f220e9196d7",
+  "aggregate_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compact_dnn_b0_runs_v3_2.csv",
+  "aggregate_csv_sha256": "5e05e3ba67d28199ab9aba185912209c4097a6599842069b15cc820c2607fb88",
+  "ready_for_phase5_B0_pair_lock": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "measurement_order": 33,
+  "architecture": "compact_dnn",
+  "variant": "PTQ",
+  "seed": 2026,
+  "deployment_metrics_sha256": "55e4d39aaa4f0cfe0fb24343c751ba227518fb72666d1e310a6c29b5220cca98",
+  "raw_latencies_sha256": "9910a56f1a223f02a3d72815c9d172c1a5a1d5a9e1005cee999d0b954e9f8eb8",
+  "run_manifest_sha256": "81d8e1972e2b9204d82a3563f8bcf0c43eb1f9e4ca4ef863aa02929791ec1706",
+  "validation_data_access": false,
+  "test_data_access": false,
+  "completed_at_utc": "2026-08-06T21:07:07.497708+00:00"
+}

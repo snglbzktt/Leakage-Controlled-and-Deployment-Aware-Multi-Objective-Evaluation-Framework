@@ -1,0 +1,981 @@
+"""
+N-BaIoT PyTorch veri hattı.
+
+Özellikler:
+- Parquet dosyalarını parça parça okur.
+- Tüm veri setini RAM'e yüklemez.
+- Standardizasyonu train tabanlı scaler parametreleriyle uygular.
+- multiclass_11, family_3 ve binary görevlerini destekler.
+- Önceden gruplanmış mini-batch tensorleri üretir.
+- Windows ve PyTorch DataLoader ile uyumludur.
+- Train için deterministik row-group ve batch içi karıştırma sağlar.
+"""
+
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any, Iterator
+
+import numpy as np
+import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
+import torch
+from torch import Tensor
+from torch.utils.data import (
+    DataLoader,
+    IterableDataset,
+    get_worker_info,
+)
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+DEFAULT_DATA_DIR = (
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "nbaiot_float32_canonical_seed2026"
+)
+
+DEFAULT_SCALER_FILE = (
+    PROJECT_ROOT
+    / "models"
+    / "preprocessing"
+    / "nbaiot_standard_scaler_seed2026.npz"
+)
+
+DEFAULT_TASK_DEFINITION_FILE = (
+    PROJECT_ROOT
+    / "models"
+    / "preprocessing"
+    / "nbaiot_task_definitions_seed2026.json"
+)
+
+DEFAULT_TASK_WEIGHT_FILE = (
+    PROJECT_ROOT
+    / "models"
+    / "preprocessing"
+    / "nbaiot_task_class_weights_seed2026.npz"
+)
+
+SPLIT_NAMES = (
+    "train",
+    "validation",
+    "test",
+)
+
+SPLIT_SEED_OFFSETS = {
+    "train": 0,
+    "validation": 10_000_019,
+    "test": 20_000_033,
+}
+
+
+@dataclass(frozen=True)
+class NBaiotPipelineAssets:
+    """Veri hattında kullanılan sabit ön işleme artifactları."""
+
+    data_directory: Path
+    scaler_file: Path
+    task_definition_file: Path
+    task_weight_file: Path
+
+    task_name: str
+    seed: int
+
+    feature_names: tuple[str, ...]
+    scaler_mean: np.ndarray
+    scaler_scale: np.ndarray
+    scaler_train_sample_count: int
+
+    source_to_target: dict[str, str]
+    target_classes: tuple[str, ...]
+    target_to_index: dict[str, int]
+
+    class_weight_scheme: str
+    class_weights: np.ndarray
+
+    task_definition: dict[str, Any]
+
+    @property
+    def feature_count(self) -> int:
+        return len(self.feature_names)
+
+    @property
+    def class_count(self) -> int:
+        return len(self.target_classes)
+
+
+def _read_json(file_path: Path) -> dict[str, Any]:
+    """JSON dosyasını yükler."""
+
+    if not file_path.exists():
+        raise FileNotFoundError(
+            f"JSON dosyası bulunamadı: {file_path}"
+        )
+
+    with file_path.open(
+        "r",
+        encoding="utf-8",
+    ) as file_handle:
+        data = json.load(file_handle)
+
+    if not isinstance(data, dict):
+        raise TypeError(
+            f"JSON kökü nesne olmalıdır: {file_path}"
+        )
+
+    return data
+
+
+def load_pipeline_assets(
+    task_name: str = "family_3",
+    weight_scheme: str = (
+        "inverse_square_root_frequency_mean1"
+    ),
+    data_directory: Path = DEFAULT_DATA_DIR,
+    scaler_file: Path = DEFAULT_SCALER_FILE,
+    task_definition_file: Path = (
+        DEFAULT_TASK_DEFINITION_FILE
+    ),
+    task_weight_file: Path = DEFAULT_TASK_WEIGHT_FILE,
+    expected_seed: int = 2026,
+) -> NBaiotPipelineAssets:
+    """Scaler, görev eşleme ve sınıf ağırlıklarını yükler."""
+
+    data_directory = data_directory.resolve()
+    scaler_file = scaler_file.resolve()
+    task_definition_file = task_definition_file.resolve()
+    task_weight_file = task_weight_file.resolve()
+
+    if not data_directory.exists():
+        raise FileNotFoundError(
+            f"Veri klasörü bulunamadı: {data_directory}"
+        )
+
+    for split_name in SPLIT_NAMES:
+        split_file = (
+            data_directory
+            / f"{split_name}.parquet"
+        )
+
+        if not split_file.exists():
+            raise FileNotFoundError(
+                f"Split dosyası bulunamadı: {split_file}"
+            )
+
+    if not scaler_file.exists():
+        raise FileNotFoundError(
+            f"Scaler artifactı bulunamadı: {scaler_file}"
+        )
+
+    if not task_weight_file.exists():
+        raise FileNotFoundError(
+            f"Görev ağırlığı bulunamadı: {task_weight_file}"
+        )
+
+    task_document = _read_json(
+        task_definition_file
+    )
+
+    actual_seed = int(
+        task_document["seed"]
+    )
+
+    if actual_seed != expected_seed:
+        raise ValueError(
+            "Görev tanımı seed değeri uyuşmuyor: "
+            f"dosya={actual_seed}, beklenen={expected_seed}"
+        )
+
+    tasks = task_document.get(
+        "tasks"
+    )
+
+    if not isinstance(tasks, dict):
+        raise TypeError(
+            "Görev tanımı dosyasında 'tasks' nesnesi yok."
+        )
+
+    if task_name not in tasks:
+        raise KeyError(
+            f"Tanımsız görev: {task_name}. "
+            f"Mevcut görevler: {sorted(tasks)}"
+        )
+
+    task_definition = tasks[
+        task_name
+    ]
+
+    target_classes = tuple(
+        str(class_name)
+        for class_name in task_definition[
+            "target_classes"
+        ]
+    )
+
+    if not target_classes:
+        raise ValueError(
+            f"{task_name} hedef sınıf listesi boş."
+        )
+
+    if len(target_classes) != len(
+        set(target_classes)
+    ):
+        raise ValueError(
+            f"{task_name} hedef sınıflarında tekrar var."
+        )
+
+    expected_target_to_index = {
+        class_name: class_index
+        for class_index, class_name in enumerate(
+            target_classes
+        )
+    }
+
+    stored_target_to_index = {
+        str(class_name): int(class_index)
+        for class_name, class_index
+        in task_definition[
+            "target_to_index"
+        ].items()
+    }
+
+    if (
+        stored_target_to_index
+        != expected_target_to_index
+    ):
+        raise ValueError(
+            f"{task_name} hedef sınıf sırası geçersiz."
+        )
+
+    source_to_target = {
+        str(source_class): str(target_class)
+        for source_class, target_class
+        in task_definition[
+            "source_to_target"
+        ].items()
+    }
+
+    unknown_target_classes = (
+        set(source_to_target.values())
+        - set(target_classes)
+    )
+
+    if unknown_target_classes:
+        raise ValueError(
+            "Kaynak-hedef eşlemesinde tanımsız hedefler var: "
+            + ", ".join(
+                sorted(unknown_target_classes)
+            )
+        )
+
+    with np.load(
+        scaler_file,
+        allow_pickle=False,
+    ) as scaler_data:
+        feature_names = tuple(
+            str(feature_name)
+            for feature_name
+            in scaler_data[
+                "feature_names"
+            ].tolist()
+        )
+
+        scaler_mean = np.asarray(
+            scaler_data["mean"],
+            dtype=np.float64,
+        )
+
+        scaler_scale = np.asarray(
+            scaler_data["scale"],
+            dtype=np.float64,
+        )
+
+        scaler_train_sample_count = int(
+            np.asarray(
+                scaler_data[
+                    "train_sample_count"
+                ]
+            ).reshape(-1)[0]
+        )
+
+        scaler_seed = int(
+            np.asarray(
+                scaler_data["seed"]
+            ).reshape(-1)[0]
+        )
+
+    if scaler_seed != expected_seed:
+        raise ValueError(
+            "Scaler seed değeri uyuşmuyor: "
+            f"scaler={scaler_seed}, beklenen={expected_seed}"
+        )
+
+    if not feature_names:
+        raise ValueError(
+            "Scaler özellik listesi boş."
+        )
+
+    if len(feature_names) != len(
+        set(feature_names)
+    ):
+        raise ValueError(
+            "Scaler özellik listesinde tekrar var."
+        )
+
+    feature_count = len(
+        feature_names
+    )
+
+    if scaler_mean.shape != (
+        feature_count,
+    ):
+        raise ValueError(
+            "Scaler mean boyutu özellik sayısıyla uyuşmuyor."
+        )
+
+    if scaler_scale.shape != (
+        feature_count,
+    ):
+        raise ValueError(
+            "Scaler scale boyutu özellik sayısıyla uyuşmuyor."
+        )
+
+    if not np.isfinite(
+        scaler_mean
+    ).all():
+        raise ValueError(
+            "Scaler mean içinde sonlu olmayan değer var."
+        )
+
+    if not np.isfinite(
+        scaler_scale
+    ).all():
+        raise ValueError(
+            "Scaler scale içinde sonlu olmayan değer var."
+        )
+
+    if np.any(
+        scaler_scale <= 0
+    ):
+        raise ValueError(
+            "Scaler scale içinde sıfır veya negatif değer var."
+        )
+
+    safe_task_name = task_name.replace(
+        "-",
+        "_",
+    )
+
+    class_name_key = (
+        f"{safe_task_name}_class_names"
+    )
+
+    class_weight_key = (
+        f"{safe_task_name}_{weight_scheme}"
+    )
+
+    with np.load(
+        task_weight_file,
+        allow_pickle=False,
+    ) as weight_data:
+        if class_name_key not in weight_data:
+            raise KeyError(
+                f"Ağırlık dosyasında anahtar yok: "
+                f"{class_name_key}"
+            )
+
+        if class_weight_key not in weight_data:
+            raise KeyError(
+                f"Ağırlık dosyasında anahtar yok: "
+                f"{class_weight_key}"
+            )
+
+        weight_class_names = tuple(
+            str(class_name)
+            for class_name
+            in weight_data[
+                class_name_key
+            ].tolist()
+        )
+
+        class_weights = np.asarray(
+            weight_data[
+                class_weight_key
+            ],
+            dtype=np.float32,
+        )
+
+        weight_seed = int(
+            np.asarray(
+                weight_data["seed"]
+            ).reshape(-1)[0]
+        )
+
+    if weight_seed != expected_seed:
+        raise ValueError(
+            "Görev ağırlığı seed değeri uyuşmuyor."
+        )
+
+    if weight_class_names != target_classes:
+        raise ValueError(
+            "Görev ağırlığı sınıf sırası hedef sınıflarla "
+            "uyuşmuyor."
+        )
+
+    if class_weights.shape != (
+        len(target_classes),
+    ):
+        raise ValueError(
+            "Sınıf ağırlığı boyutu hedef sınıf sayısıyla "
+            "uyuşmuyor."
+        )
+
+    if not np.isfinite(
+        class_weights
+    ).all():
+        raise ValueError(
+            "Sınıf ağırlıklarında sonlu olmayan değer var."
+        )
+
+    if np.any(
+        class_weights <= 0
+    ):
+        raise ValueError(
+            "Sınıf ağırlıklarının tamamı pozitif olmalıdır."
+        )
+
+    if not np.isclose(
+        float(
+            class_weights.mean()
+        ),
+        1.0,
+        rtol=1e-5,
+        atol=1e-5,
+    ):
+        raise ValueError(
+            "Sınıf ağırlıklarının ortalaması 1 değil."
+        )
+
+    return NBaiotPipelineAssets(
+        data_directory=data_directory,
+        scaler_file=scaler_file,
+        task_definition_file=task_definition_file,
+        task_weight_file=task_weight_file,
+        task_name=task_name,
+        seed=expected_seed,
+        feature_names=feature_names,
+        scaler_mean=scaler_mean,
+        scaler_scale=scaler_scale,
+        scaler_train_sample_count=(
+            scaler_train_sample_count
+        ),
+        source_to_target=source_to_target,
+        target_classes=target_classes,
+        target_to_index=(
+            expected_target_to_index
+        ),
+        class_weight_scheme=weight_scheme,
+        class_weights=class_weights,
+        task_definition=task_definition,
+    )
+
+
+class NBaiotParquetBatchDataset(
+    IterableDataset[
+        tuple[Tensor, Tensor]
+    ]
+):
+    """
+    Parquet üzerinden önceden gruplanmış PyTorch batchleri üretir.
+
+    DataLoader tarafında batch_size=None kullanılmalıdır.
+    """
+
+    def __init__(
+        self,
+        assets: NBaiotPipelineAssets,
+        split_name: str,
+        batch_size: int = 4096,
+        shuffle: bool | None = None,
+        seed: int | None = None,
+    ) -> None:
+        super().__init__()
+
+        if split_name not in SPLIT_NAMES:
+            raise ValueError(
+                f"Geçersiz split: {split_name}"
+            )
+
+        if batch_size <= 0:
+            raise ValueError(
+                "Batch size sıfırdan büyük olmalıdır."
+            )
+
+        self.assets = assets
+        self.split_name = split_name
+        self.batch_size = int(
+            batch_size
+        )
+
+        self.shuffle = (
+            split_name == "train"
+            if shuffle is None
+            else bool(shuffle)
+        )
+
+        self.seed = int(
+            assets.seed
+            if seed is None
+            else seed
+        )
+
+        self.epoch = 0
+
+        self.parquet_file_path = (
+            assets.data_directory
+            / f"{split_name}.parquet"
+        )
+
+        parquet_file = pq.ParquetFile(
+            self.parquet_file_path
+        )
+
+        expected_columns = (
+            list(
+                assets.feature_names
+            )
+            + ["class_label"]
+        )
+
+        if (
+            parquet_file.schema_arrow.names
+            != expected_columns
+        ):
+            raise ValueError(
+                f"{split_name} Parquet şeması veri hattıyla "
+                "uyuşmuyor."
+            )
+
+        for feature_name in (
+            assets.feature_names
+        ):
+            feature_type = (
+                parquet_file.schema_arrow.field(
+                    feature_name
+                ).type
+            )
+
+            if feature_type != pa.float32():
+                raise TypeError(
+                    f"{split_name}/{feature_name} "
+                    f"float32 değil: {feature_type}"
+                )
+
+        if (
+            parquet_file.schema_arrow.field(
+                "class_label"
+            ).type
+            != pa.string()
+        ):
+            raise TypeError(
+                f"{split_name}/class_label string değil."
+            )
+
+        self.row_count = int(
+            parquet_file.metadata.num_rows
+        )
+
+        self.row_group_count = int(
+            parquet_file.metadata.num_row_groups
+        )
+
+        if self.row_count <= 0:
+            raise RuntimeError(
+                f"{split_name} Parquet dosyası boş."
+            )
+
+        if self.row_group_count <= 0:
+            raise RuntimeError(
+                f"{split_name} Parquet satır grubu yok."
+            )
+
+    def __len__(self) -> int:
+        """Splitteki toplam örnek sayısını döndürür."""
+
+        return self.row_count
+
+    def set_epoch(
+        self,
+        epoch: int,
+    ) -> None:
+        """Train karıştırma tohumunda kullanılacak epoch'u ayarlar."""
+
+        if epoch < 0:
+            raise ValueError(
+                "Epoch negatif olamaz."
+            )
+
+        self.epoch = int(
+            epoch
+        )
+
+    def _map_labels(
+        self,
+        source_labels: pd.Series,
+    ) -> np.ndarray:
+        """Özgün sınıf isimlerini görev hedef kodlarına dönüştürür."""
+
+        normalized_labels = (
+            source_labels
+            .astype(str)
+        )
+
+        target_labels = (
+            normalized_labels.map(
+                self.assets.source_to_target
+            )
+        )
+
+        if target_labels.isna().any():
+            unknown_source_labels = sorted(
+                normalized_labels[
+                    target_labels.isna()
+                ].unique().tolist()
+            )
+
+            raise RuntimeError(
+                "Görev eşlemesinde bulunmayan kaynak etiketler var: "
+                + ", ".join(
+                    unknown_source_labels
+                )
+            )
+
+        encoded_labels = (
+            target_labels.map(
+                self.assets.target_to_index
+            )
+        )
+
+        if encoded_labels.isna().any():
+            unknown_target_labels = sorted(
+                target_labels[
+                    encoded_labels.isna()
+                ].unique().tolist()
+            )
+
+            raise RuntimeError(
+                "Hedef sınıf kodu bulunamadı: "
+                + ", ".join(
+                    unknown_target_labels
+                )
+            )
+
+        return encoded_labels.to_numpy(
+            dtype=np.int64
+        )
+
+    def _scale_features(
+        self,
+        feature_frame: pd.DataFrame,
+    ) -> np.ndarray:
+        """Train tabanlı standardizasyonu uygular."""
+
+        source_values = (
+            feature_frame.to_numpy(
+                dtype=np.float32,
+                copy=True,
+            )
+        )
+
+        if not np.isfinite(
+            source_values
+        ).all():
+            raise RuntimeError(
+                f"{self.split_name} ham batchinde "
+                "NaN veya sonsuz değer bulundu."
+            )
+
+        scaled_float64 = (
+            source_values.astype(
+                np.float64,
+                copy=False,
+            )
+            - self.assets.scaler_mean
+        ) / self.assets.scaler_scale
+
+        if not np.isfinite(
+            scaled_float64
+        ).all():
+            raise RuntimeError(
+                f"{self.split_name} standardizasyonundan sonra "
+                "NaN veya sonsuz değer oluştu."
+            )
+
+        scaled_float32 = np.asarray(
+            scaled_float64,
+            dtype=np.float32,
+            order="C",
+        )
+
+        return scaled_float32
+
+    def __iter__(
+        self,
+    ) -> Iterator[
+        tuple[Tensor, Tensor]
+    ]:
+        """İşçi başına Parquet satır gruplarını dolaşır."""
+
+        worker_information = (
+            get_worker_info()
+        )
+
+        if worker_information is None:
+            worker_id = 0
+            worker_count = 1
+        else:
+            worker_id = int(
+                worker_information.id
+            )
+            worker_count = int(
+                worker_information.num_workers
+            )
+
+        split_offset = (
+            SPLIT_SEED_OFFSETS[
+                self.split_name
+            ]
+        )
+
+        epoch_seed = (
+            self.seed
+            + split_offset
+            + self.epoch * 1_000_003
+        )
+
+        row_group_generator = (
+            np.random.default_rng(
+                epoch_seed
+            )
+        )
+
+        batch_generator = (
+            np.random.default_rng(
+                epoch_seed
+                + worker_id * 10_007
+                + 97
+            )
+        )
+
+        row_group_indices = np.arange(
+            self.row_group_count,
+            dtype=np.int64,
+        )
+
+        if self.shuffle:
+            row_group_generator.shuffle(
+                row_group_indices
+            )
+
+        worker_row_groups = (
+            row_group_indices[
+                worker_id::worker_count
+            ]
+        )
+
+        parquet_file = pq.ParquetFile(
+            self.parquet_file_path
+        )
+
+        selected_columns = (
+            list(
+                self.assets.feature_names
+            )
+            + ["class_label"]
+        )
+
+        for row_group_index in (
+            worker_row_groups
+        ):
+            batch_iterator = (
+                parquet_file.iter_batches(
+                    batch_size=self.batch_size,
+                    row_groups=[
+                        int(
+                            row_group_index
+                        )
+                    ],
+                    columns=selected_columns,
+                    use_threads=True,
+                )
+            )
+
+            for record_batch in (
+                batch_iterator
+            ):
+                frame = (
+                    record_batch.to_pandas()
+                )
+
+                if frame.empty:
+                    continue
+
+                scaled_features = (
+                    self._scale_features(
+                        frame.loc[
+                            :,
+                            self.assets.feature_names,
+                        ]
+                    )
+                )
+
+                target_codes = (
+                    self._map_labels(
+                        frame[
+                            "class_label"
+                        ]
+                    )
+                )
+
+                if len(
+                    scaled_features
+                ) != len(
+                    target_codes
+                ):
+                    raise RuntimeError(
+                        "Özellik ve etiket batch boyutları "
+                        "uyuşmuyor."
+                    )
+
+                if self.shuffle:
+                    permutation = (
+                        batch_generator.permutation(
+                            len(target_codes)
+                        )
+                    )
+
+                    scaled_features = (
+                        scaled_features[
+                            permutation
+                        ]
+                    )
+
+                    target_codes = (
+                        target_codes[
+                            permutation
+                        ]
+                    )
+
+                feature_array = np.array(
+                    scaled_features,
+                    dtype=np.float32,
+                    copy=True,
+                    order="C",
+                )
+
+                target_array = np.array(
+                    target_codes,
+                    dtype=np.int64,
+                    copy=True,
+                    order="C",
+                )
+
+                if not feature_array.flags.writeable:
+                    raise RuntimeError(
+                        "Özellik dizisi yazılabilir olarak oluşturulamadı."
+                    )
+
+                if not target_array.flags.writeable:
+                    raise RuntimeError(
+                        "Hedef dizisi yazılabilir olarak oluşturulamadı."
+                    )
+
+                feature_tensor = torch.from_numpy(
+                    feature_array
+                )
+
+                target_tensor = torch.from_numpy(
+                    target_array
+                )
+
+                yield (
+                    feature_tensor,
+                    target_tensor,
+                )
+
+
+def create_nbaiot_dataloader(
+    assets: NBaiotPipelineAssets,
+    split_name: str,
+    batch_size: int = 4096,
+    shuffle: bool | None = None,
+    seed: int | None = None,
+    epoch: int = 0,
+    num_workers: int = 0,
+    pin_memory: bool = False,
+    prefetch_factor: int = 2,
+) -> tuple[
+    NBaiotParquetBatchDataset,
+    DataLoader[
+        tuple[Tensor, Tensor]
+    ],
+]:
+    """N-BaIoT IterableDataset ve DataLoader nesnelerini oluşturur."""
+
+    if num_workers < 0:
+        raise ValueError(
+            "num_workers negatif olamaz."
+        )
+
+    if prefetch_factor <= 0:
+        raise ValueError(
+            "prefetch_factor sıfırdan büyük olmalıdır."
+        )
+
+    dataset = NBaiotParquetBatchDataset(
+        assets=assets,
+        split_name=split_name,
+        batch_size=batch_size,
+        shuffle=shuffle,
+        seed=seed,
+    )
+
+    dataset.set_epoch(
+        epoch
+    )
+
+    loader_arguments: dict[
+        str,
+        Any,
+    ] = {
+        "dataset": dataset,
+        "batch_size": None,
+        "num_workers": int(
+            num_workers
+        ),
+        "pin_memory": bool(
+            pin_memory
+        ),
+        "persistent_workers": False,
+    }
+
+    if num_workers > 0:
+        loader_arguments[
+            "prefetch_factor"
+        ] = int(
+            prefetch_factor
+        )
+
+    data_loader = DataLoader(
+        **loader_arguments
+    )
+
+    return (
+        dataset,
+        data_loader,
+    )

@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "measurement_order": 14,
+  "architecture": "compact_dnn",
+  "variant": "DQ",
+  "seed": 8192,
+  "deployment_metrics_sha256": "06f27bbc66f14213755300ef6c7dc7e9f9ee36b5bc9ca511afca748dc030a631",
+  "raw_latencies_sha256": "ec5dbf6428bf267279140523a35183116f6374f4a577e45f0f445da82b230713",
+  "run_manifest_sha256": "51cdd7e8fdcd62ee22d58a717bcf112079e743cf12747d5b5a71c174c290451a",
+  "validation_data_access": false,
+  "test_data_access": false,
+  "completed_at_utc": "2026-08-06T21:06:14.574022+00:00"
+}

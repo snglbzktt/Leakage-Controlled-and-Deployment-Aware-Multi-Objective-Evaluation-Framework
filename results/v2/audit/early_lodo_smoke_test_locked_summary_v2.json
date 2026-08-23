@@ -1,0 +1,53 @@
+{
+  "protocol_version": "early_lodo_smoke_lock_v2_1",
+  "status": "locked",
+  "locked_at": "2026-08-05T19:11:20.307441+00:00",
+  "scope": {
+    "purpose": "Pipeline smoke test only",
+    "scientific_result": false,
+    "held_out_device": "Danmini_Doorbell",
+    "model": "tinyml_mlp",
+    "seed": 2026,
+    "epoch_count": 1
+  },
+  "sample_sizes": {
+    "train": 12288,
+    "validation": 6144,
+    "test": 6144
+  },
+  "overlap_counts": {
+    "train_test": 0,
+    "validation_test": 0,
+    "train_validation": 0
+  },
+  "model": {
+    "parameter_count": 9603,
+    "parameter_change_sum": 71.96720562875271
+  },
+  "losses": {
+    "training": 1.0150253971417744,
+    "validation": 0.8822072148323059,
+    "test": 0.901481032371521
+  },
+  "validation_macro_f1": 0.5249218055235051,
+  "test_macro_f1": 0.41821856309277833,
+  "interpretation": "The smoke run validates data loading, strict LODO membership filtering, fold-only scaler fitting, model creation, one-epoch optimization and metric output. Its metrics must not be included as scientific experimental results.",
+  "validation_checks": {
+    "smoke_status_passed": true,
+    "smoke_all_checks_passed": true,
+    "all_smoke_internal_checks_true": true,
+    "not_scientific_result": true,
+    "held_out_device_danmini": true,
+    "model_tinyml_mlp": true,
+    "seed_2026": true,
+    "one_epoch": true,
+    "sample_sizes_match": true,
+    "all_overlap_counts_zero": true,
+    "model_parameter_count_9603": true,
+    "model_parameters_changed": true,
+    "all_numeric_outputs_finite": true,
+    "feature_alignment_passed": true,
+    "scientific_protocol_locked": true
+  },
+  "all_checks_passed": true
+}

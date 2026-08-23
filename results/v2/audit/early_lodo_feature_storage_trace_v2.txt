@@ -1,0 +1,1679 @@
+======================================================================================
+PHASE 2E-1 EARLY LODO FEATURE STORAGE TRACE
+======================================================================================
+
+PRIMARY DATASET DIRECTORY
+- data\processed\nbaiot_primary_seed2026\metadata.parquet | 44852590 bytes
+- data\processed\nbaiot_primary_seed2026\test.parquet | 150372711 bytes
+- data\processed\nbaiot_primary_seed2026\train.parquet | 675999665 bytes
+- data\processed\nbaiot_primary_seed2026\validation.parquet | 150032157 bytes
+
+FEATURE CANDIDATES
+- data\processed\nbaiot_float32_canonical_seed2026\test.parquet | size=71047436 | rows=341093 | columns=116 | numeric_columns=115 | shape=None | dtype=None
+- data\processed\nbaiot_float32_canonical_seed2026\train.parquet | size=315051975 | rows=1595664 | columns=116 | numeric_columns=115 | shape=None | dtype=None
+- data\processed\nbaiot_float32_canonical_seed2026\validation.parquet | size=71024128 | rows=341417 | columns=116 | numeric_columns=115 | shape=None | dtype=None
+- data\processed\nbaiot_primary_seed2026\test.parquet | size=150372711 | rows=372659 | columns=116 | numeric_columns=115 | shape=None | dtype=None
+- data\processed\nbaiot_primary_seed2026\train.parquet | size=675999665 | rows=1738133 | columns=116 | numeric_columns=115 | shape=None | dtype=None
+- data\processed\nbaiot_primary_seed2026\validation.parquet | size=150032157 | rows=371884 | columns=116 | numeric_columns=115 | shape=None | dtype=None
+- data\processed\numeric_order_pilot_v2\pipeline_a\x_test.npy | size=171423268 | rows=372659 | columns=115 | numeric_columns=None | shape=[372659, 115] | dtype=float32
+- data\processed\numeric_order_pilot_v2\pipeline_a\x_train.npy | size=799541308 | rows=1738133 | columns=115 | numeric_columns=None | shape=[1738133, 115] | dtype=float32
+- data\processed\numeric_order_pilot_v2\pipeline_a\x_validation.npy | size=171066768 | rows=371884 | columns=115 | numeric_columns=None | shape=[371884, 115] | dtype=float32
+- data\processed\numeric_order_pilot_v2\pipeline_b\x_test.npy | size=171423268 | rows=372659 | columns=115 | numeric_columns=None | shape=[372659, 115] | dtype=float32
+- data\processed\numeric_order_pilot_v2\pipeline_b\x_train.npy | size=799541308 | rows=1738133 | columns=115 | numeric_columns=None | shape=[1738133, 115] | dtype=float32
+- data\processed\numeric_order_pilot_v2\pipeline_b\x_validation.npy | size=171066768 | rows=371884 | columns=115 | numeric_columns=None | shape=[371884, 115] | dtype=float32
+- data\processed\vs1_leakage_ablation\grouped\X_test.npy | size=487237648 | rows=1059212 | columns=115 | numeric_columns=None | shape=[1059212, 115] | dtype=float32
+- data\processed\vs1_leakage_ablation\grouped\X_train.npy | size=2274895628 | rows=4945425 | columns=115 | numeric_columns=None | shape=[4945425, 115] | dtype=float32
+- data\processed\vs1_leakage_ablation\grouped\X_validation.npy | size=486665868 | rows=1057969 | columns=115 | numeric_columns=None | shape=[1057969, 115] | dtype=float32
+- data\processed\vs1_leakage_ablation\naive_row\X_test.npy | size=486932668 | rows=1058549 | columns=115 | numeric_columns=None | shape=[1058549, 115] | dtype=float32
+- data\processed\vs1_leakage_ablation\naive_row\X_train.npy | size=2274753948 | rows=4945117 | columns=115 | numeric_columns=None | shape=[4945117, 115] | dtype=float32
+- data\processed\vs1_leakage_ablation\naive_row\X_validation.npy | size=487112528 | rows=1058940 | columns=115 | numeric_columns=None | shape=[1058940, 115] | dtype=float32
+
+PARTITION GROUPS
+- data\processed\nbaiot_float32_canonical_seed2026 | files=3 | rows=[341093, 1595664, 341417] | total=2278174 | primary_match=False | canonical_match=True | split_set=True
+  - test.parquet
+  - train.parquet
+  - validation.parquet
+- data\processed\nbaiot_primary_seed2026 | files=3 | rows=[372659, 1738133, 371884] | total=2482676 | primary_match=True | canonical_match=False | split_set=True
+  - test.parquet
+  - train.parquet
+  - validation.parquet
+- data\processed\numeric_order_pilot_v2\pipeline_a | files=3 | rows=[372659, 1738133, 371884] | total=2482676 | primary_match=True | canonical_match=False | split_set=True
+  - x_test.npy
+  - x_train.npy
+  - x_validation.npy
+- data\processed\numeric_order_pilot_v2\pipeline_b | files=3 | rows=[372659, 1738133, 371884] | total=2482676 | primary_match=True | canonical_match=False | split_set=True
+  - x_test.npy
+  - x_train.npy
+  - x_validation.npy
+- data\processed\vs1_leakage_ablation\grouped | files=3 | rows=[1059212, 4945425, 1057969] | total=7062606 | primary_match=False | canonical_match=False | split_set=True
+  - X_test.npy
+  - X_train.npy
+  - X_validation.npy
+- data\processed\vs1_leakage_ablation\naive_row | files=3 | rows=[1058549, 4945117, 1058940] | total=7062606 | primary_match=False | canonical_match=False | split_set=True
+  - X_test.npy
+  - X_train.npy
+  - X_validation.npy
+
+CODE HINTS
+--- scripts\08_materialize_primary_dataset.py | exists=True | matches=49 ---
+00013: - Oluşturulan kayıt sayılarını 07 numaralı split raporuyla doğrular.
+00014: 
+00015: Çıktı:
+00016: data/processed/nbaiot_primary_seed2026/
+00017:     train.parquet
+00018:     validation.parquet
+00019:     test.parquet
+00020:     metadata.parquet
+00021: """
+00022: 
+00023: from __future__ import annotations
+... omitted ...
+00754: # PARQUET HELPERS
+00755: # ==========================================================
+00756: 
+00757: def create_feature_schema(
+00758:     feature_columns: list[str],
+00759: ) -> pa.Schema:
+00760:     """Model veri dosyası için Arrow şeması oluşturur."""
+00761: 
+... omitted ...
+00764:             column_name,
+00765:             pa.float64(),
+00766:         )
+00767:         for column_name in feature_columns
+00768:     ]
+00769: 
+00770:     fields.append(
+... omitted ...
+00805:                 pa.string(),
+00806:             ),
+00807:             pa.field(
+00808:                 "source_relative_path",
+00809:                 pa.string(),
+00810:             ),
+00811:             pa.field(
+00812:                 "source_row_number",
+00813:                 pa.int64(),
+00814:             ),
+00815:             pa.field(
+... omitted ...
+00826: 
+00827: def open_parquet_writers(
+00828:     output_directory: Path,
+00829:     feature_schema: pa.Schema,
+00830:     metadata_schema: pa.Schema,
+00831: ) -> tuple[
+00832:     dict[str, pq.ParquetWriter],
+00833:     pq.ParquetWriter,
+00834: ]:
+00835:     """Split ve metadata ParquetWriter nesnelerini oluşturur."""
+00836: 
+00837:     split_writers: dict[
+00838:         str,
+00839:         pq.ParquetWriter,
+00840:     ] = {}
+00841: 
+00842:     for split_name in (
+... omitted ...
+00846:     ):
+00847:         split_writers[
+00848:             split_name
+00849:         ] = pq.ParquetWriter(
+00850:             output_directory
+00851:             / f"{split_name}.parquet",
+00852:             feature_schema,
+00853:             compression="zstd",
+00854:             use_dictionary=[
+00855:                 "class_label",
+... omitted ...
+00857:             write_statistics=True,
+00858:         )
+00859: 
+00860:     metadata_writer = pq.ParquetWriter(
+00861:         output_directory
+00862:         / "metadata.parquet",
+00863:         metadata_schema,
+00864:         compression="zstd",
+00865:         use_dictionary=[
+00866:             "split",
+00867:             "class_label",
+00868:             "source_device",
+00869:             "source_relative_path",
+00870:         ],
+00871:         write_statistics=True,
+00872:     )
+... omitted ...
+00880: def close_writers(
+00881:     split_writers: dict[
+00882:         str,
+00883:         pq.ParquetWriter,
+00884:     ],
+00885:     metadata_writer: pq.ParquetWriter | None,
+00886: ) -> None:
+00887:     """Açılmış ParquetWriter nesnelerini kapatır."""
+00888: 
+00889:     for writer in split_writers.values():
+00890:         writer.close()
+... omitted ...
+00931:             f"SQLite veritabanı bulunamadı: {database_file}"
+00932:         )
+00933: 
+00934:     feature_columns = load_reference_columns(
+00935:         schema_file
+00936:     )
+00937: 
+... omitted ...
+00994:     print(f"Geçici çıktı       : {temporary_output_directory}")
+00995:     print(f"Nihai çıktı        : {final_output_directory}")
+00996:     print(f"Seed               : {args.seed}")
+00997:     print(f"Özellik sayısı     : {len(feature_columns)}")
+00998:     print(f"CSV parça boyutu   : {args.chunk_size:,}")
+00999:     print(f"Boş disk alanı     : {free_space_gb:.2f} GB")
+01000:     print("=" * 78)
+... omitted ...
+01011: 
+01012:     split_writers: dict[
+01013:         str,
+01014:         pq.ParquetWriter,
+01015:     ] = {}
+01016: 
+01017:     metadata_writer: pq.ParquetWriter | None = None
+01018: 
+01019:     try:
+01020:         configure_database(
+... omitted ...
+01037:             ),
+01038:         )
+01039: 
+01040:         feature_schema = create_feature_schema(
+01041:             feature_columns
+01042:         )
+01043: 
+01044:         metadata_schema = (
+... omitted ...
+01052:             output_directory=(
+01053:                 temporary_output_directory
+01054:             ),
+01055:             feature_schema=feature_schema,
+01056:             metadata_schema=metadata_schema,
+01057:         )
+01058: 
+... omitted ...
+01205:                     for column in chunk.columns
+01206:                 ]
+01207: 
+01208:                 if list(chunk.columns) != feature_columns:
+01209:                     raise ValueError(
+01210:                         "Sütun şeması uyuşmuyor: "
+01211:                         f"{relative_path}"
+... omitted ...
+01255:                     - chunk_first_row
+01256:                 )
+01257: 
+01258:                 selected_features = chunk.iloc[
+01259:                     local_indices
+01260:                 ].copy()
+01261: 
+... omitted ...
+01302:                         continue
+01303: 
+01304:                     split_frame = (
+01305:                         selected_features.iloc[
+01306:                             positions
+01307:                         ].copy()
+01308:                     )
+... omitted ...
+01314:                     split_table = (
+01315:                         pa.Table.from_pandas(
+01316:                             split_frame[
+01317:                                 feature_columns
+01318:                                 + ["class_label"]
+01319:                             ],
+01320:                             schema=feature_schema,
+01321:                             preserve_index=False,
+01322:                         )
+01323:                     )
+01324: 
+01325:                     split_writers[
+01326:                         split_name
+01327:                     ].write_table(
+01328:                         split_table,
+01329:                         row_group_size=(
+01330:                             args.row_group_size
+... omitted ...
+01372:                         "source_device": (
+01373:                             device
+01374:                         ),
+01375:                         "source_relative_path": (
+01376:                             relative_path
+01377:                         ),
+01378:                         "source_row_number": (
+01379:                             selected_global_rows
+01380:                         ),
+01381:                         "original_occurrence_count": (
+... omitted ...
+01395:                     )
+01396:                 )
+01397: 
+01398:                 metadata_writer.write_table(
+01399:                     metadata_table,
+01400:                     row_group_size=(
+01401:                         args.row_group_size
+... omitted ...
+01403:                 )
+01404: 
+01405:                 selected_in_chunk = int(
+01406:                     len(selected_features)
+01407:                 )
+01408: 
+01409:                 file_selected_count += (
+... omitted ...
+01554:             )
+01555:         }
+01556: 
+01557:         metadata_file = (
+01558:             final_output_directory
+01559:             / "metadata.parquet"
+01560:         )
+01561: 
+01562:         split_summary_records: list[
+... omitted ...
+01605:             "seed": int(
+01606:                 args.seed
+01607:             ),
+01608:             "feature_count": int(
+01609:                 len(feature_columns)
+01610:             ),
+01611:             "feature_storage_dtype": (
+01612:                 "float64"
+01613:             ),
+01614:             "global_unique_sample_count": int(
+... omitted ...
+01623:             "split_files": (
+01624:                 split_summary_records
+01625:             ),
+01626:             "metadata_file": str(
+01627:                 metadata_file
+01628:             ),
+01629:             "metadata_file_size_bytes": int(
+01630:                 metadata_file.stat().st_size
+01631:             ),
+01632:             "class_distribution_report": str(
+01633:                 class_report_file
+... omitted ...
+01637:                 "for each composite 128-bit fingerprint."
+01638:             ),
+01639:             "leakage_control": (
+01640:                 "Every composite feature-vector fingerprint is "
+01641:                 "materialized exactly once and belongs to one split."
+01642:             ),
+01643:         }
+... omitted ...
+01670:         )
+01671:         print(
+01672:             "Özellik sayısı         : "
+01673:             f"{len(feature_columns)}"
+01674:         )
+01675:         print(
+01676:             "Sınıf sayısı           : "
+... omitted ...
+01683:         )
+01684:         print(
+01685:             "Metadata      : "
+01686:             f"{metadata_file}"
+01687:         )
+01688:         print(
+01689:             "JSON özet     : "
+--- scripts\12_materialize_float32_canonical_dataset.py | exists=True | matches=57 ---
+00043:     PROJECT_ROOT
+00044:     / "data"
+00045:     / "processed"
+00046:     / "nbaiot_primary_seed2026"
+00047: )
+00048: 
+00049: DEFAULT_DATABASE_FILE = (
+00050:     PROJECT_ROOT
+00051:     / "data"
+00052:     / "cache"
+00053:     / "nbaiot_float32_canonical.sqlite"
+00054: )
+00055: 
+00056: DEFAULT_SCHEMA_FILE = (
+... omitted ...
+00260: # INPUT HELPERS
+00261: # ==========================================================
+00262: 
+00263: def load_feature_columns(
+00264:     schema_file: Path,
+00265: ) -> list[str]:
+00266:     """Referans özellik sütunlarını yükler."""
+... omitted ...
+00411: # FLOAT32 FINGERPRINTS
+00412: # ==========================================================
+00413: 
+00414: def create_float32_features_and_hashes(
+00415:     feature_frame: pd.DataFrame,
+00416: ) -> tuple[pd.DataFrame, np.ndarray, np.ndarray]:
+00417:     """Float32 kanonik özellik tablosu ve parmak izlerini üretir."""
+00418: 
+00419:     values = feature_frame.to_numpy(
+00420:         dtype=np.float32,
+00421:         copy=True,
+00422:     )
+... omitted ...
+00433: 
+00434:     float32_frame = pd.DataFrame(
+00435:         values,
+00436:         columns=feature_frame.columns,
+00437:     )
+00438: 
+00439:     forward = pd.util.hash_pandas_object(
+... omitted ...
+00933: # PARQUET SCHEMAS
+00934: # ==========================================================
+00935: 
+00936: def create_feature_schema(
+00937:     feature_columns: list[str],
+00938: ) -> pa.Schema:
+00939:     """Yeni model veri dosyasının Arrow şemasını oluşturur."""
+00940: 
+... omitted ...
+00943:             column_name,
+00944:             pa.float32(),
+00945:         )
+00946:         for column_name in feature_columns
+00947:     ]
+00948: 
+00949:     fields.append(
+... omitted ...
+00984:                 pa.string(),
+00985:             ),
+00986:             pa.field(
+00987:                 "representative_source_row_number",
+00988:                 pa.int64(),
+00989:             ),
+00990:             pa.field(
+... omitted ...
+01009: 
+01010: def open_writers(
+01011:     output_directory: Path,
+01012:     feature_schema: pa.Schema,
+01013:     metadata_schema: pa.Schema,
+01014: ) -> tuple[
+01015:     dict[str, pq.ParquetWriter],
+01016:     pq.ParquetWriter,
+01017: ]:
+01018:     """ParquetWriter nesnelerini açar."""
+01019: 
+01020:     split_writers: dict[
+01021:         str,
+01022:         pq.ParquetWriter,
+01023:     ] = {}
+01024: 
+01025:     for split_name in SPLIT_NAMES:
+01026:         split_writers[
+01027:             split_name
+01028:         ] = pq.ParquetWriter(
+01029:             output_directory
+01030:             / f"{split_name}.parquet",
+01031:             feature_schema,
+01032:             compression="zstd",
+01033:             use_dictionary=[
+01034:                 "class_label",
+... omitted ...
+01036:             write_statistics=True,
+01037:         )
+01038: 
+01039:     metadata_writer = pq.ParquetWriter(
+01040:         output_directory
+01041:         / "metadata.parquet",
+01042:         metadata_schema,
+01043:         compression="zstd",
+01044:         use_dictionary=[
+... omitted ...
+01056: 
+01057: 
+01058: def close_writers(
+01059:     split_writers: dict[str, pq.ParquetWriter],
+01060:     metadata_writer: pq.ParquetWriter | None,
+01061: ) -> None:
+01062:     """Açık ParquetWriter nesnelerini kapatır."""
+01063: 
+01064:     for writer in split_writers.values():
+01065:         writer.close()
+... omitted ...
+01119:             f"{database_file}"
+01120:         )
+01121: 
+01122:     feature_columns = load_feature_columns(
+01123:         schema_file
+01124:     )
+01125: 
+01126:     final_output_directory = (
+01127:         output_root
+01128:         / f"nbaiot_float32_canonical_seed{args.seed}"
+01129:     )
+01130: 
+01131:     temporary_output_directory = (
+01132:         output_root
+01133:         / (
+01134:             "nbaiot_float32_canonical_"
+01135:             f"seed{args.seed}__tmp"
+01136:         )
+01137:     )
+... omitted ...
+01178:     print(f"Geçici çıktı     : {temporary_output_directory}")
+01179:     print(f"Nihai çıktı      : {final_output_directory}")
+01180:     print(f"Seed             : {args.seed}")
+01181:     print(f"Özellik sayısı   : {len(feature_columns)}")
+01182:     print(f"Parça boyutu     : {args.batch_size:,}")
+01183:     print(f"Boş disk alanı   : {free_space_gb:.2f} GB")
+01184:     print("=" * 78)
+... omitted ...
+01195: 
+01196:     split_writers: dict[
+01197:         str,
+01198:         pq.ParquetWriter,
+01199:     ] = {}
+01200: 
+01201:     metadata_writer: pq.ParquetWriter | None = None
+01202: 
+01203:     try:
+01204:         configure_database(
+... omitted ...
+01305:                         f"split={split_name}"
+01306:                     )
+01307: 
+01308:         feature_schema = create_feature_schema(
+01309:             feature_columns
+01310:         )
+01311: 
+01312:         metadata_schema = (
+... omitted ...
+01320:             output_directory=(
+01321:                 temporary_output_directory
+01322:             ),
+01323:             feature_schema=feature_schema,
+01324:             metadata_schema=metadata_schema,
+01325:         )
+01326: 
+... omitted ...
+01357:             )
+01358: 
+01359:             expected_source_columns = (
+01360:                 feature_columns
+01361:                 + ["class_label"]
+01362:             )
+01363: 
+... omitted ...
+01369:                     f"{source_split_name} kaynak şeması uyuşmuyor."
+01370:                 )
+01371: 
+01372:             for column_name in feature_columns:
+01373:                 arrow_type = (
+01374:                     parquet_file.schema_arrow.field(
+01375:                         column_name
+... omitted ...
+01506:                 )
+01507: 
+01508:                 (
+01509:                     float32_features,
+01510:                     actual_forward,
+01511:                     actual_reverse,
+01512:                 ) = create_float32_features_and_hashes(
+01513:                     selected[
+01514:                         feature_columns
+01515:                     ]
+01516:                 )
+01517: 
+... omitted ...
+01662:                         continue
+01663: 
+01664:                     output_frame = (
+01665:                         float32_features.iloc[
+01666:                             positions
+01667:                         ].copy()
+01668:                     )
+... omitted ...
+01683:                     output_table = (
+01684:                         pa.Table.from_pandas(
+01685:                             output_frame[
+01686:                                 feature_columns
+01687:                                 + ["class_label"]
+01688:                             ],
+01689:                             schema=feature_schema,
+01690:                             preserve_index=False,
+01691:                         )
+01692:                     )
+01693: 
+01694:                     split_writers[
+01695:                         target_split_name
+01696:                     ].write_table(
+01697:                         output_table,
+01698:                         row_group_size=(
+01699:                             args.row_group_size
+... omitted ...
+01790:                         "representative_source_split": (
+01791:                             source_split_name
+01792:                         ),
+01793:                         "representative_source_row_number": (
+01794:                             representative_rows.astype(
+01795:                                 np.int64
+01796:                             )
+... omitted ...
+01818:                     )
+01819:                 )
+01820: 
+01821:                 metadata_writer.write_table(
+01822:                     metadata_table,
+01823:                     row_group_size=(
+01824:                         args.row_group_size
+... omitted ...
+01992: 
+01993:         class_report_file = (
+01994:             report_dir
+01995:             / "nbaiot_float32_canonical_class_distribution.csv"
+01996:         )
+01997: 
+01998:         summary_file = (
+01999:             report_dir
+02000:             / "nbaiot_float32_canonical_materialization_summary.json"
+02001:         )
+02002: 
+02003:         class_distribution.to_csv(
+... omitted ...
+02006:             encoding="utf-8",
+02007:         )
+02008: 
+02009:         metadata_file = (
+02010:             final_output_directory
+02011:             / "metadata.parquet"
+02012:         )
+02013: 
+02014:         summary: dict[str, Any] = {
+... omitted ...
+02018:             "seed": int(
+02019:                 args.seed
+02020:             ),
+02021:             "feature_count": int(
+02022:                 len(feature_columns)
+02023:             ),
+02024:             "feature_storage_dtype": (
+02025:                 "float32"
+02026:             ),
+02027:             "class_count": int(
+... omitted ...
+02044:             "split_files": (
+02045:                 split_records
+02046:             ),
+02047:             "metadata_file": str(
+02048:                 metadata_file
+02049:             ),
+02050:             "metadata_file_size_bytes": int(
+02051:                 metadata_file.stat().st_size
+02052:             ),
+02053:             "output_directory": str(
+02054:                 final_output_directory
+... omitted ...
+02057:                 class_report_file
+02058:             ),
+02059:             "leakage_control": (
+02060:                 "Every conflict-free float32 feature vector "
+02061:                 "is materialized once and assigned to exactly one split."
+02062:             ),
+02063:             "conflict_policy": (
+... omitted ...
+02103:         )
+02104:         print(
+--- scripts\14_fit_training_standardizer.py | exists=True | matches=52 ---
+00041:     PROJECT_ROOT
+00042:     / "data"
+00043:     / "processed"
+00044:     / "nbaiot_float32_canonical_seed2026"
+00045: )
+00046: 
+00047: DEFAULT_SCHEMA_FILE = (
+... omitted ...
+00248: # SCHEMA HELPERS
+00249: # ==========================================================
+00250: 
+00251: def load_feature_columns(
+00252:     schema_file: Path,
+00253: ) -> list[str]:
+00254:     """115 özellik sütununun adlarını yükler."""
+... omitted ...
+00267:             "Şema dosyasında 'column_name' sütunu yok."
+00268:         )
+00269: 
+00270:     feature_columns = (
+00271:         schema["column_name"]
+00272:         .astype(str)
+00273:         .str.strip()
+00274:         .tolist()
+00275:     )
+00276: 
+00277:     if not feature_columns:
+00278:         raise ValueError(
+00279:             "Özellik sütun listesi boş."
+00280:         )
+00281: 
+00282:     if len(feature_columns) != len(
+00283:         set(feature_columns)
+00284:     ):
+00285:         raise ValueError(
+00286:             "Şema dosyasında tekrarlanan sütun adı var."
+00287:         )
+00288: 
+00289:     return feature_columns
+00290: 
+00291: 
+00292: def validate_parquet_schema(
+00293:     parquet_file: pq.ParquetFile,
+00294:     feature_columns: list[str],
+00295:     split_name: str,
+00296: ) -> int:
+00297:     """Parquet şemasını ve satır sayısını doğrular."""
+00298: 
+00299:     expected_columns = (
+00300:         feature_columns
+00301:         + ["class_label"]
+00302:     )
+00303: 
+... omitted ...
+00308:             f"{split_name} sütun sırası referans şemayla uyuşmuyor."
+00309:         )
+00310: 
+00311:     for feature_name in feature_columns:
+00312:         feature_type = arrow_schema.field(
+00313:             feature_name
+00314:         ).type
+00315: 
+00316:         if feature_type != pa.float32():
+00317:             raise TypeError(
+00318:                 f"{split_name}/{feature_name} float32 değil: "
+00319:                 f"{feature_type}"
+00320:             )
+00321: 
+00322:     if arrow_schema.field(
+... omitted ...
+00344: 
+00345: def fit_training_standardizer(
+00346:     train_file: Path,
+00347:     feature_columns: list[str],
+00348:     batch_size: int,
+00349: ) -> tuple[
+00350:     StandardScaler,
+... omitted ...
+00360: 
+00361:     train_row_count = validate_parquet_schema(
+00362:         parquet_file=parquet_file,
+00363:         feature_columns=feature_columns,
+00364:         split_name="train",
+00365:     )
+00366: 
+00367:     feature_count = len(
+00368:         feature_columns
+00369:     )
+00370: 
+00371:     train_minimum = np.full(
+00372:         feature_count,
+00373:         np.inf,
+00374:         dtype=np.float64,
+00375:     )
+00376: 
+00377:     train_maximum = np.full(
+00378:         feature_count,
+00379:         -np.inf,
+00380:         dtype=np.float64,
+00381:     )
+... omitted ...
+00396: 
+00397:     for batch in parquet_file.iter_batches(
+00398:         batch_size=batch_size,
+00399:         columns=feature_columns,
+00400:     ):
+00401:         frame = batch.to_pandas()
+00402: 
+... omitted ...
+00405:             copy=True,
+00406:         )
+00407: 
+00408:         if values.shape[1] != feature_count:
+00409:             raise RuntimeError(
+00410:                 "Okunan özellik sayısı referans şemayla uyuşmuyor."
+00411:             )
+... omitted ...
+00514: 
+00515: def audit_scaled_splits(
+00516:     data_dir: Path,
+00517:     feature_columns: list[str],
+00518:     mean: np.ndarray,
+00519:     scale: np.ndarray,
+00520:     batch_size: int,
+... omitted ...
+00529:     Fit işlemi yapılmaz. Train'den öğrenilen mean ve scale kullanılır.
+00530:     """
+00531: 
+00532:     feature_count = len(
+00533:         feature_columns
+00534:     )
+00535: 
+00536:     split_records: list[
+... omitted ...
+00538:     ] = []
+00539: 
+00540:     train_scaled_sum = np.zeros(
+00541:         feature_count,
+00542:         dtype=np.float64,
+00543:     )
+00544: 
+00545:     train_scaled_square_sum = np.zeros(
+00546:         feature_count,
+00547:         dtype=np.float64,
+00548:     )
+00549: 
+... omitted ...
+00566: 
+00567:         row_count = validate_parquet_schema(
+00568:             parquet_file=parquet_file,
+00569:             feature_columns=feature_columns,
+00570:             split_name=split_name,
+00571:         )
+00572: 
+00573:         scaled_minimum = np.full(
+00574:             feature_count,
+00575:             np.inf,
+00576:             dtype=np.float64,
+00577:         )
+00578: 
+00579:         scaled_maximum = np.full(
+00580:             feature_count,
+00581:             -np.inf,
+00582:             dtype=np.float64,
+00583:         )
+... omitted ...
+00594: 
+00595:         for batch in parquet_file.iter_batches(
+00596:             batch_size=batch_size,
+00597:             columns=feature_columns,
+00598:         ):
+00599:             frame = batch.to_pandas()
+00600: 
+... omitted ...
+00767: 
+00768: def save_scaler_artifact(
+00769:     output_file: Path,
+00770:     feature_columns: list[str],
+00771:     mean: np.ndarray,
+00772:     variance: np.ndarray,
+00773:     scale: np.ndarray,
+... omitted ...
+00785:     with temporary_file.open(
+00786:         "wb"
+00787:     ) as file_handle:
+00788:         np.savez_compressed(
+00789:             file_handle,
+00790:             feature_names=np.asarray(
+00791:                 feature_columns,
+00792:                 dtype=np.str_,
+00793:             ),
+00794:             mean=np.asarray(
+... omitted ...
+00867:             f"Veri klasörü bulunamadı: {data_dir}"
+00868:         )
+00869: 
+00870:     feature_columns = load_feature_columns(
+00871:         schema_file
+00872:     )
+00873: 
+... omitted ...
+00933:     print("=" * 78)
+00934:     print(f"Veri klasörü     : {data_dir}")
+00935:     print(f"Train dosyası    : {train_file}")
+00936:     print(f"Özellik sayısı   : {len(feature_columns)}")
+00937:     print(f"Fit kaynağı      : Yalnızca train")
+00938:     print(f"Batch boyutu     : {args.batch_size:,}")
+00939:     print(f"Çıktı artifactı  : {artifact_file}")
+... omitted ...
+00946:         train_row_count,
+00947:     ) = fit_training_standardizer(
+00948:         train_file=train_file,
+00949:         feature_columns=feature_columns,
+00950:         batch_size=args.batch_size,
+00951:     )
+00952: 
+... omitted ...
+00986:         train_scaled_standard_deviation,
+00987:     ) = audit_scaled_splits(
+00988:         data_dir=data_dir,
+00989:         feature_columns=feature_columns,
+00990:         mean=mean,
+00991:         scale=scale,
+00992:         batch_size=args.batch_size,
+... omitted ...
+01067: 
+01068:     statistics = pd.DataFrame(
+01069:         {
+01070:             "feature_index": np.arange(
+01071:                 len(feature_columns),
+01072:                 dtype=np.int64,
+01073:             ),
+01074:             "feature_name": feature_columns,
+01075:             "train_mean": mean,
+01076:             "train_variance_ddof0": variance,
+01077:             "train_standard_deviation_ddof0": (
+... omitted ...
+01105: 
+01106:     save_scaler_artifact(
+01107:         output_file=artifact_file,
+01108:         feature_columns=feature_columns,
+01109:         mean=mean,
+01110:         variance=variance,
+01111:         scale=scale,
+... omitted ...
+01125:     )
+01126: 
+01127:     parameter_memory_float32_bytes = int(
+01128:         len(feature_columns)
+01129:         * 2
+01130:         * np.dtype(
+01131:             np.float32
+... omitted ...
+01156:         "variance_definition": (
+01157:             "Population variance with ddof=0, matching scikit-learn."
+01158:         ),
+01159:         "source_feature_dtype": "float32",
+01160:         "parameter_storage_dtype": "float64",
+01161:         "training_output_dtype_policy": (
+01162:             "Scaled arrays will be converted to float32 "
+01163:             "inside the PyTorch data pipeline."
+01164:         ),
+01165:         "feature_count": int(
+01166:             len(feature_columns)
+01167:         ),
+01168:         "train_sample_count": int(
+01169:             train_row_count
+01170:         ),
+01171:         "zero_variance_feature_count": int(
+01172:             zero_variance_count
+01173:         ),
+01174:         "zero_variance_features": [
+01175:             feature_columns[index]
+01176:             for index in np.flatnonzero(
+01177:                 zero_variance_mask
+01178:             )
+... omitted ...
+01243:     )
+01244:     print(
+01245:         "Özellik sayısı                  : "
+01246:         f"{len(feature_columns)}"
+01247:     )
+01248:     print(
+01249:         "Sıfır varyanslı özellik         : "
+--- scripts\37_build_float32_leakage_ablation_splits.py | exists=True | matches=8 ---
+00004: the same raw N-BaIoT row universe:
+00005: 
+00006: * ``naive_row`` assigns each raw row independently and therefore permits exact
+00007:   float32 feature vectors to cross train/validation/test boundaries.
+00008: * ``grouped_float32`` assigns every identical 115-feature float32 vector to one
+00009:   split.  Groups are allocated largest-first against per-family raw-row targets
+00010:   so that very large duplicate groups cannot silently distort the split ratios.
+00011:   Grouping is performed after the same float32 conversion used by the PyTorch
+... omitted ...
+00046: UINT64_MASK = (1 << 64) - 1
+00047: TRAIN_LIMIT = int(0.70 * (1 << 64))
+00048: VALIDATION_LIMIT = int(0.85 * (1 << 64))
+00049: EXPECTED_FEATURE_COUNT = 115
+00050: EXPECTED_RAW_ROW_COUNT = 7_062_606
+00051: EXPECTED_FLOAT32_GROUP_COUNT = 2_278_176
+00052: EXPECTED_SOURCE_FILE_COUNT = 89
+... omitted ...
+00193:     additional rows rather than allow an exact duplicate to cross splits.
+00194:     """
+00195:     matrix = np.array(values, dtype="<f4", order="C", copy=True)
+00196:     if matrix.ndim != 2 or matrix.shape[1] != EXPECTED_FEATURE_COUNT:
+00197:         raise ValueError(f"Beklenen (*, 115) matris, bulunan {matrix.shape}")
+00198:     if not np.isfinite(matrix).all():
+00199:         raise ValueError("Float32 özellik matrisinde sonlu olmayan değer var.")
+... omitted ...
+00448:             last_file_progress = time.perf_counter()
+00449:             for frame in pd.read_csv(csv_path, chunksize=chunk_size):
+00450:                 values = frame.to_numpy(dtype=np.float32, copy=False)
+00451:                 if values.shape[1] != EXPECTED_FEATURE_COUNT:
+00452:                     raise RuntimeError(f"Özellik sayısı 115 değil: {csv_path}")
+00453:                 forward, reverse = float32_fingerprints(values)
+00454:                 row_numbers = np.arange(base, base + len(values), dtype=np.uint64)
+... omitted ...
+00561:                 ("source_database", str(source_database)),
+00562:                 ("source_database_sha256", sha256(source_database)),
+00563:                 ("source_file_count", str(len(files))),
+00564:                 ("feature_dtype", "float32"),
+00565:                 ("feature_count", str(EXPECTED_FEATURE_COUNT)),
+00566:                 ("task", "family_3"),
+00567:                 ("grouped_assignment_method", "family-stratified largest-first raw-row balancing"),
+00568:                 ("validation_status", "pending"),
+... omitted ...
+00781:         "status": "split_indices_locked_before_training",
+00782:         "seed": seed,
+00783:         "task": "family_3",
+00784:         "feature_space_used_for_grouping": "115-feature float32 model input",
+00785:         "source_row_count": assignment_count,
+00786:         "source_file_count": source_file_count,
+00787:         "source_files_sha256_locked": True,
+--- scripts\38_run_b0_matched_leakage_ablation.py | exists=True | matches=52 ---
+00055: SPLIT_CODES = {"train": 0, "validation": 1, "test": 2}
+00056: SEEDS = (42, 123, 2026, 3407, 8192)
+00057: CLASS_NAMES = ("benign", "gafgyt", "mirai")
+00058: EXPECTED_FEATURE_COUNT = 115
+00059: EXPECTED_PARAMETER_COUNT = 9_603
+00060: EXPECTED_RAW_ROW_COUNT = 7_062_606
+00061: EXPECTED_FLOAT32_GROUP_COUNT = 2_278_176
+... omitted ...
+00143:     expected = {
+00144:         "protocol": "vs2_float32_leakage_ablation",
+00145:         "protocol_version": PROTOCOL_VERSION,
+00146:         "feature_dtype": "float32",
+00147:         "feature_count": "115",
+00148:         "task": "family_3",
+00149:         "seed": str(LOCKED_SPLIT_SEED),
+00150:         "validation_status": "passed",
+... omitted ...
+00483: def float32_fingerprints(values: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+00484:     """Paired order-sensitive fingerprints of the exact model-facing float32 rows."""
+00485:     matrix = np.array(values, dtype="<f4", order="C", copy=True)
+00486:     if matrix.ndim != 2 or matrix.shape[1] != EXPECTED_FEATURE_COUNT:
+00487:         raise RuntimeError(f"Model girdisi boyutu geçersiz: {matrix.shape}")
+00488:     if not np.isfinite(matrix).all():
+00489:         raise RuntimeError("Model girdisinde sonlu olmayan değer var.")
+... omitted ...
+00520:     ):
+00521:         if path.exists():
+00522:             path.unlink()
+00523:     mean = np.load(arm_directory / "mean.npy")
+00524:     scale = np.load(arm_directory / "std.npy")
+00525:     connection = sqlite3.connect(audit_database, timeout=120.0)
+00526:     started = time.perf_counter()
+00527:     processed_rows = 0
+... omitted ...
+00540:             "VALUES (?,?,?)"
+00541:         )
+00542:         for split_code, split in enumerate(SPLITS):
+00543:             x = np.load(arm_directory / f"X_{split}.npy", mmap_mode="r")
+00544:             last_progress = time.perf_counter()
+00545:             for start in range(0, len(x), chunk_size):
+00546:                 raw = np.asarray(x[start : start + chunk_size], dtype=np.float64)
+... omitted ...
+00595:             f"{overlap_count:,} model-girdisi çakışması bulundu; eğitim güvenli biçimde durduruldu."
+00596:         )
+00597:     return {
+00598:         "feature_space": "StandardScaler(float64 parameters) then float32 model input",
+00599:         "full_raw_row_scan": True,
+00600:         "processed_raw_rows": processed_rows,
+00601:         "unique_fingerprint_count_by_split": unique_by_split,
+... omitted ...
+00620:         if not completed:
+00621:             counts = split_counts(database, arm)
+00622:             row_count = sum(counts.values())
+00623:             missing_bytes += row_count * (EXPECTED_FEATURE_COUNT * 4 + 8)
+00624:     if missing_bytes == 0:
+00625:         return
+00626:     cache.mkdir(parents=True, exist_ok=True)
+... omitted ...
+00649:         "arm": arm,
+00650:         "assignment_database_sha256": database_sha256,
+00651:         "stage38_script_sha256": stage38_script_sha256,
+00652:         "feature_count": EXPECTED_FEATURE_COUNT,
+00653:         "feature_dtype": "float32",
+00654:         "scaler_parameter_dtype": "float64",
+00655:         "split_counts": counts,
+00656:         "split_class_counts": expected_class_counts,
+... omitted ...
+00663:     if mismatches:
+00664:         raise RuntimeError(f"Eski/uyumsuz VS2 önbelleği bulundu ({arm}): {mismatches}")
+00665:     for split in SPLITS:
+00666:         x = np.load(arm_directory / f"X_{split}.npy", mmap_mode="r")
+00667:         y = np.load(arm_directory / f"y_{split}.npy", mmap_mode="r")
+00668:         if x.shape != (counts[split], EXPECTED_FEATURE_COUNT) or x.dtype != np.float32:
+00669:             raise RuntimeError(f"Geçersiz önbellek X dizisi: {arm}/{split} {x.shape} {x.dtype}")
+00670:         if y.shape != (counts[split],) or y.dtype != np.int64:
+00671:             raise RuntimeError(f"Geçersiz önbellek y dizisi: {arm}/{split} {y.shape} {y.dtype}")
+... omitted ...
+00675:                 f"Önbellek sınıf sayıları uyuşmuyor: {arm}/{split} "
+00676:                 f"{observed_counts} != {expected_class_counts[split]}"
+00677:             )
+00678:     mean = np.load(arm_directory / "mean.npy")
+00679:     scale = np.load(arm_directory / "std.npy")
+00680:     weights = np.load(arm_directory / "class_weights.npy")
+00681:     if mean.shape != (EXPECTED_FEATURE_COUNT,) or mean.dtype != np.float64:
+00682:         raise RuntimeError(f"Geçersiz scaler mean: {arm} {mean.shape} {mean.dtype}")
+00683:     if scale.shape != (EXPECTED_FEATURE_COUNT,) or scale.dtype != np.float64:
+00684:         raise RuntimeError(f"Geçersiz scaler scale: {arm} {scale.shape} {scale.dtype}")
+00685:     if weights.shape != (3,) or weights.dtype != np.float32:
+00686:         raise RuntimeError(f"Geçersiz sınıf ağırlığı: {arm} {weights.shape} {weights.dtype}")
+... omitted ...
+00749:     arrays: dict[str, tuple[np.memmap, np.memmap]] = {}
+00750:     offsets = {split: 0 for split in SPLITS}
+00751:     for split in SPLITS:
+00752:         x_array = np.lib.format.open_memmap(
+00753:             arm_directory / f"X_{split}.npy",
+00754:             mode="w+",
+00755:             dtype=np.float32,
+00756:             shape=(counts[split], EXPECTED_FEATURE_COUNT),
+00757:         )
+00758:         y_array = np.lib.format.open_memmap(
+00759:             arm_directory / f"y_{split}.npy",
+00760:             mode="w+",
+00761:             dtype=np.int64,
+... omitted ...
+00770:         last_file_progress = time.perf_counter()
+00771:         for frame in pd.read_csv(csv_path, chunksize=chunk_size):
+00772:             values = frame.to_numpy(dtype=np.float32, copy=False)
+00773:             if values.shape[1] != EXPECTED_FEATURE_COUNT or not np.isfinite(values).all():
+00774:                 raise RuntimeError(f"Geçersiz CSV özellikleri: {csv_path}")
+00775:             end = base + len(values)
+00776:             for split in SPLITS:
+... omitted ...
+00811:                 f"{observed_counts} != {expected_class_counts[split]}"
+00812:             )
+00813: 
+00814:     x_train = np.load(arm_directory / "X_train.npy", mmap_mode="r")
+00815:     y_train = np.load(arm_directory / "y_train.npy", mmap_mode="r")
+00816:     scaler = StandardScaler(with_mean=True, with_std=True)
+00817:     for start in range(0, len(x_train), chunk_size):
+00818:         scaler.partial_fit(np.asarray(x_train[start : start + chunk_size], dtype=np.float32))
+00819:     mean = np.asarray(scaler.mean_, dtype=np.float64)
+00820:     standard_deviation = np.asarray(scaler.scale_, dtype=np.float64)
+00821:     if mean.shape != (EXPECTED_FEATURE_COUNT,) or standard_deviation.shape != (
+00822:         EXPECTED_FEATURE_COUNT,
+00823:     ):
+00824:         raise RuntimeError(f"{arm}: StandardScaler parametre boyutu geçersiz.")
+00825:     if not np.isfinite(mean).all() or not np.isfinite(standard_deviation).all():
+... omitted ...
+00828:         raise RuntimeError(f"{arm}: StandardScaler pozitif olmayan ölçek üretti.")
+00829:     class_counts = np.bincount(y_train, minlength=3)
+00830:     class_weights = inverse_sqrt_mean1(class_counts)
+00831:     np.save(arm_directory / "mean.npy", mean)
+00832:     np.save(arm_directory / "std.npy", standard_deviation)
+00833:     np.save(arm_directory / "class_weights.npy", class_weights)
+00834: 
+00835:     scaled_sum = np.zeros(EXPECTED_FEATURE_COUNT, dtype=np.float64)
+00836:     scaled_square = np.zeros(EXPECTED_FEATURE_COUNT, dtype=np.float64)
+00837:     scaled_finite = True
+00838:     for start in range(0, len(x_train), chunk_size):
+00839:         raw = np.asarray(x_train[start : start + chunk_size], dtype=np.float64)
+00840:         scaled = (raw - mean) / standard_deviation
+00841:         scaled_finite = scaled_finite and bool(np.isfinite(scaled).all())
+00842:         scaled_sum += scaled.sum(axis=0)
+00843:         scaled_square += np.square(scaled).sum(axis=0)
+00844:     scaled_mean = scaled_sum / len(x_train)
+00845:     scaled_variance = np.maximum(
+00846:         scaled_square / len(x_train) - np.square(scaled_mean), 0.0
+00847:     )
+00848:     scaled_std = np.sqrt(scaled_variance)
+00849:     max_abs_scaled_mean = float(np.max(np.abs(scaled_mean)))
+... omitted ...
+00860:         )
+00861:     scaled_split_audit: dict[str, Any] = {}
+00862:     for split in SPLITS:
+00863:         x_split = np.load(arm_directory / f"X_{split}.npy", mmap_mode="r")
+00864:         split_min = math.inf
+00865:         split_max = -math.inf
+00866:         split_finite = True
+... omitted ...
+00892:         scaled_overlap_audit = audit_scaled_grouped_overlap(arm_directory, chunk_size)
+00893:     else:
+00894:         scaled_overlap_audit = {
+00895:             "feature_space": "StandardScaler(float64 parameters) then float32 model input",
+00896:             "full_raw_row_scan": False,
+00897:             "reason": "Naive arm intentionally permits duplicate exposure; grouped arm is the zero-overlap lock.",
+00898:             "passed": None,
+... omitted ...
+00906:         "arm": arm,
+00907:         "assignment_database_sha256": database_sha256,
+00908:         "stage38_script_sha256": stage38_script_sha256,
+00909:         "feature_count": EXPECTED_FEATURE_COUNT,
+00910:         "feature_dtype": "float32",
+00911:         "scaler_method": "sklearn.preprocessing.StandardScaler.partial_fit",
+00912:         "scaler_parameter_dtype": "float64",
+00913:         "scaled_model_input_dtype": "float32",
+... omitted ...
+00936: 
+00937: class MemmapDataset(Dataset[tuple[torch.Tensor, torch.Tensor]]):
+00938:     def __init__(self, directory: Path, split: str) -> None:
+00939:         self.x = np.load(directory / f"X_{split}.npy", mmap_mode="r")
+00940:         self.y = np.load(directory / f"y_{split}.npy", mmap_mode="r")
+00941:         self.mean = np.load(directory / "mean.npy")
+00942:         self.std = np.load(directory / "std.npy")
+00943: 
+00944:     def __len__(self) -> int:
+00945:         return len(self.y)
+... omitted ...
+01013:     confusion = np.zeros((3, 3), dtype=np.int64)
+01014:     loss_sum = 0.0
+01015:     sample_count = 0
+01016:     for features, targets in loader:
+01017:         logits = model(features)
+01018:         loss = criterion(logits, targets)
+01019:         predictions = logits.argmax(dim=1)
+01020:         amount = len(targets)
+... omitted ...
+01145:     )
+01146:     model = create_model(
+01147:         model_name="tinyml_mlp",
+01148:         input_features=EXPECTED_FEATURE_COUNT,
+01149:         num_classes=3,
+01150:     )
+01151:     parameter_count = sum(parameter.numel() for parameter in model.parameters())
+... omitted ...
+01153:         raise RuntimeError(
+01154:             f"B0 tinyml_mlp parametre sayısı değişmiş: {parameter_count:,} != {EXPECTED_PARAMETER_COUNT:,}"
+01155:         )
+01156:     weights = torch.from_numpy(np.load(arm_directory / "class_weights.npy"))
+01157:     criterion = nn.CrossEntropyLoss(weight=weights)
+01158:     optimizer = torch.optim.AdamW(
+01159:         model.parameters(),
+... omitted ...
+01187:         model.train()
+01188:         running_loss = 0.0
+01189:         sample_count = 0
+01190:         for features, targets in train_loader:
+01191:             optimizer.zero_grad(set_to_none=True)
+01192:             logits = model(features)
+01193:             loss = criterion(logits, targets)
+01194:             loss.backward()
+01195:             nn.utils.clip_grad_norm_(model.parameters(), cfg["gradient_clip_norm"])
+--- scripts\52_build_numeric_order_pilot_cache_v2.py | exists=True | matches=61 ---
+00019: 
+00020: PROTOCOL_VERSION = "numeric_order_pilot_cache_v2_1"
+00021: 
+00022: FEATURE_COUNT = 115
+00023: BATCH_SIZE = 20_000
+00024: 
+00025: EXPECTED_ROWS = {
+... omitted ...
+00041:     PROJECT_ROOT
+00042:     / "data"
+00043:     / "processed"
+00044:     / "nbaiot_primary_seed2026"
+00045: )
+00046: 
+00047: CACHE_ROOT = (
+... omitted ...
+00182:         train_file
+00183:     ).schema_arrow
+00184: 
+00185:     feature_columns = [
+00186:         field.name
+00187:         for field in schema
+00188:         if pa.types.is_floating(
+... omitted ...
+00190:         )
+00191:     ]
+00192: 
+00193:     if len(feature_columns) != FEATURE_COUNT:
+00194:         raise RuntimeError(
+00195:             "Beklenen özellik sayısı "
+00196:             f"{FEATURE_COUNT}, bulunan "
+00197:             f"{len(feature_columns)}."
+00198:         )
+00199: 
+00200:     non_feature_columns = [
+00201:         field.name
+00202:         for field in schema
+00203:         if field.name not in feature_columns
+00204:     ]
+00205: 
+00206:     preferred_names = {
+... omitted ...
+00213: 
+00214:     preferred_matches = [
+00215:         name
+00216:         for name in non_feature_columns
+00217:         if name.casefold()
+00218:         in preferred_names
+00219:     ]
+... omitted ...
+00223:             preferred_matches[0]
+00224:         )
+00225: 
+00226:     elif len(non_feature_columns) == 1:
+00227:         label_column = (
+00228:             non_feature_columns[0]
+00229:         )
+00230: 
+00231:     else:
+00232:         raise RuntimeError(
+00233:             "Etiket sütunu otomatik "
+00234:             "belirlenemedi. Özellik dışı "
+00235:             f"sütunlar: {non_feature_columns}"
+00236:         )
+00237: 
+00238:     expected_names = [
+... omitted ...
+00278:             )
+00279: 
+00280:     return (
+00281:         feature_columns,
+00282:         label_column,
+00283:     )
+00284: 
+... omitted ...
+00298:         yield batch.to_pandas()
+00299: 
+00300: 
+00301: def feature_matrix(
+00302:     frame,
+00303:     feature_columns: list[str],
+00304: ) -> np.ndarray:
+00305:     values = frame[
+00306:         feature_columns
+00307:     ].to_numpy(
+00308:         dtype=np.float64,
+00309:         copy=False,
+... omitted ...
+00318:     if (
+00319:         values.ndim != 2
+00320:         or values.shape[1]
+00321:         != FEATURE_COUNT
+00322:     ):
+00323:         raise RuntimeError(
+00324:             "Geçersiz özellik matrisi: "
+... omitted ...
+00390: 
+00391: 
+00392: def fit_scalers(
+00393:     feature_columns: list[str],
+00394: ) -> tuple[
+00395:     np.ndarray,
+00396:     np.ndarray,
+... omitted ...
+00423:     for batch_index, frame in enumerate(
+00424:         iter_frames(
+00425:             train_file,
+00426:             feature_columns,
+00427:         ),
+00428:         start=1,
+00429:     ):
+00430:         raw = feature_matrix(
+00431:             frame,
+00432:             feature_columns,
+00433:         )
+00434: 
+00435:         pipeline_a_source = (
+... omitted ...
+00501:         "scale_b": scale_b,
+00502:     }.items():
+00503:         if values.shape != (
+00504:             FEATURE_COUNT,
+00505:         ):
+00506:             raise RuntimeError(
+00507:                 f"{name}: boyut hatası "
+... omitted ...
+00577:         return False
+00578: 
+00579:     try:
+00580:         array = np.load(
+00581:             path,
+00582:             mmap_mode="r",
+00583:             allow_pickle=False,
+... omitted ...
+00595: 
+00596: def process_split(
+00597:     split_name: str,
+00598:     feature_columns: list[str],
+00599:     label_column: str,
+00600:     mean_a: np.ndarray,
+00601:     scale_a: np.ndarray,
+... omitted ...
+00660:                 output_a,
+00661:                 (
+00662:                     expected_rows,
+00663:                     FEATURE_COUNT,
+00664:                 ),
+00665:                 np.float32,
+00666:             )
+... omitted ...
+00668:                 output_b,
+00669:                 (
+00670:                     expected_rows,
+00671:                     FEATURE_COUNT,
+00672:                 ),
+00673:                 np.float32,
+00674:             )
+... omitted ...
+00713:         f"oluşturuluyor ({expected_rows:,} satır)"
+00714:     )
+00715: 
+00716:     memmap_a = np.lib.format.open_memmap(
+00717:         partial_a,
+00718:         mode="w+",
+00719:         dtype=np.float32,
+00720:         shape=(
+00721:             expected_rows,
+00722:             FEATURE_COUNT,
+00723:         ),
+00724:     )
+00725: 
+00726:     memmap_b = np.lib.format.open_memmap(
+00727:         partial_b,
+00728:         mode="w+",
+00729:         dtype=np.float32,
+00730:         shape=(
+00731:             expected_rows,
+00732:             FEATURE_COUNT,
+00733:         ),
+00734:     )
+00735: 
+00736:     memmap_y = np.lib.format.open_memmap(
+00737:         partial_y,
+00738:         mode="w+",
+00739:         dtype=np.int8,
+... omitted ...
+00754:     )
+00755: 
+00756:     selected_columns = (
+00757:         feature_columns
+00758:         + [label_column]
+00759:     )
+00760: 
+... omitted ...
+00765:         ),
+00766:         start=1,
+00767:     ):
+00768:         raw = feature_matrix(
+00769:             frame,
+00770:             feature_columns,
+00771:         )
+00772: 
+00773:         labels = encode_labels(
+... omitted ...
+00914: 
+00915:     element_count = (
+00916:         expected_rows
+00917:         * FEATURE_COUNT
+00918:     )
+00919: 
+00920:     state = {
+... omitted ...
+01078:     * sum(
+01079:         EXPECTED_ROWS.values()
+01080:     )
+01081:     * FEATURE_COUNT
+01082:     * np.dtype(
+01083:         np.float32
+01084:     ).itemsize
+... omitted ...
+01120:     )
+01121: 
+01122: 
+01123: feature_columns, label_column = (
+01124:     discover_schema()
+01125: )
+01126: 
+01127: print(f"Özellik sayısı: {len(feature_columns)}")
+01128: print(f"Etiket sütunu : {label_column}")
+01129: 
+01130: 
+... omitted ...
+01136:     mean_b,
+01137:     scale_b,
+01138: ) = fit_scalers(
+01139:     feature_columns
+01140: )
+01141: 
+01142: 
+01143: np.savez_compressed(
+01144:     PIPELINE_A_DIRECTORY
+01145:     / "scaler.npz",
+01146:     mean=mean_a,
+01147:     scale=scale_a,
+01148:     feature_names=np.asarray(
+01149:         feature_columns,
+01150:         dtype="U",
+01151:     ),
+01152:     fit_split=np.asarray(
+... omitted ...
+01165:     ),
+01166: )
+01167: 
+01168: np.savez_compressed(
+01169:     PIPELINE_B_DIRECTORY
+01170:     / "scaler.npz",
+01171:     mean=mean_b,
+01172:     scale=scale_b,
+01173:     feature_names=np.asarray(
+01174:         feature_columns,
+01175:         dtype="U",
+01176:     ),
+01177:     fit_split=np.asarray(
+... omitted ...
+01198:         "protocol_version":
+01199:             PROTOCOL_VERSION,
+01200: 
+01201:         "feature_count":
+01202:             FEATURE_COUNT,
+01203: 
+01204:         "feature_names":
+01205:             feature_columns,
+01206: 
+01207:         "label_column":
+01208:             label_column,
+... omitted ...
+01235:     split_states.append(
+01236:         process_split(
+01237:             split_name,
+01238:             feature_columns,
+01239:             label_column,
+01240:             mean_a,
+01241:             scale_a,
+... omitted ...
+01282:     np.float32
+01283: )
+01284: 
+01285: np.save(
+01286:     SHARED_DIRECTORY
+01287:     / "class_weights.npy",
+01288:     class_weights,
+... omitted ...
+01402: 
+01403: 
+01404: cache_validation_checks = {
+01405:     "feature_count":
+01406:         len(feature_columns)
+01407:         == FEATURE_COUNT,
+01408: 
+01409:     "global_row_count":
+--- scripts\53_run_numeric_order_training_pilot_v2.py | exists=True | matches=31 ---
+00101: )
+00102: 
+00103: 
+00104: FEATURE_COUNT = 115
+00105: CLASS_COUNT = 3
+00106: 
+00107: CLASS_NAMES = [
+... omitted ...
+00267:     return digest.hexdigest()
+00268: 
+00269: 
+00270: def open_memmap(
+00271:     path: Path,
+00272:     expected_shape: tuple[int, ...],
+00273:     expected_dtype: np.dtype,
+... omitted ...
+00277:             f"Önbellek dosyası yok: {path}"
+00278:         )
+00279: 
+00280:     array = np.load(
+00281:         path,
+00282:         mmap_mode="r",
+00283:         allow_pickle=False,
+... omitted ...
+00327:     ):
+00328:         arrays[
+00329:             f"x_{split_name}"
+00330:         ] = open_memmap(
+00331:             pipeline_directory
+00332:             / f"x_{split_name}.npy",
+00333:             (
+00334:                 row_count,
+00335:                 FEATURE_COUNT,
+00336:             ),
+00337:             np.float32,
+00338:         )
+00339: 
+00340:         arrays[
+00341:             f"y_{split_name}"
+00342:         ] = open_memmap(
+00343:             shared_directory
+00344:             / f"y_{split_name}.npy",
+00345:             (
+... omitted ...
+00350: 
+00351:     arrays[
+00352:         "class_weights"
+00353:     ] = open_memmap(
+00354:         shared_directory
+00355:         / "class_weights.npy",
+00356:         (
+... omitted ...
+00363: 
+00364: 
+00365: def numpy_batch(
+00366:     features: np.ndarray,
+00367:     labels: np.ndarray,
+00368:     indexes: np.ndarray | slice,
+00369: ) -> tuple[
+00370:     torch.Tensor,
+00371:     torch.Tensor,
+00372: ]:
+00373:     feature_batch = np.array(
+00374:         features[indexes],
+00375:         dtype=np.float32,
+00376:         copy=True,
+00377:         order="C",
+... omitted ...
+00386: 
+00387:     return (
+00388:         torch.from_numpy(
+00389:             feature_batch
+00390:         ),
+00391:         torch.from_numpy(
+00392:             label_batch
+... omitted ...
+00566: 
+00567: def evaluate(
+00568:     model: nn.Module,
+00569:     features: np.ndarray,
+00570:     labels: np.ndarray,
+00571:     criterion: nn.Module,
+00572:     batch_size: int,
+... omitted ...
+00597:                 row_count,
+00598:             )
+00599: 
+00600:             feature_batch, label_batch = (
+00601:                 numpy_batch(
+00602:                     features,
+00603:                     labels,
+00604:                     slice(start, end),
+00605:                 )
+00606:             )
+00607: 
+00608:             logits = model(
+00609:                 feature_batch
+00610:             )
+00611: 
+00612:             loss = criterion(
+... omitted ...
+00665: 
+00666:     model = create_model(
+00667:         model_name=model_name,
+00668:         input_features=FEATURE_COUNT,
+00669:         num_classes=CLASS_COUNT,
+00670:     )
+00671: 
+... omitted ...
+00774: 
+00775:             model.train()
+00776: 
+00777:             train_features, train_labels = (
+00778:                 numpy_batch(
+00779:                     arrays[
+00780:                         "x_train"
+00781:                     ],
+00782:                     arrays[
+00783:                         "y_train"
+... omitted ...
+00791:             )
+00792: 
+00793:             logits = model(
+00794:                 train_features
+00795:             )
+00796: 
+00797:             if logits.shape != (
+... omitted ...
+00825:             model.eval()
+00826: 
+00827:             with torch.inference_mode():
+00828:                 validation_features, (
+00829:                     validation_labels
+00830:                 ) = numpy_batch(
+00831:                     arrays[
+00832:                         "x_validation"
+00833:                     ],
+00834:                     arrays[
+00835:                         "y_validation"
+... omitted ...
+00838:                 )
+00839: 
+00840:                 validation_logits = model(
+00841:                     validation_features
+00842:                 )
+00843: 
+00844:                 validation_predictions = (
+... omitted ...
+01261:                 start:end
+01262:             ]
+01263: 
+01264:             feature_batch, label_batch = (
+01265:                 numpy_batch(
+01266:                     arrays[
+01267:                         "x_train"
+01268:                     ],
+01269:                     arrays[
+01270:                         "y_train"
+... omitted ...
+01278:             )
+01279: 
+01280:             logits = model(
+01281:                 feature_batch
+01282:             )
+01283: 
+01284:             loss = criterion(
+... omitted ...
+01358: 
+01359:         validation_metrics = evaluate(
+01360:             model=model,
+01361:             features=arrays[
+01362:                 "x_validation"
+01363:             ],
+01364:             labels=arrays[
+01365:                 "y_validation"
+... omitted ...
+01522:     best_validation_metrics = (
+01523:         evaluate(
+01524:             model=model,
+01525:             features=arrays[
+01526:                 "x_validation"
+01527:             ],
+01528:             labels=arrays[
+01529:                 "y_validation"
+... omitted ...
+01536:     # Test tam olarak bir kez değerlendirilir.
+01537:     test_metrics = evaluate(
+01538:         model=model,
+01539:         features=arrays[
+01540:             "x_test"
+01541:         ],
+01542:         labels=arrays[
+01543:             "y_test"

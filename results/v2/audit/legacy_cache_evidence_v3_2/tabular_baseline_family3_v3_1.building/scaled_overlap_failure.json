@@ -1,0 +1,24 @@
+{
+  "feature_space": "train-only StandardScaler float64 parameters then final float32 model input",
+  "processed_fingerprint_rows": 2278176,
+  "unique_scaled_fingerprints_by_split": {
+    "train": 1533641,
+    "validation": 371672,
+    "test": 371679
+  },
+  "collapsed_within_split_rows": 1184,
+  "cross_split_model_input_fingerprint_count": 280,
+  "within_split_family_conflict_count": 0,
+  "global_family_conflict_count": 0,
+  "audit_database_quick_check": "ok",
+  "elapsed_seconds": 24.954373600077815,
+  "checks": {
+    "processed_rows_match": true,
+    "all_splits_present": true,
+    "cross_split_overlap_zero": false,
+    "within_split_family_conflicts_zero": true,
+    "global_family_conflicts_zero": true,
+    "audit_database_quick_check_ok": true
+  },
+  "passed": false
+}

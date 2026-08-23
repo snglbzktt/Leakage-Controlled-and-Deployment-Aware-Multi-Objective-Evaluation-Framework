@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-25T07:53:10.764025+00:00",
+  "status": "completed",
+  "model_name": "tinyml_mlp",
+  "method_name": "DQ",
+  "seed": 3407,
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tinyml_mlp\\DQ\\seed3407\\model_dynamic_int8.onnx",
+  "artifact_sha256": "0f3581c19e7c790f52b7c4ee9063c8d323e49c9763c32801891d1eec60bbe1be",
+  "evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "completed_at_utc": "2026-07-25T07:53:11.965712+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tinyml_mlp\\DQ\\seed3407\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tinyml_mlp\\DQ\\seed3407\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\quantization_v1\\tinyml_mlp\\DQ\\seed3407\\test_confusion_matrix.csv"
+}

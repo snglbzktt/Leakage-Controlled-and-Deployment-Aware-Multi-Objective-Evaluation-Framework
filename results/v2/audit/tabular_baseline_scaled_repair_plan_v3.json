@@ -1,0 +1,55 @@
+{
+  "status": "plan_only_not_applied",
+  "generated_at_utc": "2026-08-06T12:42:29.424622+00:00",
+  "cross_split_scaled_component_count": 280,
+  "affected_original_fingerprint_row_count": 938,
+  "minimum_moved_fingerprint_count": 353,
+  "minimum_moved_raw_row_count_given_minimum_fingerprints": 353,
+  "split_plan": [
+    {
+      "split_code": 0,
+      "split": "train",
+      "original_fingerprint_count": 1534583,
+      "fingerprint_delta": 0,
+      "proposed_fingerprint_count": 1534583,
+      "original_raw_row_count": 4943823,
+      "raw_row_delta": 0,
+      "proposed_raw_row_count": 4943823
+    },
+    {
+      "split_code": 1,
+      "split": "validation",
+      "original_fingerprint_count": 371796,
+      "fingerprint_delta": 0,
+      "proposed_fingerprint_count": 371796,
+      "original_raw_row_count": 1059389,
+      "raw_row_delta": 0,
+      "proposed_raw_row_count": 1059389
+    },
+    {
+      "split_code": 2,
+      "split": "test",
+      "original_fingerprint_count": 371797,
+      "fingerprint_delta": 0,
+      "proposed_fingerprint_count": 371797,
+      "original_raw_row_count": 1059394,
+      "raw_row_delta": 0,
+      "proposed_raw_row_count": 1059394
+    }
+  ],
+  "component_span_distribution": {
+    "2": 263,
+    "3": 17
+  },
+  "family_distribution": {
+    "0": 280,
+    "1": 0,
+    "2": 0
+  },
+  "components_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_components_v3.csv",
+  "moves_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_moves_v3.csv",
+  "failure_report_cross_split_count": 280,
+  "plan_applied": false,
+  "all_checks_passed": true,
+  "elapsed_seconds": 6.879527399898507
+}

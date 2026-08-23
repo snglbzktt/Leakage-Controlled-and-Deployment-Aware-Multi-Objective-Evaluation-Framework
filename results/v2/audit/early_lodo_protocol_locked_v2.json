@@ -1,0 +1,183 @@
+{
+  "protocol_version": "early_lodo_protocol_v2_1",
+  "status": "locked",
+  "locked_at": "2026-08-05T18:51:01.165582+00:00",
+  "software": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "torch": "2.11.0+cpu",
+    "scikit_learn": "1.9.0",
+    "cuda_available": false
+  },
+  "experiment_scope": {
+    "task": "family_3",
+    "classes": [
+      "benign",
+      "gafgyt",
+      "mirai"
+    ],
+    "device_count": 9,
+    "model_count": 3,
+    "seed_count": 1,
+    "locked_seed": 2026,
+    "expected_run_count": 27
+  },
+  "data_policy": {
+    "membership_source": "data/cache/nbaiot_duplicate_audit.sqlite:vector_device",
+    "membership_index": "data/processed/nbaiot_early_lodo_membership_v2",
+    "row_alignment": "All arrays use the exact row order of nbaiot_primary_seed2026/metadata.parquet.",
+    "training_unit": "one_row_per_exact_fingerprint",
+    "training_sample_weight": "none",
+    "test_record_weight": "held_out_device_occurrence_count",
+    "pipeline": "pipeline_a",
+    "pipeline_definition": "source float64 -> canonical float32 -> fold-train scaler fit -> standardized float32",
+    "scaler_policy": "Fit a new StandardScaler using only the strict training rows of each held-out-device fold.",
+    "tree_baseline_scaling": "HistGradientBoosting receives canonical float32 features without standardization."
+  },
+  "fold_policy": {
+    "name": "strict_heldout_device_fingerprint_disjoint",
+    "test": "Every fingerprint observed on the held-out device.",
+    "train": "Locked train rows after removing every fingerprint observed on the held-out device.",
+    "validation": "Locked validation rows after removing every fingerprint observed on the held-out device.",
+    "unused": "Non-held-out rows belonging to the old locked test split are not used in the early LODO pilot.",
+    "fingerprint_overlap": "zero by construction",
+    "test_not_used_for_selection": true
+  },
+  "models": [
+    {
+      "model_id": "tinyml_mlp_b0",
+      "model_family": "neural",
+      "architecture": "tinyml_mlp",
+      "hidden_layers": [
+        64,
+        32
+      ],
+      "activation": "relu",
+      "dropout": 0.0,
+      "learning_rate": 0.003,
+      "optimizer": "adamw",
+      "weight_decay": 0.0001,
+      "batch_size": 4096,
+      "maximum_epochs": 15,
+      "early_stopping_patience": 4,
+      "early_stopping_min_delta": 0.0002,
+      "class_weight": "inverse_sqrt_train_fingerprint_frequency"
+    },
+    {
+      "model_id": "compact_dnn_b0",
+      "model_family": "neural",
+      "architecture": "compact_dnn",
+      "hidden_layers": [
+        128,
+        64,
+        32
+      ],
+      "activation": "relu",
+      "dropout": 0.1,
+      "learning_rate": 0.001,
+      "optimizer": "adamw",
+      "weight_decay": 0.0001,
+      "batch_size": 4096,
+      "maximum_epochs": 15,
+      "early_stopping_patience": 4,
+      "early_stopping_min_delta": 0.0002,
+      "class_weight": "inverse_sqrt_train_fingerprint_frequency"
+    },
+    {
+      "model_id": "hist_gradient_boosting_b0",
+      "model_family": "classical",
+      "architecture": "hist_gradient_boosting",
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 31,
+      "max_depth": null,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.0001,
+      "max_bins": 255,
+      "class_weight": "balanced",
+      "early_stopping": false,
+      "loss": "log_loss"
+    }
+  ],
+  "neural_selection": {
+    "selection_split": "strict fold validation",
+    "selection_metric": "validation_macro_f1",
+    "best_epoch_rule": "Highest validation Macro-F1; earliest epoch breaks a tie.",
+    "test_evaluation": "Exactly once after selecting the best validation epoch."
+  },
+  "classical_selection": {
+    "configuration": "fixed preregistered B0",
+    "validation_tuning": false,
+    "test_tuning": false
+  },
+  "reporting_views": {
+    "primary": {
+      "name": "fingerprint_level",
+      "sample_weight": "none",
+      "fold_macro_f1": "Macro-F1 over classes present in that test fold.",
+      "device_macro_f1": "Arithmetic mean of the nine fold Macro-F1 values."
+    },
+    "secondary": {
+      "name": "heldout_record_weighted",
+      "sample_weight": "Held-out-device occurrence count for each fingerprint."
+    }
+  },
+  "metric_policy": {
+    "required_metrics": [
+      "accuracy",
+      "balanced_accuracy",
+      "macro_f1",
+      "weighted_f1",
+      "per_class_precision",
+      "per_class_recall",
+      "per_class_f1",
+      "per_class_fnr",
+      "confusion_matrix"
+    ],
+    "absent_test_class": "Recall, F1 and FNR are N/A; never replace with zero.",
+    "two_family_devices": [
+      "Ennio_Doorbell",
+      "Samsung_SNH_1011_N_Webcam"
+    ],
+    "mirai_eligible_fold_count": 7,
+    "gafgyt_eligible_fold_count": 9,
+    "eligible_attack_cells": 16
+  },
+  "fragility_rules": {
+    "primary_view": "fingerprint_level",
+    "device_macro_f1_threshold": 0.85,
+    "median_eligible_attack_fnr_threshold": 0.4,
+    "eligible_attack_cell_fnr_threshold": 0.4,
+    "minimum_bad_attack_cells": 6,
+    "minimum_bad_attack_cell_fraction": "one_third",
+    "single_bad_cell_interpretation": "Local severe failure only; not sufficient alone for the global fragility conclusion.",
+    "meaningful_closed_set_macro_f1_drop": 0.1,
+    "meaningful_attack_fnr_increase": 0.1
+  },
+  "reproducibility": {
+    "seed": 2026,
+    "deterministic_torch": true,
+    "no_hyperparameter_search": true,
+    "run_matrix_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\early_lodo_run_matrix_v2.csv"
+  },
+  "validation_checks": {
+    "membership_summary_locked": true,
+    "nine_fold_rows": true,
+    "nine_device_validation_rows": true,
+    "unique_fold_devices": true,
+    "fold_and_device_names_match": true,
+    "all_fold_overlap_zero": true,
+    "all_train_classes_present": true,
+    "all_validation_classes_present": true,
+    "all_tests_nonempty": true,
+    "test_family_policy_matches": true,
+    "mirai_absence_policy_matches": true,
+    "all_device_counts_match": true,
+    "all_device_family_counts_match": true,
+    "hgb_parameters_supported": true,
+    "three_models_registered": true,
+    "twenty_seven_runs": true,
+    "unique_run_ids": true,
+    "single_locked_seed": true
+  },
+  "all_checks_passed": true
+}

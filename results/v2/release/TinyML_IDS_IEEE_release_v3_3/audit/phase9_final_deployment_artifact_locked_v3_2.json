@@ -1,0 +1,89 @@
+{
+  "status": "locked",
+  "phase": 9,
+  "artifact_name": "final_deployment_artifact",
+  "protocol_version": "phase9_final_artifact_v3_2",
+  "locked_at_utc": "2026-08-06T22:58:09.036261+00:00",
+  "artifact_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2",
+  "model_family": "tinyml_mlp::P50-QAT",
+  "architecture": "tinyml_mlp",
+  "variant": "P50-QAT",
+  "representation": "static_int8",
+  "canonical_seed": 2026,
+  "class_labels_in_output_index_order": [
+    "benign",
+    "gafgyt",
+    "mirai"
+  ],
+  "artifact_lock": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\artifact_lock.json",
+    "size_bytes": 3717,
+    "sha256": "78f27e1a167d63fd0d603f757b4beec396a99d5813ba5638040a74b64611a837"
+  },
+  "independent_verification": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase9_final_artifact_verification_v3_2.json",
+    "size_bytes": 4164,
+    "sha256": "f805fc77c0377ccf8372dc67bc50fb852c4b6a40077bd3857a390831ab4cee86"
+  },
+  "locked_bundle_inventory": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\artifact_lock.json",
+      "size_bytes": 3717,
+      "sha256": "78f27e1a167d63fd0d603f757b4beec396a99d5813ba5638040a74b64611a837",
+      "relative_path": "artifact_lock.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\artifact_manifest.json",
+      "size_bytes": 5990,
+      "sha256": "30e45287f9b23eed0d8939921a33f776d95c8f5fffe006d90556d5e478f86e31",
+      "relative_path": "artifact_manifest.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\inference_contract.json",
+      "size_bytes": 1541,
+      "sha256": "37865f4c8eb9ce1d7a2393638e33f9eaaa3eb6af6489f9aa7f4f88037fa05cec",
+      "relative_path": "inference_contract.json"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\model_int8_checkpoint.pt",
+      "size_bytes": 14023,
+      "sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+      "relative_path": "model_int8_checkpoint.pt"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd",
+      "relative_path": "nbaiot_models.py"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\phase5_physical_pruning_engine_v3_2.py",
+      "size_bytes": 11014,
+      "sha256": "f79f344cef7afe3931a413545aa6e7d4a07ac96a0486e9a82fce875ff954b7d3",
+      "relative_path": "phase5_physical_pruning_engine_v3_2.py"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\phase5_qat_engine_v3_2.py",
+      "size_bytes": 5822,
+      "sha256": "d1e33943a31bd1b3e2ea83a64daee9a31a8b5a8616c97346c62fff3c03503273",
+      "relative_path": "phase5_qat_engine_v3_2.py"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\final_artifact\\tinyml_mlp_P50_QAT_seed2026_v3_2\\train_only_standard_scaler_v3_2.npz",
+      "size_bytes": 5361,
+      "sha256": "3c4f271fb3af26d42f8cc35c1f4d1b59128ac6dfee42b99c5550e8b2b9f75dd6",
+      "relative_path": "train_only_standard_scaler_v3_2.npz"
+    }
+  ],
+  "source_checkpoint_sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+  "bundled_checkpoint_sha256": "9a2d2c0dc469777e82a2daba5bd1bbad1dc5bd77fa46e0304f94752eefbfef8a",
+  "source_bundle_checkpoint_exact": true,
+  "source_bundle_outputs_exact": true,
+  "serialization_roundtrip_exact": true,
+  "validation_data_access": false,
+  "test_data_access": false,
+  "single_checkpoint_locked": true,
+  "final_deployment_artifact_locked": true,
+  "ready_for_release_archive": true,
+  "all_checks_passed": true
+}

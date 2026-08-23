@@ -1,0 +1,78 @@
+{
+  "status": "generated",
+  "phase": 13,
+  "asset_id": "table_01_dataset_protocol",
+  "generated_at_utc": "2026-08-07T07:50:38.990378+00:00",
+  "title": "Primary Study Dataset and Evaluation Protocol",
+  "row_count": 15,
+  "source_files": [
+    {
+      "source_id": "lodo_global_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\early_lodo\\global\\early_lodo_global_summary_v2.json",
+      "sha256": "1edbff5dd484f4bcd8b4d651b33795b21748debaa3e9f643b720b6970bea4b77"
+    },
+    {
+      "source_id": "phase4_summary",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_summary_v3_2.json",
+      "sha256": "a64ead61fa0f4d56c586ed3cdf6922c212dd25423bbf7fc3b59343d2a800de98"
+    },
+    {
+      "source_id": "phase5_closure",
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compression_closure_v3_2.json",
+      "sha256": "e3483c5796f16c7dc30eeb20b90ce43250289dc4ba217a03eb87d7ddc9302eac"
+    }
+  ],
+  "outputs": {
+    "csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_01_dataset_protocol_v3_3.csv",
+      "sha256": "e6fc271d7f0da831c5a905905d1237f609e08c0a9b5d47497457aeb6b6fb0fa2",
+      "size_bytes": 1373
+    },
+    "markdown": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\tables\\table_01_dataset_protocol_v3_3.md",
+      "sha256": "fe42cfe963aceb347f6a7940aa6017efb1811bae11a52b6b85c423b91d7debb5",
+      "size_bytes": 1532
+    },
+    "source_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\source_data\\table_01_dataset_protocol_source_v3_3.json",
+      "sha256": "5a0690f7f3434ff4f01254f9eb20fd5e5bc87325ce64a01ceeb069f6423d4390",
+      "size_bytes": 3021
+    },
+    "caption": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\manuscript_assets_v3_3\\captions\\table_01_dataset_protocol_caption_v3_3.txt",
+      "sha256": "b3523de7a49add5c094f9d11909a0e23ff006836add988a7bf320329dccea7c1",
+      "size_bytes": 386
+    }
+  },
+  "entry_checks": {
+    "binding_locked": true,
+    "binding_hash_matches": true,
+    "mapping_validated": true,
+    "mapping_hash_matches": true,
+    "all_five_figures_locked": true,
+    "table_01_mapped": true
+  },
+  "data_checks": {
+    "lodo_devices_9": true,
+    "lodo_models_3": true,
+    "lodo_runs_27": true,
+    "lodo_two_class_devices_2": true,
+    "lodo_severe_macro_f1_085": true,
+    "lodo_severe_attack_fnr_040": true,
+    "lodo_validation_drop_010": true,
+    "phase4_models_4": true,
+    "phase4_runs_12": true,
+    "phase4_descriptive_only": true,
+    "phase5_architectures_2": true,
+    "phase5_variants_11": true,
+    "phase5_seeds_5": true,
+    "phase5_runs_110": true,
+    "phase5_groups_22": true,
+    "phase5_test_not_selection": true
+  },
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "ready_for_manuscript": true,
+  "all_checks_passed": true
+}

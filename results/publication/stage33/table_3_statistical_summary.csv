@@ -1,0 +1,4 @@
+﻿Model,Friedman χ²,Serbestlik Derecesi,Friedman p,Friedman Anlamlı,Kendall W,Etki Büyüklüğü,Holm Sonrası Anlamlı İkili Karşılaştırma,Toplam İkili Karşılaştırma,B0 ile Anlamlı Karşılaştırma,B0 Karşılaştırma Sayısı
+TinyML-MLP,41.55272727272728,9,3.9666116561458745e-06,True,0.9233939393939395,large,0,45,0,9
+Compact-DNN,37.53818181818184,9,2.1090222866104724e-05,True,0.8341818181818187,large,0,45,0,9
+Tiny-1D-CNN,40.06310679611652,9,7.401066568964622e-06,True,0.8902912621359227,large,0,45,0,9

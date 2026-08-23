@@ -1,0 +1,12 @@
+﻿{
+    "status":  "locked_before_cache_cleanup",
+    "generated_at":  "2026-08-06T13:05:18.1842057+03:00",
+    "protocol_version":  "2.3",
+    "completed_runs":  10,
+    "scientific_file_count":  35,
+    "hash_manifest":  ".\\results\\v2\\audit\\vs2_scientific_results_sha256_before_cache_cleanup.csv",
+    "protocol_database":  ".\\data\\splits\\vs2_float32_leakage_ablation_scaled_repaired_seed2026_v3.sqlite",
+    "cache_directory":  ".\\data\\processed\\vs2_float32_leakage_ablation_repaired_cache_v3",
+    "cache_file_count":  21,
+    "cache_size_bytes":  6669036451
+}

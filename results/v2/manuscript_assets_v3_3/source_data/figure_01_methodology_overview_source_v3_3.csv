@@ -1,0 +1,8 @@
+order,phase,stage,detail,evidence
+1,Phase 3,Strict LODO generalization,9 devices × 3 models = 27 locked runs,Global severe-fragility gate passed
+2,Phase 5,Compression matrix,2 architectures × 11 variants × 5 seeds = 110 runs,22 grouped configurations
+3,Phase 6,Deployment benchmark,110 isolated CPU measurements,Batch-1 latency + batch-32 throughput; no val/test access
+4,Phase 8,Multi-objective selection,Eligibility → Pareto → deployment ordering,Selected family: TinyML-MLP P50-QAT
+5,Phase 9,Final deployment artifact,Canonical seed 2026,Exact source/bundle and serialization round-trip
+6,Phase 10,Deterministic release,Locked release archive,Deterministic rebuild exact
+7,Phase 11,Input robustness,3 models × 9 perturbation conditions = 27 evaluations,"No retraining, no model reselection, final model unchanged"

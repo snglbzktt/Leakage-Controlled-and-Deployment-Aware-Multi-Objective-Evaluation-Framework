@@ -1,0 +1,114 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "B0_architecture_pair",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "generated_at_utc": "2026-08-06T17:31:50.667404+00:00",
+  "architecture_count": 2,
+  "run_count": 10,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "architectures": [
+    {
+      "architecture": "tinyml_mlp",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "mean_test_fingerprint_macro_f1": 0.9992485859275358,
+      "std_test_fingerprint_macro_f1": 7.03988518529849e-05,
+      "min_test_fingerprint_macro_f1": 0.9991468801117707,
+      "max_test_fingerprint_macro_f1": 0.9993674466185191,
+      "mean_test_raw_weighted_macro_f1": 0.9980857659484768,
+      "mean_test_gafgyt_fnr": 0.0021601459225708552,
+      "mean_test_mirai_fnr": 0.00013253002252195946,
+      "parameter_count": 9603,
+      "linear_macs_per_sample": 9504,
+      "fragility_triggered_in_any_run": false,
+      "descriptive_macro_f1_rank": 1
+    },
+    {
+      "architecture": "compact_dnn",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "mean_test_fingerprint_macro_f1": 0.9992438134447982,
+      "std_test_fingerprint_macro_f1": 8.376242610717102e-05,
+      "min_test_fingerprint_macro_f1": 0.9991193242420112,
+      "max_test_fingerprint_macro_f1": 0.9993334614195072,
+      "mean_test_raw_weighted_macro_f1": 0.9979943971621758,
+      "mean_test_gafgyt_fnr": 0.0022175312032463477,
+      "mean_test_mirai_fnr": 0.00016586579505815103,
+      "parameter_count": 25283,
+      "linear_macs_per_sample": 25056,
+      "fragility_triggered_in_any_run": false,
+      "descriptive_macro_f1_rank": 2
+    }
+  ],
+  "paired_seed_descriptive_comparison": {
+    "compact_minus_tinyml_macro_f1_mean": -4.772482737824824e-06,
+    "compact_minus_tinyml_macro_f1_std_population": 0.00013542244361377384,
+    "compact_minus_tinyml_raw_weighted_macro_f1_mean": -9.136878630096046e-05,
+    "comparison_is_final_model_selection": false,
+    "comparison_is_statistical_superiority_claim": false
+  },
+  "source_policy": {
+    "ten_checkpoints_are_locked_B0_sources": true,
+    "matching_architecture_and_seed_required_for_all_branches": true,
+    "P25_and_P50_generated_independently_from_matching_B0": true,
+    "FP32_FT_generated_from_matching_B0": true,
+    "DQ_PTQ_QAT_generated_from_matching_B0": true,
+    "legacy_checkpoints_allowed": false
+  },
+  "test_policy": {
+    "test_evaluation_count_per_run": 1,
+    "test_used_for_selection": false,
+    "test_model_inference_repeated_by_verifiers": false
+  },
+  "entry_checks": {
+    "phase5_protocol_locked": true,
+    "phase5_protocol_lock_passed": true,
+    "preprocessing_locked": true,
+    "smoke_test_locked": true,
+    "tinyml_lock_passed": true,
+    "compact_lock_passed": true,
+    "tinyml_verification_passed": true,
+    "compact_verification_passed": true,
+    "tinyml_verification_hash_matches": true,
+    "compact_verification_hash_matches": true,
+    "tinyml_aggregate_hash_matches": true,
+    "compact_aggregate_hash_matches": true,
+    "no_fragility_in_tinyml": true,
+    "no_fragility_in_compact": true,
+    "test_count_one_tinyml": true,
+    "test_count_one_compact": true,
+    "test_inference_not_repeated_tinyml": true,
+    "test_inference_not_repeated_compact": true
+  },
+  "registry_checks": {
+    "registry_has_ten_rows": true,
+    "registry_architecture_set_matches": true,
+    "five_rows_per_architecture": true,
+    "seed_set_per_architecture_matches": true,
+    "checkpoint_hashes_unique": true,
+    "all_test_counts_are_one": true,
+    "no_fragility": true
+  },
+  "checkpoint_registry_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_checkpoint_registry_v3_2.csv",
+  "paired_comparison_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_paired_seed_comparison_v3_2.csv",
+  "all_checks_passed": true
+}

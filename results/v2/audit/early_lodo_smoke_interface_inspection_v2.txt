@@ -1,0 +1,48 @@
+======================================================================================
+PHASE 2F-0 EARLY LODO SMOKE INTERFACE INSPECTION
+======================================================================================
+
+MODEL MODULE API
+- class CompactDNN(input_features: 'int', num_classes: 'int', hidden_units: 'tuple[int, int, int]' = (128, 64, 32), dropout_probability: 'float' = 0.1) -> 'None'
+- class ModelSpec(registry_name: 'str', display_name: 'str', architecture_family: 'str', description: 'str', order_sensitive: 'bool', architecture: 'dict[str, Any]') -> None
+- class Tiny1DCNN(input_features: 'int', num_classes: 'int', channels: 'tuple[int, int, int]' = (8, 16, 24)) -> 'None'
+- class TinyMLMLP(input_features: 'int', num_classes: 'int', hidden_units: 'tuple[int, int]' = (64, 32)) -> 'None'
+- function create_model(model_name: 'str', input_features: 'int', num_classes: 'int', **model_kwargs: 'Any') -> 'nn.Module'
+- function get_model_spec(model_name: 'str') -> 'ModelSpec'
+- function get_registry_manifest() -> 'dict[str, Any]'
+- function list_registered_models() -> 'tuple[str, ...]'
+- function validate_forward_input(inputs: 'Tensor', expected_feature_count: 'int', model_name: 'str') -> 'None'
+- function validate_model_dimensions(input_features: 'int', num_classes: 'int') -> 'None'
+
+MODEL REGISTRIES
+- MODEL_FACTORIES | keys=tinyml_mlp | compact_dnn | tiny_1d_cnn
+- MODEL_SPECS | keys=tinyml_mlp | compact_dnn | tiny_1d_cnn
+
+SCRIPT 53 RELEVANT FUNCTIONS
+- line=212 | set_reproducible_seed(seed)
+- line=433 | metrics_from_confusion(confusion)
+- line=567 | evaluate(model, features, labels, criterion, batch_size)
+- line=654 | build_model_and_optimizer(model_name, seed, learning_rate, weight_decay)
+- line=1010 | run_training_condition(protocol, run_spec)
+- line=2210 | run_full_training(protocol, requested_run_id)
+
+PARQUET LAYOUT
+- train | rows=1738133 | features=115 | row_groups=110 | group_sizes=[28299, 35033, 6843, 20457, 20921, 32164, 27503, 33023, 33196, 3894, 34925, 34950, 1533, 35032, 35024, 5415, 35011, 35105, 15845, 35060, 35086, 35046, 34985, 26438, 35115, 22298, 9218, 1234, 1, 1029, 851, 2, 761, 3130, 34911, 34996, 9269, 30210, 35099, 34880, 11778, 34927, 34870, 34984, 1046, 35104, 26115, 24768, 4, 130, 7, 753, 2507, 998, 3, 34999, 35113, 31539, 14146, 6, 999, 215, 1, 726, 5, 817, 2, 1, 31743, 6853, 750, 214, 77, 1852, 34955, 7374, 34847, 32840, 34829, 11027, 34873, 34927, 34929, 4404, 35141, 4727, 35027, 30671, 3216, 1836, 34388, 269, 1317, 30085, 1, 369, 2022, 1459, 4746, 2005, 1336, 5, 12589, 3, 763, 101, 2484, 1321, 2241, 3162] | valid=True
+- validation | rows=371884 | features=115 | row_groups=101 | group_sizes=[6020, 7465, 1376, 4299, 4459, 7013, 5785, 7061, 7124, 882, 7539, 7428, 325, 7436, 7340, 1156, 7579, 7519, 3399, 7558, 7534, 7471, 7468, 5645, 7404, 4801, 1973, 263, 215, 190, 158, 686, 7609, 7535, 2000, 6499, 7409, 7487, 2538, 7508, 7609, 7552, 219, 7422, 5653, 5244, 24, 2, 153, 542, 210, 2, 7439, 7476, 6818, 3027, 212, 42, 133, 2, 164, 1, 6784, 1480, 154, 46, 17, 445, 7443, 1631, 7528, 7022, 7600, 2274, 7594, 7525, 7563, 930, 7280, 971, 7448, 6693, 657, 398, 7372, 49, 261, 6275, 100, 400, 359, 987, 444, 256, 2634, 176, 23, 528, 305, 477, 653] | valid=True
+- test | rows=372659 | features=115 | row_groups=102 | group_sizes=[6076, 7502, 1499, 4312, 4469, 7026, 5736, 7162, 7031, 809, 7536, 7622, 337, 7532, 7636, 1114, 7410, 7376, 3329, 7382, 7380, 7483, 7547, 5582, 7481, 4883, 1920, 251, 209, 156, 163, 725, 7480, 7469, 2016, 6483, 7492, 7633, 2491, 7565, 7521, 7464, 216, 7474, 5600, 5398, 1, 17, 3, 142, 527, 206, 1, 7562, 7380, 6608, 3034, 202, 39, 1, 143, 192, 6815, 1494, 164, 46, 16, 377, 7602, 1549, 7625, 6919, 7571, 2445, 7533, 7548, 7508, 914, 7579, 983, 7524, 6629, 772, 383, 7426, 55, 274, 6424, 89, 424, 296, 1072, 412, 287, 1, 2713, 175, 21, 538, 264, 501, 655] | valid=True
+
+DANMINI DEVICE
+{"device_id": 0, "device": "Danmini_Doorbell", "bit_value": 1}
+
+VALIDATION CHECKS
+protocol_locked: True
+protocol_checks_passed: True
+model_module_imported: True
+model_module_callables_found: True
+tinyml_model_token_found: True
+compact_model_token_found: True
+all_feature_splits_valid: True
+all_feature_counts_115: True
+danmini_device_found: True
+torch_cpu_available: True
+pilot_training_helpers_found: True

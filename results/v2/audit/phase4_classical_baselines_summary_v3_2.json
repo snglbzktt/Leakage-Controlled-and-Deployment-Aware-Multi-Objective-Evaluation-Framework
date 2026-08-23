@@ -1,0 +1,222 @@
+{
+  "status": "completed",
+  "phase": 4,
+  "phase_name": "classical_tabular_baselines",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "generated_at_utc": "2026-08-06T14:32:47.402533+00:00",
+  "model_count": 4,
+  "total_run_count": 12,
+  "models": [
+    {
+      "model_id": "hist_gradient_boosting_b0",
+      "display_name": "HistGradientBoosting",
+      "run_count": 1,
+      "seed_policy": "single_seed_2026",
+      "input_space": "canonical_float32_unscaled",
+      "mean_test_fingerprint_macro_f1": 0.9997380683535377,
+      "std_test_fingerprint_macro_f1": 0.0,
+      "min_test_fingerprint_macro_f1": 0.9997380683535377,
+      "max_test_fingerprint_macro_f1": 0.9997380683535377,
+      "mean_test_fingerprint_accuracy": 0.9998708969434852,
+      "mean_test_raw_weighted_macro_f1": 0.9990430947883375,
+      "mean_test_gafgyt_fnr": 0.0009632529256246025,
+      "mean_test_mirai_fnr": 0.0,
+      "fragility_triggered_in_any_run": false,
+      "scientific_status": "completed",
+      "important_caveat": "Single locked seed; descriptive comparison only.",
+      "descriptive_macro_f1_rank": 1,
+      "ranking_is_not_model_selection": true
+    },
+    {
+      "model_id": "decision_tree_b0",
+      "display_name": "Decision Tree",
+      "run_count": 5,
+      "seed_policy": "five_locked_seeds",
+      "input_space": "canonical_float32_unscaled",
+      "mean_test_fingerprint_macro_f1": 0.9995826379853678,
+      "std_test_fingerprint_macro_f1": 2.716135057175398e-05,
+      "min_test_fingerprint_macro_f1": 0.9995400059321019,
+      "max_test_fingerprint_macro_f1": 0.9996203656208831,
+      "mean_test_fingerprint_accuracy": 0.9997756834393055,
+      "mean_test_raw_weighted_macro_f1": 0.9990069932078688,
+      "mean_test_gafgyt_fnr": 0.000946857131145884,
+      "mean_test_mirai_fnr": 7.886755941490797e-05,
+      "fragility_triggered_in_any_run": false,
+      "scientific_status": "completed",
+      "important_caveat": "",
+      "descriptive_macro_f1_rank": 2,
+      "ranking_is_not_model_selection": true
+    },
+    {
+      "model_id": "random_forest_b0",
+      "display_name": "Random Forest",
+      "run_count": 5,
+      "seed_policy": "five_locked_seeds",
+      "input_space": "canonical_float32_unscaled",
+      "mean_test_fingerprint_macro_f1": 0.9994598191789837,
+      "std_test_fingerprint_macro_f1": 1.3992878214494676e-05,
+      "min_test_fingerprint_macro_f1": 0.9994398808394046,
+      "max_test_fingerprint_macro_f1": 0.9994767615918181,
+      "mean_test_fingerprint_accuracy": 0.9997186629226782,
+      "mean_test_raw_weighted_macro_f1": 0.9981710693137925,
+      "mean_test_gafgyt_fnr": 0.0017092615744061846,
+      "mean_test_mirai_fnr": 8.455903277473364e-05,
+      "fragility_triggered_in_any_run": false,
+      "scientific_status": "completed",
+      "important_caveat": "",
+      "descriptive_macro_f1_rank": 3,
+      "ranking_is_not_model_selection": true
+    },
+    {
+      "model_id": "logistic_regression_b0",
+      "display_name": "Logistic Regression",
+      "run_count": 1,
+      "seed_policy": "single_seed_2026",
+      "input_space": "train_only_standardized_float32",
+      "mean_test_fingerprint_macro_f1": 0.9969917304947536,
+      "std_test_fingerprint_macro_f1": 0.0,
+      "min_test_fingerprint_macro_f1": 0.9969917304947536,
+      "max_test_fingerprint_macro_f1": 0.9969917304947536,
+      "mean_test_fingerprint_accuracy": 0.9981306953275452,
+      "mean_test_raw_weighted_macro_f1": 0.9965715089779147,
+      "mean_test_gafgyt_fnr": 0.0032791588957432616,
+      "mean_test_mirai_fnr": 0.0019472969566879383,
+      "fragility_triggered_in_any_run": false,
+      "scientific_status": "completed_with_convergence_warning",
+      "important_caveat": "Locked max_iter=200 was reached; results retained without protocol modification.",
+      "descriptive_macro_f1_rank": 4,
+      "ranking_is_not_model_selection": true
+    }
+  ],
+  "descriptive_highest_mean_macro_f1": {
+    "model_id": "hist_gradient_boosting_b0",
+    "display_name": "HistGradientBoosting",
+    "mean_test_fingerprint_macro_f1": 0.9997380683535377
+  },
+  "interpretation_policy": {
+    "ranking_is_descriptive_only": true,
+    "no_final_model_selection": true,
+    "single_seed_and_five_seed_results_are_not_claimed_as_equivalent_uncertainty_estimates": true,
+    "tinyml_selection_requires_accuracy_size_latency_memory_and_device_generalization_evidence": true
+  },
+  "scientific_caveats": [
+    "Logistic Regression reached the locked max_iter=200 limit; the completed result is retained with a convergence warning.",
+    "HGB and Logistic Regression use one locked seed, while Decision Tree and Random Forest use five locked seeds.",
+    "The descriptive ranking does not constitute final TinyML model selection."
+  ],
+  "preflight_checks": {
+    "protocol_locked": true,
+    "protocol_hash_matches": true,
+    "run_matrix_hash_matches": true,
+    "cache_verification_passed": true,
+    "logistic_verification_passed": true,
+    "decision_tree_verification_passed": true,
+    "random_forest_verification_passed": true,
+    "hgb_verification_passed": true,
+    "run_matrix_has_12_rows": true,
+    "run_matrix_model_set_matches": true,
+    "decision_tree_aggregate_completed": true,
+    "random_forest_aggregate_completed": true,
+    "hgb_summary_completed": true
+  },
+  "metric_sanity_checks": {
+    "logistic_regression_b0_run_count_matches": true,
+    "logistic_regression_b0_macro_f1_matches_expected": true,
+    "logistic_regression_b0_fragility_false": true,
+    "decision_tree_b0_run_count_matches": true,
+    "decision_tree_b0_macro_f1_matches_expected": true,
+    "decision_tree_b0_fragility_false": true,
+    "random_forest_b0_run_count_matches": true,
+    "random_forest_b0_macro_f1_matches_expected": true,
+    "random_forest_b0_fragility_false": true,
+    "hist_gradient_boosting_b0_run_count_matches": true,
+    "hist_gradient_boosting_b0_macro_f1_matches_expected": true,
+    "hist_gradient_boosting_b0_fragility_false": true
+  },
+  "run_level_checks": {
+    "total_run_count_is_12": true,
+    "all_test_counts_are_one": true,
+    "no_fragility_triggered": true,
+    "run_ids_are_unique": true
+  },
+  "source_inventory": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_locked_v3.json",
+      "size_bytes": 10202,
+      "sha256": "d345b22bdf2e88201a057fae2e5c2e532af53e3fcbf539664637a22e26ddcb03"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_run_matrix_v3.csv",
+      "size_bytes": 2560,
+      "sha256": "c85e9a943f4834f4589dba43638c58da790b4080651b49f831f2b3e0cefbedef"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_lock_manifest_v3.json",
+      "size_bytes": 880,
+      "sha256": "6b6159027bee1ff69db9e0ffadaa53eb9acf31576795ce6812fe661b7a5e6034"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_final_cache_verification_v3_2.json",
+      "size_bytes": 12958,
+      "sha256": "4d477a139445c75310233307adeae198e39cd1c1489a2a2cb978c5acfc1e3c18"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\logistic_regression_b0_verification_v3_2_fixed.json",
+      "size_bytes": 16605,
+      "sha256": "46c26e9ec2d5a6d9884973bf653297f6808bfa6745255e1fcc274e054570b85b"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\decision_tree_b0_verification_v3_2.json",
+      "size_bytes": 13402,
+      "sha256": "fcc5fd8008da4e5fa3d16273d004261c4f6e9d79280fd7074b549db77244e010"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\random_forest_b0_verification_v3_2.json",
+      "size_bytes": 11487,
+      "sha256": "0d89397ee29713fe626b2901d57b07ca3c61f696bae9d99d4613d25feaa85b64"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_verification_v3_2.json",
+      "size_bytes": 11705,
+      "sha256": "80c8cc3bec0d58303e7557eb9223555ee9f9677ccfa52e0faad48ec6da7fd560"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\logistic_regression_b0__seed_2026\\metrics.json",
+      "size_bytes": 8501,
+      "sha256": "b78a3cf169bc7955470f88b2c28905c8bc5e02714c8e597f69ed9e6fe2f04916"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\logistic_regression_b0__seed_2026\\run_manifest.json",
+      "size_bytes": 5078,
+      "sha256": "797bb76b90d42df7c739cb39aef034be1b8aae1bd922b46f325155257e42dfd2"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\decision_tree_b0_aggregate_v3_2.json",
+      "size_bytes": 7221,
+      "sha256": "8b10db8787ebdf173e1c8bfc2ec777137a23656d793253b5d031a1b6047d9bc8"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\decision_tree_b0_runs_v3_2.csv",
+      "size_bytes": 1566,
+      "sha256": "8a8f83f1a4405bde9716a6f808b62d952df5ba1d8628e755646b68f827eccbc7"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\random_forest_b0_aggregate_v3_2.json",
+      "size_bytes": 7129,
+      "sha256": "0aae5ead04ef1e4a44a6c40f52169c2be51edb459fd8d5a5a88db172e33c9f87"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\random_forest_b0_runs_v3_2.csv",
+      "size_bytes": 1663,
+      "sha256": "5871077a2aab1b9bf825294402615f6d0c7467784b3f110d524a36995e0004cf"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hist_gradient_boosting_b0_summary_v3_2.json",
+      "size_bytes": 1587,
+      "sha256": "cf1d3d3d7d543c71c06e6f170a4df62bfa3a1eae06e57db4653c78dcf77f0e21"
+    }
+  ],
+  "model_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_model_summary_v3_2.csv",
+  "all_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_all_runs_v3_2.csv",
+  "all_checks_passed": true
+}

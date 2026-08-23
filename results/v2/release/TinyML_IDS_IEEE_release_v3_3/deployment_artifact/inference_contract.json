@@ -1,0 +1,50 @@
+{
+  "status": "constructed_pending_independent_verification",
+  "protocol_version": "phase9_final_artifact_v3_2",
+  "model_family": "tinyml_mlp::P50-QAT",
+  "architecture": "tinyml_mlp",
+  "variant": "P50-QAT",
+  "representation": "static_int8",
+  "canonical_seed": 2026,
+  "model_symbol": "TinyMLMLP",
+  "hidden_dimensions": [
+    32,
+    16
+  ],
+  "input": {
+    "feature_count": 115,
+    "dtype": "float32",
+    "shape": "[batch, 115]",
+    "preprocessing": "train_only_standard_scaler_v3_2.npz"
+  },
+  "output": {
+    "class_count": 3,
+    "shape": "[batch, 3]",
+    "semantics": "logits",
+    "class_labels_in_output_index_order": [
+      "benign",
+      "gafgyt",
+      "mirai"
+    ],
+    "class_label_source_paths": [
+      "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_verification_v3_2.json.class_labels",
+      "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_verification_v3_2.json.class_names",
+      "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_locked_v3_2.json.verification_sha256"
+    ]
+  },
+  "quantization": {
+    "method": "eager static INT8 QAT",
+    "backend": "onednn",
+    "state_dict_key": "INT8_model_state_dict"
+  },
+  "runtime": {
+    "device": "CPU",
+    "cpu_threads": 1,
+    "interop_threads": 1
+  },
+  "data_access_during_artifact_smoke": {
+    "train_data_access": true,
+    "validation_data_access": false,
+    "test_data_access": false
+  }
+}

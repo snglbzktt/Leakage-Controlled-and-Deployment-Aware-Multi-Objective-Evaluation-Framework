@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-07-24T10:28:40.270727+00:00",
+  "experiment_name": "family3_tinyml_mlp_smoke",
+  "run_mode": "smoke",
+  "scientific_result_status": "smoke_test_not_for_publication",
+  "test_split_evaluated": false,
+  "model_selection_split": "validation",
+  "model_selection_metric": "macro_f1",
+  "model_name": "tinyml_mlp",
+  "task_name": "family_3",
+  "seed": 42,
+  "parameter_count": 9603,
+  "feature_count": 115,
+  "class_count": 3,
+  "class_names": [
+    "benign",
+    "gafgyt",
+    "mirai"
+  ],
+  "class_weight_scheme": "inverse_square_root_frequency_mean1",
+  "best_epoch": 2,
+  "best_validation_macro_f1": 0.20142051487765167,
+  "epochs_completed": 2,
+  "total_training_seconds": 0.6842504999949597,
+  "config_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\experiments\\family3_tinyml_mlp_smoke.yaml",
+  "config_sha256": "2aa15293e29fb1d34a020f7a0658e6ffeaa9309d4b24f0d42092fb10375999b2",
+  "history_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\smoke_family3_tinyml_mlp\\training_history.csv",
+  "best_validation_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\smoke_family3_tinyml_mlp\\best_validation_metrics.json",
+  "checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\smoke_family3_tinyml_mlp\\best_checkpoint.pt",
+  "checkpoint_size_bytes": 124261,
+  "validation_passed": true
+}

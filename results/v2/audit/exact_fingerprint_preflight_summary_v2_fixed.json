@@ -1,0 +1,19 @@
+{
+  "protocol": "exact_fingerprint_preflight_v2_fixed",
+  "project_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE",
+  "raw_data_root": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\interim\\nbaiot_unpacked",
+  "database_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\nbaiot_duplicate_audit.sqlite",
+  "raw_csv_file_count": 89,
+  "database_file_count": 89,
+  "expected_total_rows": 7062606,
+  "observed_expected_rows": 7062606,
+  "observed_inserted_rows": 7062606,
+  "status_counts": {
+    "ok": 89
+  },
+  "resolution_counts": {
+    "exact_relative_path": 89
+  },
+  "free_disk_gb": 14.501,
+  "output_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\exact_fingerprint_preflight_files_v2_fixed.csv"
+}

@@ -1,0 +1,57 @@
+{
+  "protocol_version": "numeric_pipeline_order_audit_v2_1",
+  "status": "completed",
+  "completed_at": "2026-08-05T16:52:41.338081+00:00",
+  "elapsed_seconds": 45.248,
+  "source_universe": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\nbaiot_primary_seed2026",
+  "diagnostic_design": "Both processing orders were evaluated on the same source-precision primary splits.",
+  "important_limitation": "This is a processing-order diagnostic. Pipeline A here uses the primary source-precision split, while the historical main experiments used the separate float32-canonical split.",
+  "pipeline_a": "source float64 -> float32 -> train-only StandardScaler with float64 parameters -> float32",
+  "pipeline_b": "source float64 -> train-only StandardScaler in float64 -> float32",
+  "fit_row_count": 1738133,
+  "expected_split_rows": {
+    "train": 1738133,
+    "validation": 371884,
+    "test": 372659
+  },
+  "historical_float32_canonical_rows": {
+    "train": 1595664,
+    "validation": 341417,
+    "test": 341093
+  },
+  "maximum_scaler_mean_difference": 491445.0,
+  "maximum_scaler_scale_difference": 9618848.0,
+  "global_row_count": 2482676,
+  "global_different_row_count": 2406029,
+  "global_different_row_rate": 0.9691272642906283,
+  "global_element_count": 285507740,
+  "global_different_element_count": 38425393,
+  "global_different_element_rate": 0.13458616918756738,
+  "global_mean_absolute_difference": 1.081039911332721e-08,
+  "global_maximum_absolute_difference": 7.62939453125e-06,
+  "thresholds": {
+    "unique_count_relative_threshold": 0.0001,
+    "row_difference_rate_threshold": 0.01,
+    "maximum_absolute_difference_threshold": 0.0001,
+    "mean_absolute_difference_threshold": 1e-07
+  },
+  "requires_training_pilot": true,
+  "decision_reasons": [
+    "train-validation: splitler arası final float32 örtüşme sayısı iki hat arasında farklıdır.",
+    "train-test: splitler arası final float32 örtüşme sayısı iki hat arasında farklıdır.",
+    "validation-test: splitler arası final float32 örtüşme sayısı iki hat arasında farklıdır."
+  ],
+  "split_metrics_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\numeric_pipeline_order_split_metrics_v2.csv",
+  "overlap_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\numeric_pipeline_order_overlap_v2.csv",
+  "feature_stats_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\numeric_pipeline_order_feature_stats_v2.csv",
+  "validation_checks": {
+    "train_fit_count": true,
+    "global_row_count": true,
+    "feature_count": true,
+    "scaler_a_finite": true,
+    "scaler_b_finite": true,
+    "three_split_metric_rows": true,
+    "three_overlap_rows": true
+  },
+  "all_checks_passed": true
+}

@@ -1,0 +1,30 @@
+========================================================================================
+VS2 SCALED OVERLAP DETAIL AUDIT
+========================================================================================
+Stage-38 overlap hash pairs           : 371
+Exact cross-split scaled rows         : 371
+Hash pairs with multiple exact rows   : 0
+Exact cross-split label conflicts     : 0
+Scanned raw rows                      : 7,062,606
+Matched affected raw rows             : 1,036
+
+SPLIT SIGNATURE COUNTS
+train|test: 162
+train|validation: 162
+train|validation|test: 23
+validation|test: 24
+
+AFFECTED RAW ROWS BY SPLIT
+train: 572
+validation: 230
+test: 234
+
+AFFECTED RAW ROWS BY CLASS
+benign: 1,036
+gafgyt: 0
+mirai: 0
+
+Summary: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\vs2_scaled_overlap_detail_summary_v2.json
+Details: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\vs2_scaled_overlap_detail_rows_v2.csv
+
+VS2 SCALED OVERLAP DETAIL AUDIT COMPLETED

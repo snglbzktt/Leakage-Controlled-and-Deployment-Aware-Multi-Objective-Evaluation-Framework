@@ -1,0 +1,88 @@
+{
+  "status": "completed",
+  "phase": 8,
+  "artifact_name": "validation_only_corrected_multi_objective_selection",
+  "protocol_version": "phase8_validation_only_selection_v3_3",
+  "completed_at_utc": "2026-08-12T15:47:31.503756+00:00",
+  "corrective_reanalysis": true,
+  "original_phase8_artifacts_modified": false,
+  "test_arrays_loaded": false,
+  "test_metrics_used_for_selection": false,
+  "phase7_p_values_loaded": false,
+  "robustness_used_for_selection": false,
+  "validation_source_row_count": 110,
+  "decision_group_count": 22,
+  "compressed_candidate_count": 18,
+  "profile_results": {
+    "strict": {
+      "eligible_candidate_count": 5,
+      "Pareto_candidate_count": 2,
+      "selected_candidate_id": "tinyml_mlp::P50-FP32-FT",
+      "selected_architecture": "tinyml_mlp",
+      "selected_variant": "P50-FP32-FT"
+    },
+    "balanced": {
+      "eligible_candidate_count": 11,
+      "Pareto_candidate_count": 5,
+      "selected_candidate_id": "tinyml_mlp::P50-QAT",
+      "selected_architecture": "tinyml_mlp",
+      "selected_variant": "P50-QAT"
+    },
+    "relaxed": {
+      "eligible_candidate_count": 12,
+      "Pareto_candidate_count": 5,
+      "selected_candidate_id": "tinyml_mlp::P50-QAT",
+      "selected_architecture": "tinyml_mlp",
+      "selected_variant": "P50-QAT"
+    }
+  },
+  "primary_profile": "balanced",
+  "primary_selection": {
+    "candidate_id": "tinyml_mlp::P50-QAT",
+    "architecture": "tinyml_mlp",
+    "variant": "P50-QAT",
+    "mean_validation_fingerprint_macro_f1": 0.99787259572749,
+    "mean_serialized_state_dict_bytes": 12199.0,
+    "mean_batch_1_median_ms": 0.10766,
+    "mean_batch_32_samples_per_second": 168078.67334476035
+  },
+  "interpretation": {
+    "selection_is_preregistered_original_phase8": false,
+    "selection_is_corrective_post_hoc_reanalysis": true,
+    "manuscript_must_describe_correction_transparently": true,
+    "do_not_assume_original_P50_QAT_selection_persists": true
+  },
+  "artifacts": {
+    "protocol": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase8_validation_only_selection_protocol_v3_3.json",
+      "size_bytes": 3795,
+      "sha256": "85d1e7aad3ea524f444f44efdb2e20abc44dfe27eb43efdb2df9f139e27dbf2b"
+    },
+    "validation_source_matrix": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_validation_only_source_matrix_v3_3.csv",
+      "size_bytes": 25814,
+      "sha256": "c3ee545ebc7a8ee1d1349fd21382ee0a921f486e50e33e5b786aa10af7ef3e8b"
+    },
+    "decision_matrix": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_validation_only_decision_matrix_v3_3.csv",
+      "size_bytes": 7778,
+      "sha256": "ccd5e7d192acc6ffe9aa5365c77acc2d6c39f1a159341a06f54a72ec72f7580b"
+    },
+    "eligibility": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_validation_only_eligibility_v3_3.csv",
+      "size_bytes": 8284,
+      "sha256": "28a41248e692dc90c19f695c3663fd4c100c504395d965fde8ec057eeea22b87"
+    },
+    "Pareto": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_validation_only_pareto_results_v3_3.csv",
+      "size_bytes": 4640,
+      "sha256": "94868ad73a684591c5b1f1923173bbbcef28ffee59e58518e55e764240c549dd"
+    },
+    "selection_trace": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_validation_only_selection_trace_v3_3.csv",
+      "size_bytes": 1387,
+      "sha256": "668eaf2859ff31f802f96cb17a9887b017d27225aa932eb5bd22dd700e37a77b"
+    }
+  },
+  "all_checks_passed": true
+}

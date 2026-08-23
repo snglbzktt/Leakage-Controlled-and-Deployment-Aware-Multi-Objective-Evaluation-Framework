@@ -1,0 +1,94 @@
+{
+  "status": "locked",
+  "phase": 5,
+  "artifact_name": "B0_architecture_pair",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "locked_at_utc": "2026-08-06T17:31:50.846533+00:00",
+  "source_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase5_fair_budget_compression_protocol_v3_2.json",
+      "size_bytes": 21842,
+      "sha256": "1681aaa46ce286f498367a6c8a2ccb4c711c091fbb053ec4aa48f9bd1d10ab03"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_protocol_lock_manifest_v3_2.json",
+      "size_bytes": 4488,
+      "sha256": "cc493a736350d80c957d639c23f1ae354117cd9dbbf51165dfcd5ba8472a59d0"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preprocessing_locked_v3_2.json",
+      "size_bytes": 1422,
+      "sha256": "abc86751c43f92b9fe6e14a030dc3bc25584fe23eb34ac586684624a446b1efa"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_neural_architecture_smoke_test_locked_v3_2.json",
+      "size_bytes": 1464,
+      "sha256": "b1537cab890929961c175de4cf5686627bfc76efff537ad78a3a4954e5de9c8e"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_tinyml_mlp_b0_locked_v3_2.json",
+      "size_bytes": 1414,
+      "sha256": "2809f62be96d21ba8ac393c5fc44d86d5d0db5013bad425f80a51772cd534599"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_tinyml_mlp_b0_verification_v3_2.json",
+      "size_bytes": 17220,
+      "sha256": "474e99d687e43b94ecc267ed4ec72b40474ca77635889502692489dfa7c046fe"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_tinyml_mlp_b0_aggregate_v3_2.json",
+      "size_bytes": 8013,
+      "sha256": "426d4b83a5e465eb19cb23cd442fe7de383245e9142ebcbccfe85fa326b165f5"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_tinyml_mlp_b0_runs_v3_2.csv",
+      "size_bytes": 2616,
+      "sha256": "ca84c8de82eb6964e625a83315864b485370e77e754ce1f40f695bbd6029a2cc"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compact_dnn_b0_locked_v3_2.json",
+      "size_bytes": 1416,
+      "sha256": "59ab4d0dd6d64ef99eab5d64488922d36d14326eddd1175051d2ef8a549c45d8"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compact_dnn_b0_verification_v3_2.json",
+      "size_bytes": 17298,
+      "sha256": "a1678d693ba1615d8d549a7c85dd9c66520fd3ccdc463d19db69b4c79098aedc"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compact_dnn_b0_aggregate_v3_2.json",
+      "size_bytes": 8046,
+      "sha256": "582c5bd52abc0ee1469e4a5aa05dd32e9a6f2fbee3811b84e2343f220e9196d7"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_compact_dnn_b0_runs_v3_2.csv",
+      "size_bytes": 2646,
+      "sha256": "5e05e3ba67d28199ab9aba185912209c4097a6599842069b15cc820c2607fb88"
+    }
+  ],
+  "generated_artifacts": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_checkpoint_registry_v3_2.csv",
+      "size_bytes": 9616,
+      "sha256": "af2f62797979caa86d02fffb6ed3ca18e038d54550d89b559161832f7ae290ef"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_paired_seed_comparison_v3_2.csv",
+      "size_bytes": 1519,
+      "sha256": "d7a26c9100846dcb4417f2425a13446ee3489d3711897a824a2da663019c604f"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_summary_v3_2.json",
+      "size_bytes": 4114,
+      "sha256": "4a5975994812ec7bda705d772bda571590c2b5981da52b0d6c5f627f2deeaa4b"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_locked_v3_2.json",
+      "size_bytes": 1241,
+      "sha256": "af730f4071ea0db3a4c910231d1964a70d81967838f9448a8b180455537a9a2b"
+    }
+  ],
+  "checkpoint_count": 10,
+  "ready_for_branch_source_generation": true,
+  "all_checks_passed": true
+}

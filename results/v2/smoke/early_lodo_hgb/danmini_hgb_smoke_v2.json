@@ -1,0 +1,162 @@
+{
+  "protocol_version": "early_lodo_hgb_smoke_v2_1",
+  "status": "passed",
+  "completed_at": "2026-08-05T19:37:02.741699+00:00",
+  "scientific_result": false,
+  "purpose": "HistGradientBoosting data, memory, training and prediction smoke test. Metrics must not be reported as scientific results.",
+  "held_out_device": "Danmini_Doorbell",
+  "model_id": "hist_gradient_boosting_b0",
+  "seed": 2026,
+  "software": {
+    "scikit_learn": "1.9.0",
+    "joblib": "1.5.3"
+  },
+  "smoke_configuration": {
+    "max_iter": 5,
+    "train_quota_per_class": 10000,
+    "validation_quota_per_class": 2000,
+    "test_quota_per_class": 2000,
+    "scaled_features": false
+  },
+  "sample_class_counts": {
+    "train": [
+      10000,
+      10000,
+      10000
+    ],
+    "validation": [
+      2000,
+      2000,
+      2000
+    ],
+    "test": [
+      2000,
+      2000,
+      2000
+    ]
+  },
+  "overlap_counts": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "runtime_seconds": {
+    "fit": 11.00322899990715,
+    "validation_prediction": 0.004783000098541379,
+    "test_prediction": 0.0038270000368356705
+  },
+  "validation_metrics": {
+    "accuracy": 0.9988333333333334,
+    "balanced_accuracy": 0.9988333333333334,
+    "macro_f1_present_classes": 0.998833332677083,
+    "confusion_matrix": [
+      [
+        1995.0,
+        5.0,
+        0.0
+      ],
+      [
+        2.0,
+        1998.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2000.0
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "support": 2000.0,
+        "precision": 0.99899849774662,
+        "recall": 0.9975,
+        "f1": 0.9982486865148862,
+        "fnr": 0.0025
+      },
+      "gafgyt": {
+        "support": 2000.0,
+        "precision": 0.9975037443834248,
+        "recall": 0.999,
+        "f1": 0.9982513115163627,
+        "fnr": 0.001
+      },
+      "mirai": {
+        "support": 2000.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "fnr": 0.0
+      }
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.9723333333333334,
+    "balanced_accuracy": 0.9723333333333333,
+    "macro_f1_present_classes": 0.9721668780154359,
+    "confusion_matrix": [
+      [
+        1997.0,
+        3.0,
+        0.0
+      ],
+      [
+        22.0,
+        1837.0,
+        141.0
+      ],
+      [
+        0.0,
+        0.0,
+        2000.0
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "support": 2000.0,
+        "precision": 0.9891035165923725,
+        "recall": 0.9985,
+        "f1": 0.9937795471510326,
+        "fnr": 0.0015
+      },
+      "gafgyt": {
+        "support": 2000.0,
+        "precision": 0.9983695652173913,
+        "recall": 0.9185,
+        "f1": 0.9567708333333333,
+        "fnr": 0.0815
+      },
+      "mirai": {
+        "support": 2000.0,
+        "precision": 0.9341429238673518,
+        "recall": 1.0,
+        "f1": 0.9659502535619415,
+        "fnr": 0.0
+      }
+    }
+  },
+  "validation_checks": {
+    "cache_validated": true,
+    "hgb_parameters_supported": true,
+    "train_quota_met": true,
+    "validation_quota_met": true,
+    "test_quota_met": true,
+    "all_features_have_115_columns": true,
+    "all_features_finite": true,
+    "all_train_classes_present": true,
+    "model_classes_valid": true,
+    "five_iterations_completed": true,
+    "train_validation_overlap_zero": true,
+    "train_test_overlap_zero": true,
+    "validation_test_overlap_zero": true,
+    "validation_metric_finite": true,
+    "test_metric_finite": true,
+    "model_file_created": true
+  },
+  "all_checks_passed": true,
+  "outputs": {
+    "json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\smoke\\early_lodo_hgb\\danmini_hgb_smoke_v2.json",
+    "report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\smoke\\early_lodo_hgb\\danmini_hgb_smoke_v2.txt",
+    "model": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\smoke\\early_lodo_hgb\\danmini_hgb_smoke_v2.joblib"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "run_id": "pipeline_b__tinyml_mlp__seed123",
+  "status": "completed",
+  "completed_at": "2026-08-05T17:52:30.107860+00:00",
+  "metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_b\\tinyml_mlp\\seed123\\metrics.json",
+  "checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_b\\tinyml_mlp\\seed123\\best_checkpoint.pt",
+  "history_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\numeric_order_training_pilot_v2\\pipeline_b\\tinyml_mlp\\seed123\\history.csv"
+}

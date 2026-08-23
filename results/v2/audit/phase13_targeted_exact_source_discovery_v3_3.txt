@@ -1,0 +1,106 @@
+================================================================================================
+PHASE 13 TARGETED EXACT-SOURCE DISCOVERY
+================================================================================================
+Candidate files scanned         : 519
+Files successfully inspected    : 518
+Inspection errors               : 1
+Model inference performed       : False
+Test arrays accessed             : False
+Source files mutated             : False
+
+LODO SCIENTIFIC CANDIDATES
+------------------------------------------------------------------------------------------------
+[01] score=170 | results/v2/early_lodo/devices/Danmini_Doorbell/device_summary.json
+     record_lists=1 | largest_list=3 | keys=benign_fnr,best_epoch,completed_epoch,completed_iterations,gafgyt_fnr,held_out_device,local_severe_signal,lock_summary_file,mirai_fnr,model_id
+[02] score=170 | results/v2/early_lodo/devices/Ecobee_Thermostat/device_summary.json
+     record_lists=1 | largest_list=3 | keys=benign_fnr,best_epoch,completed_epoch,completed_iterations,gafgyt_fnr,held_out_device,local_severe_signal,lock_summary_file,mirai_fnr,model_id
+[03] score=170 | results/v2/early_lodo/devices/Ennio_Doorbell/device_summary.json
+     record_lists=1 | largest_list=3 | keys=benign_fnr,best_epoch,completed_epoch,completed_iterations,gafgyt_fnr,held_out_device,local_severe_signal,lock_summary_file,mirai_fnr,model_id
+[04] score=170 | results/v2/early_lodo/devices/Philips_B120N10_Baby_Monitor/device_summary.json
+     record_lists=1 | largest_list=3 | keys=benign_fnr,best_epoch,completed_epoch,completed_iterations,gafgyt_fnr,held_out_device,local_severe_signal,lock_summary_file,mirai_fnr,model_id
+[05] score=170 | results/v2/early_lodo/devices/Provision_PT_737E_Security_Camera/device_summary.json
+     record_lists=1 | largest_list=3 | keys=benign_fnr,best_epoch,completed_epoch,completed_iterations,gafgyt_fnr,held_out_device,local_severe_signal,lock_summary_file,mirai_fnr,model_id
+[06] score=170 | results/v2/early_lodo/devices/Provision_PT_838_Security_Camera/device_summary.json
+     record_lists=1 | largest_list=3 | keys=benign_fnr,best_epoch,completed_epoch,completed_iterations,gafgyt_fnr,held_out_device,local_severe_signal,lock_summary_file,mirai_fnr,model_id
+[07] score=170 | results/v2/early_lodo/devices/Samsung_SNH_1011_N_Webcam/device_summary.json
+     record_lists=1 | largest_list=3 | keys=benign_fnr,best_epoch,completed_epoch,completed_iterations,gafgyt_fnr,held_out_device,local_severe_signal,lock_summary_file,mirai_fnr,model_id
+[08] score=170 | results/v2/early_lodo/devices/SimpleHome_XCS7_1002_WHT_Security_Camera/device_summary.json
+     record_lists=1 | largest_list=3 | keys=benign_fnr,best_epoch,completed_epoch,completed_iterations,gafgyt_fnr,held_out_device,local_severe_signal,lock_summary_file,mirai_fnr,model_id
+[09] score=170 | results/v2/early_lodo/devices/SimpleHome_XCS7_1003_WHT_Security_Camera/device_summary.json
+     record_lists=1 | largest_list=3 | keys=benign_fnr,best_epoch,completed_epoch,completed_iterations,gafgyt_fnr,held_out_device,local_severe_signal,lock_summary_file,mirai_fnr,model_id
+[10] score=170 | results/v2/early_lodo/global/early_lodo_global_summary_v2.json
+     record_lists=1 | largest_list=3 | keys=device_count,device_fastest_count,device_macro_f1_win_count,global_macro_f1_rank,local_severe_cell_count,maximum_eligible_attack_fnr,maximum_test_macro_f1,maximum_validation_test_macro_f1_drop,mean_record_weighted_macro_f1,mean_test_accuracy
+[11] score=140 | results/v2/early_lodo/early_lodo_execution_ledger_v2.csv
+     rows=27 | headers=run_id,status,locked_at,held_out_device,model_id,seed,completed_epoch,best_epoch,stopped_early,best_validation_macro_f1
+[12] score=140 | results/v2/early_lodo/global/early_lodo_device_model_matrix_v2.csv
+     rows=27 | headers=held_out_device,model_id,run_id,seed,test_present_class_count,test_class_counts,validation_macro_f1,test_fingerprint_macro_f1,test_fingerprint_accuracy,test_record_weighted_macro_f1
+[13] score=110 | results/v2/early_lodo/devices/Danmini_Doorbell/model_comparison.csv
+     rows=3 | headers=run_id,held_out_device,model_id,seed,validation_macro_f1,test_fingerprint_macro_f1,test_fingerprint_accuracy,test_record_weighted_macro_f1,validation_test_macro_f1_drop,benign_fnr
+[14] score=110 | results/v2/early_lodo/devices/Ecobee_Thermostat/model_comparison.csv
+     rows=3 | headers=run_id,held_out_device,model_id,seed,validation_macro_f1,test_fingerprint_macro_f1,test_fingerprint_accuracy,test_record_weighted_macro_f1,validation_test_macro_f1_drop,benign_fnr
+[15] score=110 | results/v2/early_lodo/devices/Ennio_Doorbell/model_comparison.csv
+     rows=3 | headers=run_id,held_out_device,model_id,seed,validation_macro_f1,test_fingerprint_macro_f1,test_fingerprint_accuracy,test_record_weighted_macro_f1,validation_test_macro_f1_drop,benign_fnr
+
+PHASE 7 OMNIBUS CANDIDATES
+------------------------------------------------------------------------------------------------
+[01] score=150 | results/v2/audit/phase7_statistical_omnibus_results_v3_2.csv
+     rows=16 | headers=endpoint_class,family_id,architecture,metric,metric_domain,direction,unit,block_count,variant_count,friedman_statistic,kendalls_W,monte_carlo_permutations
+[02] score=150 | results/v2/audit/phase7_statistical_omnibus_verified_v3_2.csv
+     rows=16 | headers=endpoint_class,architecture,metric,friedman_statistic,kendalls_W,monte_carlo_p_plus_one,monte_carlo_exceedances,scipy_asymptotic_p,all_checks_passed
+[03] score=70  | results/v2/audit/phase7_statistical_descriptive_summary_v3_2.csv
+     rows=176 | headers=endpoint_class,architecture,metric,metric_domain,direction,unit,variant,seed_count,mean,median,std_population,minimum
+[04] score=60  | results/v2/audit/phase7_statistical_analysis_joined_matrix_v3_2.csv
+     rows=110 | headers=architecture,variant,seed,representation,test_fingerprint_macro_f1,test_fingerprint_accuracy,test_raw_weighted_macro_f1,test_gafgyt_fnr,test_mirai_fnr,float_parameter_count,float_linear_macs_per_sample,state_size_ratio_vs_float
+[05] score=60  | results/v2/audit/phase7_statistical_analysis_summary_v3_2.json
+     keys=all_checks_passed,artifact_name,artifacts,completed_at_utc,confirmatory_omnibus_rejections_nominal,confirmatory_posthoc_Holm_rejections,descriptive_row_count,entry_checks,exploratory_omnibus_rejections_nominal,exploratory_posthoc_Holm_rejections,final_model_selected,global_checks
+[06] score=60  | results/v2/audit/phase7_statistical_comparison_plan_v3_2.csv
+     rows=176 | headers=analysis_type,endpoint_class,family_id,architecture,metric,metric_domain,direction,unit,reference_variant,candidate_variant,paired_seed_count,test
+[07] score=60  | results/v2/audit/phase7_statistical_posthoc_verified_v3_2.csv
+     rows=160 | headers=endpoint_class,architecture,metric,reference_variant,candidate_variant,mean_raw_delta_candidate_minus_B0,mean_improvement_delta,paired_rank_biserial_improvement,exact_two_sided_p_raw,Holm_adjusted_p,Holm_reject_alpha_0_05,all_checks_passed
+[08] score=60  | results/v2/audit/phase7_statistical_posthoc_vs_B0_results_v3_2.csv
+     rows=160 | headers=endpoint_class,family_id,architecture,metric,metric_domain,direction,unit,reference_variant,candidate_variant,paired_seed_count,reference_mean,candidate_mean
+[09] score=20  | results/v2/audit/phase7_statistical_analysis_completed_v3_2.json
+     keys=all_checks_passed,artifact_name,completed_at_utc,descriptive_row_count,descriptive_summary,descriptive_summary_sha256,final_model_selected,omnibus_analysis_count,omnibus_results,omnibus_results_sha256,phase,posthoc_comparison_count
+[10] score=20  | results/v2/audit/phase7_statistical_analysis_lock_manifest_v3_2.json
+     keys=all_checks_passed,artifact_name,descriptive_row_count,final_model_selected,generated_artifacts,locked_at_utc,model_inference_repeated_by_verifier,omnibus_analysis_count,phase,posthoc_comparison_count,protocol_version,ready_for_multi_objective_decision_preflight
+
+PHASE 7 POST-HOC CANDIDATES
+------------------------------------------------------------------------------------------------
+[01] score=110 | results/v2/audit/phase7_statistical_posthoc_verified_v3_2.csv
+     rows=160 | headers=endpoint_class,architecture,metric,reference_variant,candidate_variant,mean_raw_delta_candidate_minus_B0,mean_improvement_delta,paired_rank_biserial_improvement,exact_two_sided_p_raw,Holm_adjusted_p,Holm_reject_alpha_0_05,all_checks_passed
+[02] score=110 | results/v2/audit/phase7_statistical_posthoc_vs_B0_results_v3_2.csv
+     rows=160 | headers=endpoint_class,family_id,architecture,metric,metric_domain,direction,unit,reference_variant,candidate_variant,paired_seed_count,reference_mean,candidate_mean
+[03] score=20  | results/v2/audit/phase7_statistical_analysis_completed_v3_2.json
+     keys=all_checks_passed,artifact_name,completed_at_utc,descriptive_row_count,descriptive_summary,descriptive_summary_sha256,final_model_selected,omnibus_analysis_count,omnibus_results,omnibus_results_sha256,phase,posthoc_comparison_count
+[04] score=20  | results/v2/audit/phase7_statistical_analysis_joined_matrix_v3_2.csv
+     rows=110 | headers=architecture,variant,seed,representation,test_fingerprint_macro_f1,test_fingerprint_accuracy,test_raw_weighted_macro_f1,test_gafgyt_fnr,test_mirai_fnr,float_parameter_count,float_linear_macs_per_sample,state_size_ratio_vs_float
+[05] score=20  | results/v2/audit/phase7_statistical_analysis_lock_manifest_v3_2.json
+     keys=all_checks_passed,artifact_name,descriptive_row_count,final_model_selected,generated_artifacts,locked_at_utc,model_inference_repeated_by_verifier,omnibus_analysis_count,phase,posthoc_comparison_count,protocol_version,ready_for_multi_objective_decision_preflight
+[06] score=20  | results/v2/audit/phase7_statistical_analysis_locked_v3_2.json
+     keys=all_checks_passed,artifact_name,descriptive_row_count,descriptive_summary_sha256,final_model_selected,locked_at_utc,model_inference_repeated_by_verifier,omnibus_analysis_count,omnibus_results_sha256,phase,posthoc_comparison_count,posthoc_results_sha256
+[07] score=20  | results/v2/audit/phase7_statistical_analysis_preflight_lock_manifest_v3_2.json
+     keys=all_checks_passed,artifact_name,final_model_selected,generated_artifacts,inferential_computation_performed,joined_row_count,locked_at_utc,omnibus_comparison_count,phase,posthoc_comparison_count,protocol_version,ready_for_locked_statistical_execution
+[08] score=20  | results/v2/audit/phase7_statistical_analysis_preflight_locked_v3_2.json
+     keys=all_checks_passed,artifact_name,comparison_plan,comparison_plan_sha256,final_model_selected,inferential_computation_performed,joined_matrix,joined_matrix_sha256,joined_row_count,locked_at_utc,omnibus_comparison_count,phase
+[09] score=20  | results/v2/audit/phase7_statistical_analysis_preflight_v3_2.json
+     keys=all_checks_passed,artifact_name,comparison_plan,entry_checks,joined_matrix,phase,preflight_checks,protocol,protocol_version,ready_for_locked_statistical_execution,status,verified_at_utc
+[10] score=20  | results/v2/audit/phase7_statistical_analysis_summary_v3_2.json
+     keys=all_checks_passed,artifact_name,artifacts,completed_at_utc,confirmatory_omnibus_rejections_nominal,confirmatory_posthoc_Holm_rejections,descriptive_row_count,entry_checks,exploratory_omnibus_rejections_nominal,exploratory_posthoc_Holm_rejections,final_model_selected,global_checks
+
+KNOWN EXACT SOURCES
+------------------------------------------------------------------------------------------------
+phase5_group_summary               | rows=22 | results/v2/audit/phase5_compression_group_summary_v3_2.csv
+phase6_group_summary               | rows=22 | results/v2/audit/phase6_deployment_benchmark_group_summary_v3_2.csv
+phase8_input_matrix                | rows=22 | results/v2/audit/phase8_multi_objective_decision_input_matrix_v3_2.csv
+phase8_pareto_results              | rows=54 | results/v2/audit/phase8_multi_objective_pareto_results_v3_2.csv
+phase8_selection_trace             | rows=3 | results/v2/audit/phase8_multi_objective_selection_trace_v3_2.csv
+phase11_all_runs                   | rows=27 | results/v2/phase11_input_robustness_v3_3/phase11_input_robustness_all_runs_v3_3.csv
+phase4_model_summary               | rows=4 | results/v2/audit/phase4_classical_baselines_model_summary_v3_2.csv
+
+================================================================================================
+DISCOVERY COMPLETE
+================================================================================================
+JSON output                     : C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\v2\audit\phase13_targeted_exact_source_discovery_v3_3.json
+Binding performed              : False
+Ready for exact source binding : True
+All checks passed              : True

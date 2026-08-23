@@ -1,0 +1,173 @@
+{
+  "status": "passed",
+  "phase": 5,
+  "artifact_name": "FP32_FT_from_locked_B0_independent_verification",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "verified_at_utc": "2026-08-06T19:03:33.364354+00:00",
+  "run_count": 10,
+  "group_count": 2,
+  "verification_policy": {
+    "checkpoint_loading_performed": true,
+    "optimizer_state_loading_performed": true,
+    "validation_model_inference_repeated": true,
+    "test_model_inference_repeated": false,
+    "saved_test_metrics_recomputed": true,
+    "test_evaluation_count_verified_per_run": 1
+  },
+  "verified_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_verified_runs_v3_2.csv",
+    "size_bytes": 5321,
+    "sha256": "617ddc9b58a46c1cfe54befb0e74bbf296d1a60ea00c6b0139439d8f5903dfbb"
+  },
+  "verified_groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "FP32-FT",
+      "run_count": 5,
+      "aggregate_metrics": {
+        "test_fingerprint_accuracy": {
+          "mean": 0.9996605665472463,
+          "std_population": 1.8194423313113223e-05,
+          "minimum": 0.9996395873005627,
+          "maximum": 0.9996933802407773
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9993869819740098,
+          "std_population": 3.4968645322849514e-05,
+          "minimum": 0.9993424665082218,
+          "maximum": 0.9994444073042175
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9983273614759355,
+          "std_population": 7.173190351485109e-05,
+          "minimum": 0.9982257858732687,
+          "maximum": 0.998436817821267
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0018732195191933476,
+          "std_population": 0.00010735802966578157,
+          "minimum": 0.0017420531633636216,
+          "maximum": 0.002049474309839483
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00010569879096844481,
+          "std_population": 2.0407835366819944e-05,
+          "minimum": 9.350277662589779e-05,
+          "maximum": 0.0001463521721101202
+        }
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "FP32-FT",
+      "run_count": 5,
+      "aggregate_metrics": {
+        "test_fingerprint_accuracy": {
+          "mean": 0.9995911736543697,
+          "std_population": 5.559182210786602e-05,
+          "minimum": 0.9995212428320908,
+          "maximum": 0.9996503458886056
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.999259629566686,
+          "std_population": 9.891450273405765e-05,
+          "minimum": 0.9991407487326659,
+          "maximum": 0.9993736887110457
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9980194688122846,
+          "std_population": 0.00016047073044462838,
+          "minimum": 0.9978100064501629,
+          "maximum": 0.998289451354056
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0021683438198102146,
+          "std_population": 0.00012923069104528958,
+          "minimum": 0.0019470005943476032,
+          "maximum": 0.002315905970118659
+        },
+        "test_mirai_fnr": {
+          "mean": 0.00013984763112750986,
+          "std_population": 5.832591469117808e-05,
+          "minimum": 8.130676228346179e-05,
+          "maximum": 0.00022765893439358198
+        }
+      },
+      "fragility_triggered_in_any_run": false,
+      "all_checks_passed": true
+    }
+  ],
+  "entry_checks": {
+    "protocol_locked": true,
+    "B0_pair_locked": true,
+    "B0_registry_hash_matches": true,
+    "pruning_FP32_FT_locked": true,
+    "preprocessing_locked": true,
+    "aggregate_completed": true,
+    "completion_completed": true,
+    "aggregate_hash_matches_completion": true,
+    "aggregate_runs_hash_matches_completion": true,
+    "group_summary_hash_matches_completion": true,
+    "ten_aggregate_rows": true,
+    "two_group_rows": true,
+    "aggregate_matrix_matches": true,
+    "B0_matrix_matches": true,
+    "locked_matrix_matches": true
+  },
+  "cache_checks": {
+    "validation_shapes_match": true,
+    "test_shapes_match": true,
+    "raw_totals_match": true,
+    "preprocessing_shapes_match": true
+  },
+  "global_checks": {
+    "ten_runs_verified": true,
+    "all_run_checks_passed": true,
+    "two_groups_verified": true,
+    "all_group_checks_passed": true,
+    "test_count_one_all_runs": true,
+    "test_inference_not_repeated": true,
+    "no_fragility": true
+  },
+  "source_artifacts": {
+    "aggregate_runs_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_all_runs_v3_2.csv",
+      "size_bytes": 6956,
+      "sha256": "690938d3f19e0c8e3e55c5845960f0a3ac327cf539f8cc9815098725fa9b582e"
+    },
+    "group_summary_csv": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_group_summary_v3_2.csv",
+      "size_bytes": 890,
+      "sha256": "bb0337ae60ce2bfae51bbb7d30d6c6286febe7090333845e263568d3cddcd1ea"
+    },
+    "aggregate_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_summary_v3_2.json",
+      "size_bytes": 7243,
+      "sha256": "bc837d393159948a5b7740ee0863d3b95552842eacfdc3fa6aeb40f7356ff013"
+    },
+    "completion_json": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_completed_v3_2.json",
+      "size_bytes": 1085,
+      "sha256": "0c69c219267b9775369bc275b0b92e25f6d508ef459d1c10f25adc940d6e2dfb"
+    },
+    "B0_pair_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_pair_locked_v3_2.json",
+      "size_bytes": 1241,
+      "sha256": "af730f4071ea0db3a4c910231d1964a70d81967838f9448a8b180455537a9a2b"
+    },
+    "B0_checkpoint_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_B0_checkpoint_registry_v3_2.csv",
+      "size_bytes": 9616,
+      "sha256": "af2f62797979caa86d02fffb6ed3ca18e038d54550d89b559161832f7ae290ef"
+    },
+    "pruning_FP32_FT_lock": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_FP32_FT_locked_v3_2.json",
+      "size_bytes": 1710,
+      "sha256": "bee8e0c7ea9e06f539e772b52907b187f80e471f257755c01cba738b65abd1b7"
+    }
+  },
+  "ready_for_DQ_QAT_and_PTQ_branches": true,
+  "all_checks_passed": true
+}

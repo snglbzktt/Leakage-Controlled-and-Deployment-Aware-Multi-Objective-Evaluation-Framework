@@ -1,0 +1,4 @@
+﻿split_a,split_b,pipeline_a_overlap_count,pipeline_b_overlap_count,overlap_difference_b_minus_a
+train,validation,240,246,6
+train,test,232,238,6
+validation,test,92,98,6

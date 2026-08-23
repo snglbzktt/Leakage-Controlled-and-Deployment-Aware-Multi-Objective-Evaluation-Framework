@@ -1,0 +1,116 @@
+{
+  "status": "locked",
+  "protocol_version": "tabular_baseline_protocol_v3_2",
+  "locked_at_utc": "2026-08-06T12:51:22.321027+00:00",
+  "amends_protocol_version": "tabular_baseline_protocol_v3_1",
+  "amendment_scope": "Pre-training deterministic repair of cross-split collisions introduced only after train-only StandardScaler transformation and final float32 conversion.",
+  "roadmap_impact": "No phase, model, seed, metric, or test-use change. This addendum remains inside Phase 4B cache integrity preparation.",
+  "scientific_trigger": {
+    "detected_before_any_phase_4_model_training": true,
+    "processed_fingerprint_rows": 2278176,
+    "cross_split_scaled_component_count": 280,
+    "affected_original_fingerprint_count": 938,
+    "within_split_family_conflict_count": 0,
+    "global_family_conflict_count": 0,
+    "affected_family": "benign"
+  },
+  "repair_policy": {
+    "input_used_for_collision_detection": "features only after train-only scaler and final float32 conversion",
+    "model_metrics_used": false,
+    "validation_performance_used": false,
+    "test_performance_used": false,
+    "labels_used_for_destination_selection": false,
+    "labels_used_only_for_safety_conflict_check": true,
+    "component_constraint": "Every scaled collision component must be assigned wholly to exactly one split.",
+    "destination_objective_order": [
+      "minimize moved original fingerprint rows",
+      "among fingerprint-minimal choices, minimize moved represented raw rows",
+      "among remaining ties, minimize cumulative absolute split raw-row deltas",
+      "then minimize cumulative absolute split fingerprint deltas",
+      "then choose the lowest split code"
+    ],
+    "post_repair_scaler_policy": "Refit StandardScaler on the repaired train fingerprint set only.",
+    "post_repair_audit_policy": "Recompute final float32 fingerprints over all splits and fail closed unless cross-split collision count and family-conflict count are zero.",
+    "iteration_policy": "If refitting the scaler creates new cross-split collisions, repeat the same locked deterministic repair rule and retain a complete iteration audit.",
+    "locked_split_database_mutation": false,
+    "base_cache_mutation": false,
+    "derived_cache_required": true
+  },
+  "locked_repair_plan": {
+    "scaled_collision_components": 280,
+    "two_split_components": 263,
+    "three_split_components": 17,
+    "affected_original_fingerprints": 938,
+    "moved_original_fingerprints": 353,
+    "moved_represented_raw_rows": 353,
+    "all_moved_fingerprints_raw_row_count_is_one": true,
+    "per_split_fingerprint_delta": {
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    "per_split_raw_row_delta": {
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    "all_split_counts_preserved_exactly": true
+  },
+  "unchanged_locks": {
+    "task": "family_3",
+    "classes": [
+      "benign",
+      "gafgyt",
+      "mirai"
+    ],
+    "feature_count": 115,
+    "source_raw_row_count": 7062606,
+    "source_fingerprint_count": 2278176,
+    "model_count": 4,
+    "expected_run_count": 12,
+    "model_hyperparameters_changed": false,
+    "seed_set_changed": false,
+    "primary_evaluation_view_changed": false,
+    "secondary_evaluation_view_changed": false,
+    "test_used_for_selection": false
+  },
+  "provenance": {
+    "base_protocol": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_locked_v3.json",
+    "base_protocol_sha256": "d345b22bdf2e88201a057fae2e5c2e532af53e3fcbf539664637a22e26ddcb03",
+    "base_lock_manifest": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_protocol_lock_manifest_v3.json",
+    "base_lock_manifest_sha256": "6b6159027bee1ff69db9e0ffadaa53eb9acf31576795ce6812fe661b7a5e6034",
+    "failure_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building\\scaled_overlap_failure.json",
+    "failure_report_sha256": "ae71c5a86abe649f35debcb0337a43e6ff05d9c82bae48fe4901ba545ae712ed",
+    "repair_plan": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_plan_v3.json",
+    "repair_plan_sha256": "65a0dcaa3ce01aafa17c60ad4f122f7c6387c3464db56400d05f6193eba8b811",
+    "components_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_components_v3.csv",
+    "components_csv_sha256": "69cbf48227a2519095e9abff5cb86d7252dbb51ad35e04e81fffbc89a3510595",
+    "moves_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_scaled_repair_moves_v3.csv",
+    "moves_csv_sha256": "d9a84ceb2c6d38cbc9378d63048de495641ce83a0b10088947a026a0bde55843",
+    "source_build_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_1.building",
+    "locker_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\96_lock_scaled_collision_protocol_addendum_v3_fixed.py",
+    "locker_script_sha256": "55ff766c7f621e3249c29602791ae95869180eec3175d955fa4c76a716f3c5c5"
+  },
+  "validation_checks": {
+    "base_protocol_locked": true,
+    "base_protocol_version_matches": true,
+    "base_manifest_locked": true,
+    "base_protocol_hash_matches_manifest": true,
+    "repair_plan_not_applied": true,
+    "repair_plan_checks_passed": true,
+    "failure_report_failed_only_for_overlap": true,
+    "component_count_matches": true,
+    "affected_fingerprint_count_matches": true,
+    "move_count_matches": true,
+    "moved_raw_rows_match": true,
+    "all_moved_fingerprints_have_unit_raw_weight": true,
+    "component_family_is_benign_only": true,
+    "move_family_is_benign_only": true,
+    "component_span_distribution_matches": true,
+    "no_identity_moves": true,
+    "global_fingerprint_delta_zero": true,
+    "global_raw_row_delta_zero": true,
+    "each_split_delta_zero": true
+  },
+  "all_checks_passed": true
+}

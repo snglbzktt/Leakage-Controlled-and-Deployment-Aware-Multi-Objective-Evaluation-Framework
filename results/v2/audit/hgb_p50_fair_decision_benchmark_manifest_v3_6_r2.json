@@ -1,0 +1,28 @@
+{
+  "status": "locked",
+  "protocol_version": "hgb_p50_fair_decision_benchmark_v3_6_r2",
+  "source_phase6_script": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\152_run_phase6_isolated_deployment_benchmark_v3_2.py",
+    "sha256": "48dd7c6e5148dbc9a3e4b0fc4b14cbe030361f2ccf67afa167ece98fb14b527a"
+  },
+  "source_hgb_model": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\tabular_baselines\\runs\\hist_gradient_boosting_b0__seed_2026\\model.joblib",
+    "sha256": "7cc2cb21b639f35167a171358b61674ddb0f4d9461341a794f5058e18a952dfa"
+  },
+  "generated": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hgb_p50_fair_decision_benchmark_all_runs_v3_6_r2.csv",
+      "sha256": "7720ee0a42a31f767b2a6d37fedb6e8b6a7430f3af93cf28cad3caeeb8b6e38d"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hgb_p50_fair_decision_benchmark_summary_v3_6_r2.json",
+      "sha256": "f016439f51a80a42e45854c6daad08f6257666fabac9ca566649f1a588da6927"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hgb_p50_fair_decision_benchmark_locked_v3_6_r2.json",
+      "sha256": "e3845f1111d72f4ef2c379c00020ac3f3fd49fffe0ee1739cc1b860ca207020b"
+    }
+  ],
+  "all_checks_passed": true,
+  "created_at_utc": "2026-08-13T10:54:03.565756+00:00"
+}

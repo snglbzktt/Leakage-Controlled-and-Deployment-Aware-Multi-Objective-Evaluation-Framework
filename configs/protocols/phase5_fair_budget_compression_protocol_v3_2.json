@@ -1,0 +1,601 @@
+{
+  "status": "locked",
+  "protocol_name": "Phase 5 fair-budget neural compression matrix",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "data_protocol_version": "tabular_baseline_protocol_v3_2",
+  "locked_at_utc": "2026-08-06T14:44:18.492862+00:00",
+  "task": {
+    "name": "family_3",
+    "classes": [
+      "benign",
+      "gafgyt",
+      "mirai"
+    ],
+    "feature_count": 115,
+    "primary_unit": "fingerprint",
+    "secondary_weighting": "represented_raw_row_count"
+  },
+  "data": {
+    "cache": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2",
+    "split_counts": {
+      "train": {
+        "fingerprints": 1534583,
+        "represented_raw_rows": 4943823
+      },
+      "validation": {
+        "fingerprints": 371797,
+        "represented_raw_rows": 1059390
+      },
+      "test": {
+        "fingerprints": 371796,
+        "represented_raw_rows": 1059393
+      }
+    },
+    "split_policy": "fixed leakage-controlled grouped_float32 v3_2",
+    "input_pipeline": "canonical float32 -> train-only StandardScaler -> final float32",
+    "scaler_policy": {
+      "fit_split": "train_only",
+      "fit_once_for_fixed_split": true,
+      "validation_or_test_in_fit": false,
+      "persist_mean_scale_and_hash": true
+    },
+    "class_weight_policy": {
+      "fit_split": "train_only",
+      "scheme": "inverse_square_root_frequency_mean1",
+      "primary_training_unit": "fingerprint",
+      "raw_occurrence_weight_used_for_fit": false
+    }
+  },
+  "legacy_reuse_policy": {
+    "legacy_checkpoints_directly_reused": false,
+    "legacy_scaler_directly_reused": false,
+    "legacy_test_results_mixed_with_v3_2": false,
+    "architecture_code_reuse": "allowed only under locked source and registry hashes",
+    "reason": "Phase 5 B0 checkpoints must be newly trained on the final v3_2 cache."
+  },
+  "architectures": {
+    "tinyml_mlp": {
+      "topology_reference": "115->64->32->3",
+      "b0_learning_rate": 0.003,
+      "equal_budget_learning_rate": 0.00030000000000000003
+    },
+    "compact_dnn": {
+      "topology_reference": "115->128->64->32->3",
+      "b0_learning_rate": 0.001,
+      "equal_budget_learning_rate": 0.0001
+    },
+    "model_source": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+    },
+    "model_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\architecture\\nbaiot_model_registry_v1.json",
+      "size_bytes": 3420,
+      "sha256": "fa7b482eb024725be113142576fffc0c5f347b7e07596fb04604200405300ac2"
+    }
+  },
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "variant_order": [
+    "B0",
+    "FP32-FT",
+    "P25-noFT",
+    "P25",
+    "P50-noFT",
+    "P50",
+    "DQ",
+    "PTQ",
+    "QAT",
+    "P25-QAT",
+    "P50-QAT"
+  ],
+  "alias_resolution": {
+    "P25": "P25-FP32-FT",
+    "P50": "P50-FP32-FT"
+  },
+  "alias_interpretation": "P25 and P50 are the equal-budget FP32-fine-tuned pruned controls. Their canonical report names are P25-FP32-FT and P50-FP32-FT.",
+  "budgets": {
+    "B0": {
+      "optimizer": "AdamW",
+      "batch_size": 4096,
+      "max_epochs": 15,
+      "early_stopping_patience": 4,
+      "early_stopping_min_delta": 0.0002,
+      "weight_decay": 0.0001,
+      "num_workers": 0,
+      "loss": "CrossEntropyLoss",
+      "selection_metric": "validation_fingerprint_macro_f1",
+      "restore_best_checkpoint": true,
+      "learning_rates": {
+        "tinyml_mlp": 0.003,
+        "compact_dnn": 0.001
+      }
+    },
+    "equal_update_budget": {
+      "optimizer": "AdamW",
+      "batch_size": 4096,
+      "max_epochs": 8,
+      "early_stopping_patience": 3,
+      "early_stopping_min_delta": 0.0002,
+      "weight_decay": 0.0001,
+      "num_workers": 0,
+      "loss": "CrossEntropyLoss",
+      "learning_rate_factor_from_b0": 0.1,
+      "restore_best_checkpoint": true,
+      "learning_rates": {
+        "tinyml_mlp": 0.00030000000000000003,
+        "compact_dnn": 0.0001
+      },
+      "applies_to": [
+        "FP32-FT",
+        "P25",
+        "P50",
+        "QAT",
+        "P25-QAT",
+        "P50-QAT"
+      ],
+      "causal_fairness_rule": "Branches in a direct comparison must start from the identical source state and receive the same maximum epoch, learning-rate, patience, min-delta, batch-size, optimizer, and weight-decay budget."
+    }
+  },
+  "variant_definitions": {
+    "B0": {
+      "canonical_name": "B0",
+      "source_variant": null,
+      "source_state": "new_training_from_final_v3_2_cache",
+      "pruning_ratio": 0.0,
+      "physical_compaction": false,
+      "fake_quantization": false,
+      "training_mode": "train_from_scratch",
+      "budget": "b0_budget",
+      "selection_metric": "fp32_validation_fingerprint_macro_f1",
+      "phase5_test_evaluations": 1
+    },
+    "FP32-FT": {
+      "canonical_name": "FP32-FT",
+      "source_variant": "B0",
+      "source_state": "matching_architecture_seed_B0_best_checkpoint",
+      "pruning_ratio": 0.0,
+      "physical_compaction": false,
+      "fake_quantization": false,
+      "training_mode": "equal_budget_fp32_fine_tuning",
+      "budget": "equal_update_budget",
+      "selection_metric": "fp32_validation_fingerprint_macro_f1",
+      "phase5_test_evaluations": 1
+    },
+    "P25-noFT": {
+      "canonical_name": "P25-noFT",
+      "source_variant": "B0",
+      "source_state": "independent_physical_pruning_from_B0",
+      "pruning_ratio": 0.25,
+      "physical_compaction": true,
+      "fake_quantization": false,
+      "training_mode": "no_updates_after_pruning",
+      "budget": "zero_update_budget",
+      "selection_metric": "not_applicable_deterministic_transform",
+      "phase5_test_evaluations": 1
+    },
+    "P25": {
+      "canonical_name": "P25-FP32-FT",
+      "source_variant": "P25-noFT",
+      "source_state": "identical_P25_noFT_state_shared_with_P25_QAT",
+      "pruning_ratio": 0.25,
+      "physical_compaction": true,
+      "fake_quantization": false,
+      "training_mode": "equal_budget_fp32_fine_tuning",
+      "budget": "equal_update_budget",
+      "selection_metric": "fp32_validation_fingerprint_macro_f1",
+      "phase5_test_evaluations": 1
+    },
+    "P50-noFT": {
+      "canonical_name": "P50-noFT",
+      "source_variant": "B0",
+      "source_state": "independent_physical_pruning_from_B0",
+      "pruning_ratio": 0.5,
+      "physical_compaction": true,
+      "fake_quantization": false,
+      "training_mode": "no_updates_after_pruning",
+      "budget": "zero_update_budget",
+      "selection_metric": "not_applicable_deterministic_transform",
+      "phase5_test_evaluations": 1
+    },
+    "P50": {
+      "canonical_name": "P50-FP32-FT",
+      "source_variant": "P50-noFT",
+      "source_state": "identical_P50_noFT_state_shared_with_P50_QAT",
+      "pruning_ratio": 0.5,
+      "physical_compaction": true,
+      "fake_quantization": false,
+      "training_mode": "equal_budget_fp32_fine_tuning",
+      "budget": "equal_update_budget",
+      "selection_metric": "fp32_validation_fingerprint_macro_f1",
+      "phase5_test_evaluations": 1
+    },
+    "DQ": {
+      "canonical_name": "DQ",
+      "source_variant": "B0",
+      "source_state": "matching_architecture_seed_B0_best_checkpoint",
+      "pruning_ratio": 0.0,
+      "physical_compaction": false,
+      "fake_quantization": false,
+      "training_mode": "dynamic_int8_conversion_no_updates",
+      "budget": "zero_update_budget",
+      "selection_metric": "not_applicable_deterministic_transform",
+      "phase5_test_evaluations": 1
+    },
+    "PTQ": {
+      "canonical_name": "PTQ",
+      "source_variant": "B0",
+      "source_state": "matching_architecture_seed_B0_best_checkpoint",
+      "pruning_ratio": 0.0,
+      "physical_compaction": false,
+      "fake_quantization": false,
+      "training_mode": "static_int8_calibration_no_updates",
+      "budget": "zero_update_budget",
+      "selection_metric": "phase6_validation_calibration_selection",
+      "phase5_test_evaluations": 0
+    },
+    "QAT": {
+      "canonical_name": "QAT",
+      "source_variant": "B0",
+      "source_state": "matching_architecture_seed_B0_best_checkpoint",
+      "pruning_ratio": 0.0,
+      "physical_compaction": false,
+      "fake_quantization": true,
+      "training_mode": "equal_budget_quantization_aware_training",
+      "budget": "equal_update_budget",
+      "selection_metric": "converted_int8_validation_fingerprint_macro_f1",
+      "phase5_test_evaluations": 1
+    },
+    "P25-QAT": {
+      "canonical_name": "P25-QAT",
+      "source_variant": "P25-noFT",
+      "source_state": "identical_P25_noFT_state_shared_with_P25",
+      "pruning_ratio": 0.25,
+      "physical_compaction": true,
+      "fake_quantization": true,
+      "training_mode": "equal_budget_pruned_quantization_aware_training",
+      "budget": "equal_update_budget",
+      "selection_metric": "converted_int8_validation_fingerprint_macro_f1",
+      "phase5_test_evaluations": 1
+    },
+    "P50-QAT": {
+      "canonical_name": "P50-QAT",
+      "source_variant": "P50-noFT",
+      "source_state": "identical_P50_noFT_state_shared_with_P50",
+      "pruning_ratio": 0.5,
+      "physical_compaction": true,
+      "fake_quantization": true,
+      "training_mode": "equal_budget_pruned_quantization_aware_training",
+      "budget": "equal_update_budget",
+      "selection_metric": "converted_int8_validation_fingerprint_macro_f1",
+      "phase5_test_evaluations": 1
+    }
+  },
+  "pruning": {
+    "type": "physical_structured_hidden_unit_pruning",
+    "mask_only_pruning_allowed": false,
+    "pruning_ratios": [
+      0.25,
+      0.5
+    ],
+    "source_policy": "Each ratio is generated independently from the matching architecture-seed B0 checkpoint. P50 is never derived from P25.",
+    "retained_width_rule": "max(1, round((1-r) * original_hidden_width))",
+    "preserve_output_layer": true,
+    "preserve_class_count": 3,
+    "compact_following_dimensions": true,
+    "recompute_parameters_and_macs": true,
+    "pruning_engine_policy": "Use the repository physical compaction implementation after it passes dimension, logit-shape, parameter-count, and MAC tests. The implementation file hash is recorded by every run manifest."
+  },
+  "quantization": {
+    "DQ": {
+      "source": "B0",
+      "training_updates": false,
+      "quantization": "dynamic_int8_linear_layers",
+      "validation_selection": false,
+      "phase5_test_policy": "evaluate_once_after_conversion"
+    },
+    "PTQ": {
+      "source": "B0",
+      "training_updates": false,
+      "quantization": "static_post_training_int8",
+      "calibration_source": "train_only",
+      "phase5_calibration_role": "conversion_smoke_and_validation_only",
+      "phase5_test_policy": "deferred_to_phase6_calibration_sensitivity",
+      "reason_for_deferral": "Phase 6 must compare calibration sizes 4096, 16384, 65536, and 262144 using train-only balanced samples, select on validation, and access test only for the selected setting."
+    },
+    "QAT": {
+      "source": "B0",
+      "training_updates": true,
+      "quantization": "quantization_aware_training_int8",
+      "budget": "equal_update_budget",
+      "selection_metric": "converted_int8_validation_fingerprint_macro_f1"
+    },
+    "P25-QAT": {
+      "source": "same_P25_noFT_state_used_by_P25",
+      "training_updates": true,
+      "quantization": "physical_P25_then_QAT",
+      "budget": "equal_update_budget",
+      "selection_metric": "converted_int8_validation_fingerprint_macro_f1"
+    },
+    "P50-QAT": {
+      "source": "same_P50_noFT_state_used_by_P50",
+      "training_updates": true,
+      "quantization": "physical_P50_then_QAT",
+      "budget": "equal_update_budget",
+      "selection_metric": "converted_int8_validation_fingerprint_macro_f1"
+    }
+  },
+  "test_isolation": {
+    "validation_used_for_selection": true,
+    "test_used_for_selection": false,
+    "test_used_for_early_stopping": false,
+    "test_used_for_thresholds": false,
+    "test_used_for_calibration": false,
+    "non_PTQ_test_evaluations_per_configuration": 1,
+    "PTQ_phase5_test_evaluations_per_configuration": 0,
+    "PTQ_final_test_access": "exactly once after Phase 6 validation-only calibration selection"
+  },
+  "required_saved_outputs": [
+    "best_checkpoint",
+    "optimizer_and_training_history",
+    "scaler_manifest",
+    "class_weight_manifest",
+    "source_checkpoint_hash",
+    "model_source_hash",
+    "variant_transform_manifest",
+    "validation_logits_and_probabilities",
+    "test_logits_and_probabilities_when_unlocked",
+    "fingerprint_level_metrics",
+    "raw_occurrence_weighted_metrics",
+    "confusion_matrices",
+    "per_class_precision_recall_f1_fnr",
+    "MCC",
+    "parameter_count",
+    "MAC_count",
+    "raw_tensor_bytes",
+    "serialized_artifact_bytes",
+    "test_access_counter",
+    "run_manifest"
+  ],
+  "reporting": {
+    "primary_endpoint": "fingerprint_macro_f1",
+    "secondary_endpoints": [
+      "raw_occurrence_weighted_macro_f1",
+      "accuracy",
+      "balanced_accuracy",
+      "MCC",
+      "gafgyt_fnr",
+      "mirai_fnr",
+      "benign_misclassification",
+      "log_loss"
+    ],
+    "probability_artifacts_required": true,
+    "AUROC_or_AUPRC_reportable_only_if_recomputed_from_saved_scores": true,
+    "five_seed_mean_and_standard_deviation": true,
+    "single_best_seed_as_main_result": false
+  },
+  "predeclared_comparisons": [
+    {
+      "comparison_id": "C01",
+      "left_variant": "QAT",
+      "right_variant": "FP32-FT",
+      "purpose": "Separate fake-quantization effect from equal additional training.",
+      "family": "equal_budget_quantization",
+      "priority": "primary"
+    },
+    {
+      "comparison_id": "C02",
+      "left_variant": "P25",
+      "right_variant": "FP32-FT",
+      "purpose": "Estimate P25 structured-pruning effect under an equal FP32 update budget.",
+      "family": "equal_budget_pruning",
+      "priority": "primary"
+    },
+    {
+      "comparison_id": "C03",
+      "left_variant": "P50",
+      "right_variant": "FP32-FT",
+      "purpose": "Estimate P50 structured-pruning effect under an equal FP32 update budget.",
+      "family": "equal_budget_pruning",
+      "priority": "primary"
+    },
+    {
+      "comparison_id": "C04",
+      "left_variant": "P25-QAT",
+      "right_variant": "P25",
+      "purpose": "Compare QAT with FP32 fine-tuning from the identical P25-noFT source.",
+      "family": "equal_budget_pruning_qat",
+      "priority": "primary"
+    },
+    {
+      "comparison_id": "C05",
+      "left_variant": "P50-QAT",
+      "right_variant": "P50",
+      "purpose": "Compare QAT with FP32 fine-tuning from the identical P50-noFT source.",
+      "family": "equal_budget_pruning_qat",
+      "priority": "primary"
+    },
+    {
+      "comparison_id": "C06",
+      "left_variant": "P25-noFT",
+      "right_variant": "P25",
+      "purpose": "Measure recovery attributable to post-pruning FP32 fine-tuning.",
+      "family": "fine_tuning_ablation",
+      "priority": "primary"
+    },
+    {
+      "comparison_id": "C07",
+      "left_variant": "P50-noFT",
+      "right_variant": "P50",
+      "purpose": "Measure recovery attributable to post-pruning FP32 fine-tuning.",
+      "family": "fine_tuning_ablation",
+      "priority": "primary"
+    },
+    {
+      "comparison_id": "C08",
+      "left_variant": "DQ",
+      "right_variant": "B0",
+      "purpose": "Measure standalone dynamic quantization effect.",
+      "family": "standalone_quantization",
+      "priority": "secondary_locked"
+    },
+    {
+      "comparison_id": "C09",
+      "left_variant": "PTQ",
+      "right_variant": "B0",
+      "purpose": "Measure standalone PTQ effect only after Phase 6 calibration selection.",
+      "family": "standalone_quantization",
+      "priority": "secondary_locked_deferred"
+    }
+  ],
+  "matrix": {
+    "architectures": [
+      "tinyml_mlp",
+      "compact_dnn"
+    ],
+    "variants": [
+      "B0",
+      "FP32-FT",
+      "P25-noFT",
+      "P25",
+      "P50-noFT",
+      "P50",
+      "DQ",
+      "PTQ",
+      "QAT",
+      "P25-QAT",
+      "P50-QAT"
+    ],
+    "seeds": [
+      42,
+      123,
+      2026,
+      3407,
+      8192
+    ],
+    "configuration_count": 110,
+    "locked_matrix_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_locked_configuration_matrix_v3_2.csv",
+    "phase5_immediate_test_configuration_count": 100,
+    "PTQ_deferred_configuration_count": 10
+  },
+  "execution_order": [
+    "generate_and_lock_train_only_scaler_and_class_weights",
+    "train_B0_for_both_architectures_and_five_seeds",
+    "independently_verify_and_lock_B0_checkpoints",
+    "create_equal_budget_FP32_FT_and_pruning_noFT_sources",
+    "run_P25_P50_QAT_and_pruning_QAT_branches",
+    "run_DQ",
+    "run_PTQ_conversion_validation_only",
+    "complete_Phase6_PTQ_calibration_sensitivity_before_PTQ_test",
+    "independently_verify_all_saved_artifacts",
+    "aggregate_paired_seed_results"
+  ],
+  "source_inventory": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_completed_v3_2.json",
+      "size_bytes": 1202,
+      "sha256": "21845a70b6bdf481c6d75d27dc1a44872f7f0092b3af0f100d5079da8e83788d"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase4_classical_baselines_lock_manifest_v3_2.json",
+      "size_bytes": 5190,
+      "sha256": "f9a2ceb84b6839ccc8e16c973c7fa67ff360a23bd1800ea3a3599da596f17cb1"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_preflight_inventory_v3_2.json",
+      "size_bytes": 55268,
+      "sha256": "9bdaa62d38c0d834018f3e75d825bb2a6e90de3e957881e76d47b2d6ac16ff59"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_planned_configuration_matrix_v3_2.csv",
+      "size_bytes": 12525,
+      "sha256": "39eac157dd5c601accc199f4d6c80414a42298b29fa8d007c79d9994f225a80b"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\cache\\tabular_baseline_family3_v3_2\\manifest.json",
+      "size_bytes": 12247,
+      "sha256": "c50fd55a14727f28759f9a96766f2dbb1d78fecd9dfb38abf340fd8b152f2bd0"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\tabular_baseline_final_cache_verification_v3_2.json",
+      "size_bytes": 12958,
+      "sha256": "4d477a139445c75310233307adeae198e39cd1c1489a2a2cb978c5acfc1e3c18"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py",
+      "size_bytes": 15283,
+      "sha256": "1a79368c60a4639b1169ae1a3912295cfe8a7fa39f0f791a0254af82fa8ac9cd"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\architecture\\nbaiot_model_registry_v1.json",
+      "size_bytes": 3420,
+      "sha256": "fa7b482eb024725be113142576fffc0c5f347b7e07596fb04604200405300ac2"
+    }
+  ],
+  "legacy_reference_inventory": [
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json",
+      "exists": true,
+      "size_bytes": 5030,
+      "sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_structured_pruning_protocol_v1.json",
+      "exists": true,
+      "size_bytes": 2241,
+      "sha256": "f2bec24161421c6665c91aaf821c75f7f43485b7b32f49e68b64425f8a3f499b"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_quantization_protocol_v1.json",
+      "exists": true,
+      "size_bytes": 2668,
+      "sha256": "2f5b9e29501d598ba6830173ce601983672731d7599da2eabb56f2c794bcf086"
+    },
+    {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_pruning_qat_protocol_v1.json",
+      "exists": true,
+      "size_bytes": 2847,
+      "sha256": "b34b2c23b9ba10958e7d788f53bddbc26a1df7900dd0ba5d6f144840ce0e8ae8"
+    }
+  ],
+  "preflight_checks": {
+    "phase4_completion_locked": true,
+    "phase4_completion_checks_passed": true,
+    "phase4_ready_for_phase5": true,
+    "phase4_lock_manifest_locked": true,
+    "preflight_passed": true,
+    "preflight_phase_is_five": true,
+    "preflight_matrix_count_is_110": true,
+    "preflight_architecture_set_matches": true,
+    "preflight_variant_set_matches": true,
+    "preflight_seed_set_matches": true,
+    "cache_manifest_completed": true,
+    "cache_protocol_matches": true,
+    "cache_verification_passed": true,
+    "model_source_hash_matches_preflight": true,
+    "model_registry_hash_matches_preflight": true,
+    "torch_importable": true,
+    "configuration_count_formula_matches": true
+  },
+  "matrix_checks": {
+    "configuration_count_is_110": true,
+    "architecture_set_matches": true,
+    "variant_set_matches": true,
+    "seed_set_matches": true,
+    "P25_alias_resolved": true,
+    "P50_alias_resolved": true,
+    "equal_budget_max_epochs_are_eight": true,
+    "equal_budget_lr_factor_is_point_one": true,
+    "PTQ_test_is_deferred": true,
+    "non_PTQ_test_count_is_one": true,
+    "P25_and_P25_QAT_share_source": true,
+    "P50_and_P50_QAT_share_source": true
+  },
+  "all_checks_passed": true
+}

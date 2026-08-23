@@ -1,0 +1,10 @@
+graph():
+    %inputs : 'Tensor' [num_users=1] = placeholder[target=inputs]
+    %network_0_input_scale_0 : [num_users=1] = get_attr[target=network_0_input_scale_0]
+    %network_0_input_zero_point_0 : [num_users=1] = get_attr[target=network_0_input_zero_point_0]
+    %quantize_per_tensor : [num_users=1] = call_function[target=torch.quantize_per_tensor](args = (%inputs, %network_0_input_scale_0, %network_0_input_zero_point_0, torch.quint8), kwargs = {})
+    %network_0 : [num_users=1] = call_module[target=network.0](args = (%quantize_per_tensor,), kwargs = {})
+    %network_2 : [num_users=1] = call_module[target=network.2](args = (%network_0,), kwargs = {})
+    %network_4 : [num_users=1] = call_module[target=network.4](args = (%network_2,), kwargs = {})
+    %dequantize_3 : [num_users=1] = call_method[target=dequantize](args = (%network_4,), kwargs = {})
+    return dequantize_3

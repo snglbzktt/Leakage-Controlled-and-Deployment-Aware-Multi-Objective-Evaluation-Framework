@@ -1,0 +1,13 @@
+{
+  "status": "locked",
+  "protocol_version": "hgb_p50_fair_decision_benchmark_v3_5",
+  "summary_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hgb_p50_fair_decision_benchmark_summary_v3_5.json",
+  "summary_sha256": "82d9fdf1f5e763262c6c85b12feb101409cc2a00ef8f786ab3ade776138f220b",
+  "all_runs_path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\hgb_p50_fair_decision_benchmark_all_runs_v3_5.csv",
+  "all_runs_sha256": "5c6995bef04c0b213dd2239ea695749c3cef2c37f71f7808fad6684fb59b57e7",
+  "tinyml_model_family_reselected": false,
+  "validation_data_access": false,
+  "test_data_access": false,
+  "all_checks_passed": true,
+  "locked_at_utc": "2026-08-13T10:35:27.827906+00:00"
+}

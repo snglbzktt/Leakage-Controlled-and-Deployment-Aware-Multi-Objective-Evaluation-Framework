@@ -1,0 +1,21 @@
+{
+  "status": "constructed",
+  "phase": 10,
+  "artifact_name": "deterministic_release_archive",
+  "protocol_version": "phase10_release_archive_v3_3",
+  "constructed_at_utc": "2026-08-06T23:06:02.900794+00:00",
+  "release_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3",
+  "zip_archive": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3.zip",
+  "zip_archive_sha256": "b3decdf91a16b0716aa04dce8f406edd0f7fad117216d7822e00f554a02950b5",
+  "zip_archive_size_bytes": 33787,
+  "release_manifest": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\release\\TinyML_IDS_IEEE_release_v3_3\\release_manifest.json",
+  "release_manifest_sha256": "52be5fd33842ffd2b90e96219ed0dbab873788ebc43e9c74bfd9c8b9e5826bf5",
+  "construction_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase10_release_archive_construction_v3_3.json",
+  "construction_report_sha256": "1e5ee7e1c212dd56c892d5886cfb4bb84a54dabd37f10e7f8b3e4426c3998919",
+  "payload_file_count": 15,
+  "archive_file_count": 16,
+  "external_final_lock_created": false,
+  "release_locked": false,
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,53 @@
+{
+  "status": "completed",
+  "analysis_role": "diagnostic_only_no_artifact_mutation",
+  "stage38_overlap_hash_pair_count": 371,
+  "exact_cross_split_scaled_row_count": 371,
+  "dual_hash_pairs_with_multiple_exact_sha256_values": 0,
+  "exact_cross_split_label_conflict_count": 0,
+  "scanned_raw_rows": 7062606,
+  "matched_raw_rows": 1036,
+  "split_signature_counts": {
+    "train|test": 162,
+    "train|validation": 162,
+    "train|validation|test": 23,
+    "validation|test": 24
+  },
+  "affected_raw_rows_by_split": {
+    "train": 572,
+    "validation": 230,
+    "test": 234
+  },
+  "affected_raw_rows_by_class": {
+    "benign": 1036,
+    "gafgyt": 0,
+    "mirai": 0
+  },
+  "affected_raw_rows_by_split_and_class": {
+    "train": {
+      "benign": 572,
+      "gafgyt": 0,
+      "mirai": 0
+    },
+    "validation": {
+      "benign": 230,
+      "gafgyt": 0,
+      "mirai": 0
+    },
+    "test": {
+      "benign": 234,
+      "gafgyt": 0,
+      "mirai": 0
+    }
+  },
+  "source_artifacts": {
+    "stage38_script": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\38_run_b0_matched_leakage_ablation.py",
+    "grouped_cache": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\vs2_float32_leakage_ablation_cache_v2\\grouped_float32",
+    "scaled_overlap_audit_database": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\vs2_float32_leakage_ablation_cache_v2\\grouped_float32\\scaled_model_input_overlap_audit.sqlite"
+  },
+  "outputs": {
+    "detail_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_detail_rows_v2.csv",
+    "summary_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_detail_summary_v2.json",
+    "text_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_detail_report_v2.txt"
+  }
+}

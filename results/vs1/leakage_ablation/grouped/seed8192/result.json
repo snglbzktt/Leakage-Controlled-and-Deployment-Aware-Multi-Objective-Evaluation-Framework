@@ -1,0 +1,136 @@
+{
+  "completed_at_utc": "2026-08-04T14:52:57.325839+00:00",
+  "seed": 8192,
+  "best_epoch": 3,
+  "best_validation_macro_f1": 0.9989398169086753,
+  "test": {
+    "loss": 0.00254848875085265,
+    "sample_count": 1059212,
+    "accuracy": 0.9994307088665914,
+    "balanced_accuracy": 0.999365613767364,
+    "macro_precision": 0.9983708383990502,
+    "macro_recall": 0.999365613767364,
+    "macro_f1": 0.9988671495756706,
+    "confusion_matrix": [
+      [
+        83243,
+        63,
+        0
+      ],
+      [
+        310,
+        424685,
+        0
+      ],
+      [
+        51,
+        179,
+        550681
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "support": 83306,
+        "precision": 0.9956820247835032,
+        "recall": 0.9992437519506399,
+        "f1": 0.9974597088251154,
+        "false_negative_rate": 0.000756248049360142
+      },
+      "gafgyt": {
+        "support": 424995,
+        "precision": 0.9994304904136475,
+        "recall": 0.9992705796538783,
+        "f1": 0.9993505286367454,
+        "false_negative_rate": 0.0007294203461216675
+      },
+      "mirai": {
+        "support": 550911,
+        "precision": 1.0,
+        "recall": 0.9995825096975737,
+        "f1": 0.9997912112651508,
+        "false_negative_rate": 0.00041749030242632656
+      }
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.019689191237672474,
+      "validation_loss": 0.004496751929083362,
+      "validation_sample_count": 1057969,
+      "validation_accuracy": 0.9991464778268551,
+      "validation_balanced_accuracy": 0.9991607599989294,
+      "validation_macro_precision": 0.998045429504701,
+      "validation_macro_recall": 0.9991607599989294,
+      "validation_macro_f1": 0.998601784892935
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.003536827444640418,
+      "validation_loss": 0.0038033650543134096,
+      "validation_sample_count": 1057969,
+      "validation_accuracy": 0.9993033822352073,
+      "validation_balanced_accuracy": 0.9993110533630197,
+      "validation_macro_precision": 0.9977259117481373,
+      "validation_macro_recall": 0.9993110533630197,
+      "validation_macro_f1": 0.9985155932423301
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.003297253724727545,
+      "validation_loss": 0.0029101967548054745,
+      "validation_sample_count": 1057969,
+      "validation_accuracy": 0.9994357112542995,
+      "validation_balanced_accuracy": 0.9993331901534445,
+      "validation_macro_precision": 0.9985477592041384,
+      "validation_macro_recall": 0.9993331901534445,
+      "validation_macro_f1": 0.9989398169086753
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0031042465192635156,
+      "validation_loss": 0.002839977304972622,
+      "validation_sample_count": 1057969,
+      "validation_accuracy": 0.9993931769267341,
+      "validation_balanced_accuracy": 0.9993735255505865,
+      "validation_macro_precision": 0.9982103609930503,
+      "validation_macro_recall": 0.9993735255505865,
+      "validation_macro_f1": 0.9987904321649882
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.0028739584590201767,
+      "validation_loss": 0.0025260720869216312,
+      "validation_sample_count": 1057969,
+      "validation_accuracy": 0.9995434648841318,
+      "validation_balanced_accuracy": 0.9994338200369054,
+      "validation_macro_precision": 0.9987721782490867,
+      "validation_macro_recall": 0.9994338200369054,
+      "validation_macro_f1": 0.9991025280023907
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.0031834135897687126,
+      "validation_loss": 0.0029784384222840406,
+      "validation_sample_count": 1057969,
+      "validation_accuracy": 0.9994555606071633,
+      "validation_balanced_accuracy": 0.9994575812493142,
+      "validation_macro_precision": 0.9985953337518939,
+      "validation_macro_recall": 0.9994575812493142,
+      "validation_macro_f1": 0.9990256501429858
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.0027350522315064286,
+      "validation_loss": 0.002965474558743023,
+      "validation_sample_count": 1057969,
+      "validation_accuracy": 0.9993043274424865,
+      "validation_balanced_accuracy": 0.9993037949419871,
+      "validation_macro_precision": 0.9982836911554576,
+      "validation_macro_recall": 0.9993037949419871,
+      "validation_macro_f1": 0.9987926251008504
+    }
+  ],
+  "test_evaluation_count": 1,
+  "test_used_for_selection": false
+}

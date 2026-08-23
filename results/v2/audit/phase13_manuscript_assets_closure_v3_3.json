@@ -1,0 +1,39 @@
+{
+  "status": "locked",
+  "phase": 13,
+  "artifact_name": "manuscript_assets_closure",
+  "protocol_version": "phase13_manuscript_assets_v3_3",
+  "locked_at_utc": "2026-08-07T08:07:37.293338+00:00",
+  "manifest": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_assets_manifest_v3_3.json",
+    "sha256": "1a1526df8e6809361b5337f90a751d5782406aa2a393b735ccc942c13ab382a1"
+  },
+  "manifest_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase13_manuscript_assets_manifest_v3_3.csv",
+    "sha256": "499b7d736a77bbc72dafc523666278da113924e280400b81c531793bb53285b5"
+  },
+  "asset_count": 12,
+  "figure_count": 5,
+  "table_count": 7,
+  "verified_output_file_count": 49,
+  "verified_output_total_bytes": 1578995,
+  "phase12_external_dataset": "deferred_optional",
+  "closure_checks": {
+    "all_12_assets_verified": true,
+    "five_figures_verified": true,
+    "seven_tables_verified": true,
+    "all_declared_output_files_verified": true,
+    "all_assets_ready_for_manuscript": true,
+    "all_asset_checks_passed": true,
+    "model_inference_not_performed_by_closure": true,
+    "test_arrays_not_accessed_by_closure": true,
+    "source_files_not_mutated_by_closure": true,
+    "phase12_external_dataset_deferred_optional": true
+  },
+  "model_inference_performed": false,
+  "test_arrays_accessed": false,
+  "source_files_mutated": false,
+  "phase13_manuscript_assets_locked": true,
+  "ready_for_manuscript_drafting": true,
+  "all_checks_passed": true
+}

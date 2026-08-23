@@ -1,0 +1,103 @@
+{
+  "protocol_version": "early_lodo_cache_cleanup_v2_1",
+  "status": "completed",
+  "verified_at": "2026-08-05T21:32:18.647774+00:00",
+  "held_out_device": "Ennio_Doorbell",
+  "cache_directory": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell",
+  "retained_files": [
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\cache_summary.json",
+    "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\scaler.npz"
+  ],
+  "removed_files": [
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\test_global_indices.npy",
+      "size_bytes": 2708920,
+      "sha256": "17761ed6b8d7447be089633115aa57993dd8ec1e0e7a2957264495833f10fe14"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\test_occurrence_count.npy",
+      "size_bytes": 1354524,
+      "sha256": "b7d8a4b49aa55569eb20d98cda057c26de36c5edbdb8b397b4dfc3d633edfdb9"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\test_source_split.npy",
+      "size_bytes": 338727,
+      "sha256": "ec805c3ff7bcc68acdf8b3aec8daa6ee54bb79de0f40438733f4cfb8150a6c16"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\train_global_indices.npy",
+      "size_bytes": 12007432,
+      "sha256": "f82ade7579558c5e412a98cedf4abedf62b1153311c545f47201b38188010a9e"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\validation_global_indices.npy",
+      "size_bytes": 2570264,
+      "sha256": "91bc65fb11d7245358caf80436c8dab84b3dae3053e80f9a4b0d65cb6cff42de"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\x_test.npy",
+      "size_bytes": 155755668,
+      "sha256": "089dd947f749e9ac3fd9b44b3bef053f00927e8da658289ef9afec72b6b01d02"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\x_train.npy",
+      "size_bytes": 690420108,
+      "sha256": "0acfaf8ad756cad2a0c464f529e659a6d93f14bba732a75ebd90c5eed0cadc5a"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\x_validation.npy",
+      "size_bytes": 147782948,
+      "sha256": "e32283e240a02cb23cabadd8cac5ce14d68b725119a48642dda8d3c2795fde4d"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\y_test.npy",
+      "size_bytes": 338727,
+      "sha256": "b0dd5b467d89fb4836ee3f3a85ca0910ab9cf80445257fd60283a1bb9685c2df"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\y_train.npy",
+      "size_bytes": 1501041,
+      "sha256": "30e313a1166be859baea4fe948125c9886c0effb682f9211f5fd260d10534cd6"
+    },
+    {
+      "relative_path": "data\\processed\\early_lodo_fold_cache_v2\\Ennio_Doorbell\\y_validation.npy",
+      "size_bytes": 321395,
+      "sha256": "cbec7dce35a921c0d6882d8459b856bec34ed0cefa541abe8f97d1b0f86eac18"
+    }
+  ],
+  "expected_reclaimed_bytes": 1015099754,
+  "device_summary_sha256": "12956ecc65ca8cb6cc2b03db0cff3fcb97c6ab6207659b98868f10c62496b912",
+  "cache_manifest_sha256": "6591b37dce2f88512a159c2e6d8fd8bc9b2822b20d37d1e0fbca5b49490972f8",
+  "device_release_manifest_sha256": "02fb17337a7c4813d8bc13715e3728db637fb1a25064be0e9e8fe2bd2143302d",
+  "pre_cleanup_validation_checks": {
+    "device_summary_complete": true,
+    "device_summary_checks_passed": true,
+    "three_models_completed": true,
+    "cache_cleanup_eligible": true,
+    "one_device_ledger_row": true,
+    "device_ledger_complete": true,
+    "device_ledger_cleanup_eligible": true,
+    "cache_directory_exists": true,
+    "cache_manifest_nonempty": true,
+    "manifest_paths_inside_cache": true,
+    "manifest_matches_cache_directory": true,
+    "manifest_sizes_match": true,
+    "manifest_hashes_match": true,
+    "removable_files_found": true,
+    "retained_files_present": true
+  },
+  "all_pre_cleanup_checks_passed": true,
+  "completed_at": "2026-08-05T21:32:18.786327+00:00",
+  "removed_file_count": 11,
+  "reclaimed_bytes": 1015099754,
+  "reclaimed_gb": 0.9453853163868189,
+  "post_cleanup_validation_checks": {
+    "all_removable_files_removed": true,
+    "retained_files_still_present": true,
+    "cache_directory_retained": true,
+    "device_summary_unchanged": true,
+    "cache_manifest_unchanged": true,
+    "device_release_manifest_unchanged": true
+  },
+  "all_post_cleanup_checks_passed": true
+}

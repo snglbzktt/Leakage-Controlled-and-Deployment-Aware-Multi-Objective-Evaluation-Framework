@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "phase": 11,
+  "artifact_name": "input_robustness_protocol_preflight",
+  "protocol_version": "phase11_input_robustness_v3_3",
+  "verified_at_utc": "2026-08-06T23:26:06.906631+00:00",
+  "entry_checks": {
+    "cache_locked": true,
+    "test_shape_exact": true,
+    "test_dtypes_exact": true,
+    "scaler_shape_exact": true,
+    "scaler_dtypes_exact": true,
+    "preprocessing_verified": true,
+    "preprocessing_lock_matches": true,
+    "bundled_scaler_matches_cache": true,
+    "B0_checkpoint_hash_matches_registry": true,
+    "B0_checkpoint_identity": true,
+    "QAT_checkpoint_hash_matches_registry": true,
+    "QAT_checkpoint_identity": true,
+    "phase9_final_artifact_locked": true,
+    "phase10_release_locked": true,
+    "hgb_summary_locked_identity": true,
+    "hgb_verification_passed": true,
+    "hgb_model_type_exact": true,
+    "hgb_model_parameters_exact": true,
+    "condition_count_9": true,
+    "model_count_3": true,
+    "planned_evaluation_count_27": true,
+    "planned_results_absent": true
+  },
+  "preflight_checks": {
+    "entry_checks_passed": true,
+    "run_matrix_rows_27": true,
+    "run_ids_unique": true,
+    "condition_order_complete": true,
+    "all_runs_post_selection": true,
+    "execution_not_performed": true,
+    "inference_not_performed": true,
+    "test_arrays_hashed_only": true,
+    "final_model_unchanged": true
+  },
+  "protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase11_input_robustness_protocol_v3_3.json",
+    "size_bytes": 12501,
+    "sha256": "77c8cca9dad7d0cacad4e1e7ed8668d835e360deb5ecec56f7b24e6e05d8c082"
+  },
+  "run_matrix": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase11_input_robustness_run_matrix_v3_3.csv",
+    "size_bytes": 5957,
+    "sha256": "febe7298d59c43649037be7eea3e2a8bf1e4cb7e49b6ad86bc7be0bef9e71dcd"
+  },
+  "planned_model_count": 3,
+  "planned_condition_count": 9,
+  "planned_evaluation_count": 27,
+  "execution_performed": false,
+  "model_inference_performed": false,
+  "test_arrays_hashed_for_integrity": true,
+  "test_array_values_used_for_evaluation": false,
+  "test_labels_used_for_evaluation": false,
+  "final_model_changed": false,
+  "ready_for_robustness_execution": true,
+  "all_checks_passed": true
+}

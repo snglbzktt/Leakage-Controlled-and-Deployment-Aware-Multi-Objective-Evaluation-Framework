@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-07-26T19:44:33.906662+00:00",
+  "status": "completed",
+  "model_name": "compact_dnn",
+  "method_name": "P25-QAT",
+  "seed": 42,
+  "artifact_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\compact_dnn\\P25-QAT\\seed42\\converted_int8_state_dict.pt",
+  "artifact_sha256": "97e140c15b979633f20e5ef5e62f3c149184c2dc2108e06bf8a09f35db51d807",
+  "evaluation_attempt_count": 1,
+  "test_used_for_selection": false,
+  "completed_at_utc": "2026-07-26T19:44:35.258944+00:00",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\compact_dnn\\P25-QAT\\seed42\\test_metrics.json",
+  "test_per_class_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\compact_dnn\\P25-QAT\\seed42\\test_per_class_metrics.csv",
+  "test_confusion_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\compact_dnn\\P25-QAT\\seed42\\test_confusion_matrix.csv"
+}

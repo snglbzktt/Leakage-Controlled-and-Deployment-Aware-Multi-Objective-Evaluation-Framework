@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "compact_dnn__b0__seed_42",
+  "architecture": "compact_dnn",
+  "variant": "B0",
+  "seed": 42,
+  "best_epoch": 7,
+  "completed_at_utc": "2026-08-06T16:45:21.502128+00:00",
+  "test_evaluation_count": 1,
+  "fragility_gate_triggered": false
+}

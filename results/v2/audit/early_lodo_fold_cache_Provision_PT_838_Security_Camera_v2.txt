@@ -1,0 +1,39 @@
+==================================================================================
+PHASE 2G-0 EARLY LODO FOLD CACHE
+==================================================================================
+
+Held-out device : Provision_PT_838_Security_Camera
+Elapsed seconds : 4.412
+
+CACHE COUNTS
+Train           : 1,164,353
+Validation      : 249,102
+Test            : 820,042
+Test occurrence : 836,891
+
+CLASS COUNTS
+train: [294008, 22871, 847474]
+validation: [62590, 4956, 181556]
+test: [93995, 296710, 429337]
+
+VALIDATION CHECKS
+write_counts_match: True
+train_shape_matches: True
+validation_shape_matches: True
+test_shape_matches: True
+all_features_finite: True
+class_counts_match: True
+stream_class_counts_match: True
+train_excludes_heldout: True
+validation_excludes_heldout: True
+test_contains_heldout: True
+train_internal_duplicates_zero: True
+train_validation_overlap_zero: True
+train_validation_test_overlap_zero: True
+test_occurrences_positive: True
+test_occurrence_total_matches: True
+scaler_feature_count_115: True
+scaler_sample_count_matches: True
+scaler_values_finite: True
+scaler_scales_positive: True
+all_cache_files_exist: True

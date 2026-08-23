@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "FP32_FT_from_locked_B0",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "completed_at_utc": "2026-08-06T18:57:53.676877+00:00",
+  "run_count": 10,
+  "test_evaluation_count_per_run": 1,
+  "test_inference_total": 10,
+  "test_used_for_selection": false,
+  "aggregate_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_summary_v3_2.json",
+  "aggregate_json_sha256": "bc837d393159948a5b7740ee0863d3b95552842eacfdc3fa6aeb40f7356ff013",
+  "aggregate_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_all_runs_v3_2.csv",
+  "aggregate_runs_csv_sha256": "690938d3f19e0c8e3e55c5845960f0a3ac327cf539f8cc9815098725fa9b582e",
+  "group_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_FP32_FT_group_summary_v3_2.csv",
+  "group_summary_csv_sha256": "bb0337ae60ce2bfae51bbb7d30d6c6286febe7090333845e263568d3cddcd1ea",
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

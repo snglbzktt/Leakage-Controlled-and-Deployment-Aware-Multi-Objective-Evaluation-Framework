@@ -1,0 +1,64 @@
+{
+  "status": "completed",
+  "phase": 6,
+  "artifact_name": "isolated_deployment_benchmark_run",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "measurement_order": 11,
+  "architecture": "tinyml_mlp",
+  "variant": "P50-FP32-FT",
+  "seed": 42,
+  "representation": "float32",
+  "source_metrics": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50\\seed_42\\metrics.json",
+    "sha256": "826f3d2ee348839516583c45bec031a6787e70b340463c98f40a191b8221cd8b"
+  },
+  "checkpoint": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\phase5_compression\\tinyml_mlp\\p50\\seed_42\\best_checkpoint.pt",
+    "sha256": "cc5e1c341f9ae30527d692d36870ada10a8dc34b28248a59da8661510d5f94cc",
+    "file_bytes": 60709,
+    "serialized_state_dict_bytes": 19925
+  },
+  "runtime": {
+    "process_id": 5192,
+    "cpu_threads": 1,
+    "interop_threads": 1,
+    "load_elapsed_ms": 14.6346,
+    "RSS_before_model_load_bytes": 270602240,
+    "RSS_after_model_load_bytes": 273764352,
+    "model_load_RSS_delta_bytes": 3162112,
+    "peak_process_RSS_bytes": 275079168,
+    "peak_inference_RSS_delta_bytes": 1314816
+  },
+  "batch_1": {
+    "warmup_iterations": 50,
+    "measured_iterations": 500,
+    "mean_ms": 0.0267374,
+    "median_ms": 0.0203,
+    "std_ms": 0.015925033790858967,
+    "p95_ms": 0.04971499999999999,
+    "p99_ms": 0.08673699999999997,
+    "minimum_ms": 0.0182,
+    "maximum_ms": 0.1846,
+    "samples_per_second": 37400.7943928729,
+    "output_sha256": "98abe6a2823a9a4cdacfaf0968e279b32557bace0e99b6893a92c23074e73b74"
+  },
+  "batch_32": {
+    "warmup_iterations": 30,
+    "measured_iterations": 200,
+    "mean_ms": 0.0271645,
+    "median_ms": 0.0268,
+    "std_ms": 0.001791895574524364,
+    "p95_ms": 0.02862499999999999,
+    "p99_ms": 0.03743599999999997,
+    "minimum_ms": 0.026,
+    "maximum_ms": 0.0425,
+    "samples_per_second": 1178008.0619926741,
+    "output_sha256": "e05e41103a16c29b9a0a6f093464c375dedd90e5fdfc3a5d876a10a6710f5981"
+  },
+  "data_access": {
+    "train_data_access": true,
+    "validation_data_access": false,
+    "test_data_access": false
+  },
+  "completed_at_utc": "2026-08-06T21:06:05.920132+00:00"
+}

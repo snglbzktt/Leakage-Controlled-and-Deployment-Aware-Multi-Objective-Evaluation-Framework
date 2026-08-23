@@ -1,0 +1,155 @@
+{
+  "protocol_version": "early_lodo_global_gate_v2_1",
+  "status": "complete",
+  "generated_at": "2026-08-05T22:50:58.840382+00:00",
+  "seed": 2026,
+  "scope": {
+    "device_count": 9,
+    "model_count": 3,
+    "scientific_run_count": 27,
+    "expected_devices": [
+      "Danmini_Doorbell",
+      "Ecobee_Thermostat",
+      "Ennio_Doorbell",
+      "Philips_B120N10_Baby_Monitor",
+      "Provision_PT_737E_Security_Camera",
+      "Provision_PT_838_Security_Camera",
+      "Samsung_SNH_1011_N_Webcam",
+      "SimpleHome_XCS7_1002_WHT_Security_Camera",
+      "SimpleHome_XCS7_1003_WHT_Security_Camera"
+    ],
+    "expected_models": [
+      "tinyml_mlp_b0",
+      "compact_dnn_b0",
+      "hist_gradient_boosting_b0"
+    ],
+    "two_class_test_devices": [
+      "Ennio_Doorbell",
+      "Samsung_SNH_1011_N_Webcam"
+    ]
+  },
+  "locked_thresholds": {
+    "severe_macro_f1_below": 0.85,
+    "severe_attack_fnr_above": 0.4,
+    "meaningful_validation_test_macro_f1_drop_at_least": 0.1
+  },
+  "global_statistics": {
+    "mean_cell_test_macro_f1": 0.9802065424253953,
+    "median_cell_test_macro_f1": 0.990265033171612,
+    "minimum_cell_test_macro_f1": 0.9033496516659376,
+    "maximum_cell_test_macro_f1": 0.9958891575760941,
+    "maximum_eligible_attack_fnr": 0.3198137135582096,
+    "local_severe_cell_count": 0,
+    "meaningful_validation_test_drop_cell_count": 0
+  },
+  "model_ranking_basis": "Unweighted mean of per-device test fingerprint Macro-F1 across all nine held-out devices.",
+  "model_ranking": [
+    {
+      "model_id": "compact_dnn_b0",
+      "device_count": 9,
+      "mean_test_macro_f1": 0.9869322360394737,
+      "median_test_macro_f1": 0.9924872991345705,
+      "sample_std_test_macro_f1": 0.010678321914349342,
+      "minimum_test_macro_f1": 0.9629626797663531,
+      "maximum_test_macro_f1": 0.9939969510495716,
+      "mean_test_accuracy": 0.9855665155576045,
+      "mean_record_weighted_macro_f1": 0.9869954133089441,
+      "mean_validation_test_macro_f1_drop": 0.010400338869089495,
+      "maximum_validation_test_macro_f1_drop": 0.03227586724031528,
+      "maximum_eligible_attack_fnr": 0.09554186390952987,
+      "mean_total_seconds": 75.03436777774348,
+      "median_total_seconds": 74.44730800006073,
+      "device_macro_f1_win_count": 5,
+      "device_fastest_count": 0,
+      "local_severe_cell_count": 0,
+      "meaningful_validation_test_drop_count": 0,
+      "global_macro_f1_rank": 1
+    },
+    {
+      "model_id": "tinyml_mlp_b0",
+      "device_count": 9,
+      "mean_test_macro_f1": 0.986283143363278,
+      "median_test_macro_f1": 0.9905334472979256,
+      "sample_std_test_macro_f1": 0.009602807152275138,
+      "minimum_test_macro_f1": 0.9629826302186023,
+      "maximum_test_macro_f1": 0.9934942493254222,
+      "mean_test_accuracy": 0.9861063748756015,
+      "mean_record_weighted_macro_f1": 0.9863498541090097,
+      "mean_validation_test_macro_f1_drop": 0.011150132714553514,
+      "maximum_validation_test_macro_f1_drop": 0.03192685077851776,
+      "maximum_eligible_attack_fnr": 0.06543131915117549,
+      "mean_total_seconds": 34.797377733319685,
+      "median_total_seconds": 34.59764059993904,
+      "device_macro_f1_win_count": 1,
+      "device_fastest_count": 5,
+      "local_severe_cell_count": 0,
+      "meaningful_validation_test_drop_count": 0,
+      "global_macro_f1_rank": 2
+    },
+    {
+      "model_id": "hist_gradient_boosting_b0",
+      "device_count": 9,
+      "mean_test_macro_f1": 0.9674042478734339,
+      "median_test_macro_f1": 0.9759641808326674,
+      "sample_std_test_macro_f1": 0.03245437118669287,
+      "minimum_test_macro_f1": 0.9033496516659376,
+      "maximum_test_macro_f1": 0.9958891575760941,
+      "mean_test_accuracy": 0.9435911144336164,
+      "mean_record_weighted_macro_f1": 0.9678829406730031,
+      "mean_validation_test_macro_f1_drop": 0.032586911400447525,
+      "maximum_validation_test_macro_f1_drop": 0.09660707195036411,
+      "maximum_eligible_attack_fnr": 0.3198137135582096,
+      "mean_total_seconds": 37.928522577767986,
+      "median_total_seconds": 38.21104669990018,
+      "device_macro_f1_win_count": 3,
+      "device_fastest_count": 4,
+      "local_severe_cell_count": 0,
+      "meaningful_validation_test_drop_count": 0,
+      "global_macro_f1_rank": 3
+    }
+  ],
+  "gate": {
+    "status": "PASS_NO_SEVERE_FRAGILITY",
+    "passed": true,
+    "rule": "A cell is severe when test Macro-F1 is below 0.85 or any eligible attack FNR is above 0.40.",
+    "severe_cells": []
+  },
+  "interpretation": {
+    "general_model_ranking": "permitted_after_9_of_9_devices_complete",
+    "test_selection_use": "prohibited",
+    "class_coverage_note": "Ennio and Samsung have no Mirai samples in held-out test; their test Macro-F1 is computed over the classes present.",
+    "ranking_caution": "The ranking is an unweighted device-level summary and must be interpreted with the two-class test coverage note."
+  },
+  "validation_checks": {
+    "exactly_nine_device_summaries": true,
+    "expected_devices_present": true,
+    "all_summaries_complete": true,
+    "all_summary_checks_passed": true,
+    "all_seed_2026": true,
+    "all_three_models": true,
+    "expected_model_set_per_device": true,
+    "exactly_27_model_rows": true,
+    "unique_27_run_ids": true,
+    "unique_device_model_cells": true,
+    "all_primary_metrics_finite": true,
+    "all_runtime_positive": true,
+    "all_test_counts_positive": true,
+    "class_coverage_matches_protocol": true,
+    "all_local_severe_flags_match": true,
+    "all_device_rankings_valid": true,
+    "all_lock_files_exist": true,
+    "all_run_result_files_exist": true,
+    "device_ledger_exists": true,
+    "device_ledger_has_nine_rows": true,
+    "device_ledger_expected_devices": true,
+    "device_ledger_rows_complete": true
+  },
+  "all_checks_passed": true,
+  "outputs": {
+    "global_summary": "results\\v2\\early_lodo\\global\\early_lodo_global_summary_v2.json",
+    "model_summary_csv": "results\\v2\\early_lodo\\global\\early_lodo_model_summary_v2.csv",
+    "device_model_matrix_csv": "results\\v2\\early_lodo\\global\\early_lodo_device_model_matrix_v2.csv",
+    "report": "results\\v2\\early_lodo\\global\\early_lodo_global_report_v2.txt",
+    "completion_note": "docs\\v2\\early_lodo\\EARLY_LODO_GLOBAL_COMPLETE.md"
+  }
+}

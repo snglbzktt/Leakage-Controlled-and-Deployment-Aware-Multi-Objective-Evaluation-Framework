@@ -1,0 +1,37 @@
+{
+  "protocol_version": "numeric_order_training_pilot_v2_1",
+  "status": "completed",
+  "completed_at": "2026-08-05T17:57:49.355110+00:00",
+  "run_count": 8,
+  "paired_count": 4,
+  "validation_deltas_b_minus_a": [
+    -0.0004392427617118111,
+    -0.0002660031281023212,
+    2.0280746647061143e-05,
+    -1.2752898719492478e-05
+  ],
+  "median_validation_delta_b_minus_a": -0.00013937801341090683,
+  "pipeline_b_win_count": 1,
+  "pipeline_a_win_count": 3,
+  "practical_equivalence_margin": 0.001,
+  "decision": "practically_equivalent_retain_pipeline_a",
+  "selected_pipeline": "pipeline_a",
+  "selection_used_test_metrics": false,
+  "initialization_checks": {
+    "tinyml_mlp_seed42": true,
+    "tinyml_mlp_seed123": true,
+    "compact_dnn_seed42": true,
+    "compact_dnn_seed123": true
+  },
+  "validation_checks": {
+    "run_count": true,
+    "paired_count": true,
+    "all_initializations_matched": true,
+    "all_test_evaluated_once": true,
+    "all_validation_metrics_finite": true,
+    "all_test_metrics_finite": true
+  },
+  "all_checks_passed": true,
+  "run_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\numeric_order_training_pilot_runs_v2.csv",
+  "paired_delta_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\numeric_order_training_pilot_paired_deltas_v2.csv"
+}

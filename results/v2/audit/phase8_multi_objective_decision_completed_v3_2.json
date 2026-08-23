@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "phase": 8,
+  "artifact_name": "multi_objective_decision_execution",
+  "protocol_version": "phase8_multi_objective_decision_v3_2",
+  "completed_at_utc": "2026-08-06T21:32:56.288511+00:00",
+  "primary_profile": "balanced",
+  "primary_provisional_candidate_id": "tinyml_mlp::P50-QAT",
+  "eligibility_results": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_eligibility_results_v3_2.csv",
+  "eligibility_results_sha256": "c6ec23de0246555b9f127a6436dee22d6a4da4502de4a08bef473304a56c0a96",
+  "Pareto_results": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_pareto_results_v3_2.csv",
+  "Pareto_results_sha256": "2ace8e5e6d847cba523b88db5a49f075d0bba41c5e1dd763ad65635c2cdc0306",
+  "selection_trace": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_selection_trace_v3_2.csv",
+  "selection_trace_sha256": "79dc0f120a7012dbf3ea273a5fc089d0080ac126fa930ec1c368efb2bb24dc55",
+  "summary_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase8_multi_objective_decision_summary_v3_2.json",
+  "summary_json_sha256": "82046fdf6171d39fa6927ee6121a389038a8eb56da51d8d3789a79106ba5fb77",
+  "decision_computation_performed": true,
+  "model_inference_performed": false,
+  "provisional_selection_available": true,
+  "final_model_selected": false,
+  "ready_for_independent_verification": true,
+  "all_checks_passed": true
+}

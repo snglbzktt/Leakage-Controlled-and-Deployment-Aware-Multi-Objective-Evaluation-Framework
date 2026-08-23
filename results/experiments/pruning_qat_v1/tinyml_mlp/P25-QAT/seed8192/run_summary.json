@@ -1,0 +1,20 @@
+{
+  "generated_at_utc": "2026-07-26T19:29:41.429079+00:00",
+  "model_name": "tinyml_mlp",
+  "pruning_name": "P25",
+  "variant_name": "P25-QAT",
+  "pruning_ratio": 0.25,
+  "seed": 8192,
+  "pruning_qat_protocol_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_pruning_qat_protocol_v1.json",
+  "pruning_qat_protocol_sha256": "b34b2c23b9ba10958e7d788f53bddbc26a1df7900dd0ba5d6f144840ce0e8ae8",
+  "source_checkpoint_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tinyml_mlp\\seed8192\\best_checkpoint.pt",
+  "source_checkpoint_sha256": "e8e239f13c0619f533fa044cf8027c9f941d24149ca94cda1d3ac84fd5ce1add",
+  "training_summary_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed8192\\training_summary.json",
+  "test_metrics_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed8192\\test_metrics.json",
+  "artifact_metadata_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\pruning_qat_v1\\tinyml_mlp\\P25-QAT\\seed8192\\artifact_metadata.json",
+  "test_evaluation_attempt_count": 1,
+  "test_used_for_model_selection": false,
+  "physical_compaction": true,
+  "mask_based_pruning": false,
+  "validation_passed": true
+}

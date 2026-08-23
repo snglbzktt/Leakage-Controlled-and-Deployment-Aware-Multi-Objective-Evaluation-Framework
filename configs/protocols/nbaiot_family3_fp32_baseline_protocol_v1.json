@@ -1,0 +1,143 @@
+{
+  "generated_at_utc": "2026-07-24T11:06:18.822937+00:00",
+  "protocol_name": "N-BaIoT family_3 FP32 multi-seed baseline",
+  "protocol_version": "1.0",
+  "status": "locked_before_multi_seed_training",
+  "dataset": "nbaiot_float32_canonical_seed2026",
+  "task": "family_3",
+  "task_role": "primary",
+  "target_classes": [
+    "benign",
+    "gafgyt",
+    "mirai"
+  ],
+  "models": [
+    "tinyml_mlp",
+    "compact_dnn",
+    "tiny_1d_cnn"
+  ],
+  "training_seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "seed_count": 5,
+  "common_training_configuration": {
+    "optimizer": "AdamW",
+    "batch_size": 4096,
+    "max_epochs": 15,
+    "early_stopping_patience": 4,
+    "early_stopping_min_delta": 0.0002,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "torch_threads": 4,
+    "num_workers": 0,
+    "loss": "CrossEntropyLoss",
+    "class_weight_scheme": "inverse_square_root_frequency_mean1",
+    "class_weights_fitted_from": "train_only",
+    "feature_scaler_fitted_from": "train_only"
+  },
+  "model_specific_configuration": {
+    "tinyml_mlp": {
+      "learning_rate": 0.003,
+      "learning_rate_source": "single-seed validation Macro F1 sweep",
+      "tuning_seed": 42,
+      "tuning_best_epoch": 7,
+      "tuning_epochs_completed": 10,
+      "tuning_validation_macro_f1": 0.978433860058456,
+      "tuning_validation_loss": 0.0181596902881618,
+      "architecture_family": "multilayer_perceptron",
+      "order_sensitive": false
+    },
+    "compact_dnn": {
+      "learning_rate": 0.001,
+      "learning_rate_source": "single-seed validation Macro F1 sweep",
+      "tuning_seed": 42,
+      "tuning_best_epoch": 8,
+      "tuning_epochs_completed": 10,
+      "tuning_validation_macro_f1": 0.979421316534027,
+      "tuning_validation_loss": 0.0266135418375185,
+      "architecture_family": "multilayer_perceptron",
+      "order_sensitive": false
+    },
+    "tiny_1d_cnn": {
+      "learning_rate": 0.003,
+      "learning_rate_source": "single-seed validation Macro F1 sweep",
+      "tuning_seed": 42,
+      "tuning_best_epoch": 9,
+      "tuning_epochs_completed": 10,
+      "tuning_validation_macro_f1": 0.8598032581497831,
+      "tuning_validation_loss": 0.0898224006611251,
+      "architecture_family": "one_dimensional_convolution",
+      "order_sensitive": true
+    }
+  },
+  "model_selection": {
+    "split": "validation",
+    "primary_metric": "macro_f1",
+    "selection_direction": "maximize",
+    "checkpoint_policy": "Best epoch within each model-seed run",
+    "test_used_for_selection": false
+  },
+  "test_evaluation": {
+    "enabled": true,
+    "timing": "After loading the best validation checkpoint",
+    "evaluations_per_model_seed": 1,
+    "hyperparameter_changes_after_test": "forbidden",
+    "test_metrics": [
+      "accuracy",
+      "balanced_accuracy",
+      "macro_precision",
+      "macro_recall",
+      "macro_f1",
+      "weighted_f1",
+      "matthews_correlation_coefficient",
+      "per_class_precision",
+      "per_class_recall",
+      "per_class_f1",
+      "per_class_false_negative_rate",
+      "confusion_matrix"
+    ]
+  },
+  "planned_run_count": {
+    "model_count": 3,
+    "seed_count": 5,
+    "total_fp32_training_runs": 15
+  },
+  "reporting_policy": {
+    "aggregation_unit": "independent training seed",
+    "report_mean": true,
+    "report_standard_deviation": true,
+    "report_median": true,
+    "report_minimum": true,
+    "report_maximum": true,
+    "report_95_percent_confidence_interval": true,
+    "primary_metric": "test Macro F1",
+    "security_metric": "per-class false-negative rate"
+  },
+  "source_artifacts": {
+    "learning_rate_selection": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_family3_learning_rate_sweep_selected.csv",
+      "sha256": "5b61bb869dae812ea33cd9253cdf2844929dea348357d7de5c3af90b1ea6cad8"
+    },
+    "task_definition": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\preprocessing\\nbaiot_task_definitions_seed2026.json",
+      "sha256": "8a8fd1c9b69ee2dc688dd361b1fb47156efd1bec84834909efa7b10a72cd936e"
+    },
+    "model_registry": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\architecture\\nbaiot_model_registry_v1.json",
+      "sha256": "fa7b482eb024725be113142576fffc0c5f347b7e07596fb04604200405300ac2"
+    },
+    "scaler": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\preprocessing\\nbaiot_standard_scaler_seed2026.npz",
+      "sha256": "6809c84e46f1e859b888a8f64fdf37a10a55c5660ec3db67d093256986e4a7b8"
+    },
+    "task_weights": {
+      "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\preprocessing\\nbaiot_task_class_weights_seed2026.npz",
+      "sha256": "f4b05c2bc71c9800edb93cec8190a2771e6a9d79c352d408456933ad218a5a11"
+    }
+  },
+  "protocol_change_policy": "Any change after this lock requires a new protocol version and must not overwrite version 1.0."
+}

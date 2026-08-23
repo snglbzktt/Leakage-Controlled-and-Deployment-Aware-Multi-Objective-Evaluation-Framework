@@ -1,0 +1,313 @@
+{
+  "status": "completed",
+  "phase": 5,
+  "artifact_name": "P25_noFT_and_P50_noFT_evaluation",
+  "protocol_version": "phase5_fair_budget_compression_v3_2",
+  "engine_version": "phase5_physical_pruning_engine_v3_2",
+  "completed_at_utc": "2026-08-06T18:13:48.698628+00:00",
+  "run_count": 20,
+  "architecture_count": 2,
+  "variant_count": 2,
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8192
+  ],
+  "groups": [
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P25-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 6819,
+      "linear_macs_per_sample": 6744,
+      "mean_validation_fingerprint_macro_f1": 0.9569747122793311,
+      "mean_test_fingerprint_accuracy": 0.9663659641308673,
+      "mean_test_fingerprint_macro_f1": 0.9569461644366667,
+      "std_test_fingerprint_macro_f1": 0.044038458309919655,
+      "min_test_fingerprint_macro_f1": 0.8890132410593958,
+      "max_test_fingerprint_macro_f1": 0.9989448667867439,
+      "mean_test_raw_weighted_macro_f1": 0.9736578643286569,
+      "mean_test_gafgyt_fnr": 0.018449367737175426,
+      "mean_test_mirai_fnr": 0.046531046987177936,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "validation_fingerprint_macro_f1": {
+          "mean": 0.9569747122793311,
+          "std_population": 0.044204413032855584,
+          "minimum": 0.888607918085115,
+          "maximum": 0.9989425664972327
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.9663659641308673,
+          "std_population": 0.036142870543865814,
+          "minimum": 0.9087806216312171,
+          "maximum": 0.9993921397755758
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9569461644366667,
+          "std_population": 0.044038458309919655,
+          "minimum": 0.8890132410593958,
+          "maximum": 0.9989448667867439
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9736578643286569,
+          "std_population": 0.021429157580268365,
+          "minimum": 0.9435951882129695,
+          "maximum": 0.9978794571922395
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.018449367737175426,
+          "std_population": 0.033541990838317735,
+          "minimum": 0.0009632529256246025,
+          "maximum": 0.08552456294960342
+        },
+        "test_mirai_fnr": {
+          "mean": 0.046531046987177936,
+          "std_population": 0.05707003265931425,
+          "minimum": 0.00010569879096844481,
+          "maximum": 0.1369368490377345
+        }
+      }
+    },
+    {
+      "architecture": "tinyml_mlp",
+      "variant": "P50-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 4291,
+      "linear_macs_per_sample": 4240,
+      "mean_validation_fingerprint_macro_f1": 0.782363328046725,
+      "mean_test_fingerprint_accuracy": 0.7835678705526686,
+      "mean_test_fingerprint_macro_f1": 0.7824954690714307,
+      "std_test_fingerprint_macro_f1": 0.10602417208368228,
+      "min_test_fingerprint_macro_f1": 0.6560429259769186,
+      "max_test_fingerprint_macro_f1": 0.9052896347896766,
+      "mean_test_raw_weighted_macro_f1": 0.8234172420647475,
+      "mean_test_gafgyt_fnr": 0.0021437501280921365,
+      "mean_test_mirai_fnr": 0.28477368262718405,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": true,
+      "aggregate_metrics": {
+        "validation_fingerprint_macro_f1": {
+          "mean": 0.782363328046725,
+          "std_population": 0.10638644904744517,
+          "minimum": 0.6555600093785312,
+          "maximum": 0.9053656801413381
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.7835678705526686,
+          "std_population": 0.11642148902225373,
+          "minimum": 0.6379788916502598,
+          "maximum": 0.9166101840794414
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.7824954690714307,
+          "std_population": 0.10602417208368228,
+          "minimum": 0.6560429259769186,
+          "maximum": 0.9052896347896766
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.8234172420647475,
+          "std_population": 0.06090207921299944,
+          "minimum": 0.7453971672937518,
+          "maximum": 0.8918161132802761
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0021437501280921365,
+          "std_population": 0.0019176597201299307,
+          "minimum": 0.00038940011886956505,
+          "maximum": 0.005533580636566726
+        },
+        "test_mirai_fnr": {
+          "mean": 0.28477368262718405,
+          "std_population": 0.14436867480983065,
+          "minimum": 0.1248627948386467,
+          "maximum": 0.47097348586481935
+        }
+      }
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P25-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 17043,
+      "linear_macs_per_sample": 16872,
+      "mean_validation_fingerprint_macro_f1": 0.9987412351658378,
+      "mean_test_fingerprint_accuracy": 0.999341036482372,
+      "mean_test_fingerprint_macro_f1": 0.9988139070020772,
+      "std_test_fingerprint_macro_f1": 0.000270457834175565,
+      "min_test_fingerprint_macro_f1": 0.9984160110085498,
+      "max_test_fingerprint_macro_f1": 0.9991157795614173,
+      "mean_test_raw_weighted_macro_f1": 0.9981630797020726,
+      "mean_test_gafgyt_fnr": 0.0016190847047732326,
+      "mean_test_mirai_fnr": 0.0003707588360124081,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": false,
+      "aggregate_metrics": {
+        "validation_fingerprint_macro_f1": {
+          "mean": 0.9987412351658378,
+          "std_population": 0.0003550698449086004,
+          "minimum": 0.9982259208824728,
+          "maximum": 0.9991244384698986
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.999341036482372,
+          "std_population": 0.0001619873267285477,
+          "minimum": 0.9990882096633638,
+          "maximum": 0.9995051049500263
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9988139070020772,
+          "std_population": 0.000270457834175565,
+          "minimum": 0.9984160110085498,
+          "maximum": 0.9991157795614173
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9981630797020726,
+          "std_population": 0.0002142967876824825,
+          "minimum": 0.9979624194480636,
+          "maximum": 0.9985641264222763
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0016190847047732326,
+          "std_population": 0.0003684496555529415,
+          "minimum": 0.0009427581825262044,
+          "maximum": 0.002049474309839483
+        },
+        "test_mirai_fnr": {
+          "mean": 0.0003707588360124081,
+          "std_population": 0.00023313074777899518,
+          "minimum": 0.00010163345285429948,
+          "maximum": 0.000756152889235806
+        }
+      }
+    },
+    {
+      "architecture": "compact_dnn",
+      "variant": "P50-noFT",
+      "run_count": 5,
+      "seeds": [
+        42,
+        123,
+        2026,
+        3407,
+        8192
+      ],
+      "parameter_count": 10083,
+      "linear_macs_per_sample": 9968,
+      "mean_validation_fingerprint_macro_f1": 0.9179855320457063,
+      "mean_test_fingerprint_accuracy": 0.9574196602437895,
+      "mean_test_fingerprint_macro_f1": 0.9182295452182796,
+      "std_test_fingerprint_macro_f1": 0.12280349164359775,
+      "min_test_fingerprint_macro_f1": 0.6777391690694655,
+      "max_test_fingerprint_macro_f1": 0.9950565551069036,
+      "mean_test_raw_weighted_macro_f1": 0.9461712357064658,
+      "mean_test_gafgyt_fnr": 0.0009714508228639395,
+      "mean_test_mirai_fnr": 0.012734265108829112,
+      "test_evaluation_count_per_run": 1,
+      "fragility_triggered_in_any_run": true,
+      "aggregate_metrics": {
+        "validation_fingerprint_macro_f1": {
+          "mean": 0.9179855320457063,
+          "std_population": 0.12331864480676089,
+          "minimum": 0.676345686859415,
+          "maximum": 0.995031687912339
+        },
+        "test_fingerprint_accuracy": {
+          "mean": 0.9574196602437895,
+          "std_population": 0.05856086055074061,
+          "minimum": 0.8452027455916685,
+          "maximum": 0.9972538704020484
+        },
+        "test_fingerprint_macro_f1": {
+          "mean": 0.9182295452182796,
+          "std_population": 0.12280349164359775,
+          "minimum": 0.6777391690694655,
+          "maximum": 0.9950565551069036
+        },
+        "test_raw_weighted_macro_f1": {
+          "mean": 0.9461712357064658,
+          "std_population": 0.08549249630357665,
+          "minimum": 0.7764288173510887,
+          "maximum": 0.9967720027554137
+        },
+        "test_gafgyt_fnr": {
+          "mean": 0.0009714508228639395,
+          "std_population": 0.0002708409572960554,
+          "minimum": 0.0004508843481646485,
+          "maximum": 0.0011886950997068713
+        },
+        "test_mirai_fnr": {
+          "mean": 0.012734265108829112,
+          "std_population": 0.0195689399571002,
+          "minimum": 0.00013009081965342784,
+          "maximum": 0.05157287931637278
+        }
+      }
+    }
+  ],
+  "test_policy": {
+    "test_evaluation_count_per_run": 1,
+    "test_used_for_selection": false,
+    "test_inference_total": 20
+  },
+  "training_policy": {
+    "fine_tuning_performed": false,
+    "train_access_count": 0
+  },
+  "fragility_triggered_in_any_run": true,
+  "entry_checks": {
+    "protocol_locked": true,
+    "B0_pair_locked": true,
+    "B0_registry_hash_matches": true,
+    "pruning_engine_locked": true,
+    "engine_hash_matches": true,
+    "pruning_sources_independently_verified": true,
+    "source_registry_hash_matches": true,
+    "matrix_has_twenty_noFT_rows": true,
+    "source_registry_has_twenty_rows": true,
+    "B0_registry_has_ten_rows": true
+  },
+  "cache_checks": {
+    "validation_shape_matches": true,
+    "test_shape_matches": true,
+    "validation_raw_total_matches": true,
+    "test_raw_total_matches": true,
+    "scaler_shape_matches": true
+  },
+  "aggregate_runs_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_all_runs_v3_2.csv",
+    "size_bytes": 15477,
+    "sha256": "8a2daf059b5b15f749120a1df09767b64e4eb41e7361bc34af1c901a41fc46fa"
+  },
+  "group_summary_csv": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase5_pruning_noFT_evaluation_group_summary_v3_2.csv",
+    "size_bytes": 1378,
+    "sha256": "f97b550dd2684038a37b9360ba28ac1797bc9f1f3152f6b17647dcdce78370ee"
+  },
+  "ready_for_independent_verification": true,
+  "all_integrity_checks_passed": true
+}

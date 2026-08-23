@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "phase": 10,
+  "artifact_name": "deterministic_release_archive_protocol_circularity_fix_preflight",
+  "protocol_version": "phase10_release_archive_v3_3",
+  "verified_at_utc": "2026-08-06T23:03:36.415586+00:00",
+  "entry_checks": {
+    "old_protocol_locked": true,
+    "old_preflight_locked": true,
+    "old_protocol_hash_matches": true,
+    "old_source_manifest_hash_matches": true,
+    "phase8_model_family_locked": true,
+    "phase9_artifact_locked": true
+  },
+  "preflight_checks": {
+    "deployment_bundle_files_8": true,
+    "audit_evidence_files_5": true,
+    "generated_documentation_files_2": true,
+    "payload_files_excluding_manifest_15": true,
+    "archive_files_including_manifest_16": true,
+    "payload_paths_unique": true,
+    "manifest_does_not_hash_itself": true,
+    "final_lock_external": true,
+    "raw_dataset_excluded": true,
+    "processed_dataset_excluded": true,
+    "nonselected_checkpoints_excluded": true,
+    "corrected_outputs_absent": true,
+    "release_construction_not_performed": true,
+    "release_not_locked": true
+  },
+  "protocol": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\phase10_release_archive_protocol_v3_3.json",
+    "size_bytes": 20232,
+    "sha256": "00990b16260d52c96d63f4201eaed1653d64c2c41f8f231d82d6ca74a84b856d"
+  },
+  "source_manifest": {
+    "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase10_release_archive_source_manifest_v3_3.json",
+    "size_bytes": 12441,
+    "sha256": "12462bf3be5ac2e5356dd635445d5316cf2ad088ca4a4f303d2b988ef6609bab"
+  },
+  "release_construction_performed": false,
+  "zip_archive_created": false,
+  "external_final_lock_created": false,
+  "release_locked": false,
+  "ready_for_release_construction": true,
+  "all_checks_passed": true
+}

@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "analysis_role": "repair_plan_only_no_input_artifact_mutation",
+  "repair_strategy": "Merge original float32 fingerprint groups that collapse to the same StandardScaler-plus-float32 model input, assign each merged component to one split, preserve affected train/validation/test raw-row totals exactly, and minimize moved raw rows.",
+  "scaled_collision_component_count": 371,
+  "affected_original_fingerprint_group_count": 1036,
+  "affected_raw_row_count": 1036,
+  "affected_class_names": [
+    "benign"
+  ],
+  "old_affected_rows_by_split": {
+    "train": 572,
+    "validation": 230,
+    "test": 234
+  },
+  "new_affected_rows_by_split": {
+    "train": 572,
+    "validation": 230,
+    "test": 234
+  },
+  "component_count_by_new_split": {
+    "train": 165,
+    "validation": 103,
+    "test": 103
+  },
+  "minimum_moved_raw_rows": 416,
+  "moved_original_fingerprint_group_count": 416,
+  "planned_cross_split_scaled_overlap_count": 0,
+  "validation_checks": {
+    "database_quick_check_ok": true,
+    "exactly_371_scaled_components": true,
+    "exactly_1036_affected_raw_rows": true,
+    "only_benign_affected": true,
+    "each_original_group_currently_in_one_split": true,
+    "affected_split_totals_preserved_exactly": true,
+    "minimum_move_objective_consistent": true,
+    "planned_zero_scaled_overlap": true
+  },
+  "source_sha256": {
+    "assignment_database": "b2c132d70b33cbfefcc3c058a333bad6429bfb5d742a32170cbc9b9ed61157f3",
+    "scaled_overlap_audit_database": "34c9324e82fd590584de7a8977969ffc9715d939689524a003d4ccb3030bf8e3",
+    "stage38_script": "5b403595b2de0c27aa00b91aed6592645b47853955425824b40911330a488fab"
+  },
+  "outputs": {
+    "repair_plan_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_plan_v2.csv",
+    "component_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_components_v2.csv",
+    "summary_json": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_plan_summary_v2.json",
+    "report_txt": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\vs2_scaled_overlap_repair_plan_report_v2.txt"
+  }
+}

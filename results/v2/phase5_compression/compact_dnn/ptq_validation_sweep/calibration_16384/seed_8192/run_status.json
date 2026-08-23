@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "stage": "completed",
+  "run_id": "compact_dnn__ptq_validation__seed_8192__cal_16384",
+  "architecture": "compact_dnn",
+  "seed": 8192,
+  "calibration_size": 16384,
+  "validation_access_count": 1,
+  "test_access_count": 0,
+  "INT8_checkpoint_sha256": "1dd3d6066908abb01305ead61b6d7d6ea7e5cd4b98f8f502e04841f2608bca0b",
+  "validation_predictions_sha256": "6ae14fc47bda76755dc90035fd0fa33a4696eacc9ce538c0edd941758c5aa080",
+  "metrics_sha256": "08fd9438c03633b16c21edd541c7878e930b5d390ef350e2e6c24b772565d65b",
+  "run_manifest_sha256": "443c3e33593d54617a7d04c824e715ebb41572044b46eef85a390a60c927b905",
+  "completed_at_utc": "2026-08-06T20:35:19.737796+00:00"
+}

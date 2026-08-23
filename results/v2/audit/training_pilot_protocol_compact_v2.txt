@@ -1,0 +1,163 @@
+﻿==============================================================================
+REGISTERED MODELS
+==============================================================================
+- tinyml_mlp
+- compact_dnn
+- tiny_1d_cnn
+
+==============================================================================
+PILOT MODEL DETAILS
+==============================================================================
+model_name=tinyml_mlp
+class_name=TinyMLMLP
+total_parameters=9603
+trainable_parameters=9603
+spec={"registry_name":"tinyml_mlp","display_name":"TinyML-MLP","architecture_family":"multilayer_perceptron","description":"Two-hidden-layer low-parameter MLP baseline.","order_sensitive":false,"architecture":{"hidden_units":[64,32],"activation":"ReLU","dropout_probability":0.0}}
+------------------------------------------------------------------------------
+model_name=compact_dnn
+class_name=CompactDNN
+total_parameters=25283
+trainable_parameters=25283
+spec={"registry_name":"compact_dnn","display_name":"Compact-DNN","architecture_family":"multilayer_perceptron","description":"Higher-capacity three-hidden-layer compact DNN.","order_sensitive":false,"architecture":{"hidden_units":[128,64,32],"activation":"ReLU","dropout_probability":0.1}}
+------------------------------------------------------------------------------
+
+==============================================================================
+IMPORTANT TRAINING CONSTANTS
+==============================================================================
+scripts\22_lock_fp32_baseline_protocol.py:47 | DEFAULT_MODEL_REGISTRY_FILE = "PROJECT_ROOT / 'models' / 'architecture' / 'nbaiot_model_registry_v1.json'"
+scripts\22_lock_fp32_baseline_protocol.py:61 | DEFAULT_WEIGHT_FILE = "PROJECT_ROOT / 'models' / 'preprocessing' / 'nbaiot_task_class_weights_seed2026.npz'"
+scripts\22_lock_fp32_baseline_protocol.py:80 | EXPECTED_MODELS = ('tinyml_mlp', 'compact_dnn', 'tiny_1d_cnn')
+scripts\22_lock_fp32_baseline_protocol.py:86 | MAIN_SEEDS = (42, 123, 2026, 3407, 8192)
+scripts\23_run_fp32_baseline_experiments.py:100 | EXPECTED_MODELS = ('tinyml_mlp', 'compact_dnn', 'tiny_1d_cnn')
+scripts\23_run_fp32_baseline_experiments.py:106 | EXPECTED_SEEDS = (42, 123, 2026, 3407, 8192)
+scripts\38_run_b0_matched_leakage_ablation.py:56 | SEEDS = (42, 123, 2026, 3407, 8192)
+scripts\38_run_b0_matched_leakage_ablation.py:64 | LOCKED_SPLIT_SEED = 2026
+src\models\nbaiot_models.py:479 | MODEL_SPECS = "{'tinyml_mlp': ModelSpec(registry_name='tinyml_mlp', display_name='TinyML-MLP', architecture_family='multilayer_perceptron', description='Two-hidden-layer low-parameter MLP baseline.', order_sensitive=False, architecture={'hidden_units': [64, 32], 'activation': 'ReLU', 'dropout_probability': 0.0}), 'compact_dnn': ModelSpec(registry_name='compact_dnn', display_name='Compact-DNN', architecture_family='multilayer_perceptron', description='Higher-capacity three-hidden-layer compact DNN.', order_sensitive=False, architecture={'hidden_units': [128, 64, 32], 'activation': 'ReLU', 'dropout_probability': 0.1}), 'tiny_1d_cnn': ModelSpec(registry_name='tiny_1d_cnn', display_name='Tiny-1D-CNN', architecture_family='one_dimensional_convolution', description='Order-sensitive compact 1D convolutional classifier.', order_sensitive=True, architecture={'channels': [8, 16, 24], 'kernel_sizes': [5, 3, 3], 'pooling': ['MaxPool1d(2)', 'MaxPool1d(2)', 'AdaptiveAvgPool1d(1)'], 'activation': 'ReLU'})}"
+src\models\nbaiot_models.py:545 | MODEL_FACTORIES = "{'tinyml_mlp': TinyMLMLP, 'compact_dnn': CompactDNN, 'tiny_1d_cnn': Tiny1DCNN}"
+
+==============================================================================
+RELEVANT CONFIG FILES
+==============================================================================
+configs\experiments\family3_tinyml_mlp_smoke.yaml | relevant_line_count=10
+name: family3_tinyml_mlp_smoke || model: tinyml_mlp || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 2 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 2 || directory: results/experiments/smoke_family3_tinyml_mlp
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_compact_dnn_seed123.yaml | relevant_line_count=10
+name: fp32_family3_compact_dnn_seed123 || model: compact_dnn || seed: 123 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\compact_dnn\seed123
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_compact_dnn_seed2026.yaml | relevant_line_count=10
+name: fp32_family3_compact_dnn_seed2026 || model: compact_dnn || seed: 2026 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\compact_dnn\seed2026
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_compact_dnn_seed3407.yaml | relevant_line_count=10
+name: fp32_family3_compact_dnn_seed3407 || model: compact_dnn || seed: 3407 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\compact_dnn\seed3407
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_compact_dnn_seed42.yaml | relevant_line_count=10
+name: fp32_family3_compact_dnn_seed42 || model: compact_dnn || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\compact_dnn\seed42
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_compact_dnn_seed8192.yaml | relevant_line_count=10
+name: fp32_family3_compact_dnn_seed8192 || model: compact_dnn || seed: 8192 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\compact_dnn\seed8192
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tiny_1d_cnn_seed123.yaml | relevant_line_count=9
+name: fp32_family3_tiny_1d_cnn_seed123 || seed: 123 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tiny_1d_cnn\seed123
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tiny_1d_cnn_seed2026.yaml | relevant_line_count=9
+name: fp32_family3_tiny_1d_cnn_seed2026 || seed: 2026 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tiny_1d_cnn\seed2026
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tiny_1d_cnn_seed3407.yaml | relevant_line_count=9
+name: fp32_family3_tiny_1d_cnn_seed3407 || seed: 3407 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tiny_1d_cnn\seed3407
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tiny_1d_cnn_seed42.yaml | relevant_line_count=9
+name: fp32_family3_tiny_1d_cnn_seed42 || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tiny_1d_cnn\seed42
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tiny_1d_cnn_seed8192.yaml | relevant_line_count=9
+name: fp32_family3_tiny_1d_cnn_seed8192 || seed: 8192 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tiny_1d_cnn\seed8192
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tinyml_mlp_seed123.yaml | relevant_line_count=10
+name: fp32_family3_tinyml_mlp_seed123 || model: tinyml_mlp || seed: 123 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tinyml_mlp\seed123
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tinyml_mlp_seed2026.yaml | relevant_line_count=10
+name: fp32_family3_tinyml_mlp_seed2026 || model: tinyml_mlp || seed: 2026 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tinyml_mlp\seed2026
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tinyml_mlp_seed3407.yaml | relevant_line_count=10
+name: fp32_family3_tinyml_mlp_seed3407 || model: tinyml_mlp || seed: 3407 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tinyml_mlp\seed3407
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tinyml_mlp_seed42.yaml | relevant_line_count=10
+name: fp32_family3_tinyml_mlp_seed42 || model: tinyml_mlp || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tinyml_mlp\seed42
+------------------------------------------------------------------------------
+configs\experiments\fp32_baseline_v1\family3_tinyml_mlp_seed8192.yaml | relevant_line_count=10
+name: fp32_family3_tinyml_mlp_seed8192 || model: tinyml_mlp || seed: 8192 || batch_size: 4096 || num_workers: 0 || max_epochs: 15 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 4 || directory: C:\Users\bozku\Desktop\TinyML_IDS_IEEE\results\experiments\fp32_baseline_v1\tinyml_mlp\seed8192
+------------------------------------------------------------------------------
+configs\experiments\learning_rate_sweep\family3_compact_dnn_lr1em03_seed42.yaml | relevant_line_count=10
+name: tuning_family3_compact_dnn_lr1em03_seed42 || model: compact_dnn || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 10 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 3 || directory: results/experiments/tuning_family3_compact_dnn_lr1em03_seed42
+------------------------------------------------------------------------------
+configs\experiments\learning_rate_sweep\family3_compact_dnn_lr3em03_seed42.yaml | relevant_line_count=10
+name: tuning_family3_compact_dnn_lr3em03_seed42 || model: compact_dnn || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 10 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 3 || directory: results/experiments/tuning_family3_compact_dnn_lr3em03_seed42
+------------------------------------------------------------------------------
+configs\experiments\learning_rate_sweep\family3_compact_dnn_lr3em04_seed42.yaml | relevant_line_count=10
+name: tuning_family3_compact_dnn_lr3em04_seed42 || model: compact_dnn || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 10 || learning_rate: 0.0003 || weight_decay: 0.0001 || patience: 3 || directory: results/experiments/tuning_family3_compact_dnn_lr3em04_seed42
+------------------------------------------------------------------------------
+configs\experiments\learning_rate_sweep\family3_tiny_1d_cnn_lr1em03_seed42.yaml | relevant_line_count=9
+name: tuning_family3_tiny_1d_cnn_lr1em03_seed42 || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 10 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 3 || directory: results/experiments/tuning_family3_tiny_1d_cnn_lr1em03_seed42
+------------------------------------------------------------------------------
+configs\experiments\learning_rate_sweep\family3_tiny_1d_cnn_lr3em03_seed42.yaml | relevant_line_count=9
+name: tuning_family3_tiny_1d_cnn_lr3em03_seed42 || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 10 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 3 || directory: results/experiments/tuning_family3_tiny_1d_cnn_lr3em03_seed42
+------------------------------------------------------------------------------
+configs\experiments\learning_rate_sweep\family3_tiny_1d_cnn_lr3em04_seed42.yaml | relevant_line_count=9
+name: tuning_family3_tiny_1d_cnn_lr3em04_seed42 || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 10 || learning_rate: 0.0003 || weight_decay: 0.0001 || patience: 3 || directory: results/experiments/tuning_family3_tiny_1d_cnn_lr3em04_seed42
+------------------------------------------------------------------------------
+configs\experiments\learning_rate_sweep\family3_tinyml_mlp_lr1em03_seed42.yaml | relevant_line_count=10
+name: tuning_family3_tinyml_mlp_lr1em03_seed42 || model: tinyml_mlp || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 10 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 3 || directory: results/experiments/tuning_family3_tinyml_mlp_lr1em03_seed42
+------------------------------------------------------------------------------
+configs\experiments\learning_rate_sweep\family3_tinyml_mlp_lr3em03_seed42.yaml | relevant_line_count=10
+name: tuning_family3_tinyml_mlp_lr3em03_seed42 || model: tinyml_mlp || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 10 || learning_rate: 0.003 || weight_decay: 0.0001 || patience: 3 || directory: results/experiments/tuning_family3_tinyml_mlp_lr3em03_seed42
+------------------------------------------------------------------------------
+configs\experiments\learning_rate_sweep\family3_tinyml_mlp_lr3em04_seed42.yaml | relevant_line_count=10
+name: tuning_family3_tinyml_mlp_lr3em04_seed42 || model: tinyml_mlp || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 10 || learning_rate: 0.0003 || weight_decay: 0.0001 || patience: 3 || directory: results/experiments/tuning_family3_tinyml_mlp_lr3em04_seed42
+------------------------------------------------------------------------------
+configs\experiments\pilots\family3_compact_dnn_pilot_seed42.yaml | relevant_line_count=10
+name: pilot_family3_compact_dnn_seed42 || model: compact_dnn || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 4 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 2 || directory: results/experiments/pilot_family3_compact_dnn_seed42
+------------------------------------------------------------------------------
+configs\experiments\pilots\family3_tiny_1d_cnn_pilot_seed42.yaml | relevant_line_count=9
+name: pilot_family3_tiny_1d_cnn_seed42 || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 4 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 2 || directory: results/experiments/pilot_family3_tiny_1d_cnn_seed42
+------------------------------------------------------------------------------
+configs\experiments\pilots\family3_tinyml_mlp_pilot_seed42.yaml | relevant_line_count=10
+name: pilot_family3_tinyml_mlp_seed42 || model: tinyml_mlp || seed: 42 || batch_size: 4096 || num_workers: 0 || max_epochs: 4 || learning_rate: 0.001 || weight_decay: 0.0001 || patience: 2 || directory: results/experiments/pilot_family3_tinyml_mlp_seed42
+------------------------------------------------------------------------------
+configs\protocols\nbaiot_family3_efficiency_profile_protocol_v1.json | relevant_line_count=9
+"tinyml_mlp", || "compact_dnn", || "seeds": [ || "B0", || "B0-ORT" || "seed": 2026, || "latency_batch_size": 1, || "throughput_batch_size": 512, || "python_executable": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\.venv\\Scripts\\python.exe",
+------------------------------------------------------------------------------
+configs\protocols\nbaiot_family3_efficiency_profile_quickcheck_v1.json | relevant_line_count=9
+"tinyml_mlp", || "compact_dnn", || "seeds": [ || "B0", || "B0-ORT" || "seed": 2026, || "latency_batch_size": 1, || "throughput_batch_size": 512, || "python_executable": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\.venv\\Scripts\\python.exe",
+------------------------------------------------------------------------------
+configs\protocols\nbaiot_family3_fp32_baseline_protocol_v1.json | relevant_line_count=51
+"protocol_name": "N-BaIoT family_3 FP32 multi-seed baseline", || "status": "locked_before_multi_seed_training", || "dataset": "nbaiot_float32_canonical_seed2026", || "tinyml_mlp", || "compact_dnn", || "training_seeds": [ || "seed_count": 5, || "optimizer": "AdamW", || "batch_size": 4096, || "max_epochs": 15, || "early_stopping_patience": 4, || "early_stopping_min_delta": 0.0002, || "weight_decay": 0.0001, || "num_workers": 0, || "loss": "CrossEntropyLoss", || "class_weight_scheme": "inverse_square_root_frequency_mean1", || "class_weights_fitted_from": "train_only", || "tinyml_mlp": { || "learning_rate": 0.003, || "learning_rate_source": "single-seed validation Macro F1 sweep", || "tuning_seed": 42, || "tuning_best_epoch": 7, || "tuning_epochs_completed": 10, || "tuning_validation_macro_f1": 0.978433860058456, || "compact_dnn": { || "learning_rate": 0.001, || "learning_rate_source": "single-seed validation Macro F1 sweep", || "tuning_seed": 42, || "tuning_best_epoch": 8, || "tuning_epochs_completed": 10, || "tuning_validation_macro_f1": 0.979421316534027, || "learning_rate": 0.003, || "learning_rate_source": "single-seed validation Macro F1 sweep", || "tuning_seed": 42, || "tuning_best_epoch": 9, || "tuning_epochs_completed": 10, || "tuning_validation_macro_f1": 0.8598032581497831, || "primary_metric": "macro_f1", || "checkpoint_policy": "Best epoch within each model-seed run", || "evaluations_per_model_seed": 1, || "macro_f1", || "seed_count": 5, || "aggregation_unit": "independent training seed", || "learning_rate_selection": { || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_family3_learning_rate_sweep_selected.csv", || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\preprocessing\\nbaiot_task_definitions_seed2026.json", || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\architecture\\nbaiot_model_registry_v1.json", || "sha256": "fa7b482eb024725be113142576fffc0c5f347b7e07596fb04604200405300ac2" || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\preprocessing\\nbaiot_standard_scaler_seed2026.npz", || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\preprocessing\\nbaiot_task_class_weights_seed2026.npz",
+------------------------------------------------------------------------------
+configs\protocols\nbaiot_family3_pruning_qat_protocol_v1.json | relevant_line_count=22
+"protocol_name": "N-BaIoT family_3 physical structured pruning plus FX QAT multi-seed", || "tinyml_mlp", || "compact_dnn", || "training_seeds": [ || "source_policy": "Every pruning-QAT variant is produced independently from the matching validation-selected FP32 model-seed checkpoint. Pruning levels are never chained.", || "physical_compaction": true, || "optimizer": "AdamW", || "learning_rate_rule": "fp32_learning_rate_times_factor", || "learning_rate_factor": 0.1, || "max_epochs": 8, || "early_stopping_patience": 3, || "early_stopping_min_delta": 0.0002, || "batch_size": 4096, || "weight_decay": 0.0001, || "num_workers": 0, || "selection_metric": "converted_int8_macro_f1", || "evaluations_per_model_pruning_seed": 1, || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json", || "sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525" || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\pruning\\nbaiot_structured_pruning_engine_v1.json", || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_fx_qat_pipeline_validation_summary.json", || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\scripts\\29b_run_quantization_experiments.py",
+------------------------------------------------------------------------------
+configs\protocols\nbaiot_family3_quantization_protocol_v1.json | relevant_line_count=21
+"protocol_name": "N-BaIoT family_3 DQ PTQ QAT multi-seed", || "tinyml_mlp", || "compact_dnn", || "training_seeds": [ || "source_policy": "Every quantized artifact is produced from the matching validation-selected FP32 model-seed checkpoint.", || "calibration_seed": 2026, || "calibration_batch_size": 1024, || "optimizer": "AdamW", || "learning_rate_rule": "fp32_learning_rate_times_factor", || "learning_rate_factor": 0.1, || "max_epochs": 8, || "early_stopping_patience": 3, || "early_stopping_min_delta": 0.0002, || "batch_size": 4096, || "weight_decay": 0.0001, || "num_workers": 0, || "selection_metric": "converted_int8_macro_f1", || "evaluations_per_model_method_seed": 1, || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json", || "sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525" || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\reports\\nbaiot_fx_qat_pipeline_validation_summary.json",
+------------------------------------------------------------------------------
+configs\protocols\nbaiot_family3_structured_pruning_protocol_v1.json | relevant_line_count=23
+"protocol_name": "N-BaIoT family_3 physical structured pruning multi-seed", || "tinyml_mlp", || "compact_dnn", || "training_seeds": [ || "source_policy": "Each pruning level is produced independently from the matching FP32 model-seed checkpoint.", || "physical_compaction": true, || "optimizer": "AdamW", || "learning_rate_rule": "fp32_learning_rate_times_factor", || "learning_rate_factor": 0.1, || "max_epochs": 8, || "early_stopping_patience": 3, || "early_stopping_min_delta": 0.0002, || "batch_size": 4096, || "weight_decay": 0.0001, || "num_workers": 0, || "loss": "CrossEntropyLoss", || "class_weight_scheme": "inverse_square_root_frequency_mean1", || "class_weights_fitted_from": "train_only" || "metric": "macro_f1", || "evaluations_per_model_ratio_seed": 1, || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\configs\\protocols\\nbaiot_family3_fp32_baseline_protocol_v1.json", || "sha256": "d5ad7742a6ced20d1b45e131d43705b08f96876c97d76a3da123f3881f870525" || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\pruning\\nbaiot_structured_pruning_engine_v1.json",
+------------------------------------------------------------------------------
+models\architecture\nbaiot_model_registry_v1.json | relevant_line_count=14
+"model_source_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\models\\nbaiot_models.py", || "dataset": "nbaiot_float32_canonical_seed2026", || "tinyml_mlp", || "compact_dnn", || "tinyml_mlp": { || "registry_name": "tinyml_mlp", || "display_name": "TinyML-MLP", || "compact_dnn": { || "registry_name": "compact_dnn", || "display_name": "Compact-DNN", || "description": "Higher-capacity three-hidden-layer compact DNN.", || "description": "Order-sensitive compact 1D convolutional classifier.", || "tinyml_mlp": { || "compact_dnn": {
+------------------------------------------------------------------------------
+models\preprocessing\nbaiot_label_mapping_seed2026.json | relevant_line_count=2
+"dataset": "nbaiot_float32_canonical_seed2026", || "seed": 2026,
+------------------------------------------------------------------------------
+models\preprocessing\nbaiot_task_definitions_seed2026.json | relevant_line_count=3
+"dataset": "nbaiot_float32_canonical_seed2026", || "seed": 2026, || "locked_primary_loss": "CrossEntropyLoss using train-only inverse-square-root-frequency weights.",
+------------------------------------------------------------------------------
+models\pruning\nbaiot_structured_pruning_engine_v1.json | relevant_line_count=55
+"source_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\src\\compression\\structured_pruning.py", || "tinyml_mlp", || "compact_dnn", || "physical_compaction": true, || "source_seed": 42, || "tinyml_mlp": { || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tinyml_mlp\\seed42\\best_checkpoint.pt", || "compact_dnn": { || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\compact_dnn\\seed42\\best_checkpoint.pt", || "sha256": "a56295944cd527a7b0d1c5aa8a6cb6d3093acc9074c55888b23d9d220abea67b" || "path": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\experiments\\fp32_baseline_v1\\tiny_1d_cnn\\seed42\\best_checkpoint.pt", || "tinyml_mlp": { || "model_name": "tinyml_mlp", || "compact_architecture": { || "compact_parameter_count": 6819, || "compact_weight_layer_macs": 6744, || "physical_compaction": true, || "model_name": "tinyml_mlp", || "compact_architecture": { || "compact_parameter_count": 4291, || "compact_weight_layer_macs": 4240, || "physical_compaction": true, || "model_name": "tinyml_mlp", || "compact_architecture": { || "compact_parameter_count": 2019, || "compact_weight_layer_macs": 1992, || "physical_compaction": true, || "compact_dnn": { || "model_name": "compact_dnn", || "compact_architecture": { || "compact_parameter_count": 17043, || "compact_weight_layer_macs": 16872, || "physical_compaction": true, || "model_name": "compact_dnn", || "compact_architecture": { || "compact_parameter_count": 10083, || "compact_weight_layer_macs": 9968, || "physical_compaction": true, || "model_name": "compact_dnn", || "compact_architecture": { || "compact_parameter_count": 4403, || "compact_weight_layer_macs": 4344, || "physical_compaction": true, || "compact_architecture": { || "compact_parameter_count": 987, || "compact_weight_layer_macs": 33960, || "physical_compaction": true, || "compact_architecture": { || "compact_parameter_count": 467, || "compact_weight_layer_macs": 15872,
+------------------------------------------------------------------------------
+models\quantization\qat_fx_validation_v1\compact_dnn\seed42\qat_validation_metadata.json | relevant_line_count=6
+"model_name": "compact_dnn", || "source_seed": 42, || "learning_rate": 1e-05, || "prepared_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\compact_dnn\\seed42\\prepared_qat_state_dict.pt", || "converted_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\compact_dnn\\seed42\\converted_int8_state_dict.pt", || "graph_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\compact_dnn\\seed42\\converted_fx_graph.txt",
+------------------------------------------------------------------------------
+models\quantization\qat_fx_validation_v1\tiny_1d_cnn\seed42\qat_validation_metadata.json | relevant_line_count=5
+"source_seed": 42, || "learning_rate": 1e-05, || "prepared_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\prepared_qat_state_dict.pt", || "converted_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\converted_int8_state_dict.pt", || "graph_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\converted_fx_graph.txt",
+------------------------------------------------------------------------------
+models\quantization\qat_fx_validation_v1\tinyml_mlp\seed42\qat_validation_metadata.json | relevant_line_count=6
+"model_name": "tinyml_mlp", || "source_seed": 42, || "learning_rate": 1e-05, || "prepared_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tinyml_mlp\\seed42\\prepared_qat_state_dict.pt", || "converted_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tinyml_mlp\\seed42\\converted_int8_state_dict.pt", || "graph_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tinyml_mlp\\seed42\\converted_fx_graph.txt",
+------------------------------------------------------------------------------

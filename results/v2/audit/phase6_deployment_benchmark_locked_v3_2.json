@@ -1,0 +1,23 @@
+{
+  "status": "locked",
+  "phase": 6,
+  "artifact_name": "isolated_deployment_benchmark",
+  "protocol_version": "phase6_deployment_benchmark_v3_2",
+  "locked_at_utc": "2026-08-06T21:14:11.147283+00:00",
+  "run_count": 110,
+  "group_count": 22,
+  "model_inference_repeated_by_verifier": false,
+  "verified_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_verified_runs_v3_2.csv",
+  "verified_runs_csv_sha256": "f69a170dcb1ff5336abcea2fba284df7e3f78fd682950e152b34ef26bb8f4df3",
+  "verification_report": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_verification_v3_2.json",
+  "verification_report_sha256": "b356a3b9bb7a947e019c99ba15517a7473e8f0b76114a109b950fcb8140f4726",
+  "all_runs_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_all_runs_v3_2.csv",
+  "all_runs_csv_sha256": "a76f0476d455802cfb3e095c66a313c67e03ad15e09dd1ed08a72808a9b72250",
+  "group_summary_csv": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\results\\v2\\audit\\phase6_deployment_benchmark_group_summary_v3_2.csv",
+  "group_summary_csv_sha256": "0be3e51a6843a0f01c217aee58b73b077b200b7680503fe9bbf73c74ac1cf3cf",
+  "validation_data_access": false,
+  "test_data_access": false,
+  "final_model_selected": false,
+  "ready_for_predeclared_statistics": true,
+  "all_checks_passed": true
+}

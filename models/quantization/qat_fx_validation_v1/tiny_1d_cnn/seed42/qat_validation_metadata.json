@@ -1,0 +1,41 @@
+{
+  "generated_at_utc": "2026-07-25T07:30:09.692674+00:00",
+  "model_name": "tiny_1d_cnn",
+  "source_seed": 42,
+  "backend": "onednn",
+  "backend_config_source": "torch.ao.quantization.backend_config.get_onednn_backend_config",
+  "qat_steps": 2,
+  "learning_rate": 1e-05,
+  "fake_quant_module_count": 10,
+  "quantized_module_count": 5,
+  "quantized_module_types": [
+    "torch.ao.nn.intrinsic.quantized.modules.conv_relu.ConvReLU1d",
+    "torch.ao.nn.quantized.modules.linear.Linear",
+    "torch.ao.nn.quantized.modules.linear.LinearPackedParams"
+  ],
+  "quantized_graph_node_count": 4,
+  "quantized_graph_targets": [
+    "<built-in method quantize_per_tensor of type object at 0x00007FFCE9D7D2D0>",
+    "dequantize"
+  ],
+  "fp32_vs_fake_quant": {
+    "sample_count": 64,
+    "maximum_absolute_difference": 4.568851470947266,
+    "mean_absolute_difference": 2.090602159500122,
+    "root_mean_squared_difference": 2.3534016609191895,
+    "argmax_prediction_agreement": 1.0
+  },
+  "fp32_vs_converted_int8": {
+    "sample_count": 64,
+    "maximum_absolute_difference": 5.378562927246094,
+    "mean_absolute_difference": 2.546064615249634,
+    "root_mean_squared_difference": 2.9056618213653564,
+    "argmax_prediction_agreement": 1.0
+  },
+  "prepared_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\prepared_qat_state_dict.pt",
+  "converted_state_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\converted_int8_state_dict.pt",
+  "graph_file": "C:\\Users\\bozku\\Desktop\\TinyML_IDS_IEEE\\models\\quantization\\qat_fx_validation_v1\\tiny_1d_cnn\\seed42\\converted_fx_graph.txt",
+  "validation_split_used": false,
+  "test_split_used": false,
+  "validation_passed": true
+}

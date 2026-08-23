@@ -1,0 +1,20 @@
+graph():
+    %inputs : 'Tensor' [num_users=1] = placeholder[target=inputs]
+    %_input_scale_0 : [num_users=1] = get_attr[target=_input_scale_0]
+    %_input_zero_point_0 : [num_users=1] = get_attr[target=_input_zero_point_0]
+    %quantize_per_tensor : [num_users=1] = call_function[target=torch.quantize_per_tensor](args = (%inputs, %_input_scale_0, %_input_zero_point_0, torch.quint8), kwargs = {})
+    %unsqueeze : [num_users=1] = call_method[target=unsqueeze](args = (%quantize_per_tensor, 1), kwargs = {})
+    %feature_extractor_0 : [num_users=1] = call_module[target=feature_extractor.0](args = (%unsqueeze,), kwargs = {})
+    %feature_extractor_2 : [num_users=1] = call_module[target=feature_extractor.2](args = (%feature_extractor_0,), kwargs = {})
+    %feature_extractor_3 : [num_users=1] = call_module[target=feature_extractor.3](args = (%feature_extractor_2,), kwargs = {})
+    %feature_extractor_5 : [num_users=1] = call_module[target=feature_extractor.5](args = (%feature_extractor_3,), kwargs = {})
+    %feature_extractor_6 : [num_users=1] = call_module[target=feature_extractor.6](args = (%feature_extractor_5,), kwargs = {})
+    %feature_extractor_8 : [num_users=1] = call_module[target=feature_extractor.8](args = (%feature_extractor_6,), kwargs = {})
+    %dequantize_7 : [num_users=1] = call_method[target=dequantize](args = (%feature_extractor_8,), kwargs = {})
+    %flatten : [num_users=1] = call_method[target=flatten](args = (%dequantize_7,), kwargs = {start_dim: 1})
+    %_scale_1 : [num_users=1] = get_attr[target=_scale_1]
+    %_zero_point_1 : [num_users=1] = get_attr[target=_zero_point_1]
+    %quantize_per_tensor_8 : [num_users=1] = call_function[target=torch.quantize_per_tensor](args = (%flatten, %_scale_1, %_zero_point_1, torch.quint8), kwargs = {})
+    %classifier : [num_users=1] = call_module[target=classifier](args = (%quantize_per_tensor_8,), kwargs = {})
+    %dequantize_9 : [num_users=1] = call_method[target=dequantize](args = (%classifier,), kwargs = {})
+    return dequantize_9

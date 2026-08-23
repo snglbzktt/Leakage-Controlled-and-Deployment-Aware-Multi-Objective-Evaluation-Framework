@@ -1,0 +1,4 @@
+﻿split,feature_file,expected_row_count,feature_row_count,metadata_filtered_row_count,numeric_feature_count,non_numeric_columns,row_count_matches,schema_matches_reference,label_rows_compared,label_mismatch_count,first_label_mismatch_index,label_sequence_matches
+train,data\processed\nbaiot_primary_seed2026\train.parquet,1738133,1738133,1738133,115,class_label,True,True,1738133,0,,True
+validation,data\processed\nbaiot_primary_seed2026\validation.parquet,371884,371884,371884,115,class_label,True,True,371884,0,,True
+test,data\processed\nbaiot_primary_seed2026\test.parquet,372659,372659,372659,115,class_label,True,True,372659,0,,True
